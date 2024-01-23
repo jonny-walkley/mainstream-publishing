@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  {% from "govuk/components/table/macro.njk" import govukTable %}
+
+  {{ govukTable({
+    firstCellIsHeader: true,
+    head: [
+      {
+        text: "Title"
+      },
+      {
+        text: "Edition"
+      },
+      {
+        text: "Last updated"
+      },
+      {
+        text: "State"
+      },
+      {
+        text: "Action"
+      }
+    ],
+    rows: [
+      [
+        {
+          text: "First 6 weeks"
+        },
+        {
+          text: "£109.80 per week"
+        },
+        {
+          text: "test"
+        },
+        {
+          text: "Draft"
+        },
+        {
+          text: "View"
+        }
+      ],
+      [
+        {
+          text: "Next 33 weeks"
+        },
+        {
+          text: "£109.80 per week"
+        }
+      ],
+      [
+        {
+          text: "Total estimated pay"
+        },
+        {
+          text: "£4,282.20"
+        }
+      ]
+    ]
+  }) }}
+
+{% endblock %}
