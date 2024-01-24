@@ -58,40 +58,30 @@
   {% set filterOptionsHtml %}
 
     {{ govukInput({
+      id: 'title',
+      name: 'title',
+      label: {
+        text: 'Title',
+        classes: 'govuk-label--m'
+      }
+    }) }}
+
+    {{ govukInput({
+      id: 'assignee',
+      name: 'assignee',
+      label: {
+        text: 'Assignee',
+        classes: 'govuk-label--m'
+      }
+    }) }}
+
+    {{ govukInput({
       id: 'keywords',
       name: 'keywords',
       label: {
         text: 'Keywords',
         classes: 'govuk-label--m'
       }
-    }) }}
-
-    {{ govukCheckboxes({
-      idPrefix: 'type',
-      name: 'type',
-      classes: "govuk-checkboxes--small",
-      fieldset: {
-        legend: {
-          text: 'Colour',
-          classes: 'govuk-fieldset__legend--m'
-        }
-      },
-      items: [
-        {
-          value: '1',
-          text: 'Blue (18)',
-          checked: true
-        },
-        {
-          value: '2',
-          text: 'Yellow (5)',
-          checked: true
-        },
-        {
-          value: '3',
-          text: 'Red (2)'
-        }
-      ]
     }) }}
 
     {{ govukCheckboxes({
@@ -107,16 +97,40 @@
       items: [
         {
           value: '1',
-          text: 'Complete (5)',
+          text: 'Draft',
           checked: true
         },
         {
           value: '2',
-          text: 'Incomplete (3)'
+          text: 'In review'
         },
         {
           value: '3',
-          text: 'In progress (13)'
+          text: 'Amends needed'
+        },
+        {
+          value: '4',
+          text: 'Fact check sent'
+        },
+        {
+          value: '5',
+          text: 'Fact check recieved'
+        },
+        {
+          value: '6',
+          text: 'Ready'
+        },
+        {
+          value: '7',
+          text: 'Scheduled'
+        },
+        {
+          value: '8',
+          text: 'Published'
+        },
+        {
+          value: '9',
+          text: 'Archived'
         }
       ]
     }) }}
@@ -145,24 +159,18 @@
         categories: [
           {
             heading: {
-              text: 'Colour'
-            },
-            items: [{
-              href: '#',
-              text: 'Blue'
-            }, {
-              href: '#',
-              text: 'Yellow'
-            }]
+              text: 'Assignee'
+            }
           },
           {
             heading: {
-              text: 'Status'
-            },
-            items: [{
-              href: '#',
-              text: 'Complete'
-            }]
+              text: 'Format'
+            }
+          },
+          {
+            heading: {
+              text: 'State'
+            }
           }
         ]
       },
@@ -176,16 +184,6 @@
     <div class="moj-action-bar">
 
       <div class="moj-action-bar__filter"></div>
-
-      {{ mojButtonMenu({
-        items: [{
-          text: 'Action 1',
-          classes: 'govuk-button--secondary'
-        }, {
-          text: 'Action 2',
-          classes: 'govuk-button--secondary'
-        }]
-      }) }}
 
     </div>
 
