@@ -7,7 +7,7 @@
 {% block content %}
   <h1 class="govuk-heading-xl">Publication</h1>
 
-  {% from "govuk/components/table/macro.njk" import govukTable %}
+  <!-- {% from "govuk/components/table/macro.njk" import govukTable %}
   {{ govukTable({
     firstCellIsHeader: true,
     head: [
@@ -46,6 +46,171 @@
         }
       ]
     ]
-  }) }}
+  }) }} -->
+
+
+  {%- from "govuk/components/checkboxes/macro.njk" import govukCheckboxes -%}
+  {%- from "govuk/components/input/macro.njk" import govukInput -%}
+  {%- from "govuk/components/table/macro.njk" import govukTable -%}
+  {%- from "moj/components/filter/macro.njk" import mojFilter -%}
+  {%- from "moj/components/button-menu/macro.njk" import mojButtonMenu -%}
+
+  {% set filterOptionsHtml %}
+
+    {{ govukInput({
+      id: 'keywords',
+      name: 'keywords',
+      label: {
+        text: 'Keywords',
+        classes: 'govuk-label--m'
+      }
+    }) }}
+
+    {{ govukCheckboxes({
+      idPrefix: 'type',
+      name: 'type',
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: 'Colour',
+          classes: 'govuk-fieldset__legend--m'
+        }
+      },
+      items: [
+        {
+          value: '1',
+          text: 'Blue (18)',
+          checked: true
+        },
+        {
+          value: '2',
+          text: 'Yellow (5)',
+          checked: true
+        },
+        {
+          value: '3',
+          text: 'Red (2)'
+        }
+      ]
+    }) }}
+
+    {{ govukCheckboxes({
+      idPrefix: 'status',
+      name: 'status',
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: 'Status',
+          classes: 'govuk-fieldset__legend--m'
+        }
+      },
+      items: [
+        {
+          value: '1',
+          text: 'Complete (5)',
+          checked: true
+        },
+        {
+          value: '2',
+          text: 'Incomplete (3)'
+        },
+        {
+          value: '3',
+          text: 'In progress (13)'
+        }
+      ]
+    }) }}
+
+  {% endset %}
+
+
+  <div class="moj-filter-layout">
+
+    <div class="moj-filter-layout__filter">
+
+      {{ mojFilter({
+        heading: {
+        text: 'Filter'
+        },
+        selectedFilters: {
+
+        heading: {
+          text: 'Selected filters'
+        },
+
+        clearLink: {
+          text: 'Clear filters'
+        },
+
+        categories: [
+          {
+            heading: {
+              text: 'Colour'
+            },
+            items: [{
+              href: '#',
+              text: 'Blue'
+            }, {
+              href: '#',
+              text: 'Yellow'
+            }]
+          },
+          {
+            heading: {
+              text: 'Status'
+            },
+            items: [{
+              href: '#',
+              text: 'Complete'
+            }]
+          }
+        ]
+      },
+        optionsHtml: filterOptionsHtml
+      }) }}
+
+    </div>
+
+    <div class="moj-filter-layout__content">
+
+    <div class="moj-action-bar">
+
+      <div class="moj-action-bar__filter"></div>
+
+      {{ mojButtonMenu({
+        items: [{
+          text: 'Action 1',
+          classes: 'govuk-button--secondary'
+        }, {
+          text: 'Action 2',
+          classes: 'govuk-button--secondary'
+        }]
+      }) }}
+
+    </div>
+
+    <div class="moj-scrollable-pane">
+      {{ govukTable({
+        firstCellIsHeader: true,
+        head: [
+          {text: 'Title'},
+          {text: 'Edition'},
+          {text: 'Updated by'},
+          {text: 'Status'},
+          {text: ''}
+        ],
+        rows: [
+          [
+            {text: '[Name of document]'},
+            {text: '[##]'},
+            {text: '[Date] by [Person]'},
+            {html: '<strong class="govuk-tag">Completed</strong>'},
+            {html: '<a href="#" class="govuk-link">View</a>'}
+          ]
+        ]
+      }) }}
+    </div>
+  </div>
+  
 
 {% endblock %}
