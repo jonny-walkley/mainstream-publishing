@@ -1,167 +1,197 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
   <h1 class="govuk-heading-xl">Publication</h1>
 
-  {%- from "govuk/components/checkboxes/macro.njk" import govukCheckboxes -%}
-  {%- from "govuk/components/input/macro.njk" import govukInput -%}
-  {%- from "govuk/components/table/macro.njk" import govukTable -%}
-  {%- from "moj/components/filter/macro.njk" import mojFilter -%}
-  {%- from "moj/components/button-menu/macro.njk" import mojButtonMenu -%}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third-from-desktop">
+      <div class="filter govuk-!-padding-5">
+        <h2 class="govuk-heading-m">Filter by</h2>
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+  
+        {{ govukInput({
+          label: {
+            text: "Title",
+            classes: "govuk-label--s"
+          },
+          id: "title",
+          name: "title"
+        }) }}
 
-  {% set filterOptionsHtml %}
+        {{ govukSelect({
+          id: "format",
+          name: "format",
+          classes: "full-width",
+          label: {
+            text: "Format",
+            classes: "govuk-label--s"
+          },
+          items: [
+            {
+              value: "all",
+              text: "All formats"
+            },
+            {
+              value: "answer",
+              text: "Answer"
+            },
+            {
+              value: "campaign",
+              text: "Campaign (retired)"
+            },
+            {
+              value: "completed-transaction",
+              text: "Completed Transaction"
+            },
+            {
+              value: "guide",
+              text: "Guide"
+            },
+            {
+              value: "help-page",
+              text: "Help page"
+            },
+            {
+              value: "licence",
+              text: "Licence (retired)"
+            },
+            {
+              value: "local-transaction",
+              text: "Local transaction"
+            },
+            {
+              value: "place",
+              text: "Place"
+            },
+            {
+              value: "programme",
+              text: "Programme (retired)"
+            },
+            {
+              value: "simple-smart-answer",
+              text: "Simple smart answer"
+            },
+            {
+              value: "transaction",
+              text: "Transaction"
+            },
+            {
+              value: "video",
+              text: "Video (retired)"
+            }
+          ]
+        }) }}
 
-    {{ govukInput({
-      id: 'title',
-      name: 'title',
-      label: {
-        text: 'Title',
-        classes: 'govuk-label--m'
-      }
-    }) }}
-
-    {{ govukInput({
-      id: 'assignee',
-      name: 'assignee',
-      label: {
-        text: 'Assignee',
-        classes: 'govuk-label--m'
-      }
-    }) }}
-
-    {{ govukInput({
-      id: 'format',
-      name: 'format',
-      label: {
-        text: 'Format',
-        classes: 'govuk-label--m'
-      }
-    }) }}
-
-    {{ govukCheckboxes({
-      idPrefix: 'status',
-      name: 'status',
-      classes: "govuk-checkboxes--small",
-      fieldset: {
-        legend: {
-          text: 'Status',
-          classes: 'govuk-fieldset__legend--m'
-        }
-      },
-      items: [
-        {
-          value: '1',
-          text: 'Draft',
-          checked: true
-        },
-        {
-          value: '2',
-          text: 'In review'
-        },
-        {
-          value: '3',
-          text: 'Amends needed'
-        },
-        {
-          value: '4',
-          text: 'Fact check sent'
-        },
-        {
-          value: '5',
-          text: 'Fact check recieved'
-        },
-        {
-          value: '6',
-          text: 'Ready'
-        },
-        {
-          value: '7',
-          text: 'Scheduled'
-        },
-        {
-          value: '8',
-          text: 'Published'
-        },
-        {
-          value: '9',
-          text: 'Archived'
-        }
-      ]
-    }) }}
-
-  {% endset %}
-
-
-  <div class="moj-filter-layout">
-
-    <div class="moj-filter-layout__filter">
-
-      {{ mojFilter({
-        heading: {
-        text: 'Filter'
-        },
-        selectedFilters: {
-
-        heading: {
-          text: 'Selected filters'
-        },
-
-        clearLink: {
-          text: 'Clear filters'
-        },
-
-        categories: [
-          {
-            heading: {
-              text: 'Assignee'
+        {{ govukCheckboxes({
+          name: "state",
+          fieldset: {
+            legend: {
+              text: "State",
+              classes: "govuk-fieldset__legend--s"
             }
           },
-          {
-            heading: {
-              text: 'Format'
+          items: [
+            {
+              value: "draft",
+              text: "Draft"
+            },
+            {
+              value: "in-review",
+              text: "In review"
+            },
+            {
+              value: "amends-needed",
+              text: "Amends needed"
+            },
+            {
+              value: "fact-check-sent",
+              text: "Fact check sent"
+            },
+            {
+              value: "fact-check-recieved",
+              text: "Fact check recieved"
+            },
+            {
+              value: "ready",
+              text: "Ready"
+            },
+            {
+              value: "schedule",
+              text: "Schedule"
+            },
+            {
+              value: "published",
+              text: "Published"
+            },
+            {
+              value: "archived",
+              text: "Archived"
             }
-          },
-          {
-            heading: {
-              text: 'State'
-            }
-          }
-        ]
-      },
-        optionsHtml: filterOptionsHtml
-      }) }}
+          ]
+        }) }}
 
+        {{ govukButton({
+          text: "Search"
+        }) }}
+
+        <p class="govuk-body">
+          <a href="#" class="govuk-link">Reset all fields</a>
+        </p>
+
+      </div>
     </div>
 
-    <div class="moj-filter-layout__content">
 
-    <div class="moj-action-bar">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      
+      <h2 class="govuk-heading-s">documents</h2>
 
-      <div class="moj-action-bar__filter"></div>
-
-    </div>
-
-    <div class="moj-scrollable-pane">
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      
+      {% from "govuk/components/table/macro.njk" import govukTable %}
       {{ govukTable({
         firstCellIsHeader: true,
         head: [
-          {text: 'Title'},
-          {text: 'Edition'},
-          {text: 'Updated by'},
-          {text: 'Status'},
-          {text: ''}
+          {
+            text: "Title"
+          },
+          {
+            text: "Edition"
+          },
+          {
+            text: "Updated by"
+          },
+          {
+            text: "State"
+          },
+          {
+            text: " "
+          }
         ],
         rows: [
           [
-            {text: '[Name of document]'},
-            {text: '[##]'},
-            {text: '[Date] by [Person]'},
-            {html: '<strong class="govuk-tag">Completed</strong>'},
-            {html: '<a href="#" class="govuk-link">View</a>'}
+            {
+              text: "Document name"
+            },
+            {
+              text: "07"
+            },
+            {
+              text: "January 7 by Nikin Nagewadia"
+            },
+            {
+              html: '<strong class="govuk-tag">Completed</strong>'
+            },
+            {
+              html: '<a href="#">View</a>'
+            }
           ]
         ]
       }) }}
