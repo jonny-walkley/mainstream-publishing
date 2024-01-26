@@ -25,6 +25,11 @@
           name: "title"
         }) }}
 
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="my-autocomplete">Assignee</label>
+          <div id="my-autocomplete-container"></div>
+        </div>
+
         {{ govukSelect({
           id: "format",
           name: "format",
@@ -166,7 +171,10 @@
             text: "Edition"
           },
           {
-            text: "Updated by"
+            text: "Assignee"
+          },
+          {
+            text: "Last updated"
           },
           {
             text: "State"
@@ -184,7 +192,10 @@
               text: "07"
             },
             {
-              text: "January 7 by Nikin Nagewadia"
+              text: "Nikin"
+            },
+            {
+              text: "January 7 2024"
             },
             {
               html: '<strong class="govuk-tag">Completed</strong>'
@@ -200,3 +211,5 @@
   
 
 {% endblock %}
+
+<script type="text/javascript" src="assets/js/accessible-autocomplete.min.js"></script>
