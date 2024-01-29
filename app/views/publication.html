@@ -25,10 +25,25 @@
           name: "title"
         }) }}
 
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--s" for="my-autocomplete">Assignee</label>
-          <div id="my-autocomplete-container"></div>
-        </div>
+        {{ govukSelect({
+          id: "assignee",
+          name: "assignee",
+          classes: "full-width",
+          label: {
+            text: "Assignee",
+            classes: "govuk-label--s"
+          },
+          items: [
+            {
+              value: "all",
+              text: "All assignees"
+            },
+            {
+              value: "person",
+              text: "Person"
+            }
+          ]
+        }) }}
 
         {{ govukSelect({
           id: "format",
