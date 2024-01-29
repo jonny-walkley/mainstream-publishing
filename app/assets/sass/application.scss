@@ -4,6 +4,13 @@
 // 
 
 // Add extra styles here
+.govuk-width-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+
 .filter {
     background-color: govuk-colour("light-grey");
 }
@@ -11,4 +18,9 @@
 .full-width {
     width: 100%;
     min-width: 100%;
+}
+
+.big-divider {
+    background-color: govuk-colour("black");
+    height: 2px;
 }
