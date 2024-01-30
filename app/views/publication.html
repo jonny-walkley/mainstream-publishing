@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-  <h1 class="govuk-heading-xl">Publication</h1>
+  <h1 class="govuk-heading-xl">Publication prototype</h1>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third-from-desktop govuk-!-padding-bottom-8">
@@ -197,17 +197,25 @@
         rows: [
           [
             {
-              html: '<a href="#">Document name</a>'
+              html: '<a href="#">Document name</a>',
+              classes: "title"
             },
             {
-              text: "Nikin"
+              text: "Nikin",
+              classes: "assignee"
+
             },
             {
-              html: '<strong class="govuk-tag">Completed</strong>'
+              html: '<strong class="govuk-tag">Completed</strong>',
+              classes: "state"
             }
           ]
         ]
       }) }}
     </div>
   </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
 {% endblock %}
