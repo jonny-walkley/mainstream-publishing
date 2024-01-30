@@ -180,56 +180,34 @@
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible big-divider">
       
-      <div class="returned-results">
-        <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
-        <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-heading-s govuk-!-margin-bottom-1" href="#">Taking your pet dog, cat or ferret abroad</a>
-        {{ govukSummaryList({
-          classes: "govuk-summary-list--no-border",
-          rows: [
+      {% from "govuk/components/table/macro.njk" import govukTable %}
+      {{ govukTable({
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: "Title"
+          },
+          {
+            text: "Assigned to"
+          },
+          {
+            text: "State"
+          }
+        ],
+        rows: [
+          [
             {
-              key: {
-                text: "Status"
-              },
-              value: {
-                html: '<strong class="govuk-tag">Draft</strong>'
-              }
+              html: '<a href="#">Document name</a>'
             },
             {
-              key: {
-                text: "Format"
-              },
-              value: {
-                html: 'Guide'
-              }
+              text: "Nikin"
             },
             {
-              key: {
-                text: "Edition"
-              },
-              value: {
-                html: '6'
-              }
-            },
-            {
-              key: {
-                text: "Last updated"
-              },
-              value: {
-                html: '25 January 2024'
-              }
-            },
-            {
-              key: {
-                text: "Assigned to"
-              },
-              value: {
-                html: 'Ngozi Okonkwo'
-              }
+              html: '<strong class="govuk-tag">Completed</strong>'
             }
           ]
-        }) }}
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      </div>
+        ]
+      }) }}
     </div>
   </div>
 {% endblock %}
