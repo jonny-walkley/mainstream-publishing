@@ -7,7 +7,10 @@ window.GOVUKPrototypeKit.documentReady(() => {
   const matchParam = (param, input, exact) =>
     input && ((input.replace(' ','').toLowerCase()).match(
       !exact ? param.replace(' ','').toLowerCase() : new RegExp(`^${param.replace(' ','').toLowerCase()}$`)
-    ))
+    ));
+
+  const filterParams = (whitelist, searchParams) =>
+    Array.from(new URL(document.location).searchParams.entries()).filter(param => whitelist.includes(param[0]) && param[1].length && param[1]!='_unchecked');
 
   fetch("/public/test.json").then(data => data.json()).then(data => {
     let firstRow = document.querySelectorAll(".govuk-table__row")[1];
@@ -16,10 +19,31 @@ window.GOVUKPrototypeKit.documentReady(() => {
     let params = new URL(document.location).searchParams;
     let titleParam = params.get("title") || "" ;
     let assigneeParam = params.get("assignee") || "";
+    let formatParam = params.get("format") || "";
+
+    let whitelist = [
+      'title',
+      'assignee',
+      'format',
+    ]
+
+    let matchExact = {
+      title: false,
+      assignee: true,
+      format: true,
+      state: true,
+    }
+
+    let processParams = filterParams(whitelist, new URL(document.location).searchParams.entries());
+    let states = filterParams(['state'], new URL(document.location).searchParams.entries());
 
     if (titleParam && titleParam.length > 0) {
       document.querySelector("#title").value = titleParam;
     }
+
+    states.forEach((state) => {
+      document.querySelector(`input[value="${state[1]}"]`).setAttribute('checked', true)
+    })
 
     data.forEach(({ title, assignee, state, format }, index) => {
       assignees.push(assignee);
@@ -28,28 +52,19 @@ window.GOVUKPrototypeKit.documentReady(() => {
       newRow.querySelector('.title').innerHTML = `<a href="#">${title}</a>`
       newRow.querySelector('.assignee').innerText = assignee
       newRow.querySelector('.state').innerHTML = `<strong class="govuk-tag">${state}</strong>`
-      newRow.querySelector('.format').innerText = format   
+      newRow.querySelector('.format').innerText = format
 
-      let whitelist = [
-        'title',
-        'assignee',
-        'format',
-        'state'
-      ]
-
-      let matchExact = {
-        title: false,
-        assignee: true,
-        format: true,
-        state: true,
+      // OR
+      if (states.length) {
+        if (states.filter(param => matchParam(param[1], data[index][param[0]], matchExact[param[0]])).length == 0) {
+          return;
+        }
       }
 
-      let params = Array.from(new URL(document.location).searchParams.entries()).filter(param => whitelist.includes(param[0]) && param[1].length && param[1]!='_unchecked');
-
-      // ...i guess it's an AND filter...
-      if (params.length) {
-        if (params.filter(param => matchParam(param[1], data[index][param[0]], matchExact[param[0]])).length == params.length) {
-          firstRow.parentNode.append(newRow)  
+      // AND
+      if (processParams.length) {
+        if (processParams.filter(param => matchParam(param[1], data[index][param[0]], matchExact[param[0]])).length == processParams.length) {
+          firstRow.parentNode.append(newRow)
         }
       } else {
         firstRow.parentNode.append(newRow)
@@ -60,13 +75,25 @@ window.GOVUKPrototypeKit.documentReady(() => {
 
     Array.from((new Set(assignees))).forEach(function(assignee) {
       let option = document.createElement("option");
-      option.value = assignee.replace(' ','').toLowerCase();
+      let value = assignee.replace(' ','').toLowerCase();
+      option.value = value;
       option.innerText = assignee;
-      document.querySelector("#assignee").appendChild(option);    
+
+      if (assigneeParam && assigneeParam.length > 0) {
+        if (matchParam(assigneeParam, value, true)) {
+          option.setAttribute('selected', true)
+        }
+      }
+
+      document.querySelector("#assignee").appendChild(option);
     });
 
+    if (formatParam && formatParam.length > 0) {
+      document.querySelector(`option[value='${formatParam}']`).setAttribute('selected', true)
+    }
+
     accessibleAutocomplete.enhanceSelectElement({
-      selectElement: document.querySelector("#assignee")
-    });    
+      selectElement: document.querySelector("#assignee"),
+    });
   });
 })
