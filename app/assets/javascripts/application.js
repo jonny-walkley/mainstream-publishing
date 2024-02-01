@@ -10,7 +10,7 @@ window.GOVUKPrototypeKit.documentReady(() => {
     ));
 
   const filterParams = (whitelist, searchParams) =>
-    Array.from(new URL(document.location).searchParams.entries()).filter(param => whitelist.includes(param[0]) && param[1].length && param[1]!='_unchecked');
+    Array.from(new URL(document.location).searchParams.entries()).filter(param => whitelist.includes(param[0]) && param[1].length && param[1] !='_unchecked' && param[1] != 'all');
 
   fetch("/public/test.json").then(data => data.json()).then(data => {
     let firstRow = document.querySelectorAll(".govuk-table__row")[1];
