@@ -25,7 +25,8 @@ window.GOVUKPrototypeKit.documentReady(() => {
       let newRow = firstRow.cloneNode(true);
       newRow.querySelector('.title').innerHTML = `<a href="#">${title}</a>`
       newRow.querySelector('.assignee').innerText = assignee
-      newRow.querySelector('.state').innerHTML = `<strong class="govuk-tag">${state}</strong>`      
+      newRow.querySelector('.state').innerHTML = `<strong class="govuk-tag">${state}</strong>`
+      newRow.querySelector('.format').innerText = format   
 
       let whitelist = [
         'title',
