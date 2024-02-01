@@ -4,25 +4,58 @@
 //
 
 window.GOVUKPrototypeKit.documentReady(() => {
-  // Add JavaScript here
-
-  console.log(document.querySelector("#assignee"))
+  const matchParam = (param, input) =>
+    input && (input.replace(' ','').toLowerCase()).match(param.replace(' ','').toLowerCase())
 
   fetch("/public/test.json").then(data => data.json()).then(data => {
     let firstRow = document.querySelectorAll(".govuk-table__row")[1];
+    let assignees = [];
 
-    data.forEach(({ title, assignee, state }) => {
+    let params = new URL(document.location).searchParams;
+    let titleParam = params.get("title") || "" ;
+    let assigneeParam = params.get("assignee") || "";
+
+    if (titleParam && titleParam.length > 0) {
+      document.querySelector("#title").value = titleParam;
+    }
+
+    data.forEach(({ title, assignee, state, format }, index) => {
+      assignees.push(assignee);
+
       let newRow = firstRow.cloneNode(true);
-
       newRow.querySelector('.title').innerHTML = `<a href="#">${title}</a>`
       newRow.querySelector('.assignee').innerText = assignee
-      newRow.querySelector('.state').innerHTML = `<strong class="govuk-tag">${state}</strong>`
+      newRow.querySelector('.state').innerHTML = `<strong class="govuk-tag">${state}</strong>`      
 
-      firstRow.parentNode.append(newRow)
+      let whitelist = [
+        'title',
+        'assignee',
+        'format',
+      ]
+
+      let params = Array.from(new URL(document.location).searchParams.entries()).filter(param => whitelist.includes(param[0]) && param[1].length);
+
+      // ...i guess it's an AND filter...
+      if (params.length) {
+        if (params.filter(param => matchParam(param[1], data[index][param[0]])).length == params.length) {
+          firstRow.parentNode.append(newRow)  
+        }
+      } else {
+        firstRow.parentNode.append(newRow)
+      }
     });
-  });
 
-  accessibleAutocomplete.enhanceSelectElement({
-    selectElement: document.querySelector("#assignee")
-  });  
+    firstRow.remove();
+
+    Array.from((new Set(assignees))).forEach(function(assignee) {
+      let option = document.createElement("option");
+      option.value = assignee.replace(' ','').toLowerCase();
+      option.innerText = assignee;
+      document.querySelector("#assignee").appendChild(option);    
+    });
+
+    accessibleAutocomplete.enhanceSelectElement({
+      selectElement: document.querySelector("#assignee")
+    });    
+  });
 })

@@ -10,161 +10,163 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third-from-desktop govuk-!-padding-bottom-8">
       <div class="filter govuk-!-padding-5">
-        <h2 class="govuk-heading-m">Filter by</h2>
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        {% from "govuk/components/select/macro.njk" import govukSelect %}
-        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-        {% from "govuk/components/button/macro.njk" import govukButton %}
-        {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
-  
-        {{ govukInput({
-          label: {
-            text: "Title",
-            classes: "govuk-label--s"
-          },
-          id: "title",
-          name: "title"
-        }) }}
+        <form>
+          <h2 class="govuk-heading-m">Filter by</h2>
+          {% from "govuk/components/input/macro.njk" import govukInput %}
+          {% from "govuk/components/select/macro.njk" import govukSelect %}
+          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+          {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+    
+          {{ govukInput({
+            label: {
+              text: "Title",
+              classes: "govuk-label--s"
+            },
+            id: "title",
+            name: "title"
+          }) }}
 
-        {{ govukSelect({
-          id: "assignee",
-          name: "assignee",
-          classes: "full-width",
-          label: {
-            text: "Assignee",
-            classes: "govuk-label--s"
-          },
-          items: [
-            {
-              value: "all",
-              text: "All assignees"
+          {{ govukSelect({
+            id: "assignee",
+            name: "assignee",
+            classes: "full-width",
+            label: {
+              text: "Assignee",
+              classes: "govuk-label--s"
             },
-            {
-              value: "person",
-              text: "Person"
-            }
-          ]
-        }) }}
+            items: [
+              {
+                value: "",
+                text: "All assignees"
+              },
+              {
+                value: "person",
+                text: "Person"
+              }
+            ]
+          }) }}
 
-        {{ govukSelect({
-          id: "format",
-          name: "format",
-          classes: "full-width",
-          label: {
-            text: "Format",
-            classes: "govuk-label--s"
-          },
-          items: [
-            {
-              value: "all",
-              text: "All formats"
+          {{ govukSelect({
+            id: "format",
+            name: "format",
+            classes: "full-width",
+            label: {
+              text: "Format",
+              classes: "govuk-label--s"
             },
-            {
-              value: "answer",
-              text: "Answer"
-            },
-            {
-              value: "campaign",
-              text: "Campaign (retired)"
-            },
-            {
-              value: "completed-transaction",
-              text: "Completed Transaction"
-            },
-            {
-              value: "guide",
-              text: "Guide"
-            },
-            {
-              value: "help-page",
-              text: "Help page"
-            },
-            {
-              value: "licence",
-              text: "Licence (retired)"
-            },
-            {
-              value: "local-transaction",
-              text: "Local transaction"
-            },
-            {
-              value: "place",
-              text: "Place"
-            },
-            {
-              value: "programme",
-              text: "Programme (retired)"
-            },
-            {
-              value: "simple-smart-answer",
-              text: "Simple smart answer"
-            },
-            {
-              value: "transaction",
-              text: "Transaction"
-            },
-            {
-              value: "video",
-              text: "Video (retired)"
-            }
-          ]
-        }) }}
+            items: [
+              {
+                value: "all",
+                text: "All formats"
+              },
+              {
+                value: "answer",
+                text: "Answer"
+              },
+              {
+                value: "campaign",
+                text: "Campaign (retired)"
+              },
+              {
+                value: "completed-transaction",
+                text: "Completed Transaction"
+              },
+              {
+                value: "guide",
+                text: "Guide"
+              },
+              {
+                value: "help-page",
+                text: "Help page"
+              },
+              {
+                value: "licence",
+                text: "Licence (retired)"
+              },
+              {
+                value: "local-transaction",
+                text: "Local transaction"
+              },
+              {
+                value: "place",
+                text: "Place"
+              },
+              {
+                value: "programme",
+                text: "Programme (retired)"
+              },
+              {
+                value: "simple-smart-answer",
+                text: "Simple smart answer"
+              },
+              {
+                value: "transaction",
+                text: "Transaction"
+              },
+              {
+                value: "video",
+                text: "Video (retired)"
+              }
+            ]
+          }) }}
 
-        {{ govukCheckboxes({
-          name: "state",
-          fieldset: {
-            legend: {
-              text: "State",
-              classes: "govuk-fieldset__legend--s"
-            }
-          },
-          items: [
-            {
-              value: "draft",
-              text: "Draft"
+          {{ govukCheckboxes({
+            name: "state",
+            fieldset: {
+              legend: {
+                text: "State",
+                classes: "govuk-fieldset__legend--s"
+              }
             },
-            {
-              value: "in-review",
-              text: "In review"
-            },
-            {
-              value: "needs-reviewing",
-              text: "Needs reviewing"
-            },
-            {
-              value: "amends-needed",
-              text: "Amends needed"
-            },
-            {
-              value: "fact-check-sent",
-              text: "Fact check sent"
-            },
-            {
-              value: "fact-check-recieved",
-              text: "Fact check recieved"
-            },
-            {
-              value: "ready",
-              text: "Ready"
-            },
-            {
-              value: "schedule",
-              text: "Schedule"
-            },
-            {
-              value: "published",
-              text: "Published"
-            },
-            {
-              value: "archived",
-              text: "Archived"
-            }
-          ]
-        }) }}
+            items: [
+              {
+                value: "draft",
+                text: "Draft"
+              },
+              {
+                value: "in-review",
+                text: "In review"
+              },
+              {
+                value: "needs-reviewing",
+                text: "Needs reviewing"
+              },
+              {
+                value: "amends-needed",
+                text: "Amends needed"
+              },
+              {
+                value: "fact-check-sent",
+                text: "Fact check sent"
+              },
+              {
+                value: "fact-check-recieved",
+                text: "Fact check recieved"
+              },
+              {
+                value: "ready",
+                text: "Ready"
+              },
+              {
+                value: "schedule",
+                text: "Schedule"
+              },
+              {
+                value: "published",
+                text: "Published"
+              },
+              {
+                value: "archived",
+                text: "Archived"
+              }
+            ]
+          }) }}
 
-        {{ govukButton({
-          text: "Search"
-        }) }}
+          {{ govukButton({
+            text: "Search"
+          }) }}
+        </form>
 
         <p class="govuk-body">
           <a href="#" class="govuk-link">Reset all fields</a>
