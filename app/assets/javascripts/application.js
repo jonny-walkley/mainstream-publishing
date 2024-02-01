@@ -95,5 +95,7 @@ window.GOVUKPrototypeKit.documentReady(() => {
     accessibleAutocomplete.enhanceSelectElement({
       selectElement: document.querySelector("#assignee"),
     });
+
+    document.querySelector('#doc-count').innerHTML = `${document.querySelectorAll('.govuk-table__body .govuk-table__row').length} documents`
   });
 })
