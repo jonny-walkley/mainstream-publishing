@@ -89,7 +89,7 @@ window.GOVUKPrototypeKit.documentReady(() => {
     });
 
     if (formatParam && formatParam.length > 0) {
-      document.querySelector(`option[value='${formatParam}']`).setAttribute('selected', true)
+      document.querySelector(`#format option[value='${formatParam}']`).setAttribute('selected', true)
     }
 
     accessibleAutocomplete.enhanceSelectElement({
