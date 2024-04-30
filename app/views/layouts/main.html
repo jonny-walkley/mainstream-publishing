@@ -1,0 +1,45 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Publisher",
+  serviceUrl: "#",
+  navigation: [
+    {
+      href: "#1",
+      text: "Publication",
+      active: true
+    },
+    {
+      href: "#2",
+      text: "Add Artefact"
+    },
+    {
+      href: "#3",
+      text: "Downtime"
+    },
+    {
+        href: "#4",
+        text: "Reports"
+    },
+    {
+        href: "#5",
+        text: "Search by users"
+    },
+    {
+        href: "#6",
+        text: "User name"
+    },
+    {
+        href: "#7",
+        text: "Sign out"
+    }
+  ]
+}) }}
+{% endblock %}

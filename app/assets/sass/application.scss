@@ -1,0 +1,26 @@
+@import "accessible-autocomplete";
+
+//
+// For guidance on how to add CSS and SCSS see:
+// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
+// 
+
+// Add extra styles here
+.govuk-width-container {
+    max-width: 1140px;
+}
+
+
+.filter {
+    background-color: govuk-colour("light-grey");
+}
+
+.full-width {
+    width: 100%;
+    min-width: 100%;
+}
+
+.big-divider {
+    background-color: govuk-colour("black");
+    height: 2px;
+}
