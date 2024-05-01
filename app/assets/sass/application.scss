@@ -74,3 +74,15 @@ height: 40px}
     height: 2px;
     padding: 10px 0 10px 0;
 }
+
+.govuk-header__container {
+    border-bottom: 10px solid red;
+}
+
+a.delete {
+    color: govuk-colour("red");
+}
+
+.govuk-table__row th, .govuk-table__row td {
+    width: 33%;
+}
