@@ -24,3 +24,55 @@
     background-color: govuk-colour("black");
     height: 2px;
 }
+
+.pink {
+    background-color: pink;
+}
+
+.actions-bar {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    padding: 10px 10px 0px 0;
+}
+
+.actions-bar-wrapper {
+    border-bottom: 1px solid  $govuk-border-colour;
+height: 40px}
+
+.actions-bar li {
+    display: inline-block;
+    margin-right: 25px;
+    padding: 5px 5px 5px 0;
+}
+
+.actions-bar ul {
+    margin-left: 0;
+    padding-left: 0 !important;
+    padding-bottom: 0;
+}
+
+
+.selected {
+    border-bottom: 5px solid $govuk-brand-colour;
+}
+
+.delete a, a:visited {
+    color: red !important;
+}
+
+.actions-panel {
+    border-top: 3px solid $govuk-brand-colour; 
+    padding: 10px 10px 10px 0;
+
+}
+
+
+.govuk-header__container--full-width {
+    border-bottom-color: red !important;
+}
+
+.line {
+    border-top: 1px solid $govuk-border-colour;
+    height: 2px;
+    padding: 10px 0 10px 0;
+}
