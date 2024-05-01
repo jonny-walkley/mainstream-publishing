@@ -60,7 +60,9 @@ height: 40px}
 }
 
 .actions-panel {
-    border-top: 3px solid $govuk-brand-colour; 
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;    border-top: 3px solid $govuk-brand-colour; 
     padding: 10px 10px 10px 0;
 
 }
@@ -84,5 +86,5 @@ a.delete {
 }
 
 .govuk-table__row th, .govuk-table__row td {
-    width: 33%;
+    width: 20%;
 }
