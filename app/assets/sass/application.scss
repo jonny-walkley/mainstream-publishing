@@ -59,12 +59,16 @@ height: 40px}
 .delete a, a:visited {
 }
 
-.actions-panel {
+.sticky {
     position: -webkit-sticky;
     position: sticky;
-    top: 0;    border-top: 3px solid $govuk-brand-colour; 
-    padding: 10px 10px 10px 0;
+}
 
+
+.actions-panel {
+    top: 0;    
+    border-top: 3px solid $govuk-brand-colour; 
+    padding: 10px 10px 10px 0;
 }
 
 
@@ -78,7 +82,7 @@ height: 40px}
 }
 
 .govuk-header__container {
-    border-bottom: 10px solid red;
+    border-bottom: 10px solid #D4351C;
 }
 
 a.delete {
