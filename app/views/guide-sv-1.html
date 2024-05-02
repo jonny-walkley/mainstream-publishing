@@ -1,0 +1,829 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">Standard Visitor visa</h1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <table class="govuk-table">
+                  
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Assigned to</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">Alex Hill</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Edit</a></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Content type</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">Guide</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Edition</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">32</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Status</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">Draft</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                      </tr>
+                    </tbody>
+                  </table>         
+                </div>
+
+          </div>
+
+
+          <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+            <ul class="moj-sub-navigation__list">
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" aria-current="page" href="#1">Edit</a>
+              </li>
+          
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#2">Tagging</a>
+              </li>
+          
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#3">Metadata</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#4">History and notes</a>
+              </li>
+         
+
+            <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#4">Admin</a>
+              </li>
+        
+
+            <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#4">Related external links</a>
+              </li>
+            </ul>
+          
+          </nav>
+        
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m">Edit</h2>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">
+                  Title
+                </label>
+                <input class="govuk-input" id="doc-title" name="doc-title" type="text" spellcheck="false" autocomplete="name" value="Standard Visitor visa">
+              </div>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">
+                        Is this beta content?
+                      </label>
+                  </legend>
+                
+                  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+                      <label class="govuk-label govuk-radios__label" for="changedName">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no" checked>
+                      <label class="govuk-label govuk-radios__label" for="changedName-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="metatags">
+                  Meta tag description
+                </label>
+                <div id="metatags-hint" class="govuk-hint">
+                    Some search engines will display this if they cannot find what they need in the main text
+                  </div>
+                <textarea class="govuk-textarea" id="metatags" name="metatags" rows="5" autocomplete="metatags">Visit the UK as a Standard Visitor for tourism, business, study (courses up to 6 months), medical treatment and other activities. Find out whether you need a Standard Visitor visa, or can visit without a visa.
+                </textarea>
+              </div>
+
+
+              <div class="line">
+                &nbsp;
+              </div>
+
+              <h2 class="govuk-heading-m">Parts</h2>
+
+              <h3 class="govuk-heading-s">1</h3>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">
+                  Title
+                </label>
+                <input class="govuk-input" id="doc-title" name="doc-title" type="text" spellcheck="false" autocomplete="name" value="Standard Visitor visa">
+              </div>
+
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-slug">
+                  Slug
+                </label>
+                <input class="govuk-input" id="doc-slug" name="doc-slug" type="text" spellcheck="false" autocomplete="name" value="overview">
+              </div>
+              
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="body">
+                  Body
+                </label>
+                
+                <textarea class="govuk-textarea" id="body" name="body" rows="25" autocomplete="body">
+You can visit the UK as a Standard Visitor for tourism, business, study (courses up to 6 months) and other permitted activities.
+
+Depending on your nationality, you’ll either:
+                  
+- have to apply for a Standard Visitor visa before you travel to the UK
+- be able to visit the UK for up to 6 months without needing a visa
+                  
+[Check if you have to apply for a visa to visit the UK](https://webarchive.nationalarchives.gov.uk/ukgwa/20211028184749mp_/https://www.gov.uk/check-uk-visa).
+                  
+You must meet the eligibility requirements to visit the UK as a Standard Visitor, even if you do not need a visa.
+                  
+The rules on what you’ll need to enter the UK may be different if you’re [travelling from Ireland, Jersey, Guernsey or the Isle of Man](https://webarchive.nationalarchives.gov.uk/ukgwa/20211028184749mp_/https://www.gov.uk/guidance/travelling-between-the-uk-and-ireland-isle-of-man-guernsey-or-jersey).
+                  
+## What you can and cannot do (‘permitted activities’)
+                  
+You can visit the UK as a Standard Visitor:
+                  
+- for tourism, for example on a holiday or vacation - to see your family or friends
+- to volunteer for up to 30 days with a registered charity
+- to pass through the UK to another country (‘in transit’)
+- for [certain business activities](https://webarchive.nationalarchives.gov.uk/ukgwa/20211028184749mp_/https://www.gov.uk/standard-visitor/visit-on-business), for example attending a meeting or interview
+- to do [a short course of study, a placement or to take an exam](https://webarchive.nationalarchives.gov.uk/ukgwa/20211028184749mp_/https://www.gov.uk/standard-visitor/visit-to-study)
+- to take part in research or an exchange programme if you’re [an academic](https://webarchive.nationalarchives.gov.uk/ukgwa/20211028184749mp_/https://www.gov.uk/standard-visitor/visit-as-an-academic)
+- [for medical reasons](https://webarchive.nationalarchives.gov.uk/ukgwa/20211028184749mp_/https://www.gov.uk/standard-visitor/visit-for-medical-reasons) or to donate an organ
+                  
+You cannot:
+                  
+- do paid or unpaid work for a UK company or as a self-employed person
+- claim public funds (benefits)
+- live in the UK for long periods of time through frequent or successive visits
+- marry or register a civil partnership, or give notice of marriage or civil partnership - you’ll need to [apply for a Marriage Visitor visa](https://webarchive.nationalarchives.gov.uk/ukgwa/20211028184749mp_/https://www.gov.uk/marriage-visa)
+                  
+## Proving your eligibility
+                  
+You must prove that you:
+                  
+- meet the [eligibility requirements](https://webarchive.nationalarchives.gov.uk/ukgwa/20211028184749mp_/https://www.gov.uk/standard-visitor/eligibility)
+- are only planning to do permitted activities
+                  
+If you need a Standard Visitor visa, you must prove this when you [apply online](https://webarchive.nationalarchives.gov.uk/ukgwa/20211028184749mp_/https://www.gov.uk/standard-visitor/apply-standard-visitor-visa).
+                  
+If you do not need a visa, you may be asked questions at the UK border about your eligibility and the activities you plan to do.
+                  
+If you’ve previously been refused entry to the UK or have a criminal record, you may want to apply for a Standard Visitor visa (even if you do not need one).
+                  
+## How long you can stay
+                  
+You can usually stay in the UK for up to 6 months.
+                  
+You might be able to stay for longer if you’re:
+                  
+- coming to the UK [for medical reasons](https://webarchive.nationalarchives.gov.uk/ukgwa/20211028184749mp_/https://www.gov.uk/standard-visitor/visit-for-medical-reasons)
+- [an academic](https://webarchive.nationalarchives.gov.uk/ukgwa/20211028184749mp_/https://www.gov.uk/standard-visitor/visit-as-an-academic) - you, your partner and your children may be able to stay for up to 12 months
+- [a graduate doing a clinical attachment or retaking the Professional and Linguistic Assessment Board (PLAB) test](https://webarchive.nationalarchives.gov.uk/ukgwa/20211028184749mp_/https://www.gov.uk/standard-visitor/extend-your-stay)
+                  
+*[PLAB]: Professional and Linguistic Assessment Board
+                  </textarea>
+              </div>
+
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Remove part
+              </button> 
+              &nbsp;
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Move down
+              </button>
+
+              <div class="line">
+                &nbsp;
+              </div>
+
+              <h3 class="govuk-heading-s">2</h3>
+
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">
+                  Title
+                </label>
+                <input class="govuk-input" id="doc-title" name="doc-title" type="text" spellcheck="false" autocomplete="name" value="Prove your eligibility">
+              </div>
+
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-slug">
+                  Slug
+                </label>
+                <input class="govuk-input" id="doc-slug" name="doc-slug" type="text" spellcheck="false" autocomplete="name" value="prove-your-eligibility">
+              </div>
+              
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="body">
+                  Body
+                </label>
+                
+                <textarea class="govuk-textarea" id="body" name="body" rows="25" autocomplete="body">
+## Prove your eligibility
+
+ou must meet the basic eligibility requirements to visit the UK. You’ll need to meet extra eligibility requirements to do some activities.
+                  
+Depending on your nationality, you’ll either prove your eligibility by:
+                  
+- [applying for a Standard Visitor visa](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029032648mp_/https://www.gov.uk/standard-visitor/apply) before you travel to the UK
+- answering questions about your visit at the UK border (if you do not need a visa)
+                  
+[Check if you need a visa to visit the UK](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029032648mp_/https://www.gov.uk/check-uk-visa).
+                  
+## Basic eligibility requirements
+                  
+You must show that:
+                  
+- you’ll leave the UK at the end of your visit
+- you’re able to support yourself and your dependants during your trip (or have funding from someone else to support you)
+- you’re able to pay for your return or onward journey (or have funding from someone else to pay for the journey)
+- you’ll not live in the UK for extended periods through frequent or successive visits, or make the UK your main home
+                  
+You must have a passport or travel document that is valid for the whole of your stay in the UK.
+                  
+You must also only plan to do activities in the UK that are allowed under the Standard Visitor rules.
+                  
+## If you’re visiting for tourism, leisure or to volunteer
+                  
+You’re allowed to:
+                  
+- spend time with family and friends
+- take a holiday or vacation
+- pass through the UK to another country
+- take part in a school exchange programme
+- volunteer for up to 30 days with a registered charity
+- do a recreational course of up to 30 days, for example a dance course
+                  
+ You can visit the UK for up to 6 months to do these permitted activities.
+                  
+## If you’re visiting to do other activities
+                  
+Check the activities you plan to do are allowed if you’re visiting the UK:
+                  
+- [on business](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029032648mp_/https://www.gov.uk/standard-visitor/visit-on-business)
+- [to study](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029032648mp_/https://www.gov.uk/standard-visitor/visit-to-study)
+- [as an academic](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029032648mp_/https://www.gov.uk/standard-visitor/visit-as-an-academic)
+- [for medical reasons](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029032648mp_/https://www.gov.uk/standard-visitor/visit-for-medical-reasons)
+                  
+ If you want to visit the UK to do these activities you must:
+                  
+- meet the basic eligibility requirements
+- meet any additional eligibility requirements for the activity
+- provide any required documents for the activity
+                  
+                  </textarea>
+              </div>
+
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Remove part
+              </button>
+
+              &nbsp;
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Move up
+              </button>
+
+              &nbsp;
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Move down
+              </button>
+
+              <div class="line">
+                &nbsp;
+              </div>
+
+              <h3 class="govuk-heading-s">3</h3>
+
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">
+                  Title
+                </label>
+                <input class="govuk-input" id="doc-title" name="doc-title" type="text" spellcheck="false" autocomplete="name" value="Visit on business">
+              </div>
+
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-slug">
+                  Slug
+                </label>
+                <input class="govuk-input" id="doc-slug" name="doc-slug" type="text" spellcheck="false" autocomplete="name" value="visit-on-business">
+              </div>
+              
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="body">
+                  Body
+                </label>
+                
+                <textarea class="govuk-textarea" id="body" name="body" rows="25" autocomplete="body">
+You can visit the UK for up to 6 months to do the following business activities:
+
+- attend interviews, meetings, conferences and seminars
+- negotiate and sign deals and contracts
+- attend trade fairs to promote your business (you cannot sell things)
+- get work-related training if you’re employed overseas and the training is not available in your home country
+- give a one-off or short series of talks as long as they’re not for profit or a commercial event (you must not be paid)
+- carry out site visits and inspections
+- oversee the delivery of goods and services provided by a UK company to your overseas company or organisation
+- deliver training or share knowledge on internal projects with UK employees of the company you work for overseas
+- install, dismantle, repair, service or advise on equipment, computer software and hardware, if your overseas company has a contract with a UK company or organisation
+                  
+Depending on your nationality, you may have to apply for a Standard Visitor visa before you travel to the UK. [Check if you need a UK visa](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029032614mp_/https://www.gov.uk/check-uk-visa).
+                  
+If you do not need a visa, you must still meet the [eligibility requirements](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029032614mp_/https://www.gov.uk/standard-visitor/eligibility) and only do permitted activities.
+                  
+## Doing activities as part of an overseas job role
+                  
+You can do certain additional activities in the UK as a Standard Visitor, if you’re employed overseas as:
+                  
+- an archaeologist
+- an artist, entertainer or musician
+- a bodyguard
+- a camera operator
+- a driver
+- an internal auditor
+- a journalist or correspondent
+- a lawyer or expert witness
+- a market researcher or analyst
+- a personal assistant
+- a professor from an overseas academic institution
+- a religious worker
+- a scientist or researcher
+- a sports person or sports official
+- a tour group courier
+- a translator or interpreter
+- a member of a film crew, including actors, producers, directors or technicians
+- a member of the production team supporting an artist, entertainer or musician
+- a member of technical staff supporting an artist, entertainer, musician or sports person
+                  
+[Check the Visitor Rules](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029032614mp_/https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-visitor-permitted-activities) for details of what you can do as a Standard Visitor in these job roles.
+                  
+## If you want to work in the UK
+                  
+You cannot do paid or unpaid work for a UK company or as a self-employed person as a visitor. You’ll need to [apply for a work visa](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029032614mp_/https://www.gov.uk/browse/visas-immigration/work-visas).
+                  
+If you’re being paid by a UK organisation as an expert in your profession, you may get permission to [visit the UK for a Permitted Paid Engagement](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029032614mp_/https://www.gov.uk/permitted-paid-engagement-visa).
+                  
+                  
+                  </textarea>
+              </div>
+
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Remove part
+              </button>
+
+              <div class="line">
+                &nbsp;
+              </div>
+              
+              <h3 class="govuk-heading-s">4</h3>
+
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">
+                  Title
+                </label>
+                <input class="govuk-input" id="doc-title" name="doc-title" type="text" spellcheck="false" autocomplete="name" value="Visit to study">
+              </div>
+
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-slug">
+                  Slug
+                </label>
+                <input class="govuk-input" id="doc-slug" name="doc-slug" type="text" spellcheck="false" autocomplete="name" value="visit-to-study">
+              </div>
+              
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="body">
+                  Body
+                </label>
+                
+                <textarea class="govuk-textarea" id="body" name="body" rows="25" autocomplete="body">
+You can visit the UK for up to 6 months to:
+
+- study at an accredited institution (this includes English language courses)
+- do a short piece of research that’s relevant to your course overseas
+- do an ‘elective’ - an optional additional placement, if you’re studying medicine, veterinary medicine and science, nursing or dentistry
+- sit an entrance exam, retake an exam or course module, or do a PhD oral exam (a viva)
+- do an unpaid clinical attachment if you’re a graduate from a medical, dental or nursing school
+- take the Objective Structured Clinical Examination (OSCE) test or the Professional and Linguistic Assessment Board (PLAB) test
+                  
+You must:
+                  
+- meet the [basic eligibility requirements for a Standard Visitor](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033603mp_/https://www.gov.uk/standard-visitor/eligibility)
+- meet any additional eligibility requirements for the activity
+- provide any required documents for the activity
+                  
+Depending on your nationality, you may have to apply for a Standard Visitor visa before you travel to the UK. [Check if you need a UK visa](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033603mp_/https://www.gov.uk/check-uk-visa).
+                  
+If you do not need a visa, you must still meet the eligibility requirements and only do permitted activities.
+                  
+To study or research certain subjects at postgraduate level or above, you may need to get an [Academic Technology Approval Scheme (ATAS) certificate](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033603mp_/https://www.gov.uk/guidance/find-out-if-you-require-an-atas-certificate) before you start your course or research.
+                  
+## If you’re visiting to study at an accredited institution
+                  
+You must prove that:
+                  
+- you’ve been accepted onto a course provided by an [accredited UK institution](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033603mp_/https://www.gov.uk/visa-to-study-english/your-course)
+- the course is no more than 6 months long (unless it’s a distance learning course)
+                  
+The accredited UK institution cannot be an academy or state-funded school.
+                  
+### Distance learning courses
+                  
+If you’re doing a distance learning course, your course can last longer than 6 months. This is because most of your study will happen outside of the UK.
+                  
+You can visit the UK to do certain activities as part of your course, for example:
+                  
+- attend induction weeks
+- do face-to-face intensive learning
+- have progress checks
+- sit exams or assessments
+                  
+### If you want to study for more than 6 months
+                  
+You’ll need to apply for either a:
+                  
+- [Short-term study visa](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033603mp_/https://www.gov.uk/study-visit-visa) - for English Language courses up to 11 months
+- [Student visa](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033603mp_/https://www.gov.uk/student-visa) - for courses run by licensed student sponsors
+- [Child Student visa](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033603mp_/https://www.gov.uk/child-study-visa) - to study at an independent school if you’re between 4 and 17 years old
+                  
+## If you’re visiting to do a short piece of research
+                  
+You must prove that:
+                  
+- you’re at least 16 years old
+- you’re already enrolled on a course overseas that is the equivalent of a UK degree
+- you’ve been accepted by a UK higher education institution to take part in research that’s relevant to the course you’re studying overseas
+                  
+You can visit for up to 6 months to do your research.
+                  
+### Documents you must provide
+                  
+You’ll need to provide confirmation from your overseas course provider that the research or research tuition is part of, or relevant to, the course you’re doing overseas.
+                  
+## If you’re visiting to do an elective
+                  
+You must prove that you’re:
+                  
+- at least 16 years old
+- already enrolled on a course overseas that is the equivalent of a UK degree
+- doing an elective (an optional additional placement) as part of an overseas medicine, veterinary medicine and science, nursing or dentistry course
+                  
+You can visit for up to 6 months to do your elective.
+                  
+### Documents you must provide
+                  
+Your UK higher education provider will need to give written confirmation that you will not be treating patients or being paid for the elective.
+                  
+## If you’re visiting to do an unpaid clinical attachment or dental observer post
+                  
+If you’re an overseas graduate from a medical, dental or nursing school you can do an unpaid clinical attachment or dental observer post for up to 6 months.
+                  
+If you want to stay longer than 6 months, you will need to pass the PLAB test and [apply to stay in the UK](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033603mp_/https://www.gov.uk/standard-visitor/extend-your-stay).
+                  
+You must not treat patients.
+                  
+### Documents you must provide
+                  
+You must provide written confirmation:
+                  
+- of your clinical attachment or dental observer post offer
+- that you’ve not done a clinical attachment or dental observer post in the UK before
+                  
+## If you’re taking the OSCE or PLAB test
+                  
+You can visit for up to 6 months to take the OSCE or PLAB test.
+                  
+If you do not pass the PLAB test, you can [apply to stay in the UK](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033603mp_/https://www.gov.uk/standard-visitor/extend-your-stay) for a further 6 months to retake the test.
+                  
+If you pass the PLAB test, you can [apply to stay in the UK](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033603mp_/https://www.gov.uk/standard-visitor/extend-your-stay) to do an unpaid clinical attachment or dental observer post. You can stay in the UK for up to 18 months in total.
+                  
+### Documents you must provide
+                  
+You must provide a letter from the Nursing and Midwifery Council confirming your OSCE test registration.
+                  
+You’ll need a letter from the General Medical Council confirming your PLAB test registration.
+                  
+- 
+                  
+*[OSCE]: Objective Structured Clinical Examination
+*[PLAB]: Professional and Linguistic Assessment Board
+                                    
+                  
+                  </textarea>
+              </div>
+
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Remove part
+              </button>
+
+              <div class="line">
+                &nbsp;
+              </div>
+              
+              <h3 class="govuk-heading-s">5</h3>
+
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">
+                  Title
+                </label>
+                <input class="govuk-input" id="doc-title" name="doc-title" type="text" spellcheck="false" autocomplete="name" value="Visit as an academic">
+              </div>
+
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-slug">
+                  Slug
+                </label>
+                <input class="govuk-input" id="doc-slug" name="doc-slug" type="text" spellcheck="false" autocomplete="name" value="visit-as-an-academic">
+              </div>
+              
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="body">
+                  Body
+                </label>
+                
+                <textarea class="govuk-textarea" id="body" name="body" rows="25" autocomplete="body">
+If you’re from an academic institution overseas, you can:
+
+- take part in formal exchange arrangements with UK counterparts
+- carry out your own research during a sabbatical
+                  
+If you’re a senior doctor or dentist you can also:
+                  
+- take part in research
+- teach (as long as it’s not a permanent teaching post)
+- undertake clinical practice (as long as it’s not a permanent position)
+                  
+To research certain subjects at postgraduate level or above, you may need to get an [Academic Technology Approval Scheme (ATAS) certificate](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033922mp_/https://www.gov.uk/guidance/find-out-if-you-require-an-atas-certificate) before you start your research.
+                  
+## If you want to visit for up to 6 months
+                  
+You must meet the [basic eligibility requirements for a Standard Visitor](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033922mp_/https://www.gov.uk/standard-visitor/eligibility).
+                  
+Depending on your nationality, you may have to apply for a Standard Visitor visa before you travel to the UK. [Check if you need a UK visa](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033922mp_/https://www.gov.uk/check-uk-visa).
+                  
+If you do not need a visa, you must still meet the eligibility requirements and only do permitted activities.
+                  
+## If you want to visit for more than 6 months
+                  
+All academic visits lasting longer than 6 months require a Standard Visitor visa regardless of your nationality.
+                  
+You can:
+                  
+   [apply for a Standard Visitor visa](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033922mp_/https://www.gov.uk/standard-visitor/apply) before you travel to the UK that lasts for up to 12 months and costs £190
+- visit for up to 6 months and [apply to stay longer when you’re in the UK](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033922mp_/https://www.gov.uk/standard-visitor/extend-your-stay) for a fee of £993 (you can stay up to 12 months in total)
+                  
+You must meet the [basic eligibility requirements for a Standard Visitor](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033922mp_/https://www.gov.uk/standard-visitor/eligibility) and the additional eligibility requirements for academics. You must provide any required documents that show your eligibility.
+                  
+Your partner and children can apply to stay with you for up to 12 months. They can apply for a Standard Visitor visa in advance or visit for 6 months and extend their stay once in the UK.
+                  
+  ## Eligibility requirements if you want to stay longer than 6 months
+                  
+You must prove you’re:
+                  
+ highly qualified in your field of expertise - this will usually mean you have a PhD or higher
+- currently working in that field of expertise at an academic institution overseas
+ not filling a permanent teaching post
+                  
+If you’re an academic, but not a senior doctor or dentist, you must also prove you’re visiting to do research or a formal exchange.
+                  
+If you’re a senior doctor or dentist, you must also prove you’re visiting to do research, clinical practice, a formal exchange or to teach.
+                  
+## Documents you may need
+                  
+You need to show you meet the eligibility requirements, for example by providing a letter from:
+                  
+- your employer outlining the dates of your sabbatical or exchange
+-  your employer outlining the research to be undertaken
+- the UK host organisation confirming the arrangements for your research, exchange or clinical practice
+                  
+Depending on where you come from, you may need a certificate that proves you do not have tuberculosis (TB). [Check if you’ll need to take a TB test](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033922mp_/https://www.gov.uk/tb-test-visa).
+                  
+[TB]: tuberculosis
+                  
+                                    
+                  
+                  </textarea>
+              </div> 
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Remove part
+              </button>
+
+ <div class="line">
+                &nbsp;
+              </div>
+              
+              <h3 class="govuk-heading-s">6</h3>
+
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">
+                  Title
+                </label>
+                <input class="govuk-input" id="doc-title" name="doc-title" type="text" spellcheck="false" autocomplete="name" value="Visit for medical reasons">
+              </div>
+
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-slug">
+                  Slug
+                </label>
+                <input class="govuk-input" id="doc-slug" name="doc-slug" type="text" spellcheck="false" autocomplete="name" value="visit-for-medical-reasons">
+              </div>
+              
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="body">
+                  Body
+                </label>
+                
+                <textarea class="govuk-textarea" id="body" name="body" rows="25" autocomplete="body">
+You can visit the UK for up to 6 months to:
+
+- have private medical treatment at a hospital or other medical facility
+- have treatment at an NHS hospital, as long as the care is paid for by your own government under a reciprocal healthcare arrangement
+- donate an organ to a family member or close friend - this includes being assessed for suitability as a donor match
+                  
+You must:
+                  
+ - [meet the basic eligibility requirements for a Standard Visitor](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033924mp_/https://www.gov.uk/standard-visitor/eligibility)
+ - meet the additional eligibility requirements for medical treatment or organ donation
+- provide the required documents that prove your eligibility
+                  
+Depending on your nationality, you may have to apply for a Standard Visitor visa before you travel to the UK. [Check if you need a UK visa](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033924mp_/https://www.gov.uk/check-uk-visa).
+                  
+If you do not need a visa, you must still meet the eligibility requirements and only do permitted activities.
+                  
+## If you’re visiting for private medical treatment
+                  
+You must prove that you:
+                  
+- have a medical condition that needs private consultation or treatment in the UK
+- have made arrangements for consultations or treatment
+- have enough money or funding to pay for your treatment
+- will leave the UK once your treatment is completed, or when your visa expires
+- are not a danger to public health if you have an infectious disease, such as leprosy
+                  
+### Documents you must provide
+                  
+You’ll need a letter written by a [doctor or consultant](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033924mp_/https://www.gmc-uk.org/registration-and-licensing/the-medical-register/a-guide-to-the-medical-register), that confirms:
+                  
+- the condition you have that needs consultation or treatment
+- the estimated cost and likely duration of any treatment
+- where the consultation and treatment will take place
+                  
+## If you’re visiting for treatment at an NHS hospital
+                  
+You can visit the UK for treatment at an NHS hospital. Your treatment must be paid for by your own government under a reciprocal healthcare arrangement.
+                  
+### Documents you must provide
+                  
+You must provide an authorisation form, issued by the government of your country, saying they will pay for your treatment.
+                  
+## If you’re visiting as an organ donor
+                  
+You can only visit the UK to donate organs to:
+                  
+- a family member who you’re genetically related to (for example your sibling or parent)
+- someone you have a close personal relationship with (for example your partner or friend)
+                  
+You must prove that the person you’re donating an organ to is legally allowed to be in the UK.
+                  
+### Documents you must provide
+                  
+You’ll need a letter from the lead nurse of the transplant team, a [General Medical Council registered specialist](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033924mp_/https://www.gmc-uk.org/registration-and-licensing/the-medical-register#searchTheRegister) or a registered NHS consultant that confirms:
+                  
+- you’re a donor match to the recipient, or you’re being tested to see if you’re a potential donor
+- the recipient is genetically related to you, or in a close personal relationship with you
+- when and where the transplant or tests will take place
+                  
+The letter should be dated no more than 3 months before you intend to arrive in the UK.
+                  
+If the recipient is not legally resident in the UK, you must provide their name, nationality and date of birth in your application.
+                  
+The recipient should [check if they need to apply for a Standard Visitor visa](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033924mp_/https://www.gov.uk/check-uk-visa) and that they meet the eligibility requirements for medical treatment.
+                  
+## If your treatment will last longer than 6 months
+                  
+All visits for medical treatment lasting longer than 6 months require a Standard Visitor visa regardless of your nationality.
+                  
+You can:
+                  
+- [apply for a Standard Visitor visa](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033924mp_/https://www.gov.uk/standard-visitor/apply) before you come to the UK - this lasts for up to 11 months and costs £190
+- visit for up to 6 months and [apply to stay for a further 6 months when you’re in the UK](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033924mp_/https://www.gov.uk/standard-visitor/extend-your-stay) for a fee of £993
+                  
+There is no limit on how many times you can extend your stay. It costs £993 each time you do.
+                  
+Depending on where you come from, you may also need a certificate that proves you do not have tuberculosis (TB). [Check if you’ll need to take a TB test](https://webarchive.nationalarchives.gov.uk/ukgwa/20211029033924mp_/https://www.gov.uk/tb-test-visa).
+                  
+*[TB]: tuberculosis
+                  
+                  
+                                    
+                  
+                  </textarea>
+              </div> 
+
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Remove part
+              </button>
+
+              <div class="line">
+                &nbsp;
+              </div>
+              <p>
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Add another part
+              </button>
+            </p>
+
+            <p>
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Save and reorder sections
+              </button>
+            </p>
+
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                 Govspeak guidance
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                  <p class="govuk-body">
+                    <p>For full examples, read the <a href="https://govspeak-preview.publishing.service.gov.uk/guide" target="_new">Govspeak Guide (opens in new tab)</a>.</p>
+
+                    <h3 class="govuk-heading-3">Paste and convert to Markdown</h3>
+                    <p>You can paste formatted text and it’ll be converted into Govspeak Markdown in fields which use and support Markdown.</p>
+                    
+                    <p>This works best when copy and pasting from text editing software like Word or Google Docs. It is less likely to recognise formatting from PDFs.</p>
+                    
+                    <p>Other formatting, such as tables, will be removed and only plain text pasted. You’ll need to write the Markdown for these separately.</p>
+              </div>
+            </details>
+              
+
+
+        </div>
+        <div class="govuk-grid-column-one-third sticky">
+            <div class="actions-panel">
+          <h3 class="govuk-heading-s">Options</h3>
+
+          <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">
+            Save
+          </button>
+          <p class="govuk-body"><a href="#">Preview (open in new tab)</a></p>
+          <p class="govuk-body"><a href="#">Submit for 2i</a></p>
+          <p class="govuk-body"><a class="delete" href="#">Delete edition</a></p>
+
+        </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+ 
+
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
