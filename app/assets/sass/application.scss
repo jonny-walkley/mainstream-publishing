@@ -96,13 +96,17 @@ a.delete {
 }
 
 .govuk-table__row th  {
-        width: 123px;
+        width: 200px;
+        text-align: left;
     }
 
  .govuk-table__row td {
-  
+    text-align: left;
 }
 
+.edit {
+    float: right;
+}
 
 .wide {
     width: 100%;

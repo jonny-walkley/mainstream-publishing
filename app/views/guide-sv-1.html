@@ -18,7 +18,7 @@
                       <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Assigned to</th>
                         <td class="govuk-table__cell govuk-table__cell--numeric">Alex Hill</td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Edit</a></td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="edit">Edit</a></td>
                       </tr>
                       <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Content type</th>
@@ -807,12 +807,53 @@ Depending on where you come from, you may also need a certificate that proves yo
                 Add another part
               </button>
             </p>
+            
+           
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h2 class="govuk-heading-m">
+                    Add a change note
+                  </h2>     
+                  <p>Telling users when published information has changed is important for transparency.
+                  </p> 
+                </legend>
+               
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                    <label class="govuk-label govuk-radios__label" for="contact">
+                      <span class="govuk-body govuk-body govuk-!-font-weight-bold">Yes - information has been added, updated or removed</span><br>
+                      <span class="govuk-hint">A change note will be published on the page and emailed to users subscribed to email alerts. The 'last updated' date will change.</span>
 
-            <p>
-              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                Save and reorder sections
-              </button>
-            </p>
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional" id="conditional-contact">
+                    <div class="govuk-form-group govuk-form-group">
+                      <label class="govuk-label" for="contact-by-email">
+                        <span class="govuk-body govuk-body govuk-!-font-weight-bold"> Describe the change for users</span> </br>
+                        <span class="govuk-hint"> Tell users what has changed, where and why. Write in full sentences, leading with the most important words. For example, "College A has been removed from the registered sponsors list because its licence has been suspended."</br>
+                        <a href="https://www.gov.uk/guidance/content-design/writing-for-gov-uk#change-notes" target="_new"></a>Guidance on change notes (opens in a new tab)</label></span>
+                      </label>
+                     
+                      <input class="govuk-input govuk-!-width-one-half govuk-input" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
+                    <label class="govuk-label govuk-radios__label" for="contact-2">
+                      <span class="govuk-body govuk-!-font-weight-bold">
+                      No
+                    </span>
+                    </label>
+                  </div>                  
+
+                </div>
+              </fieldset>
+            </div>
+            
+
+          <!--
 
             <details class="govuk-details">
               <summary class="govuk-details__summary">
@@ -832,7 +873,7 @@ Depending on where you come from, you may also need a certificate that proves yo
                     <p>Other formatting, such as tables, will be removed and only plain text pasted. You’ll need to write the Markdown for these separately.</p>
               </div>
             </details>
-              
+              -->
 
 
         </div>
@@ -843,9 +884,13 @@ Depending on where you come from, you may also need a certificate that proves yo
           <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">
             Save
           </button>
+          <p class="govuk-body"><a href="#">Save and reorder sections</a></p>
+
           <p class="govuk-body"><a href="#">Preview (open in new tab)</a></p>
           <p class="govuk-body"><a href="#">Submit for 2i</a></p>
           <p class="govuk-body"><a class="delete" href="#">Delete edition</a></p>
+
+
 
         </div>
         </div>
