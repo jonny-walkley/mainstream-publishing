@@ -1,0 +1,307 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">Document title</h1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <table class="govuk-table">
+                  
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Assigned to</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">Alex Hill</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="edit">Edit</a></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Content type</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">Guide</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Edition</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">32</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Status</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">Draft</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                      </tr>
+                    </tbody>
+                  </table>         
+                </div>
+
+          </div>
+
+
+          <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+            <ul class="moj-sub-navigation__list">
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" aria-current="page" href="#1">Edit</a>
+              </li>
+          
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#2">Tagging</a>
+              </li>
+          
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#3">Metadata</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#4">History and notes</a>
+              </li>
+         
+
+            <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#4">Admin</a>
+              </li>
+        
+
+            <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#4">Related external links</a>
+              </li>
+            </ul>
+          
+          </nav>
+        
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m">Edit</h2>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">
+                  Title
+                </label>
+                <input class="govuk-input" id="doc-title" name="doc-title" type="text" spellcheck="false" autocomplete="name" value="">
+              </div>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">
+                        Is this beta content?
+                      </label>
+                  </legend>
+                
+                  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+                      <label class="govuk-label govuk-radios__label" for="changedName">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no" checked>
+                      <label class="govuk-label govuk-radios__label" for="changedName-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="metatags">
+                  Meta tag description
+                </label>
+                <div id="metatags-hint" class="govuk-hint">
+                    Some search engines will display this if they cannot find what they need in the main text
+                  </div>
+                <textarea class="govuk-textarea" id="metatags" name="metatags" rows="5" autocomplete="metatags">
+
+                </textarea>
+              </div>
+
+
+              <div class="line">
+                &nbsp;
+              </div>
+
+              <h2 class="govuk-heading-m">Chapters</h2>
+
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Chapter 1
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Chapter 1 title
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="guide-template-2-chapter">Edit<span class="govuk-visually-hidden"> name</span></a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Chapter 2
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Chapter 2 title
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Edit<span class="govuk-visually-hidden"> date of birth</span></a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Chapter 3 
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                   Chapter 3 title
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Edit<span class="govuk-visually-hidden"> address</span></a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Chapter 4
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body">Chapter 4 title</p>
+        
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <ul class="govuk-summary-list__actions-list">
+                     
+                      <li class="govuk-summary-list__actions-list-item">
+                        <a class="govuk-link" href="#">Edit<span class="govuk-visually-hidden"> contact details</span></a>
+                      </li>
+                    </ul>
+                  </dd>
+                </div>
+              </dl>           
+
+              
+              <p>
+                <a href="guide-template-2-new-chapter">
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Add a chapter
+              </button>
+            </a>
+            </p>
+            
+           
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                   Add a public change note
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                            <h2 class="govuk-heading-m">
+                              Add a public change note
+                            </h2>     
+                            <p>Telling users when published information has changed is important for transparency.
+                            </p> 
+                          </legend>
+                         
+                          <div class="govuk-radios" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                              <label class="govuk-label govuk-radios__label" for="contact">
+                                <span class="govuk-body govuk-body govuk-!-font-weight-bold">Yes - information has been added, updated or removed</span><br>
+                                <span class="govuk-hint">A change note will be published on the page and emailed to users subscribed to email alerts. The 'last updated' date will change.</span>
+          
+                              </label>
+                            </div>
+                            <div class="govuk-radios__conditional" id="conditional-contact">
+                              <div class="govuk-form-group govuk-form-group">
+                                <label class="govuk-label" for="contact-by-email">
+                                  <span class="govuk-body govuk-body govuk-!-font-weight-bold"> Describe the change for users</span> </br>
+                                  <span class="govuk-hint"> Tell users what has changed, where and why. Write in full sentences, leading with the most important words. For example, "College A has been removed from the registered sponsors list because its licence has been suspended."</br>
+                                  <a href="https://www.gov.uk/guidance/content-design/writing-for-gov-uk#change-notes" target="_new">Guidance on change notes (opens in a new tab)</a></label></span>
+                                </label>
+                               
+                                <input class="govuk-input govuk-!-width-one-half govuk-input" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+                              </div>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
+                              <label class="govuk-label govuk-radios__label" for="contact-2">
+                                <span class="govuk-body govuk-!-font-weight-bold">
+                                No
+                              </span>
+                              </label>
+                            </div>                  
+          
+                          </div>
+                        </fieldset>
+                      </div>                </div>
+              </details>
+            
+            
+
+          <!--
+
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                 Govspeak guidance
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                  <p class="govuk-body">
+                    <p>For full examples, read the <a href="https://govspeak-preview.publishing.service.gov.uk/guide" target="_new">Govspeak Guide (opens in new tab)</a>.</p>
+
+                    <h3 class="govuk-heading-3">Paste and convert to Markdown</h3>
+                    <p>You can paste formatted text and it’ll be converted into Govspeak Markdown in fields which use and support Markdown.</p>
+                    
+                    <p>This works best when copy and pasting from text editing software like Word or Google Docs. It is less likely to recognise formatting from PDFs.</p>
+                    
+                    <p>Other formatting, such as tables, will be removed and only plain text pasted. You’ll need to write the Markdown for these separately.</p>
+              </div>
+            </details>
+              -->
+
+
+        </div>
+        <div class="govuk-grid-column-one-third sticky">
+            <div class="actions-panel">
+          <h3 class="govuk-heading-s">Options</h3>
+
+          <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">
+            Save
+          </button>
+          <p class="govuk-body"><a href="#">Save and reorder parts</a></p>
+
+          <p class="govuk-body"><a href="#">Preview (opens in new tab)</a></p>
+          <p class="govuk-body"><a href="#">Submit for 2i</a></p>
+          <p class="govuk-body"><a class="delete" href="#">Delete edition</a></p>
+
+
+
+        </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+ 
+
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
