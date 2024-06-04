@@ -229,4 +229,11 @@ a.delete {
     }
   
   }
-  
+
+
+
+.current {
+    border: 4px solid $govuk-brand-colour;
+    padding: 25px;
+    margin-bottom: 50px;
+}

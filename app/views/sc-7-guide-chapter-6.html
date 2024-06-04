@@ -1,0 +1,191 @@
+-{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    
+      <h1 class="govuk-heading-xl">Types of election, referendums, and who can vote</h1>
+    </div>
+    </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <!--
+                <table class="govuk-table">
+                  
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Assigned to</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">Alex Hill</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="edit">Edit</a></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Content type</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">Guide</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Edition</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">32</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Status</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">Draft</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                      </tr>
+                    </tbody>
+                  </table>         
+            
+
+
+          <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+            <ul class="moj-sub-navigation__list">
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" aria-current="page" href="#1">Edit</a>
+              </li>
+          
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#2">Tagging</a>
+              </li>
+          
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#3">Metadata</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#4">History and notes</a>
+              </li>
+         
+
+            <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#4">Admin</a>
+              </li>
+        
+
+            <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#4">Related external links</a>
+              </li>
+            </ul>
+          
+          </nav>
+
+          -->
+        
+        </div>
+
+    </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <p>
+            <a href="sc-1-guide-types-of-election" class="govuk-back-link body-l">Back to summary</a>
+        </p>
+
+         <h2 class="govuk-heading-m">Edit chapter</h2>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+        
+             
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">
+                  Title
+                </label>
+                <input class="govuk-input" id="doc-title" name="doc-title" type="text" spellcheck="false" autocomplete="name" value="Senedd Cymru (Welsh Parliament)">
+              </div>
+
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-slug">
+                  Slug
+                </label>
+                <input class="govuk-input" id="doc-slug" name="doc-slug" type="text" spellcheck="false" autocomplete="name" value="welsh-parliament">
+              </div>
+              
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="body">
+                  Body
+                </label>
+                <div id="body-hint" class="govuk-hint">
+                    Format using <a href="https://govspeak-preview.publishing.service.gov.uk/guide">Govspeak</a>
+                  </div>
+                
+                <textarea class="govuk-textarea" id="body" name="body" rows="25" autocomplete="body">
+There are 60 Members of the Senedd (MSs).
+
+To vote in Senedd elections you must:
+                    
+- be [registered to vote](/register-to-vote)
+- be 16 or over on the day of the election ('polling day')   
+- live in Wales
+- not be legally excluded from voting
+                    
+MSs are elected using the Additional Member system. You vote once for your constituency MS and once for an MS to represent the wider region.  
+                    
+^Read more about the Senedd [on The Electoral Commission website](https://www.electoralcommission.org.uk/voting-and-elections/how-elections-work/types-elections/senedd). ^
+                    
+                    
+*[MS]: Member of the Senedd 
+*[MSs]: Members of the Senedd
+                  </textarea>
+              </div>
+
+      
+            
+           
+           
+            
+
+   
+
+        </div>
+        <div class="govuk-grid-column-one-third sticky">
+            <div class="actions-panel">
+          <h3 class="govuk-heading-s">Options</h3>
+
+          <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">
+            Save
+          </button>
+
+          <button type="submit" class="govuk-button govuk-button--secondary govuk-button wide" data-module="govuk-button">
+            Save and go to summary
+          </button>
+
+          <button type="submit" class="govuk-button govuk-button--warning govuk-button wide" data-module="govuk-button">
+            Delete chapter
+          </button>
+
+          <p class="govuk-body"><a href="#">Preview (opens in new tab)</a></p>
+          <p class="govuk-body"><a href="#">Submit for 2i</a></p>
+          <!-- <p class="govuk-body"><a class="delete" href="#">Delete edition</a></p>-->
+
+
+
+        </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+ 
+
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
