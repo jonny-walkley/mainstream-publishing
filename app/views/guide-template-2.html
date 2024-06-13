@@ -12,31 +12,29 @@
     <div class="govuk-grid-column-full">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-                <table class="govuk-table">
+              <table class="govuk-table">
                   
-                    <tbody class="govuk-table__body">
-                      <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">Assigned to</th>
-                        <td class="govuk-table__cell govuk-table__cell--numeric">Alex Hill</td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="edit">Edit</a></td>
-                      </tr>
-                      <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">Content type</th>
-                        <td class="govuk-table__cell govuk-table__cell--numeric">Guide</td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-                      </tr>
-                      <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">Edition</th>
-                        <td class="govuk-table__cell govuk-table__cell--numeric">32</td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-                      </tr>
-                      <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">Status</th>
-                        <td class="govuk-table__cell govuk-table__cell--numeric">Draft</td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-                      </tr>
-                    </tbody>
-                  </table>         
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Assigned to</th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">Alex Hill</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="edit">Edit</a></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Content type</th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">Guide</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Edition</th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">32   <strong class="govuk-tag govuk-tag--yellow">
+                      Draft
+                    </strong></td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                  </tr>
+                  
+                </tbody>
+              </table>            
                 </div>
 
           </div>
@@ -50,7 +48,7 @@
               </li>
           
               <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="#2">Tagging</a>
+                <a class="moj-sub-navigation__link" href="guide-template-2-tagging">Tagging</a>
               </li>
           
               <li class="moj-sub-navigation__item">
@@ -89,6 +87,49 @@
                 <input class="govuk-input" id="doc-title" name="doc-title" type="text" spellcheck="false" autocomplete="name" value="">
               </div>
 
+            
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="metatags">
+                  Meta tag description
+                </label>
+                <div id="metatags-hint" class="govuk-hint">
+                    Some search engines will display this if they cannot find what they need in the main text
+                  </div>
+                <textarea class="govuk-textarea" id="metatags" name="metatags" rows="5" autocomplete="metatags">
+
+                </textarea>
+              </div>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">
+                        Is every chapter included in a step by step?
+                      </label>
+                      <div id="metatags-hint" class="govuk-hint">
+                       This will hide the chapter navigation
+                      </div>
+                  </legend>
+                
+                  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+                      <label class="govuk-label govuk-radios__label" for="changedName">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no" checked>
+                      <label class="govuk-label govuk-radios__label" for="changedName-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -114,17 +155,6 @@
                 </fieldset>
               </div>
 
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="metatags">
-                  Meta tag description
-                </label>
-                <div id="metatags-hint" class="govuk-hint">
-                    Some search engines will display this if they cannot find what they need in the main text
-                  </div>
-                <textarea class="govuk-textarea" id="metatags" name="metatags" rows="5" autocomplete="metatags">
-
-                </textarea>
-              </div>
 
 
               <div class="line">
