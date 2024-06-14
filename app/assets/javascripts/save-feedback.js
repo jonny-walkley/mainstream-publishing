@@ -13,12 +13,16 @@ function changeButtonState(e) {
   var element = e.target
 
   if (element.classList.contains('govuk-button--save')) {
-    element.textContent = 'Saving'
+    element.querySelector('span').textContent = 'Saving ...'
+    element.querySelector('span').classList.remove('save')
+    element.querySelector('span').classList.add('saving')
 
     window.setTimeout(function() {
-      element.textContent = 'Saved'
+      element.querySelector('span').textContent = 'Saved'
+      element.querySelector('span').classList.remove('saving')
+      element.querySelector('span').classList.add('saved')
     }, buttonStateDelay)
   } else {
-    govukButtonSave.textContent = 'Save'
+    govukButtonSave.querySelector('span').textContent = 'Save'
   }
 }

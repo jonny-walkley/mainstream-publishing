@@ -129,7 +129,7 @@
           <h3 class="govuk-heading-s">Options</h3>
 
           <button type="submit" data-prevent-double-click="true" class="govuk-button wide govuk-button--save" data-module="govuk-button">
-            Save
+            <span class="save">Save</span>
           </button>
 
           <button type="submit" class="govuk-button govuk-button--secondary govuk-button wide" data-module="govuk-button">
@@ -163,4 +163,9 @@
 {% block pageScripts %}
   <script src="/public/javascripts/accessible-autocomplete.js"></script>
   <script src="/public/javascripts/save-feedback.js"></script>
+{% endblock %}
+
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/save-feedback.scss" rel="stylesheet" type="text/css" />
 {% endblock %}
