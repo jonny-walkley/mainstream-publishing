@@ -1,13 +1,24 @@
 var govukButtonSave = document.querySelector('.govuk-button--save')
+var chapterEditForm = document.querySelector('.chapter-edit-form')
+var buttonStateDelay = 1000
 
-console.log('govukButtonSave: ', govukButtonSave)
+setUpPage()
 
-govukButtonSave.addEventListener('click', changeButtonState)
+function setUpPage() {
+  govukButtonSave.addEventListener('click', changeButtonState)
+  chapterEditForm.addEventListener('keydown', changeButtonState)
+}
 
 function changeButtonState(e) {
-  e.target.textContent = 'Saving'
+  var element = e.target
 
-  window.setTimeout(function() {
-    e.target.textContent = 'Saved'
-  }, 1000)
+  if (element.classList.contains('govuk-button--save')) {
+    element.textContent = 'Saving'
+
+    window.setTimeout(function() {
+      element.textContent = 'Saved'
+    }, buttonStateDelay)
+  } else {
+    govukButtonSave.textContent = 'Save'
+  }
 }
