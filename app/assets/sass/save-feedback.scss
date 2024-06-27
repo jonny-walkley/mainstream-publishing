@@ -28,4 +28,25 @@
       @keyframes l3 {to{transform: rotate(1turn)}}
     }
   }
+
+  span.saved {
+    position: relative;
+
+    &::before {
+      $size: 10px;
+      $width: 3px;
+
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -$size - 9px;
+      width: $size;
+      height: $size / 2;
+      margin-top: (-$size / 2);
+      transform: rotate(-45deg);
+      border: solid;
+      border-width: 0 0 $width $width;
+      border-top-color: transparent;
+    }
+  }
 }
