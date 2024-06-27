@@ -381,6 +381,7 @@ a.delete {
 
 
 .empty-state-container {
-  border-bottom: 1px solid $govuk-border-colour;
+  border: 1px solid $govuk-border-colour;
   margin: 25px 0 25px 0;
+  padding: 20px;
 }
