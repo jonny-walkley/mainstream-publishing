@@ -13,16 +13,18 @@ function changeButtonState(e) {
   var element = e.target
 
   if (element.classList.contains('govuk-button--save')) {
-    element.querySelector('span').textContent = 'Saving ...'
-    element.querySelector('span').classList.remove('save')
-    element.querySelector('span').classList.add('saving')
+    element.querySelector('.govuk-button__text').textContent = 'Saving ...'
+    element.classList.add('govuk-button--progress-active')
+    element.setAttribute("disabled", "disabled")
 
     window.setTimeout(function() {
-      element.querySelector('span').textContent = 'Saved'
-      element.querySelector('span').classList.remove('saving')
-      element.querySelector('span').classList.add('saved')
+      element.querySelector('.govuk-button__text').textContent = 'Saved'
+      govukButtonSave.classList.remove('govuk-button--progress-active')
+      govukButtonSave.classList.add('govuk-button--progress-saved')
     }, buttonStateDelay)
   } else {
-    govukButtonSave.querySelector('span').textContent = 'Save'
+    govukButtonSave.querySelector('.govuk-button__text').textContent = 'Save'
+    govukButtonSave.classList.remove('govuk-button--progress-saved')
+    govukButtonSave.removeAttribute('disabled')
   }
 }
