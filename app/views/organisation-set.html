@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<a href="#" class="govuk-back-link">Back</a>
+
+
+<span class="govuk-caption-l">Document title</span>
+  <h1 class="govuk-heading-xl">Set organisation</h1>
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+  <p class="govuk-body">
+    Tagging a page to an organisation will make it show up in search when filtered to the organisation(s). Example: <a href="https://www.gov.uk/search/all?keywords=taxes&order=relevance&organisations%5B%5D=hm-revenue-customs">search for documents published by HMRC</a>.</p>
+
+<div class="govuk-button-group space-test"></div>
+
+    
+
+              <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-two-thirds">
+                                <h2 class="govuk-heading-m">Organisation 1</h2>
+                               
+                </div>
+                <div class="govuk-grid-column-one-third">
+                    <button type="submit" class="govuk-button govuk-button--secondary align-right" data-module="govuk-button">
+                        Remove
+                    </span>
+                </div>
+            </div>
+
+       
+       <fieldset class="govuk-fieldset">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="title">
+            Organisation name
+          </label>
+          <div class="govuk-hint">
+            Start typing to search the list of organisations
+          </div>
+          <input class="govuk-input" id="title" name="title1" type="text" autocomplete="title-of-page">
+        </div>
+      
+      </fieldset>
+   
+      <div class="govuk-button-group space-test">
+
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Add another organisation
+      </button>
+
+      </div>
+
+            <div class="govuk-button-group space-test">
+                <div class="govuk-button-group">
+                    <button type="submit" class="govuk-button" data-module="govuk-button">
+                      Save
+                    </button>
+                    <a class="govuk-link" href="#">Cancel</a>
+                  </div>
+             
+
+            </div>
+
+          </div>    
+          </div>
+
+        </fieldset>
+
+
+       
+      
+      
+      
+      <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                
+        </div>
+      </div>
+    </main>
+  </div>
+
+ 
+
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}

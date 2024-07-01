@@ -1,0 +1,106 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<a href="#" class="govuk-back-link">Back</a>
+
+
+<span class="govuk-caption-l">Document title</span>
+  <h1 class="govuk-heading-xl">Set related content</h1>
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+  <p class="govuk-body">Related items are displayed in the sidebar. Enter the URL or path of a GOV.UK page, such as /pay-vat or /benefit-cap-calculator
+</p>
+
+<div class="govuk-button-group space-test"></div>
+
+    
+
+              <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-two-thirds">
+                                <h2 class="govuk-heading-m">Related content 1</h2>
+                               
+                </div>
+                <div class="govuk-grid-column-one-third">
+                    <button type="submit" class="govuk-button govuk-button--secondary align-right" data-module="govuk-button">
+                        Remove
+                    </span>
+                </div>
+            </div>
+
+       
+       <fieldset class="govuk-fieldset">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="title">
+            Title
+          </label>
+          <input class="govuk-input" id="title" name="title1" type="text" autocomplete="title-of-page">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-2">
+            URL or path
+          </label>
+          <div class="govuk-hint">
+            For example, /pay-vat
+          </div>
+          <input class="govuk-input" id="url" type="text" autocomplete="page-url">
+        </div>
+      </fieldset>
+   
+      <div class="govuk-button-group space-test">
+
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Add another related content item
+      </button>
+
+      </div>
+
+            <div class="govuk-button-group space-test">
+                <div class="govuk-button-group">
+                    <button type="submit" class="govuk-button" data-module="govuk-button">
+                      Save
+                    </button>
+                    <a class="govuk-link" href="#">Cancel</a>
+                  </div>
+             
+
+            </div>
+
+          </div>    
+          </div>
+
+        </fieldset>
+
+
+       
+      
+      
+      
+      <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                
+        </div>
+      </div>
+    </main>
+  </div>
+
+ 
+
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
