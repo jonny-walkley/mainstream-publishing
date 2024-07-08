@@ -1,0 +1,95 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<span class="govuk-caption-l">Document title</span>
+  <h1 class="govuk-heading-xl">Set GOV.UK breadcrumb preferences</h1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-heading-m">
+             What breadcrumb should this page display?
+            </h2>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england" checked="checked">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                Topic taxonomy level 1 > Topic taxonomy level 2
+              </label>
+            </div>
+          
+            <div class="govuk-radios__divider">or</div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-6" name="whereDoYouLive" type="radio" value="abroad">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-6">
+                Choose breadcrumb 
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="dont-set" name="whereDoYouLive" type="radio" value="abroad">
+              <label class="govuk-label govuk-radios__label" for="dont-set">
+               Don't set a breadcrumb
+              </label>
+            </div>
+
+            </div>
+
+
+            <div class="govuk-button-group space-test">
+              <a href="#">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Next
+              </button>
+            </a>
+              <a class="govuk-link" href="#">Cancel</a>
+            </div>
+
+            <div class="govuk-button-group">
+
+      
+
+          </div>
+
+             
+
+            </div>
+
+          </div>    
+          </div>
+
+        </fieldset>
+
+
+       
+      
+      
+      
+      <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                
+        </div>
+      </div>
+    </main>
+  </div>
+
+ 
+
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
