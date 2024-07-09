@@ -1,35 +1,190 @@
-.govuk-button--save {
-  span.saving {
+/*
+* Code for spinner copied from
+* https://github.com/wilsond-gds/progress-button/blob/main/src/assets/scss/_index-v1.scss and
+* https://github.com/wilsond-gds/progress-button/blob/main/src/assets/scss/_index-v2.scss
+*/
+
+$active-button-assembly-speed: .4s; // transform the button to allow space for the icon
+$active-button-visibility-speed: 1s; // make the icon visible
+$active-button-spin-speed: .8s; // speed of the spinning animation
+$active-button-text-colour: #fff; // govuk-colour("black", $legacy: "black");
+$active-button-background: #505a5f; // $govuk-focus-colour; // hard-coded for now
+$active-button-shadow-colour: #000; // govuk-colour("black", $legacy: "black");
+$active-button-animation-icon-colour: rgba(255, 255, 255, .35); // govuk-colour("black", $legacy: "black");
+$active-button-animation-icon-accent-colour: #fff; // rgba(0, 0, 0, .35);
+$active-button-animation-icon-width: 3px; // using rems creates an 'unsteady' animation
+
+// Create variables that are in local scope for the design system version of the button
+// https://github.com/alphagov/govuk-frontend/blob/main/src/govuk/components/button/_index.scss
+// IN GLOBAL SCOPE and reusable
+// $govuk-button-text-colour
+// $govuk-button-background-colour
+// RECREATED FROM VARIABLES IN LOCAL SCOPE from the scss file referenced above
+$govuk-button-colour: #00703c; // $govuk-button-background-colour; // Line 20 // hard-coded for now
+$govuk-button-hover-colour: govuk-shade($govuk-button-colour, 20%); // Line 21
+$govuk-button-shadow-colour: govuk-shade($govuk-button-colour, 60%); // Line 22
+$govuk-button-text-colour: #fff; // hard-coded for now
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.govuk-button--progress {
+  transition: background-color $active-button-assembly-speed ease-out;
+
+  // override opacity of disabled button so spinner is more visible
+  &[disabled],
+  &[disabled]:hover {
+    opacity: 1;
+    background-color: $govuk-button-hover-colour; // the dark hover colour
+    box-shadow: 0 2px 0 $govuk-button-shadow-colour;
+  }
+}
+
+.govuk-button {
+  &.govuk-button--progress-active:hover {
+    color: $active-button-text-colour;
+    background-color: $active-button-background;
+    box-shadow: 0 2px 0 $active-button-shadow-colour;
+  }
+}
+
+.govuk-button--progress-active {
+  color: $active-button-text-colour;
+  background-color: $active-button-background;
+}
+
+.govuk-button--progress-active[disabled] {
+  opacity: 1;
+}
+
+.govuk-button--progress-active {
+  .govuk-button__icon {
     display: inline-block;
     position: relative;
+    padding-left: 1.9rem;
+    transition: width, padding-left $active-button-assembly-speed ease-out;
+  }
 
-    &::before {
-      $size: 1.1875rem;
+  .govuk-button__icon:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: -.15rem;
+    left: 0;
+    min-width: 1rem;
+    min-height: 1rem;
+    animation: fade-in $active-button-visibility-speed ease, rotate $active-button-spin-speed linear infinite;
+    border: $active-button-animation-icon-width solid $active-button-animation-icon-colour;
+    border-radius: 50%;
+    border-right-color: $active-button-animation-icon-accent-colour;
+  }
+} 
 
-      content: "";
-      position: absolute;
-      top: 50%;
-      margin-top: 0rem - $size / 2;
-      left: -0.5rem - $size;
-      width: $size * (5/8);
-      height: $size * (5/8); 
-      padding: $size * (3/16);
-      aspect-ratio: 1;
-      border-radius: 50%;
-      background: white;
-      --_m: 
-        conic-gradient(#0000 10%,#000),
-        linear-gradient(#000 0 0) content-box;
-      -webkit-mask: var(--_m);
-              mask: var(--_m);
-      -webkit-mask-composite: source-out;
-              mask-composite: subtract;
-      animation: l3 1s infinite linear;
-      @keyframes l3 {to{transform: rotate(1turn)}}
+@media (prefers-reduced-motion: reduce) {
+  .govuk-button--progress {
+    transition: none;
+  }
+
+  .govuk-button--progress-active .govuk-button__icon:before {
+    display: none;
+    transition: none;
+    animation: none;
+  }
+}
+
+// spinner button styling
+$spinner-icon-size: 24px;
+$spinner-icon-path: "/public/images/mini-button-spinner.svg";
+$spinner-animation-duration: 0.75s;
+
+button#continue.button--spinner {
+  text-align: center;
+  padding-left: calc($spinner-icon-size * 2);
+  padding-right: calc($spinner-icon-size * 2);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    height: $spinner-icon-size;
+    width: $spinner-icon-size;
+    margin-right: calc($spinner-icon-size / 6);
+    background-image: url($spinner-icon-path);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: $spinner-icon-size $spinner-icon-size;
+    animation-name: spin;
+    animation-duration: $spinner-animation-duration;
+    animation-iteration-count: infinite;
+    // spin the svg image
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
     }
   }
 
-  span.saved {
+  // respect the user’s prefers reduced motion settings
+  @media (prefers-reduced-motion) {
+    padding-left: 1rem;
+    &::before {
+      display: none;
+    }
+  }
+
+  // smooth transition from hover to active to disabled
+  &:hover {
+    background-color: $govuk-button-hover-colour;
+    border-color: $govuk-button-hover-colour;
+    color: $govuk-button-text-colour;
+  }
+
+  &:focus {
+    background-color: $govuk-button-hover-colour;
+    border-color: $govuk-button-hover-colour;
+    color: $govuk-button-text-colour;
+  }
+
+  &:active {
+    background-color: $govuk-button-hover-colour;
+    border-color: $govuk-button-hover-colour;
+    color: $govuk-button-text-colour;
+  }
+
+  &:focus:not(:active):not(:hover) {
+    background-color: $govuk-button-hover-colour;
+    border-color: $govuk-button-hover-colour;
+    color: $govuk-button-text-colour;
+  }
+}
+
+.govuk-button--progress-saved {
+  .govuk-button__text {
     position: relative;
 
     &::before {
