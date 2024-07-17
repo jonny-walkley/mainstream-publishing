@@ -9,13 +9,13 @@ const router = govukPrototypeKit.requests.setupRouter()
 // Add your routes here
 
 
-router.post('/country-answer', function(request, response) {
+router.post('/ur-1-pension-credit-breadcrumb-answer', function(request, response) {
 
-    var breadcrumboptions = request.session.data['breadcrumboptions']
-    if (breadcrumb-options == "choose breadcrumb"){
-        response.redirect("/browse-breadcrumb-options")
+    var breadcrumbchoice = request.session.data['breadcrumb-choice']
+    if (breadcrumbchoice == "keep-tt"){
+        response.redirect("/ur-1-pension-credit-tagging")
     } else {
-        response.redirect("/breadcrumb-confirmation")
+        response.redirect("/ur-1-breadcrumb-selection")
     }
 })
 

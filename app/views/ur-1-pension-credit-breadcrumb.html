@@ -14,11 +14,7 @@
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h2 class="govuk-heading-m">
-             What breadcrumb should this page display?
-            </h2>
-          </legend>
+         
 
           <p>The page is tagged to the topic taxonomy and will display a default breadcrumb unless you choose a breadcrumb from the mainstream browse taxonomy.</p>
           <p>If you do not want to display a breadcrumb, remove the <a href="https://content-tagger.integration.publishing.service.gov.uk/">topic taxonomy tags on Content Tagger</a>.
@@ -46,14 +42,17 @@
             </div>
 
 
-                <div class="govuk-radios" data-module="govuk-radios">
-
+                <h2 class="govuk-heading-m">
+                 What breadcrumb should this page display?
+                </h2>
+            <form method="POST" action="ur-1-pension-credit-breadcrumb-answer">
+            
 
             <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england" checked="checked">
-                  <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-                    Keep topic taxonomy breadcrumb
+                  <input class="govuk-radios__input" id="keep-tt" name="breadcrumb-choice" type="radio" value="keep-tt" checked="checked">
+                  <label class="govuk-label govuk-radios__label" for="keep-tt">
+                     Topic taxonomy breadcrumb (current)
                   </label>
                 </div>
 
@@ -61,8 +60,8 @@
         
             <div class="govuk-radios__divider">or</div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive-6" name="whereDoYouLive" type="radio" value="abroad">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-6">
+              <input class="govuk-radios__input" id="mainstream-breadcrumb" name="breadcrumb-choice" type="radio" value="mainstream-breadcrumb">
+              <label class="govuk-label govuk-radios__label" for="mainstream-breadcrumb">
                 Choose a mainstream browse breadcrumb 
               </label>
             </div>
@@ -71,25 +70,18 @@
             </div>
 
 
+
             <div class="govuk-button-group space-test">
-              <a href="#">
-              <button type="submit" class="govuk-button" data-module="govuk-button">
-                Next
-              </button>
-            </a>
-              <a class="govuk-link" href="#">Cancel</a>
-            </div>
-
-            <div class="govuk-button-group">
-
-      
-
-          </div>
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+                <a class="govuk-link" href="ur-1-pension-credit-tagging.html">Cancel</a>
+              </div>
 
              
 
             </div>
-
+        </form>
           </div>    
           </div>
 
