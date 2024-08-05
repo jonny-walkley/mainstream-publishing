@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<span class="govuk-caption-l">Document title</span>
+<h1 class="govuk-heading-xl">Unpublish</h1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+     
+        <div class="govuk-inset-text">
+            If you unpublish a page from GOV.UK it cannot be undone.
+        </div>   
+
+        <p>Are you sure you want to unpublish this document?</p>
+
+            <div class="govuk-button-group space-test">
+                <button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
+                  Unpublish document
+                </button>
+                <a class="govuk-link" href="boilerplate-guide-unpublish.html">Cancel</a>
+              </div>
+
+
+          </div>    
+          </div>
+
+        </fieldset>
+
+
+       
+      
+      
+      
+      <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                
+        </div>
+      </div>
+    </main>
+  </div>
+
+ 
+
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
