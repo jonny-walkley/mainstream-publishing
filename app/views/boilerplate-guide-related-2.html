@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block content %}
-
   <h1 class="govuk-heading-xl">Document title</h1>
 
 
@@ -19,7 +18,7 @@
                       <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Assigned to</th>
                         <td class="govuk-table__cell govuk-table__cell--numeric">Alex Hill</td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="breadcrumb-options-when-tagged.html">Edit</a></td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="edit">Edit</a></td>
                       </tr>
                       <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Content type</th>
@@ -45,29 +44,34 @@
 
             <ul class="moj-sub-navigation__list">
               <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="guide-template-2">Edit</a>
+                <a class="moj-sub-navigation__link" href="boilerplate-guide-edit.html">Edit</a>
               </li>
           
               <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" aria-current="page" href="#2">Tagging</a>
+                <a class="moj-sub-navigation__link" href="boilerplate-guide-tagging-summary.html">Tagging</a>
               </li>
           
               <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="#3">Metadata</a>
+                <a class="moj-sub-navigation__link" href="boilerplate-guide-metadata.html">Metadata</a>
               </li>
 
+  
               <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="#4">History and notes</a>
+                <a class="moj-sub-navigation__link" href="boilerplate-guide-history.html">History and notes</a>
               </li>
          
 
             <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="#4">Admin</a>
+                <a class="moj-sub-navigation__link" href="boilerplate-guide-admin.html">Admin</a>
               </li>
         
 
             <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="#4">Related external links</a>
+                <a class="moj-sub-navigation__link" aria-current="page" href="boilerplate-guide-related.html">Related external links</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="boilerplate-guide-unpublish.html">Unpublish</a>
               </li>
             </ul>
           
@@ -76,73 +80,47 @@
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <h2 class="govuk-heading-m">Tagging</h2>
+            <h2 class="govuk-heading-m">Related external links</h2>
         </div>
       </div>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <div class="govuk-summary-card">
-            <div class="govuk-summary-card__title-wrapper">
-              <h2 class="govuk-summary-card__title">
-                GOV.UK breadcrumb
-              </h2>
-              <ul class="govuk-summary-card__actions">
-                <li class="govuk-summary-card__action">
-                  <a class="govuk-link" href="empty-breadcrumb-options.html">Edit</span></a>
-                </li>
-              </ul>
-            </div>
-            <div class="govuk-summary-card__content">
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Breadcrumb
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    Business and self employed > Business tax
-                  </dd>
-                </div>
-              </dl>
-            </div>
-          </div>
-            <div class="empty-state-container">
-            <h3 class="govuk-heading-s">Mainstream browse tags</h3>
-           <p class="govuk-body">Not tagged to any browse pages</p>
-           <p class="govuk-body"><a href="browse-tagging-options.html">Tag to a browse page</a></p>
+            <h2 class="govuk-heading-s">Link 1</h2>
+
+            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Remove
+              </button>       
+              <div class="govuk-form-group">
+                <p class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--s" for="link-name">
+                    Title
+                  </label>
+                </p>
+
+                <input class="govuk-input" id="link-name" name="linkName" type="text" aria-describedby="link-name-hint">
+
+                <label class="govuk-label govuk-label--s" for="link-url">
+                    URL
+                  </label>
+                </input>
+                
+                </h1>
+                <input class="govuk-input" id="link-url" name="linkUrl" type="text" aria-describedby="link-url-hint">
+           
+                <button type="submit" class="govuk-button govuk-button--secondary space-test" data-module="govuk-button">
+                    Add link
+                  </button>   
+              </div>
+              
         </div>
 
 
- 
-
-          <div class="empty-state-container">
-            <h3 class="govuk-heading-s">Topic taxonomy tags</h3>
-           <p class="govuk-body">Not tagged to the topic taxonomy</p>
-           <p class="govuk-body"><a href="#">Manage on Content Tagger</a></p>
-        </div>
-
-        <div class="empty-state-container">
-         <h3 class="govuk-heading-s">Organisation</h3>
-         <p class="govuk-body">Not tagged to any organisations</p>
-         <p class="govuk-body"><a href="#">Add an organisation</a></p>
-        </div>
-
-        <div class="empty-state-container">
-        <h3 class="govuk-heading-s">Related content</h3>
-        <p class="govuk-body">No related content added</p>
-        <p class="govuk-body"><a href="#">Add related content</a></p>
-        </div>
-
-        </div>
         <div class="govuk-grid-column-one-third sticky">
             <div class="actions-panel">
           <h3 class="govuk-heading-s">Options</h3>
 
-          <!--
-          <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">
-            Preview
-          </button>
-          -->
+          
           <p class="govuk-body"><a href="#">Preview (opens in new tab)</a></p>
 
 
