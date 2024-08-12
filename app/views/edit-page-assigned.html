@@ -1,0 +1,134 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<a href="edit-page-simple" class="govuk-back-link">Back</a>
+
+<span class="govuk-caption-l">Document title</span>
+<h1 class="govuk-heading-xl">Assign another person</h1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+     
+        <p>Assign this content item to another publisher
+    </p>
+
+       
+        <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+             
+            </h1>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="full">
+                  Filter
+                </label>
+                <input class="govuk-input govuk-!-width-full" id="full" name="full" type="text">
+            </div>
+            
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h1 class="govuk-fieldset__heading">
+                      Publishers
+                    </h1>
+                  </legend>
+                  <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="month">
+                      <label class="govuk-label govuk-radios__label" for="changedName">
+                        Homer Simpson
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+                      <label class="govuk-label govuk-radios__label" for="changedName-2">
+                        Marge Simpson
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changedName-3" name="changedName" type="radio" value="year">
+                        <label class="govuk-label govuk-radios__label" for="changedName-3">
+                          Lisa Simpson
+                        </label>
+                      </div>
+                      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="changedName-4" name="changedName" type="radio" value="month">
+                          <label class="govuk-label govuk-radios__label" for="changedName-4">
+                            Maggie Simpson
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="changedName-5" name="changedName" type="radio" value="year">
+                          <label class="govuk-label govuk-radios__label" for="changedName-5">
+                            Aldous Huxley
+                          </label>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changedName-6" name="changedName" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="changedName-6">
+                              Bertrand Russell
+                            </label>
+                          </div>
+    
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changedName-6" name="changedName" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="changedName-6">
+                              Franz Kafka
+                            </label>
+                          </div>
+                  </div>
+                </fieldset>
+              </div>
+
+    
+
+
+              
+
+          </div>  
+          
+          
+          </div>
+
+          <div class="govuk-grid-column-one-third sticky">
+            <div class="actions-panel">
+          <h3 class="govuk-heading-s">Options</h3>
+
+          <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">
+            Save
+          </button>
+          <p class="govuk-body"><a href="#">Cancel</a></p>
+        </div>
+        </div>
+
+        </fieldset>
+
+
+       
+      
+      
+      
+      
+      </div>
+    </main>
+  </div>
+
+ 
+
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
