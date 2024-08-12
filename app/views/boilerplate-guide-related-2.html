@@ -86,11 +86,19 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-            <h2 class="govuk-heading-s">Link 1</h2>
 
-            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                Remove
-              </button>       
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <h2 class="govuk-heading-m">Link 1</h2>
+                </div>
+                <div class="govuk-grid-column-one-third">
+                    <button type="submit" class="govuk-button govuk-button--secondary align-right" data-module="govuk-button">
+                        Remove
+                      </button>
+                    </div>
+              </div>
+
               <div class="govuk-form-group">
                 <p class="govuk-label-wrapper">
                   <label class="govuk-label govuk-label--s" for="link-name">
@@ -98,11 +106,14 @@
                   </label>
                 </p>
 
-                <input class="govuk-input" id="link-name" name="linkName" type="text" aria-describedby="link-name-hint">
+                <input class="govuk-input govuk-!-margin-bottom-5" id="link-name" name="linkName" type="text" aria-describedby="link-name-hint">
 
                 <label class="govuk-label govuk-label--s" for="link-url">
                     URL
                   </label>
+                  <div id="account-number-hint" class="govuk-hint">
+                    Example: https://gov.uk
+                  </div>
                 </input>
                 
                 </h1>
@@ -112,6 +123,10 @@
                     Add link
                   </button>   
               </div>
+
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Update
+              </button>
               
         </div>
 
