@@ -1,0 +1,176 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<h1 class="govuk-heading-xl">Publications</h1>
+
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+        <div class="filter-block">
+            <h2 class="govuk-heading-m">Filter by</h2>
+
+            <div class="govuk-form-group">
+              <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--s" for="event-name">
+                  Title
+                </label>
+              </h1>
+              <input class="govuk-input" id="event-name" name="eventName" type="text">
+            </div>
+
+            <div class="govuk-form-group">
+              <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--s" for="event-name">
+                  Assigned to
+                </label>
+              </h1>
+              <input class="govuk-input" id="event-name" name="eventName" type="text">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" for="event-name">
+                Format
+              </label>
+              <select class="govuk-select full-width" id="sort" name="sort">
+                <option value="all" selected>All formats</option>
+                <option value="guide">Guide</option>
+                <option value="ssa">Simple Smart Answer</option>
+                <option value="answer">Answer</option>
+              </select>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m border-bottom">50 documents</caption>
+
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Title</th>
+                <th scope="col" class="govuk-table__header govuk-table__header">Updated</th>
+                <th scope="col" class="govuk-table__header govuk-table__header">Assigned to</th>
+                <th scope="col" class="govuk-table__header govuk-table__header">Status</th>
+
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header"><span class="govuk-caption-m">Guide</span>
+                  <a href="#">Understand your Self Assessment tax bill</a> 
+
+                  <!-- 
+                </br>
+                <details class="govuk-details space-test-2">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Details
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <h2 class="govuk-heading-s">
+                      Edition
+                    </h2>
+                    <p>2</p>
+                  </div>
+                </details>
+                 -->
+              </th>
+                <td class="govuk-table__cell govuk-table__cell">14 August 2024</td>
+                <td class="govuk-table__cell govuk-table__cell">Aldous Huxley </td>
+                <td class="govuk-table__cell govuk-table__cell"> <strong class="govuk-tag govuk-tag--red">
+                  Fact check
+                </strong> </td>
+
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header"><span class="govuk-caption-m">Answer</span>
+                  <a href="#">Litigation friends: manage a Court Funds Office account</a> 
+
+                  <!--
+                </br>
+                <details class="govuk-details space-test-2">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Details
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <h2 class="govuk-heading-s">
+                      Edition
+                    </h2>
+                    <p>2</p>
+                    <h2 class="govuk-heading-s">
+                      Important note
+                    </h2>
+                    <p>Some long text, which is quite long and important, with critical details and next steps, added urgently</p>
+                  </div>
+                </details>
+                -->
+                </th>
+                <td class="govuk-table__cell govuk-table__cell">14 August 2024</td>
+                <td class="govuk-table__cell govuk-table__cell">Franz Kafka  </td>
+                <td class="govuk-table__cell govuk-table__cell"> <strong class="govuk-tag govuk-tag--green">
+                  Ready
+                </strong></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header"><span class="govuk-caption-m">Simple Smart Answer</span><a href="#">What to do after a goose incident</a> 
+               
+                  <!-- 
+                </br>
+                <details class="govuk-details space-test-2">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Details
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <h2 class="govuk-heading-s">
+                      Edition
+                    </h2>
+                    <p>2</p>
+                  </div>
+                </details>
+                -->
+              </th>
+                <td class="govuk-table__cell govuk-table__cell">12 August 2024</td>
+                <td class="govuk-table__cell govuk-table__cell">Maggie Simpson</td>
+                <td class="govuk-table__cell govuk-table__cell"> <strong class="govuk-tag govuk-tag--yellow">
+                  Draft
+                </strong></td>
+              </tr>
+            </tbody>
+          </table>
+
+          </div>    
+          </div>
+
+        </fieldset>
+
+
+       
+      
+      
+      
+      
+    </main>
+  </div>
+
+ 
+
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}

@@ -381,6 +381,10 @@ a.delete {
   margin-top: 50px;
 }
 
+.space-test-2 {
+  margin-top: 25px;
+}
+
 .clear-button {
   background-color: pink;
   display: block;
@@ -395,4 +399,19 @@ a.delete {
 
 .align-right {
   float: right;
+}
+
+.filter-block {
+  background-color: govuk-colour("light-grey");
+  padding: govuk-spacing(6);
+}
+
+.border-bottom {
+  border-bottom: 3px solid black;
+  padding: 10px 0 10px 0;
+}
+
+.govuk-table__header_title {
+  background-color: pink;
+  width: 40% !important;
 }
