@@ -411,7 +411,6 @@ a.delete {
   padding: 10px 0 10px 0;
 }
 
-.govuk-table__header_title {
-  background-color: pink;
-  width: 40% !important;
+th.govuk-table__header:first-child {
+  width: 50%;
 }
