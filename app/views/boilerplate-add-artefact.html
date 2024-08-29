@@ -1,0 +1,151 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<h1 class="govuk-heading-xl">New content item</h1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+     
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                 Content type
+                </h1>
+              </legend>
+           
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="contenttype" name="contenttype" type="radio" value="answer" data-aria-controls="conditional-contact">
+                  <label class="govuk-label govuk-radios__label" for="contenttype">
+                    Answer
+                  </label>
+                  <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                   One page guidance
+                  </div>
+                </div>
+               
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="contenttype-2" name="contenttype" type="radio" value="completedtransaction" data-aria-controls="conditional-contact-2">
+                  <label class="govuk-label govuk-radios__label" for="contenttype-2">
+                    Completed transaction
+                  </label>
+                  <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                    Done page for end of a service
+                   </div>
+                </div>
+
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contenttype-3" name="contenttype" type="radio" value="completedtransaction" data-aria-controls="conditional-contact-2">
+                    <label class="govuk-label govuk-radios__label" for="contenttype-3">
+                     Guide
+                    </label>
+                    <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                      Multi-page guidance
+                     </div>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contenttype-4" name="contenttype" type="radio" value="completedtransaction" data-aria-controls="conditional-contact-2">
+                    <label class="govuk-label govuk-radios__label" for="contenttype-4">
+                     Help page
+                    </label>
+                    <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                      Info about GOV.UK website, for example privacy
+                     </div>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contenttype-5" name="contenttype" type="radio" value="completedtransaction" data-aria-controls="conditional-contact-2">
+                    <label class="govuk-label govuk-radios__label" for="contenttype-5">
+                     Local transaction
+                    </label>
+                    <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                      Postcode lookup for local authorities
+                     </div>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contenttype-6" name="contenttype" type="radio" value="completedtransaction" data-aria-controls="conditional-contact-2">
+                    <label class="govuk-label govuk-radios__label" for="contenttype-6">
+                     Place
+                    </label>
+                    <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                      Postcode lookup for places and services near you
+                     </div>
+                  </div>
+
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contenttype-7" name="contenttype" type="radio" value="completedtransaction" data-aria-controls="conditional-contact-2">
+                    <label class="govuk-label govuk-radios__label" for="contenttype-7">
+                     Simple smart answer
+                    </label>
+                    <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                      Postcode lookup for places and services near you
+                     </div>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contenttype-8" name="contenttype" type="radio" value="completedtransaction" data-aria-controls="conditional-contact-2">
+                    <label class="govuk-label govuk-radios__label" for="contenttype-8">
+                    Transaction
+                    </label>
+                    <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                      Start page for a service
+                     </div>
+                  </div>
+
+
+
+
+                
+              </div>
+            </fieldset>
+          </div>
+
+
+            <div class="govuk-button-group space-test">
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                  Next
+                </button>
+                <a class="govuk-link" href="#">Cancel</a>
+              </div>
+
+
+          </div>    
+          </div>
+
+        </fieldset>
+
+
+       
+      
+      
+      
+      <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                
+        </div>
+      </div>
+    </main>
+  </div>
+
+ 
+
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
