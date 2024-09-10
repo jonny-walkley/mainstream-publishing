@@ -1,0 +1,103 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<span class="govuk-caption-xl">New content item</span>
+<h1 class="govuk-heading-xl">[Content type]</h1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+     
+       
+
+
+        <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--l" for="title">
+                Title
+              </label>
+            </h1>
+            <input class="govuk-input" id="event-name" name="title" type="text">
+          </div>
+
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--l" for="slug">
+                Slug
+              </label>
+            </h1>
+            <div id="event-name-hint" class="govuk-hint">
+                For example: lower-case-hypen-separated
+              </div>
+            <input class="govuk-input" id="event-name" name="slug" type="text">
+          </div>
+
+
+      
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <label class="govuk-label--l  govuk-!-font-weight-bold" for="doc-title">
+                        Language
+                      </label>
+                  </legend>
+                
+                  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes" checked>
+                      <label class="govuk-label govuk-radios__label" for="changedName">
+                        English
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="changedName-2">
+                        Welsh
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <div class="govuk-button-group space-test">
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                  Next
+                </button>
+                <a class="govuk-link" href="#">Cancel</a>
+              </div>
+
+
+          </div>    
+          </div>
+
+        </fieldset>
+
+
+       
+      
+      
+      
+      <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                
+        </div>
+      </div>
+    </main>
+  </div>
+
+ 
+
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
