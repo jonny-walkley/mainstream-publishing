@@ -135,11 +135,13 @@
                     Introductory paragraph
                   </label>
                   <div id="metatags-hint" class="govuk-hint">
-                    Refer to the <a href="#">Govspeak guidance (opens in new tab)</a>
-                     </div>
+                    Set the scene for the user. Explain that it's the responsibility of the local council and that we'll take you there.  
+                    Refer to the <a href="#">Govspeak guidance (opens in new tab)</a>                   
+                  </div>
                 </h1>
                
                 <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="7" aria-describedby="more-detail-hint"></textarea>
+
               </div>
 
 
@@ -221,12 +223,11 @@
                       </div>
                       
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="scotland-2" name="scotland" type="radio" value="devolved-administration" data-aria-controls="scotland-2">
-                        <label class="govuk-label govuk-radios__label" for="scotland-2">
+                        <input class="govuk-radios__input" id="scotland-2" name="scotland" type="radio" value="devolved-administration" data-aria-controls="scotland-2-conditional">                        <label class="govuk-label govuk-radios__label" for="scotland-2">
                           Service available from devolved administration (or a similar service is available)
                         </label>
                       </div>
-                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="scotland-2">
+                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="scotland-2-conditional">
                         <div class="govuk-form-group">
                           <label class="govuk-label" for="two-thirds">
                           Enter the URL of the devolved administration website page
@@ -237,6 +238,46 @@
                       <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="scotland-3" name="scotland" type="radio" value="email" data-aria-controls="scotland-3">
                         <label class="govuk-label govuk-radios__label" for="scotland-3">
+                          Service not available
+                        </label>
+                      </div>
+                    
+                    </div>
+                  </fieldset>
+                </div>
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h2 class="govuk-heading-s">
+                       Wales
+                      </h2>
+                    </legend>
+                 
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="wales-1" name="wales" type="radio" value="local-council">                       
+                         <label class="govuk-label govuk-radios__label" for="wales-1">
+                          Service available from local council
+                        </label>
+                      </div>
+                      
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="wales-2" name="wales" type="radio" value="devolved-administration" data-aria-controls="wales-2-conditional">                        <label class="govuk-label govuk-radios__label" for="wales-2">
+                          Service available from devolved administration (or a similar service is available)
+                        </label>
+                      </div>
+                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="wales-2-conditional">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="two-thirds">
+                          Enter the URL of the devolved administration website page
+                          </label>
+                          <input class="govuk-input govuk-!-width-two-thirds" id="url" name="url" type="url" autocomplete="url">
+                        </div>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="wales-3" name="wales" type="radio" value="email" data-aria-controls="wales-3">
+                        <label class="govuk-label govuk-radios__label" for="wales-3">
                           Service not available
                         </label>
                       </div>
