@@ -1,0 +1,77 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<a href="#" class="govuk-back-link">Back</a>
+
+<span class="govuk-caption-l">Document title</span>
+<h1 class="govuk-heading-xl">Send to 2nd pair of eyes</h1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+     
+        <p>
+            Explain what changes you did or did not make and why. Include a link to the relevant Zendesk ticket and Trello card. If you’ve added an edition note already, you do not need to add another one. </p>
+
+           <p><a href="#">Read the guidance on writing good change notes on the GOV.UK wiki (opens in a new tab.) </a> </p>
+
+
+       
+        <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="more-detail">
+                Send to 2nd pair of eyes
+              </label>
+            </h1>
+          
+            <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="14" aria-describedby="more-detail-hint"></textarea>
+          </div>
+
+          
+            <div class="govuk-button-group space-test">
+                
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                  Send to 2nd pair of eyes
+                </button>
+            
+                <a class="govuk-link" href="#">Cancel</a>
+
+            
+              </div>
+
+
+
+          </div>    
+          </div>
+
+        </fieldset>
+
+
+       
+      
+      
+      
+      <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                
+        </div>
+      </div>
+    </main>
+  </div>
+
+ 
+
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
