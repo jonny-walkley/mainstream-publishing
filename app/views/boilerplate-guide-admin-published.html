@@ -82,18 +82,27 @@
         <div class="govuk-grid-column-two-thirds">
             <h2 class="govuk-heading-m">Admin</h2>
 
+            <h3 class="govuk-heading-s">Update content type</h3>
+
+            <p>No content will be lost, but content in some fields might not make it into the new edition. If it can't be copied to a new content type it will still be available in the previous edition. Content in multiple fields might be combined into a single field.
+            </p>
+
+            <p>All parts of Guide Editions will be copied across. If the format you are converting to doesn't have parts, the content of all the parts will be copied into the body, with the part title displayed as a top-level sub-heading.
+            </p>
+
 
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                    <h3 class="govuk-fieldset__heading">
-                      Update content type
-                    </h3>
-                    <div id="signIn-hint" class="govuk-hint">
-                        No content will be lost, but content in some fields might not make it into the new edition. If it can't be copied to a new content type it will still be available in the previous edition. Content in multiple fields might be combined into a single field.
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="completedTransaction" name="contentType" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+                    <label class="govuk-label govuk-radios__label" for="completedTransaction">
+                      Answer
+                    </label>
+                    <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                      One page guidance
                     </div>
-                  </legend>
-                  
+                  </div>
+
                       <div class="govuk-radios" data-module="govuk-radios">
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="completedTransaction" name="contentType" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
