@@ -1,0 +1,151 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<a href="edit-page-simple" class="govuk-back-link">Back</a>
+
+<span class="govuk-caption-l">Document title</span>
+<h1 class="govuk-heading-xl">Assign reviewer</h1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+     
+      <!--
+        <p>Assign this content item to somebody
+    </p>
+    -->
+
+       
+        <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+             
+            </h1>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="full">
+                  Filter
+                </label>
+                <input class="govuk-input govuk-!-width-full" id="full" name="full" type="text">
+            </div>
+
+            
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                   
+                  <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="maggie" name="changedName" type="radio" value="month" checked>
+                      <label class="govuk-label govuk-radios__label" for="maggie">
+                        Aldous Huxley 
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="none" name="changedName" type="radio" value="month">
+                        <label class="govuk-label govuk-radios__label" for="none">
+                          None 
+                        </label>
+                      </div>
+
+              
+
+                      <div class="govuk-radios__divider">or</div>
+
+                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="homer" name="changedName" type="radio" value="month">
+                        <label class="govuk-label govuk-radios__label" for="homer">
+                          Homer Simpson
+                        </label>
+                      </div>
+                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="bart" name="changedName" type="radio" value="month">
+                        <label class="govuk-label govuk-radios__label" for="bart">
+                          Bart Simpson
+                        </label>
+                      </div>
+
+                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="lisa" name="changedName" type="radio" value="month">
+                        <label class="govuk-label govuk-radios__label" for="lisa">
+                          Lisa Simpson
+                        </label>
+                      </div>
+                      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="maggie-s" name="changedName" type="radio" value="month">
+                          <label class="govuk-label govuk-radios__label" for="maggie-s">
+                            Maggie Simpson
+                          </label>
+                        </div>
+                   
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="bertrand" name="changedName" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="bertrand">
+                              Bertrand Russell
+                            </label>
+                          </div>
+    
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="kafka" name="changedName" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="kafka">
+                              Franz Kafka
+                            </label>
+                          </div>
+                  </div>
+                </fieldset>
+              </div>
+
+    
+
+
+              
+
+          </div>  
+          
+          
+          </div>
+
+          <div class="govuk-grid-column-one-third sticky">
+            <div class="actions-panel">
+          <h3 class="govuk-heading-s">Options</h3>
+
+          <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">
+            Save
+          </button>
+          
+          <p class="govuk-body"><a href="#">Cancel</a></p>
+        </div>
+        </div>
+
+        </fieldset>
+
+
+       
+      
+      
+      
+      
+      </div>
+    </main>
+  </div>
+
+ 
+
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
