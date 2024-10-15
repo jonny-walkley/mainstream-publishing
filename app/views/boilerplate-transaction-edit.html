@@ -17,7 +17,7 @@
                 <tbody class="govuk-table__body">
                   <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">Assigned to</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">John Blackthorne</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">Diane Williams</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric"><a href="edit-page-assigned.html" class="edit">Edit</a></td>
                   </tr>
                   <tr class="govuk-table__row">
@@ -137,17 +137,7 @@
                 </fieldset>
               </div>
 
-              <div class="govuk-form-group">
-                <h1 class="govuk-label-wrapper">
-                  <label class="govuk-label govuk-label--s" for="event-name">
-                    Places manager slug
-                  </label>
-                </h1>
-                <div id="event-name-hint" class="govuk-hint">
-                    This is the assigned in the <a href="#">places manager app</a>, and can be different from the GOV.UK front-end slug
-                </div>
-                <input class="govuk-input" id="event-name" name="eventName" type="text" aria-describedby="event-name-hint" value="example-slug">
-              </div>
+              
 
               <div class="govuk-form-group">
                 <h1 class="govuk-label-wrapper">
@@ -164,6 +154,53 @@
               </div>
 
               <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                  <h2 class="govuk-heading-m">Start button</h2>
+
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">
+                            Text on start button
+                          </label>
+                      </legend>
+                    
+                      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="startnow" name="changedName" type="radio" value="yes">
+                          <label class="govuk-label govuk-radios__label" for="startnow">
+                            Start now
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="signin" name="changedName" type="radio" value="no" checked>
+                          <label class="govuk-label govuk-radios__label" for="signin">
+                            Sign in
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                  
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">
+                      Will continue on (optional)
+                    </label>
+                    <span class="govuk-hint">Text to follow the statement 'This will continue on. eg. "the HMRC website"'</span>
+                    <input class="govuk-input" id="continue" name="continue" type="text" spellcheck="false" autocomplete="none" value="">
+                  </div>
+
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">
+                      Link to start of transaction
+                    </label>
+                    <span class="govuk-hint">Link as deep as possible</span>
+                    <input class="govuk-input" id="transaction-link" name="transaction-link" type="text" spellcheck="false" autocomplete="none" value="">
+                  </div>
+
+
+              <div class="govuk-form-group">
                 <h1 class="govuk-label-wrapper">
                   <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">
                     Body
@@ -176,19 +213,41 @@
               <div class="govuk-form-group">
                 <h1 class="govuk-label-wrapper">
                   <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">
-                    What you need to know
+                    Other ways to apply
                   </label>
+                  <span class="govuk-hint">Alternative ways of completing this transaction. Not displayed on front end if left blank.
+                    </span>
                   <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="7" aria-describedby="more-detail-hint"></textarea>
 
                 </h1>
                 </div>
 
-              
+                <div class="govuk-form-group">
+                  <h1 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">
+                      What you need to know
+                    </label>
+                      </span>
+                    <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="7" aria-describedby="more-detail-hint"></textarea>
+  
+                  </h1>
+                  </div>
+                </fieldset>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">
+                    Service analytics profile (optional)
+                  </label>
+                  <span class="govuk-hint">Let service teams track user journeys between GOV.UK and their service using Google Analytics.</span>
+                  <input class="govuk-input" id="continue" name="continue" type="text" spellcheck="false" autocomplete="none" value="">
+                </div>
+
 
 
               <div class="line">
                 &nbsp;
               </div>
+
 
               
 
