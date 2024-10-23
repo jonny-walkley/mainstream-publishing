@@ -443,9 +443,10 @@ th.govuk-table__header:first-child {
 
 
 .diff ul .del::before {
-  color: #d4351c;
+  content: "\2212";
+  position: absolute;
+  left: -20px;
   background-color: #fdd;
-  content: "-";
 }
 
 .diff ul .del {
@@ -456,10 +457,13 @@ th.govuk-table__header:first-child {
   background-color: #dfd;
 }
 
+
+
 .li del::before {
   color: #d4351c;
-  background-color: #fdd;
-  content: "-";
+  content: "\2212";
+  position: absolute;
+  left: -20px;
 }
 
 diff ul .del::before, .diff ul .ins::before {
