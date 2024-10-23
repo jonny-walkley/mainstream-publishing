@@ -419,3 +419,55 @@ a.delete {
 th.govuk-table__header:first-child {
   width: 50%;
 }
+
+
+
+.diff-container {
+  border: 1px solid #f3f2f1;
+}
+
+
+.diff { 
+  border-left: 40px solid #f3f2f1; 
+  padding: 15px;
+}
+
+.diff ul li {
+  min-height: 24px;
+  margin: 0 -15px;
+  padding: 0 15px;
+  word-wrap: break-word;
+  list-style: none;
+  position: relative;
+}
+
+
+.diff ul .del::before {
+  color: #d4351c;
+  background-color: #fdd;
+  content: "-";
+}
+
+.diff ul .del {
+  background-color: #fdd;
+}
+
+.diff ul .ins {
+  background-color: #dfd;
+}
+
+.li del::before {
+  color: #d4351c;
+  background-color: #fdd;
+  content: "-";
+}
+
+diff ul .del::before, .diff ul .ins::before {
+  position: absolute;
+  font-weight: bold;
+  margin-left: -55px;
+  width: 40px;
+  text-align: center;
+  min-height: 24px;
+  top: 0;
+  bottom: 0; }

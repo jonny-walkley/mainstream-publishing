@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<a href="#" class="govuk-back-link">Back</a>
+
+<span class="govuk-caption-l">Document name</span>
+<h1 class="govuk-heading-xl">Compare edition 1 and 2</h1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+     
+    
+
+        <div class="diff-container">
+       <div class="diff">
+        <ul class="govuk-list">
+            <li class="unchanged">Unchanged line of text</li>
+            <li class="unchanged">Unchanged line of text</li>
+            <li class="unchanged">Unchanged line of text</li>
+
+            <li class="del"><del><strong>###</strong>Deleted line of text</del></li>
+            <li class="ins"><ins><strong>**</strong>Inserted line of text<strong>**</strong></ins></li>
+       
+       
+        </ul>
+
+       </div>
+    </div>
+            
+              </div>
+
+
+
+          </div>    
+          </div>
+
+        </fieldset>
+
+
+       
+      
+      
+      
+      <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                
+        </div>
+      </div>
+    </main>
+  </div>
+
+ 
+
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
