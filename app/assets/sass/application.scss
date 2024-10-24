@@ -475,11 +475,13 @@ th.govuk-table__header:first-child {
 }
 
 del strong {
-  background-color: #faa;
+  background-color: red;
+  color: white;
 }
 
 ins strong {
-  background-color: #77f177;
+  background-color: green;
+  color: white;
 }
 
 diff ul .del::before, .diff ul .ins::before {
