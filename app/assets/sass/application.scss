@@ -478,6 +478,10 @@ del strong {
   background-color: #faa;
 }
 
+ins strong {
+  background-color: #77f177;
+}
+
 diff ul .del::before, .diff ul .ins::before {
   position: absolute;
   font-weight: bold;
