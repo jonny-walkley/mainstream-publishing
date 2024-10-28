@@ -501,3 +501,87 @@ diff ul .del::before, .diff ul .ins::before {
   del {
     text-decoration: none;
   }
+
+
+// Second variant // 
+
+
+.diff2 {
+}
+
+.diff ul li {
+  min-height: 24px;
+  margin: 0 -15px;
+  padding: 0 15px;
+  word-wrap: break-word;
+  list-style: none;
+  position: relative;
+}
+
+
+.diff ul .del2::before {
+  content: "\2212";
+  position: absolute;
+  margin-left: -55px;
+  color: black;
+  background-color: yellow;
+  width: 40px;
+ text-align: center;
+ 
+}
+
+
+.diff ul .del2 {
+  background-color: #ffabab;
+}
+
+.diff ul .ins2 {
+  background-color: #b0ffcd;
+}
+
+
+.diff ul .ins2::before {
+  background-color: white;
+  color: black;
+  background-color: yellow;
+  content: "+";
+}
+
+.diff ul .del2::before {
+  color: black;
+  background-color: yellow;
+    content: "\2212";
+}
+
+del2 strong {
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #ffabab;
+  color: black;
+}
+
+ins2 strong {
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #b0ffcd;
+  color: black;
+}
+
+diff ul .del2::before, .diff ul .ins2::before {
+  position: absolute;
+  font-weight: bold;
+  margin-left: -55px;
+  width: 40px;
+  text-align: center;
+  min-height: 24px;
+  top: 0;
+  bottom: 0; }
+
+  ins2 {
+  }
+
+  del2 {
+    text-decoration: none;
+  }
+
+

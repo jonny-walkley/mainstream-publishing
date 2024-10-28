@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<a href="#" class="govuk-back-link">Back</a>
+
+<span class="govuk-caption-l">Document name</span>
+<h1 class="govuk-heading-xl">Compare edition 1 and 2</h1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+     
+    
+
+        <div class="diff-container">
+       <div class="diff">
+        <div class="diff2">
+        <ul class="govuk-list">
+            <li class="unchanged">This is an unchanged line of text in this document.</li>
+            <li class="unchanged">This is another, excellent unchanged line of text.</li>
+            <li class="unchanged">Another solid, decent line of text in this document, which turns out to be quite long, and may wrap to a new line.</li>
+            <li class="del2"><del2>A <strong>good</strong> sentence where some changes are being made.</del></li>
+            <li class="ins2"><ins2>A<strong>n</strong> <strong>excellent</strong> sentence where some changes are being made.</ins></li>
+              <li class="unchanged">This is an unchanged line of text in this document.</li>
+            <li class="del2"><del2><strong>A line of text that was totally deleted.</strong></del></li>
+            <li class="unchanged">A totally untouched and unchanged line of text that required no changes, being a good, solid line of text. A long, unchanged line of text, some of which wraps, and it turns out didn't need editing at all.</li>
+            <li class="del2"><del2><strong>Some e</strong>dited words in a line, some long old additional words added to this document </strong> alongside the old words in the same line</del></li>
+            <li class="ins2"><ins2><strong>E</strong>dited words in a line, some long old additional words added to this document </strong> alongside the old words in the same line</ins></li>
+       
+        </ul>
+      </div>
+       </div>
+    </div>
+            
+              </div>
+
+
+
+          </div>    
+          </div>
+
+        </fieldset>
+
+
+       
+      
+      
+      
+      <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                
+        </div>
+      </div>
+    </main>
+  </div>
+
+ 
+
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
