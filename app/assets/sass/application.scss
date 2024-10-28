@@ -536,18 +536,18 @@ diff ul .del::before, .diff ul .ins::before {
 }
 
 .diff ul .ins2 {
-  background-color: #b0ffcd;
+  background-color: #dfd;
 }
 
 
 .diff ul .ins2::before {
-  color: black;
-  background-color: #b0ffcd;
+  color: #025210;
+  background-color: #dfd;
   content: "\002B";
 }
 
 .diff ul .del2::before {
-  color: black;
+  color: #780d0d;
   background-color: #ffd9d9;
     content: "\2212";
 }
