@@ -438,7 +438,7 @@ th.govuk-table__header:first-child {
   word-wrap: break-word;
   list-style: none;
   position: relative;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 
@@ -449,6 +449,7 @@ th.govuk-table__header:first-child {
   background-color: #F3AEAC;
   width: 40px;
  text-align: center;
+ height: 100%;
  
 }
 
@@ -463,15 +464,17 @@ th.govuk-table__header:first-child {
 
 
 .diff ul .ins::before {
-  color: #00703c;
+  color: black;
   background-color: #99ffcf;
   content: "\002B";
+  height: 100%;
 }
 
 .diff ul .del::before {
-  color: #d4351c;
+  color: black;
   background-color: #F3AEAC;
   content: "\2212";
+  height: 100%;
 }
 
 del strong {
@@ -495,7 +498,9 @@ diff ul .del::before, .diff ul .ins::before {
   text-align: center;
   min-height: 24px;
   top: 0;
-  bottom: 0; }
+  bottom: 0; 
+height: 100%;
+}
 
   ins {
     text-decoration: none;
@@ -530,6 +535,7 @@ diff ul .del::before, .diff ul .ins::before {
   background-color: #ffd9d9;
   width: 40px;
  text-align: center;
+ height: 100%;
  
 }
 
@@ -547,12 +553,14 @@ diff ul .del::before, .diff ul .ins::before {
   color: #025210;
   background-color: #dfd;
   content: "\002B";
+  height: 100%;
 }
 
 .diff ul .del2::before {
   color: #780d0d;
   background-color: #ffd9d9;
     content: "\2212";
+    height: 100%;
 }
 
 del2 strong {
@@ -574,7 +582,9 @@ diff ul .del2::before, .diff ul .ins2::before {
   text-align: center;
   min-height: 24px;
   top: 0;
-  bottom: 0; }
+  bottom: 0; 
+  height: 100%;
+}
 
   ins2 {
   }
