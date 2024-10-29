@@ -464,14 +464,14 @@ th.govuk-table__header:first-child {
 
 
 .diff ul .ins::before {
-  color: black;
+  color: #0B0C0C;
   background-color: #99ffcf;
   content: "\002B";
   height: 100%;
 }
 
 .diff ul .del::before {
-  color: black;
+  color: #0B0C0C;
   background-color: #F3AEAC;
   content: "\2212";
   height: 100%;
@@ -479,7 +479,7 @@ th.govuk-table__header:first-child {
 
 del strong {
   background-color: #F3AEAC;
-  color: black;
+  color: #0B0C0C;
   font-weight: 100;
   border-bottom: 1px dotted grey;
 }
