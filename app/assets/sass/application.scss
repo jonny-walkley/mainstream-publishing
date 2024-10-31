@@ -481,14 +481,14 @@ del strong {
   background-color: #F3AEAC;
   color: #0B0C0C;
   font-weight: 100;
-  border-bottom: 1px dotted grey;
+  border-bottom: 2px dotted grey;
 }
 
 ins strong {
   background-color: #99ffcf;
   color: black;
   font-weight: 100;
-  border-bottom: 1px dotted grey;
+  border-bottom: 2px dotted grey;
 }
 
 diff ul .del::before, .diff ul .ins::before {
