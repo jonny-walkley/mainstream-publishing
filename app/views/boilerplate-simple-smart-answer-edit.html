@@ -5,8 +5,11 @@
 {% endblock %}
 
 {% block content %}
-  <h1 class="govuk-heading-xl">Document title</h1>
-
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  <h1 class="govuk-heading-xl">Find out if you're eligible for a dragon egg</h1>
+</div>
+</div>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -205,6 +208,7 @@
                 &nbsp;
               </div>
 
+              <div class="question">
               <h2 class="govuk-heading-m">Question 1</h2>
 
               <div class="govuk-form-group">
@@ -218,21 +222,82 @@
                   <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">
                     Optional extra information
                   </label>
-                
+                  <div id="metatags-hint" class="govuk-hint">
+                    Refer to the <a href="#">Govspeak guidance (opens in new tab)</a>
+                     </div>
                 </h1>
-               
-                <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="7" aria-describedby="more-detail-hint"></textarea>
+                <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="14" aria-describedby="more-detail-hint"></textarea>
 
               </div>
 
 
-              
+              <div class="govuk-form-group">
+                <h2 class="govuk-heading-s">Answer 1</h2>
+                <label class="govuk-label govuk-body govuk-!-font-weight-normal" for="a-1">
+                  Title
+                </label>
+                <input class="govuk-input" id="a-1" name="a-1" type="text" spellcheck="false" autocomplete="name" value="">
+              </div>
 
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="location">
+                  Next question for user
+                </label>
+                <select class="govuk-select wide" id="location" name="location" aria-describedby="location-hint">
+                  <option value="choose" selected>Choose</option>
+                  <option value="eligible">Outcome 1 (Likely eligible for dragon egg)</option>
+                  <option value="noteligible">Outcome 2 (Not eligible for dragon egg)</option>
+             
+                </select>
+
+                <p>&nbsp;</p>
+                
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Add answer
+                </button>
+             
+              <p>
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Add question
+                </button>
+              </p>
+              </div>
+            </div>
+
+            <div class="line">
+              &nbsp;
+            </div>
               
-            
-           
-            
-            
+            <div class="outcome">
+              <h2 class="govuk-heading-m">Outcome 1</h2>
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="o-1">
+                  Title
+                </label>
+                <input class="govuk-input" id="o-1" name="o-1" type="text" spellcheck="false" autocomplete="name" value="">
+              </div>
+
+              <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">
+                    Optional extra information
+                  </label>
+                  <div id="metatags-hint" class="govuk-hint">
+                    Refer to the <a href="#">Govspeak guidance (opens in new tab)</a>
+                     </div>
+                </h1>
+                <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="14" aria-describedby="more-detail-hint"></textarea>
+
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Add outcome
+                </button>
+              </div>
+
+              </div>
+
+
+
+
 
 
         </div>
