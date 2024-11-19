@@ -14,29 +14,36 @@
 
     <div class="govuk-grid-column-one-third">
         <div class="filter-block">
-            <h2 class="govuk-heading-m">Filter by</h2>
+            <h2 class="govuk-heading-m">Filter</h2>
 
+            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Clear all
+            </button>
             <div class="govuk-form-group">
               <h1 class="govuk-label-wrapper">
                 <label class="govuk-label govuk-label--s" for="event-name">
-                  Title
+                  Search
                 </label>
-              </h1>
-              <input class="govuk-input" id="event-name" name="eventName" type="text">
-            </div>
-
-            <div class="govuk-form-group">
-              <h1 class="govuk-label-wrapper">
-                <label class="govuk-label govuk-label--s" for="event-name">
-                  Assigned to
-                </label>
+                <div id="search" class="govuk-hint">Search by title or slug</div>
               </h1>
               <input class="govuk-input" id="event-name" name="eventName" type="text">
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" for="event-name">
-                Format
+                Assigned to
+              </label>
+              <select class="govuk-select full-width" id="sort" name="sort">
+                <option value="all" selected>All assignees</option>
+                <option value="guide">Me (Rebecca Cottrell)</option>
+                <option value="ssa">Thom Yorke</option>
+                <option value="answer">Aldous Huxley</option>
+              </select>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" for="event-name">
+                Content type
               </label>
               <select class="govuk-select full-width" id="sort" name="sort">
                 <option value="all" selected>All formats</option>
@@ -45,6 +52,85 @@
                 <option value="answer">Answer</option>
               </select>
             </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                <legend class="govuk-label govuk-label-s">
+                  <label class="govuk-label govuk-label--s" for="event-name">
+                    Status
+                  </label>
+                </legend>
+                <div id="nationality-hint" class="govuk-hint">
+                  Select all that apply.
+                </div>
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Deselect all
+                </button>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="drafts" aria-describedby="nationality-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      Drafts
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="nationality-2" name="nationality" type="checkbox" value="review">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality-2">
+                      In review
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="amends">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
+                      Amends needed
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="nationality-4" name="nationality" type="checkbox" value="ofc">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality-4">
+                      Out for fact check
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="nationality-5" name="nationality" type="checkbox" value="fcr">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality-5">
+                      Fact check received
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="nationality-6" name="nationality" type="checkbox" value="ready">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality-6">
+                     Ready
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="nationality-7" name="nationality" type="checkbox" value="scheduled">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality-7">
+                     Scheduled
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="nationality-8" name="nationality" type="checkbox" value="published">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality-8">
+                     Published
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="nationality-9" name="nationality" type="checkbox" value="archived">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality-9">
+                     Archived
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+             Update filter
+            </button>
+
+            <p><a href="#">Reset to default</a></p>
+
         </div>
     </div>
     <div class="govuk-grid-column-two-thirds">
@@ -62,26 +148,23 @@
             </thead>
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header"><span class="govuk-caption-m">Guide</span>
+                <th scope="row" class="govuk-table__header">
                   <a href="#">Understand your Self Assessment tax bill</a> 
-
-                  <p class="govuk-body-m space-test-2">Maggie Simpson <a href="#">added an important note</a> on 14 August 2924</p>
-
-                  
-                  <!--
                 </br>
-                <details class="govuk-details space-test-2">
-                  <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                      View important note
-                    </span>
-                  </summary>
-                  <div class="govuk-details__text">
-                    <p>Important note content</p>
-                  </div>
-                </details>
-                -->
-                 
+                <p>/understand-self-assessment-bill</p>
+                  <details class="govuk-details space-test-3">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                  ... 
+                    </div>
+                  </details>
+
+
+               
               </th>
                 <td class="govuk-table__cell govuk-table__cell">14 August 2024</td>
                 <td class="govuk-table__cell govuk-table__cell">Aldous Huxley </td>
@@ -91,29 +174,23 @@
 
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header"><span class="govuk-caption-m">Answer</span>
+                <th scope="row" class="govuk-table__header">
                   <a href="#">Litigation friends: manage a Court Funds Office account</a> 
+                  <p>/court-money-children</p>
 
-                  <!--
-                </br>
-                <details class="govuk-details space-test-2">
-                  <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                      Details
-                    </span>
-                  </summary>
-                  <div class="govuk-details__text">
-                    <h2 class="govuk-heading-s">
-                      Edition
-                    </h2>
-                    <p>2</p>
-                    <h2 class="govuk-heading-s">
-                      Important note
-                    </h2>
-                    <p>Some long text, which is quite long and important, with critical details and next steps, added urgently</p>
-                  </div>
-                </details>
-                -->
+                  <details class="govuk-details space-test-3">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                  ... 
+                    </div>
+                  </details>
+
+
+                
                 </th>
                 <td class="govuk-table__cell govuk-table__cell">14 August 2024</td>
                 <td class="govuk-table__cell govuk-table__cell">Franz Kafka  </td>
@@ -122,24 +199,22 @@
                 </strong></td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header"><span class="govuk-caption-m">Simple Smart Answer</span><a href="#">What to do after a goose incident</a> 
-               
-                  <!-- 
-                </br>
-                <details class="govuk-details space-test-2">
-                  <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                      Details
-                    </span>
-                  </summary>
-                  <div class="govuk-details__text">
-                    <h2 class="govuk-heading-s">
-                      Edition
-                    </h2>
-                    <p>2</p>
-                  </div>
-                </details>
-                -->
+                <th scope="row" class="govuk-table__header"><a href="#">What to do after a goose incident</a> 
+                  <p>/after-a-goose-incident</p>
+                  <details class="govuk-details space-test-3">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                  ... 
+                    </div>
+                  </details>
+
+            
+              
+             
               </th>
                 <td class="govuk-table__cell govuk-table__cell">12 August 2024</td>
                 <td class="govuk-table__cell govuk-table__cell">Maggie Simpson</td>

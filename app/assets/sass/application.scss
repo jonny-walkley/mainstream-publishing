@@ -407,7 +407,7 @@ a.delete {
 }
 
 .filter-block {
-  background-color: govuk-colour("light-grey");
+  border: 2px solid govuk-colour("mid-grey");
   padding: govuk-spacing(6);
 }
 
