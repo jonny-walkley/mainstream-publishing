@@ -28,13 +28,59 @@
                 Send to 2i
               </label>
             </h1>
+            
+
+                  <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                            <h1 class="govuk-fieldset__heading">
+                             Is fact check required?
+                            </h1>
+                          </legend>   
+                       
+                        <div class="govuk-radios" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                            <label class="govuk-label govuk-radios__label" for="contact">
+                              <span class="govuk-body">Yes</span><br>
+        
+                            </label>
+                          </div>
+                          <div class="govuk-radios__conditional" id="conditional-contact">
+                            <div class="govuk-form-group govuk-form-group">
+                              <label class="govuk-label" for="contact-by-email">
+                                <span class="govuk-body govuk-body govuk-!-font-weight-bold">Email addresses for fact checkers</span> </br>
+                                <span class="govuk-hint"> Separate by commas, for example, name1@email.com, name2@email.com</br>
+                               </label></span>
+                              </label>
+                             
+                              <input class="govuk-input govuk-!-width-one-half govuk-input" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+                            </div>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
+                            <label class="govuk-label govuk-radios__label" for="contact-2">
+                              <span class="govuk-body">
+                              No
+                            </span>
+                            </label>
+                          </div>                  
+        
+                        </div>
+                      </fieldset>
+                    </div> 
+                  </div>
           
-            <div class="govuk-form-group">
+
+              <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                     <h1 class="govuk-fieldset__heading">
-                     Fact check required?
+                     Is it a quick fix?
                     </h1>
+                    <div id="passport-issued-hint" class="govuk-hint">
+                      Something is a quick fix if: it’s a simple and quick change, it does not need a fact check, you’re confident it will go though 2i without needing any changes, you're able to update the Welsh translation yourself (if there is one)
+                    </div>
                   </legend>
                   <div class="govuk-radios" data-module="govuk-radios">
                     <div class="govuk-radios__item">
@@ -51,23 +97,15 @@
                     </div>
                 </div>
                 </fieldset>
-              </div>
+                </div>
 
-              <div class="govuk-form-group">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                <h1 class="govuk-fieldset__heading">
-                    Primary fact check email contact
-                </h1>
-                <div class="govuk-hint">
-                    For example, name@email.com
-                  </div>
-                <input class="govuk-input" id="event-name" name="eventName" type="text">
-              </div>
+
+             
               <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                     <h1 class="govuk-fieldset__heading">
-                Publication date
+                Scheduled publication date
                 </h1>
               <div id="passport-issued-hint" class="govuk-hint">
                 For example, 27 3 2007
@@ -109,7 +147,7 @@
                             </legend>
             <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="14" aria-describedby="more-detail-hint"></textarea>
           </div>
-          </div>
+        
 
           
           
