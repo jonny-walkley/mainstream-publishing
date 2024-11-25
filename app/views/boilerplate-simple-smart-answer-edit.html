@@ -7,7 +7,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-  <h1 class="govuk-heading-xl">Find out if you're eligible for a dragon egg</h1>
+  <h1 class="govuk-heading-xl">Prepare a charity's annual accounts</h1>
 </div>
 </div>
 
@@ -215,7 +215,7 @@
                 <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="q-1">
                   Title
                 </label>
-                <input class="govuk-input" id="q-1" name="q-1" type="text" spellcheck="false" autocomplete="name" value="">
+                <input class="govuk-input" id="q-1" name="q-1" type="text" spellcheck="false" autocomplete="name" value="Is your charity a company?">
               </div>
               <div class="govuk-form-group">
                 <h1 class="govuk-label-wrapper">
@@ -226,7 +226,10 @@
                     Refer to the <a href="#">Govspeak guidance (opens in new tab)</a>
                      </div>
                 </h1>
-                <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="14" aria-describedby="more-detail-hint"></textarea>
+                <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="14" aria-describedby="more-detail-hint">
+Charitable incorporated organisations (CIOs) aren’t companies. 
+
+*[CIOS]: Charitable Incorporated Organisations</textarea>
 
               </div>
 
@@ -236,7 +239,7 @@
                 <label class="govuk-label govuk-body govuk-!-font-weight-normal" for="a-1">
                   Title
                 </label>
-                <input class="govuk-input" id="a-1" name="a-1" type="text" spellcheck="false" autocomplete="name" value="">
+                <input class="govuk-input" id="a-1" name="a-1" type="text" spellcheck="false" autocomplete="name" value="Yes">
               </div>
 
               <div class="govuk-form-group">
@@ -244,12 +247,32 @@
                   Next question for user
                 </label>
                 <select class="govuk-select wide" id="location" name="location" aria-describedby="location-hint">
-                  <option value="choose" selected>Choose</option>
-                  <option value="eligible">Outcome 1 (Likely eligible for dragon egg)</option>
-                  <option value="noteligible">Outcome 2 (Not eligible for dragon egg)</option>
+                  <option value="choose">Choose</option>
+                  <option value="nextq1" selected>Question 5 (How much money does your charitable company make each year?)</option>
+                  <option value="nextw1"></option>
              
                 </select>
+                </div>
 
+                <div class="govuk-form-group">
+                  <h2 class="govuk-heading-s">Answer 2</h2>
+                  <label class="govuk-label govuk-body govuk-!-font-weight-normal" for="a-1">
+                    Title
+                  </label>
+                  <input class="govuk-input" id="a-1" name="a-1" type="text" spellcheck="false" autocomplete="name" value="No">
+                </div>
+               
+  
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="location">
+                    Next question for user
+                  </label>
+                  <select class="govuk-select wide" id="location" name="location" aria-describedby="location-hint">
+                    <option value="choose">Choose</option>
+                    <option value="nextq1" selected>Question 8 (How much money does your charity make each year?)</option>
+                    <option value="nextw1"></option>
+                  </select>
+                   
                 <p>&nbsp;</p>
                 
                 <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
