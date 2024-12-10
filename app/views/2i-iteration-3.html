@@ -1,0 +1,201 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<a href="#" class="govuk-back-link">Back</a>
+
+<span class="govuk-caption-l">Document title</span>
+<h1 class="govuk-heading-xl">Send to 2i</h1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+     
+            
+
+                 
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  What best applies to this content?
+                </h1>
+              </legend>
+              <div id="contact-hint" class="govuk-hint">
+                Select all options that are relevant 
+              </div>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+                  <label class="govuk-label govuk-checkboxes__label" for="contact">
+                    Requires fact check
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-email">
+                      Email address
+                    </label>
+                    <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="contact-2" name="contact" type="checkbox" value="phone">
+                  <label class="govuk-label govuk-checkboxes__label" for="contact-2">
+                    Quick fix
+                  </label>
+                </div>
+                                
+              </div>
+            </fieldset>
+          </div>
+
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          <h1 class="govuk-fieldset__heading">
+                           What should happen after review?
+                          </h1>
+                          <div id="passport-issued-hint" class="govuk-hint">
+                            Once content is ready, what should happen next?
+                            </div>
+                        </legend>   
+                     
+                      <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email">
+                          <label class="govuk-label govuk-radios__label" for="contact">
+                            <span class="govuk-body">Publish</span><br>
+      
+                          </label>
+                        </div>
+                       
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone"  data-aria-controls="conditional-schedule">
+                          <label class="govuk-label govuk-radios__label" for="contact-2">
+                            <span class="govuk-body">
+                            Schedule
+                          </span>
+                          </label>
+                        </div>   
+                        <div class="govuk-radios__conditional" id="conditional-schedule">
+                            <div class="govuk-form-group govuk-form-group">
+                              <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                    <h1 class="govuk-fieldset__heading">
+                                      Publication date
+                                    </h1>
+                                  </legend>
+                                  <div id="passport-issued-hint" class="govuk-hint">
+                                    For example, 27 3 2007
+                                  </div>
+                                  <div class="govuk-date-input" id="passport-issued">
+                                    <div class="govuk-date-input__item">
+                                      <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                          Day
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                                      </div>
+                                    </div>
+                                    <div class="govuk-date-input__item">
+                                      <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                          Month
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                                      </div>
+                                    </div>
+                                    <div class="govuk-date-input__item">
+                                      <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                          Year
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </fieldset>
+                              </div>
+                               </div>
+                          </div>               
+      
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="phone">
+                            <label class="govuk-label govuk-radios__label" for="contact-3">
+                              <span class="govuk-body">
+                              Leave in 'Ready'
+                            </span>
+                            </label>
+                          </div>  
+                      </div>
+                    </fieldset>
+                  </div> 
+             
+            
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h1 class="govuk-fieldset__heading">
+                            Change note</h1>
+                            </legend>
+                            <div id="passport-issued-hint" class="govuk-hint">
+                                Explain what changes you did or did not make and why. Include a link to the relevant Zendesk ticket and Trello card. If you’ve added a change note already, you do not need to add another one. </p>
+                    </div>
+                               <p><a href="#">Read the guidance on writing good change notes on the GOV.UK wiki (opens in a new tab.) </a> </p>
+                    
+            <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="8" aria-describedby="more-detail-hint"></textarea>
+          </div>
+        
+
+          
+          
+            <div class="govuk-button-group space-test">
+                
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                  Send to 2i
+                </button>
+            
+                <a class="govuk-link" href="#">Cancel</a>
+
+            
+              </div>
+
+
+
+          </div>    
+          </div>
+
+        </fieldset>
+
+
+       
+      
+      
+      
+      <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                
+        </div>
+      </div>
+    </main>
+  </div>
+
+ 
+
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
