@@ -620,8 +620,14 @@ diff ul .del2::before, .diff ul .ins2::before {
   .smart-answer-quick-links {
     line-height: 80% !important; 
   }
-  
+
   select.time-box  {
-    max-width: 50px !important;
-    background: pink;
+    display: inline-block;
+    max-width: 4.5em;
+    min-width: 4.5em;
+  }
+
+  .group {
+    display: inline-block;
+    margin-right: 20px;
   }
