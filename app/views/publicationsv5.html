@@ -1,0 +1,288 @@
+{% extends "layouts/main.html" %}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+{% from "govuk/components/table/macro.njk" import govukTable %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% block pageTitle %}
+  Publications - GOV.UK {{ serviceName }} - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Publications</h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+    <div class="filter-alt">
+      <h2 class="govuk-heading-m">Filter</h2>
+
+      {{ govukInput({
+      label: {
+        text: "Title or slug"
+      },
+      id: "title-or-slug",
+      name: "titleOrSlug"
+      }) }}
+
+      {{ govukSelect({
+      id: "assigned-to",
+      name: "assignedTo",
+      label: {
+        text: "Assigned to"
+      },
+      items: [
+        {
+        value: "all-assignees",
+        text: "All assignees",
+        selected: "true"
+        },
+        {
+        value: "joe-bloggs-you",
+        text: "Joe Bloggs (You)"
+        },
+        {
+        value: "aaron-aardvark",
+        text: "Aaron Aardvark"
+        },
+        {
+        value: "aaron-zender",
+        text: "Aaron Zender"
+        },
+        {
+        value: "aldous-huxley",
+        text: "Aldous Huxley"
+        },
+        {
+        value: "franz-kafka",
+        text: "Franz Kafka"
+        },
+        {
+        value: "genie-reigns",
+        text: "Genie Reigns"
+        },
+        {
+        value: "juliette-barnes",
+        text: "Juliette Barnes"
+        }
+      ]
+      }) }}
+
+      {{ govukSelect({
+        id: "content-type",
+        name: "contentType",
+        label: {
+          text: "Content type"
+        },
+        items: [
+          {
+          value: "all",
+          text: "All",
+          selected: "true"
+          },
+          {
+          value: "answer",
+          text: "Answer"
+          },
+          {
+          value: "guide",
+          text: "Guide"
+          },
+          {
+          value: "simple-smart-answer",
+          text: "Simple Smart Answer"
+          }
+        ]
+      }) }}
+
+      {{ govukCheckboxes({
+        name: "status",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "Status",
+            isPageHeading: false,
+            classes: "govuk-fieldset"
+          }
+        },
+      hint: {
+          text: "Select all that apply"
+      },
+      items: [
+        {
+        value: "drafts",
+        text: "Drafts",
+        checked: false
+        },
+        {
+        value: "in-review",
+        text: "In review",
+        checked: false
+        },
+        {
+        value: "amends-needed",
+        text: "Amends needed",
+        checked: false
+        },
+        {
+        value: "out-for-fact-check",
+        text: "Out for fact check",
+        checked: false
+        },
+        {
+        value: "fact-check-reviewed",
+        text: "Fact check reviewed",
+        checked: false
+        },
+        {
+        value: "ready",
+        text: "Ready",
+        checked: false
+        },
+        {
+        value: "scheduled",
+        text: "Scheduled"
+        },
+        {
+        value: "published",
+        text: "Published"
+        },
+        {
+        value: "archived",
+        text: "Archived"
+        }
+      ]
+      }) }}
+
+      <div class="govuk-button-group" style="margin-bottom: 0;">
+        {{ govukButton({
+          text: "Apply filters"
+        }) }}
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Clear filters</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m govuk-!-margin-bottom-2" style="padding-top: 0;">1,241 publications</caption>
+       
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Title</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header">Updated</th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <a href="#" class="govuk-link--no-visited-state">Understand your Self Assessment tax bill</a> 
+            <span class="govuk-caption-m" style="margin-top: 5px; font-size: 16px;">
+                Guide, #42 &nbsp;&ndash;&nbsp; Aldous Huxley
+            </span>
+            <details class="govuk-details space-test-2" style="margin-bottom: 5px; margin-top: 15px;">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">Details</span>
+              </summary>
+              <div class="govuk-details__text">
+                <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Important note</h2>
+                <p>Some long text, which is quite long and important, with critical details and next steps, added urgently</p>
+              </div>
+            </details>
+          </th>
+          <td class="govuk-table__cell">
+            <span class="govuk-tag govuk-tag--purple">Fact check</span>
+          </td>
+          <td class="govuk-table__cell">11 Jan 2025</td>
+        </tr>
+              
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <a href="#" class="govuk-link--no-visited-state">Changes that affect your tax credits</a>
+            <span class="govuk-caption-m" style="margin-top: 5px; font-size: 16px;">
+              Answer, #27 &nbsp;&ndash;&nbsp; Franz Kafka
+            </span>
+            <details class="govuk-details space-test-2" style="margin-bottom: 5px; margin-top: 15px;">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">Details</span>
+              </summary>
+              <div class="govuk-details__text">
+                <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Important note</h2>
+                <p>Some long text, which is quite long and important, with critical details and next steps, added urgently</p>
+              </div>
+            </details>
+          </th>
+          <td class="govuk-table__cell">
+            <span class="govuk-tag govuk-tag--yellow">Draft</span>
+          </td>
+          <td class="govuk-table__cell">11 Jan 2025</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <a href="#" class="govuk-link--no-visited-state">Check how to claim a tax refund</a>
+            <span class="govuk-caption-m" style="margin-top: 5px; font-size: 16px;">
+              Simple Smart Answer, #4 &nbsp;&ndash;&nbsp; Genie Reigns
+            </span>
+            <details class="govuk-details space-test-2" style="margin-bottom: 5px; margin-top: 15px;">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">Details</span>
+              </summary>
+              <div class="govuk-details__text">
+                <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Important note</h2>
+                <p>Some long text, which is quite long and important, with critical details and next steps, added urgently</p>
+              </div>
+            </details>
+          </th>
+          <td class="govuk-table__cell">
+            <span class="govuk-tag govuk-tag--green">Ready</span>
+          </td>
+          <td class="govuk-table__cell">10 Jan 2025</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <a href="#" class="govuk-link--no-visited-state">Get your visa, immigration or citizenship documents back</a>
+            <span class="govuk-caption-m" style="margin-top: 5px; font-size: 16px;">
+              Answer, #21 &nbsp;&ndash;&nbsp; Juliette Barnes
+            </span>
+            <details class="govuk-details space-test-2" style="margin-bottom: 5px; margin-top: 15px;">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">Details</span>
+              </summary>
+              <div class="govuk-details__text">
+                <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Important note</h2>
+                <p>Some long text, which is quite long and important, with critical details and next steps, added urgently</p>
+              </div>
+            </details>
+          </th>
+          <td class="govuk-table__cell">
+            <span class="govuk-tag govuk-tag--orange">Published</span>
+          </td>
+          <td class="govuk-table__cell">9 Jan 2025</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>    
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}

@@ -7,13 +7,46 @@
 // 
 
 // Add extra styles here
+
 .govuk-width-container {
     max-width: 1140px;
 }
 
-
 .filter {
     background-color: govuk-colour("light-grey");
+}
+
+.filter-alt {
+  background-color: govuk-colour("light-grey");
+  padding: govuk-spacing(4);
+}
+
+.filter-alt .govuk-form-group {
+  margin-bottom: 20px;
+}
+
+.filter-alt .govuk-select {
+  width: 100%;
+}
+
+.filter-alt .govuk-checkboxes__input {
+  z-index: 0;
+  width: 23px;
+  opacity: 1;
+  margin-left: 10px;
+}
+
+input[type="checkbox"]:checked {
+  z-index: 0;
+  width: 23px;
+  opacity: 0;
+  margin-left: 10px;
+  accent-color: white;
+  -moz-appearance: none;
+}
+
+.filter-alt .govuk-button, .govuk-link {
+  margin-bottom: 0 !important;
 }
 
 .full-width {
