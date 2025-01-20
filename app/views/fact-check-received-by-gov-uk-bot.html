@@ -1,0 +1,405 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">Document title</h1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <table class="govuk-table">
+                  
+                   
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Assigned to</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">Jane Price</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="edit">Edit</a></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Content type</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">Guide</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Edition</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">1   <strong class="govuk-tag govuk-tag--pink">
+                          Fact check received
+                        </strong></td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Tickets</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Trello</a>, <a href="#">Zendesk</a></td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="edit">Edit</a></td>
+                      </tr>
+                            
+                    </tbody>
+                  </table>         
+                </div>
+
+          </div>
+
+
+          <div class="important-note">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+
+            <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                <div class="govuk-notification-banner__header">
+                  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                    Key notes for Jane Price (reviewer)
+                  </h2>
+                </div>
+                <div class="govuk-notification-banner__content">
+    
+                    
+                    <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                            Fact check required
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            Yes
+                          </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                            Quick fix
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            No
+                          </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                            Notes
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            Some freetext notes
+                          </dd>
+                        </div>
+                      </dl>
+                      <p>Added by Rebecca Cookson on 12 December 2024. </br><a href="2i-iteration-3.html">Update this information</a></p>
+                </div>
+              </div>
+              </div>
+              </div>
+  
+    </div>
+
+
+          <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+            <ul class="moj-sub-navigation__list">
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="boilerplate-guide-edit.html">Edit</a>
+              </li>
+          
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="boilerplate-guide-tagging-summary.html">Tagging</a>
+              </li>
+          
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="boilerplate-guide-metadata.html">Metadata</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" aria-current="page" href="#4">History and notes</a>
+              </li>
+         
+
+            <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="boilerplate-guide-admin.html">Admin</a>
+              </li>
+        
+
+            <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="boilerplate-guide-related.html">Related external links</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="boilerplate-guide-unpublish.html">Unpublish</a>
+              </li>
+            </ul>
+          
+          </nav>
+        
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <div class="govuk-inset-text">
+            Send fact check responses to <a href="#">govuk-fact-check-integration@digital.cabinet-office.gov.uk</a> and include [66c43d95c1c4af0013fbaf4f] in the subject line.
+          </div>
+
+
+            <h2 class="govuk-heading-m">History and notes</h2>
+
+
+
+
+
+
+
+
+            {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+            {{ govukAccordion({
+              id: "accordion-with-summary-sections",
+              items: [
+                {
+                  heading: {
+                    text: "Edition 4"
+                  },
+                  content: {
+                    html:
+                    '
+                    <p><a href="#" class="govuk-link govuk-link--no-visited-state">Compare with Edition 3</a></p>
+                    <p class="govuk-body">
+                        9:26am, 14 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">Fact check received by GOV.UK Bot</span>
+                    </p>
+                    <div class="govuk-warning-text">
+                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                        <strong class="govuk-warning-text__text">
+                            <span class="govuk-visually-hidden">Warning</span>
+                            We found some potentially harmful content in this email which has been automatically removed.
+                            Please check the content of the message in case any text has been deleted as well.
+                        </strong>
+                    </div>
+                    <div class="govuk-inset-text" style="background-color: #EDF3F9;">
+                        <p>Hi,</p>
+                        <p>We have reviewed the proposed start pages and we have the following issue with the content:</p>
+                        <p>There is a reference to the ‘patent register’ we are not able to call it a register due to legal constraints, it needs to be referred to as ‘search for a patent service’ instead.</p>
+                        <p>If you have any questions please ask</p>
+                        <p>Thanks</p>
+                        <p>Jane</p>
+                        <p>
+                            From: GOV.UK Publishing <gov.uk.publishing@notifications.service.gov.uk></br>
+                            Sent: Wednesday, January 8, 2025 1:40 PM</br>
+                            To: Jane Doe <jane.doe@example.email.gov.uk></br>
+                            Subject: ‘[Check the patents journal]’ GOV.UK preview of new edition
+                        </p>
+                        <p>Hi,</p>
+                        <p>We need you to check the factual accuracy of changes made to ‘Check the patents journal’ before it’s published on GOV.​UK.</p>
+                        <p>The GOV.​UK Content Team made the changes because of the new digital service #5893029. Deadline: 16 January 2025 (5 working days)...</p>
+                        <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">Show earlier messages</a>
+                    </div>
+                    '
+                  },
+                  expanded: true
+                },
+                {
+                  heading: {
+                    text: "Edition 3"
+                  },
+                  content: {
+                    html:
+                    '<ul class="govuk-list">
+                        <li>
+                          <a class="govuk-link" href="#">Creating an agile working environment</a>
+                        </li>
+                        <li>
+                          <a class="govuk-link" href="#">Agile tools and techniques</a>
+                        </li>
+                        <li>
+                          <a class="govuk-link" href="#">Set up a team wall</a>
+                        </li>
+                        <li>
+                          <a class="govuk-link" href="#">Writing user stories</a>
+                        </li>
+                        <li>
+                          <a class="govuk-link" href="#">Planning in agile</a>
+                        </li>
+                        <li>
+                          <a class="govuk-link" href="#">Deciding on priorities</a>
+                        </li>
+                        <li>
+                          <a class="govuk-link" href="#">Developing a roadmap</a>
+                        </li>
+                    </ul>'
+                  }
+                },
+                {
+                  heading: {
+                    text: "Edition 2"
+                  },
+                  content: {
+                    html:
+                    '<ul class="govuk-list">
+                        <li>
+                          <a class="govuk-link" href="#">Governance principles for agile service delivery</a>
+                        </li>
+                        <li>
+                          <a class="govuk-link" href="#">Measuring and reporting progress</a>
+                        </li>
+                        <li>
+                          <a class="govuk-link" href="#">Spend controls: check if you need approval to spend money on a service</a>
+                        </li>
+                        <li>
+                          <a class="govuk-link" href="#">Spend controls: apply for approval to spend money on a service</a>
+                        </li>
+                        <li>
+                          <a class="govuk-link" href="#">Spend controls: the new pipeline process</a>
+                        </li>
+                        <li>
+                          <a class="govuk-link" href="#">Working across organisational boundaries</a>
+                        </li>
+                    </ul>'
+                  }
+                },
+                {
+                  heading: {
+                    text: "Edition 1"
+                  },
+                  content: {
+                    html:
+                    '<ul class="govuk-list">
+                        <li>
+                          <a class="govuk-link" href="#">How the discovery phase works</a>
+                        </li>
+                        <li>
+                          <a class="govuk-link" href="#">How the alpha phase works</a>
+                        </li>
+                        <li>
+                          <a class="govuk-link" href="#">How the beta phase works</a>
+                        </li>
+                        <li>
+                          <a class="govuk-link" href="#">How the live phase works</a>
+                        </li>
+                        <li>
+                          <a class="govuk-link" href="#">Retiring your service</a>
+                        </li>
+                    </ul>'
+                  }
+                }
+              ]
+            }) }}
+
+
+
+
+            <!-- <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+                <div class="govuk-accordion__section govuk-accordion__section--expanded">
+                  <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                      <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                       Edition 4
+                      </span>
+                    </h2>
+                  </div>
+                  <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+                    <p><a href="#">Compare with Edition 3</a></p>
+                    <p class="govuk-body">
+                        1:45pm, 24 August 2024 </br>
+                    <span class="govuk-!-font-weight-bold">Publish by Aldous Huxley</span> </p>
+                  </div>
+                </div>
+                <div class="govuk-accordion__section">
+                  <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                      <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                        Edition 3
+                      </span>
+                    </h2>
+                  </div>
+                  <div id="accordion-default-content-2" class="govuk-accordion__section-content">
+                    <p><a href="#">Compare with Edition 2</a></p>
+                    <p class="govuk-body">
+                        9:00am, 14 August 2024 </br>
+                    <span class="govuk-!-font-weight-bold">Note by Bertrand Russell</span> </p>  
+                    <div class="govuk-inset-text">
+                        <p>
+                        Just changing the slug (previously 2ied and signed off).</p>
+                        <p>
+                        FROM</p>
+                        <p>
+                        get-your-dog-microchipped
+                    </p>
+                        <p>TO</p>
+                        <p>
+                        get-your-dog-cat-microchipped
+                    </p>
+                                         </div>             
+                
+                </div>
+                </div>
+                <div class="govuk-accordion__section">
+                  <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                      <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                        Edition 2
+                      </span>
+                    </h2>
+                  </div>
+                  <div id="accordion-default-content-3" class="govuk-accordion__section-content">
+                    <p><a href="#">Compare with Edition 1</a></p>
+                    <p class="govuk-body">
+                        5:00pm, 4 August 2024 </br>
+                    <span class="govuk-!-font-weight-bold">Publish by Franz Kafka</span> </p>                 
+                 </div>
+                </div>
+                <div class="govuk-accordion__section">
+                  <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                      <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                        Edition 1
+                      </span>
+                    </h2>
+                  </div>
+                  <div id="accordion-default-content-4" class="govuk-accordion__section-content">
+                    <p class="govuk-body">
+                        2:00pm, 2 August 2024 </br>
+                    <span class="govuk-!-font-weight-bold">Create by Franz Kafka</span> </p>
+                </div>
+                </div>
+              </div> -->
+
+        </div>
+
+        <div class="govuk-grid-column-one-third sticky">
+            <div class="actions-panel">
+          <h3 class="govuk-heading-s">Options</h3>
+
+            <a href="boilerplate-guide-history-edition-note.html">
+          <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">
+            Add edition note
+          </button>
+        </a>
+
+        <a href="boilerplate-guide-history-update-impt-note.html">
+          <button type="submit" class="govuk-button govuk-button--secondary govuk-button wide" data-module="govuk-button">
+           Update important note
+          </button>
+        </a>
+
+          <p class="govuk-body"><a href="#">Preview (opens in new tab)</a></p>
+          <p class="govuk-body"><a href="2i-iteration.html">Submit for 2i</a></p>
+    
+        </div>
+        </div>
+
+      </div>
+      
+    </main>
+  </div>
+
+ 
+
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
