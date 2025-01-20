@@ -5,47 +5,58 @@
 {% endblock %}
 
 {% block content %}
-  <h1 class="govuk-heading-xl">Document title</h1>
 
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-              <table class="govuk-table">
-                  
-                <tbody class="govuk-table__body">
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Assigned to</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">Alex Hill</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="edit">Edit</a></td>
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Content type</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">Guide</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Reviewer</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">No reviewer assigned</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Edition</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">32   <strong class="govuk-tag govuk-tag--blue">
-                      Awaiting 2i 
-                    </strong></td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-                  </tr>
-                  
-                </tbody>
-              </table>            
-                </div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
 
-          </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      
+        {% set html %}
+          <h3 class="govuk-notification-banner__heading">Sent for 2i</h3>
+        {% endset %}
+
+        {{ govukNotificationBanner({
+          html: html,
+          type: "success"
+        }) }}
+
+        <h1 class="govuk-heading-xl">Document title</h1>
+              
+        <table class="govuk-table"> 
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Assigned to</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">Alex Hill</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="edit">Edit</a></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Content type</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">Guide</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Reviewer</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">No reviewer assigned</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Edition</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">32   <strong class="govuk-tag govuk-tag--grey">
+                In review 
+              </strong></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+            </tr>
+          </tbody>
+        </table>            
+      
+      </div>
+    </div>
 
           <div class="govuk-inset-text">
-        <p>You've sent this edition to be reviewed.</p>
+        <p>You’ve sent this edition to be reviewed.</p>
         <p><a href="boilerplate-guide-2i-skip-review">Skip review</a></p>
           </div>
 
