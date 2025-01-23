@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "2i-flow-edit.html"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+                <span class="govuk-caption-l">Document title</span>
+                <label class="govuk-label govuk-label--xl" for="more-detail">Send to 2i</label>
+            </h1>
+            <div id="more-detail-hint" class="govuk-hint">
+                Explain what changes you did or did not make and why. Include a link to the relevant Zendesk ticket and Trello card. If you’ve added a change note already, you do not need to add another one. <a class="govuk-link--no-visited-state" href="https://gov-uk.atlassian.net/l/cp/dwn06raQ" rel="noreferrer noopener" target="_blank">Read guidance on writing good change notes (opens in new tab)</a>.
+            </div>
+            <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="14" aria-describedby="more-detail-hint"></textarea>
+        </div>
+        
+        <form class="form" action="2i-flow-edit-success" method="post">
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+            <div class="govuk-button-group">
+                {{ govukButton({
+                    text: "Send to 2i"
+                }) }}
+                <a class="govuk-link govuk-link--no-visited-state" href="2i-flow-edit.html">Cancel</a>
+            </div>
+        </form>
+
+    </div>    
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
