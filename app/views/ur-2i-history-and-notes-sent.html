@@ -5,13 +5,14 @@
 {% endblock %}
 
 {% block content %}
-  <h1 class="govuk-heading-xl">Document title</h1>
-
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-xl">Ask the government to sell property: right to contest</h1>
+
                 <table class="govuk-table">
                    
                     <tbody class="govuk-table__body">
@@ -27,7 +28,7 @@
                       </tr>
                       <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Edition</th>
-                        <td class="govuk-table__cell govuk-table__cell--numeric">1 <strong class="govuk-tag govuk-tag--grey">
+                        <td class="govuk-table__cell govuk-table__cell--numeric">2 <strong class="govuk-tag govuk-tag--grey">
                           In review
                         </strong></td>
                         <td class="govuk-table__cell govuk-table__cell--numeric"></td>
@@ -137,7 +138,7 @@
                             Notes
                           </dt>
                           <dd class="govuk-summary-list__value">
-                            Some freetext notes
+                            Please leave a comment on the Trello card - no need to move the card
                           </dd>
                           
                         </div>
@@ -169,7 +170,7 @@
               items: [
                 {
                   heading: {
-                    text: "Edition 1"
+                    text: "Edition 2"
                   },
                   content: {
                     html:
@@ -179,9 +180,23 @@
                         <span class="govuk-!-font-weight-bold">2i requested by Aldous Huxley</span>
                     </p>
                     <div class="govuk-inset-text">
-                        Some freetext notes
+                        Changing "Land Registry" to "HM Land Registry", and editing uses of "eg"</br></br>
+                        Changed all instances of "Land Registry" to "HM Land Registry".</br></br>
+                        ALSO:</br></br>
+                        Deleted answer summary markdown</br>
+                        CHANGED</br>
+                        $!You can ask for publicly owned land or buildings to be sold if you think they’re vacant or underused.$!</br>
+                        TO</br>
+                        You can ask for publicly owned land or buildings to be sold if you think they’re vacant or underused.</br></br>
+                        CHANGED</br></br>
+                        * the land or buildings aren’t safe for your proposed use, eg if they’re part of a port, army barracks or on a flood plain</br>
+                        * they’ve plans for the land, eg for a railway or road</br>
+                        * the cost of selling wouldn’t be good value for the taxpayer, eg moving to another site would cost more than the value of the property</br></br>
+                        TO</br></br>
+                        * the land or buildings aren’t safe for your proposed use, for example if they’re part of a port, army barracks or on a flood plain</br>
+                        * they’ve plans for the land, such as for a railway or road</br>
+                        * the cost of selling wouldn’t be good value for the taxpayer, for example if moving to another site would cost more than the value of the property
                     </div>
-
                     <p class="govuk-body">
                         1:46pm, 27 January 2025</br>
                         <span class="govuk-!-font-weight-bold">Assigned to Aldous Huxley</span>
@@ -193,6 +208,37 @@
                     '
                   },
                   expanded: true
+                },
+                {
+                    heading: {
+                    text: "Edition 1"
+                  },
+                  content: {
+                    html:
+                    '
+                    <p class="govuk-body">
+                        12:29pm, 10 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">Published by Franz Kafka</span>
+                    </p>
+                    <p class="govuk-body">
+                        12:20pm, 10 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">21 approved by Franz Kafka</span>
+                    </p>
+                    <p class="govuk-body">
+                        2:05pm, 9 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">2i requested by Jane Price</span>
+                    </p>
+                    <p class="govuk-body">
+                        7:34am, 8 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">Assigned to Jane Price</span>
+                    </p>
+                    <p class="govuk-body">
+                        7:33am, 8 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">Created by Jane Price</span>
+                    </p>
+                    '
+                  },
+                  expanded: false
                 }
               ]
             }) }}

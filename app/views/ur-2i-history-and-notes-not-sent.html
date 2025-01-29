@@ -5,13 +5,14 @@
 {% endblock %}
 
 {% block content %}
-  <h1 class="govuk-heading-xl">Document title</h1>
-
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-xl">Ask the government to sell property: right to contest</h1>
+
                 <table class="govuk-table">
                   
                    
@@ -28,7 +29,7 @@
                       </tr>
                       <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Edition</th>
-                        <td class="govuk-table__cell govuk-table__cell--numeric">1 <strong class="govuk-tag govuk-tag--yellow">
+                        <td class="govuk-table__cell govuk-table__cell--numeric">2 <strong class="govuk-tag govuk-tag--yellow">
                           Draft
                         </strong></td>
                         <td class="govuk-table__cell govuk-table__cell--numeric"></td>
@@ -97,8 +98,8 @@
               rememberExpanded: false,
               items: [
                 {
-                  heading: {
-                    text: "Edition 1"
+                    heading: {
+                    text: "Edition 2"
                   },
                   content: {
                     html:
@@ -109,11 +110,42 @@
                     </p>
                     <p class="govuk-body">
                         1:45pm, 27 January 2025</br>
-                        <span class="govuk-!-font-weight-bold">Created by Aldous Huxley</span>
+                        <span class="govuk-!-font-weight-bold">New edition by Aldous Huxley</span>
                     </p>
                     '
                   },
                   expanded: true
+                },
+                {
+                    heading: {
+                    text: "Edition 1"
+                  },
+                  content: {
+                    html:
+                    '
+                    <p class="govuk-body">
+                        12:29pm, 10 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">Published by Franz Kafka</span>
+                    </p>
+                    <p class="govuk-body">
+                        12:20pm, 10 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">21 approved by Franz Kafka</span>
+                    </p>
+                    <p class="govuk-body">
+                        2:05pm, 9 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">2i requested by Jane Price</span>
+                    </p>
+                    <p class="govuk-body">
+                        7:34am, 8 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">Assigned to Jane Price</span>
+                    </p>
+                    <p class="govuk-body">
+                        7:33am, 8 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">Created by Jane Price</span>
+                    </p>
+                    '
+                  },
+                  expanded: false
                 }
               ]
             }) }}
