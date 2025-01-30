@@ -85,12 +85,8 @@ height: 40px}
     padding-bottom: 0;
 }
 
-
 .selected {
     border-bottom: 5px solid $govuk-brand-colour;
-}
-
-.delete a, a:visited {
 }
 
 .sticky {
@@ -100,16 +96,11 @@ height: 40px}
     margin-top: -20px;
 }
 
-
 .actions-panel {
     top: 0;    
     border-top: 3px solid $govuk-brand-colour; 
     padding: 10px 10px 10px 0;
     margin-top: 20px;
-}
-
-
-.govuk-header__container--full-width {
 }
 
 .line {
@@ -551,10 +542,6 @@ height: 100%;
 
 // Second variant // 
 
-
-.diff2 {
-}
-
 .diff ul li {
   min-height: 24px;
   margin: 0 -15px;
@@ -624,8 +611,6 @@ diff ul .del2::before, .diff ul .ins2::before {
   height: 100%;
 }
 
-  ins2 {
-  }
 
   del2 {
     text-decoration: none;
