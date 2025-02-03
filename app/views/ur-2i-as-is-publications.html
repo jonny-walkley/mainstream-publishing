@@ -1,0 +1,407 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<h1 class="govuk-heading-xl">Publications</h1>
+
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+        <div class="filter-block">
+            <h2 class="govuk-heading-m">Filter</h2>
+
+        <!--
+            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Clear all
+            </button>
+            -->
+            <div class="govuk-form-group">
+              <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--s" for="event-name">
+                  Search
+                </label>
+                <div id="search" class="govuk-hint">Search by title or slug</div>
+              </h1>
+              <input class="govuk-input" id="event-name" name="eventName" type="text">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" for="event-name">
+                Assigned to
+              </label>
+              <select class="govuk-select full-width" id="sort" name="sort">
+                <option value="all" selected>All assignees</option>
+                <option value="guide">Me (Rebecca Cottrell)</option>
+                <option value="ssa">Thom Yorke</option>
+                <option value="answer">Aldous Huxley</option>
+              </select>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" for="event-name">
+                Content type
+              </label>
+              <select class="govuk-select full-width" id="sort" name="sort">
+                <option value="all" selected>All</option>
+                <option value="guide">Guide</option>
+                <option value="ssa">Simple Smart Answer</option>
+                <option value="answer">Answer</option>
+              </select>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                <legend class="govuk-label govuk-label-s">
+                  <label class="govuk-label govuk-label--s" for="event-name">
+                    Status
+                  </label>
+                </legend>
+                <div id="nationality-hint" class="govuk-hint">
+                  Select all that apply.
+                </div>
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Deselect all
+                </button>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="drafts" aria-describedby="nationality-item-hint" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      Drafts
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="nationality-2" name="nationality" type="checkbox" value="review" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality-2">
+                      In review
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="amends" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
+                      Amends needed
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="nationality-4" name="nationality" type="checkbox" value="ofc" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality-4">
+                      Out for fact check
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="nationality-5" name="nationality" type="checkbox" value="fcr" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality-5">
+                      Fact check received
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="nationality-6" name="nationality" type="checkbox" value="ready" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality-6">
+                     Ready
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="nationality-7" name="nationality" type="checkbox" value="scheduled">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality-7">
+                     Scheduled
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="nationality-8" name="nationality" type="checkbox" value="published">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality-8">
+                     Published
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="nationality-9" name="nationality" type="checkbox" value="archived">
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality-9">
+                     Archived
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+             Search
+            </button>
+
+            <p><a href="#" class="govuk-link--no-visited-state">Reset to default</a></p>
+
+        </div>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m border-bottom">50 documents</caption>
+
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Title</th>
+                <th scope="col" class="govuk-table__header govuk-table__header">Updated</th>
+                <th scope="col" class="govuk-table__header govuk-table__header">Assigned to</th>
+                <th scope="col" class="govuk-table__header govuk-table__header">Status</th>
+
+              </tr>
+            </thead>
+   
+            <tbody class="govuk-table__body">
+   
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <a href="ur-2i-edit.html" class="govuk-link--no-visited-state">Ask the government to sell property: right to contest</a> 
+                        </br>
+                        <p>/right-to-contest-answer</p>
+                        <details class="govuk-details space-test-3">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Details
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                ... 
+                            </div>
+                        </details>
+                    </th>
+                    <td class="govuk-table__cell govuk-table__cell">27 Jan 2025</td>
+                    <td class="govuk-table__cell govuk-table__cell">Aldous Huxley</td>
+                    <td class="govuk-table__cell govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Draft</strong></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <a href="#" class="govuk-link--no-visited-state">UK Crown Dependencies and Overseas Territories</a> 
+                        </br>
+                        <p>/crown-dependencies-overseas-territories</p>
+                        <details class="govuk-details space-test-3">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Details
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                ... 
+                            </div>
+                        </details>
+                    </th>
+                    <td class="govuk-table__cell govuk-table__cell">27 Jan 2025</td>
+                    <td class="govuk-table__cell govuk-table__cell">Genie Reigns</td>
+                    <td class="govuk-table__cell govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">In review</strong></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <a href="#" class="govuk-link--no-visited-state">Pay a penalty to Companies House</a> 
+                        </br>
+                        <p>/pay-penalty-companies-house</p>
+                        <details class="govuk-details space-test-3">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Details
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                ... 
+                            </div>
+                        </details>
+                    </th>
+                    <td class="govuk-table__cell govuk-table__cell">27 Jan 2025</td>
+                    <td class="govuk-table__cell govuk-table__cell">Regina Harwood</td>
+                    <td class="govuk-table__cell govuk-table__cell"><strong class="govuk-tag govuk-tag--pink">Fact check received</strong></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <a href="#" class="govuk-link--no-visited-state">Online immigration status (eVisa)</a> 
+                        </br>
+                        <p>/evisas</p>
+                        <details class="govuk-details space-test-3">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Details
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                ... 
+                            </div>
+                        </details>
+                    </th>
+                    <td class="govuk-table__cell govuk-table__cell">26 Jan 2025</td>
+                    <td class="govuk-table__cell govuk-table__cell">Andre Haines</td>
+                    <td class="govuk-table__cell govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Draft</strong></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <a href="#" class="govuk-link--no-visited-state">Set up a private limited company</a> 
+                        </br>
+                        <p>/limited-company-formation</p>
+                        <details class="govuk-details space-test-3">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Details
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                ... 
+                            </div>
+                        </details>
+                    </th>
+                    <td class="govuk-table__cell govuk-table__cell">26 Jan 2025</td>
+                    <td class="govuk-table__cell govuk-table__cell">Jo Hawkins</td>
+                    <td class="govuk-table__cell govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Ready</strong></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <a href="#" class="govuk-link--no-visited-state">Apply for a Northern Ireland pet travel document</a> 
+                        </br>
+                        <p>/apply-for-northern-ireland-pet-travel-document</p>
+                        <details class="govuk-details space-test-3">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Details
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                ... 
+                            </div>
+                        </details>
+                    </th>
+                    <td class="govuk-table__cell govuk-table__cell">26 Jan 2025</td>
+                    <td class="govuk-table__cell govuk-table__cell">Mandeep Dale</td>
+                    <td class="govuk-table__cell govuk-table__cell"><strong class="govuk-tag govuk-tag--pink">Fact check</strong></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <a href="#" class="govuk-link--no-visited-state">Personal tax account: sign in or set up</a> 
+                        </br>
+                        <p>/personal-tax-account</p>
+                        <details class="govuk-details space-test-3">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Details
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                ... 
+                            </div>
+                        </details>
+                    </th>
+                    <td class="govuk-table__cell govuk-table__cell">26 Jan 2025</td>
+                    <td class="govuk-table__cell govuk-table__cell">Sylvia Allison</td>
+                    <td class="govuk-table__cell govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">In review</strong></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <a href="#" class="govuk-link--no-visited-state">Apply as a child to join or stay with a close relative in the UK</a> 
+                        </br>
+                        <p>/apply-as-child-to-join-or-stay-with-close-relative</p>
+                        <details class="govuk-details space-test-3">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Details
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                ... 
+                            </div>
+                        </details>
+                    </th>
+                    <td class="govuk-table__cell govuk-table__cell">26 Jan 2025</td>
+                    <td class="govuk-table__cell govuk-table__cell">Francesca Nightingale</td>
+                    <td class="govuk-table__cell govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Ready</strong></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <a href="#" class="govuk-link--no-visited-state">Registered Traveller: faster entry through the UK border</a> 
+                        </br>
+                        <p>/registered-traveller</p>
+                        <details class="govuk-details space-test-3">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Details
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                ... 
+                            </div>
+                        </details>
+                    </th>
+                    <td class="govuk-table__cell govuk-table__cell">26 Jan 2025</td>
+                    <td class="govuk-table__cell govuk-table__cell">Iain Squires</td>
+                    <td class="govuk-table__cell govuk-table__cell"><strong class="govuk-tag govuk-tag--pink">Fact check</strong></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <a href="#" class="govuk-link--no-visited-state">Work in the UK as a leader in arts and culture (Global Talent visa)</a> 
+                        </br>
+                        <p>/global-talent-arts-culture</p>
+                        <details class="govuk-details space-test-3">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Details
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                ... 
+                            </div>
+                        </details>
+                    </th>
+                    <td class="govuk-table__cell govuk-table__cell">25 Jan 2025</td>
+                    <td class="govuk-table__cell govuk-table__cell">Georgina Hilton</td>
+                    <td class="govuk-table__cell govuk-table__cell"><strong class="govuk-tag govuk-tag--pink">Fact check</strong></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <a href="#" class="govuk-link--no-visited-state">Set up a business partnership</a> 
+                        </br>
+                        <p>/set-up-business-partnership</p>
+                        <details class="govuk-details space-test-3">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Details
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                ... 
+                            </div>
+                        </details>
+                    </th>
+                    <td class="govuk-table__cell govuk-table__cell">25 Jan 2025</td>
+                    <td class="govuk-table__cell govuk-table__cell">Giovanni Frostez</td>
+                    <td class="govuk-table__cell govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Draft</strong></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+        </div>    
+    </div>
+
+</fieldset>
+
+             
+    </main>
+  </div>
+
+ 
+
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
