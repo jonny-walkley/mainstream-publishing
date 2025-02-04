@@ -1,0 +1,42 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<a href="#" class="govuk-back-link">Back</a>
+
+<span class="govuk-caption-l">Document title</span>
+<h1 class="govuk-heading-xl">No changes needed</h1>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+        <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--m" for="more-detail">
+                    Comment (optional)
+                </label>
+            </h1>
+            <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="14" aria-describedby="more-detail-hint"></textarea>
+        </div>
+
+        <form action="/2i-no-changes-needed-mvp">
+            <div class="govuk-button-group space-test">    
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                    Save
+                </button>
+                <a class="govuk-link" href="#">Cancel</a>
+            </div>
+        </form>
+
+    </div>    
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
