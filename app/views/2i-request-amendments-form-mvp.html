@@ -11,62 +11,30 @@
 <span class="govuk-caption-l">Document title</span>
 <h1 class="govuk-heading-xl">Request amendments</h1>
 
-
-  <div class="govuk-grid-row">
+<div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-     
-   
-
-
-       
+        
         <div class="govuk-form-group">
             <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--m" for="more-detail">
-                Amendment details
-              </label>
+                <label class="govuk-label govuk-label--m" for="more-detail">
+                    Amendment details
+                </label>
             </h1>
-          
             <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="14" aria-describedby="more-detail-hint"></textarea>
-          </div>
-
-          
-            <div class="govuk-button-group space-test">
-                
-                <button type="submit" class="govuk-button" data-module="govuk-button">
-                  Save
-                </button>
-            
-                <a class="govuk-link govuk-link--no-visited-state" href="#">Cancel</a>
-
-            
-              </div>
-
-
-
-          </div>    
-          </div>
-
-        </fieldset>
-
-
-       
-      
-      
-      
-      <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                
         </div>
-      </div>
-    </main>
-  </div>
 
- 
+        <form action="/2i-amendments-requested-mvp">
+            <div class="govuk-button-group space-test">    
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                    Save
+                </button>
+                <a class="govuk-link" href="#">Cancel</a>
+            </div>
+        </form>
 
+    </div>    
+</div>
 
-    </div>
-
-  </div>
 {% endblock %}
 
 {% block pageScripts %}
