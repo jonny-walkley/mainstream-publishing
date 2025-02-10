@@ -520,6 +520,10 @@ ins strong {
   border-bottom: 2px dashed black;
 }
 
+del strong.alt, ins strong.alt {
+  border-bottom: none;
+}
+
 diff ul .del::before, .diff ul .ins::before {
   position: absolute;
   margin-left: -55px;
