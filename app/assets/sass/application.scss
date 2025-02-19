@@ -41,12 +41,12 @@
   width: 100%;
 }
 
-.filter-alt .govuk-checkboxes__input {
-  z-index: 0;
-  width: 23px;
-  opacity: 1;
-  margin-left: 10px;
-}
+// .filter-alt .govuk-checkboxes__input {
+//   z-index: 0;
+//   width: 23px;
+//   opacity: 1;
+//   margin-left: 10px;
+// }
 
 // input[type="checkbox"]:checked {
 //   z-index: 0;
@@ -439,7 +439,7 @@ a.delete {
 
 .empty-state-container {
   border: 1px solid $govuk-border-colour;
-  margin: 25px 0 25px 0;
+  margin-bottom: 30px;
   padding: 20px;
 }
 

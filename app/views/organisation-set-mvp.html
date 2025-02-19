@@ -1,0 +1,263 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<span class="govuk-caption-l">Document title</span>
+<h1 class="govuk-heading-xl">Set organisations</h1>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+        <p class="govuk-body">Tagging a page to an organisation makes it appear in searches filtered by that organisation.</p>
+        <p class="govuk-body">For example, <a class="govuk-link--no-visited-state" href="https://www.gov.uk/search/all?keywords=taxes&order=relevance&organisations%5B%5D=hm-revenue-customs">
+            a search for documents published by HMRC</a>.</p>
+
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h1 class="govuk-fieldset__heading">
+                        Organisations
+                    </h1>
+                </legend>
+                <div id="nationality-hint" class="govuk-hint">
+                    Select all that apply
+                </div>
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                            value="hmrc">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                            AI Safety Institute
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox"
+                            value="employment-tribunal">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                            Academy for Justice Commissioning
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox"
+                            value="MOD">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+                            Academy for Social Justice
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                            Academy for Social Justice Commissioning
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-5" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-5">
+                            Accelerated Access Review
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-6" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-6">
+                            Accelerated Capability Environment
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-7" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-7">
+                            Active Travel England
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-8" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-8">
+                            Administration of Radioactive Substances Advisory Committee
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-9" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-9">
+                            Administrative Court
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-10" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-10">
+                            Administrative Justice and Tribunals Council
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-11" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-11">
+                            Administrative Justice and Tribunals Council
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-12" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-12">
+                            Administrative Justice and Tribunals Council
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-13" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-13">
+                            Administrative Justice and Tribunals Council
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-14" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-14">
+                            Administrative Justice and Tribunals Council Welsh Committee
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-15" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-15">
+                            AI Safety Institute
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-16" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-16">
+                            Adult Learning Inspectorate
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-17" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-17">
+                            Advanced Research and Invention Agency
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-18" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-18">
+                            AI Safety Institute
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-19" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-19">
+                            Advisory Committee on Animal Feedingstuffs
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-20" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-20">
+                            Advisory Committee on Business Appointments
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-21" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-21">
+                            Advisory Committee on Clinical Excellence Awards
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-22" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-22">
+                            Advisory Committee on Clinical Impact Awards
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-23" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-23">
+                            Advisory Committee on Conscientious Objectors
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-24" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-24">
+                            Advisory Committee on Novel Foods and Processes
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-25" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-25">
+                            Advisory Committee on Pesticides
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-26" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-26">
+                            Advisory Committee on Releases to the Environment
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-27" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-27">
+                            Advisory Committee on the Microbiological Safety of Food
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-28" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-28">
+                            Advisory Committees on Justices of the Peace
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-29" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-29">
+                            Advisory Council on the Misuse of Drugs
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-30" name="organisation" type="checkbox"
+                            value="DfT">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-30">
+                            Advisory Group on Military and Emergency Response Medicine
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third sticky">
+        <div class="actions-panel">
+            <h3 class="govuk-heading-s">Options</h3>
+            <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">
+                Save
+            </button>
+            <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">Cancel</a></p>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}

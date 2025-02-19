@@ -26,6 +26,65 @@
     <div class="filter-alt">
       <h2 class="govuk-heading-m">Filter</h2>
 
+      {{ govukCheckboxes({
+        name: "status",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "Status",
+            isPageHeading: false,
+            classes: "govuk-fieldset"
+          }
+        },
+      hint: {
+          text: "Select all that apply"
+      },
+      items: [
+        {
+        value: "drafts",
+        text: "Drafts (4)",
+        checked: false
+        },
+        {
+        value: "in-review",
+        text: "In review",
+        checked: false
+        },
+        {
+        value: "amends-needed",
+        text: "Amends needed",
+        checked: false
+        },
+        {
+        value: "out-for-fact-check",
+        text: "Out for fact check",
+        checked: false
+        },
+        {
+        value: "fact-check-reviewed",
+        text: "Fact check reviewed",
+        checked: false
+        },
+        {
+        value: "ready",
+        text: "Ready",
+        checked: false
+        },
+        {
+        value: "scheduled",
+        text: "Scheduled"
+        },
+        {
+        value: "published",
+        text: "Published"
+        },
+        {
+        value: "archived",
+        text: "Archived"
+        }
+      ]
+      }) }}
+
       {{ govukInput({
       label: {
         text: "Title or slug"
@@ -77,7 +136,7 @@
       ]
       }) }}
 
-      {{ govukSelect({
+      <!-- {{ govukSelect({
         id: "content-type",
         name: "contentType",
         label: {
@@ -102,66 +161,7 @@
           text: "Simple Smart Answer"
           }
         ]
-      }) }}
-
-      {{ govukCheckboxes({
-        name: "status",
-        classes: "govuk-checkboxes--small",
-        fieldset: {
-          legend: {
-            text: "Status",
-            isPageHeading: false,
-            classes: "govuk-fieldset"
-          }
-        },
-      hint: {
-          text: "Select all that apply"
-      },
-      items: [
-        {
-        value: "drafts",
-        text: "Drafts",
-        checked: false
-        },
-        {
-        value: "in-review",
-        text: "In review",
-        checked: false
-        },
-        {
-        value: "amends-needed",
-        text: "Amends needed",
-        checked: false
-        },
-        {
-        value: "out-for-fact-check",
-        text: "Out for fact check",
-        checked: false
-        },
-        {
-        value: "fact-check-reviewed",
-        text: "Fact check reviewed",
-        checked: false
-        },
-        {
-        value: "ready",
-        text: "Ready",
-        checked: false
-        },
-        {
-        value: "scheduled",
-        text: "Scheduled"
-        },
-        {
-        value: "published",
-        text: "Published"
-        },
-        {
-        value: "archived",
-        text: "Archived"
-        }
-      ]
-      }) }}
+      }) }} -->
 
       <div class="govuk-button-group" style="margin-bottom: 0;">
         {{ govukButton({
