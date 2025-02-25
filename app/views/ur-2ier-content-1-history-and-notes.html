@@ -1,0 +1,297 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-xl">Ask the government to sell property: right to contest</h1>
+
+                <table class="govuk-table">
+                   
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Assigned to</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">Aldous Huxley</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="edit govuk-link--no-visited-state">Edit</a></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Content type</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">Answer</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Edition</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">2 <strong class="govuk-tag govuk-tag--grey">
+                          In review
+                        </strong></td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">2i reviewer</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data['assign-2i-reviewer'] %} {{ data['assign-2i-reviewer'] }} {% else %} Not claimed yet {% endif %}</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="ur-2ier-content-1-assign.html" class="edit govuk-link--no-visited-state">{% if data['assign-2i-reviewer'] %} Edit {% else %} Add {% endif %}</a></td>
+                    </tr>
+                    </tbody>
+                  </table>
+
+                    <div class="govuk-inset-text">
+                        <p>Aldous Huxley has sent this edition to be reviewed.</p>
+                        <p><a href="#" class="govuk-link--no-visited-state">Request amendments</a></p>
+                        <p><a href="ur-2ier-content-1-no-changes-needed.html" class="govuk-link--no-visited-state">No changes needed</a></p>
+                    </div>
+
+                </div>
+          </div>
+
+
+          <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+            <ul class="moj-sub-navigation__list">
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="ur-2ier-content-1.html">Edit</a>
+              </li>
+          
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">Tagging</a>
+              </li>
+          
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">Metadata</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" aria-current="page" href="#">History and notes</a>
+              </li>
+         
+
+            <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">Admin</a>
+              </li>
+        
+
+            <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">Related external links</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">Unpublish</a>
+              </li>
+            </ul>
+          
+          </nav>
+        
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-l">History and notes</h2>
+            </div>
+        </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                <div class="govuk-notification-banner__header">
+                  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                    Important note
+                  </h2>
+                </div>
+                <div class="govuk-notification-banner__content">
+    
+                    
+                    <dl class="govuk-summary-list" style="max-width: none;">
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Fact check
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p>example-email-address@example-department.com</p>
+                                <p>example-email-address-2@example-department.com</p>
+                            </dd>
+                        </div>
+                       
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Quick fix
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                No
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Once ready
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Schedule to publish on 24 March 2025 at 00:01
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Links
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <a class="govuk-link--no-visited-state" href="#">Trello</a>, <a class="govuk-link--no-visited-state" href="#">Zendesk</a>
+                            </dd>
+                        </div>
+                       
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                            Notes
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            Please leave a comment on the Trello card - no need to move the card
+                          </dd>
+                          
+                        </div>
+                       
+                        <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+                            <dt class="govuk-summary-list__key">
+                                Added by 
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Aldous Huxley on 3 February 2025
+                            </dd>
+                          </div>
+                      
+                        </dl>
+                </div>
+              </div>
+
+
+              <div class="govuk-inset-text">
+                Send fact check responses to <a class="govuk-link--no-visited-state" href="#">govuk-fact-check-integration@digital.cabinet-office.gov.uk</a> and include [66c43d95c1c4af0013fbaf4f] in the subject line.
+              </div>
+    
+
+            {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+            {{ govukAccordion({
+              id: "accordion-with-summary-sections",
+              rememberExpanded: false,
+              items: [
+                {
+                  heading: {
+                    text: "Edition 2"
+                  },
+                  content: {
+                    html: ('<p class="govuk-body">10:33am, 27 February 2025</br><span class="govuk-!-font-weight-bold">2i claimed by ' + data['assign-2i-reviewer'] + '</span></p>' if data['assign-2i-reviewer']) + '
+                    <p class="govuk-body">
+                        8:21am, 3 February 2025</br>
+                        <span class="govuk-!-font-weight-bold">2i requested by Aldous Huxley</span>
+                    </p>
+                    <div class="govuk-inset-text">
+                        Changing "Land Registry" to "HM Land Registry", and editing uses of "eg"</br></br>
+                        Changed all instances of "Land Registry" to "HM Land Registry".</br></br>
+                        ALSO:</br></br>
+                        Deleted answer summary markdown</br>
+                        CHANGED</br>
+                        $!You can ask for publicly owned land or buildings to be sold if you think they’re vacant or underused.$!</br>
+                        TO</br>
+                        You can ask for publicly owned land or buildings to be sold if you think they’re vacant or underused.</br></br>
+                        CHANGED</br></br>
+                        * the land or buildings aren’t safe for your proposed use, eg if they’re part of a port, army barracks or on a flood plain</br>
+                        * they’ve plans for the land, eg for a railway or road</br>
+                        * the cost of selling wouldn’t be good value for the taxpayer, eg moving to another site would cost more than the value of the property</br></br>
+                        TO</br></br>
+                        * the land or buildings aren’t safe for your proposed use, for example if they’re part of a port, army barracks or on a flood plain</br>
+                        * they’ve plans for the land, such as for a railway or road</br>
+                        * the cost of selling wouldn’t be good value for the taxpayer, for example if moving to another site would cost more than the value of the property
+                    </div>
+                    <p class="govuk-body">
+                        1:46pm, 27 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">Assigned to Aldous Huxley</span>
+                    </p>
+                    <p class="govuk-body">
+                        1:45pm, 27 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">Created by Aldous Huxley</span>
+                    </p>
+                    '
+                  },
+                  expanded: true
+                },
+                {
+                    heading: {
+                    text: "Edition 1"
+                  },
+                  content: {
+                    html:
+                    '
+                    <p class="govuk-body">
+                        12:29pm, 10 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">Published by Franz Kafka</span>
+                    </p>
+                    <p class="govuk-body">
+                        12:20pm, 10 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">21 approved by Franz Kafka</span>
+                    </p>
+                    <p class="govuk-body">
+                        2:05pm, 9 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">2i requested by Jane Price</span>
+                    </p>
+                    <p class="govuk-body">
+                        7:34am, 8 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">Assigned to Jane Price</span>
+                    </p>
+                    <p class="govuk-body">
+                        7:33am, 8 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">Created by Jane Price</span>
+                    </p>
+                    '
+                  },
+                  expanded: false
+                }
+              ]
+            }) }}
+
+
+
+
+        </div>
+
+        <div class="govuk-grid-column-one-third sticky">
+            <div class="actions-panel">
+          <h3 class="govuk-heading-s">Options</h3>
+
+            <a href="#">
+          <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">
+            Add edition note
+          </button>
+        </a>
+
+        <a href="#">
+          <button type="submit" class="govuk-button govuk-button--secondary govuk-button wide" data-module="govuk-button">
+           Update important note
+          </button>
+        </a>
+
+          <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">Preview (opens in new tab)</a></p>
+    
+        </div>
+        </div>
+
+      </div>
+      
+    </main>
+  </div>
+
+ 
+
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}

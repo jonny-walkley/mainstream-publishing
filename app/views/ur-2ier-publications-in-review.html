@@ -1,0 +1,305 @@
+{% extends "layouts/main.html" %}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+{% from "govuk/components/table/macro.njk" import govukTable %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% block pageTitle %}
+Publications - GOV.UK {{ serviceName }} - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Publications</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+
+        <div class="filter-alt">
+            <h2 class="govuk-heading-m">Filter</h2>
+
+            {{ govukInput({
+            label: {
+            text: "Title or slug"
+            },
+            id: "title-or-slug",
+            name: "titleOrSlug"
+            }) }}
+
+            {{ govukSelect({
+            id: "assigned-to",
+            name: "assignedTo",
+            label: {
+            text: "Assigned to"
+            },
+            items: [
+            {
+            value: "all-assignees",
+            text: "All assignees",
+            selected: "true"
+            },
+            {
+            value: "joe-bloggs-you",
+            text: "Joe Bloggs (You)"
+            },
+            {
+            value: "aaron-aardvark",
+            text: "Aaron Aardvark"
+            },
+            {
+            value: "aaron-zender",
+            text: "Aaron Zender"
+            },
+            {
+            value: "aldous-huxley",
+            text: "Aldous Huxley"
+            },
+            {
+            value: "franz-kafka",
+            text: "Franz Kafka"
+            },
+            {
+            value: "genie-reigns",
+            text: "Genie Reigns"
+            },
+            {
+            value: "juliette-barnes",
+            text: "Juliette Barnes"
+            }
+            ]
+            }) }}
+
+            {{ govukCheckboxes({
+            name: "status",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+            legend: {
+            text: "Status",
+            isPageHeading: false,
+            classes: "govuk-fieldset"
+            }
+            },
+            hint: {
+            text: "Select all that apply"
+            },
+            items: [
+            {
+            value: "drafts",
+            text: "Drafts",
+            checked: false
+            },
+            {
+            value: "in-review",
+            text: "In review",
+            checked: true
+            },
+            {
+            value: "amends-needed",
+            text: "Amends needed",
+            checked: false
+            },
+            {
+            value: "out-for-fact-check",
+            text: "Out for fact check",
+            checked: false
+            },
+            {
+            value: "fact-check-received",
+            text: "Fact check received",
+            checked: false
+            },
+            {
+            value: "ready",
+            text: "Ready",
+            checked: false
+            },
+            {
+            value: "scheduled",
+            text: "Scheduled"
+            },
+            {
+            value: "published",
+            text: "Published"
+            },
+            {
+            value: "archived",
+            text: "Archived"
+            }
+            ]
+            }) }}
+
+            <div class="govuk-button-group" style="margin-bottom: 0;">
+                {{ govukButton({
+                text: "Apply filters"
+                }) }}
+                <a href="ur-2ier-publications.html" class="govuk-link govuk-link--no-visited-state">Clear filters</a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+        <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m border-bottom">2 documents<a href="#" id="expand-all">Expand all</a></caption>
+
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Title</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header">Updated</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header">Assigned to</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header">Status</th>
+                </tr>
+            </thead>
+
+            <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <a href="ur-2ier-content-1.html" class="govuk-link--no-visited-state">Ask the government to sell property: right to contest</a> 
+                        </br>
+                        <p>/right-to-contest-answer</p>
+                        <details class="govuk-details space-test-3">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Details
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                <div class="govuk-grid-row">
+                                    <div class="govuk-grid-column-one-half">
+                                        <p class="govuk-!-font-weight-bold">Edition</p>
+                                    </div>
+                                    <div class="govuk-grid-column-one-half">
+                                        <p>2</p>
+                                    </div>
+                                </div>
+                                <div class="govuk-grid-row">
+                                    <div class="govuk-grid-column-one-half">
+                                        <p class="govuk-!-font-weight-bold">Format</p>
+                                    </div>
+                                    <div class="govuk-grid-column-one-half">
+                                        <p>Answer</p>
+                                    </div>
+                                </div>
+                                <div class="govuk-grid-row">
+                                    <div class="govuk-grid-column-one-half">
+                                        <p class="govuk-!-font-weight-bold">Important note</p>
+                                    </div>
+                                    <div class="govuk-grid-column-one-half">
+                                        <p>Needs fact check, schedule publish</p>
+                                    </div>
+                                </div>
+                                <div class="govuk-grid-row">
+                                    <div class="govuk-grid-column-one-half">
+                                        <p class="govuk-!-font-weight-bold">Awaiting review</p>
+                                    </div>
+                                    <div class="govuk-grid-column-one-half">
+                                        <p>2 days</p>
+                                    </div>
+                                </div>
+                                <div class="govuk-grid-row">
+                                    <div class="govuk-grid-column-one-half">
+                                        <p class="govuk-!-font-weight-bold">2i reviewer</p>
+                                    </div>
+                                    <div class="govuk-grid-column-one-half">
+                                        <form action="/ur-2ier-content-1-claimed" method="post">
+                                            <button type="submit" class="govuk-button govuk-!-margin-0" data-module="govuk-button">
+                                                Claim 2i
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                    </th>
+                    <td class="govuk-table__cell govuk-table__cell">27 Feb 2025</td>
+                    <td class="govuk-table__cell govuk-table__cell">Aldous Huxley</td>
+                    <td class="govuk-table__cell govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">In review</strong></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <a href="ur-2ier-content-2.html" class="govuk-link--no-visited-state">Personal tax account: sign in or set up</a>
+                        </br>
+                        <p>/personal-tax-account</p>
+                        <details class="govuk-details space-test-3">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Details
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                <div class="govuk-grid-row">
+                                    <div class="govuk-grid-column-one-half">
+                                        <p class="govuk-!-font-weight-bold">Edition</p>
+                                    </div>
+                                    <div class="govuk-grid-column-one-half">
+                                        <p>31</p>
+                                    </div>
+                                </div>
+                                <div class="govuk-grid-row">
+                                    <div class="govuk-grid-column-one-half">
+                                        <p class="govuk-!-font-weight-bold">Format</p>
+                                    </div>
+                                    <div class="govuk-grid-column-one-half">
+                                        <p>Answer</p>
+                                    </div>
+                                </div>
+                                <div class="govuk-grid-row">
+                                    <div class="govuk-grid-column-one-half">
+                                        <p class="govuk-!-font-weight-bold">Important note</p>
+                                    </div>
+                                    <div class="govuk-grid-column-one-half">
+                                        <p>Quick fix, publish</p>
+                                    </div>
+                                </div>
+                                <div class="govuk-grid-row">
+                                    <div class="govuk-grid-column-one-half">
+                                        <p class="govuk-!-font-weight-bold">Awaiting review</p>
+                                    </div>
+                                    <div class="govuk-grid-column-one-half">
+                                        <p>2 days</p>
+                                    </div>
+                                </div>
+                                <div class="govuk-grid-row">
+                                    <div class="govuk-grid-column-one-half">
+                                        <p class="govuk-!-font-weight-bold">2i reviewer</p>
+                                    </div>
+                                    <div class="govuk-grid-column-one-half">
+                                        <form action="/ur-2ier-content-2-claimed" method="post">
+                                            <button type="submit" class="govuk-button govuk-!-margin-0" data-module="govuk-button">
+                                                Claim 2i
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                    </th>
+                    <td class="govuk-table__cell govuk-table__cell">26 Feb 2025</td>
+                    <td class="govuk-table__cell govuk-table__cell">Sylvia Allison</td>
+                    <td class="govuk-table__cell govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">In
+                            review</strong></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}

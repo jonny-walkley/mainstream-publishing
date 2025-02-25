@@ -1,0 +1,299 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-xl">Personal tax account: sign in or set up</h1>
+
+                <table class="govuk-table">
+                   
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Assigned to</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">Sylvia Allison</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="edit govuk-link--no-visited-state">Edit</a></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Content type</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">Answer</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Edition</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">31 <strong class="govuk-tag govuk-tag--green">
+                          Ready
+                        </strong></td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">2i reviewer</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data['assign-2i-reviewer-2'] %} {{ data['assign-2i-reviewer-2'] }} {% else %} Not claimed yet {% endif %}</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="ur-2ier-content-2-assign.html" class="edit govuk-link--no-visited-state">{% if data['assign-2i-reviewer-2'] %} Edit {% else %} Add {% endif %}</a></td>
+                    </tr>
+                    </tbody>
+                  </table>
+
+                    <div class="govuk-inset-text">
+                        <p><a href="#" class="govuk-link--no-visited-state">Request amendments</a></p>
+                    </div>
+
+                </div>
+          </div>
+
+
+          <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+            <ul class="moj-sub-navigation__list">
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">Edit</a>
+              </li>
+          
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">Tagging</a>
+              </li>
+          
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">Metadata</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" aria-current="page" href="#">History and notes</a>
+              </li>
+         
+
+            <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">Admin</a>
+              </li>
+        
+
+            <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">Related external links</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">Unpublish</a>
+              </li>
+            </ul>
+          
+          </nav>
+        
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-l">History and notes</h2>
+            </div>
+        </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                <div class="govuk-notification-banner__header">
+                  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                    Important note
+                  </h2>
+                </div>
+                <div class="govuk-notification-banner__content">
+    
+                    
+                    <dl class="govuk-summary-list" style="max-width: none;">
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Fact check
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                No
+                            </dd>
+                        </div>
+                       
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Quick fix
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Yes
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Once ready
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Publish
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Links
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <a class="govuk-link--no-visited-state" href="#">Trello</a>, <a class="govuk-link--no-visited-state" href="#">Zendesk</a>
+                            </dd>
+                        </div>
+                       
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                            Notes
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            Urgent change, please pick up as soon as possbile
+                          </dd>
+                          
+                        </div>
+                       
+                        <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+                            <dt class="govuk-summary-list__key">
+                                Added by 
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Sylvia Allison on 3 February 2025
+                            </dd>
+                          </div>
+                      
+                        </dl>
+                </div>
+              </div>
+
+
+              <div class="govuk-inset-text">
+                Send fact check responses to <a class="govuk-link--no-visited-state" href="#">govuk-fact-check-integration@digital.cabinet-office.gov.uk</a> and include [66c43d95c1c4af0013fbaf4f] in the subject line.
+              </div>
+    
+
+            {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+            {{ govukAccordion({
+              id: "accordion-with-summary-sections",
+              rememberExpanded: false,
+              items: [
+                {
+                  heading: {
+                    text: "Edition 2"
+                  },
+                  content: {
+                    html: 
+                    '<p class="govuk-body">
+                        11:19am, 27 February 2025</br>
+                        <span class="govuk-!-font-weight-bold">2i approved by ' + data['assign-2i-reviewer-2'] + '</span>
+                    </p>' +
+                    ('<p class="govuk-body">10:33am, 27 February 2025</br><span class="govuk-!-font-weight-bold">2i claimed by ' + data['assign-2i-reviewer-2'] + '</span></p>' if data['assign-2i-reviewer-2']) + '
+                    <p class="govuk-body">
+                        8:21am, 3 February 2025</br>
+                        <span class="govuk-!-font-weight-bold">2i requested by Sylvia Allisony</span>
+                    </p>
+                    <div class="govuk-inset-text">
+                        Just made a small change as the pattern should be to have the "in" as part of the link text:</br></br>
+CHANGED
+^This service is also available in [Welsh (Cymraeg)](/cyfrif-treth-personol).
+</br></br>
+TO
+^This service is also available [in Welsh (Cymraeg)](/cyfrif-treth-personol).</br></br>
+                    </div>
+                    <p class="govuk-body">
+                        1:46pm, 27 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">Assigned to Sylvia Allison</span>
+                    </p>
+                    <p class="govuk-body">
+                        1:45pm, 27 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">Created by Sylvia Allison</span>
+                    </p>
+                    '
+                  },
+                  expanded: true
+                },
+                {
+                    heading: {
+                    text: "Edition 1"
+                  },
+                  content: {
+                    html:
+                    '
+                    <p class="govuk-body">
+                        12:29pm, 10 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">Published by Franz Kafka</span>
+                    </p>
+                    <p class="govuk-body">
+                        12:20pm, 10 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">21 approved by Franz Kafka</span>
+                    </p>
+                    <p class="govuk-body">
+                        2:05pm, 9 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">2i requested by Jane Price</span>
+                    </p>
+                    <p class="govuk-body">
+                        7:34am, 8 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">Assigned to Jane Price</span>
+                    </p>
+                    <p class="govuk-body">
+                        7:33am, 8 January 2025</br>
+                        <span class="govuk-!-font-weight-bold">Created by Jane Price</span>
+                    </p>
+                    '
+                  },
+                  expanded: false
+                }
+              ]
+            }) }}
+
+
+
+
+        </div>
+
+        <div class="govuk-grid-column-one-third sticky">
+            <div class="actions-panel">
+          <h3 class="govuk-heading-s">Options</h3>
+
+            <a href="#">
+          <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">
+            Add edition note
+          </button>
+        </a>
+
+        <a href="#">
+          <button type="submit" class="govuk-button govuk-button--secondary govuk-button wide" data-module="govuk-button">
+           Update important note
+          </button>
+        </a>
+
+        <a href="#">
+            <button type="submit" class="govuk-button govuk-button--secondary govuk-button wide" data-module="govuk-button">
+             Schedule
+            </button>
+          </a>
+
+        <form action="ur-2ier-content-2-publish" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Publish</button>
+        </form>
+
+          <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">Preview (opens in new tab)</a></p>
+    
+        </div>
+        </div>
+
+      </div>
+      
+    </main>
+  </div>
+
+ 
+
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}

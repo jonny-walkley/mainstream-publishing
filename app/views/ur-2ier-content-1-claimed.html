@@ -1,0 +1,268 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                    <div class="govuk-notification-banner__header">
+                      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                        Success
+                      </h2>
+                    </div>
+                    <div class="govuk-notification-banner__content">
+                      <h3 class="govuk-notification-banner__heading">
+                        You are now the 2i reviewer of this edition
+                      </h3>
+                    </div>
+                  </div>
+
+                <h1 class="govuk-heading-xl">Ask the government to sell property: right to contest</h1>
+
+                <table class="govuk-table">   
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Assigned to</th>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">Aldous Huxley</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="edit govuk-link--no-visited-state">Edit</a></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Content type</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">Answer</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Edition</th>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">2 <strong class="govuk-tag govuk-tag--grey">In review</strong></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">2i reviewer</th>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">{% if data['assign-2i-reviewer'] %} {{ data['assign-2i-reviewer'] }} {% else %} {{ data['participant-name'] }} {% endif %}</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="ur-2ier-content-1-assign.html" class="edit govuk-link--no-visited-state">Edit</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="govuk-inset-text">
+                    <p>Aldous Huxley has sent this edition to be reviewed.</p>
+                    <p><a href="#" class="govuk-link--no-visited-state">Request amendments</a></p>
+                    <p><a href="ur-2ier-content-1-no-changes-needed.html" class="govuk-link--no-visited-state">No changes needed</a></p>
+                </div>
+
+            </div>
+        </div>
+
+        <nav class="moj-sub-navigation" aria-label="Sub navigation">
+            <ul class="moj-sub-navigation__list">
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" aria-current="page" href="#">Edit</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="#">Tagging</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="#">Metadata</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="ur-2ier-content-1-history-and-notes.html">History and notes</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="#">Admin</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="#">Related external links</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="#">Unpublish</a>
+                </li>
+            </ul>  
+        </nav>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-l">Edit</h2>
+            </div>
+        </div>
+        
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">Title</label>
+                    <input class="govuk-input" id="doc-title" name="doc-title" type="text" spellcheck="false" autocomplete="name" value="Ask the government to sell property: right to contest">
+                </div>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="metatags">Meta tag description</label>
+                    <div id="metatags-hint" class="govuk-hint">
+                        Some search engines will display this if they cannot find what they need in the main text
+                    </div>
+                    <textarea class="govuk-textarea" id="metatags" name="metatags" rows="5" autocomplete="metatags">Ask for underused or vacant property owned by the government, agencies, local councils or local public bodies to be sold - Right to Contest.</textarea>
+                </div>
+
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                            <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">Is this beta content?</label>
+                        </legend>
+                        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+                                <label class="govuk-label govuk-radios__label" for="changedName">Yes</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no" checked>
+                                <label class="govuk-label govuk-radios__label" for="changedName-2">No</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="govuk-form-group">
+                    <h1 class="govuk-label-wrapper">
+                        <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">Body</label>
+                        <div id="metatags-hint" class="govuk-hint">
+                            Refer to the <a href="#" class="govuk-link--no-visited-state">Govspeak guidance (opens in new tab)</a>
+                        </div>
+                    </h1>
+                    <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="14" aria-describedby="more-detail-hint">
+You can ask for publicly owned land or buildings to be sold if you think they're vacant or underused.
+
+##Find out who owns land or buildings
+
+You can find out who owns land or buildings by:
+
+- contacting the government department, council or public body you think is the owner
+- checking the government's [property and land asset database](http://data.gov.uk/dataset/epims)  
+- searching the [HM Land Registry database](/search-property-information-land-registry)
+
+##Ask for property to be sold
+
+Download and fill in the ['right to contest' application form](/government/publications/right-to-contest-application-form) and send it to the address on the form. The addresses are different for government property and local public body or council property.
+
+You must say why you think the property is being underused and what you think it could be used for. 
+
+^You won't have the right to buy the property - the owner can accept other offers.^  
+
+The department or agency won’t sell if:  
+
+* the land or buildings aren’t safe for your proposed use, for example if they're part of a port, army barracks or on a flood plain
+* they've plans for the land, such as for a railway or road
+* the cost of selling wouldn't be good value for the taxpayer, for example if moving to another site would cost more than the value of the property  
+
+You'll get a letter telling you the result of your application.
+
+##Further information
+
+Contact the Government Property Unit about property owned by the government and national agencies. 
+
+$C  
+**Government Property Unit**\\ 
+<righttocontest@cabinet-office.gsi.gov.uk>
+$C
+
+$A
+Cabinet Office   
+1 Horse Guards Road   
+London   
+SW1A 2HQ  
+$A
+
+
+Contact the National Planning Casework Team about property owned by local councils and public bodies. 
+
+$C
+**The National Planning Casework Team**\\
+<npcu@communities.gsi.gov.uk>
+$C
+
+$A
+5 St Philip’s Place  
+Colmore Row  
+Birmingham   
+B3 2PW   
+$A
+                    </textarea>
+                </div>
+
+                <div class="line">
+                    &nbsp;
+                </div>
+           
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            Add a public change note
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                    <h2 class="govuk-heading-m">Add a public change note</h2>
+                                    <p>Telling users when published information has changed is important for transparency.</p> 
+                                </legend>
+                                <div class="govuk-radios" data-module="govuk-radios">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                                        <label class="govuk-label govuk-radios__label" for="contact">
+                                            <span class="govuk-body govuk-body govuk-!-font-weight-bold">Yes - information has been added, updated or removed</span>
+                                            <br>
+                                            <span class="govuk-hint">A change note will be published on the page and emailed to users subscribed to email alerts. The 'last updated' date will change.</span>
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__conditional" id="conditional-contact">
+                                        <div class="govuk-form-group govuk-form-group">
+                                            <label class="govuk-label" for="contact-by-email">
+                                                <span class="govuk-body govuk-body govuk-!-font-weight-bold">Describe the change for users</span>
+                                                </br>
+                                                <span class="govuk-hint">
+                                                    Tell users what has changed, where and why. Write in full sentences, leading with the most important words. For example, "College A has been removed from the registered sponsors list because its licence has been suspended."
+                                                    </br>
+                                                    <a href="https://www.gov.uk/guidance/content-design/writing-for-gov-uk#change-notes" target="_new">Guidance on change notes (opens in a new tab)</a>
+                                                </span>
+                                            </label>
+                                            <input class="govuk-input govuk-!-width-one-half govuk-input" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+                                        </div>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
+                                        <label class="govuk-label govuk-radios__label" for="contact-2">
+                                            <span class="govuk-body govuk-!-font-weight-bold">No</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                      </div>
+                    </div>
+                </details>
+            
+            </div>
+
+            <div class="govuk-grid-column-one-third sticky">
+                <div class="actions-panel">
+                    <h3 class="govuk-heading-s">Options</h3>
+                    <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">Save</button>
+                    <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">Preview (opens in new tab)</a></p>
+                    <p class="govuk-body"><a class="delete" href="#">Delete edition</a></p>
+                </div>
+            </div>
+        </div>
+  
+    </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}

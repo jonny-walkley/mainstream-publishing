@@ -57,6 +57,12 @@
 //   -moz-appearance: none;
 // }
 
+#expand-all, #expand-all:visited {
+  float: right;
+  color: $govuk-text-colour;
+  @include govuk-font($size: 19, $weight: bold);
+}
+
 .filter-alt .govuk-button, .govuk-link {
   margin-bottom: 0 !important;
 }
