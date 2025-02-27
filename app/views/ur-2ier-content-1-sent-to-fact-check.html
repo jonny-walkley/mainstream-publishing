@@ -1,4 +1,42 @@
-{% extends "layouts/main.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "/index",
+  serviceName: "Publisher",
+  serviceUrl: "/index",
+  navigation: [
+    {
+      href: "/ur-2ier-content-1-publications-out-for-fact-check",
+      text: "Publications"
+    },
+    {
+      href: "#2",
+      text: "Add artefact"
+    },
+    {
+      href: "#3",
+      text: "Downtime"
+    },
+    {
+        href: "#4",
+        text: "Reports"
+    },
+    {
+        href: "#5",
+        text: "Search by user"
+    },
+    {
+        href: "#6",
+        text: "Username"
+    },
+    {
+        href: "#7",
+        text: "Sign out"
+    }
+  ]
+}) }}
+{% endblock %}
 
 {% block pageTitle %}
   Publication - {{ serviceName }} – GOV.UK Prototype Kit
@@ -49,7 +87,7 @@
 
                 <div class="govuk-inset-text">
                     <p>{{ data['assign-2i-reviewer'] }} requested this edition to be fact checked. We‘re awaiting a response.</p>
-                    <p><a href="ur-2ier-content-1-publications-fact-check-received.html" class="govuk-link--no-visited-state">Resend fact check email</a></p>
+                    <p><a href="#" class="govuk-link--no-visited-state">Resend fact check email</a></p>
                     <p><a href="#" class="govuk-link--no-visited-state">Request amendments</a></p>
                 </div>
 

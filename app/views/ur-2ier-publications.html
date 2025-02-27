@@ -16,7 +16,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Publications {{ data['participant-name'] }}</h1>
+    <h1 class="govuk-heading-xl">Publications</h1>
   </div>
 </div>
 
@@ -207,10 +207,18 @@
                                 </div>
                                 <div class="govuk-grid-row">
                                     <div class="govuk-grid-column-one-half">
+                                        <p class="govuk-!-font-weight-bold">Fact check needed</p>
+                                    </div>
+                                    <div class="govuk-grid-column-one-half">
+                                        <p>Yes</p>
+                                    </div>
+                                </div>
+                                <div class="govuk-grid-row">
+                                    <div class="govuk-grid-column-one-half">
                                         <p class="govuk-!-font-weight-bold">Important note</p>
                                     </div>
                                     <div class="govuk-grid-column-one-half">
-                                        <p>Needs fact check, schedule publish</p>
+                                        <p>Please leave a comment on the Trello card - no need to move the card</p>
                                     </div>
                                 </div>
                                 <div class="govuk-grid-row">
@@ -229,11 +237,9 @@
                                         {% if data['assign-2i-reviewer'] %}
                                             <p>{{ data['assign-2i-reviewer'] }}</p>
                                         {% else %}
-                                            <form action="/ur-2ier-content-1-claimed" method="post">
-                                                <button type="submit" class="govuk-button govuk-!-margin-0" data-module="govuk-button">
-                                                    Claim 2i
-                                                </button>
-                                            </form>
+                                            <button type="submit" class="govuk-button govuk-!-margin-0" data-module="govuk-button">
+                                                Claim 2i
+                                            </button>
                                         {% endif %}
                                     </div>
                                 </div>
@@ -455,10 +461,18 @@
                                 </div>
                                 <div class="govuk-grid-row">
                                     <div class="govuk-grid-column-one-half">
+                                        <p class="govuk-!-font-weight-bold">Quick fix</p>
+                                    </div>
+                                    <div class="govuk-grid-column-one-half">
+                                        <p>Yes</p>
+                                    </div>
+                                </div>
+                                <div class="govuk-grid-row">
+                                    <div class="govuk-grid-column-one-half">
                                         <p class="govuk-!-font-weight-bold">Important note</p>
                                     </div>
                                     <div class="govuk-grid-column-one-half">
-                                        <p>Quick fix, publish</p>
+                                        <p>Urgent change, please pick up as soon as possbile</p>
                                     </div>
                                 </div>
                                 <div class="govuk-grid-row">
@@ -474,11 +488,9 @@
                                         <p class="govuk-!-font-weight-bold">2i reviewer</p>
                                     </div>
                                     <div class="govuk-grid-column-one-half">
-                                        <form action="/ur-2ier-content-2-claimed" method="post">
-                                            <button type="submit" class="govuk-button govuk-!-margin-0" data-module="govuk-button">
-                                                Claim 2i
-                                            </button>
-                                        </form>
+                                        <button type="submit" class="govuk-button govuk-!-margin-0" data-module="govuk-button">
+                                            Claim 2i
+                                        </button>
                                     </div>
                                 </div>
                             </div>

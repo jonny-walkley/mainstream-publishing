@@ -1,4 +1,42 @@
-{% extends "layouts/main.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "/index",
+  serviceName: "Publisher",
+  serviceUrl: "/index",
+  navigation: [
+    {
+      href: "/ur-2ier-content-1-publications-fact-check-received",
+      text: "Publications"
+    },
+    {
+      href: "#2",
+      text: "Add artefact"
+    },
+    {
+      href: "#3",
+      text: "Downtime"
+    },
+    {
+        href: "#4",
+        text: "Reports"
+    },
+    {
+        href: "#5",
+        text: "Search by user"
+    },
+    {
+        href: "#6",
+        text: "Username"
+    },
+    {
+        href: "#7",
+        text: "Sign out"
+    }
+  ]
+}) }}
+{% endblock %}
 
 {% block pageTitle %}
   Publication - {{ serviceName }} – GOV.UK Prototype Kit
@@ -20,18 +58,18 @@
                     </div>
                     <div class="govuk-notification-banner__content">
                       <h3 class="govuk-notification-banner__heading">
-                        Scheduled to publish on {{ data['schedule-day'] }} {{ data['schedule-month']| monthName }} {{ data['schedule-year'] }} at {{ data['schedule-hour'] }}:{{ data['schedule-minute'] }}
+                        Published
                       </h3>
                     </div>
                   </div>
 
-                <h1 class="govuk-heading-xl">Ask the government to sell property: right to contest</h1>
+                <h1 class="govuk-heading-xl">Personal tax account: sign in or set up</h1>
 
                 <table class="govuk-table">   
                     <tbody class="govuk-table__body">
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Assigned to</th>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">Aldous Huxley</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">Sylvia Allison</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                         </tr>
                         <tr class="govuk-table__row">
@@ -41,7 +79,7 @@
                         </tr>
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Edition</th>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">2 <strong class="govuk-tag govuk-tag--turquoise">Scheduled</strong></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">31 <strong class="govuk-tag govuk-tag--orange">Published</strong></td>
                             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                         </tr>
                     </tbody>
@@ -62,7 +100,7 @@
                     <a class="moj-sub-navigation__link" href="#">Metadata</a>
                 </li>
                 <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="ur-2ier-content-1-fact-check-approved-history-and-notes.html">History and notes</a>
+                    <a class="moj-sub-navigation__link" href="#">History and notes</a>
                 </li>
                 <li class="moj-sub-navigation__item">
                     <a class="moj-sub-navigation__link" href="#">Admin</a>
@@ -88,78 +126,54 @@
                 <div class="published-state">
 
                     <h2 class="govuk-heading-s">Title</h2>
-                    <p>Ask the government to sell property: right to contest</p>
+                    <p>Personal tax account: sign in or set up</p>
 
                     <h2 class="govuk-heading-s">Meta tag description</h2>
-                    <p>Ask for underused or vacant property owned by the government, agencies, local councils or local public bodies to be sold - Right to Contest.</p>
+                    <p>Sign into or set up a personal tax account to check and manage HMRC records, including Income Tax, change of address, Self Assessment and company car tax.</p>
 
                     <h2 class="govuk-heading-s">Is this beta content?</h2>
                     <p>No</p>
 
                     <h2 class="govuk-heading-s">Body</h2>
-                    <p>You can ask for publicly owned land or buildings to be sold if you think they're vacant or underused.</p>
-                    <p>##Find out who owns land or buildings</p>
-                    <p>You can find out who owns land or buildings by:</p>
+                    <p>Use your personal tax account to check your records and manage your details with HM Revenue and Customs (HMRC).</p>
+                    <p>^This service is also available [in Welsh (Cymraeg)](/cyfrif-treth-personol).</p>
+                    <p>You can:</p>
                     <p>
-                        - contacting the government department, council or public body you think is the owner</br>
-                        - checking the government's [property and land asset database](http://data.gov.uk/dataset/epims)</br>  
-                        - searching the [HM Land Registry database](/search-property-information-land-registry)</br>
+                        - check your Income Tax estimate and tax code</br>
+                        - submit, view or manage a Self Assessment tax return</br>
+                        - claim a tax refund</br>
+                        - check your Child Benefit</br>
+                        - check your income from work in the previous 5 years</br>
+                        check how much Income Tax you paid in the previous 5 years</br>
+                        - check and manage your tax credits</br>
+                        - check your State Pension</br>
+                        - check if you’ll benefit from paying voluntary National Insurance contributions and if you can pay online</br>
+                        - track tax forms that you’ve submitted online</br>
+                        - check or update your Marriage Allowance</br>
+                        - tell HMRC about a change of name or address</br>
+                        - check or update benefits you get from work, for example company car details and medical insurance</br>
+                        - find your National Insurance number
+                        - find your Unique Taxpayer Reference (UTR) number, if you already have one</br>
+                        - check your Simple Assessment tax bill</br>
                     </p>
-                    <p>##Ask for property to be sold/p>
-                    <p>Download and fill in the ['right to contest' application form](/government/publications/right-to-contest-application-form) and send it to the address on the form. The addresses are different for government property and local public body or council property.</p>
-                    <p>You must say why you think the property is being underused and what you think it could be used for.</p>
-                    <p>^You won't have the right to buy the property - the owner can accept other offers.^</p>
-                    <p>The department or agency won’t sell if: </p>
-                    <p>
-                        * the land or buildings aren’t safe for your proposed use, for example if they're part of a port, army barracks or on a flood plain</br>
-                        * they've plans for the land, such as for a railway or road</br>
-                        * the cost of selling wouldn't be good value for the taxpayer, for example if moving to another site would cost more than the value of the property</br>
-                    </p>
-                    <p>You'll get a letter telling you the result of your application.</p>
-                    <p>##Further information</p>
-                    <p>Contact the Government Property Unit about property owned by the government and national agencies.</p>
-                    <p>
-                        $C</br>
-                        **Government Property Unit**\\</br>
-                        righttocontest@cabinet-office.gsi.gov.uk</br>
-                        $C
-                    </p>
-                    <p>
-                        $A</br>
-                        Cabinet Office
-                        1 Horse Guards Road</br>
-                        London</br>
-                        SW1A 2HQ</br>
-                        $A
-                    </p>
-                    <p>Contact the National Planning Casework Team about property owned by local councils and public bodies.</p>
-                    <p>
-                        $C</br>
-                        **The National Planning Casework Team**\\</br>
-                        npcu@communities.gsi.gov.uk</br>
-                        $C
-                    </p>
-                    <p>
-                        $A</br>
-                        5 St Philip’s Place</br>
-                        Colmore Row</br>
-                        Birmingham</br>
-                        B3 2PW</br>
-                        $A
-                    </p>
+                    <p>^There's a different service to [register for Self Assessment and your UTR number](/register-for-self-assessment) or [report and pay Capital Gains Tax on UK property](/capital-gains-tax/reporting-and-paying-capital-gains-tax).^</p>
+                    <p>##Before you start</p>
+                    <p>You’ll need to sign in to use this service. If you do not already have sign in details, you’ll be able to create them.</p>
+                    <p>You’ll be told when you sign in if you need to prove your identity. This is to keep your details safe and normally involves using photo ID like a passport or driving licence.</p>
+                    <p>##Sign in to or set up your personal tax account</p>
+                    <p>{button start}[Start now](https://www.tax.service.gov.uk/gg/sign-in?continue=/personal-account&accountType=individual&origin=PTA-frontend){/button}</p>
+                    <p>*[HMRC]: HM Revenue and Customs</p>
 
                     <h2 class="govuk-heading-s">Public change note</h2>
                     <p>None added</p>
 
                 </div>
-               
             </div>
 
             <div class="govuk-grid-column-one-third sticky">
                 <div class="actions-panel">
                     <h3 class="govuk-heading-s">Options</h3>
-                    <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Unschedule</button>
-                    <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Publish</button>
+                    <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">Create new edition</button>
                     <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">Preview (opens in new tab)</a></p>
                     <p class="govuk-body"><a class="delete" href="#">Delete edition</a></p>
                 </div>
