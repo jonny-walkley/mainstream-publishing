@@ -12,19 +12,6 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
 
-                <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-                    <div class="govuk-notification-banner__header">
-                      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-                        Success
-                      </h2>
-                    </div>
-                    <div class="govuk-notification-banner__content">
-                      <h3 class="govuk-notification-banner__heading">
-                        Scheduled to publish on {{ data['schedule-day'] }} {{ data['schedule-month']| monthName }} {{ data['schedule-year'] }} at {{ data['schedule-hour'] }}:{{ data['schedule-minute'] }}
-                      </h3>
-                    </div>
-                  </div>
-
                 <h1 class="govuk-heading-xl">Ask the government to sell property: right to contest</h1>
 
                 <table class="govuk-table">   
@@ -41,7 +28,7 @@
                         </tr>
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Edition</th>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">2 <strong class="govuk-tag govuk-tag--turquoise">Scheduled</strong></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">2 <strong class="govuk-tag govuk-tag--orange">Published</strong></td>
                             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                         </tr>
                     </tbody>
@@ -62,12 +49,12 @@
                     <a class="moj-sub-navigation__link" href="#">Metadata</a>
                 </li>
                 <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="ur-2ier-content-1-fact-check-approved-history-and-notes.html">History and notes</a>
+                    <a class="moj-sub-navigation__link" href="#">History and notes</a>
                 </li>
                 <li class="moj-sub-navigation__item">
                     <a class="moj-sub-navigation__link" href="#">Admin</a>
                 </li>
-        <li class="moj-sub-navigation__item">
+                <li class="moj-sub-navigation__item">
                     <a class="moj-sub-navigation__link" href="#">Related external links</a>
                 </li>
                 <li class="moj-sub-navigation__item">
@@ -158,9 +145,8 @@
             <div class="govuk-grid-column-one-third sticky">
                 <div class="actions-panel">
                     <h3 class="govuk-heading-s">Options</h3>
-                    <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Cancel scheduling</button>
-                    <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Publish</button>
-                    <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">Preview (opens in new tab)</a></p>
+                    <button type="submit" class="govuk-button wide" data-module="govuk-button">Create new edition</button>
+                    <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">View on GOV.UK (opens in new tab)</a></p>
                 </div>
             </div>
         </div>
