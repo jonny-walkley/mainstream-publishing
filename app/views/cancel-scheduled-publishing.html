@@ -6,8 +6,8 @@
 
 {% block content %}
 
-<span class="govuk-caption-l">Personal tax account: sign in or set up</span>
-<h1 class="govuk-heading-xl">Send to publish</h1>
+<span class="govuk-caption-l">Ask the government to sell property: right to contest</span>
+<h1 class="govuk-heading-xl">Cancel scheduled publishing</h1>
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -21,15 +21,14 @@
             <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="14" aria-describedby="more-detail-hint"></textarea>
         </div>
 
-        <form action="/ur-2ier-content-2-published" method="post">
+        <form action="/scheduled-publishing-cancelled" method="post">
             <div class="govuk-button-group space-test">    
                 <button type="submit" class="govuk-button" data-module="govuk-button">
-                    Send to publish
+                    Cancel scheduled publishing
                 </button>
-                <a class="govuk-link govuk-link--no-visited-state" href="#">Cancel</a>
+                <a class="govuk-link govuk-link--no-visited-state" href="answer-edit-scheduled">Cancel</a>
             </div>
         </form>
-
     </div>    
 </div>
 

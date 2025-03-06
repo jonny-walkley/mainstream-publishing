@@ -12,6 +12,8 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
 
+                {% set pubDate = data['schedule-hour'] + ':' + data['schedule-minute'] %}
+
                 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
                     <div class="govuk-notification-banner__header">
                       <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
@@ -20,7 +22,7 @@
                     </div>
                     <div class="govuk-notification-banner__content">
                       <h3 class="govuk-notification-banner__heading">
-                        Scheduled to publish on {{ data['schedule-day'] }} {{ data['schedule-month']| monthName }} {{ data['schedule-year'] }} at {{ data['schedule-hour'] }}:{{ data['schedule-minute'] }}
+                        Scheduled to publish on {{ data['schedule-day'] }} {{ data['schedule-month']| monthName }} {{ data['schedule-year'] }} at {{ pubDate | govukTime }} 
                       </h3>
                     </div>
                   </div>
@@ -42,6 +44,11 @@
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Edition</th>
                             <td class="govuk-table__cell govuk-table__cell--numeric">2 <strong class="govuk-tag govuk-tag--turquoise">Scheduled</strong></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Scheduled</th>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">{{ data['schedule-day'] }} {{ data['schedule-month']| monthName }} {{ data['schedule-year'] }}, {{ pubDate | govukTime }} </td>
                             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                         </tr>
                     </tbody>
