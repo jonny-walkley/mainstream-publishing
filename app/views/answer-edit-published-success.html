@@ -1,0 +1,172 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                
+                {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+                {% set html %}
+                <h3 class="govuk-notification-banner__heading">Published</h3>
+                {% endset %}
+
+                {{ govukNotificationBanner({
+                html: html,
+                type: "success"
+                }) }}
+
+                <h1 class="govuk-heading-xl">Ask the government to sell property: right to contest</h1>
+
+                <table class="govuk-table">   
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Assigned to</th>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">Aldous Huxley</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Content type</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">Answer</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Edition</th>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">2 <strong class="govuk-tag govuk-tag--orange">Published</strong></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <nav class="moj-sub-navigation" aria-label="Sub navigation">
+            <ul class="moj-sub-navigation__list">
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" aria-current="page" href="#">Edit</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="#">Tagging</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="#">Metadata</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="#">History and notes</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="#">Admin</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="#">Related external links</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="#">Unpublish</a>
+                </li>
+            </ul>  
+        </nav>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-l">Edit</h2>
+            </div>
+        </div>
+        
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <div class="published-state">
+
+                    <h2 class="govuk-heading-s">Title</h2>
+                    <p>Ask the government to sell property: right to contest</p>
+
+                    <h2 class="govuk-heading-s">Meta tag description</h2>
+                    <p>Ask for underused or vacant property owned by the government, agencies, local councils or local public bodies to be sold - Right to Contest.</p>
+
+                    <h2 class="govuk-heading-s">Is this beta content?</h2>
+                    <p>No</p>
+
+                    <h2 class="govuk-heading-s">Body</h2>
+                    <p>You can ask for publicly owned land or buildings to be sold if you think they're vacant or underused.</p>
+                    <p>##Find out who owns land or buildings</p>
+                    <p>You can find out who owns land or buildings by:</p>
+                    <p>
+                        - contacting the government department, council or public body you think is the owner</br>
+                        - checking the government's [property and land asset database](http://data.gov.uk/dataset/epims)</br>  
+                        - searching the [HM Land Registry database](/search-property-information-land-registry)</br>
+                    </p>
+                    <p>##Ask for property to be sold/p>
+                    <p>Download and fill in the ['right to contest' application form](/government/publications/right-to-contest-application-form) and send it to the address on the form. The addresses are different for government property and local public body or council property.</p>
+                    <p>You must say why you think the property is being underused and what you think it could be used for.</p>
+                    <p>^You won't have the right to buy the property - the owner can accept other offers.^</p>
+                    <p>The department or agency won’t sell if: </p>
+                    <p>
+                        * the land or buildings aren’t safe for your proposed use, for example if they're part of a port, army barracks or on a flood plain</br>
+                        * they've plans for the land, such as for a railway or road</br>
+                        * the cost of selling wouldn't be good value for the taxpayer, for example if moving to another site would cost more than the value of the property</br>
+                    </p>
+                    <p>You'll get a letter telling you the result of your application.</p>
+                    <p>##Further information</p>
+                    <p>Contact the Government Property Unit about property owned by the government and national agencies.</p>
+                    <p>
+                        $C</br>
+                        **Government Property Unit**\\</br>
+                        righttocontest@cabinet-office.gsi.gov.uk</br>
+                        $C
+                    </p>
+                    <p>
+                        $A</br>
+                        Cabinet Office
+                        1 Horse Guards Road</br>
+                        London</br>
+                        SW1A 2HQ</br>
+                        $A
+                    </p>
+                    <p>Contact the National Planning Casework Team about property owned by local councils and public bodies.</p>
+                    <p>
+                        $C</br>
+                        **The National Planning Casework Team**\\</br>
+                        npcu@communities.gsi.gov.uk</br>
+                        $C
+                    </p>
+                    <p>
+                        $A</br>
+                        5 St Philip’s Place</br>
+                        Colmore Row</br>
+                        Birmingham</br>
+                        B3 2PW</br>
+                        $A
+                    </p>
+
+                    <h2 class="govuk-heading-s">Public change note</h2>
+                    <p>None added</p>
+
+                </div>
+               
+            </div>
+
+            <div class="govuk-grid-column-one-third sticky">
+                <div class="actions-panel">
+                    <h3 class="govuk-heading-s">Options</h3>
+                    <button type="submit" class="govuk-button wide" data-module="govuk-button">Create new edition</button>
+                    <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">View on GOV.UK (opens in new tab)</a></p>
+                </div>
+            </div>
+        </div>
+  
+    </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
