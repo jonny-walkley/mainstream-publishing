@@ -1,0 +1,102 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Document title</h1>
+
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Assigned to</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Genie Reigns</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="edit govuk-link--no-visited-state">Edit</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Content type</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Answer</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Edition</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">1 <strong class="govuk-tag govuk-tag--yellow">Draft</strong></td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="#">Edit</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="page" href="#2">Tagging</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="#3">Metadata</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="#4">History and notes</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="#4">Admin</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="#4">Related external links</a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l">Tagging</h2>
+
+    <div class="empty-state-container">
+      <h3 class="govuk-heading-s">GOV.UK breadcrumb</h3>
+      <p class="govuk-body">No breadcrumb set</p>
+      <p class="govuk-body"><a class="govuk-link--no-visited-state" href="tagging-mvp-breadcrumb">Manage GOV.UK breadcrumb</a></p>
+    </div>
+
+    <div class="empty-state-container">
+      <h3 class="govuk-heading-s">Mainstream browse pages</h3>
+      <p class="govuk-body">Not tagged to any browse pages</p>
+      <p class="govuk-body"><a class="govuk-link--no-visited-state" href="tagging-mvp-mainstream-browse-pages-option-2">Tag to a browse page</a></p>
+    </div>
+
+    <div class="empty-state-container">
+      <h3 class="govuk-heading-s">Organisations</h3>
+      <p class="govuk-body">Not tagged to any organisations</p>
+      <p class="govuk-body"><a class="govuk-link--no-visited-state" href="tagging-mvp-organisations">Tag to an organisation</a></p>
+    </div>
+
+    <div class="empty-state-container">
+      <h3 class="govuk-heading-s">Related content</h3>
+      <p class="govuk-body">Not tagged to any related content</p>
+      <p class="govuk-body"><a class="govuk-link--no-visited-state" href="tagging-mvp-related-content">Tag to related content</a></p>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}

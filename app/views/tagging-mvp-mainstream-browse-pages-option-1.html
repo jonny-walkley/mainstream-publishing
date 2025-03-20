@@ -1,0 +1,1589 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<span class="govuk-caption-xl">Document title</span>
+<h1 class="govuk-heading-xl">Tag browse pages</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+    <!-- <p class="govuk-body">Tag mainstream browse topics to this page</p> -->
+
+
+
+    <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        
+            <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                    How would you like to be contacted?
+                </h1>
+            </legend> -->
+        
+            <div id="contact-hint" class="govuk-hint">
+                Select a category to view its browse pages
+            </div>
+        
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+            <!-- Benefits -->
+            
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="section-1" name="section-1" type="checkbox" value="Benefits" data-aria-controls="conditional-1">
+              <label class="govuk-label govuk-checkboxes__label" for="section-1">
+                Benefits
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-1">
+              
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                      
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="1-1" name="1-1" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="1-1">
+                                    Benefits and financial support for families
+                                </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="2-2" name="2-2" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="2-2">
+                                    Benefits and financial support if you’re caring for someone
+                                </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="3-3" name="3-3" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="3-3">
+                                    Benefits and financial support if you’re disabled or have a health condition
+                                </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="4-4" name="4-4" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="4-4">
+                                    Benefits and financial support if you’re looking for work
+                                </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="5-5" name="5-5" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="5-5">
+                                    Benefits and financial support if you’re on a low income
+                                </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="6-6" name="6-6" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="6-6">
+                                    Benefits and financial support if you’re temporarily unable to work
+                                </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="7-7" name="7-7" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="7-7">
+                                    Benefits and financial support when someone dies
+                                </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="8-8" name="8-8" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="8-8">
+                                    Manage an existing benefit, payment or claim
+                                </label>
+                            </div>
+                        
+                        </div>
+            
+                    </fieldset>
+                </div>
+            
+            </div>
+
+            <!-- Births, deaths, marriages and care -->
+            
+            <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="section-2" name="section-2" type="checkbox" value="Benefits" data-aria-controls="conditional-2">
+                <label class="govuk-label govuk-checkboxes__label" for="section-2">
+                    Births, deaths, marriages and care
+                </label>
+              </div>
+  
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-2">
+                
+                  <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        
+                          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="2-1" name="2-1" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="2-1">
+                                    Certificates, register offices, changes of name or gender
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="2-2" name="2-2" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="2-2">
+                                    Child Benefit
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="2-3" name="2-3" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="2-3">
+                                    Having a child, parenting and adoption
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="2-4" name="2-4" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="2-4">
+                                      Lasting power of attorney, being in care and managing finances
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="2-5" name="2-5" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="2-5">
+                                    Marriage, civil partnership and divorce
+                                  </label>
+                              </div>
+  
+                          </div>
+              
+                      </fieldset>
+                  </div>
+              
+              </div>
+            
+             <!-- Business and self employed -->
+            
+             <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="section-3" name="section-3" type="checkbox" value="Benefits" data-aria-controls="conditional-3">
+                <label class="govuk-label govuk-checkboxes__label" for="section-3">
+                    Business and self employed
+                </label>
+              </div>
+  
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-3">
+                
+                  <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        
+                          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="3-1" name="3-1" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="3-1">
+                                    Business debt and bankruptcy
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="3-2" name="3-2" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="3-2">
+                                      Business finance and support
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="3-3" name="3-3" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="3-3">
+                                      Business premises and business rates
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="3-4" name="3-4" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="3-4">
+                                    Business tax
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="3-5" name="3-5" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="3-5">
+                                    Business waste and environmental impact
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="3-6" name="3-6" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="3-6">
+                                    Childcare providers
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="3-7" name="3-7" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="3-7">
+                                    Expenses and employee benefits
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="3-8" name="3-8" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="3-8">
+                                    Exporting and doing business abroad
+                                  </label>
+                              </div>
+
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="3-9" name="3-9" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="3-9">
+                                    Food, catering and retail
+                                </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="3-10" name="3-10" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="3-10">
+                                    Importing
+                                </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="3-11" name="3-11" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="3-11">
+                                    Licences and licence applications
+                                </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="3-12" name="3-12" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="3-12">
+                                    Manufacturing
+                                </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="3-13" name="3-13" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="3-13">
+                                    Maritime vessels and work at sea
+                                </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="3-14" name="3-14" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="3-14">
+                                    Patents, trade marks, copyright and designs
+                                </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="3-15" name="3-15" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="3-15">
+                                    Running a limited company
+                                </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="3-16" name="3-16" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="3-16">
+                                    Sale of goods and services and data protection
+                                </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="3-17" name="3-17" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="3-17">
+                                    Scientific research and development
+                                </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="3-18" name="3-18" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="3-18">
+                                    Selling your business and closing down
+                                </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="3-19" name="3-19" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="3-19">
+                                    Setting up
+                                </label>
+                            </div>
+                          
+                          </div>
+              
+                      </fieldset>
+                  </div>
+              
+              </div>
+
+              <!-- Childcare and parenting -->
+            
+             <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="section-4" name="section-4" type="checkbox" value="Benefits" data-aria-controls="conditional-4">
+                <label class="govuk-label govuk-checkboxes__label" for="section-4">
+                    Childcare and parenting
+                </label>
+              </div>
+  
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-4">
+                
+                  <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        
+                          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="4-1" name="4-1" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="4-1">
+                                    Childcare
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="4-2" name="4-2" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="4-2">
+                                    Divorce, separation and legal issues
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="4-3" name="4-3" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="4-3">
+                                    Financial help if you have children
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="4-4" name="4-4" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="4-4">
+                                    Fostering, adoption and surrogacy
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="4-5" name="4-5" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="4-5">
+                                    Pregnancy and birth
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="4-6" name="4-6" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="4-6">
+                                    Schools and education
+                                  </label>
+                              </div>
+  
+                          </div>
+              
+                      </fieldset>
+                  </div>
+              
+              </div>
+
+              <!-- Citizenship and living in the UK -->
+            
+             <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="section-5" name="section-5" type="checkbox" value="Benefits" data-aria-controls="conditional-5">
+                <label class="govuk-label govuk-checkboxes__label" for="section-5">
+                    Citizenship and living in the UK
+                </label>
+              </div>
+  
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-5">
+                
+                  <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        
+                          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="5-1" name="5-1" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="5-1">
+                                    British citizenship
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="5-2" name="5-2" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="5-2">
+                                     Charities, volunteering and honours
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="5-3" name="5-3" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="5-3">
+                                    Living in the UK, government and democracy
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="5-4" name="5-4" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="5-4">
+                                    Voting
+                                  </label>
+                              </div>
+  
+                          </div>
+              
+                      </fieldset>
+                  </div>
+              
+              </div>
+
+              <!-- Crime, justice and the law -->
+            
+             <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="section-6" name="section-6" type="checkbox" value="Benefits" data-aria-controls="conditional-6">
+                <label class="govuk-label govuk-checkboxes__label" for="section-6">
+                    Crime, justice and the law
+                </label>
+              </div>
+  
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-6">
+                
+                  <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        
+                          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="6-1" name="6-1" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="6-1">
+                                      Compensation and victim support
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="6-2" name="6-2" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="6-2">
+                                    Penalties, sentences and police
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="6-3" name="6-3" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="6-3">
+                                    Prisons and probation
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="6-4" name="6-4" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="6-4">
+                                    Reporting crimes
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="6-5" name="6-5" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="6-5">
+                                      Benefits and financial support if you’re on a low income
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="6-6" name="6-6" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="6-6">
+                                      Young people and the law
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="6-7" name="6-7" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="6-7">
+                                    Your rights and legal support
+                                  </label>
+                              </div>
+                          
+                          </div>
+              
+                      </fieldset>
+                  </div>
+              
+              </div>
+
+              <!-- Disabled people -->
+            
+             <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="section-7" name="section-7" type="checkbox" value="Benefits" data-aria-controls="conditional-7">
+                <label class="govuk-label govuk-checkboxes__label" for="section-7">
+                    Disabled people
+                </label>
+              </div>
+  
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-7">
+                
+                  <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        
+                          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="7-1" name="7-1" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="7-1">
+                                    Benefits and financial help
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="7-2" name="7-2" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="7-2">
+                                      Carers
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="7-3" name="7-3" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="7-3">
+                                    Disability equipment and transport
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="7-4" name="7-4" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="7-4">
+                                    Disability rights and the Equality Act 2010
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="7-5" name="7-5" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="7-5">
+                                    Work and disabled people
+                                  </label>
+                              </div>
+  
+                          </div>
+              
+                      </fieldset>
+                  </div>
+              
+              </div>
+            
+             <!-- Driving and transport -->
+            
+             <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="section-8" name="section-8" type="checkbox" value="Benefits" data-aria-controls="conditional-8">
+                <label class="govuk-label govuk-checkboxes__label" for="section-8">
+                    Driving and transport
+                </label>
+              </div>
+  
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-8">
+                
+                  <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        
+                          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="8-1" name="8-1" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="8-1">
+                                      Benefits and financial support for families
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="8-2" name="8-2" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="8-2">
+                                      Benefits and financial support if you’re caring for someone
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="8-3" name="8-3" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="8-3">
+                                      Benefits and financial support if you’re disabled or have a health condition
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="8-4" name="8-4" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="8-4">
+                                      Benefits and financial support if you’re looking for work
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="8-5" name="8-5" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="8-5">
+                                      Benefits and financial support if you’re on a low income
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="8-6" name="8-6" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="8-6">
+                                      Benefits and financial support if you’re temporarily unable to work
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="8-7" name="8-7" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="8-7">
+                                      Benefits and financial support when someone dies
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="8-8" name="8-8" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="8-8">
+                                      Manage an existing benefit, payment or claim
+                                  </label>
+                              </div>
+                          
+                          </div>
+              
+                      </fieldset>
+                  </div>
+              
+              </div>
+
+               <!-- Education and learning -->
+            
+             <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="section-9" name="section-9" type="checkbox" value="Benefits" data-aria-controls="conditional-9">
+                <label class="govuk-label govuk-checkboxes__label" for="section-9">
+                    Education and learning
+                </label>
+              </div>
+  
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-9">
+                
+                  <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        
+                          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="9-1" name="9-1" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="9-1">
+                                    Apprenticeships, 14 to 19 education and training for work
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="9-2" name="9-2" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="9-2">
+                                      School admissions and transport to school
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="9-3" name="9-3" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="9-3">
+                                    Schools and curriculum
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="9-4" name="9-4" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="9-4">
+                                    Student finance
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="9-5" name="9-5" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="9-5">
+                                    Universities and higher education
+                                  </label>
+                              </div>
+  
+                          </div>
+              
+                      </fieldset>
+                  </div>
+              
+              </div>
+
+              <!-- Employing people -->
+            
+             <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="section-10" name="section-10" type="checkbox" value="Benefits" data-aria-controls="conditional-10">
+                <label class="govuk-label govuk-checkboxes__label" for="section-10">
+                    Employing people
+                </label>
+              </div>
+  
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-10">
+                
+                  <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        
+                          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="10-1" name="10-1" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="10-1">
+                                      Benefits and financial support for families
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="10-2" name="10-2" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="10-2">
+                                      Benefits and financial support if you’re caring for someone
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="10-3" name="10-3" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="10-3">
+                                      Benefits and financial support if you’re disabled or have a health condition
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="10-4" name="10-4" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="10-4">
+                                      Benefits and financial support if you’re looking for work
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="10-5" name="10-5" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="10-5">
+                                      Benefits and financial support if you’re on a low income
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="10-6" name="10-6" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="10-6">
+                                      Benefits and financial support if you’re temporarily unable to work
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="10-7" name="10-7" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="10-7">
+                                      Benefits and financial support when someone dies
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="10-8" name="10-8" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="10-8">
+                                      Manage an existing benefit, payment or claim
+                                  </label>
+                              </div>
+                          
+                          </div>
+              
+                      </fieldset>
+                  </div>
+              
+              </div>
+
+              <!-- Environment and countryside -->
+            
+             <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="section-11" name="section-11" type="checkbox" value="Benefits" data-aria-controls="conditional-11">
+                <label class="govuk-label govuk-checkboxes__label" for="section-11">
+                    Environment and countryside
+                </label>
+              </div>
+  
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-11">
+                
+                  <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        
+                          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="11-1" name="11-1" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="11-1">
+                                      Benefits and financial support for families
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="11-2" name="11-2" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="11-2">
+                                      Benefits and financial support if you’re caring for someone
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="11-3" name="11-3" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="11-3">
+                                      Benefits and financial support if you’re disabled or have a health condition
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="11-4" name="11-4" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="11-4">
+                                      Benefits and financial support if you’re looking for work
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="11-5" name="11-5" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="11-5">
+                                      Benefits and financial support if you’re on a low income
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="11-6" name="11-6" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="11-6">
+                                      Benefits and financial support if you’re temporarily unable to work
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="11-7" name="11-7" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="11-7">
+                                      Benefits and financial support when someone dies
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="11-8" name="11-8" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="11-8">
+                                      Manage an existing benefit, payment or claim
+                                  </label>
+                              </div>
+                          
+                          </div>
+              
+                      </fieldset>
+                  </div>
+              
+              </div>
+
+              <!-- Housing and local services -->
+            
+             <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="section-12" name="section-12" type="checkbox" value="Benefits" data-aria-controls="conditional-12">
+                <label class="govuk-label govuk-checkboxes__label" for="section-12">
+                    Housing and local services
+                </label>
+              </div>
+  
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-12">
+                
+                  <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        
+                          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="12-1" name="12-1" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="12-1">
+                                    Being a landlord and renting out a room
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="12-2" name="12-2" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="12-2">
+                                    Buying and owning a property
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="12-3" name="12-3" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="12-3">
+                                    Council Tax
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="12-4" name="12-4" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="12-4">
+                                    Council housing and housing associations
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="12-5" name="12-5" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="12-5">
+                                    Household energy
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="12-6" name="12-6" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="12-6">
+                                    Local councils and services
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="12-7" name="12-7" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="12-7">
+                                    Noise, neighbours, pets and pests
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="12-8" name="12-8" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="12-8">
+                                     Planning permission and building regulations
+                                  </label>
+                              </div>
+
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="12-9" name="12-9" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="12-9">
+                                    Recycling and rubbish
+                                </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="12-10" name="12-10" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="12-10">
+                                    Renting a property
+                                </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="12-11" name="12-11" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="12-11">
+                                    Repossessions, homelessness, emergency housing and evictions
+                                </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="12-12" name="12-12" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="12-12">
+                                    Safety and the environment in your community
+                                </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="12-13" name="12-13" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="12-13">
+                                    Streets, roads, pavements and buildings
+                                </label>
+                            </div>
+
+
+
+
+
+
+
+
+                          
+                          </div>
+              
+                      </fieldset>
+                  </div>
+              
+              </div>
+
+               <!-- Money and tax -->
+            
+             <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="section-13" name="section-13" type="checkbox" value="Benefits" data-aria-controls="conditional-13">
+                <label class="govuk-label govuk-checkboxes__label" for="section-13">
+                    Money and tax
+                </label>
+              </div>
+  
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-13">
+                
+                  <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        
+                          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="13-1" name="13-1" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="13-1">
+                                    Capital Gains Tax
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="13-2" name="13-2" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="13-2">
+                                      Court claims, debt and bankruptcy
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="13-3" name="13-3" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="13-3">
+                                    Dealing with HMRC
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="13-4" name="13-4" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="13-4">
+                                    Income Tax
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="13-5" name="13-5" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="13-5">
+                                    Inheritance Tax
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="13-6" name="13-6" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="13-6">
+                                    National Insurance
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="13-7" name="13-7" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="13-7">
+                                    Self Assessment
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="13-8" name="13-8" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="13-8">
+                                      VAT
+                                  </label>
+                              </div>
+                          
+                          </div>
+              
+                      </fieldset>
+                  </div>
+              
+              </div>
+
+               <!-- Passports, travel and living abroad -->
+            
+             <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="section-14" name="section-14" type="checkbox" value="Benefits" data-aria-controls="conditional-14">
+                <label class="govuk-label govuk-checkboxes__label" for="section-14">
+                    Passports, travel and living abroad
+                </label>
+              </div>
+  
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-14">
+                
+                  <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        
+                          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="14-1" name="14-1" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="14-1">
+                                    Living abroad
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="14-2" name="14-2" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="14-2">
+                                    Passports
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="14-3" name="14-3" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="14-3">
+                                    Travel abroad
+                                  </label>
+                              </div>
+                          
+                          </div>
+              
+                      </fieldset>
+                  </div>
+              
+              </div>
+
+              <!-- Visas and immigration -->
+            
+             <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="section-15" name="section-15" type="checkbox" value="Benefits" data-aria-controls="conditional-15">
+                <label class="govuk-label govuk-checkboxes__label" for="section-15">
+                    Visas and immigration
+                </label>
+              </div>
+  
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-15">
+                
+                  <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        
+                          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="15-1" name="15-1" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="15-1">
+                                    Commonwealth citizens and British nationals (overseas)
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="15-2" name="15-2" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="15-2">
+                                    EU, EEA and Swiss citizens
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="15-3" name="15-3" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="15-3">
+                                    Family in the UK
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="15-4" name="15-4" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="15-4">
+                                    Immigration appeals and status problems
+                                  </label>
+                              </div>
+  
+                          </div>
+              
+                      </fieldset>
+                  </div>
+              
+              </div>
+
+              <!-- Live permanently in the UK -->
+            
+             <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="section-16" name="section-16" type="checkbox" value="Benefits" data-aria-controls="conditional-16">
+                <label class="govuk-label govuk-checkboxes__label" for="section-16">
+                    Live permanently in the UK
+                </label>
+              </div>
+  
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-16">
+                
+                  <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        
+                          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="16-1" name="16-1" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="16-1">
+                                    Seek protection or asylum
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="16-2" name="16-2" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="16-2">
+                                    Study in the UK
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="16-3" name="16-3" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="16-3">
+                                    Travelling in the UK
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="16-4" name="16-4" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="16-4">
+                                    Ukrainians and their families
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="16-5" name="16-5" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="16-5">
+                                    Visit the UK
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="16-6" name="16-6" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="16-6">
+                                    What you need to do
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="16-7" name="16-7" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="16-7">
+                                    Work in the UK
+                                  </label>
+                              </div>
+  
+                          </div>
+              
+                      </fieldset>
+                  </div>
+              
+              </div>
+              
+              <!-- Working, jobs and pensions -->
+            
+             <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="section-17" name="section-17" type="checkbox" value="Benefits" data-aria-controls="conditional-17">
+                <label class="govuk-label govuk-checkboxes__label" for="section-17">
+                    Working, jobs and pensions
+                </label>
+              </div>
+  
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-17">
+                
+                  <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        
+                          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="17-1" name="17-1" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="17-1">
+                                    Armed forces
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="17-2" name="17-2" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="17-2">
+                                    Finding a job
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="17-3" name="17-3" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="17-3">
+                                      Holidays, time off, sick leave, maternity and paternity leave
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="17-4" name="17-4" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="17-4">
+                                    Redundancies, dismissals and disciplinaries
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="17-5" name="17-5" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="17-5">
+                                    State Pension
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="17-6" name="17-6" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="17-6">
+                                    Workplace and personal pensions
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="17-7" name="17-7" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="17-7">
+                                    Your contract and working hours
+                                  </label>
+                              </div>
+  
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="17-8" name="17-8" type="checkbox" value="phone">
+                                  <label class="govuk-label govuk-checkboxes__label" for="17-8">
+                                    Your pay, tax and the National Minimum Wage
+                                  </label>
+                              </div>
+
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="17-9" name="17-9" type="checkbox" value="phone">
+                                <label class="govuk-label govuk-checkboxes__label" for="17-9">
+                                    Your rights at work and trade unions
+                                </label>
+                            </div>
+                          
+                          </div>
+              
+                      </fieldset>
+                  </div>
+              
+              </div>
+
+
+
+
+          </div>
+        </fieldset>
+      </div>
+
+    <!--
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-fieldset__heading">
+          Driving and transport
+        </h1>
+      </legend>
+      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="driving1" name="organisation" type="checkbox" value="hmrc">
+          <label class="govuk-label govuk-checkboxes__label" for="driving1">
+            Buy, sell or scrap a vehicle 
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="driving2" name="organisation" type="checkbox" value="employment-tribunal">
+          <label class="govuk-label govuk-checkboxes__label" for="driving2">
+            Driving and enforcing the law 
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="driving3" name="organisation" type="checkbox" value="MOD">
+          <label class="govuk-label govuk-checkboxes__label" for="driving3">
+            Driving in the UK and abroad 
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="driving4" name="organisation" type="checkbox" value="DfT">
+          <label class="govuk-label govuk-checkboxes__label" for="driving4">
+            Driving licences 
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="driving5" name="organisation" type="checkbox" value="DfT">
+            <label class="govuk-label govuk-checkboxes__label" for="driving5">
+                Driving tests and learning how to drive or ride 
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="driving6" name="organisation" type="checkbox" value="DfT">
+            <label class="govuk-label govuk-checkboxes__label" for="driving6">
+                Driving with medical conditions, Blue Badges and transport for disabled people 
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="driving7" name="organisation" type="checkbox" value="DfT">
+            <label class="govuk-label govuk-checkboxes__label" for="driving7">
+                HGV, bus and coach drivers 
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="driving8" name="organisation" type="checkbox" value="DfT">
+            <label class="govuk-label govuk-checkboxes__label" for="driving8">
+                Manufacture or adapt a vehicle 
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="driving9" name="organisation" type="checkbox" value="DfT">
+            <label class="govuk-label govuk-checkboxes__label" for="driving9">
+                Number plates, vehicle registration and log books 
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="driving10" name="organisation" type="checkbox" value="DfT">
+            <label class="govuk-label govuk-checkboxes__label" for="driving10">
+                Parking, public transport and the environment
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="driving11" name="organisation" type="checkbox" value="DfT">
+            <label class="govuk-label govuk-checkboxes__label" for="driving11">
+                Penalty points, fines and driving bans 
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="driving12" name="organisation" type="checkbox" value="DfT">
+            <label class="govuk-label govuk-checkboxes__label" for="driving12">
+                Teaching people to drive 
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="driving13" name="organisation" type="checkbox" value="DfT">
+            <label class="govuk-label govuk-checkboxes__label" for="driving13">
+                The Highway Code, road safety and vehicle rules 
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="driving14" name="organisation" type="checkbox" value="DfT">
+            <label class="govuk-label govuk-checkboxes__label" for="driving14">
+                Transport and driving businesses 
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="driving15" name="organisation" type="checkbox" value="DfT">
+            <label class="govuk-label govuk-checkboxes__label" for="driving15">
+                Vehicle and driver data and information 
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="driving16" name="organisation" type="checkbox" value="DfT">
+            <label class="govuk-label govuk-checkboxes__label" for="driving16">
+                Vehicle tax, MOT and insurance 
+            </label>
+          </div>
+      </div>
+    </fieldset>
+  </div>
+
+  
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-fieldset__heading">
+          Employing people
+        </h1>
+      </legend>
+      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="education6" name="organisation" type="checkbox" value="hmrc">
+          <label class="govuk-label govuk-checkboxes__label" for="education6">
+            Contacts for employment and working hours 
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="education7" name="organisation" type="checkbox" value="employment-tribunal">
+          <label class="govuk-label govuk-checkboxes__label" for="education7">
+            Dismissing staff and redundancies 
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="education8" name="organisation" type="checkbox" value="MOD">
+          <label class="govuk-label govuk-checkboxes__label" for="education8">
+            Health and safety at work
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="education9" name="organisation" type="checkbox" value="DfT">
+          <label class="govuk-label govuk-checkboxes__label" for="education9">
+            Payroll
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="education10" name="organisation" type="checkbox" value="DfT">
+            <label class="govuk-label govuk-checkboxes__label" for="education10">
+                Pensions for your staff 
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="education11" name="organisation" type="checkbox" value="DfT">
+            <label class="govuk-label govuk-checkboxes__label" for="education11">
+                Recruiting and hiring 
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="education12" name="organisation" type="checkbox" value="DfT">
+            <label class="govuk-label govuk-checkboxes__label" for="education12">
+                Statutory leave and time off 
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="education13" name="organisation" type="checkbox" value="DfT">
+            <label class="govuk-label govuk-checkboxes__label" for="education13">
+                Trade unions and workers rights 
+            </label>
+          </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-fieldset__heading">
+          Environment and countryside
+        </h1>
+      </legend>
+      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="environment1" name="organisation" type="checkbox" value="hmrc">
+          <label class="govuk-label govuk-checkboxes__label" for="environment1">
+            Boats and waterways 
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="environment2" name="organisation" type="checkbox" value="employment-tribunal">
+          <label class="govuk-label govuk-checkboxes__label" for="environment2">
+            Coasts
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="environment3" name="organisation" type="checkbox" value="MOD">
+          <label class="govuk-label govuk-checkboxes__label" for="environment3">
+            Countryside
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="environment4" name="organisation" type="checkbox" value="DfT">
+          <label class="govuk-label govuk-checkboxes__label" for="environment4">
+            Farming and land management 
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="environment5" name="organisation" type="checkbox" value="DfT">
+            <label class="govuk-label govuk-checkboxes__label" for="environment5">
+                Fishing and hunting 
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="environment6" name="organisation" type="checkbox" value="DfT">
+            <label class="govuk-label govuk-checkboxes__label" for="environment6">
+                Flooding
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="environment7" name="organisation" type="checkbox" value="DfT">
+            <label class="govuk-label govuk-checkboxes__label" for="environment7">
+                Treasure and wrecks 
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="environment8" name="organisation" type="checkbox" value="DfT">
+            <label class="govuk-label govuk-checkboxes__label" for="environment8">
+                Waste management 
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="environment9" name="organisation" type="checkbox" value="DfT">
+            <label class="govuk-label govuk-checkboxes__label" for="environment9">
+                Wildlife and biodiversity 
+            </label>
+          </div>
+      </div>
+    </fieldset>
+  </div>
+
+-->
+  
+</div>
+
+  <div class="govuk-grid-column-one-third sticky">
+    <div class="actions-panel">
+        <h3 class="govuk-heading-s">Options</h3>
+        <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">
+            Save
+        </button>
+        <p class="govuk-body"><a class="govuk-link--no-visited-state" href="tagging-mvp-empty-state">Cancel</a></p>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}

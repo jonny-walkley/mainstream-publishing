@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Reorder related content - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--xl" for="event-name">
+          <span class="govuk-caption-xl">Document title</span>
+          Reorder related content
+        </label>
+      </h1>
+      <div id="event-name-hint" class="govuk-hint">
+        Use the up and down buttons to reorder related content items, or select and hold on an item to reorder using drag and drop.
+      </div>
+      <!-- <input class="govuk-input" id="event-name" name="eventName" type="text" aria-describedby="event-name-hint"> -->
+    </div>
+
+    <div class="reorderable-list-wrapper">
+      <div class="reorderable-list">
+        <p>/company-tax-returns</p>
+        {{ govukButton({
+          text: "Down",
+          classes: "govuk-button--secondary"
+        }) }}
+      </div>
+      <div class="reorderable-list">
+        <p>/prepare-file-annual-accounts-for-limited-company</p>
+        {{ govukButton({
+          text: "Down",
+          classes: "govuk-button--secondary"
+        }) }}
+        {{ govukButton({
+          text: "Up",
+          classes: "govuk-button--secondary"
+        }) }}
+      </div>
+      <div class="reorderable-list">
+        <p>/corporation-tax</p>
+        {{ govukButton({
+          text: "Down",
+          classes: "govuk-button--secondary"
+        }) }}
+        {{ govukButton({
+          text: "Up",
+          classes: "govuk-button--secondary"
+        }) }}
+      </div>
+      <div class="reorderable-list">
+        <p>/tax-help</p>
+        {{ govukButton({
+          text: "Up",
+          classes: "govuk-button--secondary bottom-up"
+        }) }}
+      </div>
+    </div>
+
+    <div class="govuk-button-group govuk-!-static-margin-top-4">
+      {{ govukButton({
+        text: "Update order"
+      }) }}
+      <a class="govuk-link govuk-link--no-visited-state" href="tagging-mvp-fully-tagged-state">Cancel</a>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}

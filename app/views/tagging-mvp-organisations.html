@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Tag organisations - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">Document title</span>
+    <h1 class="govuk-heading-xl">Tag organisations</h1>
+
+    <p class="govuk-body">Tagging a page to an organisation makes it appear in searches filtered by that organisation.
+    </p>
+    <p class="govuk-body govuk-!-static-margin-bottom-0">
+      For example, <a class="govuk-link--no-visited-state"
+        href="https://www.gov.uk/search/all?keywords=taxes&order=relevance&organisations%5B%5D=hm-revenue-customs">a
+        search for documents published by HMRC</a>.</p>
+
+    <h2 class="govuk-heading-m govuk-!-static-margin-top-8 govuk-!-static-margin-bottom-6 govuk-!-static-padding-top-0">Organisation 1</h2>
+
+    {{ govukInput({
+      label: {
+      text: "Organisation name"
+      },
+      hint: {
+      text: "Start typing to search the list of organisations"
+      },
+      id: "organisation-1",
+      name: "organisation-1"
+    }) }}
+
+    {{ govukButton({
+      text: "Add another organisation",
+      classes: "govuk-button--secondary",
+      href: "tagging-mvp-organisations-add-another"
+    }) }}
+
+    <div class="govuk-button-group govuk-!-static-margin-top-4">
+      {{ govukButton({
+        text: "Save"
+      }) }}
+      <a class="govuk-link govuk-link--no-visited-state" href="tagging-mvp-empty-state">Cancel</a>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
