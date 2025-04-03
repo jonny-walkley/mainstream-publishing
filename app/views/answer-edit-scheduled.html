@@ -12,6 +12,23 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
 
+              {% set pubDate = data['schedule-hour'] + ':' + data['schedule-minute'] %}
+
+              {% set html %}
+                {% if data['schedule-day'] %}
+                  <h3 class="govuk-notification-banner__heading">Scheduled to publish at {{ pubDate | govukTime }}, {{ data['schedule-day'] }} {{ data['schedule-month']| monthName }} {{ data['schedule-year'] }}</h3>
+                {% else %}
+                  <h3 class="govuk-notification-banner__heading">Scheduled to publish at 12:01am, 24 March 2025</h3>
+                {% endif %}
+              {% endset %}
+
+              {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+                          
+              {{ govukNotificationBanner({
+              html: html,
+              type: "success"
+              }) }}
+
                 <h1 class="govuk-heading-xl">Ask the government to sell property: right to contest</h1>
 
                 <table class="govuk-table">   
@@ -34,7 +51,12 @@
                         </tr>
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Scheduled</th>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">12:01am, 4 March 2025</td>
+                            {% if data['schedule-day'] %}
+                            <td class="govuk-table__cell govuk-table__cell--numeric">{{ pubDate | govukTime }}, {{ data['schedule-day'] }} {{ data['schedule-month']| monthName }} {{ data['schedule-year'] }}</td>
+                            {% else %}
+                            <td class="govuk-table__cell govuk-table__cell--numeric">12:01am, 24 March 2025</td>
+                            {% endif %}
+                            
                             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                         </tr>
                     </tbody>
@@ -152,7 +174,7 @@
                 <div class="actions-panel">
                     <h3 class="govuk-heading-s">Options</h3>
                     <a href="cancel-scheduled-publishing">
-                        <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Cancel scheduling</button>
+                        <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Cancel schedule</button>
                     </a>
                     <a href="send-to-publish">
                         <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Publish now</button>
