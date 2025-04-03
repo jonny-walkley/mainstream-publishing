@@ -4,13 +4,6 @@
 Publication - {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "#"
-  }) }}
-{% endblock %}
-
 {% block content %}
 
 <span class="govuk-caption-l">Ask the government to sell property: right to contest</span>
@@ -20,6 +13,18 @@ Publication - {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
 
         <form action="/answer-edit-scheduled" method="post">
+
+          {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{{ govukTextarea({
+  name: "moreDetail",
+  id: "more-detail",
+  label: {
+    text: "Comment (optional)",
+    classes: "govuk-label--s",
+    isPageHeading: true
+  }
+}) }}
 
       <div class="govuk-form-group govuk-form-group">
         <div class="govuk-form-group">
@@ -36,7 +41,7 @@ Publication - {{ serviceName }} – GOV.UK Prototype Kit
                   <label class="govuk-label govuk-date-input__label" for="schedule-day">
                     Day
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="schedule-day" name="schedule-day" type="text" inputmode="numeric" value="24">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="schedule-day" name="schedule-day" type="text" inputmode="numeric" value="">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -44,7 +49,7 @@ Publication - {{ serviceName }} – GOV.UK Prototype Kit
                   <label class="govuk-label govuk-date-input__label" for="schedule-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="schedule-month" name="schedule-month" type="text" inputmode="numeric" value="3">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="schedule-month" name="schedule-month" type="text" inputmode="numeric" value="">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -52,7 +57,7 @@ Publication - {{ serviceName }} – GOV.UK Prototype Kit
                   <label class="govuk-label govuk-date-input__label" for="schedule-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="schedule-year" name="schedule-year" type="text" inputmode="numeric" value="2025">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="schedule-year" name="schedule-year" type="text" inputmode="numeric" value="">
                 </div>
               </div>
 
