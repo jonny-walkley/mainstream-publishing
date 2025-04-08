@@ -1,0 +1,98 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to publications",
+    href: "publications"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">Answer</span>
+    <h1 class="govuk-heading-xl">Publication title</h1>
+    
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Edition</dt>
+        <dd class="govuk-summary-list__value">1 <strong class="govuk-tag govuk-tag--yellow">Draft</strong></dd>
+        <dd class="govuk-summary-list__actions"></dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Assigned to</dt>
+        <dd class="govuk-summary-list__value">Genie Reigns</dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> assignee</span></a>
+        </dd>
+      </div>
+    </dl>
+  
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="answer-draft-edit">Edit</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="answer-draft-tagging">Tagging</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" aria-current="page" href="#">Metadata</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="answer-draft-history-and-notes">History and notes</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="answer-draft-admin">Admin</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="answer-draft-related-external-links">Related external links</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">Metadata</h2>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+      
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">Slug</label>
+      <div id="event-name-hint" class="govuk-hint">If you change the slug of a published page, the old slug will automatically redirect to the new one.</div>
+      <input class="govuk-input" id="doc-title" name="doc-title" type="text" spellcheck="false" autocomplete="name" value="this-is-the-slug">
+    </div>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">Language</label>
+        </legend>
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes" checked>
+            <label class="govuk-label govuk-radios__label" for="changedName">English</label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="changedName-2">Welsh</label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Update
+    </button>
+
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}

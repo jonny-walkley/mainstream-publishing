@@ -1,0 +1,109 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<span class="govuk-caption-l">Document title</span>
+<h1 class="govuk-heading-xl">Send to fact check</h1>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% from "govuk/components/input/macro.njk" import govukInput %}
+
+    {{ govukInput({
+        label: {
+            text: "Email addresses",
+            classes: "govuk-label--m"
+        },
+        hint: {
+          text: "You can enter multiple email addresses if you comma separate them as follows: fact-checker-one@example.com, fact-checker-two@example.com"
+        },
+        id: "email",
+        name: "email",
+        type: "email",
+        autocomplete: "email",
+        spellcheck: false,
+        value: ""
+    }) }}
+        
+    <div class="govuk-form-group">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="more-detail">
+          Customised message
+        </label>
+      </h1>
+
+      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="14" aria-describedby="more-detail-hint">
+Hi,
+
+We need you to check the factual accuracy of changes made to ‘Statutory Neonatal Care Pay and Leave: employer guide’ before it’s published on GOV.UK.
+
+The GOV.UK Content Team made the changes because
+
+# Deadline: 15 April 2025 (5 working days from today - 8 April 2025)
+
+Preview the changes:
+https://draft-origin.integration.publishing.service.gov.uk/employers-neonatal-care-pay-leave?token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1Yzg1OGQyOC1iODc3LTRlN2ItYTU5Ni04MjdkZTNkODI0MGIiLCJjb250ZW50X2lkIjoiYjU0MTBiZDYtMTA2OS00MmViLTlhMjAtMjQ3NThjYTE1NzA4IiwiaWF0IjoxNzQ0MTIxNzk5LCJleHAiOjE3NDY3MTM3OTl9.T05_RFesBeNUyaE_c1TuXie6A6VTJlVTKuJ6k5NHgUY
+
+---------------------------------------------------
+
+# What to do
+
+Reply and confirm the content is correct.
+
+Or, if you spot something that's not correct, reply to this email and tell us:
+
+- which paragraph or section isn’t right - for example chapter 2, under heading ‘How much it costs’
+- what’s wrong and why - for example the text implies a legal obligation, when there isn't one
+
+Check your reply is being sent to govuk-fact-check-integration@digital.cabinet-office.gov.uk. Do not remove [67f2dd70036d59001480c74c] from the subject line - GDS will not get your fact check response if this is removed.
+
+---------------------------------------------------
+
+# How to do it
+
+When fact checking, please:
+
+- only point out factual errors - don’t suggest wording (GDS is responsible for the style)
+- use plain text - GDS systems don’t display text formatting, colours or attachments
+
+To get the content published more quickly:
+
+- only include comments about sections that GDS has changed
+- only reply once - it’ll help if you co-ordinate your response before replying
+
+---------------------------------------------------
+
+# When to contact your GOV.UK lead
+
+Ask your GOV.UK lead if:
+
+- you’ve spotted a new issue - they’ll raise a new request with GDS
+- you’ve got any questions - they can ask GDS any queries via the Zendesk system
+- you need an extension to the deadline
+
+Thank you.</textarea>
+</div>
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Send to fact check",
+    href: "answer-edit-sent-to-fact-check"
+  }) }}
+  <a class="govuk-link govuk-link--no-visited-state" href="answer-edit-fact-check">Cancel</a>
+</div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}

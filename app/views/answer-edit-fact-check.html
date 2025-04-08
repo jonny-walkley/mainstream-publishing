@@ -1,42 +1,4 @@
-{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
-
-{% block header %}
-{{ govukHeader({
-  homepageUrl: "/index",
-  serviceName: "Publisher",
-  serviceUrl: "/index",
-  navigation: [
-    {
-      href: "/ur-2ier-content-1-publications-fact-check-received",
-      text: "Publications"
-    },
-    {
-      href: "#2",
-      text: "Add artefact"
-    },
-    {
-      href: "#3",
-      text: "Downtime"
-    },
-    {
-        href: "#4",
-        text: "Reports"
-    },
-    {
-        href: "#5",
-        text: "Search by user"
-    },
-    {
-        href: "#6",
-        text: "Username"
-    },
-    {
-        href: "#7",
-        text: "Sign out"
-    }
-  ]
-}) }}
-{% endblock %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
   Publication - {{ serviceName }} – GOV.UK Prototype Kit
@@ -49,19 +11,6 @@
 
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-
-                <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-                    <div class="govuk-notification-banner__header">
-                      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-                        Success
-                      </h2>
-                    </div>
-                    <div class="govuk-notification-banner__content">
-                      <h3 class="govuk-notification-banner__heading">
-                        Sent to fact check
-                      </h3>
-                    </div>
-                  </div>
 
                 <h1 class="govuk-heading-xl">Ask the government to sell property: right to contest</h1>
 
@@ -79,15 +28,13 @@
                         </tr>
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Edition</th>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">2 <strong class="govuk-tag govuk-tag--purple">Fact check</strong></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">2 <strong class="govuk-tag govuk-tag--green">Ready</strong></td>
                             <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                         </tr>
                     </tbody>
                 </table>
 
                 <div class="govuk-inset-text">
-                    <p>{{ data['assign-2i-reviewer'] }} requested this edition to be fact checked. We’re awaiting a response.</p>
-                    <p><a href="#" class="govuk-link--no-visited-state">Resend fact check email</a></p>
                     <p><a href="#" class="govuk-link--no-visited-state">Request amendments</a></p>
                 </div>
 
@@ -106,7 +53,7 @@
                     <a class="moj-sub-navigation__link" href="#">Metadata</a>
                 </li>
                 <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="ur-2ier-content-1-fact-check-history-and-notes.html">History and notes</a>
+                    <a class="moj-sub-navigation__link" href="#">History and notes</a>
                 </li>
                 <li class="moj-sub-navigation__item">
                     <a class="moj-sub-navigation__link" href="#">Admin</a>
@@ -285,8 +232,12 @@ $A
                 <div class="actions-panel">
                     <h3 class="govuk-heading-s">Options</h3>
                     <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">Save</button>
+                    <a href="fact-check-as-is">
+                      <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Fact check</button>
+                    </a>
+                    <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Schedule</button>
+                    <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Publish</button>
                     <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">Preview (opens in new tab)</a></p>
-                    <p class="govuk-body"><a class="delete" href="#">Delete edition</a></p>
                 </div>
             </div>
         </div>

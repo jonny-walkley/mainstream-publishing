@@ -1,0 +1,94 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to publications",
+    href: "publications"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">Answer</span>
+    <h1 class="govuk-heading-xl">Publication title</h1>
+    
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Edition</dt>
+        <dd class="govuk-summary-list__value">1 <strong class="govuk-tag govuk-tag--yellow">Draft</strong></dd>
+        <dd class="govuk-summary-list__actions"></dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Assigned to</dt>
+        <dd class="govuk-summary-list__value">Genie Reigns</dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> assignee</span></a>
+        </dd>
+      </div>
+    </dl>
+  
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="answer-draft-edit">Edit</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" aria-current="page" href="#">Tagging</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="answer-draft-metadata">Metadata</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="answer-draft-history-and-notes">History and notes</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="answer-draft-admin">Admin</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="answer-draft-related-external-links">Related external links</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">Tagging</h2>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    
+    <div class="empty-state-container">
+      <h3 class="govuk-heading-s">GOV.UK breadcrumb</h3>
+      <p class="govuk-body">No breadcrumb set</p>
+      <p class="govuk-body"><a class="govuk-link--no-visited-state" href="tagging-mvp-breadcrumb">Set GOV.UK breadcrumb</a></p>
+    </div>
+
+    <div class="empty-state-container">
+      <h3 class="govuk-heading-s">Mainstream browse pages</h3>
+      <p class="govuk-body">Not tagged to any browse pages</p>
+      <p class="govuk-body"><a class="govuk-link--no-visited-state" href="tagging-mvp-mainstream-browse-pages-option-2">Tag to a browse page</a></p>
+    </div>
+
+    <div class="empty-state-container">
+      <h3 class="govuk-heading-s">Organisations</h3>
+      <p class="govuk-body">Not tagged to any organisations</p>
+      <p class="govuk-body"><a class="govuk-link--no-visited-state" href="tagging-mvp-organisations">Tag to an organisation</a></p>
+    </div>
+
+    <div class="empty-state-container">
+      <h3 class="govuk-heading-s">Related content</h3>
+      <p class="govuk-body">Not tagged to any related content</p>
+      <p class="govuk-body"><a class="govuk-link--no-visited-state" href="tagging-mvp-related-content">Tag to related content</a></p>
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
