@@ -44,11 +44,11 @@
     <nav class="moj-sub-navigation" aria-label="Sub navigation">
       <ul class="moj-sub-navigation__list">
         <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" aria-current="page" href="#">Edit</a></li>
-        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="answer-draft-tagging">Tagging</a></li>
-        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="answer-draft-metadata">Metadata</a></li>
-        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="answer-draft-history-and-notes">History and notes</a></li>
-        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="answer-draft-admin">Admin</a></li>
-        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="answer-draft-related-external-links">Related external links</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#">Tagging</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#">Metadata</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#">History and notes</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#">Admin</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#">Related external links</a></li>
       </ul>
     </nav>
   </div>
@@ -73,6 +73,62 @@
       </div>
       <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
     </div>
+
+    <h3 class="govuk-heading-m">Chapters</h3>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+          Chapter 1 title
+        </dt>
+        <dd class="govuk-summary-list__value">
+          
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Edit<span class="govuk-visually-hidden"> Chapter 1</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+          Chapter 2 title
+        </dt>
+        <dd class="govuk-summary-list__value">
+          
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Edit<span class="govuk-visually-hidden"> Chapter 2</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+          Chapter 3 title
+        </dt>
+        <dd class="govuk-summary-list__value">
+          
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Edit<span class="govuk-visually-hidden"> Chapter 3</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+          Chapter 4 title
+        </dt>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link govuk-link--no-visited-state" href="#">Edit<span class="govuk-visually-hidden"> Chapter 4</span></a>
+            </li>
+          </ul>
+        </dd>
+      </div>
+    </dl>
+
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Add a chapter
+    </button>
 
     {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -100,62 +156,6 @@
         }
       ]
     }) }}
-
-    <h3 class="govuk-heading-m">Chapters</h3>
-
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-          Chapter 1 title
-        </dt>
-        <dd class="govuk-summary-list__value">
-          
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">Edit<span class="govuk-visually-hidden"> name</span></a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-          Chapter 2 title
-        </dt>
-        <dd class="govuk-summary-list__value">
-          
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">Edit<span class="govuk-visually-hidden"> date of birth</span></a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-          Chapter 3 title
-        </dt>
-        <dd class="govuk-summary-list__value">
-          
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">Edit<span class="govuk-visually-hidden"> address</span></a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-          Chapter 4 title
-        </dt>
-        <dd class="govuk-summary-list__value">
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <ul class="govuk-summary-list__actions-list">
-            <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="#">Edit<span class="govuk-visually-hidden"> contact details</span></a>
-            </li>
-          </ul>
-        </dd>
-      </div>
-    </dl>
-
-    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-      Add a chapter
-    </button>
 
     <div class="line">
         &nbsp;
