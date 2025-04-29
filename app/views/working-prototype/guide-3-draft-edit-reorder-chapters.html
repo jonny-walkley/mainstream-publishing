@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Reorder related content - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--xl" for="event-name">
+          <span class="govuk-caption-xl">Publication title</span>
+          Reorder chapters
+        </label>
+      </h1>
+      <div id="reorder-chapters-hint" class="govuk-hint">
+        Use the up and down buttons to reorder chapters, or select and hold on an item to reorder using drag and drop
+      </div>
+      <!-- <input class="govuk-input" id="event-name" name="eventName" type="text" aria-describedby="event-name-hint"> -->
+    </div>
+
+    <div class="reorderable-list-wrapper">
+      <div class="reorderable-list">
+        <p>Chapter 1 title</p>
+        {{ govukButton({
+          text: "Down",
+          classes: "govuk-button--secondary"
+        }) }}
+      </div>
+      <div class="reorderable-list">
+        <p>Chapter 2 title</p>
+        {{ govukButton({
+          text: "Up",
+          classes: "govuk-button--secondary bottom-up"
+        }) }}
+      </div>
+    </div>
+
+    <div class="govuk-button-group govuk-!-static-margin-top-4">
+      {{ govukButton({
+        text: "Update order"
+      }) }}
+      <a class="govuk-link govuk-link--no-visited-state" href="guide-3-draft-edit">Cancel</a>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
