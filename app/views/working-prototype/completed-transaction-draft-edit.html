@@ -77,73 +77,85 @@
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
         <legend class="">
-          <label class="govuk-label govuk-label--s" for="doc-title">Promotions</label>
+          <label class="govuk-label govuk-label--s" for="promotions">Promotions</label>
         </legend>
-        <div id="contact-hint" class="govuk-hint">
+        <div id="promotions-hint" class="govuk-hint">
           Display a promotion above the satisfaction survey
         </div>
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="do-not-promote" checked>
-            <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+            <input class="govuk-radios__input" id="do-not-promote" name="promotions" type="radio" value="do-not-promote" checked>
+            <label class="govuk-label govuk-radios__label" for="do-not-promote">
               Don’t promote anything on this page
             </label>
           </div>
           <div class="govuk-radios__divider">or</div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="organ-donation" data-aria-controls="conditional-organ-donation">
-            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+            <input class="govuk-radios__input" id="organ-donation" name="promotions" type="radio" value="organ-donation" data-aria-controls="conditional-organ-donation">
+            <label class="govuk-label govuk-radios__label" for="organ-donation">
               Organ donation
             </label>
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-organ-donation">
             <div class="govuk-form-group">
-              <label class="govuk-label" for="electric-vehicles">
+              <label class="govuk-label" for="promotion-url">
                 Promotion URL
               </label>
-              <input class="govuk-input govuk-!-width-full" id="promotion-url" name="promotion-url" type="text" autocomplete="tel">
+              <input class="govuk-input govuk-!-width-full" id="promotion-url" name="promotion-url" type="text">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="opt-in-url">
+                Opt-in URL (optional)
+              </label>
+              <input class="govuk-input govuk-!-width-full" id="opt-in-url" name="opt-in-url" type="text">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="opt-out-url">
+                Opt-out URL (optional)
+              </label>
+              <input class="govuk-input govuk-!-width-full" id="opt-out-url" name="opt-out-url" type="text">
             </div>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="photo-id" data-aria-controls="conditional-photo-id">
-            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+            <input class="govuk-radios__input" id="bring-ID-to-vote" name="promotions" type="radio" value="photo-id" data-aria-controls="conditional-photo-id">
+            <label class="govuk-label govuk-radios__label" for="bring-ID-to-vote">
               Bring photo ID to vote
             </label>
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-photo-id">
             <div class="govuk-form-group">
-              <label class="govuk-label" for="electric-vehicles">
+              <label class="govuk-label" for="promotion-url-bring-ID-to-vote">
                 Promotion URL
               </label>
-              <input class="govuk-input govuk-!-width-full" id="promotion-url" name="promotion-url" type="text" autocomplete="tel">
+              <input class="govuk-input govuk-!-width-full" id="promotion-url-bring-ID-to-vote" name="promotion-url" type="text">
             </div>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="conditional-mot-reminders" data-aria-controls="conditional-mot-reminders">
-            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+            <input class="govuk-radios__input" id="mot-reminders" name="promotions" type="radio" value="conditional-mot-reminders" data-aria-controls="conditional-mot-reminders">
+            <label class="govuk-label govuk-radios__label" for="mot-reminders">
               MOT reminders
             </label>
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-mot-reminders">
             <div class="govuk-form-group">
-              <label class="govuk-label" for="electric-vehicles">
+              <label class="govuk-label" for="promotion-url-mot-reminders">
                 Promotion URL
               </label>
-              <input class="govuk-input govuk-!-width-full" id="promotion-url" name="promotion-url" type="text" autocomplete="tel">
+              <input class="govuk-input govuk-!-width-full" id="promotion-url-mot-reminders" name="promotion-url" type="text">
             </div>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="whereDoYouLive-6" name="whereDoYouLive" type="radio" value="electric-vehicles" data-aria-controls="conditional-electric-vehicles">
-            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-6">
+            <input class="govuk-radios__input" id="electric-vehicles" name="promotions" type="radio" value="electric-vehicles" data-aria-controls="conditional-electric-vehicles">
+            <label class="govuk-label govuk-radios__label" for="electric-vehicles">
               Electric vehicles
             </label>
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-electric-vehicles">
             <div class="govuk-form-group">
-              <label class="govuk-label" for="electric-vehicles">
+              <label class="govuk-label" for="promotion-url-electric-vehicles">
                 Promotion URL
               </label>
-              <input class="govuk-input govuk-!-width-full" id="promotion-url" name="promotion-url" type="text" autocomplete="tel">
+              <input class="govuk-input govuk-!-width-full" id="promotion-url-electric-vehicles" name="promotion-url" type="text">
             </div>
           </div>
         </div>
