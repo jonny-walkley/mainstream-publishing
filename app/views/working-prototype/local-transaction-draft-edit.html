@@ -97,13 +97,6 @@
     </div>
 
     <div class="govuk-form-group">
-      <label class="govuk-label govuk-label--s" for="what-you-need-to-know">
-        What you need to know (optional)
-      </label>
-      <textarea class="govuk-textarea" id="what-you-need-to-know" name="whatYouNeedToKnow" rows="16"></textarea>
-    </div>
-
-    <div class="govuk-form-group">
       <label class="govuk-label govuk-label--s" for="more-information">
         More information (optional)
       </label>
@@ -111,16 +104,20 @@
     </div>
 
     <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+      <label class="govuk-label govuk-label--s" for="what-you-need-to-know">
+        What you need to know (optional)
+      </label>
+      <textarea class="govuk-textarea" id="what-you-need-to-know" name="whatYouNeedToKnow" rows="6"></textarea>
+    </div>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
         <legend class="">
           <label class="govuk-label govuk-label--s" for="northernIreland">Northern Ireland</label>
         </legend>
-        <!-- <div id="contact-hint" class="govuk-hint">
-          Display a promotion above the satisfaction survey
-        </div> -->
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="northernIreland-1" name="northernIreland" type="radio" value="do-not-promote">
+            <input class="govuk-radios__input" id="northernIreland-1" name="northernIreland" type="radio" value="do-not-promote" checked>
             <label class="govuk-label govuk-radios__label" for="northernIreland-1">
               Service available from local council
             </label>
@@ -150,16 +147,13 @@
     </div>
 
     <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+      <fieldset class="govuk-fieldset">
         <legend class="">
-          <label class="govuk-label govuk-label--s" for="doc-title">Scotland</label>
+          <label class="govuk-label govuk-label--s" for="scotland">Scotland</label>
         </legend>
-        <!-- <div id="contact-hint" class="govuk-hint">
-          Display a promotion above the satisfaction survey
-        </div> -->
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="scotland-1" name="scotland" type="radio" value="do-not-promote">
+            <input class="govuk-radios__input" id="scotland-1" name="scotland" type="radio" value="do-not-promote" checked>
             <label class="govuk-label govuk-radios__label" for="scotland-1">
               Service available from local council
             </label>
@@ -189,16 +183,13 @@
     </div>
 
     <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+      <fieldset class="govuk-fieldset">
         <legend class="">
-          <label class="govuk-label govuk-label--s" for="doc-title">Wales</label>
+          <label class="govuk-label govuk-label--s" for="wales">Wales</label>
         </legend>
-        <!-- <div id="contact-hint" class="govuk-hint">
-          Display a promotion above the satisfaction survey
-        </div> -->
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="wales-1" name="wales" type="radio" value="do-not-promote">
+            <input class="govuk-radios__input" id="wales-1" name="wales" type="radio" value="do-not-promote" checked>
             <label class="govuk-label govuk-radios__label" for="wales-1">
               Service available from local council
             </label>
