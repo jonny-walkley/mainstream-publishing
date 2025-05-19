@@ -103,7 +103,6 @@
       fieldset: {
         legend: {
           text: "Is every chapter part of a step by step?",
-          isPageHeading: true,
           classes: "govuk-fieldset__legend--s"
         }
       },
@@ -127,23 +126,27 @@
         &nbsp;
     </div>
 
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">Is this beta content?</label>
-        </legend>
-        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="changedName">Yes</label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no" checked>
-            <label class="govuk-label govuk-radios__label" for="changedName-2">No</label>
-          </div>
-        </div>
-      </fieldset>
-    </div>
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      name: "IsThisBetaContent",
+      fieldset: {
+        legend: {
+          text: "Is this beta content?",
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No",
+          checked: true
+        }
+      ]
+    }) }}
            
     <details class="govuk-details">
       <summary class="govuk-details__summary">
