@@ -9,6 +9,19 @@ Publication - {{ serviceName }} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+    {% set html %}
+      <h3 class="govuk-notification-banner__heading">
+        GOV.UK breadcrumb removed
+      </h3>
+    {% endset %}
+
+    {{ govukNotificationBanner({
+      html: html,
+      type: "success"
+    }) }}
+
     <h1 class="govuk-heading-xl">Document title</h1>
 
     <table class="govuk-table">
@@ -68,30 +81,10 @@ Publication - {{ serviceName }} – GOV.UK Prototype Kit
 
     <h2 class="govuk-heading-l">Tagging</h2>
 
-    <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">GOV.UK breadcrumb</h2>
-        <ul class="govuk-summary-card__actions">
-          <li class="govuk-summary-card__action">
-            <a class="govuk-link govuk-link--no-visited-state" href="tagging-mvp-tagged-breadcrumb-removed">Remove</a>
-          </li>
-          <li class="govuk-summary-card__action">
-            <a class="govuk-link govuk-link--no-visited-state" href="tagging-mvp-edit-breadcrumb">Edit</a>
-          </li>
-        </ul>
-      </div>
-      <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Breadcrumb
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Business and self-employed > Business tax and VAT
-            </dd>
-          </div>
-        </dl>
-      </div>
+    <div class="empty-state-container">
+      <h3 class="govuk-heading-s">GOV.UK breadcrumb</h3>
+      <p class="govuk-body">No breadcrumb set</p>
+      <p class="govuk-body"><a class="govuk-link--no-visited-state" href="tagging-mvp-breadcrumb">Set GOV.UK breadcrumb</a></p>
     </div>
 
     <div class="govuk-summary-card">
