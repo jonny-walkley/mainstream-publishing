@@ -1,0 +1,104 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  New content item - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  
+    <h1 class="govuk-heading-xl">New content item</h1>
+
+    <form method="post" action="new-content-item-details">
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        name: "contentType",
+        fieldset: {
+          legend: {
+            text: "Content type",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Answer",
+            text: "Answer",
+            hint: {
+              text: "One-page guidance"
+            }
+          },
+          {
+            value: "Completed transaction",
+            text: "Completed transaction",
+            hint: {
+              text: "Done page (feedback) for end of a service"
+            }
+          },
+          {
+            value: "Guide",
+            text: "Guide",
+            hint: {
+              text: "Multi-page guidance"
+            }
+          },{
+            value: "Help page",
+            text: "Help page",
+            hint: {
+              text: "Info about GOV.UK website, for example Privacy"
+            }
+          },
+          {
+            value: "Local transaction",
+            text: "Local transaction",
+            hint: {
+              text: "Postcode look-up for local authorities"
+            }
+          },
+          {
+            value: "Place",
+            text: "Place",
+            hint: {
+              text: "Postcode look-up for places/services near you"
+            }
+          },
+          {
+            value: "Simple smart answer",
+            text: "Simple smart answer",
+            hint: {
+              text: "Simple questions and answers that route users to relevant outcomes"
+            }
+          },
+          {
+            value: "Transaction",
+            text: "Transaction",
+            hint: {
+              text: "Start page for a service"
+            }
+          }
+        ]
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+        <a class="govuk-link govuk-link--no-visited-state" href="#">Cancel</a>
+      </div>
+
+    </form>
+  
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
