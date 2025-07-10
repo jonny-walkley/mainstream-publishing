@@ -51,6 +51,9 @@
   a:active {
     color: $govuk-link-active-colour;
   }
+  p a {
+    // font-weight: bold;
+  }
 }
 
 .govuk-width-container {
