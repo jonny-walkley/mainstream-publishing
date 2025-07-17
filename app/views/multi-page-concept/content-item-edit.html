@@ -1,0 +1,219 @@
+{% extends "layouts/main-rebrand.html" %}
+
+{% block pageTitle %}
+  My content - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigation: [
+      {
+        href: "#1",
+        text: "Publications"
+      },
+      {
+        href: "#2",
+        text: "New content"
+      },
+      {
+        href: "#3",
+        text: "Downtime"
+      },
+      {
+          href: "#4",
+          text: "Reports"
+      },
+      {
+          href: "#5",
+          text: "Search user"
+      },
+      {
+          href: "#6",
+          text: "My profile"
+      },
+      {
+          href: "#7",
+          text: "Switch app"
+      }
+    ]
+  }) }}
+
+  {{ govukServiceNavigation({
+    serviceUrl: "#",
+    navigation: [
+    {
+      href: "my-content",
+      text: "My content"
+    },
+    {
+      href: "all-publications",
+      text: "All publications"
+    },
+    {
+      href: "2i-queue",
+      text: "2i queue"
+    },
+    {
+      href: "fact-check",
+      text: "Fact check"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">Answer</span>
+    <h1 class="govuk-heading-xl">Visit national parks, nature reserves and green spaces</h1>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Edition</dt>
+        <dd class="govuk-summary-list__value">1 <strong class="govuk-tag govuk-tag--yellow govuk-!-margin-left-1">Draft</strong></dd>
+        <dd class="govuk-summary-list__actions"></dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Assigned to</dt>
+        <dd class="govuk-summary-list__value">Genie Reigns</dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> assignee</span></a>
+        </dd>
+      </div>
+    </dl>
+    
+</div>
+
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" aria-current="page" href="#">Edit</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#">Tagging</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#">Metadata</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#">History and notes</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#">Admin</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#">Related external links</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">Edit</h2>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+                        
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">Title</label>
+      <input class="govuk-input" id="doc-title" name="doc-title" type="text" spellcheck="false" autocomplete="name" value="Visit national parks, nature reserves and green spaces">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-label--s" for="body">
+        Body
+      </label>
+      <div id="body-hint" class="govuk-hint">
+        Refer to the <a href="https://govspeak-preview.publishing.service.gov.uk/guide" target="_blank" class="govuk-link--no-visited-state">Govspeak guidance (opens in new tab)</a>
+      </div>
+      <textarea class="govuk-textarea" id="body" name="body" rows="16"></textarea>
+    </div>
+
+    <div class="line">
+        &nbsp;
+    </div>
+
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      name: "IsThisBetaContent",
+      fieldset: {
+        legend: {
+          text: "Is this beta content?",
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No",
+          checked: true
+        }
+      ]
+    }) }}
+           
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Add a public change note
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h2 class="govuk-heading-m">Add a public change note</h2>
+              <p>Telling users when published information has changed is important for transparency.</p> 
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                <label class="govuk-label govuk-radios__label" for="contact">
+                  <span class="govuk-body govuk-body govuk-!-font-weight-bold">Yes – information has been added, updated or removed</span>
+                  <br>
+                  <span class="govuk-hint">A change note will be published on the page and emailed to users subscribed to email alerts. The ‘last updated’ date will change.</span>
+                </label>
+              </div>
+              <div class="govuk-radios__conditional" id="conditional-contact">
+                <div class="govuk-form-group govuk-form-group">
+                  <label class="govuk-label" for="contact-by-email">
+                    <span class="govuk-body govuk-body govuk-!-font-weight-bold">Describe the change for users</span>
+                    </br>
+                    <span class="govuk-hint">
+                      Tell users what has changed, where and why. Write in full sentences, leading with the most important words. For example, "College A has been removed from the registered sponsors list because its licence has been suspended."
+                      </br>
+                      <a href="https://www.gov.uk/guidance/content-design/writing-for-gov-uk#change-notes" target="_new">Guidance on change notes (opens in a new tab)</a>
+                    </span>
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-half govuk-input" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
+                <label class="govuk-label govuk-radios__label" for="contact-2">
+                  <span class="govuk-body govuk-!-font-weight-bold">No</span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </details>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third sticky options-sidebar">
+    <div class="actions-panel">
+      <h3 class="govuk-heading-s">Options</h3>
+      <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">Save</button>
+      <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">2i</button>
+      <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">Preview (opens in new tab)</a></p>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}

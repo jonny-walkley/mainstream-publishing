@@ -1,7 +1,7 @@
 {% extends "layouts/main-rebrand.html" %}
 
 {% block pageTitle %}
-  2i queue - {{ serviceName }} – GOV.UK Prototype Kit
+  My content - {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -13,11 +13,12 @@
     navigation: [
       {
         href: "#1",
-        text: "Publications"
+        text: "Publications",
+        active: true
       },
       {
         href: "#2",
-        text: "New content item"
+        text: "New content"
       },
       {
         href: "#3",
@@ -29,15 +30,15 @@
       },
       {
           href: "#5",
-          text: "Search by user"
+          text: "Search user"
       },
       {
           href: "#6",
-          text: "Profile"
+          text: "My profile"
       },
       {
           href: "#7",
-          text: "Sign out"
+          text: "Switch app"
       }
     ]
   }) }}
@@ -47,7 +48,7 @@
     navigation: [
     {
       href: "my-content",
-      text: "My content"    
+      text: "My content"
     },
     {
       href: "all-publications",
@@ -70,9 +71,67 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-l">2i queue</h1>
+    <!-- <h1 class="govuk-heading-l">My content</h1> -->
+
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+      <caption class="govuk-table__caption govuk-table__caption--l govuk-!-margin-bottom-7">2i queue</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Title</th>
+          <th scope="col" class="govuk-table__header">Content type</th>
+          <th scope="col" class="govuk-table__header">Assigned to</th>
+          <th scope="col" class="govuk-table__header">Time in queue</th>
+          <th scope="col" class="govuk-table__header">2i reviewer</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="content-item-edit" class="govuk-link--no-visited-state" style="font-weight: 600;">Self Assessment tax return forms</a>
+            <span style="display: block;" class="govuk-!-padding-bottom-4">/self-assessment-tax-return-forms</span>
+            <span style="display: block;" class="govuk-!-padding-bottom-4">“FC to hmctsweb@justice.gov.uk. If no amends, ok to publish. Welsh needed - leave Zen open.”</span>
+          </td>
+          <td class="govuk-table__cell">Answer</td>
+          <td class="govuk-table__cell">Elliot Berzatto</td>
+          <td class="govuk-table__cell">1 hour 33 minutes</td>
+          <td class="govuk-table__cell">
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Claim 2i
+            </button>
+          </td>
+        </tr>
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="content-item-edit" class="govuk-link--no-visited-state" style="font-weight: 600;">Tax if you come to the UK</a>
+            <span style="display: block;" class="govuk-!-padding-bottom-4">/tax-come-to-uk</span>
+            <span style="display: block;" class="govuk-!-padding-bottom-4">“Please send FC to web.editor@education.gov.uk”</span>
+          </td>
+          <td class="govuk-table__cell">Answer</td>
+          <td class="govuk-table__cell">Scarlett O’Connor</td>
+          <td class="govuk-table__cell">54 minutes</td>
+          <td class="govuk-table__cell">
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Claim 2i
+            </button>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="content-item-edit" class="govuk-link--no-visited-state" style="font-weight: 600;">Apply to the EU Settlement Scheme (settled and pre-settled status)</a>
+            <span style="display: block;" class="govuk-!-padding-bottom-4">/settled-status-eu-citizens-families</span>
+            <span style="display: block;" class="govuk-!-padding-bottom-4">“Urgent. FC to hmctsweb@justice.gov.uk. If no amends, ok to publish. Welsh needed - leave Zen open.”</span>
+          </td>
+          <td class="govuk-table__cell">Answer</td>
+          <td class="govuk-table__cell">Bill Williamson</td>
+          <td class="govuk-table__cell">43 minutes</td>
+          <td class="govuk-table__cell">
+            Layla Grant
+          </td>
+        </tr>
+      </tbody>
+    </table>
     
   </div>
 </div>
