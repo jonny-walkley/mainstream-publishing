@@ -4,9 +4,88 @@
 //
 // For guidance on how to add CSS and SCSS see:
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-// 
+//
 
-// Add extra styles here
+.active-filter {
+  display: inline-block;
+  background-color: #f3f2f1;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border: 1px solid #b1b4b6;
+  border-radius: .3125em;
+}
+
+.align-right {
+  float: right;
+}
+
+.fact-check > tbody > tr:last-child  {
+  th, td {
+  border: none;
+}
+}
+
+table .important-note, table .view-response {
+  margin: 5px 0;
+}
+
+
+table {
+  .slug, .important-note, .view-response {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+.all-publications tbody th, .all-publications thead tr :nth-child(1) {
+  // Title
+  width: 40% !important;
+}
+
+.all-publications thead tr {
+
+  // Status
+  :nth-child(2) {
+    width: 15%;
+  }
+
+  // Updated
+  :nth-child(3) {
+    width: 15%;
+  }
+
+  // Assigned to
+  :nth-child(4) {
+    width: 20%;
+  }
+
+  // Content type
+  :nth-child(5) {
+    width: 10%;
+  }
+
+}
+
+#item-count {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 0 0 10px;
+  vertical-align: middle;
+}
+
+#filters {
+  display: flex;
+  grid-gap: 30px;
+  .govuk-form-group {
+    width: 100%;
+  }
+}
+
+
+#filters button {
+  display: absolute;
+}
 
 .options-sidebar {
   button {
@@ -154,6 +233,13 @@ height: 40px}
     top: 0;    
     border-top: 3px solid $govuk-brand-colour; 
     padding: 10px 10px 10px 0;
+    margin-top: 20px;
+}
+
+.actions-sidebar {
+    top: 0;    
+    border-top: 3px solid $govuk-brand-colour; 
+    padding: 27px 0 0 0;
     margin-top: 20px;
 }
 

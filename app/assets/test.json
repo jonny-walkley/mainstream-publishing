@@ -68,7 +68,7 @@
       "state": "draft",
       "assignee": "Michael Richards",
       "version_number": 23,
-      "format": "SimpleSmartAnswer",
+      "format": "Simple smart answer",
       "id": "65b91eaf04143a00109b41b4"
   },
   {
@@ -84,7 +84,7 @@
       "state": "scheduled_for_publishing",
       "assignee": "Ruth Harper",
       "version_number": 62,
-      "format": "SimpleSmartAnswer",
+      "format": "Simple smart answer",
       "id": "65b933d7e21d7a00105c4eb7"
   },
   {
@@ -121,11 +121,43 @@
   },
   {
       "title": "Pay for UK healthcare as part of your immigration application",
-      "state": "fact_check",
+      "state": "fact_check_sent",
       "assignee": "Helen Wilkinson",
       "version_number": 68,
       "format": "Guide",
       "id": "65ba2cf64c78a2000dcad8e0"
+  },
+  {
+      "title": "Student finance for undergraduates",
+      "state": "fact_check_sent",
+      "assignee": "Esther Woods",
+      "version_number": 135,
+      "format": "Guide",
+      "id": "68371e2a99242e001779f7f5"
+  },
+  {
+      "title": "Health and Care Worker visa",
+      "state": "fact_check_received",
+      "assignee": "Caroline Atkinson",
+      "version_number": 55,
+      "format": "Guide",
+      "id": "68765420cba10400249a199f"
+  },
+  {
+      "title": "Expenses if you're self-employed",
+      "state": "fact_check_received",
+      "assignee": "Megan Thirlwell",
+      "version_number": 18,
+      "format": "Guide",
+      "id": "687904b8493faf00174957b3"
+  },
+  {
+      "title": "Change your name by deed poll",
+      "state": "ready",
+      "assignee": "Genie Todd",
+      "version_number": 45,
+      "format": "Guide",
+      "id": "677d0ec3b1ff3c001a1661e0"
   },
   {
       "title": "Benefits calculators",

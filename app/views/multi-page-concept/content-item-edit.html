@@ -12,7 +12,7 @@
     serviceUrl: "/index",
     navigation: [
       {
-        href: "#1",
+        href: "my-content",
         text: "Publications"
       },
       {
@@ -30,10 +30,6 @@
       {
           href: "#5",
           text: "Search user"
-      },
-      {
-          href: "#6",
-          text: "My profile"
       },
       {
           href: "#7",
@@ -71,8 +67,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <span class="govuk-caption-xl">Answer</span>
-    <h1 class="govuk-heading-xl">Visit national parks, nature reserves and green spaces</h1>
+    <span class="govuk-caption-xl">{{ data['content-type'] }}</span>
+    <h1 class="govuk-heading-xl">{{ data['title'] }}</h1>
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
@@ -112,7 +108,7 @@
                         
     <div class="govuk-form-group">
       <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">Title</label>
-      <input class="govuk-input" id="doc-title" name="doc-title" type="text" spellcheck="false" autocomplete="name" value="Visit national parks, nature reserves and green spaces">
+      <input class="govuk-input" id="doc-title" name="doc-title" type="text" spellcheck="false" autocomplete="name" value="{{ data['title'] }}">
     </div>
 
     <div class="govuk-form-group">
@@ -120,7 +116,7 @@
         Body
       </label>
       <div id="body-hint" class="govuk-hint">
-        Refer to the <a href="https://govspeak-preview.publishing.service.gov.uk/guide" target="_blank" class="govuk-link--no-visited-state">Govspeak guidance (opens in new tab)</a>
+        Read the <a href="https://govspeak-preview.publishing.service.gov.uk/guide" target="_blank" class="govuk-link--no-visited-state">Govspeak guide (opens in new tab)</a>
       </div>
       <textarea class="govuk-textarea" id="body" name="body" rows="16"></textarea>
     </div>
@@ -202,8 +198,8 @@
   </div>
 
   <div class="govuk-grid-column-one-third sticky options-sidebar">
-    <div class="actions-panel">
-      <h3 class="govuk-heading-s">Options</h3>
+    <div class="actions-sidebar">
+      <!-- <h3 class="govuk-heading-s">Actions</h3> -->
       <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">Save</button>
       <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">2i</button>
       <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">Preview (opens in new tab)</a></p>

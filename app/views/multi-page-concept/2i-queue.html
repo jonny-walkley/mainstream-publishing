@@ -1,7 +1,7 @@
 {% extends "layouts/main-rebrand.html" %}
 
 {% block pageTitle %}
-  My content - {{ serviceName }} – GOV.UK Prototype Kit
+  2i queue - {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -10,34 +10,10 @@
     productName: "Publisher",
     homepageUrl: "/index",
     serviceUrl: "/index",
+    navigationClasses: "align-right",
     navigation: [
       {
-        href: "#1",
-        text: "Publications",
-        active: true
-      },
-      {
-        href: "#2",
-        text: "New content"
-      },
-      {
-        href: "#3",
-        text: "Downtime"
-      },
-      {
-          href: "#4",
-          text: "Reports"
-      },
-      {
-          href: "#5",
-          text: "Search user"
-      },
-      {
-          href: "#6",
-          text: "My profile"
-      },
-      {
-          href: "#7",
+          href: "#1",
           text: "Switch app"
       }
     ]
@@ -62,6 +38,10 @@
     {
       href: "fact-check",
       text: "Fact check"
+    },
+    {
+      href: "new-content",
+      text: "New content"
     }
   ]
   }) }}
@@ -75,7 +55,7 @@
 
     <!-- <h1 class="govuk-heading-l">My content</h1> -->
 
-    <table class="govuk-table govuk-table--small-text-until-tablet">
+    <!-- <table class="govuk-table govuk-table--small-text-until-tablet">
       <caption class="govuk-table__caption govuk-table__caption--l govuk-!-margin-bottom-7">2i queue</caption>
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -131,7 +111,54 @@
           </td>
         </tr>
       </tbody>
-    </table>
+    </table> -->
+
+    <h1 class="govuk-heading-l">
+      2i queue
+      <span id="item-count"></span>
+    </h1>
+
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+    {{ govukTable({
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Title"
+        },
+        {
+          text: "Content type"
+        },
+        {
+          text: "Assigned to"
+        },
+
+        {
+          text: "Time in queue"
+        },
+        {
+          text: "2i reviewer"
+        }
+      ],
+      rows: [
+        [
+          {
+            classes: "title"
+          },
+          {
+            classes: "format"
+          },
+          {
+            classes: "assignee"
+          },
+          {
+            text: "3 minutes"
+          },
+          {
+            html: "<button class='govuk-button'>Claim 2i</button>"
+          }
+        ]
+      ]
+    }) }}
     
   </div>
 </div>
@@ -139,5 +166,5 @@
 {% endblock %}
 
 {% block pageScripts %}
-  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+  <script src="/public/javascripts/publications.js"></script>
 {% endblock %}

@@ -10,34 +10,10 @@
     productName: "Publisher",
     homepageUrl: "/index",
     serviceUrl: "/index",
+    navigationClasses: "align-right",
     navigation: [
       {
-        href: "#1",
-        text: "Publications",
-        active: true
-      },
-      {
-        href: "#2",
-        text: "New content"
-      },
-      {
-        href: "#3",
-        text: "Downtime"
-      },
-      {
-          href: "#4",
-          text: "Reports"
-      },
-      {
-          href: "#5",
-          text: "Search user"
-      },
-      {
-          href: "#6",
-          text: "My profile"
-      },
-      {
-          href: "#7",
+          href: "#1",
           text: "Switch app"
       }
     ]
@@ -62,6 +38,10 @@
       href: "fact-check",
       text: "Fact check",
       active: true
+    },
+    {
+      href: "new-content",
+      text: "New content"
     }
   ]
   }) }}
@@ -73,7 +53,12 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-l">Fact check</h1>
+    <!-- <h2 id="doc-count" class="govuk-heading-m"></h2> -->
+    <h1 class="govuk-heading-l">
+      Fact check
+      <span id="item-count"></span>
+    </h1>
+
 
     <div class="govuk-tabs" data-module="govuk-tabs">
       <h2 class="govuk-tabs__title">
@@ -91,8 +76,11 @@
           </a>
         </li>
       </ul>
-      <div class="govuk-tabs__panel" id="received">
-        <table class="govuk-table govuk-table--small-text-until-tablet">
+
+      <!-- Received -->
+
+      <div class="govuk-tabs__panel" id="received">       
+        <!-- <table class="govuk-table govuk-table--small-text-until-tablet">
           <caption class="govuk-table__caption govuk-table__caption--m">Received</caption>
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -105,59 +93,106 @@
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">
-                <a href="#" style="font-weight: 600;">Apply online for student finance</a>
-                <span style="display: block;" class="govuk-!-padding-bottom-4">/apply-online-for-student-finance</span>
+                <a href="#" style="font-weight: 600;">Search for a patent</a>
+                <span style="display: block;" class="govuk-!-padding-bottom-4">/search-for-patent</span>
                 <span style="display: block;" class="govuk-!-padding-bottom-4 govuk-!-font-size-16"><a href="#">View response</a></span>
               </td>
-              <td class="govuk-table__cell">21 minutes ago</td>
+              <td class="govuk-table__cell">33 minutes ago</td>
               <td class="govuk-table__cell">Zaya Cash</td>
-              <td class="govuk-table__cell">Transaction</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <a href="#" style="font-weight: 600;">Apply online for student finance</a>
-                <span style="display: block;" class="govuk-!-padding-bottom-4">/apply-online-for-student-finance</span>
-                <span style="display: block;" class="govuk-!-padding-bottom-4 govuk-!-font-size-16"><a href="#">View response</a></span>
-              </td>
-              <td class="govuk-table__cell">21 minutes ago</td>
-              <td class="govuk-table__cell">Zaya Cash</td>
-              <td class="govuk-table__cell">Transaction</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <a href="#" style="font-weight: 600;">Apply online for student finance</a>
-                <span style="display: block;" class="govuk-!-padding-bottom-4">/apply-online-for-student-finance</span>
-                <span style="display: block;" class="govuk-!-padding-bottom-4 govuk-!-font-size-16"><a href="#">View response</a></span>
-              </td>
-              <td class="govuk-table__cell">21 minutes ago</td>
-              <td class="govuk-table__cell">Zaya Cash</td>
-              <td class="govuk-table__cell">Transaction</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <a href="#" style="font-weight: 600;">Apply online for student finance</a>
-                <span style="display: block;" class="govuk-!-padding-bottom-4">/apply-online-for-student-finance</span>
-                <span style="display: block;" class="govuk-!-padding-bottom-4 govuk-!-font-size-16"><a href="#">View response</a></span>
-              </td>
-              <td class="govuk-table__cell">21 minutes ago</td>
-              <td class="govuk-table__cell">Zaya Cash</td>
-              <td class="govuk-table__cell">Transaction</td>
+              <td class="govuk-table__cell">Answer</td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell" style="border: none;">
-                <a href="#" style="font-weight: 600;">Apply online for student finance</a>
-                <span style="display: block;" class="govuk-!-padding-bottom-4">/apply-online-for-student-finance</span>
+                <a href="#" style="font-weight: 600;">Search for a patent</a>
+                <span style="display: block;" class="govuk-!-padding-bottom-4">/search-for-patent</span>
                 <span style="display: block;" class="govuk-!-padding-bottom-4 govuk-!-font-size-16"><a href="#">View response</a></span>
               </td>
               <td class="govuk-table__cell" style="border: none;">21 minutes ago</td>
               <td class="govuk-table__cell" style="border: none;">Zaya Cash</td>
-              <td class="govuk-table__cell" style="border: none;">Transaction</td>
+              <td class="govuk-table__cell" style="border: none;">Answer</td>
             </tr>
           </tbody>
-        </table>
+        </table> -->
+        {% from "govuk/components/table/macro.njk" import govukTable %}
+        {{ govukTable({
+          caption: "Received",
+          captionClasses: "govuk-table__caption--m",
+          firstCellIsHeader: true,
+          classes: "fact-check",
+          head: [
+            {
+              text: "Title"
+            },
+            {
+              text: "Status"
+            },
+            {
+              text: "Assigned to"
+            },
+            {
+              text: "Content type"
+            }
+          ],
+          rows: [
+            [
+              {
+                classes: "title-received"
+              },
+              {
+                classes: "state-received"
+
+              },
+              {
+                classes: "assignee-received"
+              },
+              {
+                classes: "format-received"
+              }
+            ]
+          ]
+        }) }}
+        <!-- {{ govukTable({
+          caption: "Sent out",
+          captionClasses: "govuk-table__caption--m",
+          firstCellIsHeader: true,
+          head: [
+            {
+              text: "Title"
+            },
+            {
+              text: "Status"
+            },
+            {
+              text: "Assigned to"
+            },
+            {
+              text: "Content type"
+            }
+          ],
+          rows: [
+            [
+              {
+                classes: "title-sent"
+              },
+              {
+                classes: "state-sent"
+
+              },
+              {
+                classes: "assignee-sent"
+              },
+              {
+                classes: "format-sent"
+              }
+            ]
+          ]
+        }) }} -->
       </div>
+
+      <!-- Sent out -->
+
       <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="sent-out">
-        <table class="govuk-table">
+        <!-- <table class="govuk-table">
           <caption class="govuk-table__caption govuk-table__caption--m">Sent out</caption>
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -187,17 +222,127 @@
               <td class="govuk-table__cell">Transaction</td>
             </tr>
             <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <a href="#" style="font-weight: 600;">Apply online for student finance</a>
+                <span style="display: block;" class="govuk-!-padding-bottom-4">/apply-online-for-student-finance</span>
+              </td>
+              <td class="govuk-table__cell">6 days ago</td>
+              <td class="govuk-table__cell">Zaya Cash</td>
+              <td class="govuk-table__cell">Transaction</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <a href="#" style="font-weight: 600;">Apply online for student finance</a>
+                <span style="display: block;" class="govuk-!-padding-bottom-4">/apply-online-for-student-finance</span>
+              </td>
+              <td class="govuk-table__cell">6 days ago</td>
+              <td class="govuk-table__cell">Zaya Cash</td>
+              <td class="govuk-table__cell">Transaction</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <a href="#" style="font-weight: 600;">Apply online for student finance</a>
+                <span style="display: block;" class="govuk-!-padding-bottom-4">/apply-online-for-student-finance</span>
+              </td>
+              <td class="govuk-table__cell">7 days ago</td>
+              <td class="govuk-table__cell">Zaya Cash</td>
+              <td class="govuk-table__cell">Transaction</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <a href="#" style="font-weight: 600;">Apply online for student finance</a>
+                <span style="display: block;" class="govuk-!-padding-bottom-4">/apply-online-for-student-finance</span>
+              </td>
+              <td class="govuk-table__cell">7 days ago</td>
+              <td class="govuk-table__cell">Zaya Cash</td>
+              <td class="govuk-table__cell">Transaction</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <a href="#" style="font-weight: 600;">Apply online for student finance</a>
+                <span style="display: block;" class="govuk-!-padding-bottom-4">/apply-online-for-student-finance</span>
+              </td>
+              <td class="govuk-table__cell">9 days ago</td>
+              <td class="govuk-table__cell">Zaya Cash</td>
+              <td class="govuk-table__cell">Transaction</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <a href="#" style="font-weight: 600;">Apply online for student finance</a>
+                <span style="display: block;" class="govuk-!-padding-bottom-4">/apply-online-for-student-finance</span>
+              </td>
+              <td class="govuk-table__cell">9 days ago</td>
+              <td class="govuk-table__cell">Zaya Cash</td>
+              <td class="govuk-table__cell">Transaction</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <a href="#" style="font-weight: 600;">Apply online for student finance</a>
+                <span style="display: block;" class="govuk-!-padding-bottom-4">/apply-online-for-student-finance</span>
+              </td>
+              <td class="govuk-table__cell">9 days ago</td>
+              <td class="govuk-table__cell">Zaya Cash</td>
+              <td class="govuk-table__cell">Transaction</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <a href="#" style="font-weight: 600;">Apply online for student finance</a>
+                <span style="display: block;" class="govuk-!-padding-bottom-4">/apply-online-for-student-finance</span>
+              </td>
+              <td class="govuk-table__cell">9 days ago</td>
+              <td class="govuk-table__cell">Zaya Cash</td>
+              <td class="govuk-table__cell">Transaction</td>
+            </tr>
+            <tr class="govuk-table__row">
               <td class="govuk-table__cell" style="border: none;">
                 <a href="#" style="font-weight: 600;">Apply online for student finance</a>
                 <span style="display: block;" class="govuk-!-padding-bottom-4">/apply-online-for-student-finance</span>
               </td>
-              <td class="govuk-table__cell" style="border: none;">6 days ago</td>
+              <td class="govuk-table__cell" style="border: none;">10 days ago</td>
               <td class="govuk-table__cell" style="border: none;">Zaya Cash</td>
               <td class="govuk-table__cell" style="border: none;">Transaction</td>
             </tr>
           </tbody>
-        </table>
+        </table> -->
+          {{ govukTable({
+          caption: "Sent out",
+          captionClasses: "govuk-table__caption--m",
+          firstCellIsHeader: true,
+          classes: "fact-check",
+          head: [
+            {
+              text: "Title"
+            },
+            {
+              text: "Status"
+            },
+            {
+              text: "Assigned to"
+            },
+            {
+              text: "Content type"
+            }
+          ],
+          rows: [
+            [
+              {
+                classes: "title-sent"
+              },
+              {
+                classes: "state-sent"
+
+              },
+              {
+                classes: "assignee-sent"
+              },
+              {
+                classes: "format-sent"
+              }
+            ]
+          ]
+        }) }}
       </div>
+
     </div>
         
   </div>
@@ -206,5 +351,5 @@
 {% endblock %}
 
 {% block pageScripts %}
-  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+  <script src="/public/javascripts/publications.js"></script>
 {% endblock %}

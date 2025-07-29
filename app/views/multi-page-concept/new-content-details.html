@@ -1,0 +1,147 @@
+{% extends "layouts/main-rebrand.html" %}
+
+{% block pageTitle %}
+  New content - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right",
+    navigation: [
+      {
+          href: "#1",
+          text: "Switch app"
+      }
+    ]
+  }) }}
+
+  {{ govukServiceNavigation({
+    serviceUrl: "#",
+    navigation: [
+    {
+      href: "my-content",
+      text: "My content"
+    },
+    {
+      href: "all-publications",
+      text: "All publications"
+    },
+    {
+      href: "2i-queue",
+      text: "2i queue"
+    },
+    {
+      href: "fact-check",
+      text: "Fact check"
+    },
+    {
+      href: "#",
+      text: "New content",
+      active: true
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "new-content"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  
+    <span class="govuk-caption-l">New content</span>
+    <h1 class="govuk-heading-l">{{ data['contentType'] }}</h1>
+
+    <form method="post" action="">
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="title">
+          Title
+        </label>
+        <input class="govuk-input" id="title" name="title" type="text" spellcheck="false" value="">
+      </div>      
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="slug">
+          Slug
+        </label>
+        <div id="slug-hint" class="govuk-hint">
+          Must be written in the following format: lower-case-hypen-separated
+        </div>
+        <div class="govuk-input__wrapper">
+          {% if data['contentType'] == 'Completed transaction' %}
+            <div class="govuk-input__prefix" aria-hidden="true">done/</div>
+          {% elif data['contentType'] == 'Help page' %}
+            <div class="govuk-input__prefix" aria-hidden="true">help/</div>
+          {% endif %}
+          <input class="govuk-input" id="slug" name="slug" type="text" spellcheck="false">
+        </div>      
+      </div>
+
+      {% if data['contentType'] == 'Local transaction' %}
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="LGSL-code">
+            LGSL code
+          </label>
+          <input class="govuk-input govuk-input--width-4" id="LGSL-code" name="LGSL-code" type="text" spellcheck="false" value="">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="LGIL-code">
+            LGIL code
+          </label>
+          <input class="govuk-input govuk-input--width-4" id="LGIL-code" name="LGIL-code" type="text" spellcheck="false" value="">
+        </div>
+      {% endif %}
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="language-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Language
+          </legend>
+          <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="language" name="language" type="radio" value="English" checked>
+              <label class="govuk-label govuk-radios__label" for="language">
+                English
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="language-2" name="language" type="radio" value="Welsh">
+              <label class="govuk-label govuk-radios__label" for="language-2">
+                Welsh
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Create content"
+        }) }}
+        <a class="govuk-link govuk-link--no-visited-state" href="#">Cancel</a>
+      </div>
+
+    </form>
+  
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}

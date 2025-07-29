@@ -10,34 +10,10 @@
     productName: "Publisher",
     homepageUrl: "/index",
     serviceUrl: "/index",
+    navigationClasses: "align-right",
     navigation: [
       {
-        href: "#1",
-        text: "Publications",
-        active: true
-      },
-      {
-        href: "#2",
-        text: "New content"
-      },
-      {
-        href: "#3",
-        text: "Downtime"
-      },
-      {
-          href: "#4",
-          text: "Reports"
-      },
-      {
-          href: "#5",
-          text: "Search user"
-      },
-      {
-          href: "#6",
-          text: "My profile"
-      },
-      {
-          href: "#7",
+          href: "#1",
           text: "Switch app"
       }
     ]
@@ -62,6 +38,10 @@
     {
       href: "fact-check",
       text: "Fact check"
+    },
+    {
+      href: "new-content",
+      text: "New content"
     }
   ]
   }) }}
@@ -75,7 +55,7 @@
 
     <!-- <h1 class="govuk-heading-l">My content</h1> -->
 
-    <table class="govuk-table govuk-table--small-text-until-tablet">
+    <!-- <table class="govuk-table govuk-table--small-text-until-tablet">
       <caption class="govuk-table__caption govuk-table__caption--l govuk-!-margin-bottom-7">My content</caption>
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -88,7 +68,7 @@
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            <a href="content-item-edit" class="govuk-link--no-visited-state" style="font-weight: 600;">Visit national parks, nature reserves and green spaces</a>
+            <a href="content-item-edit?title=Visit+national+parks,+nature+reserves+and+green+spaces&content-type=Answer" class="govuk-link--no-visited-state" style="font-weight: 600;">Visit national parks, nature reserves and green spaces</a>
             <span style="display: block;" class="govuk-!-padding-bottom-4">/find-nature-reserves-national-parks-and-greenspaces</span>
           </td>
           <td class="govuk-table__cell">
@@ -131,13 +111,103 @@
           <td class="govuk-table__cell">Answer</td>
         </tr>
       </tbody>
-    </table>
+    </table> -->
     
+    <h1 class="govuk-heading-l">
+      My content
+      <span id="item-count"></span>
+    </h1>
+    
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+    {{ govukTable({
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Title"
+        },
+        {
+          text: "Status"
+        },
+        {
+          text: "Updated"
+        },
+        {
+          text: "Content type"
+        }
+      ],
+      rows: [
+        [
+          {
+            classes: "title"
+          },
+          {
+            classes: "state"
+
+          },
+          {
+            classes: "updated",
+            text: "33 minutes ago"
+          },
+          {
+            classes: "format"
+          }
+        ]
+      ]
+    }) }}
+
   </div>
 </div>
 
 {% endblock %}
 
+{% block footer %}
+
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{{ govukFooter({
+  navigation: [
+    {
+      title: "Admin pages",
+      width: "one-third",
+      columns: 1,
+      items: [
+        {
+          href: "#",
+          text: "CSV reports"
+        },
+        {
+          href: "#",
+          text: "Downtime messages"
+        },
+        {
+          href: "#",
+          text: "Search users"
+        }
+      ]
+    },
+    {
+      title: "Support and feedback",
+      width: "two-thirds",
+      items: [
+        {
+          href: "#",
+          text: "Raise a support request"
+        },
+        {
+          href: "#",
+          text: "Check if publishing apps are working or if there’s any maintenance planned"
+        },
+        {
+          href: "#",
+          text: "How to write, publish, and improve content"
+        }
+      ]
+    }
+  ]
+}) }}
+
+{% endblock %}
+
 {% block pageScripts %}
-  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+  <script src="/public/javascripts/publications.js"></script>
 {% endblock %}
