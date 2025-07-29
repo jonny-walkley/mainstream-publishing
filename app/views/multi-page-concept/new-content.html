@@ -129,17 +129,62 @@
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
-      <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-        <a class="govuk-link govuk-link--no-visited-state" href="#">Cancel</a>
-      </div>
+      {{ govukButton({
+        text: "Continue"
+      }) }}
 
     </form>
   
   </div>
 </div>
+
+{% endblock %}
+
+{% block footer %}
+
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{{ govukFooter({
+  navigation: [
+    {
+      title: "Admin pages",
+      width: "one-third",
+      columns: 1,
+      items: [
+        {
+          href: "#",
+          text: "CSV reports"
+        },
+        {
+          href: "#",
+          text: "Downtime messages"
+        },
+        {
+          href: "#",
+          text: "Search users"
+        }
+      ]
+    },
+    {
+      title: "Support and feedback",
+      width: "two-thirds",
+      items: [
+        {
+          href: "#",
+          text: "Raise a support request"
+        },
+        {
+          href: "#",
+          text: "Check if publishing apps are working or if there’s any maintenance planned"
+        },
+        {
+          href: "#",
+          text: "How to write, publish, and improve content"
+        }
+      ]
+    }
+  ]
+}) }}
 
 {% endblock %}
 
