@@ -59,7 +59,6 @@
       <span id="item-count"></span>
     </h1>
 
-
     <div class="govuk-tabs" data-module="govuk-tabs">
       <h2 class="govuk-tabs__title">
         Contents
@@ -124,7 +123,10 @@
               text: "Title"
             },
             {
-              text: "Status"
+              text: "Response"
+            },
+            {
+              text: "Received"
             },
             {
               text: "Assigned to"
@@ -139,8 +141,10 @@
                 classes: "title-received"
               },
               {
-                classes: "state-received"
-
+                html: "<a href='#' id='view-response'>View response</a>"
+              },
+              {
+                text: "16 minutes ago"
               },
               {
                 classes: "assignee-received"
@@ -314,7 +318,7 @@
               text: "Title"
             },
             {
-              text: "Status"
+              text: "Sent out"
             },
             {
               text: "Assigned to"
@@ -329,7 +333,7 @@
                 classes: "title-sent"
               },
               {
-                classes: "state-sent"
+                text: "3 days ago"
 
               },
               {

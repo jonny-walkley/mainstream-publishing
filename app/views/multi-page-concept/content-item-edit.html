@@ -1,7 +1,7 @@
 {% extends "layouts/main-rebrand.html" %}
 
 {% block pageTitle %}
-  My content - {{ serviceName }} – GOV.UK Prototype Kit
+  Publication - {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -10,29 +10,11 @@
     productName: "Publisher",
     homepageUrl: "/index",
     serviceUrl: "/index",
+    classes: "govuk-!-font-weight-bold",
+    navigationClasses: "align-right",
     navigation: [
       {
-        href: "my-content",
-        text: "Publications"
-      },
-      {
-        href: "#2",
-        text: "New content"
-      },
-      {
-        href: "#3",
-        text: "Downtime"
-      },
-      {
-          href: "#4",
-          text: "Reports"
-      },
-      {
-          href: "#5",
-          text: "Search user"
-      },
-      {
-          href: "#7",
+          href: "#1",
           text: "Switch app"
       }
     ]
@@ -56,6 +38,10 @@
     {
       href: "fact-check",
       text: "Fact check"
+    },
+    {
+      href: "new-content",
+      text: "New content"
     }
   ]
   }) }}
@@ -67,22 +53,37 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <span class="govuk-caption-xl">{{ data['content-type'] }}</span>
-    <h1 class="govuk-heading-xl">{{ data['title'] }}</h1>
+    <span class="govuk-caption-xl"></span>
+    <h1 class="govuk-heading-xl"></h1>
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Edition</dt>
-        <dd class="govuk-summary-list__value">1 <strong class="govuk-tag govuk-tag--yellow govuk-!-margin-left-1">Draft</strong></dd>
-        <dd class="govuk-summary-list__actions"></dd>
+        <dt class="govuk-summary-list__key">Edition {{ data['title'] }}</dt>
+        <dd class="govuk-summary-list__value" id="edition"></dd>
+        <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions"></dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Assigned to</dt>
-        <dd class="govuk-summary-list__value">Genie Reigns</dd>
+        <dd class="govuk-summary-list__value" id="assignee"></dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> assignee</span></a>
         </dd>
       </div>
+      {% if data['status'] == "In review" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">2i reviewer</dt>
+          <dd class="govuk-summary-list__value">Not claimed yet</dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link govuk-link--no-visited-state" href="#"><span class="govuk-visually-hidden">2i reviewer</span></a>
+          </dd>
+        </div>
+      {% elif data['status'] == "Scheduled" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Scheduled</dt>
+          <dd class="govuk-summary-list__value"></dd>
+          <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions"></dd>
+        </div>
+      {% endif %}
     </dl>
     
 </div>
@@ -96,6 +97,9 @@
         <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#">History and notes</a></li>
         <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#">Admin</a></li>
         <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#">Related external links</a></li>
+        {% if data['status'] == "Published" %}
+          <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#">Unpublish</a></li>
+        {% endif %}
       </ul>
     </nav>
   </div>
@@ -105,27 +109,446 @@
   </div>
 
   <div class="govuk-grid-column-two-thirds">
-                        
-    <div class="govuk-form-group">
-      <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">Title</label>
-      <input class="govuk-input" id="doc-title" name="doc-title" type="text" spellcheck="false" autocomplete="name" value="{{ data['title'] }}">
-    </div>
-
-    <div class="govuk-form-group">
-      <label class="govuk-label govuk-label--s" for="body">
-        Body
-      </label>
-      <div id="body-hint" class="govuk-hint">
-        Read the <a href="https://govspeak-preview.publishing.service.gov.uk/guide" target="_blank" class="govuk-link--no-visited-state">Govspeak guide (opens in new tab)</a>
+          
+    {% if (data['status'] == "Scheduled") or (data['status'] == "Published") or (data['status'] == "Archived") %}
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Title</h3>
+      <p class="govuk-body" id="title"></p>
+    {% else %}
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">Title</label>
+        <input class="govuk-input" id="title" name="title" type="text" spellcheck="false" value="">
       </div>
-      <textarea class="govuk-textarea" id="body" name="body" rows="16"></textarea>
-    </div>
+    {% endif %}
 
-    <div class="line">
-        &nbsp;
-    </div>
+    {% if (data['content-type'] == "Answer") or (data['content-type'] == "Help page") %}
 
-    {{ govukRadios({
+      {% if (data['status'] == "Scheduled") or (data['status'] == "Published") or (data['status'] == "Archived") %}
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Body</h3>
+
+      {% else %}
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="body">
+            Body
+          </label>
+          <div id="body-hint" class="govuk-hint">
+            Read the <a href="https://govspeak-preview.publishing.service.gov.uk/guide" target="_blank" class="govuk-link--no-visited-state">Govspeak guide (opens in new tab)</a>
+          </div>
+          <textarea class="govuk-textarea" id="body" name="body" rows="16"></textarea>
+        </div>
+
+      {% endif %}
+
+    {% elif data['content-type'] == "Completed transaction" %}
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+          <legend class="">
+            <label class="govuk-label govuk-label--s" for="promotions">Promotions</label>
+          </legend>
+          <div id="promotions-hint" class="govuk-hint">
+            Display a promotion above the satisfaction survey
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="do-not-promote-anything" name="promotions" type="radio" value="do-not-promote-anything" checked>
+              <label class="govuk-label govuk-radios__label" for="do-not-promote-anything">
+                Do not promote anything on this page
+              </label>
+            </div>
+            <div class="govuk-radios__divider">or</div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="organ-donation" name="promotions" type="radio" value="organ-donation" data-aria-controls="conditional-organ-donation">
+              <label class="govuk-label govuk-radios__label" for="organ-donation">
+                Organ donation
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-organ-donation">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="promotion-url">
+                  Promotion URL
+                </label>
+                <input class="govuk-input govuk-!-width-full" id="promotion-url" name="promotion-url" type="text">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="opt-in-url">
+                  Opt-in URL (optional)
+                </label>
+                <input class="govuk-input govuk-!-width-full" id="opt-in-url" name="opt-in-url" type="text">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="opt-out-url">
+                  Opt-out URL (optional)
+                </label>
+                <input class="govuk-input govuk-!-width-full" id="opt-out-url" name="opt-out-url" type="text">
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bring-ID-to-vote" name="promotions" type="radio" value="photo-id" data-aria-controls="conditional-photo-id">
+              <label class="govuk-label govuk-radios__label" for="bring-ID-to-vote">
+                Bring photo ID to vote
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-photo-id">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="promotion-url-bring-ID-to-vote">
+                  Promotion URL
+                </label>
+                <input class="govuk-input govuk-!-width-full" id="promotion-url-bring-ID-to-vote" name="promotion-url" type="text">
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mot-reminders" name="promotions" type="radio" value="conditional-mot-reminders" data-aria-controls="conditional-mot-reminders">
+              <label class="govuk-label govuk-radios__label" for="mot-reminders">
+                MOT reminders
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-mot-reminders">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="promotion-url-mot-reminders">
+                  Promotion URL
+                </label>
+                <input class="govuk-input govuk-!-width-full" id="promotion-url-mot-reminders" name="promotion-url" type="text">
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="electric-vehicles" name="promotions" type="radio" value="electric-vehicles" data-aria-controls="conditional-electric-vehicles">
+              <label class="govuk-label govuk-radios__label" for="electric-vehicles">
+                Electric vehicles
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-electric-vehicles">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="promotion-url-electric-vehicles">
+                  Promotion URL
+                </label>
+                <input class="govuk-input govuk-!-width-full" id="promotion-url-electric-vehicles" name="promotion-url" type="text">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+    {% elif data['content-type'] == "Local transaction" %}
+
+      <div class="published-state">
+        <h2 class="govuk-heading-s">LGSL code</h2>
+        <p>273</p>
+      </div>
+                  
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="LGIL-code">LGIL code</label>
+        <input class="govuk-input govuk-input--width-2" id="LGIL-code" name="LGIL-code" type="text" spellcheck="false" value="">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="introduction">
+          Introduction
+        </label>
+        <div id="introduction-hint" class="govuk-hint">
+          Set the scene for the user.
+          Explain that it’s the responsibility of the local council and that we’ll take you there.
+          Read the <a href="https://govspeak-preview.publishing.service.gov.uk/guide" target="_blank" class="govuk-link--no-visited-state">Govspeak guide (opens in new tab)</a>.
+        </div>
+        <textarea class="govuk-textarea" id="introduction" name="introduction" rows="16"></textarea>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="more-information">
+          More information (optional)
+        </label>
+        <textarea class="govuk-textarea" id="more-information" name="moreInformation" rows="16"></textarea>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="what-you-need-to-know">
+          What you need to know (optional)
+        </label>
+        <textarea class="govuk-textarea" id="what-you-need-to-know" name="whatYouNeedToKnow" rows="6"></textarea>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="">
+            <label class="govuk-label govuk-label--s" for="northernIreland">Northern Ireland</label>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="northernIreland-1" name="northernIreland" type="radio" value="do-not-promote" checked>
+              <label class="govuk-label govuk-radios__label" for="northernIreland-1">
+                Service available from local council
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="northernIreland-2" name="northernIreland" type="radio" value="photo-id" data-aria-controls="conditional-nothern-ireland">
+              <label class="govuk-label govuk-radios__label" for="northernIreland-2">
+                Service available from devolved administration (or a similar service is available)
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-nothern-ireland">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="electric-vehicles">
+                  URL of the devolved administration website page
+                </label>
+                <input class="govuk-input govuk-!-width-full" id="promotion-url" name="promotion-url" type="text" autocomplete="tel">
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="northernIreland-3" name="northernIreland" type="radio" value="conditional-mot-reminders">
+              <label class="govuk-label govuk-radios__label" for="northernIreland-3">
+                Service not available
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="">
+            <label class="govuk-label govuk-label--s" for="scotland">Scotland</label>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="scotland-1" name="scotland" type="radio" value="do-not-promote" checked>
+              <label class="govuk-label govuk-radios__label" for="scotland-1">
+                Service available from local council
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="scotland-2" name="scotland" type="radio" value="photo-id" data-aria-controls="conditional-scotland">
+              <label class="govuk-label govuk-radios__label" for="scotland-2">
+                Service available from devolved administration (or a similar service is available)
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-scotland">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="electric-vehicles">
+                  URL of the devolved administration website page
+                </label>
+                <input class="govuk-input govuk-!-width-full" id="promotion-url" name="promotion-url" type="text" autocomplete="tel">
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="scotland-3" name="scotland" type="radio" value="conditional-mot-reminders">
+              <label class="govuk-label govuk-radios__label" for="scotland-3">
+                Service not available
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="">
+            <label class="govuk-label govuk-label--s" for="wales">Wales</label>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="wales-1" name="wales" type="radio" value="do-not-promote" checked>
+              <label class="govuk-label govuk-radios__label" for="wales-1">
+                Service available from local council
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="wales-2" name="wales" type="radio" value="photo-id" data-aria-controls="conditional-wales">
+              <label class="govuk-label govuk-radios__label" for="wales-2">
+                Service available from devolved administration (or a similar service is available)
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-wales">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="electric-vehicles">
+                  URL of the devolved administration website page
+                </label>
+                <input class="govuk-input govuk-!-width-full" id="promotion-url" name="promotion-url" type="text" autocomplete="tel">
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="wales-3" name="wales" type="radio" value="conditional-mot-reminders">
+              <label class="govuk-label govuk-radios__label" for="wales-3">
+                Service not available
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+    {% elif data['content-type'] == "Transaction" %}
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="introduction">
+          Introduction
+        </label>
+        <div id="introduction-hint" class="govuk-hint">
+          Set the scene for the user.
+          What is about to happen? For example, “you will need to fill in a form, print it out and take it to the post office”.
+          Read the <a href="https://govspeak-preview.publishing.service.gov.uk/guide" target="_blank" class="govuk-link--no-visited-state">Govspeak guide (opens in new tab)</a>.
+        </div>
+        <textarea class="govuk-textarea" id="introduction" name="introduction" rows="16"></textarea>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="start-button-text-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h1 class="govuk-fieldset__heading">
+              Start button text
+            </h1>
+          </legend>
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="start-now" name="start-button-text" type="radio" value="start-now" checked>
+              <label class="govuk-label govuk-radios__label" for="start-now">
+                Start now
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sign-in" name="start-button-text" type="radio" value="sign-in">
+              <label class="govuk-label govuk-radios__label" for="sign-in">
+                Sign in
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="text-below-button">Text below the start button (optional)</label>
+        <div id="text-below-button" class="govuk-hint">
+          Following ‘on’, for example “the HMRC website”
+        </div>
+        <input class="govuk-input" id="text-below-button" name="text-below-button" type="text" spellcheck="false" value="">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="text-below-button">Link to start of transaction</label>
+        <div id="text-below-button" class="govuk-hint">
+          Link as deep as possible
+        </div>
+        <input class="govuk-input" id="text-below-button" name="text-below-button" type="text" spellcheck="false" value="">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="more-information">
+          More information (optional)
+        </label>
+        <!-- <div id="more-information-hint" class="govuk-hint">
+          This will appear under a ‘Before you start’ heading or in a ‘More information’ tab
+        </div> -->
+        <textarea class="govuk-textarea" id="more-information" name="moreInformation" rows="16"></textarea>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="other-ways-to-apply">
+          Other ways to apply (optional)
+        </label>
+        <div id="other-ways-to-apply-hint" class="govuk-hint">
+          Alternative ways of completing this transaction
+        </div>
+        <textarea class="govuk-textarea" id="other-ways-to-apply" name="otherWaysToApply" rows="16"></textarea>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="what-you-need-to-know">
+          What you need to know (optional)
+        </label>
+        <textarea class="govuk-textarea" id="what-you-need-to-know" name="whatYouNeedToKnow" rows="16"></textarea>
+      </div>
+
+    {% elif data['content-type'] == "Place" %}
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="places-manager-service-identifier">Places Manager service identifier</label>
+        <div id="places-manager-service-identifier-hint" class="govuk-hint">
+          This is assigned in the <a href="" class="govuk-link--no-visited-state">Places Manager application</a>
+        </div>
+        <input class="govuk-input" id="places-manager-service-identifier" name="places-manager-service-identifier" type="text" spellcheck="false" value="example-service-identifier">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="introduction">
+          Introduction
+        </label>
+        <div id="introduction-hint" class="govuk-hint">
+          Read the <a href="https://govspeak-preview.publishing.service.gov.uk/guide" target="_blank" class="govuk-link--no-visited-state">Govspeak guide (opens in new tab)</a>
+        </div>
+        <textarea class="govuk-textarea" id="introduction" name="introduction" rows="16"></textarea>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="further-information">
+          Further information (optional)
+        </label>
+        <textarea class="govuk-textarea" id="further-information" name="furtherInformation" rows="16"></textarea>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="what-you-need-to-know">
+          What you need to know (optional)
+        </label>
+        <textarea class="govuk-textarea" id="what-you-need-to-know" name="whatYouNeedToKnow" rows="6"></textarea>
+      </div>
+
+    {% elif data['content-type'] == "Guide" %}
+
+      <h3 class="govuk-heading-m">Chapters</h3>
+
+      <!-- <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+            Chapter 1 title
+          </dt>
+          <dd class="govuk-summary-list__value">
+            
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link govuk-link--no-visited-state" href="guide-draft-edit-chapter-1">Edit<span class="govuk-visually-hidden"> Chapter 1</span></a>
+          </dd>
+        </div>
+      </dl> -->
+
+      <a href="guide-draft-add-new-chapter">
+        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Add a new chapter
+        </button>
+      </a>
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        name: "IsEveryChapterIncludedInStepByStep",
+        fieldset: {
+          legend: {
+            text: "Is every chapter part of a step by step?",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "The chapter navigation will be hidden if they all are"
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No",
+            checked: true
+          }
+        ]
+      }) }}
+
+    {% endif %}
+
+    <!-- <div class="line">
+      &nbsp;
+    </div> -->
+
+    <!-- Move 'Is this beta content' to admin page? -->
+
+    <!-- {{ govukRadios({
       classes: "govuk-radios--inline",
       name: "IsThisBetaContent",
       fieldset: {
@@ -145,9 +568,12 @@
           checked: true
         }
       ]
-    }) }}
+    }) }} -->
+
+    <!-- Move 'Add a public change note' to history and notes? -->
+
            
-    <details class="govuk-details">
+    <!-- <details class="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
           Add a public change note
@@ -193,17 +619,42 @@
           </fieldset>
         </div>
       </div>
-    </details>
+    </details> -->
 
   </div>
 
   <div class="govuk-grid-column-one-third sticky options-sidebar">
-    <div class="actions-sidebar">
-      <!-- <h3 class="govuk-heading-s">Actions</h3> -->
-      <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">Save</button>
-      <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">2i</button>
-      <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">Preview (opens in new tab)</a></p>
-    </div>
+    {% if data['status'] !== "Archived" %}
+      <div class="actions-sidebar">
+        <!-- <h3 class="govuk-heading-s">Actions</h3> -->
+
+        {% if (data['status'] !== "Scheduled") and (data['status'] !== "Published") %}
+        <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">Save</button>
+        {% endif %}
+
+        {% if (data['status'] == "Draft") or (data['status'] == "Amends needed") %}
+          <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">2i</button>
+        {% elif data['status'] == "In review" %}
+          <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button" id="skip">Skip review</button>
+        {% elif data['status'] == "Ready" %}
+          <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Fact check</button>
+          <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Schedule</button>
+          <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Publish</button>
+        {% elif data['status'] == "Scheduled" %}
+          <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Cancel schedule</button>
+          <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Publish now</button>
+        {% elif data['status'] == "Published" %}
+          <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">Create new edition</button>
+        {% endif %}
+        
+        {% if data['status'] !== "Published" %}
+          <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">Preview (opens in new tab)</a></p>
+        {% else %}
+          <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">View on GOV.UK (opens in new tab)</a></p>
+        {% endif %}
+
+      </div>
+    {% endif %}
   </div>
 
 </div>
@@ -259,5 +710,5 @@
 {% endblock %}
 
 {% block pageScripts %}
-  <script src="/public/javascripts/accessible-autocomplete.js"></script>
+  <script src="/public/javascripts/content-item.js"></script>
 {% endblock %}

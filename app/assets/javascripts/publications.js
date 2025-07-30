@@ -59,7 +59,7 @@ window.GOVUKPrototypeKit.documentReady(() => {
     const thePath = window.location.protocol + "//" + window.location.host + window.location.pathname;
     const currentPage = thePath.substring(thePath.lastIndexOf('/') + 1);
 
-    data.forEach(({ title, assignee, state, format }, index) => {
+    data.forEach(({ title, assignee, state, format, version_number, id }, index) => {
      
       assignees.push(assignee);
       let newRow = firstRow.cloneNode(true);
@@ -95,13 +95,21 @@ window.GOVUKPrototypeKit.documentReady(() => {
           break;
       }
 
+      let status = state.toLowerCase().replace(/\b\w/g, s => s.toUpperCase()).replaceAll("_", " ")
+
+
+
 
       if (currentPage == "my-content") {
 
+      
+              console.log(version_number);
+
         if (assignee == "Esther Woods") {
           if (state !== "published" && state !== "archived") {
-            newRow.querySelector('.title').innerHTML = `<a href="#" class="govuk-link govuk-link--no-visited-state">${title}</a>`
-            newRow.querySelector('.state').innerHTML = `<strong class="govuk-tag govuk-tag--${tagColour}">${state.toLowerCase().replace(/\b\w/g, s => s.toUpperCase()).replaceAll("_", " ")}</strong>`
+            newRow.querySelector('.title').innerHTML = `<a href="content-item-edit?id=${id}&content-type=${format}&status=${status}" class="govuk-link govuk-link--no-visited-state">${title}</a>`
+            // newRow.querySelector('.title').innerHTML = `<a href="content-item-edit?title=${title}&content-type=${format}&assignee=${assignee}&status=${status}&tagColour=${tagColour}&edition=${version_number}" class="govuk-link govuk-link--no-visited-state">${title}</a>`
+            newRow.querySelector('.state').innerHTML = `<strong class="govuk-tag govuk-tag--${tagColour}">${status}</strong>`
             // newRow.querySelector('.assignee').innerText = assignee
             newRow.querySelector('.format').innerText = format  
             firstRow.parentNode.append(newRow)
@@ -112,10 +120,10 @@ window.GOVUKPrototypeKit.documentReady(() => {
 
         if (state == "in_review") {
           newRow.querySelector('.title').innerHTML = `
-            <a href="#" class="govuk-link govuk-link--no-visited-state">${title}</a>
+            <a href="content-item-edit?id=${id}&content-type=${format}&status=${status}" class="govuk-link govuk-link--no-visited-state">${title}</a>
             <q class="important-note">Quick fix. No FC needed. Please 2i, publish and leave a comment on the Trello card - no need to move the Trello card.
             The issue was identified by automatic Siteimprove checks which flag potential style and accessibility issues.</q>`
-          // newRow.querySelector('.state').innerHTML = `<strong class="govuk-tag govuk-tag--${tagColour}">${state.toLowerCase().replace(/\b\w/g, s => s.toUpperCase()).replaceAll("_", " ")}</strong>`
+          // newRow.querySelector('.state').innerHTML = `<strong class="govuk-tag govuk-tag--${tagColour}">${status}</strong>`
           newRow.querySelector('.assignee').innerText = assignee
           newRow.querySelector('.format').innerText = format  
           firstRow.parentNode.append(newRow)
@@ -124,8 +132,9 @@ window.GOVUKPrototypeKit.documentReady(() => {
       } else if (currentPage == "fact-check") {
 
         if (state == "fact_check_received") {
-          newRow.querySelector('.title-received').innerHTML = `<a href="#" class="govuk-link govuk-link--no-visited-state">${title}</a><a href="#" class="view-response">View response</a>`
-          newRow.querySelector('.state-received').innerHTML = `<strong class="govuk-tag govuk-tag--${tagColour}">${state.toLowerCase().replace(/\b\w/g, s => s.toUpperCase()).replaceAll("_", " ")}</strong>`
+          newRow.querySelector('.title-received').innerHTML = `<a href="content-item-edit?id=${id}&content-type=${format}&status=${status}" class="govuk-link govuk-link--no-visited-state">${title}</a>`
+          // newRow.querySelector('.title-received').innerHTML = `<a href="#" class="govuk-link govuk-link--no-visited-state">${title}</a><a href="#" class="view-response">View response</a>`
+          // newRow.querySelector('.state-received').innerHTML = `<strong class="govuk-tag govuk-tag--${tagColour}">${status}</strong>`
           newRow.querySelector('.assignee-received').innerText = assignee
           newRow.querySelector('.format-received').innerText = format  
           firstRow.parentNode.append(newRow)
@@ -135,8 +144,8 @@ window.GOVUKPrototypeKit.documentReady(() => {
           let firstRowSent = sentTable.querySelectorAll(".govuk-table__row")[1];
           let newRowSent = firstRowSent.cloneNode(true);
 
-          newRowSent.querySelector('.title-sent').innerHTML = `<a href="#" class="govuk-link govuk-link--no-visited-state">${title}</a>`
-          newRowSent.querySelector('.state-sent').innerHTML = `<strong class="govuk-tag govuk-tag--${tagColour}">${state.toLowerCase().replace(/\b\w/g, s => s.toUpperCase()).replaceAll("_", " ")}</strong>`
+          newRowSent.querySelector('.title-sent').innerHTML = `<a href="content-item-edit?id=${id}&content-type=${format}&status=${status}" class="govuk-link govuk-link--no-visited-state">${title}</a>`
+          // newRowSent.querySelector('.state-sent').innerHTML = `<strong class="govuk-tag govuk-tag--${tagColour}">${status}</strong>`
           newRowSent.querySelector('.assignee-sent').innerText = assignee
           newRowSent.querySelector('.format-sent').innerText = format
           firstRowSent.parentNode.append(newRowSent)
@@ -145,8 +154,8 @@ window.GOVUKPrototypeKit.documentReady(() => {
 
       } else {
 
-        newRow.querySelector('.title').innerHTML = `<a href="#" class="govuk-link govuk-link--no-visited-state">${title}</a><span class="slug">/this-is-a-slug</span>`
-        newRow.querySelector('.state').innerHTML = `<strong class="govuk-tag govuk-tag--${tagColour}">${state.toLowerCase().replace(/\b\w/g, s => s.toUpperCase()).replaceAll("_", " ")}</strong>`
+        newRow.querySelector('.title').innerHTML = `<a href="content-item-edit?id=${id}&content-type=${format}&status=${status}" class="govuk-link govuk-link--no-visited-state">${title}</a><span class="slug">/this-is-a-slug</span>`
+        newRow.querySelector('.state').innerHTML = `<strong class="govuk-tag govuk-tag--${tagColour}">${status}</strong>`
         newRow.querySelector('.assignee').innerText = assignee
         newRow.querySelector('.format').innerText = format
 

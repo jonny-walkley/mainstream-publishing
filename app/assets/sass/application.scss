@@ -6,6 +6,10 @@
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 //
 
+.govuk-template--rebranded .govuk-header__navigation-item a {
+  font-weight: 600;
+}
+
 .active-filter {
   display: inline-block;
   background-color: #f3f2f1;
@@ -29,18 +33,21 @@ table .important-note, table .view-response {
   margin: 5px 0;
 }
 
-
 table {
   .slug, .important-note, .view-response {
     display: block;
-    font-size: 16px;
     font-weight: 400;
+  }
+  .slug, .important-note {
+    font-size: 16px;
   }
 }
 
-.all-publications tbody th, .all-publications thead tr :nth-child(1) {
-  // Title
-  width: 40% !important;
+.all-publications, .fact-check {
+  tbody th, thead tr :nth-child(1) {
+    // Title
+    width: 40% !important;
+  }
 }
 
 .all-publications thead tr {
