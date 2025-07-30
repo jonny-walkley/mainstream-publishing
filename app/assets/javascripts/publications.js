@@ -59,7 +59,9 @@ window.GOVUKPrototypeKit.documentReady(() => {
     const thePath = window.location.protocol + "//" + window.location.host + window.location.pathname;
     const currentPage = thePath.substring(thePath.lastIndexOf('/') + 1);
 
-    data.forEach(({ title, assignee, state, format, version_number, id }, index) => {
+    data.forEach(({ title, assignee, state, format, version_number, id, slug }, index) => {
+
+      console.log(slug);
      
       assignees.push(assignee);
       let newRow = firstRow.cloneNode(true);
@@ -154,7 +156,7 @@ window.GOVUKPrototypeKit.documentReady(() => {
 
       } else {
 
-        newRow.querySelector('.title').innerHTML = `<a href="content-item-edit?id=${id}&content-type=${format}&status=${status}" class="govuk-link govuk-link--no-visited-state">${title}</a><span class="slug">/this-is-a-slug</span>`
+        newRow.querySelector('.title').innerHTML = `<a href="content-item-edit?id=${id}&content-type=${format}&status=${status}" class="govuk-link govuk-link--no-visited-state">${title}</a><span class="slug">/${slug}</span>`
         newRow.querySelector('.state').innerHTML = `<strong class="govuk-tag govuk-tag--${tagColour}">${status}</strong>`
         newRow.querySelector('.assignee').innerText = assignee
         newRow.querySelector('.format').innerText = format

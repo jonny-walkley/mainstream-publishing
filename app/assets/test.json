@@ -1,6 +1,7 @@
 [
   {
       "title": "After a crime: your rights",
+      "slug": "your-rights-after-crime",
       "state": "published",
       "assignee": "Esther Woods",
       "version_number": 14,
@@ -9,6 +10,7 @@
   },
   {
       "title": "Volunteer to check standards in prison",
+      "slug": "volunteer-to-check-standards-in-prison",
       "state": "published",
       "assignee": "Emily Atherton",
       "version_number": 9,
@@ -17,6 +19,7 @@
   },
   {
       "title": "Leasehold property",
+      "slug": "leasehold-property",
       "state": "published",
       "assignee": "Emily Atherton",
       "version_number": 20,
@@ -24,7 +27,8 @@
       "id": "65b8f74dea62b8000dff305c"
   },
   {
-      "title": "Pay a Self Assessment penalty ",
+      "title": "Pay a Self Assessment penalty",
+      "slug": "pay-self-assessment-penalty",
       "state": "published",
       "assignee": "Michael Richards",
       "version_number": 2,
@@ -33,6 +37,7 @@
   },
   {
       "title": "Bringing animals into Great Britain",
+      "slug": "bringing-animals-into-great-britain",
       "state": "draft",
       "assignee": "Zoe Williams",
       "version_number": 6,
@@ -41,6 +46,7 @@
   },
   {
       "title": "Get a DNA test",
+      "slug": "get-a-dna-test",
       "state": "published",
       "assignee": "Tafara Masendu",
       "version_number": 15,
@@ -49,6 +55,7 @@
   },
   {
       "title": "Youth crime prevention programmes",
+      "slug": "youth-crime-prevention-programmes",
       "state": "published",
       "assignee": "Esther Woods",
       "version_number": 5,
@@ -57,6 +64,7 @@
   },
   {
       "title": "Taliad Tanwydd Gaeaf",
+      "slug": "taliad-tanwydd-gaeaf",
       "state": "published",
       "assignee": "Megan Husband",
       "version_number": 37,
@@ -65,6 +73,7 @@
   },
   {
       "title": "Claim a National Insurance refund",
+      "slug": "claim-national-insurance-refund",
       "state": "draft",
       "assignee": "Michael Richards",
       "version_number": 23,
@@ -73,6 +82,7 @@
   },
   {
       "title": "Report a free NHS COVID-19 rapid lateral flow test result",
+      "slug": "report-covid19-result",
       "state": "published",
       "assignee": "Ruth Harper",
       "version_number": 28,
@@ -81,6 +91,7 @@
   },
   {
       "title": "Contact DVSA",
+      "slug": "contact-dvsa",
       "state": "scheduled_for_publishing",
       "assignee": "Ruth Harper",
       "version_number": 62,
@@ -89,6 +100,7 @@
   },
   {
       "title": "Check coastal erosion risk in your area",
+      "slug": "check-coastal-erosion-management-in-your-area",
       "state": "amends_needed",
       "assignee": "Lottie Moore",
       "version_number": 8,
@@ -97,6 +109,7 @@
   },
   {
       "title": "British National (Overseas) visa",
+      "slug": "british-national-overseas-bno-visa",
       "state": "draft",
       "assignee": "Adam Wainwright",
       "version_number": 30,
@@ -105,6 +118,7 @@
   },
   {
       "title": "Self-employed National Insurance rates",
+      "slug": "self-employed-national-insurance-rates",
       "state": "published",
       "assignee": "Michael Richards",
       "version_number": 32,
@@ -113,6 +127,7 @@
   },
   {
       "title": "Get a faster decision on your visa or settlement application",
+      "slug": "faster-decision-visa-settlement",
       "state": "published",
       "assignee": "Alice Jones",
       "version_number": 38,
@@ -121,6 +136,7 @@
   },
   {
       "title": "Pay for UK healthcare as part of your immigration application",
+      "slug": "healthcare-immigration-application",
       "state": "fact_check_sent",
       "assignee": "Helen Wilkinson",
       "version_number": 68,
@@ -129,6 +145,7 @@
   },
   {
       "title": "Student finance for undergraduates",
+      "slug": "student-finance",
       "state": "fact_check_sent",
       "assignee": "Esther Woods",
       "version_number": 135,
@@ -137,6 +154,7 @@
   },
   {
       "title": "Health and Care Worker visa",
+      "slug": "health-care-worker-visa",
       "state": "fact_check_received",
       "assignee": "Caroline Atkinson",
       "version_number": 55,
@@ -145,6 +163,7 @@
   },
   {
       "title": "Expenses if you're self-employed",
+      "slug": "expenses-if-youre-self-employed",
       "state": "fact_check_received",
       "assignee": "Megan Thirlwell",
       "version_number": 18,
@@ -153,6 +172,7 @@
   },
   {
       "title": "Change your name by deed poll",
+      "slug": "change-name-deed-poll",
       "state": "ready",
       "assignee": "Genie Todd",
       "version_number": 45,
@@ -161,6 +181,7 @@
   },
   {
       "title": "Benefits calculators",
+      "slug": "benefits-calculators",
       "state": "archived",
       "assignee": "Claire Ryan-East",
       "version_number": 69,
@@ -169,6 +190,7 @@
   },
   {
       "title": "Marriage Allowance",
+      "slug": "marriage-allowance",
       "state": "in_review",
       "assignee": "Sarah Nicholson",
       "version_number": 43,
@@ -177,6 +199,7 @@
   },
   {
       "title": "Find your UTR number",
+      "slug": "find-utr-number",
       "state": "published",
       "assignee": "Ana Botto",
       "version_number": 13,
@@ -185,6 +208,7 @@
   },
   {
       "title": "Contact the Court Funds Office",
+      "slug": "contact-court-funds-office",
       "state": "draft",
       "assignee": "Esther Woods",
       "version_number": 13,
@@ -193,6 +217,7 @@
   },
   {
       "title": "Cyfrifiannell Budd-daliadau",
+      "slug": "cyfrifiannell-budd-daliadau",
       "state": "archived",
       "assignee": "Claire Ryan-East",
       "version_number": 5,
@@ -201,6 +226,7 @@
   },
   {
       "title": "Find and claim money in a court account",
+      "slug": "find-court-money",
       "state": "draft",
       "assignee": "Esther Woods",
       "version_number": 8,
@@ -209,6 +235,7 @@
   },
   {
       "title": "Charity Worker visa (Temporary Work)",
+      "slug": "temporary-worker-charity-worker-visa",
       "state": "draft",
       "assignee": "Helen Wilkinson",
       "version_number": 83,
@@ -217,6 +244,7 @@
   },
   {
       "title": "Creative Worker visa (Temporary Work)",
+      "slug": "creative-worker-visa",
       "state": "draft",
       "assignee": "Helen Wilkinson",
       "version_number": 92,
@@ -225,6 +253,7 @@
   },
   {
       "title": "Family visas: apply, extend or switch",
+      "slug": "uk-family-visa",
       "state": "draft",
       "assignee": "Helen Wilkinson",
       "version_number": 69,
@@ -232,7 +261,8 @@
       "id": "65ba3de64c78a2000dcad8f5"
   },
   {
-      "title": "Apply for the Global Talent visa ",
+      "title": "Apply for the Global Talent visa",
+      "slug": "global-talent",
       "state": "draft",
       "assignee": "Helen Wilkinson",
       "version_number": 37,
@@ -241,6 +271,7 @@
   },
   {
       "title": "Appeal to the tax tribunal",
+      "slug": "tax-tribunal",
       "state": "published",
       "assignee": "Hannah Whittaker",
       "version_number": 39,
@@ -249,6 +280,7 @@
   },
   {
       "title": "Government Authorised Exchange visa (Temporary Work)",
+      "slug": "government-authorised-exchange",
       "state": "draft",
       "assignee": "Helen Wilkinson",
       "version_number": 85,
@@ -257,6 +289,7 @@
   },
   {
       "title": "Graduate Trainee visa (Global Business Mobility)",
+      "slug": "graduate-trainee-visa",
       "state": "draft",
       "assignee": "Helen Wilkinson",
       "version_number": 12,
@@ -265,6 +298,7 @@
   },
   {
       "title": "Graduate visa",
+      "slug": "graduate-visa",
       "state": "draft",
       "assignee": "Helen Wilkinson",
       "version_number": 17,
@@ -273,6 +307,7 @@
   },
   {
       "title": "High Potential Individual (HPI) visa",
+      "slug": "high-potential-individual-visa",
       "state": "draft",
       "assignee": "Helen Wilkinson",
       "version_number": 20,
@@ -281,6 +316,7 @@
   },
   {
       "title": "International Agreement visa (Temporary Work)",
+      "slug": "international-agreement-worker-visa",
       "state": "draft",
       "assignee": "Helen Wilkinson",
       "version_number": 95,
@@ -289,6 +325,7 @@
   },
   {
       "title": "Archebwch eich prawf gyrru",
+      "slug": "archebu-prawf-gyrru-ymarferol",
       "state": "published",
       "assignee": "Lottie Moore",
       "version_number": 17,
@@ -297,6 +334,7 @@
   },
   {
       "title": "Archebu eich prawf gyrru theori",
+      "slug": "archebu-prawf-gyrru-theori",
       "state": "published",
       "assignee": "Lottie Moore",
       "version_number": 14,
@@ -305,6 +343,7 @@
   },
   {
       "title": "Applying for probate",
+      "slug": "applying-for-probate",
       "state": "draft",
       "assignee": "Richard Skipper",
       "version_number": 128,
@@ -313,6 +352,7 @@
   },
   {
       "title": "Stopping a probate application",
+      "slug": "stop-probate-application",
       "state": "draft",
       "assignee": "Richard Skipper",
       "version_number": 18,
@@ -321,6 +361,7 @@
   },
   {
       "title": "Cancel your driving test",
+      "slug": "cancel-driving-test",
       "state": "draft",
       "assignee": "Nicola Frost",
       "version_number": 50,
@@ -329,6 +370,7 @@
   },
   {
       "title": "Cancel your theory test",
+      "slug": "cancel-theory-test",
       "state": "draft",
       "assignee": "Nicola Frost",
       "version_number": 40,
@@ -337,6 +379,7 @@
   },
   {
       "title": "Change your driving test appointment",
+      "slug": "change-driving-test",
       "state": "draft",
       "assignee": "Nicola Frost",
       "version_number": 52,
@@ -345,6 +388,7 @@
   },
   {
       "title": "Change your theory test appointment",
+      "slug": "change-theory-test",
       "state": "draft",
       "assignee": "Nicola Frost",
       "version_number": 41,
@@ -353,6 +397,7 @@
   },
   {
       "title": "Check, change or cancel your instructor theory test",
+      "slug": "check-change-cancel-your-instructor-theory-test",
       "state": "draft",
       "assignee": "Nicola Frost",
       "version_number": 31,
@@ -361,6 +406,7 @@
   },
   {
       "title": "Benefits calculators",
+      "slug": "benefits-calculators",
       "state": "published",
       "assignee": "Anna Woods",
       "version_number": 70,
@@ -369,6 +415,7 @@
   },
   {
       "title": "Cyfrifiannell Budd-daliadau",
+      "slug": "cyfrifiannell-budd-daliadau",
       "state": "published",
       "assignee": "Anna Woods",
       "version_number": 6,
@@ -377,6 +424,7 @@
   },
   {
       "title": "Benefits calculators",
+      "slug": "benefits-calculators",
       "state": "scheduled_for_publishing",
       "assignee": "Anna Woods",
       "version_number": 71,
@@ -385,6 +433,7 @@
   },
   {
       "title": "Cyfrifiannell Budd-daliadau",
+      "slug": "cyfrifiannell-budd-daliadau",
       "state": "scheduled_for_publishing",
       "assignee": "Anna Woods",
       "version_number": 7,
@@ -393,6 +442,7 @@
   },
   {
       "title": "Appeal to the Employment Appeal Tribunal (EAT)",
+      "slug": "appeal-employment-appeal-tribunal",
       "state": "in_review",
       "assignee": "Esther Woods",
       "version_number": 14,
@@ -401,6 +451,7 @@
   },
   {
       "title": "Find a traineeship",
+      "slug": "find-traineeship",
       "state": "archived",
       "assignee": "Anna Woods",
       "version_number": 8,
@@ -409,6 +460,7 @@
   },
   {
       "title": "Become an apprentice",
+      "slug": "become-apprentice",
       "state": "draft",
       "assignee": "Anna Woods",
       "version_number": 43,
@@ -417,6 +469,7 @@
   },
   {
       "title": "How to report antisocial behaviour",
+      "slug": "how-report-antisocial-behaviour",
       "state": "amends_needed",
       "assignee": "Caroline Atkinson",
       "version_number": 12,
@@ -425,6 +478,7 @@
   },
   {
       "title": "Report a crime",
+      "slug": "report-crime",
       "state": "draft",
       "assignee": "Caroline Atkinson",
       "version_number": 1,
