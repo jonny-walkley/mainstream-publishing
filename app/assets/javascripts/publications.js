@@ -100,7 +100,7 @@ window.GOVUKPrototypeKit.documentReady(() => {
 
 
 
-    data.forEach(({ title, assignee, state, format, version_number, id, slug }, index) => {
+    data.forEach(({ title, assignee, state, format, version_number, id, slug, language }, index) => {
      
       assignees.push(assignee);
       let newRow = firstRow.cloneNode(true);
@@ -155,22 +155,44 @@ window.GOVUKPrototypeKit.documentReady(() => {
       } else if (currentPage == "2i-queue") {
 
         if (state == "in_review") {
-          newRow.querySelector('.title').innerHTML = `
-            <a href="content-item-edit?id=${id}&content-type=${format}&status=${status}" class="govuk-link govuk-link--no-visited-state">${title}</a>
-            <q class="important-note">Quick fix. No FC needed. Please 2i, publish and leave a comment on the Trello card - no need to move the Trello card.
-            The issue was identified by automatic Siteimprove checks which flag potential style and accessibility issues.</q>`
-          newRow.querySelector('.assignee').innerText = assignee
-          newRow.querySelector('.format').innerText = format  
-          firstRow.parentNode.append(newRow)
+
+          if (language == "en") {
+
+            newRow.querySelector('.title-english').innerHTML = `
+              <a href="content-item-edit?id=${id}&content-type=${format}&status=${status}" class="govuk-link govuk-link--no-visited-state">${title}</a>
+              <q class="important-note">Quick fix. No FC needed. Please 2i, publish and leave a comment on the Trello card - no need to move the Trello card.
+              The issue was identified by automatic Siteimprove checks which flag potential style and accessibility issues.</q>`
+            newRow.querySelector('.assignee-english').innerText = assignee
+            newRow.querySelector('.format-english').innerText = format  
+            firstRow.parentNode.append(newRow)
+
+          } else {
+
+            let welshTable = document.querySelectorAll(".govuk-table")[1];
+            let firstRowWelsh = welshTable.querySelectorAll(".govuk-table__row")[1];
+            let newRowWelsh = firstRowWelsh.cloneNode(true);
+
+            newRowWelsh.querySelector('.title-welsh').innerHTML = `
+              <a href="content-item-edit?id=${id}&content-type=${format}&status=${status}" class="govuk-link govuk-link--no-visited-state">${title}</a>
+              <q class="important-note">Quick fix. No FC needed. Please 2i, publish and leave a comment on the Trello card - no need to move the Trello card.
+              The issue was identified by automatic Siteimprove checks which flag potential style and accessibility issues.</q>`
+            newRowWelsh.querySelector('.assignee-welsh').innerText = assignee
+            newRowWelsh.querySelector('.format-welsh').innerText = format
+            firstRowWelsh.parentNode.append(newRowWelsh)
+
+          }
+
         }
 
       } else if (currentPage == "fact-check") {
 
         if (state == "fact_check_received") {
+         
           newRow.querySelector('.title-received').innerHTML = `<a href="content-item-edit?id=${id}&content-type=${format}&status=${status}" class="govuk-link govuk-link--no-visited-state">${title}</a>`
           newRow.querySelector('.assignee-received').innerText = assignee
           newRow.querySelector('.format-received').innerText = format  
           firstRow.parentNode.append(newRow)
+        
         } else if (state == "fact_check_sent") {
 
           let sentTable = document.querySelectorAll(".govuk-table")[1];
@@ -263,6 +285,8 @@ window.GOVUKPrototypeKit.documentReady(() => {
 
     if (currentPage == "fact-check") {
       document.querySelectorAll(".govuk-table")[1].querySelectorAll(".govuk-table__row")[1].remove()
+    } else if (currentPage == "2i-queue") {
+      document.querySelectorAll(".govuk-table")[1].querySelectorAll(".govuk-table__row")[1].remove()
     }
     
     // Populate the number of results heading and show/hide elements if no results
@@ -274,6 +298,7 @@ window.GOVUKPrototypeKit.documentReady(() => {
     };
 
     document.querySelector('#item-count').innerHTML = `${count} ${toPlural(count, "item")}`
+    // console.log(count);
 
     if (count === 0) {
       document.querySelector('.govuk-table').style.display = 'none';

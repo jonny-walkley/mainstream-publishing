@@ -108,13 +108,13 @@
         rows: [
           [
             {
-              classes: "title"
+              classes: "title-english"
             },
             {
-              classes: "format"
+              classes: "format-english"
             },
             {
-              classes: "assignee"
+              classes: "assignee-english"
             },
             {
               text: "3 minutes"
@@ -130,10 +130,53 @@
       
       </div>
       <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="welsh">
-        <h3 class="govuk-heading-m">Welsh</h3>
+        <!-- <h3 class="govuk-heading-m">Welsh</h3> -->
+        {{ govukTable({
+          caption: "Welsh",
+          captionClasses: "govuk-table__caption--m",
+          firstCellIsHeader: true,
+          classes: "queue-2i",
+          head: [
+            {
+              text: "Title"
+            },
+            {
+              text: "Content type"
+            },
+            {
+              text: "Assigned to"
+            },
+            {
+              text: "Time in queue"
+            },
+            {
+              text: "2i reviewer"
+            }
+          ],
+          rows: [
+            [
+              {
+                classes: "title-welsh"
+              },
+              {
+                classes: "format-welsh"
+              },
+              {
+                classes: "assignee-welsh"
+              },
+              {
+                text: "3 minutes"
+              },
+              {
+                html: "<button class='govuk-button'>Claim 2i</button>"
+              }
+            ]
+          ]
+        }) }}
       </div>
+    </div>
 
-      <!-- End tabs -->
+    <!-- End tabs -->
     
   </div>
 </div>
