@@ -25,8 +25,14 @@
 
 .fact-check > tbody > tr:last-child  {
   th, td {
-  border: none;
+    border: none;
+  }
 }
+
+.queue-2i > tbody > tr:last-child  {
+  th, td {
+    border: none;
+  }
 }
 
 table .important-note, table .view-response {
@@ -47,6 +53,20 @@ table {
   tbody th, thead tr :nth-child(1) {
     // Title
     width: 40% !important;
+  }
+}
+
+.queue-2i {
+  tbody th, thead tr :nth-child(1) {
+    // Title
+    width: 45% !important;
+  }
+}
+
+.queue-2i {
+  tbody th, thead tr :nth-child(5) {
+    // 2i reviewer
+    width: 10% !important;
   }
 }
 

@@ -96,7 +96,8 @@
       "assignee": "Ruth Harper",
       "version_number": 62,
       "format": "Simple smart answer",
-      "id": "65b933d7e21d7a00105c4eb7"
+      "id": "65b933d7e21d7a00105c4eb7",
+      "scheduled": "12:01am, 8 November 2025"
   },
   {
       "title": "Check coastal erosion risk in your area",
@@ -141,7 +142,8 @@
       "assignee": "Helen Wilkinson",
       "version_number": 68,
       "format": "Guide",
-      "id": "65ba2cf64c78a2000dcad8e0"
+      "id": "65ba2cf64c78a2000dcad8e0",
+      "sent_out": "3 days ago"
   },
   {
       "title": "Student finance for undergraduates",
@@ -150,7 +152,8 @@
       "assignee": "Esther Woods",
       "version_number": 135,
       "format": "Guide",
-      "id": "68371e2a99242e001779f7f5"
+      "id": "68371e2a99242e001779f7f5",
+      "sent_out": "4 days ago"
   },
   {
       "title": "Health and Care Worker visa",
@@ -429,7 +432,9 @@
       "assignee": "Anna Woods",
       "version_number": 71,
       "format": "Answer",
-      "id": "65ba742d81aa290010cf5cab"
+      "id": "65ba742d81aa290010cf5cab",
+      "scheduled": "9:00am, 20 October 2025"
+
   },
   {
       "title": "Cyfrifiannell Budd-daliadau",
@@ -438,7 +443,8 @@
       "assignee": "Anna Woods",
       "version_number": 7,
       "format": "Answer",
-      "id": "65ba74a281aa290010cf5cae"
+      "id": "65ba74a281aa290010cf5cae",
+      "scheduled": "12:01am, 12 December 2025"
   },
   {
       "title": "Appeal to the Employment Appeal Tribunal (EAT)",

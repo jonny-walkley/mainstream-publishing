@@ -58,16 +58,9 @@
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Edition {{ data['title'] }}</dt>
+        <dt class="govuk-summary-list__key">Edition</dt>
         <dd class="govuk-summary-list__value" id="edition"></dd>
         <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions"></dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Assigned to</dt>
-        <dd class="govuk-summary-list__value" id="assignee"></dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> assignee</span></a>
-        </dd>
       </div>
       {% if data['status'] == "In review" %}
         <div class="govuk-summary-list__row">
@@ -77,13 +70,26 @@
             <a class="govuk-link govuk-link--no-visited-state" href="#"><span class="govuk-visually-hidden">2i reviewer</span></a>
           </dd>
         </div>
+      {% elif data['status'] == "Fact check sent" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Sent out</dt>
+          <dd class="govuk-summary-list__value" id="sent-out"></dd>
+          <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions"></dd>
+        </div>
       {% elif data['status'] == "Scheduled" %}
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Scheduled</dt>
-          <dd class="govuk-summary-list__value"></dd>
+          <dt class="govuk-summary-list__key">Scheduled for</dt>
+          <dd class="govuk-summary-list__value" id="scheduled"></dd>
           <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions"></dd>
         </div>
       {% endif %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Assigned to</dt>
+        <dd class="govuk-summary-list__value" id="assignee"></dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> assignee</span></a>
+        </dd>
+      </div>
     </dl>
     
 </div>
@@ -142,7 +148,13 @@
 
     {% elif data['content-type'] == "Completed transaction" %}
 
-      <div class="govuk-form-group">
+      {% if (data['status'] == "Scheduled") or (data['status'] == "Published") or (data['status'] == "Archived") %}
+
+      
+      
+      {% else %}
+
+        <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
           <legend class="">
             <label class="govuk-label govuk-label--s" for="promotions">Promotions</label>
@@ -230,7 +242,17 @@
         </fieldset>
       </div>
 
+      {% endif %}
+
+     
+
     {% elif data['content-type'] == "Local transaction" %}
+
+      {% if (data['status'] == "Scheduled") or (data['status'] == "Published") or (data['status'] == "Archived") %}
+
+      
+      
+      {% else %}
 
       <div class="published-state">
         <h2 class="govuk-heading-s">LGSL code</h2>
@@ -376,86 +398,115 @@
         </fieldset>
       </div>
 
+      {% endif %}
+
     {% elif data['content-type'] == "Transaction" %}
 
-      <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="introduction">
-          Introduction
-        </label>
-        <div id="introduction-hint" class="govuk-hint">
-          Set the scene for the user.
-          What is about to happen? For example, “you will need to fill in a form, print it out and take it to the post office”.
-          Read the <a href="https://govspeak-preview.publishing.service.gov.uk/guide" target="_blank" class="govuk-link--no-visited-state">Govspeak guide (opens in new tab)</a>.
-        </div>
-        <textarea class="govuk-textarea" id="introduction" name="introduction" rows="16"></textarea>
-      </div>
+      {% if (data['status'] == "Scheduled") or (data['status'] == "Published") or (data['status'] == "Archived") %}
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="start-button-text-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            <h1 class="govuk-fieldset__heading">
-              Start button text
-            </h1>
-          </legend>
-          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="start-now" name="start-button-text" type="radio" value="start-now" checked>
-              <label class="govuk-label govuk-radios__label" for="start-now">
-                Start now
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="sign-in" name="start-button-text" type="radio" value="sign-in">
-              <label class="govuk-label govuk-radios__label" for="sign-in">
-                Sign in
-              </label>
-            </div>
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Introduction</h3>
+      <p class="govuk-body" id=""></p>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Start button text</h3>
+      <p class="govuk-body" id=""></p>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Text below the start button (optional)</h3>
+      <p class="govuk-body" id=""></p>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Link to start of transaction</h3>
+      <p class="govuk-body" id=""></p>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">More information (optional)</h3>
+      <p class="govuk-body" id=""></p>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Other ways to apply (optional)</h3>
+      <p class="govuk-body" id=""></p>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">What you need to know (optional)</h3>
+      <p class="govuk-body" id=""></p>
+
+      {% else %}
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="introduction">
+            Introduction
+          </label>
+          <div id="introduction-hint" class="govuk-hint">
+            Set the scene for the user.
+            What is about to happen? For example, “you will need to fill in a form, print it out and take it to the post office”.
+            Read the <a href="https://govspeak-preview.publishing.service.gov.uk/guide" target="_blank" class="govuk-link--no-visited-state">Govspeak guide (opens in new tab)</a>.
           </div>
-        </fieldset>
-      </div>
-
-      <div class="govuk-form-group">
-        <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="text-below-button">Text below the start button (optional)</label>
-        <div id="text-below-button" class="govuk-hint">
-          Following ‘on’, for example “the HMRC website”
+          <textarea class="govuk-textarea" id="introduction" name="introduction" rows="16"></textarea>
         </div>
-        <input class="govuk-input" id="text-below-button" name="text-below-button" type="text" spellcheck="false" value="">
-      </div>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="text-below-button">Link to start of transaction</label>
-        <div id="text-below-button" class="govuk-hint">
-          Link as deep as possible
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="start-button-text-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h1 class="govuk-fieldset__heading">
+                Start button text
+              </h1>
+            </legend>
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="start-now" name="start-button-text" type="radio" value="start-now" checked>
+                <label class="govuk-label govuk-radios__label" for="start-now">
+                  Start now
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sign-in" name="start-button-text" type="radio" value="sign-in">
+                <label class="govuk-label govuk-radios__label" for="sign-in">
+                  Sign in
+                </label>
+              </div>
+            </div>
+          </fieldset>
         </div>
-        <input class="govuk-input" id="text-below-button" name="text-below-button" type="text" spellcheck="false" value="">
-      </div>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="more-information">
-          More information (optional)
-        </label>
-        <!-- <div id="more-information-hint" class="govuk-hint">
-          This will appear under a ‘Before you start’ heading or in a ‘More information’ tab
-        </div> -->
-        <textarea class="govuk-textarea" id="more-information" name="moreInformation" rows="16"></textarea>
-      </div>
-
-      <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="other-ways-to-apply">
-          Other ways to apply (optional)
-        </label>
-        <div id="other-ways-to-apply-hint" class="govuk-hint">
-          Alternative ways of completing this transaction
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="text-below-button">Text below the start button (optional)</label>
+          <div id="text-below-button" class="govuk-hint">
+            Following ‘on’, for example “the HMRC website”
+          </div>
+          <input class="govuk-input" id="text-below-button" name="text-below-button" type="text" spellcheck="false" value="">
         </div>
-        <textarea class="govuk-textarea" id="other-ways-to-apply" name="otherWaysToApply" rows="16"></textarea>
-      </div>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="what-you-need-to-know">
-          What you need to know (optional)
-        </label>
-        <textarea class="govuk-textarea" id="what-you-need-to-know" name="whatYouNeedToKnow" rows="16"></textarea>
-      </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="text-below-button">Link to start of transaction</label>
+          <div id="text-below-button" class="govuk-hint">
+            Link as deep as possible
+          </div>
+          <input class="govuk-input" id="text-below-button" name="text-below-button" type="text" spellcheck="false" value="">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="more-information">
+            More information (optional)
+          </label>
+          <!-- <div id="more-information-hint" class="govuk-hint">
+            This will appear under a ‘Before you start’ heading or in a ‘More information’ tab
+          </div> -->
+          <textarea class="govuk-textarea" id="more-information" name="moreInformation" rows="16"></textarea>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="other-ways-to-apply">
+            Other ways to apply (optional)
+          </label>
+          <div id="other-ways-to-apply-hint" class="govuk-hint">
+            Alternative ways of completing this transaction
+          </div>
+          <textarea class="govuk-textarea" id="other-ways-to-apply" name="otherWaysToApply" rows="16"></textarea>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="what-you-need-to-know">
+            What you need to know (optional)
+          </label>
+          <textarea class="govuk-textarea" id="what-you-need-to-know" name="whatYouNeedToKnow" rows="16"></textarea>
+        </div>
+
+      {% endif %}
 
     {% elif data['content-type'] == "Place" %}
 
@@ -492,55 +543,67 @@
       </div>
 
     {% elif data['content-type'] == "Guide" %}
+    
+      {% if (data['status'] == "Scheduled") or (data['status'] == "Published") or (data['status'] == "Archived") %}
 
-      <h3 class="govuk-heading-m">Chapters</h3>
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Chapters</h3>
+        <p class="govuk-body" id=""></p>
 
-      <!-- <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-            Chapter 1 title
-          </dt>
-          <dd class="govuk-summary-list__value">
-            
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link govuk-link--no-visited-state" href="guide-draft-edit-chapter-1">Edit<span class="govuk-visually-hidden"> Chapter 1</span></a>
-          </dd>
-        </div>
-      </dl> -->
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Is every chapter part of a step by step?</h3>
+        <p class="govuk-body" id=""></p>
 
-      <a href="guide-draft-add-new-chapter">
-        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-          Add a new chapter
-        </button>
-      </a>
+      {% else %}
 
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        name: "IsEveryChapterIncludedInStepByStep",
-        fieldset: {
-          legend: {
-            text: "Is every chapter part of a step by step?",
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        hint: {
-          text: "The chapter navigation will be hidden if they all are"
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
+        <h3 class="govuk-heading-m">Chapters</h3>
+
+        <!-- <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+              Chapter 1 title
+            </dt>
+            <dd class="govuk-summary-list__value">
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link govuk-link--no-visited-state" href="guide-draft-edit-chapter-1">Edit<span class="govuk-visually-hidden"> Chapter 1</span></a>
+            </dd>
+          </div>
+        </dl> -->
+
+        <a href="guide-draft-add-new-chapter">
+          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Add a new chapter
+          </button>
+        </a>
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          name: "IsEveryChapterIncludedInStepByStep",
+          fieldset: {
+            legend: {
+              text: "Is every chapter part of a step by step?",
+              classes: "govuk-fieldset__legend--s"
+            }
           },
-          {
-            value: "no",
-            text: "No",
-            checked: true
-          }
-        ]
-      }) }}
+          hint: {
+            text: "The chapter navigation will be hidden if they all are"
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: true
+            }
+          ]
+        }) }}
 
-    {% endif %}
+        {% endif %}
+
+      {% endif %}
 
     <!-- <div class="line">
       &nbsp;

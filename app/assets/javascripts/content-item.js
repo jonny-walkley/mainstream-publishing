@@ -1,44 +1,11 @@
   window.GOVUKPrototypeKit.documentReady(() => {
 
-  const matchParam = (param, input, exact) =>
-    input && ((input.replace(' ','').toLowerCase()).match(
-      !exact ? param.replace(' ','').toLowerCase() : new RegExp(`^${param.replace(' ','').toLowerCase()}$`)
-    ));
-
-  const filterParams = (whitelist, searchParams) =>
-    Array.from(new URL(document.location).searchParams.entries()).filter(param => whitelist.includes(param[0]) && param[1].length && param[1] !='_unchecked' && param[1] != 'all');
-
-  let params2 = new URLSearchParams(document.location.search);
-  let contentItemID = params2.get("id");
+  let params = new URLSearchParams(document.location.search);
+  let contentItemID = params.get("id");
 
   fetch("/public/test.json").then(data => data.json()).then(data => {
 
-    let firstRow = document.querySelectorAll(".govuk-table__row")[1];
-    let assignees = [];
-    let params = new URL(document.location).searchParams;
-    let titleParam = params.get("title") || "" ;
-    let assigneeParam = params.get("assignee") || "";
-    let formatParam = params.get("format") || "";
-    let statusParam = params.get("state") || "";
-
-    let whitelist = [
-      'title',
-      'assignee',
-      'format',
-      'status'
-    ]
-
-    let matchExact = {
-      title: false,
-      assignee: true,
-      format: true,
-      state: true,
-    }
-
-    let processParams = filterParams(whitelist, new URL(document.location).searchParams.entries());
-    let states = filterParams(['state'], new URL(document.location).searchParams.entries());
-
-    data.forEach(({ title, assignee, state, format, version_number, id }, index) => {
+    data.forEach(({ title, assignee, state, format, version_number, id, scheduled, sent_out }, index) => {
       
       if (id == contentItemID) {
 
@@ -76,10 +43,10 @@
             break;
         }
               
-        // Set content type
+        // Set caption content type 
         document.querySelector('.govuk-caption-xl').innerHTML = `${format}`
 
-        // Set title
+        // Set h1 heading title
         document.querySelector('.govuk-heading-xl').innerHTML = `${title}`
 
         // Set edition number and status
@@ -88,14 +55,22 @@
         // Set assigned to
         document.querySelector('#assignee').innerHTML = `${assignee}`
 
-        // Hide the 'Skip review' button if content item is in review and not assigned to current user
+        // Hide the 'Skip review' button if content item is 'In review' and not assigned to current user
         if (status == "In review" && assignee !== "Esther Woods") {
           document.querySelector('#skip').style.display = 'none';
         }
 
-        // Set title
+        if (status == "Fact check sent") {
+          document.querySelector('#sent-out').innerHTML = `${sent_out}`
+        }
+
+        if (status == "Scheduled") {
+          document.querySelector('#scheduled').innerHTML = `${scheduled}`
+        }
+
+        // Set text input or h3 heading for title
         if (status == "Scheduled" || status == "Published" || status == "Archived") {
-         document.querySelector('#title').innerHTML = title;
+          document.querySelector('#title').innerHTML = title;
         } else {
           document.querySelector('#title').value = title;
         }

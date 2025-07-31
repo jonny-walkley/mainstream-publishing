@@ -35,33 +35,72 @@ window.GOVUKPrototypeKit.documentReady(() => {
     let processParams = filterParams(whitelist, new URL(document.location).searchParams.entries());
     let states = filterParams(['state'], new URL(document.location).searchParams.entries());
 
-
-    // Show 'Clear filters' link if filters are applied
-
-    if (processParams.length !== 0 || (statusParam !== "" && statusParam !== "all" )) {
-
-      document.querySelector('#clear-filters').innerHTML = `Clear filters`
-      document.querySelector('#active-filters').innerHTML = `<p class="govuk-body">Active filters</p>`
-
-      processParams.forEach((filter) => {
-       
-        console.log("filter: " + filter[0]);
-        console.log("value: " + filter[1]);
-        const activeFilterElement = document.querySelector('#active-filters')
-        activeFilterElement.innerHTML += `<p class="active-filter">${filter[0]}: ${filter[1]}</p>`;
-      
-      })
-      
-    }
-
     // Get current page
 
     const thePath = window.location.protocol + "//" + window.location.host + window.location.pathname;
     const currentPage = thePath.substring(thePath.lastIndexOf('/') + 1);
 
-    data.forEach(({ title, assignee, state, format, version_number, id, slug }, index) => {
+    // If filters are applied
 
-      console.log(slug);
+    if (processParams.length !== 0 || (statusParam !== "" && statusParam !== "all" )) {
+          
+      // Show 'Clear filters' link
+      document.querySelector('#clear-filters').innerHTML = `Clear filters`
+          
+      // Show active filters text
+      // document.querySelector('#active-filters').innerHTML = `<p class="govuk-body govuk-!-margin-bottom-2">Active filters</p>`
+
+      // Show active filters
+
+      const activeFilterElement = document.querySelector('#active-filters')
+
+      let isTitle = false;
+      let isAssignee = false;
+      let isFormat = false;
+
+      // processParams.forEach((filter) => {
+
+      //   if (filter[0] == "title") {
+      //     isTitle = true;
+      //     filterTitle = filter[1]
+      //   } 
+        
+      //   if ((filter[0] == "assignee") || (filter[1] == "assignee")) {
+      //     isAssignee = true;
+      //     filterAssignee = filter[1].toLowerCase().replace(/\b\w/g, s => s.toUpperCase()).replaceAll("_", " ")
+      //   } 
+
+      //   if ((filter[0] == "format") || (filter[1] == "format") || (filter[2] == "format")) {
+      //     isFormat = true;
+      //     filterFormat = filter[1].charAt(0).toUpperCase() + String(filter[1]).slice(1);
+      //   } 
+        
+      //  })
+
+      // if (isTitle) {
+      //   activeFilterElement.innerHTML += `<p class="active-filter">Title or slug: ${filterTitle}</p>`;
+      // }
+      
+      // if (statusParam && statusParam !=="all") {
+      //   statusParam = statusParam.toLowerCase().replace(/\b\w/g, s => s.toUpperCase()).replaceAll("_", " ")
+      //   activeFilterElement.innerHTML += `<p class="active-filter">Status: ${statusParam}</p>`;
+      // }
+
+      // if (isAssignee) {
+      //   activeFilterElement.innerHTML += `<p class="active-filter">Assignee: ${filterAssignee}</p>`;
+      // }
+
+      // if (isFormat) {
+      //   activeFilterElement.innerHTML += `<p class="active-filter">Content type: ${filterFormat}</p>`;
+      // }
+
+    }     
+
+
+
+
+
+    data.forEach(({ title, assignee, state, format, version_number, id, slug }, index) => {
      
       assignees.push(assignee);
       let newRow = firstRow.cloneNode(true);
@@ -104,15 +143,10 @@ window.GOVUKPrototypeKit.documentReady(() => {
 
       if (currentPage == "my-content") {
 
-      
-              console.log(version_number);
-
         if (assignee == "Esther Woods") {
           if (state !== "published" && state !== "archived") {
             newRow.querySelector('.title').innerHTML = `<a href="content-item-edit?id=${id}&content-type=${format}&status=${status}" class="govuk-link govuk-link--no-visited-state">${title}</a>`
-            // newRow.querySelector('.title').innerHTML = `<a href="content-item-edit?title=${title}&content-type=${format}&assignee=${assignee}&status=${status}&tagColour=${tagColour}&edition=${version_number}" class="govuk-link govuk-link--no-visited-state">${title}</a>`
             newRow.querySelector('.state').innerHTML = `<strong class="govuk-tag govuk-tag--${tagColour}">${status}</strong>`
-            // newRow.querySelector('.assignee').innerText = assignee
             newRow.querySelector('.format').innerText = format  
             firstRow.parentNode.append(newRow)
           }
@@ -125,7 +159,6 @@ window.GOVUKPrototypeKit.documentReady(() => {
             <a href="content-item-edit?id=${id}&content-type=${format}&status=${status}" class="govuk-link govuk-link--no-visited-state">${title}</a>
             <q class="important-note">Quick fix. No FC needed. Please 2i, publish and leave a comment on the Trello card - no need to move the Trello card.
             The issue was identified by automatic Siteimprove checks which flag potential style and accessibility issues.</q>`
-          // newRow.querySelector('.state').innerHTML = `<strong class="govuk-tag govuk-tag--${tagColour}">${status}</strong>`
           newRow.querySelector('.assignee').innerText = assignee
           newRow.querySelector('.format').innerText = format  
           firstRow.parentNode.append(newRow)
@@ -135,8 +168,6 @@ window.GOVUKPrototypeKit.documentReady(() => {
 
         if (state == "fact_check_received") {
           newRow.querySelector('.title-received').innerHTML = `<a href="content-item-edit?id=${id}&content-type=${format}&status=${status}" class="govuk-link govuk-link--no-visited-state">${title}</a>`
-          // newRow.querySelector('.title-received').innerHTML = `<a href="#" class="govuk-link govuk-link--no-visited-state">${title}</a><a href="#" class="view-response">View response</a>`
-          // newRow.querySelector('.state-received').innerHTML = `<strong class="govuk-tag govuk-tag--${tagColour}">${status}</strong>`
           newRow.querySelector('.assignee-received').innerText = assignee
           newRow.querySelector('.format-received').innerText = format  
           firstRow.parentNode.append(newRow)
@@ -147,14 +178,13 @@ window.GOVUKPrototypeKit.documentReady(() => {
           let newRowSent = firstRowSent.cloneNode(true);
 
           newRowSent.querySelector('.title-sent').innerHTML = `<a href="content-item-edit?id=${id}&content-type=${format}&status=${status}" class="govuk-link govuk-link--no-visited-state">${title}</a>`
-          // newRowSent.querySelector('.state-sent').innerHTML = `<strong class="govuk-tag govuk-tag--${tagColour}">${status}</strong>`
           newRowSent.querySelector('.assignee-sent').innerText = assignee
           newRowSent.querySelector('.format-sent').innerText = format
           firstRowSent.parentNode.append(newRowSent)
 
         }
 
-      } else {
+      } else { // Current page is 'All publications'
 
         newRow.querySelector('.title').innerHTML = `<a href="content-item-edit?id=${id}&content-type=${format}&status=${status}" class="govuk-link govuk-link--no-visited-state">${title}</a><span class="slug">/${slug}</span>`
         newRow.querySelector('.state').innerHTML = `<strong class="govuk-tag govuk-tag--${tagColour}">${status}</strong>`
@@ -205,6 +235,7 @@ window.GOVUKPrototypeKit.documentReady(() => {
       accessibleAutocomplete.enhanceSelectElement({
         selectElement: document.querySelector("#assignee")
       });
+
 
       // Show selected filters in their fields
       
