@@ -6,6 +6,10 @@
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 //
 
+#accordion-history-and-notes .govuk-inset-text {
+  border-width: 1px;
+}
+
 .content-item-summary .govuk-tag {
   max-width: max-content;
 }
@@ -39,12 +43,12 @@
   }
 }
 
-table .important-note, table .view-response {
+table .important-note, table {
   margin: 5px 0;
 }
 
 table {
-  .slug, .important-note, .view-response {
+  .slug, .important-note {
     display: block;
     font-weight: 400;
   }

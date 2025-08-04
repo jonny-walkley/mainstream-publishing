@@ -1,0 +1,175 @@
+{% extends "layouts/main-rebrand.html" %}
+
+{% block pageTitle %}
+  Tagging - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    classes: "govuk-!-font-weight-bold",
+    navigationClasses: "align-right",
+    navigation: [
+      {
+          href: "#1",
+          text: "Switch app"
+      }
+    ]
+  }) }}
+
+  {{ govukServiceNavigation({
+    serviceUrl: "#",
+    navigation: [
+    {
+      href: "my-content",
+      text: "My content"
+    },
+    {
+      href: "all-publications",
+      text: "All publications"
+    },
+    {
+      href: "2i-queue",
+      text: "2i queue"
+    },
+    {
+      href: "fact-check",
+      text: "Fact check"
+    },
+    {
+      href: "new-content",
+      text: "New content"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl"></span>
+    <h1 class="govuk-heading-xl"></h1>
+
+    <dl class="govuk-summary-list content-item-summary">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Edition</dt>
+        <dd class="govuk-summary-list__value" id="edition"></dd>
+        <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions"></dd>
+      </div>
+      {% if data['status'] == "In review" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">2i reviewer</dt>
+          <dd class="govuk-summary-list__value" id="reviewer"></dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link govuk-link--no-visited-state" href="#"><span class="govuk-visually-hidden">2i reviewer</span></a>
+          </dd>
+        </div>
+      {% elif data['status'] == "Fact check sent" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Sent out</dt>
+          <dd class="govuk-summary-list__value" id="sent-out"></dd>
+          <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions"></dd>
+        </div>
+      {% elif data['status'] == "Scheduled" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Scheduled for</dt>
+          <dd class="govuk-summary-list__value" id="scheduled"></dd>
+          <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions"></dd>
+        </div>
+      {% endif %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Assigned to</dt>
+        <dd class="govuk-summary-list__value" id="assignee"></dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> assignee</span></a>
+        </dd>
+      </div>
+    </dl>
+    
+</div>
+
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-edit">Edit</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" aria-current="page" href="content-item-tagging">Tagging</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-metadata">Metadata</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-history-and-notes">History and notes</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-admin">Admin</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-related-external-links">Related external links</a></li>
+        {% if data['status'] == "Published" %}
+          <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-unpublish">Unpublish</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">Tagging</h2>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{{ govukFooter({
+  navigation: [
+    {
+      title: "Admin pages",
+      width: "one-third",
+      columns: 1,
+      items: [
+        {
+          href: "#",
+          text: "CSV reports"
+        },
+        {
+          href: "#",
+          text: "Downtime messages"
+        },
+        {
+          href: "#",
+          text: "Search users"
+        }
+      ]
+    },
+    {
+      title: "Support and feedback",
+      width: "two-thirds",
+      items: [
+        {
+          href: "#",
+          text: "Raise a support request"
+        },
+        {
+          href: "#",
+          text: "Check if publishing apps are working or if there’s any maintenance planned"
+        },
+        {
+          href: "#",
+          text: "How to write, publish, and improve content"
+        }
+      ]
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/content-item.js"></script>
+{% endblock %}

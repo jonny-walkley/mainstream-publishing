@@ -5,6 +5,10 @@
 
   fetch("/public/test.json").then(data => data.json()).then(data => {
 
+    const thePath = window.location.protocol + "//" + window.location.host + window.location.pathname;
+    const currentPage = thePath.substring(thePath.lastIndexOf('/') + 1);
+    console.log(currentPage)
+
     data.forEach(({ title, assignee, state, format, version_number, id, scheduled, sent_out, reviewer }, index) => {
       
       if (id == contentItemID) {
@@ -57,7 +61,6 @@
 
         // Hide the 'Skip review' button if content item is 'In review' and not assigned to current user
 
-
         if (status == "In review") {
         
           if (assignee !== "Esther Woods") {
@@ -80,12 +83,37 @@
           document.querySelector('#scheduled').innerHTML = `${scheduled}`
         }
 
-        // Set text input or h3 heading for title
-        if (status == "Scheduled" || status == "Published" || status == "Archived") {
-          document.querySelector('#title').innerHTML = title;
-        } else {
-          document.querySelector('#title').value = title;
+        if (currentPage == "content-item-edit") {
+          
+          // Set text input or h3 heading for title
+          if (status == "Scheduled" || status == "Published" || status == "Archived") {
+            document.querySelector('#title').innerHTML = title;
+          } else {
+            document.querySelector('#title').value = title;
+          }
+        
         }
+
+      
+
+        // For example, getElementsByTagName returns an Array-like object
+        const arrayLike = document.getElementsByClassName('moj-sub-navigation__link');
+
+        // converting to array
+        const arr = Array.from(arrayLike);
+
+        // using forEach
+        arr.forEach(el => {
+          console.log(el);
+          el.href += `?id=${id}&content-type=${format}&status=${status}`;
+        });
+
+
+
+        // Set content item navigation links
+        // document.querySelector('.moj-sub-navigation__list').innerHTML = `
+        //   <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" aria-current="page" href="content-item-edit?id=${id}&content-type=${format}&status=${status}">Edit</a></li>
+        //   <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-tagging?id=${id}&content-type=${format}&status=${status}">Tagging</a></li>`
 
       }
 
