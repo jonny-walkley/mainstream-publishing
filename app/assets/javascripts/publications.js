@@ -52,11 +52,11 @@ window.GOVUKPrototypeKit.documentReady(() => {
 
       // Show active filters
 
-      const activeFilterElement = document.querySelector('#active-filters')
+      // const activeFilterElement = document.querySelector('#active-filters')
 
-      let isTitle = false;
-      let isAssignee = false;
-      let isFormat = false;
+      // let isTitle = false;
+      // let isAssignee = false;
+      // let isFormat = false;
 
       // processParams.forEach((filter) => {
 
@@ -100,7 +100,7 @@ window.GOVUKPrototypeKit.documentReady(() => {
 
 
 
-    data.forEach(({ title, assignee, state, format, version_number, id, slug, language }, index) => {
+    data.forEach(({ title, assignee, state, format, version_number, id, slug, language, important_note, time_in_queue, reviewer }, index) => {
      
       assignees.push(assignee);
       let newRow = firstRow.cloneNode(true);
@@ -160,10 +160,17 @@ window.GOVUKPrototypeKit.documentReady(() => {
 
             newRow.querySelector('.title-english').innerHTML = `
               <a href="content-item-edit?id=${id}&content-type=${format}&status=${status}" class="govuk-link govuk-link--no-visited-state">${title}</a>
-              <q class="important-note">Quick fix. No FC needed. Please 2i, publish and leave a comment on the Trello card - no need to move the Trello card.
-              The issue was identified by automatic Siteimprove checks which flag potential style and accessibility issues.</q>`
-            newRow.querySelector('.assignee-english').innerText = assignee
+              <q class="important-note">${important_note}</q>`
             newRow.querySelector('.format-english').innerText = format  
+            newRow.querySelector('.assignee-english').innerText = assignee
+            newRow.querySelector('.time-in-queue-english').innerHTML = `<time>${time_in_queue}</time>`
+
+            if (reviewer !== "unclaimed") {
+              newRow.querySelector('.reviewer-english').innerText = reviewer
+            } else {
+              newRow.querySelector('.reviewer-english').innerHTML = `<button class='govuk-button'>Claim 2i</button>`
+            }
+
             firstRow.parentNode.append(newRow)
 
           } else {
@@ -174,10 +181,17 @@ window.GOVUKPrototypeKit.documentReady(() => {
 
             newRowWelsh.querySelector('.title-welsh').innerHTML = `
               <a href="content-item-edit?id=${id}&content-type=${format}&status=${status}" class="govuk-link govuk-link--no-visited-state">${title}</a>
-              <q class="important-note">Quick fix. No FC needed. Please 2i, publish and leave a comment on the Trello card - no need to move the Trello card.
-              The issue was identified by automatic Siteimprove checks which flag potential style and accessibility issues.</q>`
-            newRowWelsh.querySelector('.assignee-welsh').innerText = assignee
+              <q class="important-note">${important_note}</q>`
             newRowWelsh.querySelector('.format-welsh').innerText = format
+            newRowWelsh.querySelector('.assignee-welsh').innerText = assignee
+            newRowWelsh.querySelector('.time-in-queue-welsh').innerHTML = `<time>${time_in_queue}</time>`
+
+            if (reviewer !== "unclaimed") {
+              newRowWelsh.querySelector('.reviewer-welsh').innerText = reviewer
+            } else {
+              newRowWelsh.querySelector('.reviewer-welsh').innerHTML = `<button class='govuk-button'>Claim 2i</button>`
+            }
+
             firstRowWelsh.parentNode.append(newRowWelsh)
 
           }

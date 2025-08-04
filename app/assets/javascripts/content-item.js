@@ -5,7 +5,7 @@
 
   fetch("/public/test.json").then(data => data.json()).then(data => {
 
-    data.forEach(({ title, assignee, state, format, version_number, id, scheduled, sent_out }, index) => {
+    data.forEach(({ title, assignee, state, format, version_number, id, scheduled, sent_out, reviewer }, index) => {
       
       if (id == contentItemID) {
 
@@ -56,8 +56,20 @@
         document.querySelector('#assignee').innerHTML = `${assignee}`
 
         // Hide the 'Skip review' button if content item is 'In review' and not assigned to current user
-        if (status == "In review" && assignee !== "Esther Woods") {
-          document.querySelector('#skip').style.display = 'none';
+
+
+        if (status == "In review") {
+        
+          if (assignee !== "Esther Woods") {
+            document.querySelector('#skip').style.display = 'none';
+          }
+
+          if (reviewer !== "unclaimed") {
+            document.querySelector('#reviewer').innerHTML = `${reviewer}`
+          } else {
+            document.querySelector('#reviewer').innerHTML = `Not claimed yet`
+          }
+        
         }
 
         if (status == "Fact check sent") {

@@ -6,6 +6,10 @@
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 //
 
+.content-item-summary .govuk-tag {
+  max-width: max-content;
+}
+
 .govuk-template--rebranded .govuk-header__navigation-item a {
   font-weight: 600;
 }

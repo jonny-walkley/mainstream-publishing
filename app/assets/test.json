@@ -231,7 +231,10 @@
       "version_number": 43,
       "format": "Guide",
       "id": "65ba35614c78a2000ecad8e8",
-      "language": "en"
+      "language": "en",
+      "important_note": "Quick fix. No FC needed. Please 2i, publish and leave a comment on the Trello card - no need to move the Trello card. The issue was identified by automatic Siteimprove checks which flag potential style and accessibility issues.",
+      "time_in_queue": "1 hour 36 minutes",
+      "reviewer": "Genie Reigns"
   },
   {
       "title": "Find your UTR number",
@@ -514,7 +517,10 @@
       "version_number": 14,
       "format": "Guide",
       "id": "65ba7def7d86d7000db7bba6",
-      "language": "en"
+      "language": "en",
+      "important_note": "Changing meta tag description. No fact check needed. Please publish. Please leave Zen and Trello.",
+      "time_in_queue": "21 minutes",
+      "reviewer": "unclaimed"
   },
   {
       "title": "Find a traineeship",
@@ -564,6 +570,9 @@
       "version_number": 26,
       "format": "Guide",
       "id": "685e6771def1ae0018bb4a40",
-      "language": "cy"
+      "language": "cy",
+      "important_note": "Leave for HMRC to review",
+      "time_in_queue": "2 days",
+      "reviewer": "unclaimed"
   }
 ]
