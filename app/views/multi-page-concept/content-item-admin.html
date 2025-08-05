@@ -67,7 +67,7 @@
           <dt class="govuk-summary-list__key">2i reviewer</dt>
           <dd class="govuk-summary-list__value" id="reviewer"></dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link govuk-link--no-visited-state" href="#"><span class="govuk-visually-hidden">2i reviewer</span></a>
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden">2i reviewer</span></a>
           </dd>
         </div>
       {% elif data['status'] == "Fact check sent" %}
@@ -115,7 +115,43 @@
   </div>
 
   <div class="govuk-grid-column-two-thirds">
-    
+
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      name: "IsThisBetaContent",
+      fieldset: {
+        legend: {
+          text: "Is this beta content?",
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No",
+          checked: true
+        }
+      ]
+    }) }}
+
+  </div>
+
+  <div class="govuk-grid-column-one-third sticky options-sidebar">
+    <div class="actions-sidebar">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Save",
+        classes: "govuk-button wide"
+      }) }}
+      {{ govukButton({
+        text: "Delete this edition",
+        classes: "govuk-button--secondary wide"
+      }) }}
+    </div>
   </div>
 
 </div>

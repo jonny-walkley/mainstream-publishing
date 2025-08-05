@@ -67,7 +67,7 @@
           <dt class="govuk-summary-list__key">2i reviewer</dt>
           <dd class="govuk-summary-list__value" id="reviewer"></dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link govuk-link--no-visited-state" href="#"><span class="govuk-visually-hidden">2i reviewer</span></a>
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden">2i reviewer</span></a>
           </dd>
         </div>
       {% elif data['status'] == "Fact check sent" %}
@@ -116,8 +116,71 @@
 
   <div class="govuk-grid-column-two-thirds">
     
+    {% if (data['status'] == "Scheduled") or (data['status'] == "Published") or (data['status'] == "Archived") %}
+      
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Slug</h3>
+      <p class="govuk-body" id="slug"></p>
+    
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Meta tag description</h3>
+      <p class="govuk-body" id="meta-tag-description"></p>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Language</h3>
+      <p class="govuk-body" id="language"></p>
+    
+    {% else %}
+    
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="slug">Slug</label>
+        <div id="slug-hint" class="govuk-hint">
+          If you change the slug of a published page, the old slug will automatically redirect to the new one
+        </div>
+        <input class="govuk-input" id="slug" name="slug" type="text" spellcheck="false" value="">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="meta-tag-description">
+          Meta tag description
+        </label>
+        <div id="metadata-hint" class="govuk-hint">
+          Some search engines will display this if they cannot find what they need in the main text
+        </div>
+        <textarea class="govuk-textarea" id="meta-tag-description" name="meta-tag-description" rows="4" value=""></textarea>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="language-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Language
+          </legend>
+          <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="language" name="language" type="radio" value="English" checked>
+              <label class="govuk-label govuk-radios__label" for="language">
+                English
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="language-2" name="language" type="radio" value="Welsh">
+              <label class="govuk-label govuk-radios__label" for="language-2">
+                Welsh
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    
+    {% endif %}
+
   </div>
 
+  {% if (data['status'] !== "Scheduled") and (data['status'] !== "Published") %}
+    <div class="govuk-grid-column-one-third sticky options-sidebar">
+        <div class="actions-sidebar">
+          <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">Save</button>
+        </div>
+    </div>
+  {% endif %}
+  
 </div>
 
 {% endblock %}

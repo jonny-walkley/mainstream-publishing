@@ -9,7 +9,7 @@
     const currentPage = thePath.substring(thePath.lastIndexOf('/') + 1);
     console.log(currentPage)
 
-    data.forEach(({ title, assignee, state, format, version_number, id, scheduled, sent_out, reviewer }, index) => {
+    data.forEach(({ title, assignee, state, format, version_number, id, scheduled, sent_out, reviewer, slug, important_note, meta_tag_description }, index) => {
       
       if (id == contentItemID) {
 
@@ -47,10 +47,10 @@
             break;
         }
               
-        // Set caption content type 
+        // Set caption as content type 
         document.querySelector('.govuk-caption-xl').innerHTML = `${format}`
 
-        // Set h1 heading title
+        // Set h1 heading as publication title
         document.querySelector('.govuk-heading-xl').innerHTML = `${title}`
 
         // Set edition number and status
@@ -62,9 +62,11 @@
         // Hide the 'Skip review' button if content item is 'In review' and not assigned to current user
 
         if (status == "In review") {
-        
-          if (assignee !== "Esther Woods") {
-            document.querySelector('#skip').style.display = 'none';
+
+          if (currentPage == "content-item-edit" || currentPage == "content-item-history-and-notes") {
+            if (assignee !== "Esther Woods") {
+              document.querySelector('#skip').style.display = 'none';
+            }
           }
 
           if (reviewer !== "unclaimed") {
@@ -94,21 +96,57 @@
         
         }
 
-      
+        if (currentPage == "content-item-metadata") {
 
-        // For example, getElementsByTagName returns an Array-like object
+          if (status == "Scheduled" || status == "Published" || status == "Archived") {
+            
+            document.querySelector('#slug').innerHTML = `${slug}`
+            document.querySelector('#meta-tag-description').innerHTML = `${meta_tag_description}`
+          
+          } else {
+            
+            document.querySelector('#slug').value = slug;
+            document.querySelector('#meta-tag-description').value = meta_tag_description;
+
+            if (version_number > 1) {
+              document.querySelector('#slug-hint').innerHTML = "If you change the slug, the old slug will automatically redirect to the new one";
+            } else {
+              document.querySelector('#slug-hint').innerHTML = "Must be written in the following format: lower-case-hypen-separated";
+            }
+
+          }
+          
+        }
+
+        if (currentPage == "content-item-history-and-notes") {
+         
+          if(important_note) {
+            document.querySelector('#important-note').style.display = 'block';
+            document.querySelector('#important-note-button').innerHTML = "Update important note";
+            document.querySelector('#important-note-body').innerHTML = important_note;
+          }
+        
+          const assigneeInstances = document.getElementsByClassName('assignee');
+        
+          const assigneeInstancesArr = Array.from(assigneeInstances);
+            
+          assigneeInstancesArr.forEach(el => {
+            el.innerHTML = assignee;
+          });
+
+        }      
+
+        // returns array-like object
         const arrayLike = document.getElementsByClassName('moj-sub-navigation__link');
 
-        // converting to array
+        // convert to array
         const arr = Array.from(arrayLike);
 
-        // using forEach
+        // loop through
         arr.forEach(el => {
           console.log(el);
           el.href += `?id=${id}&content-type=${format}&status=${status}`;
         });
-
-
 
         // Set content item navigation links
         // document.querySelector('.moj-sub-navigation__list').innerHTML = `

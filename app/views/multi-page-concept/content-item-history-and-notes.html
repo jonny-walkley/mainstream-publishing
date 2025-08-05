@@ -67,7 +67,7 @@
           <dt class="govuk-summary-list__key">2i reviewer</dt>
           <dd class="govuk-summary-list__value" id="reviewer"></dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link govuk-link--no-visited-state" href="#"><span class="govuk-visually-hidden">2i reviewer</span></a>
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden">2i reviewer</span></a>
           </dd>
         </div>
       {% elif data['status'] == "Fact check sent" %}
@@ -115,6 +115,24 @@
   </div>
 
   <div class="govuk-grid-column-two-thirds">
+    
+    <div id="important-note" style="display: none;">
+
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+{% set html %}
+  <q class="govuk-body" id="important-note-body">
+    
+  </q>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  titleText: "Important note"
+}) }}
+
+    </div>
+
     {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
 
     {{ govukAccordion({
@@ -127,31 +145,28 @@
           },
           content: {
             html: 
-            
-              ('<p class="govuk-body">10:33am, 27 February 2025</br><span class="govuk-!-font-weight-bold">2i claimed by ' + data['assign-2i-reviewer'] + '</span></p>' if data['assign-2i-reviewer'])
-              
-              + '
+              '
                 <p class="govuk-body">
-                    8:21am, 3 February 2025</br>
-                    <span class="govuk-!-font-weight-bold">2i requested</span> by Requestor
+                  <time>8:21am, 3 Feb 2025</time>
+                  <span class="govuk-!-font-weight-bold">2i requested</span> by <span class="assignee"></span>
                 </p>
                 <div class="govuk-inset-text">
-                    Changing "Land Registry" to "HM Land Registry", and editing uses of "eg"</br></br>
-                    Changed all instances of "Land Registry" to "HM Land Registry".</br></br>
-                    ALSO:</br></br>
-                    Deleted answer summary markdown</br>
-                    CHANGED</br>
-                    $!You can ask for publicly owned land or buildings to be sold if you think they’re vacant or underused.$!</br>
-                    TO</br>
-                    You can ask for publicly owned land or buildings to be sold if you think they’re vacant or underused.
+                  Changing "Land Registry" to "HM Land Registry", and editing uses of "eg"</br></br>
+                  Changed all instances of "Land Registry" to "HM Land Registry".</br></br>
+                  ALSO:</br></br>
+                  Deleted answer summary markdown</br>
+                  CHANGED</br>
+                  $!You can ask for publicly owned land or buildings to be sold if you think they’re vacant or underused.$!</br>
+                  TO</br>
+                  You can ask for publicly owned land or buildings to be sold if you think they’re vacant or underused.
                 </div>
                 <p class="govuk-body">
-                    1:46pm, 27 January 2025</br>
-                    <span class="govuk-!-font-weight-bold">Assigned</span> to Assignee
+                  <time>1:46pm, 27 Jan 2025</time>
+                  <span class="govuk-!-font-weight-bold">Assigned</span> to <span class="assignee"></span>
                 </p>
                 <p class="govuk-body">
-                    1:45pm, 27 January 2025</br>
-                    <span class="govuk-!-font-weight-bold">Created</span> by Creator
+                  <time>1:45pm, 27 Jan 2025</time>
+                  <span class="govuk-!-font-weight-bold">Created</span> by <span class="assignee"></span>
                 </p>
               '
           },
@@ -172,7 +187,12 @@
   <div class="govuk-grid-column-one-third sticky options-sidebar">
     <div class="actions-sidebar">
       <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">Add edition note</button>
-      <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Add important note</button>
+      <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button" id="important-note-button">Add important note</button>
+      {% if (data['status'] == "Draft") or (data['status'] == "Amends needed") %}
+        <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">2i</button>
+      {% elif data['status'] == "In review" %}
+        <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button" id="skip">Skip review</button>
+      {% endif %}
     </div>
   </div>
 

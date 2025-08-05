@@ -67,7 +67,7 @@
           <dt class="govuk-summary-list__key">2i reviewer</dt>
           <dd class="govuk-summary-list__value" id="reviewer"></dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link govuk-link--no-visited-state" href="#"><span class="govuk-visually-hidden">2i reviewer</span></a>
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden">2i reviewer</span></a>
           </dd>
         </div>
       {% elif data['status'] == "Fact check sent" %}
@@ -121,7 +121,7 @@
       <p class="govuk-body" id="title"></p>
     {% else %}
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="doc-title">Title</label>
+        <label class="govuk-label govuk-label--s" for="title">Title</label>
         <input class="govuk-input" id="title" name="title" type="text" spellcheck="false" value="">
       </div>
     {% endif %}
