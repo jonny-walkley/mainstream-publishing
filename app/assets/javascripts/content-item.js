@@ -9,7 +9,7 @@
     const currentPage = thePath.substring(thePath.lastIndexOf('/') + 1);
     console.log(currentPage)
 
-    data.forEach(({ title, assignee, state, format, version_number, id, scheduled, sent_out, reviewer, slug, important_note, meta_tag_description }, index) => {
+    data.forEach(({ title, assignee, state, format, version_number, id, scheduled, sent_out, reviewer, slug, important_note, meta_tag_description, language, lgsl_code, lgil_code, places_manager_service_identifier, body }, index) => {
       
       if (id == contentItemID) {
 
@@ -93,6 +93,21 @@
           } else {
             document.querySelector('#title').value = title;
           }
+
+          if (format == "Local transaction") {
+            document.querySelector('#lgsl-code').innerHTML = lgsl_code;
+            document.querySelector('#lgil-code').value = lgil_code;
+          }
+
+          if (format == "Place") {
+            document.querySelector('#places-manager-service-identifier').value = places_manager_service_identifier;
+          }
+
+          if (format == "Answer" || format == "Help page") {
+            if (body) {
+              document.querySelector('#body').value = body;
+            }
+          }
         
         }
 
@@ -102,6 +117,11 @@
             
             document.querySelector('#slug').innerHTML = `${slug}`
             document.querySelector('#meta-tag-description').innerHTML = `${meta_tag_description}`
+            if (language == "en") {
+              document.querySelector('#language').innerHTML = "English";
+            } else {
+              document.querySelector('#language').innerHTML = "Welsh";
+            }
           
           } else {
             
@@ -114,7 +134,19 @@
               document.querySelector('#slug-hint').innerHTML = "Must be written in the following format: lower-case-hypen-separated";
             }
 
+            if (language == "en") {
+              document.querySelector('#language-english').checked = true;
+            } else {
+              document.querySelector('#language-welsh').checked = true;
+            }
+
           }
+
+          if (format == "Completed transaction") {
+            document.querySelector('#meta-tag-description-heading').style.display = 'none';
+          }
+
+
           
         }
 
@@ -124,6 +156,15 @@
             document.querySelector('#important-note').style.display = 'block';
             document.querySelector('#important-note-button').innerHTML = "Update important note";
             document.querySelector('#important-note-body').innerHTML = important_note;
+          }
+
+          if (status == "Fact check received") {
+            document.querySelector('#fact-check-response').style.display = 'block';
+          }
+
+          if (status !== "Draft") {
+            
+            document.querySelector('#review-requested').style.display = 'block';
           }
         
           const assigneeInstances = document.getElementsByClassName('assignee');

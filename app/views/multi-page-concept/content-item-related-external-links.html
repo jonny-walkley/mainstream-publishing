@@ -115,8 +115,59 @@
   </div>
 
   <div class="govuk-grid-column-two-thirds">
+
+    {% if (data['status'] !== "Scheduled") and (data['status'] !== "Published") and (data['status'] !== "Archived") %}
+
+      <p>Any changes will be visible on the publication when it is next published.</p>
+
+      <h2 class="govuk-heading-m govuk-!-static-margin-top-0 govuk-!-static-margin-bottom-6">Link 1</h2>
+   
+      {{ govukInput({
+        label: {
+          text: "Title"
+        },
+        id: "related-content-1",
+        name: "related-content-1"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "URL or path"
+        },
+        hint: {
+          text: "For example, https://gov.uk"
+        },
+        id: "related-content-1",
+        name: "related-content-1"
+      }) }}
+
+      {{ govukButton({
+        text: "Add related external link",
+        classes: "govuk-button--secondary",
+        href: "#"
+      }) }}
+
+    {% else %}
+
+      <h2 class="govuk-heading-m govuk-!-static-margin-top-0 govuk-!-static-margin-bottom-6">Link 1</h2>
+      
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Title</h3>
+      <p class="govuk-body" id="">Your energy rights as a tenant</p>
+      
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">URL</h3>
+      <p class="govuk-body" id="">https://www.citizensadvice.org.uk/consumer/energy/energy-supply/</p>
+
+    {% endif %}
     
   </div>
+
+  {% if (data['status'] !== "Scheduled") and (data['status'] !== "Published") and (data['status'] !== "Archived") %}
+    <div class="govuk-grid-column-one-third sticky options-sidebar">
+        <div class="actions-sidebar">
+          <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">Save</button>
+        </div>
+    </div>
+  {% endif %}
 
 </div>
 
@@ -129,7 +180,7 @@
 {{ govukFooter({
   navigation: [
     {
-      title: "Admin pages",
+      title: "Reports, downtime and users",
       width: "one-third",
       columns: 1,
       items: [

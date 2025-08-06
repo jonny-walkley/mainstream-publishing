@@ -141,7 +141,7 @@
           <div id="body-hint" class="govuk-hint">
             Read the <a href="https://govspeak-preview.publishing.service.gov.uk/guide" target="_blank" class="govuk-link--no-visited-state">Govspeak guide (opens in new tab)</a>
           </div>
-          <textarea class="govuk-textarea" id="body" name="body" rows="16"></textarea>
+          <textarea class="govuk-textarea" id="body" name="body" rows="20"></textarea>
         </div>
 
       {% endif %}
@@ -256,12 +256,12 @@
 
       <div class="published-state">
         <h2 class="govuk-heading-s">LGSL code</h2>
-        <p>273</p>
+        <p id="lgsl-code"></p>
       </div>
                   
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="LGIL-code">LGIL code</label>
-        <input class="govuk-input govuk-input--width-2" id="LGIL-code" name="LGIL-code" type="text" spellcheck="false" value="">
+        <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="lgil-code">LGIL code</label>
+        <input class="govuk-input govuk-input--width-2" id="lgil-code" name="lgil-code" type="text" spellcheck="false" value="">
       </div>
 
       <div class="govuk-form-group">
@@ -464,7 +464,7 @@
         </div>
 
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="text-below-button">Text below the start button (optional)</label>
+          <label class="govuk-label govuk-label--s" for="text-below-button">Text below the start button (optional)</label>
           <div id="text-below-button" class="govuk-hint">
             Following ‘on’, for example “the HMRC website”
           </div>
@@ -472,7 +472,7 @@
         </div>
 
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="text-below-button">Link to start of transaction</label>
+          <label class="govuk-label govuk-label--s" for="text-below-button">Link to start of transaction</label>
           <div id="text-below-button" class="govuk-hint">
             Link as deep as possible
           </div>
@@ -511,11 +511,11 @@
     {% elif data['content-type'] == "Place" %}
 
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="places-manager-service-identifier">Places Manager service identifier</label>
+        <label class="govuk-label govuk-label--s" for="places-manager-service-identifier">Places Manager service identifier</label>
         <div id="places-manager-service-identifier-hint" class="govuk-hint">
           This is assigned in the <a href="" class="govuk-link--no-visited-state">Places Manager application</a>
         </div>
-        <input class="govuk-input" id="places-manager-service-identifier" name="places-manager-service-identifier" type="text" spellcheck="false" value="example-service-identifier">
+        <input class="govuk-input" id="places-manager-service-identifier" name="places-manager-service-identifier" type="text" spellcheck="false" value="">
       </div>
 
       <div class="govuk-form-group">
@@ -731,7 +731,7 @@
 {{ govukFooter({
   navigation: [
     {
-      title: "Admin pages",
+      title: "Reports, downtime and users",
       width: "one-third",
       columns: 1,
       items: [

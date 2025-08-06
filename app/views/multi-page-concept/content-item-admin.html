@@ -116,41 +116,58 @@
 
   <div class="govuk-grid-column-two-thirds">
 
-    {{ govukRadios({
-      classes: "govuk-radios--inline",
-      name: "IsThisBetaContent",
-      fieldset: {
-        legend: {
-          text: "Is this beta content?",
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      items: [
-        {
-          value: "yes",
-          text: "Yes"
+    {% if (data['status'] == "Scheduled") or (data['status'] == "Published") or (data['status'] == "Archived") %}
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Is this beta content?</h3>
+      <p class="govuk-body" id="is-this-beta-content">No</p>
+   
+    {% else %}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        name: "IsThisBetaContent",
+        fieldset: {
+          legend: {
+            text: "Is this beta content?",
+            classes: "govuk-fieldset__legend--s"
+          }
         },
-        {
-          value: "no",
-          text: "No",
-          checked: true
-        }
-      ]
-    }) }}
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No",
+            checked: true
+          }
+        ]
+      }) }}
+
+    {% endif %}
 
   </div>
 
   <div class="govuk-grid-column-one-third sticky options-sidebar">
     <div class="actions-sidebar">
+
       {% from "govuk/components/button/macro.njk" import govukButton %}
-      {{ govukButton({
-        text: "Save",
-        classes: "govuk-button wide"
-      }) }}
+
+      {% if (data['status'] !== "Scheduled") and (data['status'] !== "Published") and (data['status'] !== "Archived") %}
+    
+        {{ govukButton({
+          text: "Save",
+          classes: "govuk-button wide"
+        }) }}
+
+      {% endif %}
+    
       {{ govukButton({
         text: "Delete this edition",
         classes: "govuk-button--secondary wide"
       }) }}
+    
     </div>
   </div>
 
@@ -165,7 +182,7 @@
 {{ govukFooter({
   navigation: [
     {
-      title: "Admin pages",
+      title: "Reports, downtime and users",
       width: "one-third",
       columns: 1,
       items: [

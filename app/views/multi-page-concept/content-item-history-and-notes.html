@@ -147,26 +147,56 @@
             html: 
               '
                 <p class="govuk-body">
-                  <time>8:21am, 3 Feb 2025</time>
-                  <span class="govuk-!-font-weight-bold">2i requested</span> by <span class="assignee"></span>
+                  <a href="#">Compare with Edition 1</a>
                 </p>
-                <div class="govuk-inset-text">
-                  Changing "Land Registry" to "HM Land Registry", and editing uses of "eg"</br></br>
-                  Changed all instances of "Land Registry" to "HM Land Registry".</br></br>
-                  ALSO:</br></br>
-                  Deleted answer summary markdown</br>
-                  CHANGED</br>
-                  $!You can ask for publicly owned land or buildings to be sold if you think they’re vacant or underused.$!</br>
-                  TO</br>
-                  You can ask for publicly owned land or buildings to be sold if you think they’re vacant or underused.
+                <div id="fact-check-response" style="display: none;">
+                  <p class="govuk-body">
+                    <time>2:02pm, 6 Aug 2025</time>
+                    <span class="govuk-!-font-weight-bold">Fact check received</span> by GOV.UK Bot
+                  </p>
+                  <div class="govuk-inset-text fact-check-response">
+                      <p>Hi,</p>
+                      <p>We have reviewed the proposed changes and have the following issue:</p>
+                      <p>There is a reference to the ‘patent register’ we are not able to call it a register due to legal constraints, it needs to be referred to as ‘search for a patent service’ instead.</p>
+                      <p>If you have any questions please ask</p>
+                      <p>Thanks</p>
+                      <p>Jane</p>
+                      <p>
+                          From: GOV.UK Publishing <gov.uk.publishing@notifications.service.gov.uk></br>
+                          Sent: Wednesday, January 8, 2025 1:40 PM</br>
+                          To: Jane Doe <jane.doe@example.email.gov.uk></br>
+                          Subject: ‘[Check the patents journal]’ GOV.UK preview of new edition
+                      </p>
+                      <p>Hi,</p>
+                      <p>We need you to check the factual accuracy of changes made to ‘Check the patents journal’ before it’s published on GOV.​UK.</p>
+                      <p>The GOV.​UK Content Team made the changes because of the new digital service #5893029. Deadline: 16 January 2025 (5 working days)...</p>
+                      <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">Show earlier messages</a>
+                  </div>
                 </div>
+                <div id="review-requested" style="display: none;">
+                  <p class="govuk-body">
+                    <time>8:21am, 3 Aug 2025</time>
+                    <span class="govuk-!-font-weight-bold">2i requested</span> by <span class="assignee"></span>
+                  </p>
+                  <div class="govuk-inset-text">
+                    Changing "Land Registry" to "HM Land Registry", and editing uses of "eg"</br></br>
+                    Changed all instances of "Land Registry" to "HM Land Registry".</br></br>
+                    ALSO:</br></br>
+                    Deleted answer summary markdown</br>
+                    CHANGED</br>
+                    $!You can ask for publicly owned land or buildings to be sold if you think they’re vacant or underused.$!</br>
+                    TO</br>
+                    You can ask for publicly owned land or buildings to be sold if you think they’re vacant or underused.
+                  </div>
+                </div>
+
                 <p class="govuk-body">
-                  <time>1:46pm, 27 Jan 2025</time>
+                  <time>1:46pm, 27 Jul 2025</time>
                   <span class="govuk-!-font-weight-bold">Assigned</span> to <span class="assignee"></span>
                 </p>
                 <p class="govuk-body">
-                  <time>1:45pm, 27 Jan 2025</time>
-                  <span class="govuk-!-font-weight-bold">Created</span> by <span class="assignee"></span>
+                  <time>1:46pm, 27 Jul 2025</time>
+                  <span class="govuk-!-font-weight-bold">New edition</span> by <span class="assignee"></span>
                 </p>
               '
           },
@@ -207,7 +237,7 @@
 {{ govukFooter({
   navigation: [
     {
-      title: "Admin pages",
+      title: "Reports, downtime and users",
       width: "one-third",
       columns: 1,
       items: [

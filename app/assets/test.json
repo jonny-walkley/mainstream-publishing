@@ -1,4 +1,15 @@
 [
+    {
+      "title": "Volunteer to check standards in prison",
+      "slug": "volunteer-to-check-standards-in-prison",
+      "state": "published",
+      "assignee": "Emily Atherton",
+      "version_number": 9,
+      "format": "Answer",
+      "id": "65b8f1737b9d2f0010099ad0",
+      "language": "en",
+      "meta_tag_description": "Join an Independent Monitoring Board (IMB) to volunteer to check standards in prisons - find out how to apply"
+  },
   {
       "title": "Visit national parks, nature reserves and green spaces",
       "slug": "find-nature-reserves-national-parks-and-greenspaces",
@@ -8,7 +19,7 @@
       "format": "Answer",
       "id": "67239cb953fe6d0018ae10cc",
       "language": "en",
-      "body": "",
+      "body": "You can visit areas of the countryside that are protected because of their natural beauty and rare wildlife, plants and geology.\n\n^You have the [right to access some land](/right-of-way-open-access-land) across the UK for walking or certain other leisure activities.^\n\n##Green spaces\n\nGreen spaces can include parks and village greens.\n\nYour [local council](/find-your-local-council) will have details of green spaces near you.\n\n##Nature reserves\n\nNature reserves can include:\n\n* coastal headlands\n* ancient woodlands\n* former industrial sites or inner city areas\n\nFind National Nature Reserves (NNRs) in:\n\n+ [England](/government/collections/national-nature-reserves-in-england)\n+ [Wales](https://naturalresources.wales/days-out/places-to-visit/?lang=en)\n+ [Scotland](http://www.nnr-scotland.org.uk/)\n+ [Northern Ireland](https://www.daera-ni.gov.uk/topics/land-and-landscapes/nature-reserves)\n\nFind Local Nature Reserves (LNRs) in your area in:\n\n- [England](https://designatedsites.naturalengland.org.uk/)\n- [Scotland](http://www.snh.gov.uk/enjoying-the-outdoors/where-to-go/nature-reserves-and-parks/lnrs/)\n\nOr you can [contact your council.](/find-your-local-council)\nYou can also find nature reserves managed by:\n\n+ the [Wildlife Trusts](http://www.wildlifetrusts.org/wildlife/reserves)\n+ the [RSPB (Royal Society for the Protection of Birds)](https://www.rspb.org.uk/reserves-and-events/reserves-a-z/)\n\n##National Parks and Areas of Outstanding Natural Beauty\n\nNational Parks and Areas of Outstanding Natural Beauty (AONBs) are parts of the countryside protected for their landscape.\n\nFind [National Parks](https://www.nationalparks.uk/) in England, Wales and Scotland.\n\nFind [AONBs](http://www.landscapesforlife.org.uk/) in England, Wales and Northern Ireland.\n\n## Follow the countryside code\n\nYou should help protect the natural environment by following [the countryside code](/government/publications/the-countryside-code).\n\n*[AONBs]: Areas of Outstanding Natural Beauty\n*[NNRs]: National Nature Reserves\n*[LNRs]: Local Nature Reserves\n*[RSPB]: Royal Society for the Protection of Birds",
       "meta_tag_description": "Find nature reserves, national parks and Areas of Outstanding Natural Beauty and green spaces"
   },
   {
@@ -20,18 +31,19 @@
       "format": "Guide",
       "id": "65b8efd77b9d2f000d099b11",
       "language": "en",
-      "meta_tag_description": "If you've been the victim of a crime, you have the right to privacy, to make a personal statement and to contact the police and be kept informed about the investigation."
+      "meta_tag_description": "If you’ve been the victim of a crime, you have the right to privacy, to make a personal statement and to contact the police and be kept informed about the investigation."
   },
   {
-      "title": "Volunteer to check standards in prison",
-      "slug": "volunteer-to-check-standards-in-prison",
-      "state": "published",
-      "assignee": "Emily Atherton",
-      "version_number": 9,
-      "format": "Answer",
-      "id": "65b8f1737b9d2f0010099ad0",
+      "title": "Contact DVSA",
+      "slug": "contact-dvsa",
+      "state": "scheduled_for_publishing",
+      "assignee": "Ruth Harper",
+      "version_number": 62,
+      "format": "Simple smart answer",
+      "id": "65b933d7e21d7a00105c4eb7",
+      "scheduled": "12:01am, 8 November 2025",
       "language": "en",
-      "meta_tag_description": "Join an Independent Monitoring Board (IMB) to volunteer to check standards in prisons - find out how to apply"
+      "meta_tag_description": "Find the right number, email or address to contact DVSA about driving tests, instructor services, MOT, operator licensing and Driver CPC."
   },
   {
       "title": "Leasehold property",
@@ -54,6 +66,18 @@
       "id": "65b8f781ea62b80010ff304a",
       "language": "en",
       "meta_tag_description": "How to pay a Self Assessment late filing penalty or late payment penalty by Direct Debit, bank transfer, credit card, cheque or at a bank or building society."
+  },
+  {
+      "title": "Pay for UK healthcare as part of your immigration application",
+      "slug": "healthcare-immigration-application",
+      "state": "fact_check_sent",
+      "assignee": "Helen Wilkinson",
+      "version_number": 68,
+      "format": "Guide",
+      "id": "65ba2cf64c78a2000dcad8e0",
+      "sent_out": "3 days ago",
+      "language": "en",
+      "meta_tag_description": "Find out if you need to pay the immigration health surcharge as part of your visa or immigration application."
   },
   {
       "title": "Bringing animals into Great Britain",
@@ -86,7 +110,7 @@
       "format": "Guide",
       "id": "65b90ac1e21d7a000d5c4e16",
       "language": "en",
-      "meta_tag_description": "Youth crime prevention programmes - how young people are put on a programme, what they're like, mentoring and involving parents and families."
+      "meta_tag_description": "Youth crime prevention programmes - how young people are put on a programme, what they’re like, mentoring and involving parents and families."
   },
   {
       "title": "Taliad Tanwydd Gaeaf",
@@ -97,7 +121,7 @@
       "format": "Guide",
       "id": "65b91bb9e21d7a000d5c4e21",
       "language": "cy",
-      "meta_tag_description": "Mae Taliad Tanwydd Gaeaf yn helpu pobl hŷn gyda'u biliau gwresogi - ffurflen gais, faint rydych yn ei gael, cymhwyster."
+      "meta_tag_description": "Mae Taliad Tanwydd Gaeaf yn helpu pobl hŷn gyda’u biliau gwresogi - ffurflen gais, faint rydych yn ei gael, cymhwyster."
   },
   {
       "title": "Claim a National Insurance refund",
@@ -120,18 +144,6 @@
       "id": "65b925bda7cf03000d92e2bd",
       "language": "en",
       "meta_tag_description": "You do not need to report the result from a COVID-19 rapid lateral flow test in England."
-  },
-  {
-      "title": "Contact DVSA",
-      "slug": "contact-dvsa",
-      "state": "scheduled_for_publishing",
-      "assignee": "Ruth Harper",
-      "version_number": 62,
-      "format": "Simple smart answer",
-      "id": "65b933d7e21d7a00105c4eb7",
-      "scheduled": "12:01am, 8 November 2025",
-      "language": "en",
-      "meta_tag_description": "Find the right number, email or address to contact DVSA about driving tests, instructor services, MOT, operator licensing and Driver CPC."
   },
   {
       "title": "Check coastal erosion risk in your area",
@@ -164,7 +176,7 @@
       "format": "Answer",
       "id": "65ba1a994c78a2000dcad8d4",
       "language": "en",
-      "meta_tag_description": "National Insurance contributions if you're self-employed - rates and exceptions."
+      "meta_tag_description": "National Insurance contributions if you’re self-employed - rates and exceptions."
   },
   {
       "title": "Get a faster decision on your visa or settlement application",
@@ -175,19 +187,7 @@
       "format": "Guide",
       "id": "65ba217ae418c5000e732bb4",
       "language": "en",
-      "meta_tag_description": "Getting a faster decision on a visa or settlement application; priority service, super priority service; waiting times; how to check if you're eligible"
-  },
-  {
-      "title": "Pay for UK healthcare as part of your immigration application",
-      "slug": "healthcare-immigration-application",
-      "state": "fact_check_sent",
-      "assignee": "Helen Wilkinson",
-      "version_number": 68,
-      "format": "Guide",
-      "id": "65ba2cf64c78a2000dcad8e0",
-      "sent_out": "3 days ago",
-      "language": "en",
-      "meta_tag_description": "Find out if you need to pay the immigration health surcharge as part of your visa or immigration application."
+      "meta_tag_description": "Getting a faster decision on a visa or settlement application; priority service, super priority service; waiting times; how to check if you’re eligible"
   },
   {
       "title": "Student finance for undergraduates",
@@ -210,10 +210,10 @@
       "format": "Guide",
       "id": "68765420cba10400249a199f",
       "language": "en",
-      "meta_tag_description": "Apply for a Health and Care Worker visa (formerly a Tier 2 Health and Care visa) if you're a medical professional who's been offered a job with the NHS, an NHS supplier or in adult social care - eligibility, fees, documents, extend or switch, bring your family, taking on additional work."
+      "meta_tag_description": "Apply for a Health and Care Worker visa (formerly a Tier 2 Health and Care visa) if you’re a medical professional who’s been offered a job with the NHS, an NHS supplier or in adult social care - eligibility, fees, documents, extend or switch, bring your family, taking on additional work."
   },
   {
-      "title": "Expenses if you're self-employed",
+      "title": "Expenses if you’re self-employed",
       "slug": "expenses-if-youre-self-employed",
       "state": "fact_check_received",
       "assignee": "Megan Thirlwell",
@@ -221,7 +221,7 @@
       "format": "Guide",
       "id": "687904b8493faf00174957b3",
       "language": "en",
-      "meta_tag_description": "Business expenses you can claim if you're self-employed"
+      "meta_tag_description": "Business expenses you can claim if you’re self-employed"
   },
   {
       "title": "Change your name by deed poll",
@@ -268,7 +268,7 @@
       "format": "Answer",
       "id": "65ba35874c78a2000ecad8eb",
       "language": "en",
-      "meta_tag_description": "Where to find your unique tax reference (UTR) number, what to do if you've lost your UTR number, or how to apply if you do not have a UTR number"
+      "meta_tag_description": "Where to find your unique tax reference (UTR) number, what to do if you’ve lost your UTR number, or how to apply if you do not have a UTR number"
   },
   {
       "title": "Contact the Court Funds Office",
@@ -400,7 +400,7 @@
       "format": "Guide",
       "id": "65ba418de418c5000d732bbf",
       "language": "en",
-      "meta_tag_description": "Apply for a High Potential Individual (HPI) visa if you've been awarded a qualification by an eligible university in the last 5 years - eligibility, fees, documents, switch, bring your partner and children"
+      "meta_tag_description": "Apply for a High Potential Individual (HPI) visa if you’ve been awarded a qualification by an eligible university in the last 5 years - eligibility, fees, documents, switch, bring your partner and children"
   },
   {
       "title": "International Agreement visa (Temporary Work)",
@@ -411,7 +411,7 @@
       "format": "Guide",
       "id": "65ba426f4c78a2000ecad8ff",
       "language": "en",
-      "meta_tag_description": "Apply for a Temporary Work – International Agreement visa if you're working under international law (including diplomatic households) - extend or switch, family members"
+      "meta_tag_description": "Apply for a Temporary Work – International Agreement visa if you’re working under international law (including diplomatic households) - extend or switch, family members"
   },
   {
       "title": "Archebwch eich prawf gyrru",
@@ -466,7 +466,7 @@
       "format": "Transaction",
       "id": "65ba64677d1e8d000d28161a",
       "language": "en",
-      "meta_tag_description": "Cancel your practical driving or riding test if you no longer need your appointment - give 3 working days' notice to get a refund"
+      "meta_tag_description": "Cancel your practical driving or riding test if you no longer need your appointment - give 3 working days’ notice to get a refund"
   },
   {
       "title": "Cancel your theory test",
@@ -477,7 +477,7 @@
       "format": "Transaction",
       "id": "65ba65a905328600107fa409",
       "language": "en",
-      "meta_tag_description": "Cancel your driving theory test if you no longer need your appointment - give 3 working days' notice to get a refund."
+      "meta_tag_description": "Cancel your driving theory test if you no longer need your appointment - give 3 working days’ notice to get a refund."
   },
   {
       "title": "Change your driving test appointment",
@@ -630,5 +630,56 @@
       "time_in_queue": "2 days",
       "reviewer": "unclaimed",
       "meta_tag_description": "Grant Mamolaeth Cychwyn Cadarn – taliad o £500 i helpu gyda chostau babi newydd, cymhwyster, gwneud cais, ffurflen gais SF100W"
+  },
+  {
+      "title": "Report a road spillage",
+      "slug": "report-road-spillage",
+      "state": "fact_check_sent",
+      "assignee": "Lottie Moore",
+      "version_number": 9,
+      "format": "Local transaction",
+      "id": "683711a9095c4e0022468eb5",
+      "sent_out": "6 days ago",
+      "language": "en",
+      "important_note": "The issue was identified by automatic Siteimprove checks which flag potential style and accessibility issues. No FC needed. Please 2i, publish and leave a comment on the Trello card - no need to move the Trello card thanks",
+      "meta_tag_description": "Report an incident of spillage on the road such as oil, mud, sand or dropped cargo to the local council",
+      "lgsl_code": "591",
+      "lgil_code": "17"
+  },
+  {
+      "title": "Accessibility statement for www.gov.uk",
+      "slug": "help/accessibility-statement",
+      "state": "published",
+      "assignee": "Kati Tirbhowan",
+      "version_number": 10,
+      "format": "Help page",
+      "id": "688898ea7a98bb00175dc016",
+      "language": "en",
+      "important_note": "Quick fix, can publish",
+      "meta_tag_description": "Find out how accessible www.gov.uk is and how to tell us about accessibility problems."
+  },
+  {
+      "title": "Find a motorcycle or moped CBT course",
+      "slug": "find-motorcycle-training",
+      "state": "amends_needed",
+      "assignee": "Lottie Moore",
+      "version_number": 2,
+      "format": "Place",
+      "id": "6837108199242e001779f7e1",
+      "language": "en",
+      "important_note": "The issue was identified by automatic Siteimprove checks which flag potential style and accessibility issues. No FC needed. Please 2i, publish and leave a comment on the Trello card - no need to move the Trello card thanks",
+      "meta_tag_description": "Find a compulsory basic training (CBT) course to learn to ride a motorcycle or moped",
+      "places_manager_service_identifier": "motorcycle-approved-training-bodies"
+  },{
+      "title": "Give feedback on Apply for a DVSA Crown copyright licence",
+      "slug": "done/apply-for-dvsa-crown-copyright-licence",
+      "state": "published",
+      "assignee": "Lottie Moore",
+      "version_number": 1,
+      "format": "Completed transaction",
+      "id": "688743144e4ccb0023e614cc",
+      "language": "en",
+      "important_note": "[4 August deadline] Please publish.",
+      "meta_tag_description": ""
   }
 ]

@@ -121,7 +121,7 @@
       <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Slug</h3>
       <p class="govuk-body" id="slug"></p>
     
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Meta tag description</h3>
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1" id="meta-tag-description-heading">Meta tag description</h3>
       <p class="govuk-body" id="meta-tag-description"></p>
 
       <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Language</h3>
@@ -152,16 +152,16 @@
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
               Language
           </legend>
-          <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="language" name="language" type="radio" value="English" checked>
-              <label class="govuk-label govuk-radios__label" for="language">
+              <input class="govuk-radios__input" id="language-english" name="language" type="radio" value="English">
+              <label class="govuk-label govuk-radios__label" for="language-english">
                 English
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="language-2" name="language" type="radio" value="Welsh">
-              <label class="govuk-label govuk-radios__label" for="language-2">
+              <input class="govuk-radios__input" id="language-welsh" name="language" type="radio" value="Welsh">
+              <label class="govuk-label govuk-radios__label" for="language-welsh">
                 Welsh
               </label>
             </div>
@@ -173,7 +173,7 @@
 
   </div>
 
-  {% if (data['status'] !== "Scheduled") and (data['status'] !== "Published") %}
+  {% if (data['status'] !== "Scheduled") and (data['status'] !== "Published") and (data['status'] !== "Archived") %}
     <div class="govuk-grid-column-one-third sticky options-sidebar">
         <div class="actions-sidebar">
           <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">Save</button>
@@ -192,7 +192,7 @@
 {{ govukFooter({
   navigation: [
     {
-      title: "Admin pages",
+      title: "Reports, downtime and users",
       width: "one-third",
       columns: 1,
       items: [
