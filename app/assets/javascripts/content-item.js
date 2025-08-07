@@ -82,8 +82,10 @@
 
           if (reviewer !== "unclaimed") {
             document.querySelector('#reviewer').innerHTML = `${reviewer}`
+            document.querySelector('#reviewer-link').innerHTML = `Change<span class="govuk-visually-hidden">2i reviewer</span>`
           } else {
             document.querySelector('#reviewer').innerHTML = `Not claimed yet`
+            document.querySelector('#reviewer-link').innerHTML = `Assign<span class="govuk-visually-hidden">2i reviewer</span>`
           }
         
         }
