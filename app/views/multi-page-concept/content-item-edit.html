@@ -141,7 +141,7 @@
           <div id="body-hint" class="govuk-hint">
             Read the <a href="https://govspeak-preview.publishing.service.gov.uk/guide" target="_blank" class="govuk-link--no-visited-state">Govspeak guide (opens in new tab)</a>
           </div>
-          <textarea class="govuk-textarea" id="body" name="body" rows="20"></textarea>
+          <textarea class="govuk-textarea" id="body" name="body" rows="24"></textarea>
         </div>
 
       {% endif %}
@@ -696,7 +696,16 @@
         {% endif %}
 
         {% if (data['status'] == "Draft") or (data['status'] == "Amends needed") %}
-          <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">2i</button>
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            id: "send-to-2i",
+            text: "2i",
+            classes: "govuk-button--secondary wide",
+            href: "#"
+          }) }}
+
         {% elif data['status'] == "In review" %}
           <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button" id="skip">Skip review</button>
         {% elif data['status'] == "Ready" %}

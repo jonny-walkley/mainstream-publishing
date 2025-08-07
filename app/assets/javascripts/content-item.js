@@ -7,7 +7,6 @@
 
     const thePath = window.location.protocol + "//" + window.location.host + window.location.pathname;
     const currentPage = thePath.substring(thePath.lastIndexOf('/') + 1);
-    console.log(currentPage)
 
     data.forEach(({ title, assignee, state, format, version_number, id, scheduled, sent_out, reviewer, slug, important_note, meta_tag_description, language, lgsl_code, lgil_code, places_manager_service_identifier, body }, index) => {
       
@@ -46,12 +45,24 @@
             tagColour = "grey"
             break;
         }
-              
-        // Set caption as content type 
-        document.querySelector('.govuk-caption-xl').innerHTML = `${format}`
 
-        // Set h1 heading as publication title
-        document.querySelector('.govuk-heading-xl').innerHTML = `${title}`
+        if (currentPage !== "content-item-2i") {
+        
+          // Set caption as content type 
+          document.querySelector('.govuk-caption-xl').innerHTML = `${format}`
+
+          // Set h1 heading as publication title
+          document.querySelector('.govuk-heading-xl').innerHTML = `${title}`
+        
+        } else {
+
+          // Set caption as publication title 
+          document.querySelector('.govuk-caption-xl').innerHTML = `${title}`
+
+          // Set cancel link to go back to publication
+          document.querySelector('#cancel-link').href = `content-item-edit?id=${id}&content-type=${format}&status=${status}`
+        
+        }
 
         // Set edition number and status
         document.querySelector('#edition').innerHTML = `${version_number}<strong class="govuk-tag govuk-tag--${tagColour} govuk-!-margin-left-2">${status}</strong>`
@@ -175,7 +186,15 @@
             el.innerHTML = assignee;
           });
 
-        }      
+        }
+
+        // Set send to 2i link
+
+        if (currentPage == "content-item-edit" || currentPage == "content-item-history-and-notes") {
+          if (status == "Draft" || status == "Amends needed") {
+            document.querySelector('#send-to-2i').href = `content-item-2i?id=${id}&content-type=${format}&status=${status}`;
+          }
+        }
 
         // returns array-like object
         const arrayLike = document.getElementsByClassName('moj-sub-navigation__link');
@@ -185,7 +204,6 @@
 
         // loop through
         arr.forEach(el => {
-          console.log(el);
           el.href += `?id=${id}&content-type=${format}&status=${status}`;
         });
 

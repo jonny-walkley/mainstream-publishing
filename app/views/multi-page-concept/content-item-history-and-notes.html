@@ -219,7 +219,16 @@
       <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">Add edition note</button>
       <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button" id="important-note-button">Add important note</button>
       {% if (data['status'] == "Draft") or (data['status'] == "Amends needed") %}
-        <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">2i</button>
+        
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            id: "send-to-2i",
+            text: "2i",
+            classes: "govuk-button--secondary wide",
+            href: "#"
+          }) }}
+
       {% elif data['status'] == "In review" %}
         <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button" id="skip">Skip review</button>
       {% endif %}

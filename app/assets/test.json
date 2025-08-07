@@ -68,6 +68,17 @@
       "meta_tag_description": "How to pay a Self Assessment late filing penalty or late payment penalty by Direct Debit, bank transfer, credit card, cheque or at a bank or building society."
   },
   {
+      "title": "Change your name by deed poll",
+      "slug": "change-name-deed-poll",
+      "state": "ready",
+      "assignee": "Genie Todd",
+      "version_number": 45,
+      "format": "Guide",
+      "id": "677d0ec3b1ff3c001a1661e0",
+      "language": "en",
+      "meta_tag_description": "A deed poll recognises a change of name of an adult or child - make your own, use official forms, or get one through a specialist agency or solicitor."
+  },
+  {
       "title": "Pay for UK healthcare as part of your immigration application",
       "slug": "healthcare-immigration-application",
       "state": "fact_check_sent",
@@ -222,17 +233,6 @@
       "id": "687904b8493faf00174957b3",
       "language": "en",
       "meta_tag_description": "Business expenses you can claim if you’re self-employed"
-  },
-  {
-      "title": "Change your name by deed poll",
-      "slug": "change-name-deed-poll",
-      "state": "ready",
-      "assignee": "Genie Todd",
-      "version_number": 45,
-      "format": "Guide",
-      "id": "677d0ec3b1ff3c001a1661e0",
-      "language": "en",
-      "meta_tag_description": "A deed poll recognises a change of name of an adult or child - make your own, use official forms, or get one through a specialist agency or solicitor."
   },
   {
       "title": "Benefits calculators",

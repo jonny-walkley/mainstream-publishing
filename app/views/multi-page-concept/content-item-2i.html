@@ -1,0 +1,154 @@
+{% extends "layouts/main-rebrand.html" %}
+
+{% block pageTitle %}
+  Edit - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    classes: "govuk-!-font-weight-bold",
+    navigationClasses: "align-right",
+    navigation: [
+      {
+          href: "#1",
+          text: "Switch app"
+      }
+    ]
+  }) }}
+
+  {{ govukServiceNavigation({
+    serviceUrl: "#",
+    navigation: [
+    {
+      href: "my-content",
+      text: "My content"
+    },
+    {
+      href: "all-publications",
+      text: "All publications"
+    },
+    {
+      href: "2i-queue",
+      text: "2i queue"
+    },
+    {
+      href: "fact-check",
+      text: "Fact check"
+    },
+    {
+      href: "new-content",
+      text: "New content"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">Publication title</span>
+    <h1 class="govuk-heading-xl">Send to 2i</h1>
+
+    <p class="govuk-body">Your change note should include:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Zendesk ticket link</li>
+      <li>Trello card link</li>
+      <li>a summary of the ticket and the changes</li>
+      <li>the location of the change, what the change is and why you’ve changed it</li>
+    </ul>
+
+    <p class="govuk-body govuk-!-margin-bottom-8">
+      <a class="govuk-link--no-visited-state" href="https://gov-uk.atlassian.net/l/cp/dwn06raQ" rel="noreferrer noopener" target="_blank">
+        Read guidance on writing good change notes (opens in new tab)
+      </a>
+    </p>
+        
+    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+    {{ govukTextarea({
+      name: "moreDetail",
+      id: "more-detail",
+      rows: 18,
+      label: {
+        text: "Change note (optional)",
+        classes: "govuk-label--m",
+        isPageHeading: false
+      },
+      hint: {
+        html:'If you’ve added a change note already, you do not need to add another one'
+      }
+    }) }}
+
+    <form class="form" action="#" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      <div class="govuk-button-group">
+          {{ govukButton({
+              text: "Send to 2i"
+          }) }}
+          <a class="govuk-link govuk-link--no-visited-state" id="cancel-link" href="#">Cancel</a>
+      </div>
+    </form>
+    
+  </div> 
+</div>
+
+{% endblock %}
+
+{% block footer %}
+
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{{ govukFooter({
+  navigation: [
+    {
+      title: "Reports, downtime and users",
+      width: "one-third",
+      columns: 1,
+      items: [
+        {
+          href: "#",
+          text: "CSV reports"
+        },
+        {
+          href: "#",
+          text: "Downtime messages"
+        },
+        {
+          href: "#",
+          text: "Search users"
+        }
+      ]
+    },
+    {
+      title: "Support and feedback",
+      width: "two-thirds",
+      items: [
+        {
+          href: "#",
+          text: "Raise a support request"
+        },
+        {
+          href: "#",
+          text: "Check if publishing apps are working or if there’s any maintenance planned"
+        },
+        {
+          href: "#",
+          text: "How to write, publish, and improve content"
+        }
+      ]
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/content-item.js"></script>
+{% endblock %}
