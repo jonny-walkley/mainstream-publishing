@@ -304,6 +304,13 @@ window.GOVUKPrototypeKit.documentReady(() => {
       document.querySelectorAll(".govuk-table")[1].querySelectorAll(".govuk-table__row")[1].remove()
     }
     
+    
+    
+    
+
+    
+    
+    
     // Populate the number of results heading and show/hide elements if no results
 
     let count = document.querySelectorAll('.govuk-table__body .govuk-table__row').length;
@@ -312,12 +319,40 @@ window.GOVUKPrototypeKit.documentReady(() => {
       return `${single}${count === 1 ? "" : "s"}`;
     };
 
-    document.querySelector('#item-count').innerHTML = `${count} ${toPlural(count, "item")}`
+    let itemCount = document.querySelector('#item-count');
+    if (itemCount) {
+      itemCount.innerHTML = `${count} ${toPlural(count, "item")}`
+    }
+    // document.querySelector('#item-count').innerHTML = `${count} ${toPlural(count, "item")}`
     // console.log(count);
 
     if (count === 0) {
       document.querySelector('.govuk-table').style.display = 'none';
     }
+
+
+
+
+    // Count items in both tables and display the count in each table
+
+    if (currentPage == "2i-queue" || currentPage == "fact-check") {
+
+      let numberOfFirstTableItems = document.querySelectorAll(".govuk-table")[0].querySelectorAll('.govuk-table__body .govuk-table__row').length;
+      let numberOfSecondTableItems = document.querySelectorAll(".govuk-table")[1].querySelectorAll('.govuk-table__body .govuk-table__row').length;
+
+      let captionFirstTable = document.querySelectorAll(".govuk-table")[0].querySelectorAll('.govuk-table__caption')[0];
+      captionFirstTable.innerHTML += `<span class="item-count">${numberOfFirstTableItems} ${toPlural(numberOfFirstTableItems, "item")}</span>`;
+
+      let captionSecondTable = document.querySelectorAll(".govuk-table")[1].querySelectorAll('.govuk-table__caption')[0];
+      captionSecondTable.innerHTML += `<span class="item-count">${numberOfSecondTableItems} ${toPlural(numberOfSecondTableItems, "item")}</span>`;
+      
+    }
+
+
+
+
+
+
 
   });
 })
