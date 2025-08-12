@@ -118,20 +118,30 @@
     
     <div id="important-note" style="display: none;">
 
-{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
-{% set html %}
-  <q class="govuk-body" id="important-note-body">
-    
-  </q>
-{% endset %}
+      {% set html %}
+        <q class="govuk-body" id="important-note-body">
+          
+        </q>
+      {% endset %}
 
-{{ govukNotificationBanner({
-  html: html,
-  titleText: "Important note"
-}) }}
+      {{ govukNotificationBanner({
+        html: html,
+        titleText: "Important note"
+      }) }}
 
     </div>
+
+    <!-- <h3 class="govuk-heading-m" id="current-edition">Edition </h3> -->
+
+    <!-- <div id="history-and-notes" class="govuk-!-margin-bottom-6"> -->
+
+    <!-- <p class="govuk-body">
+      <a href="#" class="govuk-link--no-visited-state compare-edition" id="current-edition-compare">Compare with Edition </a>
+    </p> -->
+  
+  <!-- </div> -->
 
     {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
 
@@ -139,77 +149,85 @@
       id: "accordion-history-and-notes",
       rememberExpanded: false,
       items: [
-        {
-          heading: {
-            text: "Edition 2"
-          },
-          content: {
-            html: 
-              '
-                <p class="govuk-body">
-                  <a href="#">Compare with Edition 1</a>
-                </p>
-                <div id="fact-check-response" style="display: none;">
-                  <p class="govuk-body">
-                    <time>2:02pm, 6 Aug 2025</time>
-                    <span class="govuk-!-font-weight-bold">Fact check received</span> by GOV.UK Bot
-                  </p>
-                  <div class="govuk-inset-text fact-check-response">
-                      <p>Hi,</p>
-                      <p>We have reviewed the proposed changes and have the following issue:</p>
-                      <p>There is a reference to the ‘patent register’ we are not able to call it a register due to legal constraints, it needs to be referred to as ‘search for a patent service’ instead.</p>
-                      <p>If you have any questions please ask</p>
-                      <p>Thanks</p>
-                      <p>Jane</p>
-                      <p>
-                          From: GOV.UK Publishing <gov.uk.publishing@notifications.service.gov.uk></br>
-                          Sent: Wednesday, January 8, 2025 1:40 PM</br>
-                          To: Jane Doe <jane.doe@example.email.gov.uk></br>
-                          Subject: ‘[Check the patents journal]’ GOV.UK preview of new edition
-                      </p>
-                      <p>Hi,</p>
-                      <p>We need you to check the factual accuracy of changes made to ‘Check the patents journal’ before it’s published on GOV.​UK.</p>
-                      <p>The GOV.​UK Content Team made the changes because of the new digital service #5893029. Deadline: 16 January 2025 (5 working days)...</p>
-                      <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">Show earlier messages</a>
-                  </div>
-                </div>
-                <div id="review-requested" style="display: none;">
-                  <p class="govuk-body">
-                    <time>8:21am, 3 Aug 2025</time>
-                    <span class="govuk-!-font-weight-bold">2i requested</span> by <span class="assignee"></span>
-                  </p>
-                  <div class="govuk-inset-text">
-                    Changing "Land Registry" to "HM Land Registry", and editing uses of "eg"</br></br>
-                    Changed all instances of "Land Registry" to "HM Land Registry".</br></br>
-                    ALSO:</br></br>
-                    Deleted answer summary markdown</br>
-                    CHANGED</br>
-                    $!You can ask for publicly owned land or buildings to be sold if you think they’re vacant or underused.$!</br>
-                    TO</br>
-                    You can ask for publicly owned land or buildings to be sold if you think they’re vacant or underused.
-                  </div>
-                </div>
-
-                <p class="govuk-body">
-                  <time>1:46pm, 27 Jul 2025</time>
-                  <span class="govuk-!-font-weight-bold">Assigned</span> to <span class="assignee"></span>
-                </p>
-                <p class="govuk-body">
-                  <time>1:46pm, 27 Jul 2025</time>
-                  <span class="govuk-!-font-weight-bold">New edition</span> by <span class="assignee"></span>
-                </p>
-              '
-          },
-          expanded: true
+      {
+        heading: {
+          html: "<span id='current-edition'>Edition </span>"
         },
-        {
-          heading: {
-            text: "Edition 1"
-          },
-          content: {
-            html: '<p class="govuk-body">To-do.</p>'
-          }
-        }
+        content: {
+          html: '
+          
+          <p class="govuk-body compare-edition">
+            <a href="#" class="govuk-link--no-visited-state" id="current-edition-compare">Compare with Edition </a>
+          </p>
+          
+          <div id="fact-check-response">
+    
+            <p class="govuk-body">
+              <time>2:02pm, 6 Aug 2025</time>
+              <span class="govuk-!-font-weight-bold">Fact check received</span> by GOV.UK Bot
+            </p>
+          
+            <div class="govuk-inset-text fact-check-response">
+              <p>Hi,</p>
+              <p>We have reviewed the proposed changes and have the following issue:</p>
+              <p>There is a reference to the ‘patent register’ we are not able to call it a register due to legal constraints, it needs to be referred to as ‘search for a patent service’ instead.</p>
+              <p>If you have any questions please ask</p>
+              <p>Thanks</p>
+              <p>Jane</p>
+              <p>
+                From: GOV.UK Publishing <gov.uk.publishing@notifications.service.gov.uk></br>
+                Sent: Wednesday, January 8, 2025 1:40 PM</br>
+                To: Jane Doe <jane.doe@example.email.gov.uk></br>
+                Subject: ‘[Check the patents journal]’ GOV.UK preview of new edition
+              </p>
+              <p>Hi,</p>
+              <p>We need you to check the factual accuracy of changes made to ‘Check the patents journal’ before it’s published on GOV.​UK.</p>
+              <p>The GOV.​UK Content Team made the changes because of the new digital service #5893029. Deadline: 16 January 2025 (5 working days)...</p>
+              <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">Show earlier messages</a>
+            </div>
+          </div>
+
+          <div id="review-requested" style="display: none;">
+
+            <div id="claimed-by" style="display: none;">
+              <p class="govuk-body">
+                <time>10:16am, 3 Aug 2025</time>
+                <span class="govuk-!-font-weight-bold">2i claimed</span> by <span class="claimed-by-name"></span>
+              </p>
+            </div>
+            
+            <p class="govuk-body">
+              <time>8:21am, 3 Aug 2025</time>
+              <span class="govuk-!-font-weight-bold">2i requested</span> by <span class="assignee"></span>
+            </p>
+            
+            <div class="govuk-inset-text">
+              Changing "Land Registry" to "HM Land Registry", and editing uses of "eg"</br></br>
+              Changed all instances of "Land Registry" to "HM Land Registry".</br></br>
+              ALSO:</br></br>
+              Deleted answer summary markdown</br>
+              CHANGED</br>
+              $!You can ask for publicly owned land or buildings to be sold if you think they’re vacant or underused.$!</br>
+              TO</br>
+              You can ask for publicly owned land or buildings to be sold if you think they’re vacant or underused.
+            </div>
+          
+          </div>
+        
+          <p class="govuk-body">
+            <time>1:46pm, 27 Jul 2025</time>
+            <span class="govuk-!-font-weight-bold">Assigned</span> to <span class="assignee"></span>
+          </p>
+        
+          <p class="govuk-body">
+            <time>1:46pm, 27 Jul 2025</time>
+            <span class="govuk-!-font-weight-bold">New edition</span> by <span class="assignee"></span>
+          </p>
+          
+          '
+        },
+        expanded: true
+      }
       ]
     }) }}
   </div>

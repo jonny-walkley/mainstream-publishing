@@ -6,20 +6,35 @@
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 //
 
+// #history-and-notes {
+//   padding: 20px;
+//   border-left: 1px solid #b1b4b6;
+// }
+
+p.compare-edition {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
 .tabs-no-border {
   border: 0 !important;
   padding: 30px 0 !important;
 }
 
-#accordion-history-and-notes .govuk-inset-text {
-  margin-top: 0;
-}
+#accordion-history-and-notes, #history-and-notes {
+  .govuk-inset-text {
+    margin-top: 0;
+  }
+  .govuk-accordion__section-content {
+    padding-top: 0;
+  }
+} 
 
 .fact-check-response {
   background-color: #EDF3F9;
 }
 
-#accordion-history-and-notes {
+#accordion-history-and-notes, #history-and-notes {
 
   time {
     display: block;
@@ -29,8 +44,10 @@
   
 }
 
-#accordion-history-and-notes .govuk-inset-text {
-  border-width: 1px;
+#accordion-history-and-notes, #history-and-notes {
+  .govuk-inset-text {
+    border-width: 1px;
+  }
 }
 
 .content-item-summary .govuk-tag {
@@ -303,8 +320,12 @@ height: 40px}
 .actions-sidebar {
     top: 0;    
     border-top: 3px solid $govuk-brand-colour; 
-    padding: 27px 0 0 0;
+    padding: 20px 0 0 0;
     margin-top: 20px;
+}
+
+.actions-sidebar a {
+  margin-bottom: 15px;
 }
 
 .line {

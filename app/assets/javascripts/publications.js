@@ -203,7 +203,7 @@ window.GOVUKPrototypeKit.documentReady(() => {
         if (state == "fact_check_received") {
          
           newRow.querySelector('.title-received').innerHTML = `<a href="content-item-edit?id=${id}&content-type=${format}&status=${status}" class="govuk-link govuk-link--no-visited-state">${title}</a>`
-          newRow.querySelector('.view-response').innerHTML = `<a href="content-item-history-and-notes?id=${id}&content-type=${format}&status=${status}#accordion-history-and-notes" class="govuk-link govuk-link--no-visited-state">View response</a>`
+        newRow.querySelector('.view-response').innerHTML = `<a href="content-item-history-and-notes?id=${id}&content-type=${format}&status=${status}#fact-check-response" class="govuk-link govuk-link--no-visited-state">View response</a>`
           newRow.querySelector('.assignee-received').innerText = assignee
           newRow.querySelector('.format-received').innerText = format  
           firstRow.parentNode.append(newRow)

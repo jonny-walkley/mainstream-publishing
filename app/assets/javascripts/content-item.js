@@ -46,6 +46,8 @@
             break;
         }
 
+        // --- Overall things ---
+
         if (currentPage !== "content-item-2i") {
         
           // Set caption as content type 
@@ -53,22 +55,196 @@
 
           // Set h1 heading as publication title
           document.querySelector('.govuk-heading-xl').innerHTML = `${title}`
+
+          // Set edition number and status
+          document.querySelector('#edition').innerHTML = `${version_number}<strong class="govuk-tag govuk-tag--${tagColour} govuk-!-margin-left-2">${status}</strong>`
+
+          // Set assigned to
+          document.querySelector('#assignee').innerHTML = `${assignee}`
+
+          // Set sub navigation page links
+          const subNav = document.getElementsByClassName('moj-sub-navigation__link');
+          const subNavArray = Array.from(subNav);
+
+          subNavArray.forEach(navItem => {
+            navItem.href += `?id=${id}&content-type=${format}&status=${status}`;
+          });
         
         } else {
 
           // Set caption as publication title 
           document.querySelector('.govuk-caption-xl').innerHTML = `${title}`
 
-          // Set cancel link to go back to publication
-          document.querySelector('#cancel-link').href = `content-item-edit?id=${id}&content-type=${format}&status=${status}`
+          // Set cancel link to go back to the previous page
+
+          const lastPageUrl = document.referrer;
+          let backLinkPage = "content-item-";
+
+          if (lastPageUrl.includes('edit')) {
+            backLinkPage += `edit`
+          } else {
+            backLinkPage += `history-and-notes`
+          }
+
+          document.querySelector('#cancel-link').href = `${backLinkPage}?id=${id}&content-type=${format}&status=${status}`
         
         }
 
-        // Set edition number and status
-        document.querySelector('#edition').innerHTML = `${version_number}<strong class="govuk-tag govuk-tag--${tagColour} govuk-!-margin-left-2">${status}</strong>`
+        // --- Page-specifc things ---
 
-        // Set assigned to
-        document.querySelector('#assignee').innerHTML = `${assignee}`
+        switch (currentPage) {
+
+          case "content-item-edit":
+
+            // Set 'Title', either text input field or h3 heading
+            if (status == "Scheduled" || status == "Published" || status == "Archived") {
+              document.querySelector('#title').innerHTML = title;
+            } else {
+              document.querySelector('#title').value = title;
+            }
+
+            if (format == "Local transaction") {
+              document.querySelector('#lgsl-code').innerHTML = lgsl_code;
+              document.querySelector('#lgil-code').value = lgil_code;
+            }
+
+            if (format == "Place") {
+              document.querySelector('#places-manager-service-identifier').value = places_manager_service_identifier;
+            }
+
+            if (format == "Answer" || format == "Help page") {
+              if (body) {
+                document.querySelector('#body').value = body;
+              }
+            }
+            
+            break;
+          
+          case "content-item-metadata":
+
+            if (status == "Scheduled" || status == "Published" || status == "Archived") {
+              
+              document.querySelector('#slug').innerHTML = `${slug}`
+              document.querySelector('#meta-tag-description').innerHTML = `${meta_tag_description}`
+              
+              let languageElement = document.querySelector('#language');
+
+              if (language == "en") {
+                languageElement.innerHTML = "English";
+              } else {
+                languageElement.innerHTML = "Welsh";
+              }
+            
+            } else {
+              
+              document.querySelector('#slug').value = slug;
+              document.querySelector('#meta-tag-description').value = meta_tag_description;
+
+              if (version_number > 1) {
+                document.querySelector('#slug-hint').innerHTML = "If you change the slug, the old slug will automatically redirect to the new one";
+              } else {
+                document.querySelector('#slug-hint').innerHTML = "Must be written in the following format: lower-case-hypen-separated";
+              }
+
+              if (language == "en") {
+                document.querySelector('#language-english').checked = true;
+              } else {
+                document.querySelector('#language-welsh').checked = true;
+              }
+
+            }
+
+            if (format == "Completed transaction") {
+              document.querySelector('#meta-tag-description-heading').style.display = 'none';
+
+            }
+
+            break;
+          
+          case "content-item-history-and-notes":
+
+            if (important_note) {
+              document.querySelector('#important-note').style.display = 'block';
+              document.querySelector('#important-note-button').innerHTML = "Update important note";
+              document.querySelector('#important-note-body').innerHTML = important_note;
+            }
+
+            document.querySelector('#current-edition').innerHTML += `${version_number}`
+            document.querySelector('#current-edition-compare').innerHTML += `${version_number-1}`
+
+            if (status !== "Fact check received") {
+              document.querySelector('#fact-check-response').style.display = 'none';
+            }
+
+            if (status !== "Draft") {
+              document.querySelector('#review-requested').style.display = 'block';
+              if (reviewer !== "unclaimed") {
+                document.querySelector('#claimed-by').style.display = 'block';
+                document.querySelector('.claimed-by-name').innerHTML = reviewer;
+              }
+            }
+        
+            const assigneeInstances = document.getElementsByClassName('assignee');
+            const assigneeInstancesArr = Array.from(assigneeInstances);
+            
+            assigneeInstancesArr.forEach(el => {
+              el.innerHTML = assignee;
+            });
+
+
+
+
+
+            const totalEditions = new Array(version_number);
+            totalPreviousEditions = totalEditions.length-1;
+            editionsAccordion = document.querySelector('#accordion-history-and-notes')
+
+            for(let i = totalPreviousEditions; i > 0; i-- ) {
+              
+              editionsAccordion.innerHTML += `
+              <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <button type="button" aria-controls="accordion-history-and-notes-content-3" class="govuk-accordion__section-button" aria-expanded="false" aria-label="Edition 1 , Show this section">
+                      <span class="govuk-accordion__section-heading-text" id="accordion-history-and-notes-heading-3">
+                        <span class="govuk-accordion__section-heading-text-focus">
+                          Edition ${i}
+                        </span>
+                      </span>
+                      <span class="govuk-visually-hidden govuk-accordion__section-heading-divider">, </span>
+                      <span class="govuk-accordion__section-toggle" data-nosnippet="">
+                        <span class="govuk-accordion__section-toggle-focus">
+                          <span class="govuk-accordion-nav__chevron govuk-accordion-nav__chevron--down"></span>
+                          <span class="govuk-accordion__section-toggle-text">Show</span>
+                        </span>
+                      </span>
+                    </button>
+                  </h2>
+                </div>
+                <div id="accordion-history-and-notes-content-3" class="govuk-accordion__section-content" hidden="until-found">
+                  <p class="govuk-body">To-do.</p>
+                </div>
+              </div>
+            `;
+            
+            }
+
+            break;
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // Hide the 'Skip review' button if content item is 'In review' and not assigned to current user
 
@@ -98,98 +274,6 @@
           document.querySelector('#scheduled').innerHTML = `${scheduled}`
         }
 
-        if (currentPage == "content-item-edit") {
-          
-          // Set text input or h3 heading for title
-          if (status == "Scheduled" || status == "Published" || status == "Archived") {
-            document.querySelector('#title').innerHTML = title;
-          } else {
-            document.querySelector('#title').value = title;
-          }
-
-          if (format == "Local transaction") {
-            document.querySelector('#lgsl-code').innerHTML = lgsl_code;
-            document.querySelector('#lgil-code').value = lgil_code;
-          }
-
-          if (format == "Place") {
-            document.querySelector('#places-manager-service-identifier').value = places_manager_service_identifier;
-          }
-
-          if (format == "Answer" || format == "Help page") {
-            if (body) {
-              document.querySelector('#body').value = body;
-            }
-          }
-        
-        }
-
-        if (currentPage == "content-item-metadata") {
-
-          if (status == "Scheduled" || status == "Published" || status == "Archived") {
-            
-            document.querySelector('#slug').innerHTML = `${slug}`
-            document.querySelector('#meta-tag-description').innerHTML = `${meta_tag_description}`
-            if (language == "en") {
-              document.querySelector('#language').innerHTML = "English";
-            } else {
-              document.querySelector('#language').innerHTML = "Welsh";
-            }
-          
-          } else {
-            
-            document.querySelector('#slug').value = slug;
-            document.querySelector('#meta-tag-description').value = meta_tag_description;
-
-            if (version_number > 1) {
-              document.querySelector('#slug-hint').innerHTML = "If you change the slug, the old slug will automatically redirect to the new one";
-            } else {
-              document.querySelector('#slug-hint').innerHTML = "Must be written in the following format: lower-case-hypen-separated";
-            }
-
-            if (language == "en") {
-              document.querySelector('#language-english').checked = true;
-            } else {
-              document.querySelector('#language-welsh').checked = true;
-            }
-
-          }
-
-          if (format == "Completed transaction") {
-            document.querySelector('#meta-tag-description-heading').style.display = 'none';
-          }
-
-
-          
-        }
-
-        if (currentPage == "content-item-history-and-notes") {
-         
-          if(important_note) {
-            document.querySelector('#important-note').style.display = 'block';
-            document.querySelector('#important-note-button').innerHTML = "Update important note";
-            document.querySelector('#important-note-body').innerHTML = important_note;
-          }
-
-          if (status == "Fact check received") {
-            document.querySelector('#fact-check-response').style.display = 'block';
-          }
-
-          if (status !== "Draft") {
-            
-            document.querySelector('#review-requested').style.display = 'block';
-          }
-        
-          const assigneeInstances = document.getElementsByClassName('assignee');
-        
-          const assigneeInstancesArr = Array.from(assigneeInstances);
-            
-          assigneeInstancesArr.forEach(el => {
-            el.innerHTML = assignee;
-          });
-
-        }
-
         // Set send to 2i link
 
         if (currentPage == "content-item-edit" || currentPage == "content-item-history-and-notes") {
@@ -197,17 +281,6 @@
             document.querySelector('#send-to-2i').href = `content-item-2i?id=${id}&content-type=${format}&status=${status}`;
           }
         }
-
-        // returns array-like object
-        const arrayLike = document.getElementsByClassName('moj-sub-navigation__link');
-
-        // convert to array
-        const arr = Array.from(arrayLike);
-
-        // loop through
-        arr.forEach(el => {
-          el.href += `?id=${id}&content-type=${format}&status=${status}`;
-        });
 
         // Set content item navigation links
         // document.querySelector('.moj-sub-navigation__list').innerHTML = `
