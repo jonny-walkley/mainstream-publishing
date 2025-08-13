@@ -65,12 +65,12 @@
       <ul class="govuk-tabs__list">
         <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
           <a class="govuk-tabs__tab" href="#received">
-            Received
+            Received back
           </a>
         </li>
         <li class="govuk-tabs__list-item">
           <a class="govuk-tabs__tab" href="#sent-out">
-            Sent out
+            Waiting on
           </a>
         </li>
       </ul>
@@ -80,7 +80,7 @@
       <div class="govuk-tabs__panel tabs-no-border" id="received">       
         {% from "govuk/components/table/macro.njk" import govukTable %}
         {{ govukTable({
-          caption: "Received",
+          caption: "Received back",
           captionClasses: "govuk-table__caption--m",
           firstCellIsHeader: true,
           classes: "fact-check",
@@ -127,7 +127,7 @@
 
       <div class="govuk-tabs__panel tabs-no-border govuk-tabs__panel--hidden" id="sent-out">
         {{ govukTable({
-          caption: "Sent out",
+          caption: "Waiting on",
           captionClasses: "govuk-table__caption--m",
           firstCellIsHeader: true,
           classes: "fact-check",

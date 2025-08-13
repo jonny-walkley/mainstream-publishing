@@ -1,7 +1,7 @@
 {% extends "layouts/main-rebrand.html" %}
 
 {% block pageTitle %}
-  Send to 2i - {{ serviceName }} – GOV.UK Prototype Kit
+  Important note - {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -54,35 +54,29 @@
   <div class="govuk-grid-column-two-thirds">
 
     <span class="govuk-caption-xl"></span>
-    <h1 class="govuk-heading-xl">Send to 2i</h1>
+    <h1 class="govuk-heading-xl">Add important note</h1>
 
-    <p class="govuk-body">Your change note should include:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>the Zendesk ticket link</li>
-      <li>the Trello card link</li>
-      <li>a summary of the ticket and the changes</li>
-      <li>the location of the change, what the change is and why you’ve changed it</li>
+    <p class="govuk-body">Add important notes that anyone who works on this edition needs to see.</p>
+    
+    <p class="govuk-body">The important note needs to say:</p>
+    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+      <li>if it’s urgent </li>
+      <li>if it’s a quick fix</li>
+      <li>if it should be 2ied with something else</li>
+      <li>what should happen next with the content (for example, publish, schedule)</li>
+      <li>if it needs a fact check and the fact check email addresses</li>
     </ul>
-
-    <p class="govuk-body govuk-!-margin-bottom-6">
-      <a class="govuk-link--no-visited-state" href="https://gov-uk.atlassian.net/l/cp/dwn06raQ" rel="noreferrer noopener" target="_blank">
-        Read guidance on writing good change notes (opens in new tab)
-      </a>
-    </p>
         
     {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
     {{ govukTextarea({
-      name: "editionNote",
-      id: "edition-note",
-      rows: 18,
+      name: "importantNote",
+      id: "important-note",
+      rows: 10,
       label: {
-        text: "Change note (optional)",
+        html: "Important note",
         classes: "govuk-label--m",
         isPageHeading: false
-      },
-      hint: {
-        html:'If you’ve added a change note already, you do not need to add another one'
       }
     }) }}
 
@@ -90,7 +84,7 @@
       {% from "govuk/components/button/macro.njk" import govukButton %}
       <div class="govuk-button-group">
         {{ govukButton({
-            text: "Send to 2i"
+            text: "Add important note"
         }) }}
         <a class="govuk-link govuk-link--no-visited-state" id="cancel-link" href="#">Cancel</a>
       </div>

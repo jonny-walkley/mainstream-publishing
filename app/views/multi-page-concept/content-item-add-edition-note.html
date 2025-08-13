@@ -1,7 +1,7 @@
 {% extends "layouts/main-rebrand.html" %}
 
 {% block pageTitle %}
-  Send to 2i - {{ serviceName }} – GOV.UK Prototype Kit
+  Add edition note - {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -54,7 +54,7 @@
   <div class="govuk-grid-column-two-thirds">
 
     <span class="govuk-caption-xl"></span>
-    <h1 class="govuk-heading-xl">Send to 2i</h1>
+    <h1 class="govuk-heading-xl">Add edition note</h1>
 
     <p class="govuk-body">Your change note should include:</p>
     <ul class="govuk-list govuk-list--bullet">
@@ -73,8 +73,8 @@
     {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
     {{ govukTextarea({
-      name: "editionNote",
-      id: "edition-note",
+      name: "moreDetail",
+      id: "more-detail",
       rows: 18,
       label: {
         text: "Change note (optional)",
@@ -89,10 +89,10 @@
     <form class="form" action="#" method="post">
       {% from "govuk/components/button/macro.njk" import govukButton %}
       <div class="govuk-button-group">
-        {{ govukButton({
-            text: "Send to 2i"
-        }) }}
-        <a class="govuk-link govuk-link--no-visited-state" id="cancel-link" href="#">Cancel</a>
+          {{ govukButton({
+              text: "Add edition note"
+          }) }}
+          <a class="govuk-link govuk-link--no-visited-state" id="cancel-link" href="#">Cancel</a>
       </div>
     </form>
     

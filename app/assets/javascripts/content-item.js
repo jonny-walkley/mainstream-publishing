@@ -46,9 +46,9 @@
             break;
         }
 
-        // --- Overall things ---
+        // --- Overall ---
 
-        if (currentPage !== "content-item-2i") {
+        if (currentPage !== "content-item-2i" && currentPage !== "content-item-add-edition-note" && currentPage !== "content-item-important-note" ) {
         
           // Set caption as content type 
           document.querySelector('.govuk-caption-xl').innerHTML = `${format}`
@@ -90,7 +90,7 @@
         
         }
 
-        // --- Page-specifc things ---
+        // --- Page-specifc ---
 
         switch (currentPage) {
 
@@ -127,7 +127,7 @@
               document.querySelector('#slug').innerHTML = `${slug}`
               document.querySelector('#meta-tag-description').innerHTML = `${meta_tag_description}`
               
-              let languageElement = document.querySelector('#language');
+              const languageElement = document.querySelector('#language');
 
               if (language == "en") {
                 languageElement.innerHTML = "English";
@@ -163,6 +163,9 @@
           
           case "content-item-history-and-notes":
 
+            document.querySelector('#edition-note').href = `content-item-add-edition-note?id=${id}&content-type=${format}&status=${status}`;
+            document.querySelector('#important-note-button').href = `content-item-important-note?id=${id}&content-type=${format}&status=${status}`;
+
             if (important_note) {
               document.querySelector('#important-note').style.display = 'block';
               document.querySelector('#important-note-button').innerHTML = "Update important note";
@@ -178,7 +181,7 @@
 
             if (status !== "Draft") {
               document.querySelector('#review-requested').style.display = 'block';
-              if (reviewer !== "unclaimed") {
+              if (reviewer && reviewer !== "unclaimed") {
                 document.querySelector('#claimed-by').style.display = 'block';
                 document.querySelector('.claimed-by-name').innerHTML = reviewer;
               }
@@ -193,7 +196,7 @@
 
 
 
-
+            // Add accordions for previous edititons
 
             const totalEditions = new Array(version_number);
             totalPreviousEditions = totalEditions.length-1;
@@ -202,39 +205,36 @@
             for(let i = totalPreviousEditions; i > 0; i-- ) {
               
               editionsAccordion.innerHTML += `
-              <div class="govuk-accordion__section">
-                <div class="govuk-accordion__section-header">
-                  <h2 class="govuk-accordion__section-heading">
-                    <button type="button" aria-controls="accordion-history-and-notes-content-3" class="govuk-accordion__section-button" aria-expanded="false" aria-label="Edition 1 , Show this section">
-                      <span class="govuk-accordion__section-heading-text" id="accordion-history-and-notes-heading-3">
-                        <span class="govuk-accordion__section-heading-text-focus">
-                          Edition ${i}
+                <div class="govuk-accordion__section">
+                  <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                      <button type="button" aria-controls="accordion-history-and-notes-content-3" class="govuk-accordion__section-button" aria-expanded="false" aria-label="Edition 1 , Show this section">
+                        <span class="govuk-accordion__section-heading-text" id="accordion-history-and-notes-heading-3">
+                          <span class="govuk-accordion__section-heading-text-focus">
+                            Edition ${i}
+                          </span>
                         </span>
-                      </span>
-                      <span class="govuk-visually-hidden govuk-accordion__section-heading-divider">, </span>
-                      <span class="govuk-accordion__section-toggle" data-nosnippet="">
-                        <span class="govuk-accordion__section-toggle-focus">
-                          <span class="govuk-accordion-nav__chevron govuk-accordion-nav__chevron--down"></span>
-                          <span class="govuk-accordion__section-toggle-text">Show</span>
+                        <span class="govuk-visually-hidden govuk-accordion__section-heading-divider">, </span>
+                        <span class="govuk-accordion__section-toggle" data-nosnippet="">
+                          <span class="govuk-accordion__section-toggle-focus">
+                            <span class="govuk-accordion-nav__chevron govuk-accordion-nav__chevron--down"></span>
+                            <span class="govuk-accordion__section-toggle-text">Show</span>
+                          </span>
                         </span>
-                      </span>
-                    </button>
-                  </h2>
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="accordion-history-and-notes-content-3" class="govuk-accordion__section-content" hidden="until-found">
+                    <p class="govuk-body">To-do.</p>
+                  </div>
                 </div>
-                <div id="accordion-history-and-notes-content-3" class="govuk-accordion__section-content" hidden="until-found">
-                  <p class="govuk-body">To-do.</p>
-                </div>
-              </div>
-            `;
+              `;
             
             }
 
             break;
 
         }
-
-
-
 
 
 
