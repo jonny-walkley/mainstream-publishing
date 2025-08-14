@@ -248,7 +248,7 @@
   {
       "title": "Marriage Allowance",
       "slug": "marriage-allowance",
-      "state": "in_review",
+      "state": "in_2i",
       "assignee": "Sarah Nicholson",
       "version_number": 43,
       "format": "Guide",
@@ -485,7 +485,7 @@
   {
       "title": "Appeal to the Employment Appeal Tribunal (EAT)",
       "slug": "appeal-employment-appeal-tribunal",
-      "state": "in_review",
+      "state": "in_2i",
       "assignee": "Esther Woods",
       "version_number": 14,
       "format": "Guide",
@@ -610,7 +610,7 @@
   {
       "title": "Grant Mamolaeth Cychwyn Cadarn",
       "slug": "grant-mamolaeth-cychwyn-cadarn",
-      "state": "in_review",
+      "state": "in_2i",
       "assignee": "Megan Husband",
       "version_number": 26,
       "format": "Guide",

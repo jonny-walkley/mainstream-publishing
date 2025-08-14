@@ -109,7 +109,7 @@ window.GOVUKPrototypeKit.documentReady(() => {
         case "draft":
           tagColour = "yellow"
           break;
-        case "in_review":
+        case "in_2i":
           tagColour = "blue"
           break;
         case "amends_needed":
@@ -154,7 +154,7 @@ window.GOVUKPrototypeKit.documentReady(() => {
 
       } else if (currentPage == "2i-queue") {
 
-        if (state == "in_review") {
+        if (state == "in_2i") {
 
           if (language == "en") {
 

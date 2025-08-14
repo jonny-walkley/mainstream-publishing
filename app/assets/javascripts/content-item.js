@@ -18,7 +18,7 @@
           case "draft":
             tagColour = "yellow"
             break;
-          case "in_review":
+          case "in_2i":
             tagColour = "blue"
             break;
           case "amends_needed":
@@ -256,9 +256,9 @@
 
 
 
-        // Hide the 'Skip review' button if content item is 'In review' and not assigned to current user
+        // Hide the 'Skip 2i' button if content item is 'In 2i' and not assigned to current user
 
-        if (status == "In review") {
+        if (status == "In 2i") {
 
           if (currentPage == "content-item-edit" || currentPage == "content-item-history-and-notes") {
             if (assignee !== "Esther Woods") {
