@@ -234,6 +234,16 @@
 
             break;
 
+            case "content-item-important-note":
+              
+              if (important_note) {
+                document.querySelector('.govuk-heading-xl').innerHTML = "Update important note";
+                document.querySelector('#important-note').value = important_note;
+                document.querySelector('#important-note-button').innerHTML = "Update important note"
+              }
+            
+              break;
+
         }
 
 

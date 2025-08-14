@@ -251,7 +251,7 @@
         href: "#"
       }) }}
       
-      {% if (data['status'] == "Draft") or (data['status'] == "Amends needed") %}  
+      {% if (data['status'] == "Draft") or (data['status'] == "Amends needed") %}
         {{ govukButton({
           id: "send-to-2i",
           text: "2i",
@@ -259,7 +259,7 @@
           href: "#"
         }) }}
       {% elif data['status'] == "In review" %}
-        <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button" id="skip">Skip review</button>
+        <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button" id="skip">Skip 2i</button>
       {% endif %}
     
     </div>
