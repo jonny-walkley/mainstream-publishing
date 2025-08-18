@@ -1,7 +1,7 @@
 {% extends "layouts/main-rebrand.html" %}
 
 {% block pageTitle %}
-  Important note - {{ serviceName }} – GOV.UK Prototype Kit
+  Send to fact check - {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -54,27 +54,14 @@
   <div class="govuk-grid-column-two-thirds">
 
     <span class="govuk-caption-xl"></span>
-    <h1 class="govuk-heading-xl">Add important note</h1>
-
-    <p class="govuk-body">Add important notes that anyone who works on this edition needs to see.</p>
-    
-    <p class="govuk-body">The important note needs to say:</p>
-    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-      <li>if it’s urgent </li>
-      <li>if it’s a quick fix</li>
-      <li>if it should be 2ied with something else</li>
-      <li>what should happen next with the content (for example, publish, schedule)</li>
-      <li>if it needs a fact check and the fact check email addresses</li>
-    </ul>
-        
-    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+    <h1 class="govuk-heading-xl">Publish</h1>
 
     {{ govukTextarea({
-      name: "importantNote",
-      id: "important-note",
-      rows: 10,
+      name: "publishComment",
+      id: "publish-comment",
+      rows: 5,
       label: {
-        html: "Important note",
+        text: "Comment (optional)",
         classes: "govuk-label--m",
         isPageHeading: false
       }
@@ -83,11 +70,10 @@
     <form class="form" action="#" method="post">
       {% from "govuk/components/button/macro.njk" import govukButton %}
       <div class="govuk-button-group">
-        {{ govukButton({
-            id: "important-note-button",
-            text: "Add important note"
-        }) }}
-        <a class="govuk-link govuk-link--no-visited-state" id="cancel-link" href="#">Cancel</a>
+          {{ govukButton({
+              text: "Publish"
+          }) }}
+          <a class="govuk-link govuk-link--no-visited-state" id="cancel-link" href="#">Cancel</a>
       </div>
     </form>
     

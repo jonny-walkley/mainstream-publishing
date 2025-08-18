@@ -52,7 +52,7 @@
       "version_number": 62,
       "format": "Simple smart answer",
       "id": "65b933d7e21d7a00105c4eb7",
-      "scheduled": "12:01am, 8 November 2025",
+      "scheduled": "12:01am, 8 Nov 2025",
       "language": "en",
       "meta_tag_description": "Find the right number, email or address to contact DVSA about driving tests, instructor services, MOT, operator licensing and Driver CPC."
   },
@@ -244,6 +244,18 @@
       "id": "687904b8493faf00174957b3",
       "language": "en",
       "meta_tag_description": "Business expenses you can claim if you’re self-employed"
+  },
+  {
+      "title": "Winter Fuel Payment",
+      "slug": "winter-fuel-payment",
+      "state": "scheduled_for_publishing",
+      "assignee": "Esther Woods",
+      "version_number": 141,
+      "format": "Guide",
+      "id": "689f36119ee96b00179753ea",
+      "scheduled": "12:01am, 1 Nov 2025",
+      "language": "en",
+      "meta_tag_description": "Winter Fuel Payment helps older people with their heating bills - claim form, how much you get, eligibility"
   },
   {
       "title": "Marriage Allowance",
@@ -465,7 +477,7 @@
       "version_number": 71,
       "format": "Answer",
       "id": "65ba742d81aa290010cf5cab",
-      "scheduled": "9:00am, 20 October 2025",
+      "scheduled": "9:00am, 20 Oct 2025",
       "language": "en",
       "meta_tag_description": "Find out what benefits you could get, how much you could get and how to claim"
 
@@ -478,7 +490,7 @@
       "version_number": 7,
       "format": "Answer",
       "id": "65ba74a281aa290010cf5cae",
-      "scheduled": "12:01am, 12 December 2025",
+      "scheduled": "12:01am, 12 Dec 2025",
       "language": "cy",
       "meta_tag_description": "Darganfyddwch pa fudd-daliadau gallwch gael, faint gallwch gael a sut i wneud cais"
   },

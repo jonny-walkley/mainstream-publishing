@@ -100,7 +100,7 @@ window.GOVUKPrototypeKit.documentReady(() => {
 
 
 
-    data.forEach(({ title, assignee, state, format, version_number, id, slug, language, important_note, time_in_queue, reviewer }, index) => {
+    data.forEach(({ title, assignee, state, format, version_number, id, slug, language, important_note, time_in_queue, reviewer, scheduled, sent_out }, index) => {
      
       assignees.push(assignee);
       let newRow = firstRow.cloneNode(true);
@@ -146,8 +146,13 @@ window.GOVUKPrototypeKit.documentReady(() => {
         if (assignee == "Esther Woods") {
           if (state !== "published" && state !== "archived") {
             newRow.querySelector('.title').innerHTML = `<a href="content-item-edit?id=${id}&content-type=${format}&status=${status}" class="govuk-link govuk-link--no-visited-state">${title}</a>`
+            if (status == "Fact check sent") {
+              newRow.querySelector('.title').innerHTML += `<span class="publication-list-dynamic-text">Sent out: ${sent_out}</span>`;
+            } else if (status == "Scheduled") {
+              newRow.querySelector('.title').innerHTML += `<span class="publication-list-dynamic-text">Scheduled for: ${scheduled}</span>`;
+            }
             newRow.querySelector('.state').innerHTML = `<strong class="govuk-tag govuk-tag--${tagColour}">${status}</strong>`
-            newRow.querySelector('.format').innerText = format  
+            newRow.querySelector('.format').innerText = format
             firstRow.parentNode.append(newRow)
           }
         }

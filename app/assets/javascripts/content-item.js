@@ -47,49 +47,28 @@
         }
 
         // --- Overall ---
-
-        if (currentPage !== "content-item-2i" && currentPage !== "content-item-add-edition-note" && currentPage !== "content-item-important-note" ) {
         
-          // Set caption as content type 
-          document.querySelector('.govuk-caption-xl').innerHTML = `${format}`
+        // Set caption as content type 
+        document.querySelector('.govuk-caption-xl').innerHTML = `${format}`
 
-          // Set h1 heading as publication title
-          document.querySelector('.govuk-heading-xl').innerHTML = `${title}`
+        // Set h1 heading as publication title
+        document.querySelector('.govuk-heading-xl').innerHTML = `${title}`
 
-          // Set edition number and status
-          document.querySelector('#edition').innerHTML = `${version_number}<strong class="govuk-tag govuk-tag--${tagColour} govuk-!-margin-left-2">${status}</strong>`
+        // Set edition number and status
+        document.querySelector('#edition').innerHTML = `${version_number}<strong class="govuk-tag govuk-tag--${tagColour} govuk-!-margin-left-2">${status}</strong>`
 
-          // Set assigned to
-          document.querySelector('#assignee').innerHTML = `${assignee}`
+        // Set assigned to
+        document.querySelector('#assignee').innerHTML = `${assignee}`
 
-          // Set sub navigation page links
-          const subNav = document.getElementsByClassName('moj-sub-navigation__link');
-          const subNavArray = Array.from(subNav);
+        // Set sub navigation page links
+        const subNav = document.getElementsByClassName('moj-sub-navigation__link');
+        const subNavArray = Array.from(subNav);
 
-          subNavArray.forEach(navItem => {
-            navItem.href += `?id=${id}&content-type=${format}&status=${status}`;
-          });
+        subNavArray.forEach(navItem => {
+          navItem.href += `?id=${id}&content-type=${format}&status=${status}`;
+        });
         
-        } else {
-
-          // Set caption as publication title 
-          document.querySelector('.govuk-caption-xl').innerHTML = `${title}`
-
-          // Set cancel link to go back to the previous page
-
-          const lastPageUrl = document.referrer;
-          let backLinkPage = "content-item-";
-
-          if (lastPageUrl.includes('edit')) {
-            backLinkPage += `edit`
-          } else {
-            backLinkPage += `history-and-notes`
-          }
-
-          document.querySelector('#cancel-link').href = `${backLinkPage}?id=${id}&content-type=${format}&status=${status}`
-        
-        }
-
+  
         // --- Page-specifc ---
 
         switch (currentPage) {
@@ -116,6 +95,13 @@
               if (body) {
                 document.querySelector('#body').value = body;
               }
+            }
+
+            // Set action links if status is 'Ready'
+            if (status == "Ready") {
+              document.querySelector('#fact-check').href = `content-item-fact-check?id=${id}&content-type=${format}&status=${status}`;
+              document.querySelector('#schedule').href = `content-item-schedule?id=${id}&content-type=${format}&status=${status}`;
+              document.querySelector('#publish').href = `content-item-publish?id=${id}&content-type=${format}&status=${status}`;
             }
             
             break;
@@ -234,23 +220,7 @@
 
             break;
 
-            case "content-item-important-note":
-              
-              if (important_note) {
-                document.querySelector('.govuk-heading-xl').innerHTML = "Update important note";
-                document.querySelector('#important-note').value = important_note;
-                document.querySelector('#important-note-button').innerHTML = "Update important note"
-              }
-            
-              break;
-
         }
-
-
-
-
-
-
 
 
 

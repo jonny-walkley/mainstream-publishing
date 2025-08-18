@@ -687,6 +687,7 @@
   </div>
 
   <div class="govuk-grid-column-one-third sticky options-sidebar">
+    {% from "govuk/components/button/macro.njk" import govukButton %}
     {% if data['status'] !== "Archived" %}
       <div class="actions-sidebar">
         <!-- <h3 class="govuk-heading-s">Actions</h3> -->
@@ -697,8 +698,6 @@
 
         {% if (data['status'] == "Draft") or (data['status'] == "Amends needed") %}
 
-          {% from "govuk/components/button/macro.njk" import govukButton %}
-
           {{ govukButton({
             id: "send-to-2i",
             text: "2i",
@@ -706,12 +705,27 @@
             href: "#"
           }) }}
 
-        {% elif data['status'] == "In review" %}
+        {% elif data['status'] == "In 2i" %}
           <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button" id="skip">Skip 2i</button>
         {% elif data['status'] == "Ready" %}
-          <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Fact check</button>
-          <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Schedule</button>
-          <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Publish</button>
+          {{ govukButton({
+            id: "fact-check",
+            text: "Fact check",
+            classes: "govuk-button--secondary wide",
+            href: "#"
+          }) }}
+          {{ govukButton({
+            id: "schedule",
+            text: "Schedule",
+            classes: "govuk-button--secondary wide",
+            href: "#"
+          }) }}
+          {{ govukButton({
+            id: "publish",
+            text: "Publish",
+            classes: "govuk-button--secondary wide",
+            href: "#"
+          }) }}
         {% elif data['status'] == "Scheduled" %}
           <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Cancel schedule</button>
           <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Publish now</button>
