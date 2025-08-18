@@ -79,19 +79,7 @@ p.compare-edition {
   float: right;
 }
 
-.fact-check > tbody > tr:last-child  {
-  th, td {
-    border: none;
-  }
-}
-
-.queue-2i > tbody > tr:last-child  {
-  th, td {
-    border: none;
-  }
-}
-
-table .important-note, table {
+table .important-note {
   margin: 5px 0;
 }
 
@@ -105,50 +93,66 @@ table {
   }
 }
 
-.all-publications, .fact-check {
+.all-publications, .queue-2i, .fact-check {
   tbody th, thead tr :nth-child(1) {
     // Title
     width: 40% !important;
   }
 }
 
-.queue-2i {
-  tbody th, thead tr :nth-child(1) {
-    // Title
-    width: 45% !important;
-  }
-}
-
-.queue-2i {
-  tbody th, thead tr :nth-child(5) {
-    // 2i reviewer
-    width: 10% !important;
-  }
-}
-
 .all-publications thead tr {
-
   // Status
   :nth-child(2) {
     width: 15%;
   }
-
   // Updated
   :nth-child(3) {
     width: 15%;
   }
-
   // Assigned to
   :nth-child(4) {
     width: 20%;
   }
-
   // Content type
   :nth-child(5) {
     width: 10%;
   }
-
 }
+
+.queue-2i {
+  // Content type
+  tbody th, thead tr :nth-child(2) {
+    width: 15%;
+  }
+  // Assigned to
+  tbody th, thead tr :nth-child(3) {
+    width: 15%;
+  }
+  // Time in queue
+  tbody th, thead tr :nth-child(4) {
+    width: 15%;
+  }
+  // 2i reviewer
+  tbody th, thead tr :nth-child(5) {
+    width: 15%;
+  }
+}
+
+.fact-check {
+  // Response / Sent out
+  tbody th, thead tr :nth-child(2) {
+    width: 15%;
+  }
+}
+
+// Remove border from last table item
+// .queue-2i, .fact-check {
+//   tbody > tr:last-child {
+//     th, td {
+//       border: none;
+//     }
+//   }
+// }
 
 #item-count, .item-count {
   font-size: 16px;
@@ -156,6 +160,12 @@ table {
   color: #505a5f;
 }
 
+// All publications page
+#item-count {
+  margin-bottom: 10px;
+}
+
+// 2i queue and fact check pages
 .item-count {
   font-size: 16px;
   font-weight: 400;
@@ -354,7 +364,7 @@ a.delete {
 }
 
 .govuk-table__row th  {
-        width: 200px;
+        // width: 200px;
         text-align: left;
     }
 

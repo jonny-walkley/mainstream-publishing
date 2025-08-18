@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  {{ data['contentType'] }} - New content item - {{ serviceName }} - GOV.UK Prototype Kit
+  {{ data['contentType'] }} - New content - {{ serviceName }} - GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,7 +16,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
   
-    <span class="govuk-caption-xl">New content item</span>
+    <span class="govuk-caption-xl">New content</span>
     <h1 class="govuk-heading-xl">{{ data['contentType'] }}</h1>
 
     <form method="post" action="">
@@ -86,7 +86,7 @@
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Create content item"
+          text: "Create content"
         }) }}
         <a class="govuk-link govuk-link--no-visited-state" href="#">Cancel</a>
       </div>
