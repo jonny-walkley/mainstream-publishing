@@ -138,9 +138,6 @@ window.GOVUKPrototypeKit.documentReady(() => {
 
       let status = state.toLowerCase().replace(/\b\w/g, s => s.toUpperCase()).replaceAll("_", " ")
 
-
-
-
       if (currentPage == "my-content") {
 
         if (assignee == "Esther Woods") {
@@ -148,6 +145,8 @@ window.GOVUKPrototypeKit.documentReady(() => {
             newRow.querySelector('.title').innerHTML = `<a href="content-item-edit?id=${id}&content-type=${format}&status=${status}" class="govuk-link govuk-link--no-visited-state">${title}</a>`
             if (status == "Fact check sent") {
               newRow.querySelector('.title').innerHTML += `<span class="publication-list-dynamic-text">Sent out: ${sent_out}</span>`;
+            } else if (status == "Fact check received") {
+              // newRow.querySelector('.title').innerHTML += `<span class="publication-list-dynamic-text"><a href="content-item-history-and-notes?id=${id}&content-type=${format}&status=${status}#fact-check-response" class="govuk-link govuk-link--no-visited-state">View response</a></span>`;
             } else if (status == "Scheduled") {
               newRow.querySelector('.title').innerHTML += `<span class="publication-list-dynamic-text">Scheduled for: ${scheduled}</span>`;
             }

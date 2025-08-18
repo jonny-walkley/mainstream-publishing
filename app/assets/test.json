@@ -212,18 +212,6 @@
       "meta_tag_description": "Getting a faster decision on a visa or settlement application; priority service, super priority service; waiting times; how to check if you’re eligible"
   },
   {
-      "title": "Student finance for undergraduates",
-      "slug": "student-finance",
-      "state": "fact_check_sent",
-      "assignee": "Esther Woods",
-      "version_number": 135,
-      "format": "Guide",
-      "id": "68371e2a99242e001779f7f5",
-      "sent_out": "4 days ago",
-      "language": "en",
-      "meta_tag_description": "Student finance - student loans or student grants for tuition fees and living costs, extra help, student loan repayments."
-  },
-  {
       "title": "Health and Care Worker visa",
       "slug": "health-care-worker-visa",
       "state": "fact_check_received",
@@ -233,6 +221,17 @@
       "id": "68765420cba10400249a199f",
       "language": "en",
       "meta_tag_description": "Apply for a Health and Care Worker visa (formerly a Tier 2 Health and Care visa) if you’re a medical professional who’s been offered a job with the NHS, an NHS supplier or in adult social care - eligibility, fees, documents, extend or switch, bring your family, taking on additional work."
+  },
+  {
+      "title": "Pay your Inheritance Tax bill",
+      "slug": "paying-inheritance-tax",
+      "state": "fact_check_received",
+      "assignee": "Esther Woods",
+      "version_number": 54,
+      "format": "Guide",
+      "id": "689b085bf89d7800176ba509",
+      "language": "en",
+      "meta_tag_description": "How to pay Inheritance Tax: get a reference number, payment methods, use the deceased's bank account, National Savings and Investments, government stock, yearly instalments."
   },
   {
       "title": "Expenses if you’re self-employed",
@@ -632,6 +631,18 @@
       "time_in_queue": "2 days",
       "reviewer": "unclaimed",
       "meta_tag_description": "Grant Mamolaeth Cychwyn Cadarn – taliad o £500 i helpu gyda chostau babi newydd, cymhwyster, gwneud cais, ffurflen gais SF100W"
+  },
+  {
+      "title": "Student finance for undergraduates",
+      "slug": "student-finance",
+      "state": "fact_check_sent",
+      "assignee": "Esther Woods",
+      "version_number": 135,
+      "format": "Guide",
+      "id": "68371e2a99242e001779f7f5",
+      "sent_out": "4 days ago",
+      "language": "en",
+      "meta_tag_description": "Student finance - student loans or student grants for tuition fees and living costs, extra help, student loan repayments."
   },
   {
       "title": "Report a road spillage",
