@@ -90,6 +90,17 @@
       "meta_tag_description": "A deed poll recognises a change of name of an adult or child - make your own, use official forms, or get one through a specialist agency or solicitor."
   },
   {
+      "title": "Check if a website can legally sell medicines online in Northern Ireland",
+      "slug": "check-medicines-online",
+      "state": "fact_check_received",
+      "assignee": "Caroline Atkinson",
+      "version_number": 5,
+      "format": "Transaction",
+      "id": "68836da46fa95d00242d3cbb",
+      "language": "en",
+      "meta_tag_description": "Check if someone selling medicines online in Northern Ireland is allowed to do so by the Medicines and Healthcare products Regulatory Agency (MHRA)"
+  },
+  {
       "title": "Pay for UK healthcare as part of your immigration application",
       "slug": "healthcare-immigration-application",
       "state": "fact_check_sent",
@@ -257,6 +268,19 @@
       "meta_tag_description": "Winter Fuel Payment helps older people with their heating bills - claim form, how much you get, eligibility"
   },
   {
+      "title": "Benefits calculators",
+      "slug": "benefits-calculators",
+      "state": "scheduled_for_publishing",
+      "assignee": "Anna Woods",
+      "version_number": 71,
+      "format": "Answer",
+      "id": "65ba742d81aa290010cf5cab",
+      "scheduled": "9:00am, 20 Oct 2025",
+      "language": "en",
+      "meta_tag_description": "Find out what benefits you could get, how much you could get and how to claim"
+
+  },
+  {
       "title": "Marriage Allowance",
       "slug": "marriage-allowance",
       "state": "in_2i",
@@ -291,6 +315,17 @@
       "id": "65ba3a3da16590001144c316",
       "language": "en",
       "meta_tag_description": "How to contact the Court Funds Office - email, phone, address, complaints"
+  },
+  {
+      "title": "Going on short trips in Europe",
+      "slug": "visiting-country-in-europe",
+      "state": "fact_check_received",
+      "assignee": "Caroline Atkinson",
+      "version_number": 1,
+      "format": "Answer",
+      "id": "6194e2c5d3bf7f73fd36158b",
+      "language": "en",
+      "meta_tag_description": "Check what you should consider when going on short trips in Europe"
   },
   {
       "title": "Find and claim money in a court account",
@@ -467,19 +502,6 @@
       "id": "65ba726816ba910010a99de5",
       "language": "cy",
       "meta_tag_description": "Darganfyddwch pa fudd-daliadau gallwch gael, faint gallwch gael a sut i wneud cais"
-  },
-  {
-      "title": "Benefits calculators",
-      "slug": "benefits-calculators",
-      "state": "scheduled_for_publishing",
-      "assignee": "Anna Woods",
-      "version_number": 71,
-      "format": "Answer",
-      "id": "65ba742d81aa290010cf5cab",
-      "scheduled": "9:00am, 20 Oct 2025",
-      "language": "en",
-      "meta_tag_description": "Find out what benefits you could get, how much you could get and how to claim"
-
   },
   {
       "title": "Cyfrifiannell Budd-daliadau",
