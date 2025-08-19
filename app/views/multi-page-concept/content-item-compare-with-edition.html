@@ -1,0 +1,158 @@
+{% extends "layouts/main-rebrand.html" %}
+
+{% block pageTitle %}
+  Compare with Edition - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    classes: "govuk-!-font-weight-bold",
+    navigationClasses: "align-right",
+    navigation: [
+      {
+          href: "#1",
+          text: "Switch app"
+      }
+    ]
+  }) }}
+
+  {{ govukServiceNavigation({
+    serviceUrl: "#",
+    navigation: [
+    {
+      href: "my-content",
+      text: "My content"
+    },
+    {
+      href: "all-publications",
+      text: "All publications"
+    },
+    {
+      href: "2i-queue",
+      text: "2i queue"
+    },
+    {
+      href: "fact-check",
+      text: "Fact check"
+    },
+    {
+      href: "new-content",
+      text: "New content"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    id: "back-link",
+    text: "Back to History and notes"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl"></span>
+    <h1 class="govuk-heading-xl">Compare editions</h1>
+
+    <div class="diff-container">
+      <div class="diff">
+        <ul class="govuk-list">
+          <li class="unchanged"># Overview</li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="unchanged">You must tell your neighbours if you want to carry out any building work near or on your shared property boundary, or ‘party wall’, in England and Wales.</li>
+          <li class="unchanged">Party walls stand on the land of 2 or more owners and either:</li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="unchanged">- form part of a building</li>
+          <li class="del"><del>- do<strong>n’</strong>t form part of a building, such as a garden wall (not wooden fences)</del></li>
+          <li class="ins"><ins>- do<strong> no</strong>t form part of a building, such as a garden wall (not wooden fences)</ins></li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="unchanged">Walls on one owner’s land used by other owners (2 or more) to separate their buildings are also party walls.</li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="unchanged">##Party structures</li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="unchanged">Walls on one owner’s land used by other owners (2 or more) to separate their buildings are also party walls.</li>
+          <li class="del"><del> You can also have a ‘party structure’. This could be a floor or other structure that separates buildings or parts of buildings with different owners, <strong>eg</strong> flats
+          </del></li>
+          <li class="ins"><ins>-You can also have a ‘party structure’. This could be a floor or other structure that separates buildings or parts of buildings with different owners, <strong>for example</strong> flats. </ins></li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="unchanged">Party wall agreements are different from [planning permission](/planning-permission-england-wales) or [building regulations approval](/building-regulations-approval).</li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="del"><del> ^There are different rules in <strong>[</strong>Scotland](http://scotland.shelter.org.uk/get_advice/advice_topics/neighbourhood_issues/boundary_disputes)<strong> and [Northern Ireland](http://www.housingadviceni.org/your-neighbourhood/problems-with-neighbours/boundary-disputes.html)</strong>.^
+          </del></li>
+          <li class="ins"><ins>-^There are different <strong>[</strong>rules in Scotland](http://scotland.shelter.org.uk/get_advice/advice_topics/neighbourhood_issues/boundary_disputes).^
+          </ins></li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="unchanged"># Work you must tell your neighbour about</li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="unchanged">- build on or at the boundary of your 2 properties</li>
+          <li class="unchanged">- work on an existing party wall or party structure</li>
+          <li class="unchanged">- dig below and near to the foundation level of their property</li>
+        </ul>
+      </div>
+    </div>
+    
+  </div> 
+</div>
+
+{% endblock %}
+
+{% block footer %}
+
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{{ govukFooter({
+  navigation: [
+    {
+      title: "Reports, downtime and users",
+      width: "one-third",
+      columns: 1,
+      items: [
+        {
+          href: "#",
+          text: "CSV reports"
+        },
+        {
+          href: "#",
+          text: "Downtime messages"
+        },
+        {
+          href: "#",
+          text: "Search users"
+        }
+      ]
+    },
+    {
+      title: "Support and feedback",
+      width: "two-thirds",
+      items: [
+        {
+          href: "#",
+          text: "Raise a support request"
+        },
+        {
+          href: "#",
+          text: "Check if publishing apps are working or if there’s any maintenance planned"
+        },
+        {
+          href: "#",
+          text: "How to write, publish, and improve content"
+        }
+      ]
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/content-item-actions.js"></script>
+{% endblock %}

@@ -159,7 +159,16 @@
             }
 
             document.querySelector('#current-edition').innerHTML += `${version_number}`
-            document.querySelector('#current-edition-compare').innerHTML += `${version_number-1}`
+
+            const compareLink = document.querySelector('#current-edition-compare');
+
+            if (version_number > 1) {
+              compareLink.innerHTML += `${version_number-1}`
+              compareLink.href = `content-item-compare-with-edition?id=${id}&content-type=${format}&status=${status}`
+            } else {
+              compareLink.style.display = 'none';
+              document.querySelector('#first-event').innerHTML = "New content";
+            }
 
             if (status !== "Fact check received") {
               document.querySelector('#fact-check-response').style.display = 'none';

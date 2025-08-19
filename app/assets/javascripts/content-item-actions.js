@@ -28,7 +28,13 @@
           backLinkPage += `history-and-notes`
         }
 
-        document.querySelector('#cancel-link').href = `${backLinkPage}?id=${id}&content-type=${format}&status=${status}`
+        const cancelLink = document.querySelector('#cancel-link');
+
+        if (cancelLink) {
+          cancelLink.href = `${backLinkPage}?id=${id}&content-type=${format}&status=${status}`
+        } else {
+          document.querySelector('.govuk-back-link').href = `${backLinkPage}?id=${id}&content-type=${format}&status=${status}`
+        }
         
         // --- Page-specifc ---
 
@@ -42,6 +48,12 @@
               document.querySelector('#important-note-button').innerHTML = "Update important note"
             }
             
+            break;
+
+          case "content-item-compare-with-edition":
+              
+            document.querySelector('.govuk-heading-xl').innerHTML += ` ${version_number -1} and ${version_number}`;
+
             break;
 
         }
