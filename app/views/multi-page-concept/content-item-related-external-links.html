@@ -51,7 +51,7 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-two-thirds chapter-edit-form">
 
     <span class="govuk-caption-xl"></span>
     <h1 class="govuk-heading-xl"></h1>
@@ -164,7 +164,11 @@
   {% if (data['status'] !== "Scheduled") and (data['status'] !== "Published") and (data['status'] !== "Archived") %}
     <div class="govuk-grid-column-one-third sticky options-sidebar">
         <div class="actions-sidebar">
-          <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">Save</button>
+          <button type="submit" data-prevent-double-click="true" class="govuk-button wide govuk-button--save govuk-button--progress" data-module="govuk-button">
+            <span class="govuk-button__icon">
+              <span class="govuk-button__text">Save</span>
+            </span>
+          </button>
         </div>
     </div>
   {% endif %}
@@ -223,4 +227,5 @@
 
 {% block pageScripts %}
   <script src="/public/javascripts/content-item.js"></script>
+  <script src="/public/javascripts/save-feedback.js"></script>
 {% endblock %}

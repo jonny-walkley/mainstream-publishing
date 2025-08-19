@@ -114,7 +114,7 @@
     <h2 class="govuk-heading-l">Admin</h2>
   </div>
 
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-two-thirds  chapter-edit-form">
 
     {% if (data['status'] == "Scheduled") or (data['status'] == "Published") or (data['status'] == "Archived") %}
 
@@ -156,10 +156,11 @@
 
       {% if (data['status'] !== "Scheduled") and (data['status'] !== "Published") and (data['status'] !== "Archived") %}
     
-        {{ govukButton({
-          text: "Save",
-          classes: "govuk-button wide"
-        }) }}
+        <button type="submit" data-prevent-double-click="true" class="govuk-button wide govuk-button--save govuk-button--progress" data-module="govuk-button">
+          <span class="govuk-button__icon">
+            <span class="govuk-button__text">Save</span>
+          </span>
+        </button>
 
       {% endif %}
     
@@ -225,4 +226,5 @@
 
 {% block pageScripts %}
   <script src="/public/javascripts/content-item.js"></script>
+  <script src="/public/javascripts/save-feedback.js"></script>
 {% endblock %}
