@@ -2,7 +2,9 @@ var govukButtonSave = document.querySelector('.govuk-button--save')
 var chapterEditForm = document.querySelector('.chapter-edit-form')
 var buttonStateDelay = 1000
 
-setUpPage()
+if (govukButtonSave) {
+  setUpPage()
+}
 
 function setUpPage() {
   govukButtonSave.addEventListener('click', changeButtonState)

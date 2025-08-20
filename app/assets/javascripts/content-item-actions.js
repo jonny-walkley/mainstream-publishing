@@ -28,6 +28,8 @@
           backLinkPage += `history-and-notes`
         } else if (lastPageUrl.includes('admin')) {
           backLinkPage += `admin`
+        } else {
+          backLinkPage += `edit`
         }
 
         const cancelLink = document.querySelector('#cancel-link');
