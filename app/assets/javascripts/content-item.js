@@ -203,8 +203,8 @@
                 <div class="govuk-accordion__section">
                   <div class="govuk-accordion__section-header">
                     <h2 class="govuk-accordion__section-heading">
-                      <button type="button" aria-controls="accordion-history-and-notes-content-3" class="govuk-accordion__section-button" aria-expanded="false" aria-label="Edition 1 , Show this section">
-                        <span class="govuk-accordion__section-heading-text" id="accordion-history-and-notes-heading-3">
+                      <button type="button" aria-controls="accordion-history-and-notes-content-${i}" class="govuk-accordion__section-button" aria-expanded="false" aria-label="Edition ${i} , Show this section">
+                        <span class="govuk-accordion__section-heading-text" id="accordion-history-and-notes-heading-${i}">
                           <span class="govuk-accordion__section-heading-text-focus">
                             Edition ${i}
                           </span>
@@ -219,7 +219,7 @@
                       </button>
                     </h2>
                   </div>
-                  <div id="accordion-history-and-notes-content-3" class="govuk-accordion__section-content" hidden="until-found">
+                  <div id="accordion-history-and-notes-content-${i}" class="govuk-accordion__section-content" hidden="until-found">
                     <p class="govuk-body">To-do.</p>
                   </div>
                 </div>

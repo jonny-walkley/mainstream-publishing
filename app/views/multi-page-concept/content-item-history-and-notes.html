@@ -276,6 +276,12 @@
       {% elif data['status'] == "In 2i" %}
         <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button" id="skip">Skip 2i</button>
       {% endif %}
+
+      {% if data['status'] !== "Published" %}
+        <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">Preview (opens in new tab)</a></p>
+      {% else %}
+        <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">View on GOV.UK (opens in new tab)</a></p>
+      {% endif %}
     
     </div>
   </div>
