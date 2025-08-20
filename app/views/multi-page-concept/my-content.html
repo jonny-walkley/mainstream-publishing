@@ -53,66 +53,6 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <!-- <h1 class="govuk-heading-l">My content</h1> -->
-
-    <!-- <table class="govuk-table govuk-table--small-text-until-tablet">
-      <caption class="govuk-table__caption govuk-table__caption--l govuk-!-margin-bottom-7">My content</caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Title</th>
-          <th scope="col" class="govuk-table__header">Status</th>
-          <th scope="col" class="govuk-table__header">Updated</th>
-          <th scope="col" class="govuk-table__header">Content type</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="content-item-edit?title=Visit+national+parks,+nature+reserves+and+green+spaces&content-type=Answer" class="govuk-link--no-visited-state" style="font-weight: 600;">Visit national parks, nature reserves and green spaces</a>
-            <span style="display: block;" class="govuk-!-padding-bottom-4">/find-nature-reserves-national-parks-and-greenspaces</span>
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--yellow">Draft</strong>
-          </td>
-          <td class="govuk-table__cell">3 minutes ago</td>
-          <td class="govuk-table__cell">Answer</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="#" class="govuk-link--no-visited-state" style="font-weight: 600;">Pay the Dartford Crossing charge (Dart Charge)</a>
-            <span style="display: block;" class="govuk-!-padding-bottom-4">/pay-dartford-crossing-charge</span>
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--light-blue">2i needed</strong>
-          </td>
-          <td class="govuk-table__cell">8 minutes ago</td>
-          <td class="govuk-table__cell">Guide</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="#" class="govuk-link--no-visited-state" style="font-weight: 600;">Report illegal fishing in England</a>
-            <span style="display: block;" class="govuk-!-padding-bottom-4">/report-illegal-fishing-in-england-charge</span>
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--pink">Fact check sent</strong>
-          </td>
-          <td class="govuk-table__cell">2 days ago</td>
-          <td class="govuk-table__cell">Answer</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="#" class="govuk-link--no-visited-state" style="font-weight: 600;">Find your lost theory test pass certificate number</a>
-            <span style="display: block;" class="govuk-!-padding-bottom-4">/find-theory-test-pass-number</span>
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--turquoise">Scheduled</strong>
-          </td>
-          <td class="govuk-table__cell">5 days ago</td>
-          <td class="govuk-table__cell">Answer</td>
-        </tr>
-      </tbody>
-    </table> -->
-    
     <h1 class="govuk-heading-xl">
       My content
       <!-- <span id="item-count"></span> -->
@@ -158,54 +98,6 @@
 
   </div>
 </div>
-
-{% endblock %}
-
-{% block footer %}
-
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
-
-{{ govukFooter({
-  navigation: [
-    {
-      title: "Reports, downtime and users",
-      width: "one-third",
-      columns: 1,
-      items: [
-        {
-          href: "#",
-          text: "CSV reports"
-        },
-        {
-          href: "#",
-          text: "Downtime messages"
-        },
-        {
-          href: "#",
-          text: "Search users"
-        }
-      ]
-    },
-    {
-      title: "Support and feedback",
-      width: "two-thirds",
-      items: [
-        {
-          href: "#",
-          text: "Raise a support request"
-        },
-        {
-          href: "#",
-          text: "Check if publishing apps are working or if there’s any maintenance planned"
-        },
-        {
-          href: "#",
-          text: "How to write, publish, and improve content"
-        }
-      ]
-    }
-  ]
-}) }}
 
 {% endblock %}
 

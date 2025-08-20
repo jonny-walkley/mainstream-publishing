@@ -55,7 +55,6 @@
 
     <h1 class="govuk-heading-xl">
       All publications
-      <!-- <span id="item-count"></span> -->
     </h1>
 
     <!-- Filter -->
@@ -201,7 +200,6 @@
           text: "Apply filters"
         }) }}
         <a id="clear-filters" class="govuk-link govuk-link--no-visited-state" href="/multi-page-concept/all-publications"></a>
-        <!-- <a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16" href="/">Clear filters</a> -->
       </div>
     </form>
 
@@ -211,7 +209,6 @@
 
     <!-- End filter -->
 
-    <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible big-divider">      -->
     {% from "govuk/components/table/macro.njk" import govukTable %}
     {{ govukTable({
       firstCellIsHeader: true,
@@ -257,54 +254,6 @@
     }) }}
   </div>
 </div>
-
-{% endblock %}
-
-{% block footer %}
-
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
-
-{{ govukFooter({
-  navigation: [
-    {
-      title: "Reports, downtime and users",
-      width: "one-third",
-      columns: 1,
-      items: [
-        {
-          href: "#",
-          text: "CSV reports"
-        },
-        {
-          href: "#",
-          text: "Downtime messages"
-        },
-        {
-          href: "#",
-          text: "Search users"
-        }
-      ]
-    },
-    {
-      title: "Support and feedback",
-      width: "two-thirds",
-      items: [
-        {
-          href: "#",
-          text: "Raise a support request"
-        },
-        {
-          href: "#",
-          text: "Check if publishing apps are working or if there’s any maintenance planned"
-        },
-        {
-          href: "#",
-          text: "How to write, publish, and improve content"
-        }
-      ]
-    }
-  ]
-}) }}
 
 {% endblock %}
 

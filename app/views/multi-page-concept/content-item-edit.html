@@ -480,9 +480,6 @@
           <label class="govuk-label govuk-label--s" for="more-information">
             More information (optional)
           </label>
-          <!-- <div id="more-information-hint" class="govuk-hint">
-            This will appear under a ‘Before you start’ heading or in a ‘More information’ tab
-          </div> -->
           <textarea class="govuk-textarea" id="more-information" name="moreInformation" rows="16"></textarea>
         </div>
 
@@ -602,34 +599,6 @@
 
       {% endif %}
 
-    <!-- <div class="line">
-      &nbsp;
-    </div> -->
-
-    <!-- Move 'Is this beta content' to admin page? -->
-
-    <!-- {{ govukRadios({
-      classes: "govuk-radios--inline",
-      name: "IsThisBetaContent",
-      fieldset: {
-        legend: {
-          text: "Is this beta content?",
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      items: [
-        {
-          value: "yes",
-          text: "Yes"
-        },
-        {
-          value: "no",
-          text: "No",
-          checked: true
-        }
-      ]
-    }) }} -->
-
     <!-- Move 'Add a public change note' to history and notes? -->
 
            
@@ -687,7 +656,6 @@
     {% from "govuk/components/button/macro.njk" import govukButton %}
     {% if data['status'] !== "Archived" %}
       <div class="actions-sidebar">
-        <!-- <h3 class="govuk-heading-s">Actions</h3> -->
 
         {% if (data['status'] !== "Scheduled") and (data['status'] !== "Published") %}
         <button type="submit" data-prevent-double-click="true" class="govuk-button wide govuk-button--save govuk-button--progress" data-module="govuk-button">
@@ -745,54 +713,6 @@
   </div>
 
 </div>
-
-{% endblock %}
-
-{% block footer %}
-
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
-
-{{ govukFooter({
-  navigation: [
-    {
-      title: "Reports, downtime and users",
-      width: "one-third",
-      columns: 1,
-      items: [
-        {
-          href: "#",
-          text: "CSV reports"
-        },
-        {
-          href: "#",
-          text: "Downtime messages"
-        },
-        {
-          href: "#",
-          text: "Search users"
-        }
-      ]
-    },
-    {
-      title: "Support and feedback",
-      width: "two-thirds",
-      items: [
-        {
-          href: "#",
-          text: "Raise a support request"
-        },
-        {
-          href: "#",
-          text: "Check if publishing apps are working or if there’s any maintenance planned"
-        },
-        {
-          href: "#",
-          text: "How to write, publish, and improve content"
-        }
-      ]
-    }
-  ]
-}) }}
 
 {% endblock %}
 

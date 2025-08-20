@@ -130,16 +130,6 @@
 
     </div>
 
-    <!-- <h3 class="govuk-heading-m" id="current-edition">Edition </h3> -->
-
-    <!-- <div id="history-and-notes" class="govuk-!-margin-bottom-6"> -->
-
-    <!-- <p class="govuk-body">
-      <a href="#" class="govuk-link--no-visited-state compare-edition" id="current-edition-compare">Compare with Edition </a>
-    </p> -->
-  
-  <!-- </div> -->
-
     {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
 
     {{ govukAccordion({
@@ -284,54 +274,6 @@
   </div>
 
 </div>
-
-{% endblock %}
-
-{% block footer %}
-
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
-
-{{ govukFooter({
-  navigation: [
-    {
-      title: "Reports, downtime and users",
-      width: "one-third",
-      columns: 1,
-      items: [
-        {
-          href: "#",
-          text: "CSV reports"
-        },
-        {
-          href: "#",
-          text: "Downtime messages"
-        },
-        {
-          href: "#",
-          text: "Search users"
-        }
-      ]
-    },
-    {
-      title: "Support and feedback",
-      width: "two-thirds",
-      items: [
-        {
-          href: "#",
-          text: "Raise a support request"
-        },
-        {
-          href: "#",
-          text: "Check if publishing apps are working or if there’s any maintenance planned"
-        },
-        {
-          href: "#",
-          text: "How to write, publish, and improve content"
-        }
-      ]
-    }
-  ]
-}) }}
 
 {% endblock %}
 
