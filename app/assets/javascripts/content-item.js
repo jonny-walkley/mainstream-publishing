@@ -229,6 +229,17 @@
 
             break;
 
+          case "content-item-admin":
+
+            console.log(status)
+
+            if (status == "Published") {
+              console.log("yes")
+              document.querySelector('#unpublish').href = `content-item-unpublish?id=${id}&content-type=${format}&status=${status}`
+            }
+
+            break;
+
         }
 
 

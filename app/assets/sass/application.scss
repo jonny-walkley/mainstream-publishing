@@ -386,7 +386,7 @@ height: 40px}
 }
 
 a.delete {
-    color: govuk-colour("red");
+    color: govuk-colour("red") !important;
 }
 .govuk-table {
     text-align: left;

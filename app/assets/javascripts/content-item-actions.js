@@ -24,8 +24,10 @@
 
         if (lastPageUrl.includes('edit')) {
           backLinkPage += `edit`
-        } else {
+        } else if (lastPageUrl.includes('history-and-notes')) {
           backLinkPage += `history-and-notes`
+        } else if (lastPageUrl.includes('admin')) {
+          backLinkPage += `admin`
         }
 
         const cancelLink = document.querySelector('#cancel-link');
@@ -46,6 +48,7 @@
               document.querySelector('.govuk-heading-xl').innerHTML = "Update important note";
               document.querySelector('#important-note').value = important_note;
               document.querySelector('#important-note-button').innerHTML = "Update important note"
+              document.querySelector('#delete-link').style.display = 'block';
             }
             
             break;
