@@ -115,11 +115,11 @@
 
     {% if (data['status'] == "Scheduled") or (data['status'] == "Published") or (data['status'] == "Archived") %}
 
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Is this beta content?</h3>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Is this beta content?</h3>
       <p class="govuk-body" id="is-this-beta-content">No</p>
 
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Add a public change note?</h3>
-      <p class="govuk-body" id="is-this-beta-content">No</p>
+      <!-- <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Add a public change note?</h3>
+      <p class="govuk-body" id="is-this-beta-content">No</p> -->
    
     {% else %}
 
@@ -216,6 +216,13 @@
           </span>
         </button>
 
+        {{ govukButton({
+          id: "add-a-public-change-note",
+          text: "Add a public change note",
+          classes: "govuk-button--secondary wide",
+          href: "#"
+        }) }}
+
       {% endif %}
     
 
@@ -235,13 +242,6 @@
         }) }}
 
       {% else %}
-
-        {{ govukButton({
-          id: "add-a-public-change-note",
-          text: "Add a public change note",
-          classes: "govuk-button--secondary wide",
-          href: "#"
-        }) }}
 
         {{ govukButton({
           text: "Delete this edition",
