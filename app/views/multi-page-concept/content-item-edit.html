@@ -101,7 +101,7 @@
         <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-tagging">Tagging</a></li>
         <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-metadata">Metadata</a></li>
         <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-history-and-notes">History and notes</a></li>
-        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-related-external-links">Related external links</a></li>
+        <!-- <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-related-external-links">Related external links</a></li> -->
         <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-admin">Admin</a></li>
       </ul>
     </nav>
@@ -114,11 +114,11 @@
   <div class="govuk-grid-column-two-thirds chapter-edit-form">
           
     {% if (data['status'] == "Scheduled") or (data['status'] == "Published") or (data['status'] == "Archived") %}
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Title</h3>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Title</h3>
       <p class="govuk-body" id="title"></p>
     {% else %}
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="title">Title</label>
+        <label class="govuk-label govuk-label--m" for="title">Title</label>
         <input class="govuk-input" id="title" name="title" type="text" spellcheck="false" value="">
       </div>
     {% endif %}
@@ -127,12 +127,12 @@
 
       {% if (data['status'] == "Scheduled") or (data['status'] == "Published") or (data['status'] == "Archived") %}
 
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Body</h3>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Body</h3>
 
       {% else %}
 
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--s" for="body">
+          <label class="govuk-label govuk-label--m" for="body">
             Body
           </label>
           <div id="body-hint" class="govuk-hint">
@@ -154,7 +154,7 @@
         <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
           <legend class="">
-            <label class="govuk-label govuk-label--s" for="promotions">Promotions</label>
+            <label class="govuk-label govuk-label--m" for="promotions">Promotions</label>
           </legend>
           <div id="promotions-hint" class="govuk-hint">
             Display a promotion above the satisfaction survey
@@ -252,19 +252,19 @@
       {% else %}
 
       <div class="published-state">
-        <h2 class="govuk-heading-s">LGSL code</h2>
+        <h2 class="govuk-heading-m">LGSL code</h2>
         <p id="lgsl-code"></p>
       </div>
 
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="LGIL-code">
+        <label class="govuk-label govuk-label--m" for="LGIL-code">
           LGIL code
         </label>
         <input class="govuk-input govuk-input--width-2 govuk-input--extra-letter-spacing" id="LGIL-code" name="LGILcode" type="text" spellcheck="false" value="" aria-describedby="LGIL-code-hint">
       </div>
 
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="introduction">
+        <label class="govuk-label govuk-label--m" for="introduction">
           Introduction
         </label>
         <div id="introduction-hint" class="govuk-hint">
@@ -276,14 +276,14 @@
       </div>
 
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="more-information">
+        <label class="govuk-label govuk-label--m" for="more-information">
           More information (optional)
         </label>
         <textarea class="govuk-textarea" id="more-information" name="moreInformation" rows="16"></textarea>
       </div>
 
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="what-you-need-to-know">
+        <label class="govuk-label govuk-label--m" for="what-you-need-to-know">
           What you need to know (optional)
         </label>
         <textarea class="govuk-textarea" id="what-you-need-to-know" name="whatYouNeedToKnow" rows="6"></textarea>
@@ -292,7 +292,7 @@
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="">
-            <label class="govuk-label govuk-label--s" for="northernIreland">Northern Ireland</label>
+            <label class="govuk-label govuk-label--m" for="northernIreland">Northern Ireland</label>
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
@@ -328,7 +328,7 @@
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="">
-            <label class="govuk-label govuk-label--s" for="scotland">Scotland</label>
+            <label class="govuk-label govuk-label--m" for="scotland">Scotland</label>
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
@@ -364,7 +364,7 @@
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="">
-            <label class="govuk-label govuk-label--s" for="wales">Wales</label>
+            <label class="govuk-label govuk-label--m" for="wales">Wales</label>
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
@@ -403,31 +403,31 @@
 
       {% if (data['status'] == "Scheduled") or (data['status'] == "Published") or (data['status'] == "Archived") %}
 
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Introduction</h3>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Introduction</h3>
       <p class="govuk-body" id=""></p>
 
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Start button text</h3>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Start button text</h3>
       <p class="govuk-body" id=""></p>
 
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Text below the start button (optional)</h3>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Text below the start button (optional)</h3>
       <p class="govuk-body" id=""></p>
 
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Link to start of transaction</h3>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Link to start of transaction</h3>
       <p class="govuk-body" id=""></p>
 
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">More information (optional)</h3>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">More information (optional)</h3>
       <p class="govuk-body" id=""></p>
 
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Other ways to apply (optional)</h3>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Other ways to apply (optional)</h3>
       <p class="govuk-body" id=""></p>
 
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">What you need to know (optional)</h3>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">What you need to know (optional)</h3>
       <p class="govuk-body" id=""></p>
 
       {% else %}
 
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--s" for="introduction">
+          <label class="govuk-label govuk-label--m" for="introduction">
             Introduction
           </label>
           <div id="introduction-hint" class="govuk-hint">
@@ -440,12 +440,12 @@
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="start-button-text-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h1 class="govuk-fieldset__heading">
                 Start button text
               </h1>
             </legend>
-            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="start-now" name="start-button-text" type="radio" value="start-now" checked>
                 <label class="govuk-label govuk-radios__label" for="start-now">
@@ -463,7 +463,7 @@
         </div>
 
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--s" for="text-below-button">Text below the start button (optional)</label>
+          <label class="govuk-label govuk-label--m" for="text-below-button">Text below the start button (optional)</label>
           <div id="text-below-button" class="govuk-hint">
             Following ‘on’, for example “the HMRC website”
           </div>
@@ -471,7 +471,7 @@
         </div>
 
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--s" for="text-below-button">Link to start of transaction</label>
+          <label class="govuk-label govuk-label--m" for="text-below-button">Link to start of transaction</label>
           <div id="text-below-button" class="govuk-hint">
             Link as deep as possible
           </div>
@@ -479,14 +479,14 @@
         </div>
 
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--s" for="more-information">
+          <label class="govuk-label govuk-label--m" for="more-information">
             More information (optional)
           </label>
           <textarea class="govuk-textarea" id="more-information" name="moreInformation" rows="16"></textarea>
         </div>
 
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--s" for="other-ways-to-apply">
+          <label class="govuk-label govuk-label--m" for="other-ways-to-apply">
             Other ways to apply (optional)
           </label>
           <div id="other-ways-to-apply-hint" class="govuk-hint">
@@ -496,7 +496,7 @@
         </div>
 
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--s" for="what-you-need-to-know">
+          <label class="govuk-label govuk-label--m" for="what-you-need-to-know">
             What you need to know (optional)
           </label>
           <textarea class="govuk-textarea" id="what-you-need-to-know" name="whatYouNeedToKnow" rows="16"></textarea>
@@ -507,7 +507,7 @@
     {% elif data['content-type'] == "Place" %}
 
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="places-manager-service-identifier">Places Manager service identifier</label>
+        <label class="govuk-label govuk-label--m" for="places-manager-service-identifier">Places Manager service identifier</label>
         <div id="places-manager-service-identifier-hint" class="govuk-hint">
           This is assigned in the <a href="" class="govuk-link--no-visited-state">Places Manager application</a>
         </div>
@@ -515,7 +515,7 @@
       </div>
 
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="introduction">
+        <label class="govuk-label govuk-label--m" for="introduction">
           Introduction
         </label>
         <div id="introduction-hint" class="govuk-hint">
@@ -525,14 +525,14 @@
       </div>
 
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="further-information">
+        <label class="govuk-label govuk-label--m" for="further-information">
           Further information (optional)
         </label>
         <textarea class="govuk-textarea" id="further-information" name="furtherInformation" rows="16"></textarea>
       </div>
 
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="what-you-need-to-know">
+        <label class="govuk-label govuk-label--m" for="what-you-need-to-know">
           What you need to know (optional)
         </label>
         <textarea class="govuk-textarea" id="what-you-need-to-know" name="whatYouNeedToKnow" rows="6"></textarea>
@@ -542,10 +542,10 @@
     
       {% if (data['status'] == "Scheduled") or (data['status'] == "Published") or (data['status'] == "Archived") %}
 
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Chapters</h3>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Chapters</h3>
         <p class="govuk-body" id=""></p>
 
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Is every chapter part of a step by step?</h3>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Is every chapter part of a step by step?</h3>
         <p class="govuk-body" id="">No</p>
 
       {% else %}
@@ -578,7 +578,7 @@
           fieldset: {
             legend: {
               text: "Is every chapter part of a step by step?",
-              classes: "govuk-fieldset__legend--s"
+              classes: "govuk-fieldset__legend--m"
             }
           },
           hint: {

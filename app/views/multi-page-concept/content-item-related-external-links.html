@@ -119,7 +119,7 @@
 
       <h2 class="govuk-heading-m govuk-!-static-margin-top-0 govuk-!-static-margin-bottom-6">Link 1</h2>
    
-      {{ govukInput({
+      <!-- {{ govukInput({
         label: {
           text: "Title"
         },
@@ -142,7 +142,51 @@
         text: "Add another related external link",
         classes: "govuk-button--secondary",
         href: "#"
-      }) }}
+      }) }} -->
+
+      <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Related external links
+        </h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Reorder<span class="govuk-visually-hidden"> related external links</span></a>
+          </li>
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> related external links</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Related external link 1
+            </dt>
+            <dd class="govuk-summary-list__value">
+              /right-of-way-open-access-land
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Related external link 2
+            </dt>
+            <dd class="govuk-summary-list__value">
+              /the-countryside-code-advice-for-countryside-visitors
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Related external link 3
+            </dt>
+            <dd class="govuk-summary-list__value">
+              /the-countryside-code-advice-for-countryside-visitors
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
 
     {% else %}
 
