@@ -117,11 +117,14 @@
 
       <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Is this beta content?</h3>
       <p class="govuk-body" id="is-this-beta-content">No</p>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Add a public change note?</h3>
+      <p class="govuk-body" id="is-this-beta-content">No</p>
    
     {% else %}
 
       {{ govukRadios({
-        classes: "govuk-radios--inline",
+        classes: "govuk-radios",
         name: "IsThisBetaContent",
         fieldset: {
           legend: {
@@ -142,6 +145,60 @@
         ]
       }) }}
 
+      {% set publicChangeNoteHtml %}
+      {{ govukTextarea({
+        name: "publicChangeNote",
+        id: "public-change-note",
+        label: {
+          text: "Public change note",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        },
+        hint: {
+          html: '
+            Describe what changed, where, and why.
+            Use full sentences and start with the most important information.
+            For example, “College A has been removed from the registered sponsors list because its licence has been suspended.”
+            <a class="govuk-link--no-visited-state" href="https://gov-uk.atlassian.net/l/cp/dwn06raQ" rel="noreferrer noopener" target="_blank">
+              Read guidance on writing good change notes (opens in new tab)</a>.
+          '
+        }
+      }) }}
+      {% endset -%}
+
+      <div id="add-a-public-change-note">
+        {{ govukRadios({
+          name: "addPublicChangeNote",
+          fieldset: {
+            legend: {
+              text: "Add a public change note?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "Tell users when published information has changed"
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              hint: {
+                text: "The note will be published on the page, emailed to users subscribed to alerts, and the ‘last updated’ date will change"
+              },
+              conditional: {
+                html: publicChangeNoteHtml
+              }
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: true
+            }
+          ]
+        }) }}
+      </div>
+    
     {% endif %}
 
   </div>

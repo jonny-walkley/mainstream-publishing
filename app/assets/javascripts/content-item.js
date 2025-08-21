@@ -234,17 +234,16 @@
             console.log(status)
 
             if (status == "Published") {
-              console.log("yes")
               document.querySelector('#unpublish').href = `content-item-unpublish?id=${id}&content-type=${format}&status=${status}`
+            }
+
+            if (version_number == 1) {
+              document.querySelector('#add-a-public-change-note').style.display = 'none';
             }
 
             break;
 
         }
-
-
-
-
 
         // Hide the 'Skip 2i' button if content item is 'In 2i' and not assigned to current user
 
