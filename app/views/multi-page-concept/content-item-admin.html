@@ -166,7 +166,7 @@
       }) }}
       {% endset -%}
 
-      <div id="add-a-public-change-note">
+      <!-- <div id="add-a-public-change-note">
         {{ govukRadios({
           name: "addPublicChangeNote",
           fieldset: {
@@ -197,7 +197,7 @@
             }
           ]
         }) }}
-      </div>
+      </div> -->
     
     {% endif %}
 
@@ -235,6 +235,13 @@
         }) }}
 
       {% else %}
+
+        {{ govukButton({
+          id: "add-a-public-change-note",
+          text: "Add a public change note",
+          classes: "govuk-button--secondary wide",
+          href: "#"
+        }) }}
 
         {{ govukButton({
           text: "Delete this edition",
