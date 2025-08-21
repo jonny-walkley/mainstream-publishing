@@ -183,20 +183,20 @@ table {
 //   }
 // }
 
+/* Shared styles */
 #item-count, .item-count {
-  font-size: 16px;
-  margin: 0 0 0 0px;
+  font-size: 19px;
   color: #505a5f;
+  margin: 0;
 }
 
-// All publications page
+/* Specific to #item-count (All publications page) */
 #item-count {
   margin-bottom: 10px;
 }
 
-// 2i queue and fact check pages
+/* Specific to .item-count (2i queue and fact check pages) */
 .item-count {
-  font-size: 16px;
   font-weight: 400;
   margin-left: 15px;
   vertical-align: middle;
