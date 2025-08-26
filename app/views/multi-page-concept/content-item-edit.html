@@ -543,7 +543,192 @@
       {% if (data['status'] == "Scheduled") or (data['status'] == "Published") or (data['status'] == "Archived") %}
 
         <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Chapters</h3>
-        <p class="govuk-body" id=""></p>
+        <div id="guide-chapters">
+            {{ govukSummaryList({
+              rows: [
+                {
+                  key: {
+                    text: "Overview"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "",
+                        visuallyHiddenText: "Overview"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Get a payment reference number"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "",
+                        visuallyHiddenText: "Get a payment reference number"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Approve a payment through your online bank account"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "",
+                        visuallyHiddenText: "Approve a payment through your online bank account"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Make an online or telephone bank transfer"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "",
+                        visuallyHiddenText: "Make an online or telephone bank transfer"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "At your bank or building society"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "",
+                        visuallyHiddenText: "At your bank or building society"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "By cheque through the post"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "",
+                        visuallyHiddenText: "By cheque through the post"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "From the deceased’s bank, savings or investment account"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "",
+                        visuallyHiddenText: "From the deceased’s bank, savings or investment account"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Using British government stock"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "",
+                        visuallyHiddenText: "Using British government stock"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "By transferring national heritage property"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "",
+                        visuallyHiddenText: "By transferring national heritage property"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "In yearly instalments"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "",
+                        visuallyHiddenText: "In yearly instalments"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Trusts"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "",
+                        visuallyHiddenText: "Trusts"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Pay early to avoid paying interest"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: " ",
+                        visuallyHiddenText: "Pay early to avoid paying interest"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }}
+          </div>
 
         <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Is every chapter part of a step by step?</h3>
         <p class="govuk-body" id="">No</p>
@@ -552,19 +737,483 @@
 
         <h3 class="govuk-heading-m">Chapters</h3>
 
-        <!-- <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-              Chapter 1 title
-            </dt>
-            <dd class="govuk-summary-list__value">
-              
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link govuk-link--no-visited-state" href="guide-draft-edit-chapter-1">Edit<span class="govuk-visually-hidden"> Chapter 1</span></a>
-            </dd>
+        {% if data['status'] !== "Draft" %}
+
+          <!-- Chapter name and edit link -->
+
+          <div id="guide-chapters">
+            {{ govukSummaryList({
+              rows: [
+                {
+                  key: {
+                    text: "Overview"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "Overview"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Get a payment reference number"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "Get a payment reference number"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Approve a payment through your online bank account"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "Approve a payment through your online bank account"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Make an online or telephone bank transfer"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "Make an online or telephone bank transfer"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "At your bank or building society"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "At your bank or building society"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "By cheque through the post"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "By cheque through the post"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "From the deceased’s bank, savings or investment account"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "From the deceased’s bank, savings or investment account"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Using British government stock"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "Using British government stock"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "By transferring national heritage property"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "By transferring national heritage property"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "In yearly instalments"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "In yearly instalments"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Trusts"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "Trusts"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Pay early to avoid paying interest"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "Pay early to avoid paying interest"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }}
           </div>
-        </dl> -->
+
+          <!-- Chapter number, name and edit link -->
+
+          <!-- {{ govukSummaryList({
+              rows: [
+                {
+                  key: {
+                    text: "Chapter 1"
+                  },
+                  value: {
+                    text: "Overview"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "Overview"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Chapter 2"
+                  },
+                  value: {
+                    text: "Get a payment reference number"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "Get a payment reference number"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Chapter 3"
+                  },
+                  value: {
+                    text: "Approve a payment through your online bank account"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "Approve a payment through your online bank account"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Chapter 4"
+                  },
+                  value: {
+                    text: "Make an online or telephone bank transfer"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "Make an online or telephone bank transfer"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Chapter 5"
+                  },
+                  value: {
+                    text: "At your bank or building society"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "At your bank or building society"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Chapter 6"
+                  },
+                  value: {
+                    text: "By cheque through the post"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "By cheque through the post"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Chapter 7"
+                  },
+                  value: {
+                    text: "From the deceased’s bank, savings or investment account"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "From the deceased's bank, savings or investment account"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Chapter 8"
+                  },
+                  value: {
+                    text: "Using British government stock"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "Using British government stock"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Chapter 9"
+                  },
+                  value: {
+                    text: "By transferring national heritage property"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "By transferring national heritage property"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Chapter 10"
+                  },
+                  value: {
+                    text: "In yearly instalments"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "In yearly instalments"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Chapter 11"
+                  },
+                  value: {
+                    text: "Trusts"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "Trusts"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Chapter 12"
+                  },
+                  value: {
+                    text: "Pay early to avoid paying interest"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "Pay early to avoid paying interest"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }} -->
+
+          <!-- Chapter name as link -->
+
+          <!-- {{ govukTable({
+              caption: "",
+              captionClasses: "govuk-table__caption--m",
+              head: [
+                {
+                  text: ""
+                }
+              ],
+              rows: [
+                [
+                  {
+                    html: '<a href="#">Overview</a>'
+                  }
+                ],
+                [
+                  {
+                    html: '<a href="#">Get a payment reference number</a>'
+                  }
+                ],
+                [
+                  {
+                    html: '<a href="#">Approve a payment through your online bank account</a>'
+                  }
+                ],
+                [
+                  {
+                    html: '<a href="#">Make an online or telephone bank transfer</a>'
+                  }
+                ],
+                [
+                  {
+                    html: '<a href="#">At your bank or building society</a>'
+                  }
+                ],
+                [
+                  {
+                    html: '<a href="#">By cheque through the post</a>'
+                  }
+                ],
+                [
+                  {
+                    html: '<a href="#">From the deceased’s bank, savings or investment account</a>'
+                  }
+                ],
+                [
+                  {
+                    html: '<a href="#">Using British government stock</a>'
+                  }
+                ],
+                [
+                  {
+                    html: '<a href="#">By transferring national heritage property</a>'
+                  }
+                ],
+                [
+                  {
+                    html: '<a href="#">In yearly instalments</a>'
+                  }
+                ],
+                [
+                  {
+                    html: '<a href="#">Trusts</a>'
+                  }
+                ],
+                [
+                  {
+                    html: '<a href="#">Pay early to avoid paying interest</a>'
+                  }
+                ]
+              ]
+            }) }} -->
+
+        {% endif %} 
 
         <a href="guide-draft-add-new-chapter">
           <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">

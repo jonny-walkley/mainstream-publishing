@@ -11,6 +11,16 @@
 //   border-left: 1px solid #b1b4b6;
 // }
 
+#guide-chapters .govuk-summary-list .govuk-summary-list__row {
+  .govuk-summary-list__key {
+    font-weight: 500;
+    width: 80%;
+  }
+  .govuk-summary-list__value {
+    display: none;
+  }
+}
+
 #important-note-body {
   font-weight: 600;
 }
