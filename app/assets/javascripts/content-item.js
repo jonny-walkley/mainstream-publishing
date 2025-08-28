@@ -193,8 +193,13 @@
                   document.querySelector('#amends-needed').style.display = 'block';
                 }
 
-                if (status == "Ready") {
+                if (status == "Ready" || status == "Scheduled") {
                   document.querySelector('#review-approved').style.display = 'block';
+                }
+
+                if (status == "Scheduled") {
+                  document.querySelector('#scheduled-for').style.display = 'block';
+                  document.querySelector('#scheduled-for-time').innerHTML = `Scheduled for ${scheduled}`;
                 }
 
               }
