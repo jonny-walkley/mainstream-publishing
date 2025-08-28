@@ -182,18 +182,12 @@
                 
                 document.querySelector('#claimed-by').style.display = 'block';
 
-                // Loop through instances where 2i reviewer name needs to show
-                  const reviewerInstances = document.getElementsByClassName('claimed-by-name');
-                  const reviewerInstancesArr = Array.from(reviewerInstances);
-                  reviewerInstancesArr.forEach(el => {
-                    el.innerHTML = reviewer;
-                  });
-
                 if (status == "Amends needed") {
                   document.querySelector('#amends-needed').style.display = 'block';
                 }
 
-                if (status == "Ready" || status == "Scheduled") {
+
+                if (status == "Ready" || status == "Scheduled" || status == "Fact check sent" || status == "Fact check received") {
                   document.querySelector('#review-approved').style.display = 'block';
                 }
 
@@ -201,6 +195,17 @@
                   document.querySelector('#scheduled-for').style.display = 'block';
                   document.querySelector('#scheduled-for-time').innerHTML = `Scheduled for ${scheduled}`;
                 }
+
+                if (status == "Fact check sent" || status == "Fact check received") {
+                  document.querySelector('#fact-check-sent').style.display = 'block';
+                }
+
+                // Loop through instances where 2i reviewer name needs to show
+                const reviewerInstances = document.getElementsByClassName('claimed-by-name');
+                const reviewerInstancesArr = Array.from(reviewerInstances);
+                reviewerInstancesArr.forEach(el => {
+                  el.innerHTML = reviewer;
+                });
 
               }
             
@@ -255,8 +260,6 @@
 
           case "content-item-admin":
 
-            console.log(status)
-
             if (status == "Published") {
               document.querySelector('#unpublish').href = `content-item-unpublish?id=${id}&content-type=${format}&status=${status}`
             }
@@ -304,11 +307,6 @@
             document.querySelector('#send-to-2i').href = `content-item-2i?id=${id}&content-type=${format}&status=${status}`;
           }
         }
-
-        // Set content item navigation links
-        // document.querySelector('.moj-sub-navigation__list').innerHTML = `
-        //   <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" aria-current="page" href="content-item-edit?id=${id}&content-type=${format}&status=${status}">Edit</a></li>
-        //   <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-tagging?id=${id}&content-type=${format}&status=${status}">Tagging</a></li>`
 
       }
 
