@@ -175,24 +175,30 @@
             }
 
             if (status !== "Draft") {
+
               document.querySelector('#review-requested').style.display = 'block';
+              
               if (reviewer && reviewer !== "unclaimed") {
                 
                 document.querySelector('#claimed-by').style.display = 'block';
 
-                if (status == "Amends needed") {
-                
-                  document.querySelector('#amends-needed').style.display = 'block';
-                  // Loop through instances where 2i reviewer name needs to show
+                // Loop through instances where 2i reviewer name needs to show
                   const reviewerInstances = document.getElementsByClassName('claimed-by-name');
                   const reviewerInstancesArr = Array.from(reviewerInstances);
                   reviewerInstancesArr.forEach(el => {
                     el.innerHTML = reviewer;
                   });
-                
+
+                if (status == "Amends needed") {
+                  document.querySelector('#amends-needed').style.display = 'block';
+                }
+
+                if (status == "Ready") {
+                  document.querySelector('#review-approved').style.display = 'block';
                 }
 
               }
+            
             }
         
             const assigneeInstances = document.getElementsByClassName('assignee');
