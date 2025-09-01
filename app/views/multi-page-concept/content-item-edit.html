@@ -85,12 +85,23 @@
       {% endif %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Assigned to</dt>
-        <dd class="govuk-summary-list__value" id="assignee"></dd>
+        <dd class="govuk-summary-list__value assignee"></dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> assignee</span></a>
         </dd>
       </div>
     </dl>
+
+    {% if data['status'] == "In 2i" %}
+      {{ govukInsetText({
+        id: "reviewer-actions",
+        html: "
+          <span class='assignee'></span> sent this edition to 2i.<br><br>
+          <a href='#' class='govuk-link govuk-link--no-visited-state'>Needs more work</a><br><br>
+          <a href='#' class='govuk-link govuk-link--no-visited-state'>No changes needed</a>
+        "
+      }) }}
+    {% endif %}
     
 </div>
 

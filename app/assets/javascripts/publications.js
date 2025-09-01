@@ -100,41 +100,24 @@ window.GOVUKPrototypeKit.documentReady(() => {
 
 
 
-    data.forEach(({ title, assignee, state, format, version_number, id, slug, language, important_note, time_in_queue, reviewer, scheduled, sent_out }, index) => {
+    data.forEach(({ title, assignee, state, format, version_number, id, slug, language, important_note, time_in_queue, reviewer, scheduled_for, sent_out }, index) => {
      
       assignees.push(assignee);
       let newRow = firstRow.cloneNode(true);
 
-      switch (state) {
-        case "draft":
-          tagColour = "yellow"
-          break;
-        case "in_2i":
-          tagColour = "blue"
-          break;
-        case "amends_needed":
-          tagColour = "red"
-          break;
-        case "fact_check_sent":
-          tagColour = "pink"
-          break;
-        case "fact_check_received":
-          tagColour = "purple"
-          break;
-        case "ready":
-          tagColour = "green"
-          break;
-        case "scheduled_for_publishing":
-          tagColour = "turquoise"
-          state = "Scheduled"
-          break;
-        case "published":
-          tagColour = "orange"
-          break;
-        case "archived":
-          tagColour = "grey"
-          break;
-      }
+      const stateTagColours = {
+        draft: "yellow",
+        in_2i: "blue",
+        amends_needed: "red",
+        fact_check_sent: "pink",
+        fact_check_received: "purple",
+        ready: "green",
+        scheduled: "turquoise",
+        published: "orange",
+        archived: "grey"
+      };
+
+      tagColour = stateTagColours[state];
 
       let status = state.toLowerCase().replace(/\b\w/g, s => s.toUpperCase()).replaceAll("_", " ")
 
@@ -148,7 +131,7 @@ window.GOVUKPrototypeKit.documentReady(() => {
             } else if (status == "Fact check received") {
               // newRow.querySelector('.title').innerHTML += `<span class="publication-list-dynamic-text"><a href="content-item-history-and-notes?id=${id}&content-type=${format}&status=${status}#fact-check-response" class="govuk-link govuk-link--no-visited-state">View response</a></span>`;
             } else if (status == "Scheduled") {
-              newRow.querySelector('.title').innerHTML += `<span class="publication-list-dynamic-text">Scheduled for: ${scheduled}</span>`;
+              newRow.querySelector('.title').innerHTML += `<span class="publication-list-dynamic-text">Scheduled for: ${scheduled_for}</span>`;
             }
             newRow.querySelector('.state').innerHTML = `<strong class="govuk-tag govuk-tag--${tagColour}">${status}</strong>`
             newRow.querySelector('.format').innerText = format

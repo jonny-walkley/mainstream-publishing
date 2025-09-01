@@ -8,43 +8,25 @@
     const thePath = window.location.protocol + "//" + window.location.host + window.location.pathname;
     const currentPage = thePath.substring(thePath.lastIndexOf('/') + 1);
 
-    data.forEach(({ title, assignee, state, format, version_number, id, scheduled, sent_out, reviewer, slug, important_note, meta_tag_description, language, lgsl_code, lgil_code, places_manager_service_identifier, body }, index) => {
+    data.forEach(({ title, assignee, state, format, version_number, id, scheduled_for, sent_out, reviewer, slug, important_note, meta_tag_description, language, lgsl_code, lgil_code, places_manager_service_identifier, body }, index) => {
       
       if (id == contentItemID) {
 
         let status = state.toLowerCase().replace(/\b\w/g, s => s.toUpperCase()).replaceAll("_", " ")
 
-        switch (state) {
-          case "draft":
-            tagColour = "yellow"
-            break;
-          case "in_2i":
-            tagColour = "blue"
-            break;
-          case "amends_needed":
-            tagColour = "red"
-            break;
-          case "fact_check_sent":
-            tagColour = "pink"
-            break;
-          case "fact_check_received":
-            tagColour = "purple"
-            break;
-          case "ready":
-            tagColour = "green"
-            break;
-          case "scheduled_for_publishing":
-            tagColour = "turquoise"
-            state = "Scheduled"
-            status = "Scheduled"
-            break;
-          case "published":
-            tagColour = "orange"
-            break;
-          case "archived":
-            tagColour = "grey"
-            break;
-        }
+        const stateTagColours = {
+          draft: "yellow",
+          in_2i: "blue",
+          amends_needed: "red",
+          fact_check_sent: "pink",
+          fact_check_received: "purple",
+          ready: "green",
+          scheduled: "turquoise",
+          published: "orange",
+          archived: "grey"
+        };
+
+        tagColour = stateTagColours[state];
 
         // --- Overall ---
         
@@ -58,16 +40,23 @@
         document.querySelector('#edition').innerHTML = `${version_number}<strong class="govuk-tag govuk-tag--${tagColour} govuk-!-margin-left-2">${status}</strong>`
 
         // Set assigned to
-        document.querySelector('#assignee').innerHTML = `${assignee}`
+        const assigneeInstances = document.getElementsByClassName('assignee');
+        const assigneeInstancesArr = Array.from(assigneeInstances);
+        assigneeInstancesArr.forEach(el => {
+          el.innerHTML = assignee;
+        });
+
+        // Hide review actions if in 2i and unclaimed
+        if (status == "In 2i" && reviewer == "unclaimed") {
+          document.querySelector('#reviewer-actions').style.display = 'none';
+        }
 
         // Set sub navigation page links
         const subNav = document.getElementsByClassName('moj-sub-navigation__link');
         const subNavArray = Array.from(subNav);
-
         subNavArray.forEach(navItem => {
           navItem.href += `?id=${id}&content-type=${format}&status=${status}`;
         });
-        
   
         // --- Page-specifc ---
 
@@ -186,14 +175,13 @@
                   document.querySelector('#amends-needed').style.display = 'block';
                 }
 
-
                 if (status == "Ready" || status == "Scheduled" || status == "Fact check sent" || status == "Fact check received") {
                   document.querySelector('#review-approved').style.display = 'block';
                 }
 
                 if (status == "Scheduled") {
                   document.querySelector('#scheduled-for').style.display = 'block';
-                  document.querySelector('#scheduled-for-time').innerHTML = `Scheduled for ${scheduled}`;
+                  document.querySelector('#scheduled-for-time').innerHTML = `Scheduled for ${scheduled_for}`;
                 }
 
                 if (status == "Fact check sent" || status == "Fact check received") {
@@ -297,7 +285,7 @@
         }
 
         if (status == "Scheduled") {
-          document.querySelector('#scheduled').innerHTML = `${scheduled}`
+          document.querySelector('#scheduled').innerHTML = `${scheduled_for}`
         }
 
         // Set send to 2i link
