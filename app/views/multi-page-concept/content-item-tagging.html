@@ -91,6 +91,24 @@
         </dd>
       </div>
     </dl>
+
+    {% if data['status'] == "In 2i" %}
+      {{ govukInsetText({
+        id: "reviewer-actions",
+        html: "
+          <p class='govuk-body'><span class='assignee'></span> sent this edition to 2i.</p>
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>Request amendments</a></p>
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>No changes needed</a></p>
+        "
+      }) }}
+    {% elif data['status'] == "Ready" %}
+      {{ govukInsetText({
+        id: "request-amendments",
+        html: "
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>Request amendments</a></p>
+        "
+      }) }}
+    {% endif %}
     
 </div>
 

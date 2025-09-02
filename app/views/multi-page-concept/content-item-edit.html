@@ -96,9 +96,16 @@
       {{ govukInsetText({
         id: "reviewer-actions",
         html: "
-          <span class='assignee'></span> sent this edition to 2i.<br><br>
-          <a href='#' class='govuk-link govuk-link--no-visited-state'>Needs more work</a><br><br>
-          <a href='#' class='govuk-link govuk-link--no-visited-state'>No changes needed</a>
+          <p class='govuk-body'><span class='assignee'></span> sent this edition to 2i.</p>
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>Request amendments</a></p>
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>No changes needed</a></p>
+        "
+      }) }}
+    {% elif data['status'] == "Ready" %}
+      {{ govukInsetText({
+        id: "request-amendments",
+        html: "
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>Request amendments</a></p>
         "
       }) }}
     {% endif %}
