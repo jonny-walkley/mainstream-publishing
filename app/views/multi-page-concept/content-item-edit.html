@@ -283,10 +283,10 @@
       </div>
 
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="LGIL-code">
+        <label class="govuk-label govuk-label--m" for="lgil-code">
           LGIL code
         </label>
-        <input class="govuk-input govuk-input--width-2 govuk-input--extra-letter-spacing" id="LGIL-code" name="LGILcode" type="text" spellcheck="false" value="" aria-describedby="LGIL-code-hint">
+        <input class="govuk-input govuk-input--width-2 govuk-input--extra-letter-spacing" id="lgil-code" name="LGILcode" type="text" spellcheck="false" value="" aria-describedby="LGIL-code-hint">
       </div>
 
       <div class="govuk-form-group">
@@ -301,6 +301,14 @@
         <textarea class="govuk-textarea" id="introduction" name="introduction" rows="16"></textarea>
       </div>
 
+       <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="title">Button text (optional)</label>
+         <div id="local-transaction-button-text-hint" class="govuk-hint">
+            If left blank, the default text ‘Find your local council’ will be used
+          </div>
+        <input class="govuk-input" id="title" name="title" type="text" spellcheck="false" value="">
+      </div>
+
       <div class="govuk-form-group">
         <label class="govuk-label govuk-label--m" for="more-information">
           More information (optional)
@@ -313,6 +321,26 @@
           What you need to know (optional)
         </label>
         <textarea class="govuk-textarea" id="what-you-need-to-know" name="whatYouNeedToKnow" rows="6"></textarea>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="above-results-content">
+          Above results content (optional)
+        </label>
+         <div id="above-results-hint" class="govuk-hint">
+            This content appears above the address lookup results, below the page heading
+          </div>
+        <textarea class="govuk-textarea" id="above-results-content" name="above-results-content" rows="6"></textarea>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="what-you-need-to-know">
+          Below results content (optional)
+        </label>
+        <div id="below-results-hint" class="govuk-hint">
+          This content appears below the address lookup results
+        </div>
+        <textarea class="govuk-textarea" id="below-results-content" name="below-results-content" rows="6"></textarea>
       </div>
 
       <div class="govuk-form-group">
