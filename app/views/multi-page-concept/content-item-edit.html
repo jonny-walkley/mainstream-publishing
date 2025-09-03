@@ -108,6 +108,14 @@
           <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>Request amendments</a></p>
         "
       }) }}
+    {% elif data['status'] == "Fact check received" %}
+      {{ govukInsetText({
+        id: "fact-check-received-actions",
+        html: "
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>No changes needed</a></p>
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>Request amendments</a></p>
+        "
+      }) }}
     {% endif %}
     
 </div>

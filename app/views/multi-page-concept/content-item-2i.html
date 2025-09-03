@@ -56,6 +56,7 @@
     <span class="govuk-caption-xl"></span>
     <h1 class="govuk-heading-xl">Send to 2i</h1>
 
+    <h2 class="govuk-heading-l">Add change note</h2>
     <p class="govuk-body">Your change note should include:</p>
     <ul class="govuk-list govuk-list--bullet">
       <li>the Zendesk ticket link</li>
@@ -86,11 +87,37 @@
       }
     }) }}
 
+    <h2 class="govuk-heading-l">Add important note</h2>
+
+    <p class="govuk-body">The important note needs to say:</p>
+    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+      <li>if it’s urgent </li>
+      <li>if it’s a quick fix</li>
+      <li>if it should be 2ied with something else</li>
+      <li>what should happen next with the content (for example, publish, schedule)</li>
+      <li>if it needs a fact check and the fact check email addresses</li>
+    </ul>
+
+    {{ govukTextarea({
+      name: "importantNote",
+      id: "important-note",
+      rows: 10,
+      label: {
+        html: "Important note",
+        classes: "govuk-label--m",
+        isPageHeading: false
+      }
+    }) }}
+
     <form class="form" action="#" method="post">
       {% from "govuk/components/button/macro.njk" import govukButton %}
       <div class="govuk-button-group">
         {{ govukButton({
             text: "Send to 2i"
+        }) }}
+        {{ govukButton({
+            text: "Save as draft",
+            classes: "govuk-button--secondary"
         }) }}
         <a class="govuk-link govuk-link--no-visited-state" id="cancel-link" href="#">Cancel</a>
       </div>

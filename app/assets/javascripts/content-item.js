@@ -175,7 +175,7 @@
                   document.querySelector('#amends-needed').style.display = 'block';
                 }
 
-                if (status == "Ready" || status == "Scheduled" || status == "Fact check sent" || status == "Fact check received") {
+                if (status !== "Draft" && status !== "In 2i" && status !== "Amends needed") {
                   document.querySelector('#review-approved').style.display = 'block';
                 }
 
@@ -186,6 +186,10 @@
 
                 if (status == "Fact check sent" || status == "Fact check received") {
                   document.querySelector('#fact-check-sent').style.display = 'block';
+                }
+
+                if (status == "Published") {
+                  document.querySelector('#published-by').style.display = 'block';
                 }
 
                 // Loop through instances where 2i reviewer name needs to show

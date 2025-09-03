@@ -167,7 +167,10 @@
 
           <!-- To-do: Published by -->
           <div id="published-by" style="display: none;">
-            
+            <p class="govuk-body">
+              <time>5:33pm, 6 Aug 2025</time>
+              <span class="govuk-!-font-weight-bold">Published</span> by <span class="claimed-by-name"></span>
+            </p>
           </div>
           <!-- End -->
 
@@ -335,14 +338,32 @@
   <div class="govuk-grid-column-one-third sticky options-sidebar">
     <div class="actions-sidebar">
 
-      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {% if (data['status'] == "Draft") or (data['status'] == "Amends needed") %}
+        
+        {{ govukButton({
+          id: "send-to-2i",
+          text: "2i",
+          classes: "govuk-button wide",
+          href: "#"
+        }) }}
+        
+        {{ govukButton({
+          id: "edition-note",
+          text: "Add edition note",
+          classes: "govuk-button--secondary wide",
+          href: "#"
+        }) }}
+      
+      {% else %}
 
-      {{ govukButton({
-        id: "edition-note",
-        text: "Add edition note",
-        classes: "govuk-button wide",
-        href: "#"
-      }) }}
+        {{ govukButton({
+          id: "edition-note",
+          text: "Add edition note",
+          classes: "govuk-button wide",
+          href: "#"
+        }) }}
+      
+      {% endif %}
 
       {{ govukButton({
         id: "important-note-button",
@@ -350,16 +371,16 @@
         classes: "govuk-button--secondary wide",
         href: "#"
       }) }}
-      
-      {% if (data['status'] == "Draft") or (data['status'] == "Amends needed") %}
+
+      {% if data['status'] == "In 2i" %}
+
         {{ govukButton({
-          id: "send-to-2i",
-          text: "2i",
+          id: "skip",
+          text: "Skip review",
           classes: "govuk-button--secondary wide",
           href: "#"
         }) }}
-      {% elif data['status'] == "In 2i" %}
-        <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button" id="skip">Skip 2i</button>
+
       {% endif %}
 
       {% if data['status'] !== "Published" %}

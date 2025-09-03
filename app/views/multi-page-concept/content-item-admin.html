@@ -224,8 +224,6 @@
   <div class="govuk-grid-column-one-third sticky options-sidebar">
     <div class="actions-sidebar">
 
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-
       {% if (data['status'] !== "Scheduled") and (data['status'] !== "Published") and (data['status'] !== "Archived") %}
     
         <button type="submit" data-prevent-double-click="true" class="govuk-button wide govuk-button--save govuk-button--progress" data-module="govuk-button">
@@ -242,8 +240,6 @@
         }) }}
 
       {% endif %}
-    
-
 
       {% if (data['status'] == "Published") %}
 
@@ -261,10 +257,21 @@
 
       {% else %}
 
-        {{ govukButton({
-          text: "Delete this edition",
-          classes: "govuk-button--secondary wide"
-        }) }}
+        {% if data['status'] == "Scheduled" %}
+          
+          {{ govukButton({
+            text: "Delete this edition",
+            classes: "govuk-button wide"
+          }) }}
+        
+        {% else %}
+          
+          {{ govukButton({
+            text: "Delete this edition",
+            classes: "govuk-button--secondary wide"
+          }) }}
+        
+        {% endif %}
 
       {% endif %}
     
