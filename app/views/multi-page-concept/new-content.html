@@ -1,11 +1,10 @@
 {% extends "layouts/main-rebrand.html" %}
 
 {% block pageTitle %}
-  New content - {{ serviceName }} – GOV.UK Prototype Kit
+  Create new content - {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
-
   {{ govukHeader({
     productName: "Publisher",
     homepageUrl: "/index",
@@ -13,42 +12,62 @@
     navigationClasses: "align-right",
     navigation: [
       {
-          href: "#1",
-          text: "Switch app"
+        href: "#1",
+        text: "Switch app"
       }
     ]
   }) }}
-
-  {{ govukServiceNavigation({
-    serviceUrl: "#",
-    navigation: [
-    {
-      href: "my-content",
-      text: "My content"
-    },
-    {
-      href: "all-publications",
-      text: "All publications"
-    },
-    {
-      href: "2i-queue",
-      text: "2i queue"
-    },
-    {
-      href: "fact-check",
-      text: "Fact check"
-    },
-    {
-      href: "new-content",
-      text: "Create new content",
-      active: true
-    }
-  ]
-  }) }}
-
+  {% set activeNav = "new-content" %}
+  {% include "includes/_service-navigation.njk" %}
 {% endblock %}
 
 {% block content %}
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% set contentTypes = [
+  {
+    value: "Answer",
+    text: "Answer",
+    hint: { text: "One-page guidance" }
+  },
+  {
+    value: "Completed transaction",
+    text: "Completed transaction",
+    hint: { text: "Done page (feedback) at the end of a service" }
+  },
+  {
+    value: "Guide",
+    text: "Guide",
+    hint: { text: "Multi-page guidance" }
+  },
+  {
+    value: "Help page",
+    text: "Help page",
+    hint: { text: "Information about the GOV.UK website, for example ‘Privacy notice’" }
+  },
+  {
+    value: "Local transaction",
+    text: "Local transaction",
+    hint: { text: "Address lookup for local authorities" }
+  },
+  {
+    value: "Place",
+    text: "Place",
+    hint: { text: "Address lookup for nearby places and services" }
+  },
+  {
+    value: "Simple smart answer",
+    text: "Simple smart answer",
+    hint: { text: "Simple questions and answers that route users to relevant outcomes" }
+  },
+  {
+    value: "Transaction",
+    text: "Transaction",
+    hint: { text: "Start page for a service" }
+  }
+] %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -56,8 +75,6 @@
     <h1 class="govuk-heading-xl">Create new content</h1>
     
     <form method="post" action="new-content-details">
-
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
       {{ govukRadios({
         name: "contentType",
@@ -68,70 +85,10 @@
             classes: "govuk-fieldset__legend--m"
           }
         },
-        items: [
-          {
-            value: "Answer",
-            text: "Answer",
-            hint: {
-              text: "One-page guidance"
-            }
-          },
-          {
-            value: "Completed transaction",
-            text: "Completed transaction",
-            hint: {
-              text: "Done page (feedback) at the end of a service"
-            }
-          },
-          {
-            value: "Guide",
-            text: "Guide",
-            hint: {
-              text: "Multi-page guidance"
-            }
-          },{
-            value: "Help page",
-            text: "Help page",
-            hint: {
-              text: "Information about the GOV.UK website, for example ‘Privacy notice’"
-            }
-          },
-          {
-            value: "Local transaction",
-            text: "Local transaction",
-            hint: {
-              text: "Address lookup for local authorities"
-            }
-          },
-          {
-            value: "Place",
-            text: "Place",
-            hint: {
-              text: "Address lookup for nearby places and services"
-            }
-          },
-          {
-            value: "Simple smart answer",
-            text: "Simple smart answer",
-            hint: {
-              text: "Simple questions and answers that route users to relevant outcomes"
-            }
-          },
-          {
-            value: "Transaction",
-            text: "Transaction",
-            hint: {
-              text: "Start page for a service"
-            }
-          }
-        ]
+        items: contentTypes
       }) }}
 
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-
-      {{ govukButton({
-        text: "Continue"
-      }) }}
+      {{ govukButton({ text: "Continue" }) }}
 
     </form>
   

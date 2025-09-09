@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block header %}
-
   {{ govukHeader({
     productName: "Publisher",
     homepageUrl: "/index",
@@ -13,167 +12,83 @@
     navigationClasses: "align-right",
     navigation: [
       {
-          href: "#1",
-          text: "Switch app"
+        href: "#1",
+        text: "Switch app"
       }
     ]
   }) }}
-
-  {{ govukServiceNavigation({
-    serviceUrl: "#",
-    navigation: [
-    {
-      href: "my-content",
-      text: "My content"
-    },
-    {
-      href: "all-publications",
-      text: "All publications"
-    },
-    {
-      href: "2i-queue",
-      text: "2i queue",
-      active: true
-    },
-    {
-      href: "fact-check",
-      text: "Fact check"
-    },
-    {
-      href: "new-content",
-      text: "Create new content"
-    }
-  ]
-  }) }}
-
+  {% set activeNav = "2i-queue" %}
+  {% include "includes/_service-navigation.njk" %}
 {% endblock %}
 
 {% block content %}
 
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% set tableHead = [
+  { text: "Title" },
+  { text: "Content type" },
+  { text: "Assigned to" },
+  { text: "Time in queue" },
+  { text: "2i reviewer" }
+] %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-xl">
-      2i queue
-    </h1>
-
-    <!-- Tabs -->
+    <h1 class="govuk-heading-xl">2i queue</h1>
 
     <div class="govuk-tabs" data-module="govuk-tabs">
-      <h2 class="govuk-tabs__title">
-        Contents
-      </h2>
+      <h2 class="govuk-tabs__title">Contents</h2>
+
       <ul class="govuk-tabs__list">
         <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-          <a class="govuk-tabs__tab" href="#english">
-            English
-          </a>
+          <a class="govuk-tabs__tab" href="#english">English</a>
         </li>
         <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#welsh">
-            Welsh
-          </a>
+          <a class="govuk-tabs__tab" href="#welsh">Welsh</a>
         </li>
       </ul>
 
-      <div class="govuk-tabs__panel tabs-no-border" id="english">  
-
-      <!-- End tabs -->
-
-      {% from "govuk/components/table/macro.njk" import govukTable %}
-      {{ govukTable({
-        caption: "English",
-        captionClasses: "govuk-table__caption--m",
-        firstCellIsHeader: true,
-        classes: "queue-2i",
-        head: [
-          {
-            text: "Title"
-          },
-          {
-            text: "Content type"
-          },
-          {
-            text: "Assigned to"
-          },
-          {
-            text: "Time in queue"
-          },
-          {
-            text: "2i reviewer"
-          }
-        ],
-        rows: [
-          [
-            {
-              classes: "title-english"
-            },
-            {
-              classes: "format-english"
-            },
-            {
-              classes: "assignee-english"
-            },
-            {
-              classes: "time-in-queue-english"
-            },
-            {
-              classes: "reviewer-english"
-            }
+      <div class="govuk-tabs__panel tabs-no-border" id="english">
+        {{ govukTable({
+          caption: "English",
+          captionClasses: "govuk-table__caption--m",
+          firstCellIsHeader: true,
+          classes: "queue-2i",
+          head: tableHead,
+          rows: [
+            [
+              { classes: "title-english" },
+              { classes: "format-english" },
+              { classes: "assignee-english" },
+              { classes: "time-in-queue-english" },
+              { classes: "reviewer-english" }
+            ]
           ]
-        ]
-      }) }}
-
-      <!-- Tabs -->
-      
+        }) }}
       </div>
+
       <div class="govuk-tabs__panel tabs-no-border govuk-tabs__panel--hidden" id="welsh">
         {{ govukTable({
           caption: "Welsh",
           captionClasses: "govuk-table__caption--m",
           firstCellIsHeader: true,
           classes: "queue-2i",
-          head: [
-            {
-              text: "Title"
-            },
-            {
-              text: "Content type"
-            },
-            {
-              text: "Assigned to"
-            },
-            {
-              text: "Time in queue"
-            },
-            {
-              text: "2i reviewer"
-            }
-          ],
+          head: tableHead,
           rows: [
             [
-              {
-                classes: "title-welsh"
-              },
-              {
-                classes: "format-welsh"
-              },
-              {
-                classes: "assignee-welsh"
-              },
-              {
-                classes: "time-in-queue-welsh"
-              },
-              {
-                classes: "reviewer-welsh"
-              }
+              { classes: "title-welsh" },
+              { classes: "format-welsh" },
+              { classes: "assignee-welsh" },
+              { classes: "time-in-queue-welsh" },
+              { classes: "reviewer-welsh" }
             ]
           ]
         }) }}
       </div>
-    </div>
 
-    <!-- End tabs -->
+    </div>
     
   </div>
 </div>

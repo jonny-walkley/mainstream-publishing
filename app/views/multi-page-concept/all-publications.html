@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block header %}
-
   {{ govukHeader({
     productName: "Publisher",
     homepageUrl: "/index",
@@ -13,193 +12,118 @@
     navigationClasses: "align-right",
     navigation: [
       {
-          href: "#1",
-          text: "Switch app"
+        href: "#1",
+        text: "Switch app"
       }
     ]
   }) }}
-
-  {{ govukServiceNavigation({
-    serviceUrl: "#",
-    navigation: [
-    {
-      href: "my-content",
-      text: "My content"    
-    },
-    {
-      href: "all-publications",
-      text: "All publications",
-      active: true
-    },
-    {
-      href: "2i-queue",
-      text: "2i queue"
-    },
-    {
-      href: "fact-check",
-      text: "Fact check"
-    },
-    {
-      href: "new-content",
-      text: "Create new content"
-    }
-  ]
-  }) }}
-
+  {% set activeNav = "all-publications" %}
+  {% include "includes/_service-navigation.njk" %}
 {% endblock %}
 
 {% block content %}
 
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% set statusOptions = [
+  { value: "all", text: "All statuses" },
+  { value: "draft", text: "Draft" },
+  { value: "in_2i", text: "In 2i" },
+  { value: "amends_needed", text: "Amends needed" },
+  { value: "fact_check_sent", text: "Fact check sent" },
+  { value: "fact_check_received", text: "Fact check received" },
+  { value: "ready", text: "Ready" },
+  { value: "scheduled", text: "Scheduled" },
+  { value: "published", text: "Published" },
+  { value: "archived", text: "Archived" }
+] %}
+
+{% set assigneeOptions = [
+  { value: "all", text: "All assignees" }
+] %}
+
+{% set formatOptions = [
+  { value: "all", text: "All types" },
+  { value: "answer", text: "Answer" },
+  { value: "completed transaction", text: "Completed transaction" },
+  { value: "guide", text: "Guide" },
+  { value: "help page", text: "Help page" },
+  { value: "local transaction", text: "Local transaction" },
+  { value: "place", text: "Place" },
+  { value: "Simple smart answer", text: "Simple smart answer" },
+  { value: "transaction", text: "Transaction" }
+] %}
+
+{% set tableHead = [
+  { text: "Title" },
+  { text: "Status" },
+  { text: "Updated" },
+  { text: "Assigned to" },
+  { text: "Content type" }
+] %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-xl">
-      All publications
-    </h1>
+    <h1 class="govuk-heading-xl">All publications</h1>
 
     <!-- Filter -->
 
     <form>
-      {% from "govuk/components/input/macro.njk" import govukInput %}
-      {% from "govuk/components/select/macro.njk" import govukSelect %}
-      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-      {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
-
       <div id="filters">
 
-      {{ govukInput({
-        label: {
-          text: "Title or slug",
-          classes: "govuk-label--m"
-        },
-        id: "title",
-        name: "title"
-      }) }}
+        {{ govukInput({
+          label: {
+            text: "Title or slug",
+            classes: "govuk-label--m"
+          },
+          id: "title",
+          name: "title"
+        }) }}
 
-      {{ govukSelect({
-        id: "status",
-        name: "state",
-        classes: "full-width",
-        label: {
-          text: "Status",
-          classes: "govuk-label--m"
-        },
-        items: [
-          {
-            value: "all",
-            text: "All statuses"
-          },  
-          {
-            value: "draft",
-            text: "Draft"
+        {{ govukSelect({
+          id: "status",
+          name: "state",
+          classes: "full-width",
+          label: {
+            text: "Status",
+            classes: "govuk-label--m"
           },
-          {
-            value: "in_2i",
-            text: "In 2i"
-          },
-          {
-            value: "amends_needed",
-            text: "Amends needed"
-          },
-          {
-            value: "fact_check_sent",
-            text: "Fact check sent"
-          },
-          {
-            value: "fact_check_received",
-            text: "Fact check received"
-          },
-          {
-            value: "ready",
-            text: "Ready"
-          },
-          {
-            value: "scheduled",
-            text: "Scheduled"
-          },
-          {
-            value: "published",
-            text: "Published"
-          },
-          {
-            value: "archived",
-            text: "Archived"
-          }
-        ]
-      }) }}
+          items: statusOptions
+        }) }}
 
-      {{ govukSelect({
-        id: "assignee",
-        name: "assignee",
-        classes: "full-width",
-        label: {
-          text: "Assigned to",
-          classes: "govuk-label--m"
-        },
-        items: [
-          {
-            value: "all",
-            text: "All assignees"
-          }
-        ]
-      }) }}
+        {{ govukSelect({
+          id: "assignee",
+          name: "assignee",
+          classes: "full-width",
+          label: {
+            text: "Assigned to",
+            classes: "govuk-label--m"
+          },
+          items: assigneeOptions
+        }) }}
 
-      {{ govukSelect({
-        id: "format",
-        name: "format",
-        classes: "full-width",
-        label: {
-          text: "Content type",
-          classes: "govuk-label--m"
-        },
-        items: [
-          {
-            value: "all",
-            text: "All types"
+        {{ govukSelect({
+          id: "format",
+          name: "format",
+          classes: "full-width",
+          label: {
+            text: "Content type",
+            classes: "govuk-label--m"
           },
-          {
-            value: "answer",
-            text: "Answer"
-          },
-          {
-            value: "completed transaction",
-            text: "Completed transaction"
-          },
-          {
-            value: "guide",
-            text: "Guide"
-          },
-          {
-            value: "help page",
-            text: "Help page"
-          },
-          {
-            value: "local transaction",
-            text: "Local transaction"
-          },
-          {
-            value: "place",
-            text: "Place"
-          },
-          {
-            value: "Simple smart answer",
-            text: "Simple smart answer"
-          },
-          {
-            value: "transaction",
-            text: "Transaction"
-          }
-        ]
-      }) }}
+          items: formatOptions
+        }) }}
 
       </div>
-      
+
       <div class="govuk-button-group">
         {{ govukButton({
           text: "Apply filters"
         }) }}
-        <a id="clear-filters" class="govuk-link govuk-link--no-visited-state" href="/multi-page-concept/all-publications"></a>
+        <a id="clear-filters" class="govuk-link govuk-link--no-visited-state" href="/multi-page-concept/all-publications">Clear filters</a>
       </div>
     </form>
 
@@ -209,49 +133,21 @@
 
     <!-- End filter -->
 
-    {% from "govuk/components/table/macro.njk" import govukTable %}
     {{ govukTable({
       firstCellIsHeader: true,
       classes: "all-publications",
-      head: [
-        {
-          text: "Title"
-        },
-        {
-          text: "Status"
-        },
-        {
-          text: "Updated"
-        },
-        {
-          text: "Assigned to"
-        },
-        {
-          text: "Content type"
-        }
-      ],
+      head: tableHead,
       rows: [
         [
-          {
-            classes: "title"
-          },
-          {
-            classes: "state"
-
-          },
-          {
-            classes: "updated",
-            text: "19 minutes ago"
-          },
-          {
-            classes: "assignee"
-          },
-          {
-            classes: "format"
-          }
+          { classes: "title" },
+          { classes: "state" },
+          { classes: "updated", text: "19 minutes ago" },
+          { classes: "assignee" },
+          { classes: "format" }
         ]
       ]
     }) }}
+
   </div>
 </div>
 

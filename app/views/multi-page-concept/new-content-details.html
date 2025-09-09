@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block header %}
-
   {{ govukHeader({
     productName: "Publisher",
     homepageUrl: "/index",
@@ -13,42 +12,17 @@
     navigationClasses: "align-right",
     navigation: [
       {
-          href: "#1",
-          text: "Switch app"
+        href: "#1",
+        text: "Switch app"
       }
     ]
   }) }}
-
-  {{ govukServiceNavigation({
-    serviceUrl: "#",
-    navigation: [
-    {
-      href: "my-content",
-      text: "My content"
-    },
-    {
-      href: "all-publications",
-      text: "All publications"
-    },
-    {
-      href: "2i-queue",
-      text: "2i queue"
-    },
-    {
-      href: "fact-check",
-      text: "Fact check"
-    },
-    {
-      href: "#",
-      text: "Create new content",
-      active: true
-    }
-  ]
-  }) }}
-
+  {% set activeNav = "new-content" %}
+  {% include "includes/_service-navigation.njk" %}
 {% endblock %}
 
 {% block beforeContent %}
+  {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
   {{ govukBackLink({
     text: "Back",
     href: "new-content"
@@ -57,25 +31,24 @@
 
 {% block content %}
 
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-  
+
     <span class="govuk-caption-xl">Create new content</span>
     <h1 class="govuk-heading-xl">{{ data['contentType'] }}</h1>
 
     <form method="post" action="">
 
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="title">
-          Title
-        </label>
+        <label class="govuk-label govuk-label--m" for="title">Title</label>
         <input class="govuk-input" id="title" name="title" type="text" spellcheck="false" value="">
-      </div>      
+      </div>
 
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="slug">
-          Slug
-        </label>
+        <label class="govuk-label govuk-label--m" for="slug">Slug</label>
         <div id="slug-hint" class="govuk-hint">
           Must be written in the following format: lower-case-hypen-separated
         </div>
@@ -85,58 +58,50 @@
           {% elif data['contentType'] == 'Help page' %}
             <div class="govuk-input__prefix" aria-hidden="true">help/</div>
           {% endif %}
-          <input class="govuk-input" id="slug" name="slug" type="text" spellcheck="false">
-        </div>      
+          <input class="govuk-input" id="slug" name="slug" type="text" spellcheck="false" aria-describedby="slug-hint">
+        </div>
       </div>
 
       {% if data['contentType'] == 'Local transaction' %}
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--m" for="LGSL-code">
-            LGSL code
-          </label>
-          <input class="govuk-input govuk-input--width-3 govuk-input--extra-letter-spacing" id="LGSL-code" name="LGSLcode" type="text" spellcheck="false" value="" aria-describedby="LGSL-code-hint">
+          <label class="govuk-label govuk-label--m" for="LGSL-code">LGSL code</label>
+          <input class="govuk-input govuk-input--width-3 govuk-input--extra-letter-spacing" id="LGSL-code" name="LGSLcode" type="text" spellcheck="false" aria-describedby="LGSL-code-hint" value="">
         </div>
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--m" for="LGIL-code">
-            LGIL code
-          </label>
-          <input class="govuk-input govuk-input--width-2 govuk-input--extra-letter-spacing" id="LGIL-code" name="LGILcode" type="text" spellcheck="false" value="" aria-describedby="LGIL-code-hint">
+          <label class="govuk-label govuk-label--m" for="LGIL-code">LGIL code</label>
+          <input class="govuk-input govuk-input--width-2 govuk-input--extra-letter-spacing" id="LGIL-code" name="LGILcode" type="text" spellcheck="false" aria-describedby="LGIL-code-hint" value="">
         </div>
       {% endif %}
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="language-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              Language
-          </legend>
-          <div class="govuk-radios govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="language" name="language" type="radio" value="English" checked>
-              <label class="govuk-label govuk-radios__label" for="language">
-                English
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="language-2" name="language" type="radio" value="Welsh">
-              <label class="govuk-label govuk-radios__label" for="language-2">
-                Welsh
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-
-      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukRadios({
+        name: "language",
+        fieldset: {
+          legend: {
+            text: "Language",
+            classes: "govuk-fieldset__legend--m"
+          },
+          ariaDescribedBy: "language-hint"
+        },
+        items: [
+          {
+            value: "English",
+            text: "English",
+            checked: true
+          },
+          {
+            value: "Welsh",
+            text: "Welsh"
+          }
+        ]
+      }) }}
 
       <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Create content"
-        }) }}
+        {{ govukButton({ text: "Create content" }) }}
         <a class="govuk-link govuk-link--no-visited-state" href="my-content">Cancel</a>
       </div>
 
     </form>
-  
+
   </div>
 </div>
 
