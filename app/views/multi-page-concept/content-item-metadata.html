@@ -5,47 +5,19 @@
 {% endblock %}
 
 {% block header %}
-
   {{ govukHeader({
     productName: "Publisher",
     homepageUrl: "/index",
     serviceUrl: "/index",
-    classes: "govuk-!-font-weight-bold",
     navigationClasses: "align-right",
     navigation: [
       {
-          href: "#1",
-          text: "Switch app"
+        href: "#1",
+        text: "Switch app"
       }
     ]
   }) }}
-
-  {{ govukServiceNavigation({
-    serviceUrl: "#",
-    navigation: [
-    {
-      href: "my-content",
-      text: "My content"
-    },
-    {
-      href: "all-publications",
-      text: "All publications"
-    },
-    {
-      href: "2i-queue",
-      text: "2i queue"
-    },
-    {
-      href: "fact-check",
-      text: "Fact check"
-    },
-    {
-      href: "new-content",
-      text: "Create new content"
-    }
-  ]
-  }) }}
-
+  {% include "includes/_service-navigation.njk" %}
 {% endblock %}
 
 {% block content %}
