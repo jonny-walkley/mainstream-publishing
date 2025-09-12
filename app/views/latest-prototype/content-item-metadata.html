@@ -1,0 +1,191 @@
+{% extends "layouts/main-rebrand.html" %}
+
+{% block pageTitle %}
+  Metadata - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right",
+    navigation: [
+      {
+        href: "#1",
+        text: "Switch app"
+      }
+    ]
+  }) }}
+  {% include "includes/_service-navigation_iteration.njk" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds chapter-edit-form">
+
+    <span class="govuk-caption-xl"></span>
+    <h1 class="govuk-heading-xl"></h1>
+
+    <dl class="govuk-summary-list content-item-summary">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Edition</dt>
+        <dd class="govuk-summary-list__value" id="edition"></dd>
+        <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions"></dd>
+      </div>
+      {% if data['status'] == "In 2i" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">2i reviewer</dt>
+          <dd class="govuk-summary-list__value" id="reviewer"></dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link govuk-link--no-visited-state" id="reviewer-link" href="#">Change<span class="govuk-visually-hidden">2i reviewer</span></a>
+          </dd>
+        </div>
+      {% elif data['status'] == "Fact check sent" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Sent out</dt>
+          <dd class="govuk-summary-list__value" id="sent-out"></dd>
+          <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions"></dd>
+        </div>
+      {% elif data['status'] == "Scheduled" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Scheduled for</dt>
+          <dd class="govuk-summary-list__value" id="scheduled"></dd>
+          <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions"></dd>
+        </div>
+      {% endif %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Assigned to</dt>
+        <dd class="govuk-summary-list__value assignee"></dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> assignee</span></a>
+        </dd>
+      </div>
+    </dl>
+
+    {% if data['status'] == "In 2i" %}
+      {{ govukInsetText({
+        id: "reviewer-actions",
+        html: "
+          <p class='govuk-body'><span class='assignee'></span> sent this edition to 2i.</p>
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>Request amendments</a></p>
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>No changes needed</a></p>
+        "
+      }) }}
+    {% elif data['status'] == "Ready" %}
+      {{ govukInsetText({
+        id: "request-amendments",
+        html: "
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>Request amendments</a></p>
+        "
+      }) }}
+    {% elif data['status'] == "Fact check received" %}
+      {{ govukInsetText({
+        id: "fact-check-received-actions",
+        html: "
+          <p class='govuk-body'>We have received a fact check response for this edition.</p>
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>Request amendments</a></p>
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>No changes needed</a></p>
+        "
+      }) }}
+    {% endif %}
+    
+</div>
+
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-edit">Edit</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-tagging">Tagging</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" aria-current="page" href="content-item-metadata">Metadata</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-history-and-notes">History and notes</a></li>
+        <!-- <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-related-external-links">Related external links</a></li> -->
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-admin">Admin</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">Metadata</h2>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    
+    {% if (data['status'] == "Scheduled") or (data['status'] == "Published") or (data['status'] == "Archived") %}
+      
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Slug</h3>
+      <p class="govuk-body" id="slug"></p>
+    
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1" id="meta-tag-description-heading">Meta tag description</h3>
+      <p class="govuk-body" id="meta-tag-description"></p>
+
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Language</h3>
+      <p class="govuk-body" id="language"></p>
+    
+    {% else %}
+    
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="slug">Slug</label>
+        <div id="slug-hint" class="govuk-hint">
+          If you change the slug of a published page, the old slug will automatically redirect to the new one
+        </div>
+        <input class="govuk-input" id="slug" name="slug" type="text" spellcheck="false" value="">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="meta-tag-description">
+          Meta tag description
+        </label>
+        <div id="metadata-hint" class="govuk-hint">
+          Some search engines will display this if they cannot find what they need in the main text
+        </div>
+        <textarea class="govuk-textarea" id="meta-tag-description" name="meta-tag-description" rows="4" value=""></textarea>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="language-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Language
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="language-english" name="language" type="radio" value="English">
+              <label class="govuk-label govuk-radios__label" for="language-english">
+                English
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="language-welsh" name="language" type="radio" value="Welsh">
+              <label class="govuk-label govuk-radios__label" for="language-welsh">
+                Welsh
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    
+    {% endif %}
+
+  </div>
+
+  {% if (data['status'] !== "Scheduled") and (data['status'] !== "Published") and (data['status'] !== "Archived") %}
+    <div class="govuk-grid-column-one-third sticky options-sidebar">
+        <div class="actions-sidebar">
+          <button type="submit" data-prevent-double-click="true" class="govuk-button wide govuk-button--save govuk-button--progress" data-module="govuk-button">
+            <span class="govuk-button__icon">
+              <span class="govuk-button__text">Save</span>
+            </span>
+          </button>
+        </div>
+    </div>
+  {% endif %}
+  
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/content-item.js"></script>
+  <script src="/public/javascripts/save-feedback.js"></script>
+{% endblock %}

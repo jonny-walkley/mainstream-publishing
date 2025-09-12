@@ -1,0 +1,75 @@
+{% extends "layouts/main-rebrand.html" %}
+
+{% block pageTitle %}
+  Add edition note - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right",
+    navigation: [
+      {
+        href: "#1",
+        text: "Switch app"
+      }
+    ]
+  }) }}
+  {% include "includes/_service-navigation_iteration.njk" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl"></span>
+    <h1 class="govuk-heading-xl">Add edition note</h1>
+
+    <p class="govuk-body">Your change note should include:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>the Zendesk ticket link</li>
+      <li>the Trello card link</li>
+      <li>a summary of the ticket and the changes</li>
+      <li>the location of the change, what the change is and why you’ve changed it</li>
+    </ul>
+
+    <p class="govuk-body govuk-!-margin-bottom-6">
+      <a class="govuk-link--no-visited-state" href="https://gov-uk.atlassian.net/l/cp/dwn06raQ" rel="noreferrer noopener" target="_blank">
+        Read guidance on writing good change notes (opens in new tab)
+      </a>
+    </p>
+        
+    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+    {{ govukTextarea({
+      name: "moreDetail",
+      id: "more-detail",
+      rows: 18,
+      label: {
+        text: "Edition note",
+        classes: "govuk-label--m",
+        isPageHeading: false
+      }
+    }) }}
+
+    <form class="form" action="#" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      <div class="govuk-button-group">
+          {{ govukButton({
+              text: "Add edition note"
+          }) }}
+          <a class="govuk-link govuk-link--no-visited-state" id="cancel-link" href="#">Cancel</a>
+      </div>
+    </form>
+    
+  </div> 
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/content-item-actions.js"></script>
+{% endblock %}

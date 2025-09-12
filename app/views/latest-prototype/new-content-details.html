@@ -18,7 +18,7 @@
     ]
   }) }}
   {% set activeNav = "new-content" %}
-  {% include "includes/_service-navigation.njk" %}
+  {% include "includes/_service-navigation_iteration.njk" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -66,6 +66,8 @@
             <div class="govuk-input__prefix" aria-hidden="true">done/</div>
           {% elif data['contentType'] == 'Help page' %}
             <div class="govuk-input__prefix" aria-hidden="true">help/</div>
+          {% else %}
+            <div class="govuk-input__prefix" aria-hidden="true">/</div>
           {% endif %}
           <input class="govuk-input" id="slug" name="slug" type="text" spellcheck="false">
         </div>

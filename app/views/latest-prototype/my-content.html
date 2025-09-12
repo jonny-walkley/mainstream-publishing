@@ -1,0 +1,55 @@
+{% extends "layouts/main-rebrand.html" %}
+
+{% block pageTitle %}
+  My content - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right",
+    navigation: [
+      {
+        href: "#1",
+        text: "Switch app"
+      }
+    ]
+  }) }}
+  {% set activeNav = "my-content" %}
+  {% include "includes/_service-navigation_iteration.njk" %}
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% set tableHead = [
+  { text: "Title" },
+  { text: "Status" },
+  { text: "Updated" },
+  { text: "Content type" }
+] %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="inline-header-and-button">
+      <h1 class="govuk-heading-xl">My content</h1>
+      {{ govukButton({
+        text: "Create new content",
+        href: "new-content"
+      }) }}
+    </div>
+
+    <ul id="dynamic-task-list" class="govuk-task-list my-content"></ul>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/publications_iteration.js"></script>
+{% endblock %}

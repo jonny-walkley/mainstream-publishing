@@ -1,0 +1,74 @@
+{% extends "layouts/main-rebrand.html" %}
+
+{% block pageTitle %}
+  Important note - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right",
+    navigation: [
+      {
+        href: "#1",
+        text: "Switch app"
+      }
+    ]
+  }) }}
+  {% include "includes/_service-navigation_iteration.njk" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl"></span>
+    <h1 class="govuk-heading-xl">Add important note</h1>
+
+    <!-- <p class="govuk-body">Add important notes that anyone who works on this edition needs to see.</p> -->
+    
+    <p class="govuk-body">The important note needs to say:</p>
+    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+      <li>if it’s urgent </li>
+      <li>if it’s a quick fix</li>
+      <li>if it should be 2ied with something else</li>
+      <li>what should happen next with the content (for example, publish, schedule)</li>
+      <li>if it needs a fact check and the fact check email addresses</li>
+    </ul>
+        
+    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+    {{ govukTextarea({
+      name: "importantNote",
+      id: "important-note",
+      rows: 10,
+      label: {
+        html: "Important note",
+        classes: "govuk-label--m",
+        isPageHeading: false
+      }
+    }) }}
+
+    <form class="form" action="#" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      <div class="govuk-button-group">
+        {{ govukButton({
+            id: "important-note-button",
+            text: "Add important note"
+        }) }}
+        <a class="govuk-link govuk-link--no-visited-state" id="cancel-link" href="#">Cancel</a>
+        <a class="govuk-link delete" id="delete-link" href="#" style="display: none;">Delete</a>
+      </div>
+    </form>
+    
+  </div> 
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/content-item-actions.js"></script>
+{% endblock %}

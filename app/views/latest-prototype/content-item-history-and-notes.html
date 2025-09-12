@@ -1,0 +1,382 @@
+{% extends "layouts/main-rebrand.html" %}
+
+{% block pageTitle %}
+  History and notes - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right",
+    navigation: [
+      {
+        href: "#1",
+        text: "Switch app"
+      }
+    ]
+  }) }}
+  {% include "includes/_service-navigation_iteration.njk" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl"></span>
+    <h1 class="govuk-heading-xl"></h1>
+
+    <dl class="govuk-summary-list content-item-summary">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Edition</dt>
+        <dd class="govuk-summary-list__value" id="edition"></dd>
+        <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions"></dd>
+      </div>
+      {% if data['status'] == "In 2i" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">2i reviewer</dt>
+          <dd class="govuk-summary-list__value" id="reviewer"></dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link govuk-link--no-visited-state" id="reviewer-link" href="#">Change<span class="govuk-visually-hidden">2i reviewer</span></a>
+          </dd>
+        </div>
+      {% elif data['status'] == "Fact check sent" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Sent out</dt>
+          <dd class="govuk-summary-list__value" id="sent-out"></dd>
+          <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions"></dd>
+        </div>
+      {% elif data['status'] == "Scheduled" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Scheduled for</dt>
+          <dd class="govuk-summary-list__value" id="scheduled"></dd>
+          <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions"></dd>
+        </div>
+      {% endif %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Assigned to</dt>
+        <dd class="govuk-summary-list__value assignee"></dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> assignee</span></a>
+        </dd>
+      </div>
+    </dl>
+
+    {% if data['status'] == "In 2i" %}
+      {{ govukInsetText({
+        id: "reviewer-actions",
+        html: "
+          <p class='govuk-body'><span class='assignee'></span> sent this edition to 2i.</p>
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>Request amendments</a></p>
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>No changes needed</a></p>
+        "
+      }) }}
+    {% elif data['status'] == "Ready" %}
+      {{ govukInsetText({
+        id: "request-amendments",
+        html: "
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>Request amendments</a></p>
+        "
+      }) }}
+    {% elif data['status'] == "Fact check received" %}
+      {{ govukInsetText({
+        id: "fact-check-received-actions",
+        html: "
+          <p class='govuk-body'>We have received a fact check response for this edition.</p>
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>Request amendments</a></p>
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>No changes needed</a></p>
+        "
+      }) }}
+    {% endif %}
+    
+</div>
+
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-edit">Edit</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-tagging">Tagging</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-metadata">Metadata</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" aria-current="page" href="content-item-history-and-notes">History and notes</a></li>
+        <!-- <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-related-external-links">Related external links</a></li> -->
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-admin">Admin</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">History and notes</h2>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    
+    <div id="important-note" style="display: none;">
+
+      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+      {% set html %}
+        <q class="govuk-body" id="important-note-body">
+          
+        </q>
+      {% endset %}
+
+      {{ govukNotificationBanner({
+        html: html,
+        titleText: "Important note"
+      }) }}
+
+    </div>
+
+    {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+    {{ govukAccordion({
+      id: "accordion-history-and-notes",
+      rememberExpanded: false,
+      items: [
+      {
+        heading: {
+          html: "<span id='current-edition'>Edition </span>"
+        },
+        content: {
+          html: '
+          
+          <p class="govuk-body compare-edition">
+            <a href="#" class="govuk-link--no-visited-state" id="current-edition-compare">Compare with Edition </a>
+          </p>
+
+          <!-- To-do: Published by -->
+          <div id="published-by" style="display: none;">
+            <p class="govuk-body">
+              <time>5:33pm, 6 Aug 2025</time>
+              <span class="govuk-!-font-weight-bold">Published</span> by <span class="claimed-by-name"></span>
+            </p>
+          </div>
+          <!-- End -->
+
+          <!-- To-do: Scheduled for -->
+          <div id="scheduled-for" style="display: none;">
+            <p class="govuk-body">
+              <time>4:04pm, 6 Aug 2025</time>
+              <span class="govuk-!-font-weight-bold">Scheduled for publishing</span> by <span class="claimed-by-name"></span>
+            </p>
+            <div class="govuk-inset-text">
+              <p id="scheduled-for-time"></p>
+            </div>
+          </div>
+          <!-- End -->
+          
+          <div id="fact-check-response">
+    
+            <p class="govuk-body">
+              <time>2:02pm, 6 Aug 2025</time>
+              <span class="govuk-!-font-weight-bold">Fact check received</span> by GOV.UK Bot
+            </p>
+          
+            <div class="govuk-inset-text fact-check-response">
+              <p>Hi,</p>
+              <p>We have reviewed the proposed changes and have the following issue:</p>
+              <p>There is a reference to the ‘patent register’ we are not able to call it a register due to legal constraints, it needs to be referred to as ‘search for a patent service’ instead.</p>
+              <p>If you have any questions please ask</p>
+              <p>Thanks</p>
+              <p>Jane</p>
+              <!-- <p>
+                From: GOV.UK Publishing <gov.uk.publishing@notifications.service.gov.uk></br>
+                Sent: Wednesday, January 8, 2025 1:40 PM</br>
+                To: Jane Doe <jane.doe@example.email.gov.uk></br>
+                Subject: ‘[Check the patents journal]’ GOV.UK preview of new edition
+              </p>
+              <p>Hi,</p>
+              <p>We need you to check the factual accuracy of changes made to ‘Check the patents journal’ before it’s published on GOV.​UK.</p>
+              <p>The GOV.​UK Content Team made the changes because of the new digital service #5893029. Deadline: 16 January 2025 (5 working days)...</p> -->
+              <a href="#" class="govuk-link govuk-link--no-visited-state">Show earlier messages</a>
+            </div>
+          </div>
+
+          <!-- To-do: Fact check sent -->
+          <div id="fact-check-sent" style="display: none;">
+            <p class="govuk-body">
+              <time>11:30pm, 6 Aug 2025</time>
+              <span class="govuk-!-font-weight-bold">Sent for fact check</span> by <span class="claimed-by-name"></span>
+            </p>
+            <div class="govuk-inset-text">
+              <p class="govuk-body">Sent to:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li><a href="#">contact@hmrc-content.deskpro.com</a></li>
+                <li><a href="#">web.editor@education.gov.uk</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- End -->
+
+          <!-- To-do: Amends needed -->
+          <div id="amends-needed" style="display: none;">
+            
+            <p class="govuk-body">
+              <time>11:17am, 3 Aug 2025</time>
+              <span class="govuk-!-font-weight-bold">Amends requested</span> by <span class="claimed-by-name"></span>
+            </p>
+
+            <div class="govuk-inset-text">
+              ~ 2i amends ~</br></br>
+
+              I’ve made the below minor change - agreed with <span class="assignee"></span> on Slack.</br></br>
+
+              [1]</br></br>
+
+              ##If you’re off work</br></br>
+
+              CHANGED</br></br>
+              The amount of pay you can get depends on what is in your contract and if you’re:</br>
+              - being dismissed or made redundant</br>
+              - resigning</br></br>
+
+              TO</br></br>
+              The amount of pay you can get depends on what is in your contract and if you’re:</br>
+              - being dismissed</br>
+              - being made redundant</br>
+              - resigning</br></br>
+
+              NOTE</br></br>
+              Being dismissed and made redundant are different scenarios - it might be easier to scan if we split them into separate bullets.
+            </div>
+          
+          </div>
+          <!-- End -->
+
+          <!-- To-do: 2i approved -->
+          <div id="review-approved" style="display: none;">
+
+            <p class="govuk-body">
+              <time>11:17am, 3 Aug 2025</time>
+              <span class="govuk-!-font-weight-bold">2i approved</span> by <span class="claimed-by-name"></span>
+            </p>
+
+          </div>
+          <!-- End -->
+
+          <div id="review-requested" style="display: none;">
+
+            <div id="claimed-by" style="display: none;">
+              <p class="govuk-body">
+                <time>10:16am, 3 Aug 2025</time>
+                <span class="govuk-!-font-weight-bold">2i claimed</span> by <span class="claimed-by-name"></span>
+              </p>
+            </div>
+            
+            <p class="govuk-body">
+              <time>8:21am, 3 Aug 2025</time>
+              <span class="govuk-!-font-weight-bold">2i requested</span> by <span class="assignee"></span>
+            </p>
+            
+            <div class="govuk-inset-text">
+              Zen: <a class="govuk-link govuk-link--no-visited-state" href="#">https://govuk.zendesk.com/agent/tickets/5906698</a></br></br>
+              Trello: <a class="govuk-link govuk-link--no-visited-state" href="#">https://trello.com/c/lKsBviKZ/52-fix-blue-team-broken-links-aug-2024</a></br></br>
+
+              SUMMARY:</br></br>
+
+              This is part of the blue team’s broken link project.
+              We’re replacing all of the HMCTS links that are currently broken.</br></br>
+
+              LOCATION:</br></br>
+              #If you lose your case</br>
+              ##Appealing an employment tribunal decision made in Scotland.</br></br>
+
+              CHANGE:</br></br>
+
+              If you get permission, you can appeal to the Scottish higher court, the [Court of Session](<a class="govuk-link govuk-link--no-visited-state" href="#">https://www.scotcourts.gov.uk/the-courts/court-of-session/about-the-court-of-session</a>).</br></br>
+
+              TO:</br></br>
+
+              If you get permission, you can appeal to the Scottish higher court, the [Court of Session](<a class="govuk-link govuk-link--no-visited-state" href="#">https://www.scotcourts.gov.uk/courts-and-tribunals/the-supreme-courts/the-court-of-session/</a>).</br></br>
+
+              REASON:</br></br>
+
+              Fixing the broken link.
+            </div>
+
+          </div>
+        
+          <p class="govuk-body">
+            <time>1:46pm, 27 Jul 2025</time>
+            <span class="govuk-!-font-weight-bold">Assigned</span> to <span class="assignee"></span>
+          </p>
+        
+          <p class="govuk-body">
+            <time>1:46pm, 27 Jul 2025</time>
+            <span class="govuk-!-font-weight-bold" id="first-event">New edition</span> by <span class="assignee"></span>
+          </p>
+          
+          '
+        },
+        expanded: true
+      }
+      ]
+    }) }}
+  </div>
+
+  <div class="govuk-grid-column-one-third sticky options-sidebar">
+    <div class="actions-sidebar">
+
+      {% if (data['status'] == "Draft") or (data['status'] == "Amends needed") %}
+        
+        {{ govukButton({
+          id: "send-to-2i",
+          text: "2i",
+          classes: "govuk-button wide",
+          href: "#"
+        }) }}
+        
+        {{ govukButton({
+          id: "edition-note",
+          text: "Add edition note",
+          classes: "govuk-button--secondary wide",
+          href: "#"
+        }) }}
+      
+      {% else %}
+
+        {{ govukButton({
+          id: "edition-note",
+          text: "Add edition note",
+          classes: "govuk-button wide",
+          href: "#"
+        }) }}
+      
+      {% endif %}
+
+      {{ govukButton({
+        id: "important-note-button",
+        text: "Add important note",
+        classes: "govuk-button--secondary wide",
+        href: "#"
+      }) }}
+
+      {% if data['status'] == "In 2i" %}
+
+        {{ govukButton({
+          id: "skip",
+          text: "Skip review",
+          classes: "govuk-button--secondary wide",
+          href: "#"
+        }) }}
+
+      {% endif %}
+
+      {% if data['status'] !== "Published" %}
+        <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">Preview (opens in new tab)</a></p>
+      {% else %}
+        <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">View on GOV.UK (opens in new tab)</a></p>
+      {% endif %}
+    
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/content-item.js"></script>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "layouts/main-rebrand.html" %}
+
+{% block pageTitle %}
+  Publish - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right",
+    navigation: [
+      {
+        href: "#1",
+        text: "Switch app"
+      }
+    ]
+  }) }}
+  {% include "includes/_service-navigation_iteration.njk" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl"></span>
+    <h1 class="govuk-heading-xl">Publish</h1>
+
+    {{ govukTextarea({
+      name: "publishComment",
+      id: "publish-comment",
+      rows: 5,
+      label: {
+        text: "Note (optional)",
+        classes: "govuk-label--m",
+        isPageHeading: false
+      }
+    }) }}
+
+    <form class="form" action="#" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      <div class="govuk-button-group">
+          {{ govukButton({
+              text: "Publish"
+          }) }}
+          <a class="govuk-link govuk-link--no-visited-state" id="cancel-link" href="#">Cancel</a>
+      </div>
+    </form>
+    
+  </div> 
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/content-item-actions.js"></script>
+{% endblock %}

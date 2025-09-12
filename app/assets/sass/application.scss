@@ -11,6 +11,20 @@
 //   border-left: 1px solid #b1b4b6;
 // }
 
+.inline-header-and-button {
+  h1 {
+    display: inline-block;
+  }
+  a {
+    float: right;
+    margin-top: 5px;
+  }
+}
+
+.govuk-task-list .govuk-task-list__link {
+  font-weight: bold;
+}
+
 #guide-chapters .govuk-summary-list .govuk-summary-list__row {
   .govuk-summary-list__key {
     font-weight: 500;

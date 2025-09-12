@@ -1,0 +1,74 @@
+{% extends "layouts/main-rebrand.html" %}
+
+{% block pageTitle %}
+  Send to fact check - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right",
+    navigation: [
+      {
+        href: "#1",
+        text: "Switch app"
+      }
+    ]
+  }) }}
+  {% include "includes/_service-navigation_iteration.njk" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl"></span>
+    <h1 class="govuk-heading-xl">Send to fact check</h1>
+
+    {{ govukInput({
+      label: {
+        text: "Email addresses",
+        classes: "govuk-label--m"
+      },
+      hint: {
+        text: "You can enter multiple email addresses if you comma separate them as follows: fact-checker-one@example.com, fact-checker-two@example.com"
+      },
+      id: "email-addresses",
+      name: "emailAddresses",
+      type: "email",
+      autocomplete: "email",
+      spellcheck: false
+    }) }}
+
+    {{ govukTextarea({
+      name: "factCheckEmail",
+      id: "fact-check-email",
+      rows: 18,
+      label: {
+        text: "Customised message",
+        classes: "govuk-label--m",
+        isPageHeading: false
+      }
+    }) }}
+
+    <form class="form" action="#" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      <div class="govuk-button-group">
+          {{ govukButton({
+              text: "Send to fact check"
+          }) }}
+          <a class="govuk-link govuk-link--no-visited-state" id="cancel-link" href="#">Cancel</a>
+      </div>
+    </form>
+    
+  </div> 
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/content-item-actions.js"></script>
+{% endblock %}

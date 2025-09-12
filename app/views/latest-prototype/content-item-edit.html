@@ -1,0 +1,1400 @@
+{% extends "layouts/main-rebrand.html" %}
+
+{% block pageTitle %}
+  Edit - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right",
+    navigation: [
+      {
+        href: "#1",
+        text: "Switch app"
+      }
+    ]
+  }) }}
+  {% include "includes/_service-navigation_iteration.njk" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl"></span>
+    <h1 class="govuk-heading-xl"></h1>
+
+    <dl class="govuk-summary-list content-item-summary">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Edition</dt>
+        <dd class="govuk-summary-list__value" id="edition"></dd>
+        <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions"></dd>
+      </div>
+      {% if data['status'] == "In 2i" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">2i reviewer</dt>
+          <dd class="govuk-summary-list__value" id="reviewer"></dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link govuk-link--no-visited-state" id="reviewer-link" href="#"></a>
+          </dd>
+        </div>
+      {% elif data['status'] == "Fact check sent" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Sent out</dt>
+          <dd class="govuk-summary-list__value" id="sent-out"></dd>
+          <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions"></dd>
+        </div>
+      {% elif data['status'] == "Scheduled" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Scheduled for</dt>
+          <dd class="govuk-summary-list__value" id="scheduled"></dd>
+          <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions"></dd>
+        </div>
+      {% endif %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Assigned to</dt>
+        <dd class="govuk-summary-list__value assignee"></dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> assignee</span></a>
+        </dd>
+      </div>
+    </dl>
+
+    {% if data['status'] == "In 2i" %}
+      {{ govukInsetText({
+        id: "reviewer-actions",
+        html: "
+          <p class='govuk-body'><span class='assignee'></span> sent this edition to 2i.</p>
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>Request amendments</a></p>
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>No changes needed</a></p>
+        "
+      }) }}
+    {% elif data['status'] == "Ready" %}
+      {{ govukInsetText({
+        id: "request-amendments",
+        html: "
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>Request amendments</a></p>
+        "
+      }) }}
+    {% elif data['status'] == "Fact check received" %}
+      {{ govukInsetText({
+        id: "fact-check-received-actions",
+        html: "
+          <p class='govuk-body'>We have received a fact check response for this edition.</p>
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>Request amendments</a></p>
+          <p class='govuk-body'><a href='#' class='govuk-link govuk-link--no-visited-state'>No changes needed</a></p>
+        "
+      }) }}
+    {% endif %}
+    
+</div>
+
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" aria-current="page" href="content-item-edit">Edit</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-tagging">Tagging</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-metadata">Metadata</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-history-and-notes">History and notes</a></li>
+        <!-- <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-related-external-links">Related external links</a></li> -->
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="content-item-admin">Admin</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">Edit</h2>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds chapter-edit-form">
+          
+    {% if (data['status'] == "Scheduled") or (data['status'] == "Published") or (data['status'] == "Archived") %}
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Title</h3>
+      <p class="govuk-body" id="title"></p>
+    {% else %}
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="title">Title</label>
+        <input class="govuk-input" id="title" name="title" type="text" spellcheck="false" value="">
+      </div>
+    {% endif %}
+
+    {% if (data['content-type'] == "Answer") or (data['content-type'] == "Help page") %}
+
+      {% if (data['status'] == "Scheduled") or (data['status'] == "Published") or (data['status'] == "Archived") %}
+
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Body</h3>
+
+      {% else %}
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="body">
+            Body
+          </label>
+          <div id="body-hint" class="govuk-hint">
+            Read the <a href="https://govspeak-preview.publishing.service.gov.uk/guide" target="_blank" class="govuk-link--no-visited-state">Govspeak guide (opens in new tab)</a>
+          </div>
+          <textarea class="govuk-textarea" id="body" name="body" rows="24"></textarea>
+        </div>
+
+      {% endif %}
+
+    {% elif data['content-type'] == "Completed transaction" %}
+
+      {% if (data['status'] == "Scheduled") or (data['status'] == "Published") or (data['status'] == "Archived") %}
+
+      
+      
+      {% else %}
+
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+          <legend class="">
+            <label class="govuk-label govuk-label--m" for="promotions">Promotions</label>
+          </legend>
+          <div id="promotions-hint" class="govuk-hint">
+            Display a promotion above the satisfaction survey
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="do-not-promote-anything" name="promotions" type="radio" value="do-not-promote-anything" checked>
+              <label class="govuk-label govuk-radios__label" for="do-not-promote-anything">
+                Do not promote anything on this page
+              </label>
+            </div>
+            <div class="govuk-radios__divider">or</div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="organ-donation" name="promotions" type="radio" value="organ-donation" data-aria-controls="conditional-organ-donation">
+              <label class="govuk-label govuk-radios__label" for="organ-donation">
+                Organ donation
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-organ-donation">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="promotion-url">
+                  Promotion URL
+                </label>
+                <input class="govuk-input govuk-!-width-full" id="promotion-url" name="promotion-url" type="text">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="opt-in-url">
+                  Opt-in URL (optional)
+                </label>
+                <input class="govuk-input govuk-!-width-full" id="opt-in-url" name="opt-in-url" type="text">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="opt-out-url">
+                  Opt-out URL (optional)
+                </label>
+                <input class="govuk-input govuk-!-width-full" id="opt-out-url" name="opt-out-url" type="text">
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bring-ID-to-vote" name="promotions" type="radio" value="photo-id" data-aria-controls="conditional-photo-id">
+              <label class="govuk-label govuk-radios__label" for="bring-ID-to-vote">
+                Bring photo ID to vote
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-photo-id">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="promotion-url-bring-ID-to-vote">
+                  Promotion URL
+                </label>
+                <input class="govuk-input govuk-!-width-full" id="promotion-url-bring-ID-to-vote" name="promotion-url" type="text">
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mot-reminders" name="promotions" type="radio" value="conditional-mot-reminders" data-aria-controls="conditional-mot-reminders">
+              <label class="govuk-label govuk-radios__label" for="mot-reminders">
+                MOT reminders
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-mot-reminders">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="promotion-url-mot-reminders">
+                  Promotion URL
+                </label>
+                <input class="govuk-input govuk-!-width-full" id="promotion-url-mot-reminders" name="promotion-url" type="text">
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="electric-vehicles" name="promotions" type="radio" value="electric-vehicles" data-aria-controls="conditional-electric-vehicles">
+              <label class="govuk-label govuk-radios__label" for="electric-vehicles">
+                Electric vehicles
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-electric-vehicles">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="promotion-url-electric-vehicles">
+                  Promotion URL
+                </label>
+                <input class="govuk-input govuk-!-width-full" id="promotion-url-electric-vehicles" name="promotion-url" type="text">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {% endif %}
+
+     
+
+    {% elif data['content-type'] == "Local transaction" %}
+
+      {% if (data['status'] == "Scheduled") or (data['status'] == "Published") or (data['status'] == "Archived") %}
+
+      
+      
+      {% else %}
+
+      <div class="published-state">
+        <h2 class="govuk-heading-m">LGSL code</h2>
+        <p id="lgsl-code"></p>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="lgil-code">
+          LGIL code
+        </label>
+        <input class="govuk-input govuk-input--width-2 govuk-input--extra-letter-spacing" id="lgil-code" name="LGILcode" type="text" spellcheck="false" value="" aria-describedby="LGIL-code-hint">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="introduction">
+          Introduction
+        </label>
+        <div id="introduction-hint" class="govuk-hint">
+          Set the scene for the user.
+          Explain that it’s the responsibility of the local council and that we’ll take you there.
+          Read the <a href="https://govspeak-preview.publishing.service.gov.uk/guide" target="_blank" class="govuk-link--no-visited-state">Govspeak guide (opens in new tab)</a>.
+        </div>
+        <textarea class="govuk-textarea" id="introduction" name="introduction" rows="16"></textarea>
+      </div>
+
+       <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="local-transaction-button-text">Button text (optional)</label>
+         <div id="local-transaction-button-text-hint" class="govuk-hint">
+            If left blank, the default text ‘Find your local council’ will be used
+          </div>
+        <input class="govuk-input" id="local-transaction-button-text" name="local-transaction-button-text" type="text" spellcheck="false" value="">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="more-information">
+          More information (optional)
+        </label>
+        <textarea class="govuk-textarea" id="more-information" name="moreInformation" rows="16"></textarea>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="what-you-need-to-know">
+          What you need to know (optional)
+        </label>
+        <textarea class="govuk-textarea" id="what-you-need-to-know" name="whatYouNeedToKnow" rows="6"></textarea>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="above-results-content">
+          Above results content (optional)
+        </label>
+         <div id="above-results-hint" class="govuk-hint">
+            This content appears above the address lookup results, below the page heading
+          </div>
+        <textarea class="govuk-textarea" id="above-results-content" name="above-results-content" rows="6"></textarea>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="below-results-content">
+          Below results content (optional)
+        </label>
+        <div id="below-results-hint" class="govuk-hint">
+          This content appears below the address lookup results
+        </div>
+        <textarea class="govuk-textarea" id="below-results-content" name="below-results-content" rows="6"></textarea>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="">
+            <label class="govuk-label govuk-label--m" for="northernIreland">Northern Ireland</label>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="northernIreland-1" name="northernIreland" type="radio" value="do-not-promote" checked>
+              <label class="govuk-label govuk-radios__label" for="northernIreland-1">
+                Service available from local council
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="northernIreland-2" name="northernIreland" type="radio" value="photo-id" data-aria-controls="conditional-nothern-ireland">
+              <label class="govuk-label govuk-radios__label" for="northernIreland-2">
+                Service available from devolved administration (or a similar service is available)
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-nothern-ireland">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="electric-vehicles">
+                  URL of the devolved administration website page
+                </label>
+                <input class="govuk-input govuk-!-width-full" id="promotion-url" name="promotion-url" type="text" autocomplete="tel">
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="northernIreland-3" name="northernIreland" type="radio" value="conditional-mot-reminders">
+              <label class="govuk-label govuk-radios__label" for="northernIreland-3">
+                Service not available
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="">
+            <label class="govuk-label govuk-label--m" for="scotland">Scotland</label>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="scotland-1" name="scotland" type="radio" value="do-not-promote" checked>
+              <label class="govuk-label govuk-radios__label" for="scotland-1">
+                Service available from local council
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="scotland-2" name="scotland" type="radio" value="photo-id" data-aria-controls="conditional-scotland">
+              <label class="govuk-label govuk-radios__label" for="scotland-2">
+                Service available from devolved administration (or a similar service is available)
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-scotland">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="electric-vehicles">
+                  URL of the devolved administration website page
+                </label>
+                <input class="govuk-input govuk-!-width-full" id="promotion-url" name="promotion-url" type="text" autocomplete="tel">
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="scotland-3" name="scotland" type="radio" value="conditional-mot-reminders">
+              <label class="govuk-label govuk-radios__label" for="scotland-3">
+                Service not available
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="">
+            <label class="govuk-label govuk-label--m" for="wales">Wales</label>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="wales-1" name="wales" type="radio" value="do-not-promote" checked>
+              <label class="govuk-label govuk-radios__label" for="wales-1">
+                Service available from local council
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="wales-2" name="wales" type="radio" value="photo-id" data-aria-controls="conditional-wales">
+              <label class="govuk-label govuk-radios__label" for="wales-2">
+                Service available from devolved administration (or a similar service is available)
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-wales">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="electric-vehicles">
+                  URL of the devolved administration website page
+                </label>
+                <input class="govuk-input govuk-!-width-full" id="promotion-url" name="promotion-url" type="text" autocomplete="tel">
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="wales-3" name="wales" type="radio" value="conditional-mot-reminders">
+              <label class="govuk-label govuk-radios__label" for="wales-3">
+                Service not available
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {% endif %}
+
+    {% elif data['content-type'] == "Transaction" %}
+
+      {% if (data['status'] == "Scheduled") or (data['status'] == "Published") or (data['status'] == "Archived") %}
+
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Introduction</h3>
+      <p class="govuk-body" id=""></p>
+
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Start button text</h3>
+      <p class="govuk-body" id=""></p>
+
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Text below the start button (optional)</h3>
+      <p class="govuk-body" id=""></p>
+
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Link to start of transaction</h3>
+      <p class="govuk-body" id=""></p>
+
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">More information (optional)</h3>
+      <p class="govuk-body" id=""></p>
+
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Other ways to apply (optional)</h3>
+      <p class="govuk-body" id=""></p>
+
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">What you need to know (optional)</h3>
+      <p class="govuk-body" id=""></p>
+
+      {% else %}
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="introduction">
+            Introduction
+          </label>
+          <div id="introduction-hint" class="govuk-hint">
+            Set the scene for the user.
+            What is about to happen? For example, “you will need to fill in a form, print it out and take it to the post office”.
+            Read the <a href="https://govspeak-preview.publishing.service.gov.uk/guide" target="_blank" class="govuk-link--no-visited-state">Govspeak guide (opens in new tab)</a>.
+          </div>
+          <textarea class="govuk-textarea" id="introduction" name="introduction" rows="16"></textarea>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="start-button-text-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Start button text
+              </h1>
+            </legend>
+            <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="start-now" name="start-button-text" type="radio" value="start-now" checked>
+                <label class="govuk-label govuk-radios__label" for="start-now">
+                  Start now
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sign-in" name="start-button-text" type="radio" value="sign-in">
+                <label class="govuk-label govuk-radios__label" for="sign-in">
+                  Sign in
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="text-below-button">Text below the start button (optional)</label>
+          <div id="text-below-button-hint" class="govuk-hint">
+            Following ‘on’, for example “the HMRC website”
+          </div>
+          <input class="govuk-input" id="text-below-button" name="text-below-button" type="text" spellcheck="false" value="">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="link-to-start-of-transaction">Link to start of transaction</label>
+          <div id="link-to-start-of-transaction-hint" class="govuk-hint">
+            Link as deep as possible
+          </div>
+          <input class="govuk-input" id="link-to-start-of-transaction" name="text-below-button" type="text" spellcheck="false" value="">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="more-information">
+            More information (optional)
+          </label>
+          <textarea class="govuk-textarea" id="more-information" name="moreInformation" rows="16"></textarea>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="other-ways-to-apply">
+            Other ways to apply (optional)
+          </label>
+          <div id="other-ways-to-apply-hint" class="govuk-hint">
+            Alternative ways of completing this transaction
+          </div>
+          <textarea class="govuk-textarea" id="other-ways-to-apply" name="otherWaysToApply" rows="16"></textarea>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="what-you-need-to-know">
+            What you need to know (optional)
+          </label>
+          <textarea class="govuk-textarea" id="what-you-need-to-know" name="whatYouNeedToKnow" rows="16"></textarea>
+        </div>
+
+      {% endif %}
+
+    {% elif data['content-type'] == "Place" %}
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="places-manager-service-identifier">Places Manager service identifier</label>
+        <div id="places-manager-service-identifier-hint" class="govuk-hint">
+          This is assigned in the <a href="" class="govuk-link--no-visited-state">Places Manager application</a>
+        </div>
+        <input class="govuk-input" id="places-manager-service-identifier" name="places-manager-service-identifier" type="text" spellcheck="false" value="">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="introduction">
+          Introduction
+        </label>
+        <div id="introduction-hint" class="govuk-hint">
+          Read the <a href="https://govspeak-preview.publishing.service.gov.uk/guide" target="_blank" class="govuk-link--no-visited-state">Govspeak guide (opens in new tab)</a>
+        </div>
+        <textarea class="govuk-textarea" id="introduction" name="introduction" rows="16"></textarea>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="further-information">
+          Further information (optional)
+        </label>
+        <textarea class="govuk-textarea" id="further-information" name="furtherInformation" rows="16"></textarea>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="what-you-need-to-know">
+          What you need to know (optional)
+        </label>
+        <textarea class="govuk-textarea" id="what-you-need-to-know" name="whatYouNeedToKnow" rows="6"></textarea>
+      </div>
+
+    {% elif data['content-type'] == "Guide" %}
+    
+      {% if (data['status'] == "Scheduled") or (data['status'] == "Published") or (data['status'] == "Archived") %}
+
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Chapters</h3>
+        <div id="guide-chapters">
+            {{ govukSummaryList({
+              rows: [
+                {
+                  key: {
+                    text: "Overview"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "",
+                        visuallyHiddenText: "Overview"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Get a payment reference number"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "",
+                        visuallyHiddenText: "Get a payment reference number"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Approve a payment through your online bank account"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "",
+                        visuallyHiddenText: "Approve a payment through your online bank account"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Make an online or telephone bank transfer"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "",
+                        visuallyHiddenText: "Make an online or telephone bank transfer"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "At your bank or building society"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "",
+                        visuallyHiddenText: "At your bank or building society"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "By cheque through the post"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "",
+                        visuallyHiddenText: "By cheque through the post"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "From the deceased’s bank, savings or investment account"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "",
+                        visuallyHiddenText: "From the deceased’s bank, savings or investment account"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Using British government stock"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "",
+                        visuallyHiddenText: "Using British government stock"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "By transferring national heritage property"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "",
+                        visuallyHiddenText: "By transferring national heritage property"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "In yearly instalments"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "",
+                        visuallyHiddenText: "In yearly instalments"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Trusts"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "",
+                        visuallyHiddenText: "Trusts"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Pay early to avoid paying interest"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: " ",
+                        visuallyHiddenText: "Pay early to avoid paying interest"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }}
+          </div>
+
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Is every chapter part of a step by step?</h3>
+        <p class="govuk-body" id="">No</p>
+
+      {% else %}
+
+        <h3 class="govuk-heading-m">Chapters</h3>
+
+        {% if data['status'] !== "Draft" %}
+
+          <!-- Chapter name and edit link -->
+
+          <div id="guide-chapters">
+            {{ govukSummaryList({
+              rows: [
+                {
+                  key: {
+                    text: "Overview"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "Overview"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Get a payment reference number"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "Get a payment reference number"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Approve a payment through your online bank account"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "Approve a payment through your online bank account"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Make an online or telephone bank transfer"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "Make an online or telephone bank transfer"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "At your bank or building society"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "At your bank or building society"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "By cheque through the post"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "By cheque through the post"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "From the deceased’s bank, savings or investment account"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "From the deceased’s bank, savings or investment account"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Using British government stock"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "Using British government stock"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "By transferring national heritage property"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "By transferring national heritage property"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "In yearly instalments"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "In yearly instalments"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Trusts"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "Trusts"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Pay early to avoid paying interest"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        classes: "govuk-link--no-visited-state",
+                        text: "Edit",
+                        visuallyHiddenText: "Pay early to avoid paying interest"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }}
+          </div>
+
+          <!-- Chapter number, name and edit link -->
+
+          <!-- {{ govukSummaryList({
+              rows: [
+                {
+                  key: {
+                    text: "Chapter 1"
+                  },
+                  value: {
+                    text: "Overview"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "Overview"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Chapter 2"
+                  },
+                  value: {
+                    text: "Get a payment reference number"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "Get a payment reference number"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Chapter 3"
+                  },
+                  value: {
+                    text: "Approve a payment through your online bank account"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "Approve a payment through your online bank account"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Chapter 4"
+                  },
+                  value: {
+                    text: "Make an online or telephone bank transfer"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "Make an online or telephone bank transfer"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Chapter 5"
+                  },
+                  value: {
+                    text: "At your bank or building society"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "At your bank or building society"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Chapter 6"
+                  },
+                  value: {
+                    text: "By cheque through the post"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "By cheque through the post"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Chapter 7"
+                  },
+                  value: {
+                    text: "From the deceased’s bank, savings or investment account"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "From the deceased's bank, savings or investment account"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Chapter 8"
+                  },
+                  value: {
+                    text: "Using British government stock"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "Using British government stock"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Chapter 9"
+                  },
+                  value: {
+                    text: "By transferring national heritage property"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "By transferring national heritage property"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Chapter 10"
+                  },
+                  value: {
+                    text: "In yearly instalments"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "In yearly instalments"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Chapter 11"
+                  },
+                  value: {
+                    text: "Trusts"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "Trusts"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Chapter 12"
+                  },
+                  value: {
+                    text: "Pay early to avoid paying interest"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Edit",
+                        visuallyHiddenText: "Pay early to avoid paying interest"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }} -->
+
+          <!-- Chapter name as link -->
+
+          <!-- {{ govukTable({
+              caption: "",
+              captionClasses: "govuk-table__caption--m",
+              head: [
+                {
+                  text: ""
+                }
+              ],
+              rows: [
+                [
+                  {
+                    html: '<a href="#">Overview</a>'
+                  }
+                ],
+                [
+                  {
+                    html: '<a href="#">Get a payment reference number</a>'
+                  }
+                ],
+                [
+                  {
+                    html: '<a href="#">Approve a payment through your online bank account</a>'
+                  }
+                ],
+                [
+                  {
+                    html: '<a href="#">Make an online or telephone bank transfer</a>'
+                  }
+                ],
+                [
+                  {
+                    html: '<a href="#">At your bank or building society</a>'
+                  }
+                ],
+                [
+                  {
+                    html: '<a href="#">By cheque through the post</a>'
+                  }
+                ],
+                [
+                  {
+                    html: '<a href="#">From the deceased’s bank, savings or investment account</a>'
+                  }
+                ],
+                [
+                  {
+                    html: '<a href="#">Using British government stock</a>'
+                  }
+                ],
+                [
+                  {
+                    html: '<a href="#">By transferring national heritage property</a>'
+                  }
+                ],
+                [
+                  {
+                    html: '<a href="#">In yearly instalments</a>'
+                  }
+                ],
+                [
+                  {
+                    html: '<a href="#">Trusts</a>'
+                  }
+                ],
+                [
+                  {
+                    html: '<a href="#">Pay early to avoid paying interest</a>'
+                  }
+                ]
+              ]
+            }) }} -->
+
+        {% endif %} 
+
+        <a href="guide-draft-add-new-chapter">
+          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Add a new chapter
+          </button>
+        </a>
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          name: "IsEveryChapterIncludedInStepByStep",
+          fieldset: {
+            legend: {
+              text: "Is every chapter part of a step by step?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "The chapter navigation will be hidden if they all are"
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: true
+            }
+          ]
+        }) }}
+
+        {% endif %}
+
+      {% endif %}
+
+    <!-- Move 'Add a public change note' to history and notes? -->
+
+           
+    <!-- <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Add a public change note
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h2 class="govuk-heading-m">Add a public change note</h2>
+              <p>Telling users when published information has changed is important for transparency.</p> 
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                <label class="govuk-label govuk-radios__label" for="contact">
+                  <span class="govuk-body govuk-body govuk-!-font-weight-bold">Yes – information has been added, updated or removed</span>
+                  <br>
+                  <span class="govuk-hint">A change note will be published on the page and emailed to users subscribed to email alerts. The ‘last updated’ date will change.</span>
+                </label>
+              </div>
+              <div class="govuk-radios__conditional" id="conditional-contact">
+                <div class="govuk-form-group govuk-form-group">
+                  <label class="govuk-label" for="contact-by-email">
+                    <span class="govuk-body govuk-body govuk-!-font-weight-bold">Describe the change for users</span>
+                    </br>
+                    <span class="govuk-hint">
+                      Tell users what has changed, where and why. Write in full sentences, leading with the most important words. For example, "College A has been removed from the registered sponsors list because its licence has been suspended."
+                      </br>
+                      <a href="https://www.gov.uk/guidance/content-design/writing-for-gov-uk#change-notes" target="_new">Guidance on change notes (opens in a new tab)</a>
+                    </span>
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-half govuk-input" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
+                <label class="govuk-label govuk-radios__label" for="contact-2">
+                  <span class="govuk-body govuk-!-font-weight-bold">No</span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </details> -->
+
+  </div>
+
+  <div class="govuk-grid-column-one-third sticky options-sidebar">
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {% if data['status'] !== "Archived" %}
+      <div class="actions-sidebar">
+
+        {% if (data['status'] !== "Scheduled") and (data['status'] !== "Published") %}
+        <button type="submit" data-prevent-double-click="true" class="govuk-button wide govuk-button--save govuk-button--progress" data-module="govuk-button">
+          <span class="govuk-button__icon">
+            <span class="govuk-button__text">Save</span>
+          </span>
+        </button>
+        {% endif %}
+
+        {% if (data['status'] == "Draft") or (data['status'] == "Amends needed") %}
+
+          {{ govukButton({
+            id: "send-to-2i",
+            text: "2i",
+            classes: "govuk-button--secondary wide",
+            href: "#"
+          }) }}
+
+        {% elif data['status'] == "In 2i" %}
+          <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button" id="skip">Skip 2i</button>
+        {% elif data['status'] == "Ready" %}
+          {{ govukButton({
+            id: "fact-check",
+            text: "Fact check",
+            classes: "govuk-button--secondary wide",
+            href: "#"
+          }) }}
+          {{ govukButton({
+            id: "schedule",
+            text: "Schedule",
+            classes: "govuk-button--secondary wide",
+            href: "#"
+          }) }}
+          {{ govukButton({
+            id: "publish",
+            text: "Publish",
+            classes: "govuk-button--secondary wide",
+            href: "#"
+          }) }}
+        {% elif data['status'] == "Scheduled" %}
+          <button type="submit" class="govuk-button wide" data-module="govuk-button">Cancel schedule</button>
+          <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">Publish now</button>
+        {% elif data['status'] == "Published" %}
+          <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">Create new edition</button>
+        {% endif %}
+        
+        {% if data['status'] !== "Published" %}
+          <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">Preview (opens in new tab)</a></p>
+        {% else %}
+          <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">View on GOV.UK (opens in new tab)</a></p>
+        {% endif %}
+
+      </div>
+    {% endif %}
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/content-item.js"></script>
+  <script src="/public/javascripts/save-feedback.js"></script>
+{% endblock %}

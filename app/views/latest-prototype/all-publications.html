@@ -1,7 +1,7 @@
 {% extends "layouts/main-rebrand.html" %}
 
 {% block pageTitle %}
-  All publications - {{ serviceName }} – GOV.UK Prototype Kit
+  Find content - {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -18,7 +18,7 @@
     ]
   }) }}
   {% set activeNav = "all-publications" %}
-  {% include "includes/_service-navigation.njk" %}
+  {% include "includes/_service-navigation_iteration.njk" %}
 {% endblock %}
 
 {% block content %}
@@ -68,7 +68,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-xl">All publications</h1>
+    <h1 class="govuk-heading-xl">Find content</h1>
 
     <!-- Filter -->
 
@@ -123,7 +123,7 @@
         {{ govukButton({
           text: "Apply filters"
         }) }}
-        <a id="clear-filters" class="govuk-link govuk-link--no-visited-state" href="/multi-page-concept/all-publications"></a>
+        <a id="clear-filters" class="govuk-link govuk-link--no-visited-state" href="/latest-prototype/all-publications"></a>
       </div>
     </form>
 
