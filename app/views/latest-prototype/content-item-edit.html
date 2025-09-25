@@ -1343,6 +1343,15 @@
         </button>
         {% endif %}
 
+        {% if (data['content-type'] == "Guide") and (data['status'] !== "Draft") and (data['status'] !== "Published") and (data['status'] !== "Scheduled") %}
+          {{ govukButton({
+            id: "reorder-chapters",
+            text: "Reorder chapters",
+            classes: "govuk-button--secondary wide",
+            href: "#"
+          }) }}
+        {% endif %}
+
         {% if (data['status'] == "Draft") or (data['status'] == "Amends needed") %}
 
           {{ govukButton({

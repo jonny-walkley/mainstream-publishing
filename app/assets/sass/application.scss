@@ -39,12 +39,15 @@
   font-weight: 600;
 }
 
-.publication-list-dynamic-text {
+.publication-list-dynamic-text, .publication-list-hint-text {
   display: block;
   font-weight: 500;
-  font-size: 16px;
   color: #505a5f;
   margin: 5px 0 0;
+}
+
+.publication-list-dynamic-text {
+  font-size: 16px;
 }
 
 p.compare-edition {

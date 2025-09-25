@@ -100,6 +100,120 @@ window.GOVUKPrototypeKit.documentReady(() => {
 
 
 
+
+
+
+if (currentPage === "my-content-potential-iteration") {
+  const taskListContainer = document.querySelector("#dynamic-task-list");
+  const tagColourMap = {
+    draft: "govuk-tag--yellow",
+    in_2i: "govuk-tag--blue",
+    amends_needed: "govuk-tag--red",
+    fact_check_sent: "govuk-tag--pink",
+    fact_check_received: "govuk-tag--purple",
+    ready: "govuk-tag--green",
+    scheduled: "govuk-tag--turquoise",
+    published: "govuk-tag--orange",
+    archived: "govuk-tag--grey"
+  };
+
+  function toSentenceCase(str) {
+    if (!str) return "";
+    const lower = str.replace(/_/g, " ").toLowerCase();
+    return lower.charAt(0).toUpperCase() + lower.slice(1);
+  }
+
+  // Group content
+  const sections = {
+    amends_needed: [],
+    draft: [],
+    other: []
+  };
+
+  data.forEach((item) => {
+    const { assignee, state } = item;
+    if (assignee === "Esther Woods" && state !== "published" && state !== "archived") {
+      if (state === "amends_needed") {
+        sections.amends_needed.push(item);
+      } else if (state === "draft") {
+        sections.draft.push(item);
+      } else {
+        sections.other.push(item);
+      }
+    }
+  });
+
+  function renderSection(heading, items) {
+    if (!items.length) return;
+
+    const sectionHeading = document.createElement("h2");
+    sectionHeading.className = "govuk-heading-m";
+    sectionHeading.textContent = heading;
+    taskListContainer.appendChild(sectionHeading);
+
+    const list = document.createElement("ul");
+    list.className = "govuk-task-list";
+
+    items.forEach((item, index) => {
+      const { title, format, state, id, sent_out, scheduled_for } = item;
+      const statusFormatted = toSentenceCase(state);
+      const tagClass = tagColourMap[state] || "";
+      const statusId = `item-${index}-status`;
+      const hintId = `item-${index}-hint`;
+      // const url = `content-item-edit?id=${id}&content-type=${format}&status=${statusFormatted}`;
+      const url = `#`;
+
+      let hintText = "";
+      if (state === "fact_check_sent" && sent_out) {
+        hintText = `Sent ${sent_out}`;
+      } else if (state === "scheduled" && scheduled_for) {
+        hintText = `Scheduled for ${scheduled_for}`;
+      } else if (state === "amends_needed") {
+        hintText = `Returned from 2i`;
+      }
+
+      const hasHint = !!hintText;
+      const ariaDescribedBy = hasHint ? `${hintId} ${statusId}` : statusId;
+
+      const listItem = document.createElement("li");
+      listItem.className = "govuk-task-list__item govuk-task-list__item--with-link";
+      listItem.innerHTML = `
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link govuk-link--no-visited-state" href="${url}" aria-describedby="${ariaDescribedBy}">
+            ${title}
+          </a>
+          ${hasHint ? `<div id="${hintId}" class="govuk-task-list__hint">${hintText}</div>` : ""}
+        </div>
+        <div class="govuk-task-list__status" id="${statusId}">
+          <strong class="govuk-tag ${tagClass}">
+            ${statusFormatted}
+          </strong>
+        </div>
+      `;
+      list.appendChild(listItem);
+    });
+
+    taskListContainer.appendChild(list);
+  }
+
+  renderSection("Amends needed", sections.amends_needed);
+  renderSection("Drafts", sections.draft);
+  renderSection("Awaiting 2i, fact check and publishing", sections.other);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     data.forEach(({ title, assignee, state, format, version_number, id, slug, language, important_note, time_in_queue, reviewer, scheduled_for, sent_out }, index) => {
      
       assignees.push(assignee);
@@ -121,17 +235,19 @@ window.GOVUKPrototypeKit.documentReady(() => {
 
       let status = state.toLowerCase().replace(/\b\w/g, s => s.toUpperCase()).replaceAll("_", " ")
 
+
+
       if (currentPage == "my-content") {
 
         if (assignee == "Esther Woods") {
           if (state !== "published" && state !== "archived") {
             newRow.querySelector('.title').innerHTML = `<a href="content-item-edit?id=${id}&content-type=${format}&status=${status}" class="govuk-link govuk-link--no-visited-state">${title}</a>`
             if (status == "Fact check sent") {
-              newRow.querySelector('.title').innerHTML += `<span class="publication-list-hint-text">Sent ${sent_out}</span>`;
+              newRow.querySelector('.title').innerHTML += `<span class="publication-list-dynamic-text">Sent out: ${sent_out}</span>`;
             } else if (status == "Fact check received") {
               // newRow.querySelector('.title').innerHTML += `<span class="publication-list-dynamic-text"><a href="content-item-history-and-notes?id=${id}&content-type=${format}&status=${status}#fact-check-response" class="govuk-link govuk-link--no-visited-state">View response</a></span>`;
             } else if (status == "Scheduled") {
-              newRow.querySelector('.title').innerHTML += `<span class="publication-list-hint-text">Scheduled for ${scheduled_for}</span>`;
+              newRow.querySelector('.title').innerHTML += `<span class="publication-list-dynamic-text">Scheduled for: ${scheduled_for}</span>`;
             }
             newRow.querySelector('.state').innerHTML = `<strong class="govuk-tag govuk-tag--${tagColour}">${status}</strong>`
             newRow.querySelector('.format').innerText = format
