@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-label-wrapper">
+  <label class="govuk-label govuk-label--l" for="more-detail">
+    UK driving licence
+  </label>
+</h1>
+
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      When fact checking, please:
+      <p>- only point out factual errors - don’t suggest wording (GDS is responsible for the style)</p>
+      <p>- use plain text - GDS systems don’t display text formatting, colours or attachments</p>
+    </p>
+  </div>
+</div>
+<h2 class="govuk-label-wrapper">
+ 
+    Changes that requires fact check:
+
+</h2>
+<div class="govuk-inset-text">
+  <p>Changed</p>
+
+  <p>^This may increase by up to a year following review of the State Pension age.</p>
+  
+  <p>To</p>
+  
+  <p>^This may change following the 3rd review of the State Pension age.</p>
+</div>
+
+<div class="govuk-accordion" 
+     data-module="govuk-accordion" 
+     data-allow-show-all="false" 
+     id="accordion-default">
+  
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h6 class="govuk-accordion__section-heading">
+        <button type="button"
+                class="govuk-accordion__section-button"
+                id="accordion-default-heading-3"
+                aria-controls="accordion-default-content-1"
+                aria-expanded="false">
+          You can check all the current changes below or <a href="#" class="govuk-link">preview the whole content</a>.
+        </button>
+      </h6>
+    </div>
+    
+    <div id="accordion-default-content-1"
+         class="govuk-accordion__section-content"
+         aria-labelledby="accordion-default-heading-1">
+      <img src="/public/images/diff.png"
+           alt="Screenshot of content"
+           style="max-width: 600px; height: auto;">
+    </div>
+  </div>
+</div>
+
+  <style>
+    .govuk-accordion__show-all {
+      display: none !important;
+    }
+  </style>
+  
+{% endblock %}
+
+

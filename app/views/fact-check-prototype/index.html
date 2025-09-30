@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Please log into your account
+      </h1>
+    </legend>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-line-1">
+        Your email address
+      </label>
+      <input class="govuk-input" id="address-line-1" name="addressLine1" type="text" autocomplete="address-line1">
+    </div>
+  </fieldset>
+  <div class="govuk-form-group govuk-password-input" data-module="govuk-password-input">
+    <label class="govuk-label" for="password-input">
+      Password
+    </label>
+    <div class="govuk-input__wrapper govuk-password-input__wrapper">
+      <input class="govuk-input govuk-password-input__input govuk-js-password-input-input" id="password-input" name="password" type="password" spellcheck="false" autocomplete="current-password" autocapitalize="none">
+      <button type="button" class="govuk-button govuk-button--secondary govuk-password-input__toggle govuk-js-password-input-toggle" data-module="govuk-button" aria-controls="password-input" aria-label="Show password" hidden>
+        Show
+      </button>
+    </div>
+  </div>
+  {{ govukButton({
+    text: "Log in (spock MVP 1)",
+    href: "my-content",
+    isStartButton: false
+  }) }}
+  {{ govukButton({
+    text: "Log in (spock MVP 2)",
+    href: "my-content-2",
+    isStartButton: false
+  }) }}
+  {{ govukButton({
+    text: "Log in (SME)",
+    href: "sme-my-content",
+    isStartButton: false
+  }) }}
+
+{% endblock %}

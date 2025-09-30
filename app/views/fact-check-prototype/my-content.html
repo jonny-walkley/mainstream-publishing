@@ -1,0 +1,104 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">My content to fact check</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Content</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header">GDS Contact person</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        <a class="govuk-link" href="content-for-fact-check" aria-describedby="company-details-1-status">
+          Student visa
+        </a>
+      </th>
+      <td class="govuk-table__cell">
+        <div class="govuk-task-list__status" id="company-details-1-status">
+          <strong class="govuk-tag govuk-tag--blue">New</strong>
+        </div>
+      </td>
+      <td class="govuk-table__cell">John Smith</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        <a class="govuk-link" href="spock-review-page" aria-describedby="company-details-2-status">
+          If you cannot pay your tax bill on time
+        </a>
+      </th>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--yellow">To do</strong>
+      </td>
+      <td class="govuk-table__cell">Peter Jones</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        <a class="govuk-link" href="spock-review-page" aria-describedby="company-details-3-status">
+          Object to an application to change the land register
+        </a>
+      </th>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--yellow">To do</strong>
+      </td>
+      <td class="govuk-table__cell">Peter Jones</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        <a class="govuk-link" href="content-for-fact-check" aria-describedby="company-details-4-status">
+          Winter Fuel Payment
+        </a>
+      </th>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--green">Completed</strong>
+      </td>
+      <td class="govuk-table__cell">Anna Brown</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        <a class="govuk-link" href="content-for-fact-check" aria-describedby="company-details-5-status">
+          Register to vote
+        </a>
+      </th>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--green">Completed</strong>
+      </td>
+      <td class="govuk-table__cell">John Smith</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<!-- JS fix to force correct hrefs and override Prototype Kit task-list JS hijack -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const overrides = {
+    "If you cannot pay your tax bill on time": "spock-review-page",
+    "Object to an application to change the land register": "spock-review-page"
+  };
+
+  document.querySelectorAll('a.govuk-link').forEach(link => {
+    const text = link.textContent.trim();
+    if (overrides[text]) {
+      link.href = overrides[text];
+    }
+  });
+});
+</script>
+
+
+{% endblock %}

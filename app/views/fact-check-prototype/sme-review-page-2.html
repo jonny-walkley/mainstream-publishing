@@ -1,0 +1,119 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-label-wrapper">
+  <label class="govuk-label govuk-label--l" for="more-detail">
+    UK driving licence
+  </label>
+</h1>
+
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      When fact checking, please:
+      <p>- only point out factual errors - don’t suggest wording (GDS is responsible for the style)</p>
+      <p>- use plain text - GDS systems don’t display text formatting, colours or attachments</p>
+    </p>
+  </div>
+</div>
+<h2 class="govuk-label-wrapper">
+ 
+    Changes that requires fact check:
+
+</h2>
+<div class="govuk-inset-text">
+  <p>Changed</p>
+
+  <p>^This may increase by up to a year following review of the State Pension age.</p>
+  
+  <p>To</p>
+  
+  <p>^This may change following the 3rd review of the State Pension age.</p>
+</div>
+
+<div class="govuk-accordion" 
+     data-module="govuk-accordion" 
+     data-allow-show-all="false" 
+     id="accordion-default">
+  
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h6 class="govuk-accordion__section-heading">
+        <button type="button"
+                class="govuk-accordion__section-button"
+                id="accordion-default-heading-3"
+                aria-controls="accordion-default-content-1"
+                aria-expanded="false">
+          You can check all the current changes below or <a href="#" class="govuk-link">preview the whole content</a>.
+        </button>
+      </h6>
+    </div>
+    
+    <div id="accordion-default-content-1"
+         class="govuk-accordion__section-content"
+         aria-labelledby="accordion-default-heading-1">
+      <img src="/public/images/diff.png"
+           alt="Screenshot of content"
+           style="max-width: 600px; height: auto;">
+    </div>
+  </div>
+</div>
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Feedback section</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Author</th>
+      <th scope="col" class="govuk-table__header">Comment</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">John Smith</th>
+      <td class="govuk-table__cell">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Anna Brown</th>
+      <td class="govuk-table__cell">Should be 4th review instead of 3rd review </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Ben Jones</th>
+      <td class="govuk-table__cell">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing</td>
+    </tr>
+  </tbody>
+</table>
+
+  <div class="govuk-form-group">
+    <h2 class="govuk-label-wrapper">
+        Please provide us with the feedback below
+    </h2>
+    <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+  </div>
+  <form action="confirmation" method="post" novalidate>
+
+    {{ govukButton({
+      text: "Send the feedback",
+      href: "updated-review-page"
+    }) }}
+
+  </form>
+
+  <style>
+    .govuk-accordion__show-all {
+      display: none !important;
+    }
+  </style>
+  
+{% endblock %}
+
+

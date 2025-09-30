@@ -1,0 +1,23 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Your response was successfully sent to GDS contact person.
+    </h3>
+    <a href="my-content" class="govuk-back-link">Back to My content page</a>
+  </div>
+</div>
+
+{% endblock %}
