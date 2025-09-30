@@ -1,5 +1,14 @@
 {% extends "layouts/main.html" %}
 
+{% block header %}
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right"
+  }) }}
+{% endblock %}
+
 {% set pageName="Home" %}
 
 {% block content %}

@@ -4,6 +4,15 @@
   GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block header %}
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right"
+  }) }}
+{% endblock %}
+
 {% block content %}
 
 <div><p>Magic link page</p>
