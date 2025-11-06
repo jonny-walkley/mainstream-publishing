@@ -1,0 +1,190 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block pageTitle %}
+  Become an apprentice - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      { text: "Home", href: "/" },
+      { text: "Education and learning", href: "#" },
+      { text: "Apprenticeships, 14 to 19 education and training for work" }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<style>
+h1.govuk-heading-xl {
+  margin-top: 0;
+}
+
+.govuk-list--bullet,
+.govuk-list--number {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* Big grey "DRAFT" watermark background */
+body::before {
+  content: "DRAFT";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: 20rem; 
+  color: rgba(0, 0, 0, 0.05);
+  font-weight: 900;
+  font-family: "GDS Transport", Arial, sans-serif;
+  pointer-events: none;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+/* Ensure page content stays above the watermark */
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Match GOV.UK main content width */
+.govuk-width-container {
+  max-width: 960px;
+}
+
+/* Optional: spacing inside container */
+.govuk-width-container > .govuk-grid-row {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+</style>
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Become an apprentice</h1>
+
+      <nav class="govuk-contents-list" aria-label="Contents">
+        <h2 class="govuk-heading-m">Contents</h2>
+        <ol class="govuk-contents-list__list">
+          <li class="govuk-contents-list__item"><a class="govuk-link" href="#how">How apprenticeships work</a></li>
+          <li class="govuk-contents-list__item"><a class="govuk-link" href="#what">What you'll get</a></li>
+          <li class="govuk-contents-list__item"><a class="govuk-link" href="#apply">Apply for an apprenticeship</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="how" class="govuk-heading-l">How apprenticeships work</h2>
+
+      <p class="govuk-body">Apprenticeships combine practical training in a job with study.</p>
+      <p class="govuk-body">As an apprentice you’ll:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>be an employee earning a wage and getting holiday pay</li>
+        <li>work alongside experienced staff</li>
+        <li>gain job-specific skills</li>
+        <li>get time for training and study related to your role (at least 20% of your normal working hours)</li>
+      </ul>
+
+      <p class="govuk-body">Apprenticeships can take from 8 months to 6 years to complete, depending on the type and level of the apprenticeship.</p>
+
+      <h3 class="govuk-heading-m">Levels of apprenticeship</h3>
+
+      <p class="govuk-body">Apprenticeships have equivalent educational levels.</p>
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Level</th>
+            <th scope="col" class="govuk-table__header">Equivalent educational level</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Foundation and Intermediate 2</td>
+            <td class="govuk-table__cell">GCSE</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Advanced 3</td>
+            <td class="govuk-table__cell">A level</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Higher 4, 5, 6 and 7</td>
+            <td class="govuk-table__cell">Foundation degree and above</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Degree 6 and 7</td>
+            <td class="govuk-table__cell">Bachelor’s or master’s degree</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="govuk-body">Some apprenticeships may also give you an additional qualification, such as a diploma.</p>
+
+      <h3 class="govuk-heading-m">Who can start an apprenticeship</h3>
+
+      <p class="govuk-body">To start an apprenticeship, you’ll need to be:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>16 or over</li>
+        <li>living in England</li>
+        <li>not in full-time education</li>
+      </ul>
+
+      <p class="govuk-body">You can apply for an apprenticeship while you’re still at school but you’ll need to be 16 or over by the end of the summer holidays to start the apprenticeship.</p>
+
+      <h3 class="govuk-heading-m">If you have relevant experience</h3>
+
+      <p class="govuk-body">
+        You could spend less time training or qualify earlier if you have relevant experience. This includes having:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>qualifications, such as a National Vocational Qualification (NVQ) in a relevant subject</li>
+        <li>industry or sector experience</li>
+        <li>completed training, such as an IT course</li>
+      </ul>
+
+      <p class="govuk-body">You can agree this with your training provider and employer when you start your apprenticeship.</p>
+
+      <h3 class="govuk-heading-m">Apprenticeships in Scotland, Wales and Northern Ireland</h3>
+
+      <p class="govuk-body">Different organisations deal with:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="govuk-link" href="https://www.apprenticeships.scot">apprenticeships in Scotland</a></li>
+        <li><a class="govuk-link" href="https://www.gov.wales">apprenticeships in Wales</a></li>
+        <li><a class="govuk-link" href="https://www.nidirect.gov.uk">apprenticeships in Northern Ireland</a></li>
+      </ul>
+
+      <p class="govuk-body"><a class="govuk-link" href="#">Next: What you'll get</a></p>
+
+      <h3 class="govuk-heading-m">Related content</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="govuk-link" href="#">Find an apprenticeship</a></li>
+        <li><a class="govuk-link" href="#">Training and study at work: your rights</a></li>
+        <li><a class="govuk-link" href="#">Careers helpline for teenagers</a></li>
+      </ul>
+
+      <h3 class="govuk-heading-m">Explore the topic</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="govuk-link" href="#">Apprenticeships, 14 to 19 education and training for work</a></li>
+        <li><a class="govuk-link" href="#">Finding a job</a></li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
