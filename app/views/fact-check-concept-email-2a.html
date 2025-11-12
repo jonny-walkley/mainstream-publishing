@@ -1,0 +1,64 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% block pageTitle %}
+  Fact check email – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div style="width: 750px; margin: auto;">
+
+    <img src="/public/images/gds-logo.png" alt="GOV.UK logo" style="margin-bottom: 30px;">
+
+    <p class="govuk-body-l">Hi,</p>
+
+    <p class="govuk-body-l">
+      We need you to check the factual accuracy of changes made to the following GOV.UK page before it’s published:
+    </p>
+
+    <p class="govuk-body-l">‘Become an apprentice’</p>
+
+    <p class="govuk-body-l">
+      The GOV.UK Content Team made the changes to reflect new funding rules/amounts and structure.
+    </p>
+
+    <p class="govuk-body-l">
+      The Zendesk ticket is #6209300.
+    </p>
+
+    <p class="govuk-body-l">
+      <strong>Deadline: Thursday 13 November 2025</strong>
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l">What to do</h2>
+
+    <p class="govuk-body-l"><a href="check-the-changes-spoc" class="govuk-link--no-visited-state">Check the changes</a></p>
+
+    <p class="govuk-body-l">When fact checking, please:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li class="govuk-body-l">check the content for factual accuracy</li>
+      <li class="govuk-body-l">tell us if anything is wrong, and why</li>
+      <li class="govuk-body-l">send your response on the fact check page</li>
+    </ul>
+
+    <p class="govuk-body-l">Only one fact check response can be submitted – agree your response with any colleagues first.</p>
+
+    <p class="govuk-body-l"><strong>Do not reply to this email.</strong></p>
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l">When to contact your GOV.UK lead</h2>
+
+    <p class="govuk-body-l">Contact your GOV.UK lead if you:</p>
+    <ul class="govuk-body-l govuk-list--bullet">
+      <li>need an extension to the deadline</li>
+      <li>spot an issue not related to this change</li>
+      <li>have questions for the GDS team</li>
+    </ul>
+
+    <p class="govuk-body-l">Thank you.</p>
+
+  </div>
+
+{% endblock %}
