@@ -1,0 +1,49 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block pageTitle %}Fact check submitted – {{ serviceName }}{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukPanel({
+      titleText: "Fact check submitted",
+      html: "Your response has been sent"
+    }) }}
+
+    <p class="govuk-body">Thanks for checking the changed content. </p>
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+
+    {% if data['factually-correct'] === "Yes, they’re correct" %}    
+
+      <p class="govuk-body">We’ll contact you on the Zendesk ticket:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>when the changes are live</li>
+        <li>if we have any questions</li>
+      </ul>
+
+    {% elif data['factually-correct'] == "No, there’s an error" %}
+
+      <p class="govuk-body">We’ll look at your response and:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>make any necessary changes</li>
+        <li>send you the content for  another fact check if needed</li>
+        <li>contact you on the Zendesk ticket if we have any questions</li>
+      </ul>
+
+    {% endif %}
+
+  </div>
+</div>
+
+{% endblock %}

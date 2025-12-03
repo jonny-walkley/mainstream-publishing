@@ -1,0 +1,348 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block pageTitle %}
+  Fact check – Become an apprentice | GOV.UK Publisher – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">Become an apprentice</span>
+    <h1 class="govuk-heading-xl">Fact check the changes</h1>
+
+    <div class="govuk-inset-text">
+      Respond by <strong>Thursday 13 November 2025</strong>
+    </div>
+
+    {{ govukButton({
+      text: "Respond to fact check",
+      href: "confirm-the-changes-are-factually-correct"
+    }) }}
+
+  </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-4">
+
+  <div class="govuk-grid-column-two-thirds">
+    
+    <div class="diff-container-alt">
+      <div class="diff-alt">
+        <ul class="govuk-list">
+          
+          <li class="unchanged"><h2 class="govuk-heading-xl">How apprenticeships work</h2></li>
+
+          <li class="unchanged">Apprenticeships combine practical training in a job with study.</li>
+          <li class="unchanged">&nbsp;</li>
+
+          <li class="">
+            <p class="govuk-body">As an apprentice you’ll:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>be an employee <a href="#" class="govuk-link--no-visited-state">earning a wage and getting holiday pay</a></li>
+              <li>work alongside experienced staff</li>
+              <li>gain job-specific skills</li>
+              <li>get time for training and study related to your role (at least 20% of your normal working hours)</li>
+            </ul>            
+          </li>
+
+          <li class="del"><del>Apprenticeships take <strong>1</strong> to <strong>5</strong> years to complete depending on the<strong>ir</strong> level.</del></li>
+          <li class="ins"><ins>Apprenticeships <strong>can </strong>take <strong>from 8 months</strong> to <strong>6</strong> years to complete<strong>,</strong> depending on the<strong> type and</strong> level<strong> of the apprenticeship</strong>.</ins></li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="unchanged"><h2 class="govuk-heading-m">Levels of apprenticeship</h2></li>
+          <li class="unchanged">Apprenticeships have equivalent educational levels.</li>
+
+          <table class="govuk-table">
+            
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header">Level</th>
+                <th scope="col" class="govuk-table__header">Equivalent educational level</th>
+              </tr>
+            </thead>
+            
+            <tbody class="govuk-table__body">
+              
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Intermediate</th>
+                <td class="govuk-table__cell">2</td>
+                <td class="govuk-table__cell">GCSE</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Foundation and Intermediate</th>
+                <td class="govuk-table__cell">2</td>
+                <td class="govuk-table__cell">GCSE</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Advanced</th>
+                <td class="govuk-table__cell">3</td>
+                <td class="govuk-table__cell">A level</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Higher</th>
+                <td class="govuk-table__cell">4,5,6 and 7</td>
+                <td class="govuk-table__cell">Foundation degree and above</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Degree</th>
+                <td class="govuk-table__cell">6 and 7</td>
+                <td class="govuk-table__cell">Bachelor’s or master’s degree</td>
+              </tr>
+            
+            </tbody>
+          
+          </table>
+
+          <li class="unchanged">Some apprenticeships may also give you an additional qualification, such as a diploma.</li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="unchanged"><h2 class="govuk-heading-m">Who can start an apprenticeship</h2></li>
+
+          <li class="unchanged">
+            <p class="govuk-body">
+              To start an apprenticeship, you’ll need to be:
+            </p>
+          </li>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li class="unchanged">16 or over</li>
+            <li class="unchanged">living in England</li>
+            <li class="unchanged">not in full-time education</li>
+          </ul>
+
+          <li class="unchanged">
+            <div class="govuk-inset-text">
+              You can <a href="#" class="govuk-link--no-visited-state">apply for an apprenticeship</a> while you’re still at school but you’ll need to be 16 or over by the end of the summer holidays to start the apprenticeship.
+            </div>
+          </li>
+          <li class="unchanged"><h2 class="govuk-heading-m">If you have relevant experience</h2></li>
+
+          <li class="unchanged">
+            <p class="govuk-body">
+              You could spend less time training or qualify earlier if you have relevant experience. This includes having:
+            </p>
+          </li>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li class="unchanged">qualifications, such as a National Vocational Qualification (NVQ) in a relevant subject</li>
+            <li class="unchanged">industry or sector experience</li>
+            <li class="unchanged">completed training, such as an IT course</li>
+          </ul>
+
+          <li class="unchanged">You can agree this with your training provider and employer when you start your apprenticeship.</li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="unchanged"><h2 class="govuk-heading-m">Apprenticeships in Scotland, Wales and Northern Ireland</h2></li>
+          
+          <li class="unchanged">
+             <p class="govuk-body">
+              Different organisations deal with:
+             </p>
+          </li>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li class="unchanged"><a href="#" class="govuk-link--no-visited-state">apprenticeships in Scotland</a></li>
+            <li class="unchanged"><a href="#" class="govuk-link--no-visited-state">apprenticeships in Wales</a></li>
+            <li class="unchanged"><a href="#" class="govuk-link--no-visited-state">apprenticeships in Northern Ireland</a></li>
+          </ul>
+
+          <li class="unchanged">&nbsp;</li>
+
+          <li class="unchanged"><h2 class="govuk-heading-xl">What you’ll get</h2></li>
+
+          <li class="unchanged">
+            <p class="govuk-body">
+              As an apprentice, you’ll get:
+            </p>
+          </li>
+          
+          <ul class="govuk-list govuk-list--bullet">
+            <li class="unchanged">paid and be entitled to the <a href="#" class="govuk-link--no-visited-state">National Minimum Wage</a></li>
+            <li class="unchanged">time for training or study as part of your apprenticeship</li>
+            <li class="unchanged">holiday pay and other <a href="#" class="govuk-link--no-visited-state">employee rights</a></li>
+          </ul>
+
+          <li class="unchanged">&nbsp;</li>
+
+          <li class="unchanged">
+            <h2 class="govuk-heading-m">Apprentice pay and the National Minimum Wage</h2>
+          </li>
+
+          <li class="unchanged">There are different rates of pay for apprentices depending on your age and what year of your apprenticeship you’re in.</li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="unchanged">Your employment contract should confirm your rate of pay.</li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="unchanged"><h3 class="govuk-heading-s">Aged 16 to 18</h3></li>
+          <li class="unchanged">The current <a href="#" class="govuk-link--no-visited-state">National Minimum Wage rate</a> for an apprentice is £7.55 per hour.</li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="unchanged"><h3 class="govuk-heading-s">Aged 19 or over and in your first year</h3></li>
+          <li class="unchanged">The current <a href="#" class="govuk-link--no-visited-state">National Minimum Wage rate</a> for an apprentice is £7.55 per hour.</li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="unchanged"><h3 class="govuk-heading-s">Aged 19 or over and have completed your first year</h3></li>
+          <li class="unchanged">You’re entitled to the <a href="#" class="govuk-link--no-visited-state">National Minimum Wage or National Living Wage rate</a> for your age.</li>
+          <li class="unchanged">
+            <div class="govuk-inset-text">
+              <a href="#" class="govuk-link--no-visited-state">Check you’re being paid the minimum wage</a> with the National Minimum Wage and Living Wage calculator.
+            </div>
+          </li>
+
+          <li class="unchanged">
+            <h2 class="govuk-heading-m">Time apprentices are paid for</h2>
+          </li>
+          
+          <li class="unchanged">
+            <p class="govuk-body">You must be paid for:</p>
+          </li>
+          
+          <ul class="govuk-list govuk-list--bullet">
+            <li class="unchanged">your normal working hours</li>
+            <li class="unchanged">training that’s part of your apprenticeship (at least 20% of your normal working hours)</li>
+            <li class="unchanged">study towards English and maths qualifications, if they’re part of your apprenticeship</li>
+          </ul>
+          
+          <li class="unchanged">Your normal working hours should be in your employment contract (this might be your apprenticeship agreement).</li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="unchanged">There are rules about <a href="#" class="govuk-link--no-visited-state">how many hours you can work in a week</a> and <a href="#" class="govuk-link--no-visited-state">being paid overtime</a>.</li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="unchanged">If you’re studying for English and maths qualifications which are part of your apprenticeship, your employer should allow you time to study during your normal working hours.</li>
+          <li class="unchanged">&nbsp;</li>
+          
+          <li class="unchanged">
+            <h2 class="govuk-heading-m">Training</h2>
+          </li>
+          
+          <li class="unchanged">As an apprentice, at least 20% of your normal working hours must be spent on training.</li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="unchanged">Your training might happen every week, every month or in a separate block of time.</li>
+          <li class="unchanged">&nbsp;</li>
+
+          <li class="unchanged">
+            <p class="govuk-body">The training might take place:</p>
+          </li>
+          
+          <ul class="govuk-list govuk-list--bullet">
+            <li class="unchanged">at your place of work</li>
+            <li class="unchanged">somewhere else like at a college or training provider</li>
+            <li class="unchanged">online</li>
+          </ul>
+
+          <li class="unchanged">Your training provider will be able to tell you when and where your training will be.</li>
+          <li class="unchanged">&nbsp;</li>
+          
+          <li class="unchanged">
+            <h2 class="govuk-heading-m">Holidays</h2>
+          </li>
+
+          <li class="unchanged">You’ll get at least 20 days paid holiday per year, plus bank holidays.</li>
+          <li class="unchanged">
+            <div class="govuk-inset-text">
+              Use the <a href="#" class="govuk-link--no-visited-state">holiday calculator</a> to check holiday entitlement for apprentices.
+            </div>
+          </li>
+          <li class="unchanged"><h2 class="govuk-heading-m">If you’ve been in local authority care</h2></li>
+          <li class="unchanged">If you’re under 25 when you start your apprenticeship and have previously been in local authority care, you may be eligible for a bursary payment.</li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="unchanged">Ask your training provider for more information about what you’ll get, if you’re eligible and how to apply.</li>
+          <li class="unchanged">&nbsp;</li>
+          
+          <li class="ins">
+            <ins>
+              <h2 class="govuk-heading-m">Benefits and financial support</h2>
+            </ins>
+          </li>
+          
+          <li class="ins"><ins>If you’re disabled or have a health condition, you may be entitled to <a href="#" class="govuk-link--no-visited-state">certain benefits and financial support</a> to help with work-related costs.</ins></li>
+          <li class="ins"><ins>&nbsp;</ins></li>
+          
+          <li class="unchanged">
+            <h2 class="govuk-heading-m">Help and advice</h2>
+          </li>
+          
+          <li class="unchanged"></li>Your school, college or training provider may be able to give you advice about apprenticeships.</li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="unchanged"></li><a href="#" class="govuk-link--no-visited-state">Contact Acas</a> for free and confidential advice on your rights at work.</li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="unchanged">The <a href="#" class="govuk-link--no-visited-state">Apprentice Support Centre</a> has information and advice about apprenticeships.</li>
+          <li class="unchanged">&nbsp;</li>
+          
+          <li class="unchanged">
+            <h2 class="govuk-heading-xl">Apply for an apprenticeship</h2>
+          </li>
+          
+          <li class="unchanged">There are 3 steps to applying for an apprenticeship.</li>
+          
+          <li class="unchanged">
+            <ol class="govuk-list govuk-list--number">
+              <li><a href="#" class="govuk-link--no-visited-state">Search for an apprenticeship</a>.</li>
+              <li>Sign in or create an account.</li>
+              <li>Complete and submit your application.</li>
+            </ol>
+          </li>
+
+          <li class="unchanged">The <a href="#" class="govuk-link--no-visited-state">National Careers Service</a> has advice on writing applications and what to do at interviews.</li>
+          <li class="unchanged">
+            <div class="govuk-inset-text">
+              If you’re applying again because you were made redundant from your last apprenticeship, call the Apprenticeship helpline. You can also talk to your training provider.
+            </div>
+          </li>
+          <li class="unchanged"><h2 class="govuk-heading-m">If you’re unsuccessful</h2></li>
+          <li class="unchanged">You can ask for feedback if you do not get selected for an interview or for the apprenticeship.</li>
+          <li class="unchanged">&nbsp;</li>
+          <li class="unchanged">You can complain if you think you were not successful because you were discriminated against, or your treatment in the interview or application process was unfair.</li>
+          <li class="unchanged">&nbsp;</li>
+
+          <li class="unchanged">
+            <div class="govuk-inset-text govuk-inset-text--contact">
+              <ul class="govuk-list">
+                <li class="unchanged">Apprenticeship helpline</li>
+                <li class="unchanged"><nationalhelpdesk@apprenticeships.gov.uk></li>
+                <li class="unchanged">Telephone: 0800 015 0400</li>
+                <li class="unchanged">Monday to Friday, 9am to 5pm</li>
+                <li class="unchanged"><a href="#" class="govuk-link--no-visited-state">Find out about call charges</a></li>
+              </ul>
+            </div>
+          </li>
+          
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+ 
+  <div class="govuk-grid-column-one-third sticky options-sidebar">
+    <div class="actions-sidebar govuk-!-padding-bottom-3">        
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Preview</h3>
+      <p class="govuk-body"><a href="draft-become-apprentice" class="govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">Preview the draft page (opens in new tab)</a></p>
+      
+      <hr class="govuk-section-break govuk-section-break govuk-section-break--visible govuk-!-margin-top-6 govuk-!-margin-bottom-3">
+      
+      <h3 class="govuk-heading-s">Guidance</h3>
+      <p class="govuk-body">When fact checking:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>red highlights and a minus sign (–) show content that’s been deleted</li>
+        <li>green highlights and a plus sign (+) show content that’s been added</li>
+        <!-- <li><a href="https://govspeak-preview.publishing.service.gov.uk/guide" class="govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">Govspeak formatting (opens in new tab)</a> uses extra characters – ignore them</li> -->
+      </ul>
+      <p class="govuk-body"><a href="https://www.gov.uk/government/publications/how-content-requests-from-government-get-published/fact-checking-content-on-govuk" class="govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">Fact checking guidance (opens in new tab)</a></p>
+
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

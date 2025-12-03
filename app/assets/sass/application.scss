@@ -761,15 +761,37 @@ a.delete {
   padding: 15px;
 }
 
-.diff ul li, .diff-alt ul li {
+.diff ul li, .diff-alt ul li, .diff-alt ol li {
   margin: 0 -15px;
   padding: 0 15px;
   word-wrap: break-word;
-  list-style: none;
+  // list-style: none;
   position: relative;
   line-height: 1.6;
 }
 
+.diff-alt ul.govuk-list--bullet, .diff-alt ol.govuk-list--number {
+    // list-style-position: inside;
+    // padding-left: 10px !important;
+    margin-left: 20px !important;
+    padding-left: 0 !important;
+}
+
+.diff-alt ul.govuk-list--bullet li {
+    // padding-left: 0 !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+.diff-alt ol.govuk-list--number {
+      margin-left: 40px !important;
+}
+
+.govuk-inset-text--contact {
+  border-left: 1px solid #b1b4b6;
+  padding-left: 15px;
+  margin: 0 0 30px 0;
+}
 
 .diff ul .del::before, .diff-alt ul .del::before {
   content: "\2212";
@@ -779,7 +801,6 @@ a.delete {
   width: 40px;
  text-align: center;
  height: 100%;
- 
 }
 
 
@@ -849,7 +870,7 @@ del strong.alt, ins strong.alt {
 
 // Second variant // 
 
-.diff ul li {
+.diff ul li.unchanged {
   min-height: 24px;
   margin: 0 -15px;
   padding: 0 15px;

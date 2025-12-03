@@ -1,0 +1,56 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block pageTitle %}
+  Sign in to GOV.UK - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Signon",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Sign in to GOV.UK</h1>
+
+    {{ govukInput({
+      label: {
+        text: "Email"
+      },
+      id: "email",
+      classes: "govuk-input--width-20",
+      name: "email",
+      type: "email",
+      autocomplete: "email",
+      spellcheck: false
+    }) }}
+
+    {{ govukPasswordInput({
+      label: {
+        text: "Password"
+      },
+      id: "password-input",
+      classes: "govuk-input--width-20",
+      name: "password"
+    }) }}
+
+    {{ govukButton({
+      text: "Sign in",
+      href: "fact-check-the-changes-SPoC"
+    }) }}
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link govuk-link--no-visited-state">Forgot your password?</a>
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}
