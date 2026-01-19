@@ -1,0 +1,58 @@
+{% extends "layouts/main-rebrand.html" %}
+
+{% block pageTitle %}
+  Delete chapter - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right",
+    navigation: [
+      {
+        href: "#1",
+        text: "Switch app"
+      },
+      {
+        href: "#2",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+  {% include "includes/_service-navigation_iteration.njk" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">Statutory Paternity Pay and Leave: employer guide</span>
+    <h1 class="govuk-heading-xl">Delete chapter</h1>
+
+    <h2 class="govuk-heading-m">Are you sure you want to delete this chapter?</h2>
+
+    {{ govukInsetText({
+      text: data['chapter']
+    }) }}
+
+    {{ govukWarningText({
+      text: "Deleting this chapter will permanently remove it.",
+      iconFallbackText: "Warning"
+    }) }}
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Delete chapter",
+        classes: "govuk-button--warning"
+      }) }}
+
+      <a class="govuk-link govuk-link--no-visited-state" href="guide-accordion-version">Cancel</a>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
