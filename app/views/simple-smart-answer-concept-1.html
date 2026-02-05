@@ -1,0 +1,2342 @@
+{% extends "layouts/main-rebrand.html" %}
+
+{% block pageTitle %}
+  Simple Smart Answer - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right",
+    navigation: [
+      {
+        href: "#1",
+        text: "Switch app"
+      },
+      {
+        href: "#2",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+  {% include "includes/_service-navigation_iteration.njk" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">Simple smart answer</span>
+    <h1 class="govuk-heading-xl">Exchange a non-GB driving licence</h1>
+    
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Edition</dt>
+        <dd class="govuk-summary-list__value">46 <strong class="govuk-tag govuk-tag--yellow">Draft</strong></dd>
+        <dd class="govuk-summary-list__actions"></dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Assigned to</dt>
+        <dd class="govuk-summary-list__value">Genie Reigns</dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> assignee</span></a>
+        </dd>
+      </div>
+    </dl>
+  
+  </div>
+
+  <div class="govuk-grid-column-full">
+    
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" aria-current="page" href="#">Edit</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#">Tagging</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#">Metadata</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#">History and notes</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#">Admin</a></li>
+      </ul>
+    </nav>
+
+  </div>
+
+  <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-l">Edit</h2>
+
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+                        
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-label--m" for="doc-title">Title</label>
+      <input class="govuk-input" id="doc-title" name="doc-title" type="text" spellcheck="false" autocomplete="name" value="Exchange a non-GB driving licence">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-label--m" for="body">
+        Body
+      </label>          
+      <textarea class="govuk-textarea" id="body" name="body" rows="15" autocomplete="body">
+Use this tool to find out how to exchange your non-GB driving licence for a British licence.
+
+^Great Britain is England, Wales and Scotland. There's a different process if you want to [get a Northern Ireland driving licence](http://www.nidirect.gov.uk/index/information-and-services/motoring/driver-licensing/driving-in-ni-on-a-foreign-licence/exchanging-your-foreign-driving-licence.htm).^
+
+*[GB]: Great Britain
+      </textarea>
+    </div>
+
+    <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="start-button-text-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Start button text
+              </h1>
+            </legend>
+            <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="start-now" name="start-button-text" type="radio" value="start-now" checked>
+                <label class="govuk-label govuk-radios__label" for="start-now">
+                  Start now
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sign-in" name="start-button-text" type="radio" value="sign-in">
+                <label class="govuk-label govuk-radios__label" for="sign-in">
+                  Continue
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sign-in" name="start-button-text" type="radio" value="sign-in">
+                <label class="govuk-label govuk-radios__label" for="sign-in">
+                  Find contact details
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sign-in" name="start-button-text" type="radio" value="sign-in">
+                <label class="govuk-label govuk-radios__label" for="sign-in">
+                  Next
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+    <h3 class="govuk-heading-l" id="questions">Questions</h3>
+
+    <!-- Accordions -->
+
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default" data-i18n.hide-all-sections="Hide all questions" data-i18n.show-all-sections="Show all questions">
+
+      <!-- Question 1 -->
+      
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+              Question 1
+            </span>
+          </h2>
+          <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+            Are you a resident of Great Britain?
+          </div>
+        </div>
+        
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="question-1-title">Question</label>
+            <input class="govuk-input" id="question-1-title" name="question-1-title" type="text" spellcheck="false" value="Are you a resident of Great Britain?">
+          </div>
+
+          {{ govukTextarea({
+            name: "question1moreInformation ",
+            id: "question-1-more-information",
+            label: {
+              text: "More information (optional)",
+              classes: "govuk-label govuk-label--s"
+            },
+            rows: 5,
+            value: "You’re normally a resident if you live in Great Britain for 185 days in each calendar year."
+          }) }}
+
+          <!-- Answer 1 -->
+
+          <div class="govuk-summary-card">
+            
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Answer 1
+              </h2>
+              <ul class="govuk-summary-card__actions">
+                <li class="govuk-summary-card__action">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Delete answer</a>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="govuk-summary-card__content">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="question-1-answer-1-title">Answer</label>
+                <input class="govuk-input" id="question-1-answer-1-title" name="question-1-answer-1-title" type="text" spellcheck="false" value="Yes">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="sort">
+                  Goes to
+                </label>
+                <select class="govuk-select" id="question-1-answer-1-goes-to" name="question-1-answer-1-goes-to" style="width: 100%;">
+                  <option value="" disabled>Questions</option>
+                  <option value="question-2">Question 2</option>
+                  <option value="question-3">Question 3</option>
+                  <option value="question-4">Question 4</option>
+                  <option value="question-5">Question 5</option>
+                  <option value="question-6">Question 6</option>
+                  <option value="question-7">Question 7</option>
+                  <option value="" disabled>Outcomes</option>
+                  <option value="outcome-1">Outcome 1</option>
+                  <option value="outcome-2">Outcome 2</option>
+                  <option value="outcome-3">Outcome 3</option>
+                  <option value="outcome-4">Outcome 4</option>
+                  <option value="outcome-5">Outcome 5</option>
+                  <option value="outcome-6">Outcome 6</option>
+                  <option value="outcome-7">Outcome 7</option>
+                  <option value="outcome-8">Outcome 8</option>
+                  <option value="outcome-9">Outcome 9</option>
+                  <option value="outcome-10">Outcome 10</option>
+                  <option value="outcome-11">Outcome 11</option>
+                  <option value="outcome-12">Outcome 12</option>
+                  <option value="outcome-13">Outcome 13</option>
+                  <option value="outcome-14">Outcome 14</option>
+                  <option value="outcome-15">Outcome 15</option>
+                  <option value="outcome-16">Outcome 16</option>
+                  <option value="outcome-17">Outcome 17</option>
+                  <option value="outcome-18">Outcome 18</option>
+                  <option value="outcome-19">Outcome 19</option>
+                  <option value="outcome-20">Outcome 20</option>
+                  <option value="outcome-21">Outcome 21</option>
+                  <option value="outcome-22">Outcome 22</option>
+                  <option value="outcome-23">Outcome 23</option>
+                  <option value="outcome-24">Outcome 24</option>
+                  <option value="outcome-25">Outcome 25</option>
+                  <option value="outcome-26">Outcome 26</option>
+                  <option value="outcome-27">Outcome 27</option>
+                  <option value="outcome-28">Outcome 28</option>
+                </select>
+              </div>
+
+              <a href="#accordion-default-heading-2" class="govuk-body govuk-link govuk-link--no-visited-state">Go to question 2</a>
+
+            </div>
+          
+          </div>
+
+          <!-- End answer -->
+
+          <!-- Answer 2 -->
+
+          <div class="govuk-summary-card">
+            
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Answer 2
+              </h2>
+              <ul class="govuk-summary-card__actions">
+                <li class="govuk-summary-card__action">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Delete answer</a>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="govuk-summary-card__content">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="question-1-answer-2-title">Answer</label>
+                <input class="govuk-input" id="question-1-answer-2-title" name="question-1-answer-2-title" type="text" spellcheck="false" value="No">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="sort">
+                  Goes to
+                </label>
+                <select class="govuk-select" id="question-1-answer-2-goes-to" name="question-1-answer-2-goes-to" style="width: 100%;">
+                  <option value="" disabled>Questions</option>
+                  <option value="question-2">Question 2</option>
+                  <option value="question-3">Question 3</option>
+                  <option value="question-4">Question 4</option>
+                  <option value="question-5">Question 5</option>
+                  <option value="question-6">Question 6</option>
+                  <option value="question-7">Question 7</option>
+                  <option value="" disabled>Outcomes</option>
+                  <option value="outcome-1" selected>Outcome 1</option>
+                  <option value="outcome-2">Outcome 2</option>
+                  <option value="outcome-3">Outcome 3</option>
+                  <option value="outcome-4">Outcome 4</option>
+                  <option value="outcome-5">Outcome 5</option>
+                  <option value="outcome-6">Outcome 6</option>
+                  <option value="outcome-7">Outcome 7</option>
+                  <option value="outcome-8">Outcome 8</option>
+                  <option value="outcome-9">Outcome 9</option>
+                  <option value="outcome-10">Outcome 10</option>
+                  <option value="outcome-11">Outcome 11</option>
+                  <option value="outcome-12">Outcome 12</option>
+                  <option value="outcome-13">Outcome 13</option>
+                  <option value="outcome-14">Outcome 14</option>
+                  <option value="outcome-15">Outcome 15</option>
+                  <option value="outcome-16">Outcome 16</option>
+                  <option value="outcome-17">Outcome 17</option>
+                  <option value="outcome-18">Outcome 18</option>
+                  <option value="outcome-19">Outcome 19</option>
+                  <option value="outcome-20">Outcome 20</option>
+                  <option value="outcome-21">Outcome 21</option>
+                  <option value="outcome-22">Outcome 22</option>
+                  <option value="outcome-23">Outcome 23</option>
+                  <option value="outcome-24">Outcome 24</option>
+                  <option value="outcome-25">Outcome 25</option>
+                  <option value="outcome-26">Outcome 26</option>
+                  <option value="outcome-27">Outcome 27</option>
+                  <option value="outcome-28">Outcome 28</option>
+                </select>
+              </div>
+
+              <a href="#accordion-default-heading-outcome-1" class="govuk-body govuk-link govuk-link--no-visited-state">Go to outcome 1</a>
+
+
+            </div>
+          
+          </div>
+
+          <!-- End answer -->
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Add another answer",
+              classes: "govuk-button--secondary govuk-!-margin-bottom-2"
+            }) }}
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Delete question</a>
+          </div>
+      
+        </div>
+      </div>
+
+      <!-- End question -->
+
+      <!-- Question 2 -->
+           
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+              Question 2
+            </span>
+          </h2>
+          <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+            What kind of licence do you have?
+          </div>
+        </div>
+        
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="question-2-title">Question</label>
+            <input class="govuk-input" id="question-2-title" name="question-2-title" type="text" spellcheck="false" value="What kind of licence do you have?">
+          </div>
+
+          {{ govukTextarea({
+            name: "question1moreInformation ",
+            id: "question-2-more-information",
+            label: {
+              text: "More information (optional)",
+              classes: "govuk-label govuk-label--s"
+            },
+            rows: 5,
+            value: "Your licence will say what type of vehicles you can drive."
+          }) }}
+
+          <!-- Answer 1 -->
+
+          <div class="govuk-summary-card">
+            
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Answer 1
+              </h2>
+              <ul class="govuk-summary-card__actions">
+                <li class="govuk-summary-card__action">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Delete answer</a>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="govuk-summary-card__content">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="question-1-answer-1-title">Answer</label>
+                <input class="govuk-input" id="question-2-answer-1-title" name="question-2-answer-1-title" type="text" spellcheck="false" value="Car or motorcycle">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="sort">
+                  Goes to
+                </label>
+                <select class="govuk-select" id="question-2-answer-1-goes-to" name="question-2-answer-1-goes-to" style="width: 100%;">
+                  <option value="" disabled>Questions</option>
+                  <option value="question-2">Question 2</option>
+                  <option value="question-3">Question 3</option>
+                  <option value="question-4" selected>Question 4</option>
+                  <option value="question-5">Question 5</option>
+                  <option value="question-6">Question 6</option>
+                  <option value="question-7">Question 7</option>
+                  <option value="" disabled>Outcomes</option>
+                  <option value="outcome-1">Outcome 1</option>
+                  <option value="outcome-2">Outcome 2</option>
+                  <option value="outcome-3">Outcome 3</option>
+                  <option value="outcome-4">Outcome 4</option>
+                  <option value="outcome-5">Outcome 5</option>
+                  <option value="outcome-6">Outcome 6</option>
+                  <option value="outcome-7">Outcome 7</option>
+                  <option value="outcome-8">Outcome 8</option>
+                  <option value="outcome-9">Outcome 9</option>
+                  <option value="outcome-10">Outcome 10</option>
+                  <option value="outcome-11">Outcome 11</option>
+                  <option value="outcome-12">Outcome 12</option>
+                  <option value="outcome-13">Outcome 13</option>
+                  <option value="outcome-14">Outcome 14</option>
+                  <option value="outcome-15">Outcome 15</option>
+                  <option value="outcome-16">Outcome 16</option>
+                  <option value="outcome-17">Outcome 17</option>
+                  <option value="outcome-18">Outcome 18</option>
+                  <option value="outcome-19">Outcome 19</option>
+                  <option value="outcome-20">Outcome 20</option>
+                  <option value="outcome-21">Outcome 21</option>
+                  <option value="outcome-22">Outcome 22</option>
+                  <option value="outcome-23">Outcome 23</option>
+                  <option value="outcome-24">Outcome 24</option>
+                  <option value="outcome-25">Outcome 25</option>
+                  <option value="outcome-26">Outcome 26</option>
+                  <option value="outcome-27">Outcome 27</option>
+                  <option value="outcome-28">Outcome 28</option>
+                </select>
+              </div>
+
+              <a href="#accordion-default-heading-outcome-1" class="govuk-body govuk-link govuk-link--no-visited-state">Go to outcome 1</a>
+
+
+            </div>
+          
+          </div>
+
+          <!-- End answer -->
+
+          <!-- Answer 2 -->
+
+          <div class="govuk-summary-card">
+            
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Answer 2
+              </h2>
+              <ul class="govuk-summary-card__actions">
+                <li class="govuk-summary-card__action">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Delete answer</a>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="govuk-summary-card__content">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="question-2-answer-2-title">Answer</label>
+                <input class="govuk-input" id="question-2-answer-2-title" name="question-2-answer-2-title" type="text" spellcheck="false" value="Lorry, bus or minibus">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="sort">
+                  Goes to
+                </label>
+                <select class="govuk-select" id="question-2-answer-2-goes-to" name="question-1-answer-2-goes-to" style="width: 100%;">
+                  <option value="" disabled>Questions</option>
+                  <option value="question-2">Question 2</option>
+                  <option value="question-3" selected>Question 3</option>
+                  <option value="question-4">Question 4</option>
+                  <option value="question-5">Question 5</option>
+                  <option value="question-6">Question 6</option>
+                  <option value="question-7">Question 7</option>
+                  <option value="" disabled>Outcomes</option>
+                  <option value="outcome-1">Outcome 1</option>
+                  <option value="outcome-2">Outcome 2</option>
+                  <option value="outcome-3">Outcome 3</option>
+                  <option value="outcome-4">Outcome 4</option>
+                  <option value="outcome-5">Outcome 5</option>
+                  <option value="outcome-6">Outcome 6</option>
+                  <option value="outcome-7">Outcome 7</option>
+                  <option value="outcome-8">Outcome 8</option>
+                  <option value="outcome-9">Outcome 9</option>
+                  <option value="outcome-10">Outcome 10</option>
+                  <option value="outcome-11">Outcome 11</option>
+                  <option value="outcome-12">Outcome 12</option>
+                  <option value="outcome-13">Outcome 13</option>
+                  <option value="outcome-14">Outcome 14</option>
+                  <option value="outcome-15">Outcome 15</option>
+                  <option value="outcome-16">Outcome 16</option>
+                  <option value="outcome-17">Outcome 17</option>
+                  <option value="outcome-18">Outcome 18</option>
+                  <option value="outcome-19">Outcome 19</option>
+                  <option value="outcome-20">Outcome 20</option>
+                  <option value="outcome-21">Outcome 21</option>
+                  <option value="outcome-22">Outcome 22</option>
+                  <option value="outcome-23">Outcome 23</option>
+                  <option value="outcome-24">Outcome 24</option>
+                  <option value="outcome-25">Outcome 25</option>
+                  <option value="outcome-26">Outcome 26</option>
+                  <option value="outcome-27">Outcome 27</option>
+                  <option value="outcome-28">Outcome 28</option>
+                </select>
+              </div>
+
+              <a href="#accordion-default-heading-outcome-1" class="govuk-body govuk-link govuk-link--no-visited-state">Go to outcome 1</a>
+
+
+            </div>
+          
+          </div>
+
+          <!-- End answer -->
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Add another answer",
+              classes: "govuk-button--secondary govuk-!-margin-bottom-2"
+            }) }}
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Delete question</a>
+          </div>
+      
+        </div>
+      </div>
+
+      <!-- End question -->
+      
+      <!-- Question 3 -->
+
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+              Question 3
+            </span>
+          </h2>
+          <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+            Where did you pass your test?
+          </div>
+        </div>
+        
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="question-3-title">Question</label>
+            <input class="govuk-input" id="question-3-title" name="question-3-title" type="text" spellcheck="false" value="Where did you pass your test?">
+          </div>
+
+          {{ govukTextarea({
+            name: "question1moreInformation ",
+            id: "question-3-more-information",
+            label: {
+              text: "More information (optional)",
+              classes: "govuk-label govuk-label--s"
+            },
+            rows: 5,
+            value: "You’re normally a resident if you live in Great Britain for 185 days in each calendar year."
+          }) }}
+
+          <!-- Answer 1 -->
+
+          <div class="govuk-summary-card">
+            
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Answer 1
+              </h2>
+              <ul class="govuk-summary-card__actions">
+                <li class="govuk-summary-card__action">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Delete answer</a>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="govuk-summary-card__content">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="question-1-answer-1-title">Answer</label>
+                <input class="govuk-input" id="question-3-answer-1-title" name="question-3-answer-1-title" type="text" spellcheck="false" value="European Union or European Economic Area">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="sort">
+                  Goes to
+                </label>
+                <select class="govuk-select" id="question-3-answer-1-goes-to" name="question-3-answer-1-goes-to" style="width: 100%;">
+                  <option value="" disabled>Questions</option>
+                  <option value="question-2">Question 2</option>
+                  <option value="question-3">Question 3</option>
+                  <option value="question-4">Question 4</option>
+                  <option value="question-5">Question 5</option>
+                  <option value="question-6" selected>Question 6</option>
+                  <option value="question-7">Question 7</option>
+                  <option value="" disabled>Outcomes</option>
+                  <option value="outcome-1">Outcome 1</option>
+                  <option value="outcome-2">Outcome 2</option>
+                  <option value="outcome-3">Outcome 3</option>
+                  <option value="outcome-4">Outcome 4</option>
+                  <option value="outcome-5">Outcome 5</option>
+                  <option value="outcome-6">Outcome 6</option>
+                  <option value="outcome-7">Outcome 7</option>
+                  <option value="outcome-8">Outcome 8</option>
+                  <option value="outcome-9">Outcome 9</option>
+                  <option value="outcome-10">Outcome 10</option>
+                  <option value="outcome-11">Outcome 11</option>
+                  <option value="outcome-12">Outcome 12</option>
+                  <option value="outcome-13">Outcome 13</option>
+                  <option value="outcome-14">Outcome 14</option>
+                  <option value="outcome-15">Outcome 15</option>
+                  <option value="outcome-16">Outcome 16</option>
+                  <option value="outcome-17">Outcome 17</option>
+                  <option value="outcome-18">Outcome 18</option>
+                  <option value="outcome-19">Outcome 19</option>
+                  <option value="outcome-20">Outcome 20</option>
+                  <option value="outcome-21">Outcome 21</option>
+                  <option value="outcome-22">Outcome 22</option>
+                  <option value="outcome-23">Outcome 23</option>
+                  <option value="outcome-24">Outcome 24</option>
+                  <option value="outcome-25">Outcome 25</option>
+                  <option value="outcome-26">Outcome 26</option>
+                  <option value="outcome-27">Outcome 27</option>
+                  <option value="outcome-28">Outcome 28</option>
+                </select>
+              </div>
+
+              <a href="#accordion-default-heading-6" class="govuk-body govuk-link govuk-link--no-visited-state">Go to question 6</a>
+
+
+            </div>
+          
+          </div>
+
+          <!-- End answer -->
+
+          <!-- Answer 2 -->
+
+          <div class="govuk-summary-card">
+            
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Answer 2
+              </h2>
+              <ul class="govuk-summary-card__actions">
+                <li class="govuk-summary-card__action">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Delete answer</a>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="govuk-summary-card__content">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="question-3-answer-2-title">Answer</label>
+                <input class="govuk-input" id="question3-answer-2-title" name="question-3-answer-2-title" type="text" spellcheck="false" value="Switzerland">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="sort">
+                  Goes to
+                </label>
+                <select class="govuk-select" id="question-3-answer-2-goes-to" name="question-3-answer-2-goes-to" style="width: 100%;">
+                  <option value="" disabled>Questions</option>
+                  <option value="question-2">Question 2</option>
+                  <option value="question-3">Question 3</option>
+                  <option value="question-4">Question 4</option>
+                  <option value="question-5">Question 5</option>
+                  <option value="question-6">Question 6</option>
+                  <option value="question-7">Question 7</option>
+                  <option value="" disabled>Outcomes</option>
+                  <option value="outcome-1" selected>Outcome 1</option>
+                  <option value="outcome-2">Outcome 2</option>
+                  <option value="outcome-3">Outcome 3</option>
+                  <option value="outcome-4">Outcome 4</option>
+                  <option value="outcome-5">Outcome 5</option>
+                  <option value="outcome-6">Outcome 6</option>
+                  <option value="outcome-7">Outcome 7</option>
+                  <option value="outcome-8">Outcome 8</option>
+                  <option value="outcome-9">Outcome 9</option>
+                  <option value="outcome-10">Outcome 10</option>
+                  <option value="outcome-11">Outcome 11</option>
+                  <option value="outcome-12">Outcome 12</option>
+                  <option value="outcome-13">Outcome 13</option>
+                  <option value="outcome-14">Outcome 14</option>
+                  <option value="outcome-15">Outcome 15</option>
+                  <option value="outcome-16">Outcome 16</option>
+                  <option value="outcome-17">Outcome 17</option>
+                  <option value="outcome-18">Outcome 18</option>
+                  <option value="outcome-19" selected>Outcome 19</option>
+                  <option value="outcome-20">Outcome 20</option>
+                  <option value="outcome-21">Outcome 21</option>
+                  <option value="outcome-22">Outcome 22</option>
+                  <option value="outcome-23">Outcome 23</option>
+                  <option value="outcome-24">Outcome 24</option>
+                  <option value="outcome-25">Outcome 25</option>
+                  <option value="outcome-26">Outcome 26</option>
+                  <option value="outcome-27">Outcome 27</option>
+                  <option value="outcome-28">Outcome 28</option>
+                </select>
+              </div>
+
+              <a href="#accordion-default-heading-outcome-19" class="govuk-body govuk-link govuk-link--no-visited-state">Go to outcome 19</a>
+
+
+            </div>
+          
+          </div>
+
+          <!-- End answer -->
+
+          <!-- Answer 3 -->
+
+          <div class="govuk-summary-card">
+            
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Answer 3
+              </h2>
+              <ul class="govuk-summary-card__actions">
+                <li class="govuk-summary-card__action">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Delete answer</a>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="govuk-summary-card__content">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="question-3-answer-2-title">Answer</label>
+                <input class="govuk-input" id="question3-answer-2-title" name="question-3-answer-2-title" type="text" spellcheck="false" value="Great Britain or Northern Ireland">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="sort">
+                  Goes to
+                </label>
+                <select class="govuk-select" id="question-3-answer-2-goes-to" name="question-3-answer-2-goes-to" style="width: 100%;">
+                  <option value="" disabled>Questions</option>
+                  <option value="question-2">Question 2</option>
+                  <option value="question-3">Question 3</option>
+                  <option value="question-4">Question 4</option>
+                  <option value="question-5">Question 5</option>
+                  <option value="question-6">Question 6</option>
+                  <option value="question-7">Question 7</option>
+                  <option value="" disabled>Outcomes</option>
+                  <option value="outcome-1" selected>Outcome 1</option>
+                  <option value="outcome-2">Outcome 2</option>
+                  <option value="outcome-3">Outcome 3</option>
+                  <option value="outcome-4">Outcome 4</option>
+                  <option value="outcome-5" selected>Outcome 5</option>
+                  <option value="outcome-6">Outcome 6</option>
+                  <option value="outcome-7">Outcome 7</option>
+                  <option value="outcome-8">Outcome 8</option>
+                  <option value="outcome-9">Outcome 9</option>
+                  <option value="outcome-10">Outcome 10</option>
+                  <option value="outcome-11">Outcome 11</option>
+                  <option value="outcome-12">Outcome 12</option>
+                  <option value="outcome-13">Outcome 13</option>
+                  <option value="outcome-14">Outcome 14</option>
+                  <option value="outcome-15">Outcome 15</option>
+                  <option value="outcome-16">Outcome 16</option>
+                  <option value="outcome-17">Outcome 17</option>
+                  <option value="outcome-18">Outcome 18</option>
+                  <option value="outcome-19">Outcome 19</option>
+                  <option value="outcome-20">Outcome 20</option>
+                  <option value="outcome-21">Outcome 21</option>
+                  <option value="outcome-22">Outcome 22</option>
+                  <option value="outcome-23">Outcome 23</option>
+                  <option value="outcome-24">Outcome 24</option>
+                  <option value="outcome-25">Outcome 25</option>
+                  <option value="outcome-26">Outcome 26</option>
+                  <option value="outcome-27">Outcome 27</option>
+                  <option value="outcome-28">Outcome 28</option>
+                </select>
+              </div>
+
+              <a href="#accordion-default-heading-outcome-5" class="govuk-body govuk-link govuk-link--no-visited-state">Go to outcome 5</a>
+
+
+            </div>
+          
+          </div>
+
+          <!-- End answer -->
+
+          <!-- Answer 4 -->
+
+          <div class="govuk-summary-card">
+            
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Answer 4
+              </h2>
+              <ul class="govuk-summary-card__actions">
+                <li class="govuk-summary-card__action">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Delete answer</a>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="govuk-summary-card__content">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="question-3-answer-2-title">Answer</label>
+                <input class="govuk-input" id="question3-answer-2-title" name="question-3-answer-2-title" type="text" spellcheck="false" value="Jersey, Guernsey or Isle of Man">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="sort">
+                  Goes to
+                </label>
+                <select class="govuk-select" id="question-3-answer-2-goes-to" name="question-3-answer-2-goes-to" style="width: 100%;">
+                  <option value="" disabled>Questions</option>
+                  <option value="question-2">Question 2</option>
+                  <option value="question-3">Question 3</option>
+                  <option value="question-4">Question 4</option>
+                  <option value="question-5">Question 5</option>
+                  <option value="question-6">Question 6</option>
+                  <option value="question-7">Question 7</option>
+                  <option value="" disabled>Outcomes</option>
+                  <option value="outcome-1">Outcome 1</option>
+                  <option value="outcome-2">Outcome 2</option>
+                  <option value="outcome-3">Outcome 3</option>
+                  <option value="outcome-4">Outcome 4</option>
+                  <option value="outcome-5">Outcome 5</option>
+                  <option value="outcome-6" selected>Outcome 6</option>
+                  <option value="outcome-7">Outcome 7</option>
+                  <option value="outcome-8">Outcome 8</option>
+                  <option value="outcome-9">Outcome 9</option>
+                  <option value="outcome-10">Outcome 10</option>
+                  <option value="outcome-11">Outcome 11</option>
+                  <option value="outcome-12">Outcome 12</option>
+                  <option value="outcome-13">Outcome 13</option>
+                  <option value="outcome-14">Outcome 14</option>
+                  <option value="outcome-15">Outcome 15</option>
+                  <option value="outcome-16">Outcome 16</option>
+                  <option value="outcome-17">Outcome 17</option>
+                  <option value="outcome-18">Outcome 18</option>
+                  <option value="outcome-19">Outcome 19</option>
+                  <option value="outcome-20">Outcome 20</option>
+                  <option value="outcome-21">Outcome 21</option>
+                  <option value="outcome-22">Outcome 22</option>
+                  <option value="outcome-23">Outcome 23</option>
+                  <option value="outcome-24">Outcome 24</option>
+                  <option value="outcome-25">Outcome 25</option>
+                  <option value="outcome-26">Outcome 26</option>
+                  <option value="outcome-27">Outcome 27</option>
+                  <option value="outcome-28">Outcome 28</option>
+                </select>
+              </div>
+
+              <a href="#accordion-default-heading-outcome-6" class="govuk-body govuk-link govuk-link--no-visited-state">Go to outcome 6</a>
+
+
+            </div>
+          
+          </div>
+
+          <!-- End answer -->
+
+          <!-- Answer 5 -->
+
+          <div class="govuk-summary-card">
+            
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Answer 5
+              </h2>
+              <ul class="govuk-summary-card__actions">
+                <li class="govuk-summary-card__action">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Delete answer</a>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="govuk-summary-card__content">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="question-3-answer-2-title">Answer</label>
+                <input class="govuk-input" id="question3-answer-2-title" name="question-3-answer-2-title" type="text" spellcheck="false" value="Gibraltar">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="sort">
+                  Goes to
+                </label>
+                <select class="govuk-select" id="question-3-answer-2-goes-to" name="question-3-answer-2-goes-to" style="width: 100%;">
+                  <option value="" disabled>Questions</option>
+                  <option value="question-2">Question 2</option>
+                  <option value="question-3">Question 3</option>
+                  <option value="question-4">Question 4</option>
+                  <option value="question-5">Question 5</option>
+                  <option value="question-6">Question 6</option>
+                  <option value="question-7">Question 7</option>
+                  <option value="" disabled>Outcomes</option>
+                  <option value="outcome-1">Outcome 1</option>
+                  <option value="outcome-2">Outcome 2</option>
+                  <option value="outcome-3">Outcome 3</option>
+                  <option value="outcome-4">Outcome 4</option>
+                  <option value="outcome-5">Outcome 5</option>
+                  <option value="outcome-6">Outcome 6</option>
+                  <option value="outcome-7" selected>Outcome 7</option>
+                  <option value="outcome-8">Outcome 8</option>
+                  <option value="outcome-9">Outcome 9</option>
+                  <option value="outcome-10">Outcome 10</option>
+                  <option value="outcome-11">Outcome 11</option>
+                  <option value="outcome-12">Outcome 12</option>
+                  <option value="outcome-13">Outcome 13</option>
+                  <option value="outcome-14">Outcome 14</option>
+                  <option value="outcome-15">Outcome 15</option>
+                  <option value="outcome-16">Outcome 16</option>
+                  <option value="outcome-17">Outcome 17</option>
+                  <option value="outcome-18">Outcome 18</option>
+                  <option value="outcome-19">Outcome 19</option>
+                  <option value="outcome-20">Outcome 20</option>
+                  <option value="outcome-21">Outcome 21</option>
+                  <option value="outcome-22">Outcome 22</option>
+                  <option value="outcome-23">Outcome 23</option>
+                  <option value="outcome-24">Outcome 24</option>
+                  <option value="outcome-25">Outcome 25</option>
+                  <option value="outcome-26">Outcome 26</option>
+                  <option value="outcome-27">Outcome 27</option>
+                  <option value="outcome-28">Outcome 28</option>
+                </select>
+              </div>
+
+              <a href="#accordion-default-heading-outcome-7" class="govuk-body govuk-link govuk-link--no-visited-state">Go to outcome 7</a>
+
+
+            </div>
+          
+          </div>
+
+          <!-- End answer -->
+
+          <!-- Answer 6 -->
+
+          <div class="govuk-summary-card">
+            
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Answer 6
+              </h2>
+              <ul class="govuk-summary-card__actions">
+                <li class="govuk-summary-card__action">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Delete answer</a>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="govuk-summary-card__content">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="question-3-answer-2-title">Answer</label>
+                <input class="govuk-input" id="question3-answer-2-title" name="question-3-answer-2-title" type="text" spellcheck="false" value="Other">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="sort">
+                  Goes to
+                </label>
+                <select class="govuk-select" id="question-3-answer-2-goes-to" name="question-3-answer-2-goes-to" style="width: 100%;">
+                  <option value="" disabled>Questions</option>
+                  <option value="question-2">Question 2</option>
+                  <option value="question-3">Question 3</option>
+                  <option value="question-4">Question 4</option>
+                  <option value="question-5">Question 5</option>
+                  <option value="question-6">Question 6</option>
+                  <option value="question-7">Question 7</option>
+                  <option value="" disabled>Outcomes</option>
+                  <option value="outcome-1">Outcome 1</option>
+                  <option value="outcome-2">Outcome 2</option>
+                  <option value="outcome-3">Outcome 3</option>
+                  <option value="outcome-4">Outcome 4</option>
+                  <option value="outcome-5">Outcome 5</option>
+                  <option value="outcome-6">Outcome 6</option>
+                  <option value="outcome-7">Outcome 7</option>
+                  <option value="outcome-8" selected>Outcome 8</option>
+                  <option value="outcome-9">Outcome 9</option>
+                  <option value="outcome-10">Outcome 10</option>
+                  <option value="outcome-11">Outcome 11</option>
+                  <option value="outcome-12">Outcome 12</option>
+                  <option value="outcome-13">Outcome 13</option>
+                  <option value="outcome-14">Outcome 14</option>
+                  <option value="outcome-15">Outcome 15</option>
+                  <option value="outcome-16">Outcome 16</option>
+                  <option value="outcome-17">Outcome 17</option>
+                  <option value="outcome-18">Outcome 18</option>
+                  <option value="outcome-19">Outcome 19</option>
+                  <option value="outcome-20">Outcome 20</option>
+                  <option value="outcome-21">Outcome 21</option>
+                  <option value="outcome-22">Outcome 22</option>
+                  <option value="outcome-23">Outcome 23</option>
+                  <option value="outcome-24">Outcome 24</option>
+                  <option value="outcome-25">Outcome 25</option>
+                  <option value="outcome-26">Outcome 26</option>
+                  <option value="outcome-27">Outcome 27</option>
+                  <option value="outcome-28">Outcome 28</option>
+                </select>
+              </div>
+
+              <a href="#accordion-default-heading-outcome-8" class="govuk-body govuk-link govuk-link--no-visited-state">Go to outcome 8</a>
+
+
+            </div>
+          
+          </div>
+
+          <!-- End answer -->
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Add another answer",
+              classes: "govuk-button--secondary govuk-!-margin-bottom-2"
+            }) }}
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Delete question</a>
+          </div>
+      
+        </div>
+      </div>
+      
+      <!-- Question 4 -->
+
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+              Question 4
+            </span>
+          </h2>
+          <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+            Where did you pass your test?
+          </div>
+        </div>
+        
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="question-4-title">Question</label>
+            <input class="govuk-input" id="question-4-title" name="question-4-title" type="text" spellcheck="false" value="Where did you pass your test?">
+          </div>
+
+          {{ govukTextarea({
+            name: "question1moreInformation ",
+            id: "question-4-more-information",
+            label: {
+              text: "More information (optional)",
+              classes: "govuk-label govuk-label--s"
+            },
+            rows: 5,
+            value: "You’re normally a resident if you live in Great Britain for 185 days in each calendar year."
+          }) }}
+
+          <!-- Answer 1 -->
+
+          <div class="govuk-summary-card">
+            
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Answer 1
+              </h2>
+              <ul class="govuk-summary-card__actions">
+                <li class="govuk-summary-card__action">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Delete answer</a>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="govuk-summary-card__content">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="question-4-answer-1-title">Answer</label>
+                <input class="govuk-input" id="question-4-answer-1-title" name="question-4-answer-1-title" type="text" spellcheck="false" value="Yes">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="sort">
+                  Goes to
+                </label>
+                <select class="govuk-select" id="question-4-answer-1-goes-to" name="question-4-answer-1-goes-to" style="width: 100%;">
+                  <option value="" disabled>Questions</option>
+                  <option value="question-2">Question 2</option>
+                  <option value="question-3">Question 3</option>
+                  <option value="question-4">Question 4</option>
+                  <option value="question-5">Question 5</option>
+                  <option value="question-6">Question 6</option>
+                  <option value="question-7">Question 7</option>
+                  <option value="" disabled>Outcomes</option>
+                  <option value="outcome-1">Outcome 1</option>
+                  <option value="outcome-2">Outcome 2</option>
+                  <option value="outcome-3">Outcome 3</option>
+                  <option value="outcome-4">Outcome 4</option>
+                  <option value="outcome-5">Outcome 5</option>
+                  <option value="outcome-6">Outcome 6</option>
+                  <option value="outcome-7">Outcome 7</option>
+                  <option value="outcome-8">Outcome 8</option>
+                  <option value="outcome-9">Outcome 9</option>
+                  <option value="outcome-10">Outcome 10</option>
+                  <option value="outcome-11">Outcome 11</option>
+                  <option value="outcome-12">Outcome 12</option>
+                  <option value="outcome-13">Outcome 13</option>
+                  <option value="outcome-14">Outcome 14</option>
+                  <option value="outcome-15">Outcome 15</option>
+                  <option value="outcome-16">Outcome 16</option>
+                  <option value="outcome-17">Outcome 17</option>
+                  <option value="outcome-18">Outcome 18</option>
+                  <option value="outcome-19">Outcome 19</option>
+                  <option value="outcome-20">Outcome 20</option>
+                  <option value="outcome-21">Outcome 21</option>
+                  <option value="outcome-22">Outcome 22</option>
+                  <option value="outcome-23">Outcome 23</option>
+                  <option value="outcome-24">Outcome 24</option>
+                  <option value="outcome-25">Outcome 25</option>
+                  <option value="outcome-26">Outcome 26</option>
+                  <option value="outcome-27">Outcome 27</option>
+                  <option value="outcome-28">Outcome 28</option>
+                </select>
+              </div>
+
+            </div>
+          
+          </div>
+
+          <!-- End answer -->
+
+          <!-- Answer 2 -->
+
+          <div class="govuk-summary-card">
+            
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Answer 2
+              </h2>
+              <ul class="govuk-summary-card__actions">
+                <li class="govuk-summary-card__action">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Delete answer</a>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="govuk-summary-card__content">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="question-4-answer-2-title">Answer</label>
+                <input class="govuk-input" id="question-4-answer-2-title" name="question-4-answer-2-title" type="text" spellcheck="false" value="No">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="sort">
+                  Goes to
+                </label>
+                <select class="govuk-select" id="question-4-answer-2-goes-to" name="question-4-answer-2-goes-to" style="width: 100%;">
+                  <option value="" disabled>Questions</option>
+                  <option value="question-2">Question 2</option>
+                  <option value="question-3">Question 3</option>
+                  <option value="question-4">Question 4</option>
+                  <option value="question-5">Question 5</option>
+                  <option value="question-6">Question 6</option>
+                  <option value="question-7">Question 7</option>
+                  <option value="" disabled>Outcomes</option>
+                  <option value="outcome-1" selected>Outcome 1</option>
+                  <option value="outcome-2">Outcome 2</option>
+                  <option value="outcome-3">Outcome 3</option>
+                  <option value="outcome-4">Outcome 4</option>
+                  <option value="outcome-5">Outcome 5</option>
+                  <option value="outcome-6">Outcome 6</option>
+                  <option value="outcome-7">Outcome 7</option>
+                  <option value="outcome-8">Outcome 8</option>
+                  <option value="outcome-9">Outcome 9</option>
+                  <option value="outcome-10">Outcome 10</option>
+                  <option value="outcome-11">Outcome 11</option>
+                  <option value="outcome-12">Outcome 12</option>
+                  <option value="outcome-13">Outcome 13</option>
+                  <option value="outcome-14">Outcome 14</option>
+                  <option value="outcome-15">Outcome 15</option>
+                  <option value="outcome-16">Outcome 16</option>
+                  <option value="outcome-17">Outcome 17</option>
+                  <option value="outcome-18">Outcome 18</option>
+                  <option value="outcome-19">Outcome 19</option>
+                  <option value="outcome-20">Outcome 20</option>
+                  <option value="outcome-21">Outcome 21</option>
+                  <option value="outcome-22">Outcome 22</option>
+                  <option value="outcome-23">Outcome 23</option>
+                  <option value="outcome-24">Outcome 24</option>
+                  <option value="outcome-25">Outcome 25</option>
+                  <option value="outcome-26">Outcome 26</option>
+                  <option value="outcome-27">Outcome 27</option>
+                  <option value="outcome-28">Outcome 28</option>
+                </select>
+              </div>
+
+            </div>
+          
+          </div>
+
+          <!-- End answer -->
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Add another answer",
+              classes: "govuk-button--secondary govuk-!-margin-bottom-2"
+            }) }}
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Delete question</a>
+          </div>
+      
+        </div>
+      </div>
+
+      <!-- Question 5 -->
+
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-5">
+              Question 5
+            </span>
+          </h2>
+          <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+            Which country was your current licence issued in?
+          </div>
+        </div>
+        
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="question-5-title">Question</label>
+            <input class="govuk-input" id="question-5-title" name="question-5-title" type="text" spellcheck="false" value="Which country was your current licence issued in?">
+          </div>
+
+          {{ govukTextarea({
+            name: "question1moreInformation ",
+            id: "question-5-more-information",
+            label: {
+              text: "More information (optional)",
+              classes: "govuk-label govuk-label--s"
+            },
+            rows: 5,
+            value: "You’re normally a resident if you live in Great Britain for 185 days in each calendar year."
+          }) }}
+
+          <!-- Answer 1 -->
+
+          <div class="govuk-summary-card">
+            
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Answer 1
+              </h2>
+              <ul class="govuk-summary-card__actions">
+                <li class="govuk-summary-card__action">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Delete answer</a>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="govuk-summary-card__content">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="question-5-answer-1-title">Answer</label>
+                <input class="govuk-input" id="question-5-answer-1-title" name="question-5-answer-1-title" type="text" spellcheck="false" value="Yes">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="sort">
+                  Goes to
+                </label>
+                <select class="govuk-select" id="question-5-answer-1-goes-to" name="question-5-answer-1-goes-to" style="width: 100%;">
+                  <option value="" disabled>Questions</option>
+                  <option value="question-2">Question 2</option>
+                  <option value="question-3">Question 3</option>
+                  <option value="question-4">Question 4</option>
+                  <option value="question-5">Question 5</option>
+                  <option value="question-6">Question 6</option>
+                  <option value="question-7">Question 7</option>
+                  <option value="" disabled>Outcomes</option>
+                  <option value="outcome-1">Outcome 1</option>
+                  <option value="outcome-2">Outcome 2</option>
+                  <option value="outcome-3">Outcome 3</option>
+                  <option value="outcome-4">Outcome 4</option>
+                  <option value="outcome-5">Outcome 5</option>
+                  <option value="outcome-6">Outcome 6</option>
+                  <option value="outcome-7">Outcome 7</option>
+                  <option value="outcome-8">Outcome 8</option>
+                  <option value="outcome-9">Outcome 9</option>
+                  <option value="outcome-10">Outcome 10</option>
+                  <option value="outcome-11">Outcome 11</option>
+                  <option value="outcome-12">Outcome 12</option>
+                  <option value="outcome-13">Outcome 13</option>
+                  <option value="outcome-14">Outcome 14</option>
+                  <option value="outcome-15">Outcome 15</option>
+                  <option value="outcome-16">Outcome 16</option>
+                  <option value="outcome-17">Outcome 17</option>
+                  <option value="outcome-18">Outcome 18</option>
+                  <option value="outcome-19">Outcome 19</option>
+                  <option value="outcome-20">Outcome 20</option>
+                  <option value="outcome-21">Outcome 21</option>
+                  <option value="outcome-22">Outcome 22</option>
+                  <option value="outcome-23">Outcome 23</option>
+                  <option value="outcome-24">Outcome 24</option>
+                  <option value="outcome-25">Outcome 25</option>
+                  <option value="outcome-26">Outcome 26</option>
+                  <option value="outcome-27">Outcome 27</option>
+                  <option value="outcome-28">Outcome 28</option>
+                </select>
+              </div>
+
+            </div>
+          
+          </div>
+
+          <!-- End answer -->
+
+          <!-- Answer 2 -->
+
+          <div class="govuk-summary-card">
+            
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Answer 2
+              </h2>
+              <ul class="govuk-summary-card__actions">
+                <li class="govuk-summary-card__action">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Delete answer</a>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="govuk-summary-card__content">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="question-5-answer-2-title">Answer</label>
+                <input class="govuk-input" id="question-5-answer-2-title" name="question-5-answer-2-title" type="text" spellcheck="false" value="No">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="sort">
+                  Goes to
+                </label>
+                <select class="govuk-select" id="question-5-answer-2-goes-to" name="question-5-answer-2-goes-to" style="width: 100%;">
+                  <option value="" disabled>Questions</option>
+                  <option value="question-2">Question 2</option>
+                  <option value="question-3">Question 3</option>
+                  <option value="question-4">Question 4</option>
+                  <option value="question-5">Question 5</option>
+                  <option value="question-6">Question 6</option>
+                  <option value="question-7">Question 7</option>
+                  <option value="" disabled>Outcomes</option>
+                  <option value="outcome-1" selected>Outcome 1</option>
+                  <option value="outcome-2">Outcome 2</option>
+                  <option value="outcome-3">Outcome 3</option>
+                  <option value="outcome-4">Outcome 4</option>
+                  <option value="outcome-5">Outcome 5</option>
+                  <option value="outcome-6">Outcome 6</option>
+                  <option value="outcome-7">Outcome 7</option>
+                  <option value="outcome-8">Outcome 8</option>
+                  <option value="outcome-9">Outcome 9</option>
+                  <option value="outcome-10">Outcome 10</option>
+                  <option value="outcome-11">Outcome 11</option>
+                  <option value="outcome-12">Outcome 12</option>
+                  <option value="outcome-13">Outcome 13</option>
+                  <option value="outcome-14">Outcome 14</option>
+                  <option value="outcome-15">Outcome 15</option>
+                  <option value="outcome-16">Outcome 16</option>
+                  <option value="outcome-17">Outcome 17</option>
+                  <option value="outcome-18">Outcome 18</option>
+                  <option value="outcome-19">Outcome 19</option>
+                  <option value="outcome-20">Outcome 20</option>
+                  <option value="outcome-21">Outcome 21</option>
+                  <option value="outcome-22">Outcome 22</option>
+                  <option value="outcome-23">Outcome 23</option>
+                  <option value="outcome-24">Outcome 24</option>
+                  <option value="outcome-25">Outcome 25</option>
+                  <option value="outcome-26">Outcome 26</option>
+                  <option value="outcome-27">Outcome 27</option>
+                  <option value="outcome-28">Outcome 28</option>
+                </select>
+              </div>
+
+            </div>
+          
+          </div>
+
+          <!-- End answer -->
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Add another answer",
+              classes: "govuk-button--secondary govuk-!-margin-bottom-2"
+            }) }}
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Delete question</a>
+          </div>
+      
+        </div>
+      </div>
+
+      <!-- Question 6 -->
+
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-6">
+              Question 6
+            </span>
+          </h2>
+          <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+            How old are you?
+          </div>
+        </div>
+        
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="question-6-title">Question</label>
+            <input class="govuk-input" id="question-6-title" name="question-6-title" type="text" spellcheck="false" value="How old are you?">
+          </div>
+
+          {{ govukTextarea({
+            name: "question1moreInformation ",
+            id: "question-1-more-information",
+            label: {
+              text: "More information (optional)",
+              classes: "govuk-label govuk-label--s"
+            },
+            rows: 5,
+            value: "You’re normally a resident if you live in Great Britain for 185 days in each calendar year."
+          }) }}
+
+          <!-- Answer 1 -->
+
+          <div class="govuk-summary-card">
+            
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Answer 1
+              </h2>
+              <ul class="govuk-summary-card__actions">
+                <li class="govuk-summary-card__action">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Delete answer</a>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="govuk-summary-card__content">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="question-6-answer-1-title">Answer</label>
+                <input class="govuk-input" id="question-6-answer-1-title" name="question-6-answer-1-title" type="text" spellcheck="false" value="Yes">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="sort">
+                  Goes to
+                </label>
+                <select class="govuk-select" id="question-6-answer-1-goes-to" name="question-6-answer-1-goes-to" style="width: 100%;">
+                  <option value="" disabled>Questions</option>
+                  <option value="question-2">Question 2</option>
+                  <option value="question-3">Question 3</option>
+                  <option value="question-4">Question 4</option>
+                  <option value="question-5">Question 5</option>
+                  <option value="question-6">Question 6</option>
+                  <option value="question-7">Question 7</option>
+                  <option value="" disabled>Outcomes</option>
+                  <option value="outcome-1">Outcome 1</option>
+                  <option value="outcome-2">Outcome 2</option>
+                  <option value="outcome-3">Outcome 3</option>
+                  <option value="outcome-4">Outcome 4</option>
+                  <option value="outcome-5">Outcome 5</option>
+                  <option value="outcome-6">Outcome 6</option>
+                  <option value="outcome-7">Outcome 7</option>
+                  <option value="outcome-8">Outcome 8</option>
+                  <option value="outcome-9">Outcome 9</option>
+                  <option value="outcome-10">Outcome 10</option>
+                  <option value="outcome-11">Outcome 11</option>
+                  <option value="outcome-12">Outcome 12</option>
+                  <option value="outcome-13">Outcome 13</option>
+                  <option value="outcome-14">Outcome 14</option>
+                  <option value="outcome-15">Outcome 15</option>
+                  <option value="outcome-16">Outcome 16</option>
+                  <option value="outcome-17">Outcome 17</option>
+                  <option value="outcome-18">Outcome 18</option>
+                  <option value="outcome-19">Outcome 19</option>
+                  <option value="outcome-20">Outcome 20</option>
+                  <option value="outcome-21">Outcome 21</option>
+                  <option value="outcome-22">Outcome 22</option>
+                  <option value="outcome-23">Outcome 23</option>
+                  <option value="outcome-24">Outcome 24</option>
+                  <option value="outcome-25">Outcome 25</option>
+                  <option value="outcome-26">Outcome 26</option>
+                  <option value="outcome-27">Outcome 27</option>
+                  <option value="outcome-28">Outcome 28</option>
+                </select>
+              </div>
+
+            </div>
+          
+          </div>
+
+          <!-- End answer -->
+
+          <!-- Answer 2 -->
+
+          <div class="govuk-summary-card">
+            
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Answer 2
+              </h2>
+              <ul class="govuk-summary-card__actions">
+                <li class="govuk-summary-card__action">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Delete answer</a>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="govuk-summary-card__content">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="question-6-answer-2-title">Answer</label>
+                <input class="govuk-input" id="question-6-answer-2-title" name="question-6-answer-2-title" type="text" spellcheck="false" value="No">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="sort">
+                  Goes to
+                </label>
+                <select class="govuk-select" id="question-6-answer-2-goes-to" name="question-6-answer-2-goes-to" style="width: 100%;">
+                  <option value="" disabled>Questions</option>
+                  <option value="question-2">Question 2</option>
+                  <option value="question-3">Question 3</option>
+                  <option value="question-4">Question 4</option>
+                  <option value="question-5">Question 5</option>
+                  <option value="question-6">Question 6</option>
+                  <option value="question-7">Question 7</option>
+                  <option value="" disabled>Outcomes</option>
+                  <option value="outcome-1" selected>Outcome 1</option>
+                  <option value="outcome-2">Outcome 2</option>
+                  <option value="outcome-3">Outcome 3</option>
+                  <option value="outcome-4">Outcome 4</option>
+                  <option value="outcome-5">Outcome 5</option>
+                  <option value="outcome-6">Outcome 6</option>
+                  <option value="outcome-7">Outcome 7</option>
+                  <option value="outcome-8">Outcome 8</option>
+                  <option value="outcome-9">Outcome 9</option>
+                  <option value="outcome-10">Outcome 10</option>
+                  <option value="outcome-11">Outcome 11</option>
+                  <option value="outcome-12">Outcome 12</option>
+                  <option value="outcome-13">Outcome 13</option>
+                  <option value="outcome-14">Outcome 14</option>
+                  <option value="outcome-15">Outcome 15</option>
+                  <option value="outcome-16">Outcome 16</option>
+                  <option value="outcome-17">Outcome 17</option>
+                  <option value="outcome-18">Outcome 18</option>
+                  <option value="outcome-19">Outcome 19</option>
+                  <option value="outcome-20">Outcome 20</option>
+                  <option value="outcome-21">Outcome 21</option>
+                  <option value="outcome-22">Outcome 22</option>
+                  <option value="outcome-23">Outcome 23</option>
+                  <option value="outcome-24">Outcome 24</option>
+                  <option value="outcome-25">Outcome 25</option>
+                  <option value="outcome-26">Outcome 26</option>
+                  <option value="outcome-27">Outcome 27</option>
+                  <option value="outcome-28">Outcome 28</option>
+                </select>
+              </div>
+
+            </div>
+          
+          </div>
+
+          <!-- End answer -->
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Add another answer",
+              classes: "govuk-button--secondary govuk-!-margin-bottom-2"
+            }) }}
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Delete question</a>
+          </div>
+      
+        </div>
+      </div>
+
+      <!-- Question 7 -->
+
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+              Question 7
+            </span>
+          </h2>
+          <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+            Do you have a Ukraine visa scheme visa? Or have you had one in the past?
+          </div>
+        </div>
+        
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="question-7-title">Question</label>
+            <input class="govuk-input" id="question-7-title" name="question-7-title" type="text" spellcheck="false" value="Do you have a Ukraine visa scheme visa? Or have you had one in the past?">
+          </div>
+
+          {{ govukTextarea({
+            name: "question1moreInformation ",
+            id: "question-1-more-information",
+            label: {
+              text: "More information (optional)",
+              classes: "govuk-label govuk-label--s"
+            },
+            rows: 5,
+            value: "You’re normally a resident if you live in Great Britain for 185 days in each calendar year."
+          }) }}
+
+          <!-- Answer 1 -->
+
+          <div class="govuk-summary-card">
+            
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Answer 1
+              </h2>
+              <ul class="govuk-summary-card__actions">
+                <li class="govuk-summary-card__action">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Delete answer</a>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="govuk-summary-card__content">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="question-7-answer-1-title">Answer</label>
+                <input class="govuk-input" id="question-7-answer-1-title" name="question-7-answer-1-title" type="text" spellcheck="false" value="Yes">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="sort">
+                  Goes to
+                </label>
+                <select class="govuk-select" id="question-7-answer-1-goes-to" name="question-7-answer-1-goes-to" style="width: 100%;">
+                  <option value="" disabled>Questions</option>
+                  <option value="question-2">Question 2</option>
+                  <option value="question-3">Question 3</option>
+                  <option value="question-4">Question 4</option>
+                  <option value="question-5">Question 5</option>
+                  <option value="question-6">Question 6</option>
+                  <option value="question-7">Question 7</option>
+                  <option value="" disabled>Outcomes</option>
+                  <option value="outcome-1">Outcome 1</option>
+                  <option value="outcome-2">Outcome 2</option>
+                  <option value="outcome-3">Outcome 3</option>
+                  <option value="outcome-4">Outcome 4</option>
+                  <option value="outcome-5">Outcome 5</option>
+                  <option value="outcome-6">Outcome 6</option>
+                  <option value="outcome-7">Outcome 7</option>
+                  <option value="outcome-8">Outcome 8</option>
+                  <option value="outcome-9">Outcome 9</option>
+                  <option value="outcome-10">Outcome 10</option>
+                  <option value="outcome-11">Outcome 11</option>
+                  <option value="outcome-12">Outcome 12</option>
+                  <option value="outcome-13">Outcome 13</option>
+                  <option value="outcome-14">Outcome 14</option>
+                  <option value="outcome-15">Outcome 15</option>
+                  <option value="outcome-16">Outcome 16</option>
+                  <option value="outcome-17">Outcome 17</option>
+                  <option value="outcome-18">Outcome 18</option>
+                  <option value="outcome-19">Outcome 19</option>
+                  <option value="outcome-20">Outcome 20</option>
+                  <option value="outcome-21">Outcome 21</option>
+                  <option value="outcome-22">Outcome 22</option>
+                  <option value="outcome-23">Outcome 23</option>
+                  <option value="outcome-24">Outcome 24</option>
+                  <option value="outcome-25">Outcome 25</option>
+                  <option value="outcome-26">Outcome 26</option>
+                  <option value="outcome-27">Outcome 27</option>
+                  <option value="outcome-28">Outcome 28</option>
+                </select>
+              </div>
+
+            </div>
+          
+          </div>
+
+          <!-- End answer -->
+
+          <!-- Answer 2 -->
+
+          <div class="govuk-summary-card">
+            
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Answer 2
+              </h2>
+              <ul class="govuk-summary-card__actions">
+                <li class="govuk-summary-card__action">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Delete answer</a>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="govuk-summary-card__content">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="question-7-answer-2-title">Answer</label>
+                <input class="govuk-input" id="question-7-answer-2-title" name="question-7-answer-2-title" type="text" spellcheck="false" value="No">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="sort">
+                  Goes to
+                </label>
+                <select class="govuk-select" id="question-7-answer-2-title" name="question-7-answer-2-goes-to" style="width: 100%;">
+                  <option value="" disabled>Questions</option>
+                  <option value="question-2">Question 2</option>
+                  <option value="question-3">Question 3</option>
+                  <option value="question-4">Question 4</option>
+                  <option value="question-5">Question 5</option>
+                  <option value="question-6">Question 6</option>
+                  <option value="question-7">Question 7</option>
+                  <option value="" disabled>Outcomes</option>
+                  <option value="outcome-1" selected>Outcome 1</option>
+                  <option value="outcome-2">Outcome 2</option>
+                  <option value="outcome-3">Outcome 3</option>
+                  <option value="outcome-4">Outcome 4</option>
+                  <option value="outcome-5">Outcome 5</option>
+                  <option value="outcome-6">Outcome 6</option>
+                  <option value="outcome-7">Outcome 7</option>
+                  <option value="outcome-8">Outcome 8</option>
+                  <option value="outcome-9">Outcome 9</option>
+                  <option value="outcome-10">Outcome 10</option>
+                  <option value="outcome-11">Outcome 11</option>
+                  <option value="outcome-12">Outcome 12</option>
+                  <option value="outcome-13">Outcome 13</option>
+                  <option value="outcome-14">Outcome 14</option>
+                  <option value="outcome-15">Outcome 15</option>
+                  <option value="outcome-16">Outcome 16</option>
+                  <option value="outcome-17">Outcome 17</option>
+                  <option value="outcome-18">Outcome 18</option>
+                  <option value="outcome-19">Outcome 19</option>
+                  <option value="outcome-20">Outcome 20</option>
+                  <option value="outcome-21">Outcome 21</option>
+                  <option value="outcome-22">Outcome 22</option>
+                  <option value="outcome-23">Outcome 23</option>
+                  <option value="outcome-24">Outcome 24</option>
+                  <option value="outcome-25">Outcome 25</option>
+                  <option value="outcome-26">Outcome 26</option>
+                  <option value="outcome-27">Outcome 27</option>
+                  <option value="outcome-28">Outcome 28</option>
+                </select>
+              </div>
+
+            </div>
+          
+          </div>
+
+          <!-- End answer -->
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Add another answer",
+              classes: "govuk-button--secondary govuk-!-margin-bottom-2"
+            }) }}
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Delete question</a>
+          </div>
+      
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- End accordions -->
+
+    {{ govukButton({
+      text: "Add another question",
+      classes: "govuk-button--secondary govuk-!-margin-bottom-8"
+    }) }}
+
+    <!-- Outcomes -->
+
+    <h3 class="govuk-heading-l" id="outcomes">Outcomes</h3>
+
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default" data-i18n.hide-all-sections="Hide all outcomes" data-i18n.show-all-sections="Show all outcomes">
+
+{% set outcomes = [
+
+  { 
+    _label: "Outcome 1",
+    title: "You cannot exchange your driving licence because you're not a resident of Great Britain.",
+    moreInfo: "
+^You may be able to drive in the UK for up to 12 months on your non-GB licence.^
+
+[Check if you can drive in the UK on your non-GB licence](/driving-nongb-licence)."
+  },
+  
+  { 
+    _label: "Outcome 2",
+    title: "You can drive in Great Britain on your licence until you’re 45, or for 5 years after you become resident in Great Britain, whichever is longer.",
+    moreInfo: "%You must [register your details](/government/publications/application-for-a-driving-licence-counterpart-for-non-gb-licence-holders-form-d9) with the Driver and Vehicle Licensing Agency (DVLA) within 12 months of becoming resident.%
+
+After this time you must exchange your licence - the fee is £43. You do not have to retake your test. 
+
+s1. Get a D2 pack from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+s2. Send the forms and any documents you need (including your driving licence) to the address on the form.
+s3. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+
+*[DVLA]: Driver and Vehicle Licensing Agency"
+  },
+  
+  { 
+    _label: "Outcome 3",
+    title: "You can drive on your non-GB licence until you're 66, or for 5 years after you become resident in Great Britain, whichever is shorter.",
+    moreInfo: "^You must [register your details](/government/publications/application-for-a-driving-licence-counterpart-for-non-gb-licence-holders-form-d9) with the Driver and Vehicle Licensing Agency (DVLA) within 12 months of becoming resident.^
+
+After this time you must exchange your licence - the fee is £43. You do not have to retake your test. 
+
+s1. Get a D2 pack and a D4 form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+s2. Get your doctor to fill in a D4 form. 
+s3. Send the forms and any documents you need (including your driving licence) to the address on the form.
+s4. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+^An optician or optometrist must fill in the vision assessment part of the D4 form if it cannot be done by your doctor.^
+
+*[DVLA]: Driver and Vehicle Licensing Agency"
+  },
+  
+  { 
+    _label: "Outcome 4",
+    title: "You must exchange your licence - the fee is £43.",
+    moreInfo: "You do not have to retake your test. 
+
+s1. Get a D2 pack and a D4 form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+s2. Get your doctor to fill in a D4 form.
+s3. Send the forms and any documents you need (including your driving licence) to the address on the form.
+s4. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+^An optician or optometrist must fill in the vision assessment part of the D4 form if it cannot be done by your doctor.^"
+  },
+  
+  { 
+    _label: "Outcome 5",
+    title: "You can exchange your licence if it was issued on or after 1 April 1986. There is no fee.",
+    moreInfo: "s1. Get a D2 pack from the Post Office. If you’re over 45 you need to get a D4 form too. Find a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+s2. If you’re over 45 get your doctor to fill in the D4 form. 
+s3. Send the forms and any documents you need (including your driving licence) to the address on the form.
+s4. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+^An optician or optometrist must fill in the vision assessment part of the D4 form if it cannot be done by your doctor.^"
+  },
+  
+  { 
+    _label: "Outcome 6",
+    title: "You can exchange your licence if it was issued on or after 1 April 1991. You must exchange it within 12 months of becoming resident in the UK. The fee is £43.",
+    moreInfo: "s1. Get a D2 pack and a D4 form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+s2. Get your doctor to fill in a D4 form. 
+s3. Send the forms, fee and any documents you need (including your driving licence) to the address on the form.
+s4. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+^An optician or optometrist must fill in the vision assessment part of the D4 form if it cannot be done by your doctor.^"
+  },
+  
+  { 
+    _label: "Outcome 7",
+    title: "You can exchange your licence up to 5 years after becoming resident in Great Britain, but you can only use it for 12 months. The fee is £43.",
+    moreInfo: "s1. Get a D2 pack from the Post Office. If you’re over 45 you need to get a D4 form too. Find a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+s2. If you’re over 45 get your doctor to fill in the D4 form. 
+s3. Send the forms, fee and any documents you need (including your driving licence) to the address on the form.
+s4. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+^An optician or optometrist must fill in the vision assessment part of the D4 form if it cannot be done by your doctor.^"
+  },
+  
+  { 
+    _label: "Outcome 8",
+    title: "You cannot exchange your licence and you must stop driving large vehicles. You can drive cars and motorcycles for up to 12 months.",
+    moreInfo: "You need to [get a Great Britain issued licence](/become-lorry-bus-driver) to drive a lorry, bus or minibus."
+  },
+  
+  { 
+    _label: "Outcome 9",
+    title: "You can drive in Great Britain on a full, valid driving licence from an EU country.",
+    moreInfo: "You can drive in Great Britain until you’re 70. If you're 67 or over when you become resident, you can drive for 3 years.
+
+After this time you must exchange your licence. You do not have to retake your test.
+
+s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder). 
+s2. Send the form, the £43 fee and any documents you need (including your driving licence) to the address on the form.
+s3. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+%You can only drive in Great Britain with a non-EU licence for 12 months after you arrive.%"
+  },
+  
+  { 
+    _label: "Outcome 10",
+    title: "You can exchange your licence if it was issued on or after 1 January 1976. There is no fee.",
+    moreInfo: "s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+s2. Send the form and any documents you need (including your driving licence) to the address on the form.
+s3. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked."
+  },
+  
+  { 
+    _label: "Outcome 11",
+    title: "You may be able to exchange your licence.",
+    moreInfo: "You can exchange your licence up to five years after you became resident, if it was issued on or after 1 April 1991. The fee is £43.
+
+s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder). 
+s2. Send the form, fee and any documents you need (including your driving licence) to the address on the form.
+s3. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked."
+  },
+  
+  { 
+    _label: "Outcome 12",
+    title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+    moreInfo: " After 12 months you must exchange your licence to keep driving. You can exchange it up to 5 years after becoming resident, if it has not expired.
+
+If your licence allows you to drive manual vehicles, you can usually exchange it for a UK licence that allows you to drive manual vehicles.
+
+## Exchange your licence
+
+s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+s2. Send the form, £43 fee and any documents you need (including your driving licence and proof of passing your test in a manual vehicle if needed) to the address on the form.
+s3. Your licence will usually arrive in 3 to 4 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked."
+  },
+  
+  { 
+    _label: "Outcome 13",
+    title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+    moreInfo: "After 12 months you must exchange your licence to keep driving. You can exchange it up to 5 years after becoming resident, if it has not expired.
+
+%You can only drive manual vehicles if you can prove you passed a manual vehicle test - otherwise, you must drive an automatic.%
+
+s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder). 
+s2. Send the form, £43 fee and any documents you need (including your driving licence) to the address on the form.
+s3. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked."
+  },
+  
+  { 
+    _label: "Outcome 14",
+    title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+    moreInfo: "After 12 months you must exchange your licence to keep driving a car. You can exchange it up to 5 years after becoming resident, if it has not expired. You cannot exchange your motorcycle entitlement.
+
+##Exchange your licence
+
+s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+s2. Send the form, £43 fee and any documents you need (including your driving licence) to the address on the form.
+s3. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+##If you want to ride a motorcycle
+
+You’ll be given provisional motorcycle entitlement if you exchange your full valid licence within 5 years of becoming resident. You’ll then need to take a [theory test](/motorcycle-theory-test) and [practical test](/motorcycle-practical-test).
+
+If you do not exchange your licence within 5 years of becoming resident, you’ll need to [get a provisional driving licence](/apply-first-provisional-driving-licence) in order to take the tests.
+
+Find out about [riding a motorcycle](/ride-motorcycle-moped) in the UK."
+  },
+  
+  { 
+    _label: "Outcome 15",
+    title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+    moreInfo: "After 12 months you must exchange your licence to keep driving. You can exchange it up to 5 years after becoming resident, if it has not expired.
+
+%You need to provide an official translation of your licence - [contact your embassy](/government/publications/foreign-embassies-in-the-uk).%
+
+s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder). 
+s2. Send the form, £43 fee and any documents you need (including your driving licence) to the address on the form.
+s3. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked."
+  },
+  
+  { 
+    _label: "Outcome 16",
+    title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+    moreInfo: "After 12 months you must exchange your licence to keep driving. You can exchange it up to 5 years after becoming resident, if it has not expired. You cannot exchange your motorcycle entitlement.
+
+s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder). 
+s2. Send the form, £43 fee and any documents you need (including your driving licence) to the address on the form.
+s3. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+%You need to provide an official translation of your licence - [contact your embassy](/government/publications/foreign-embassies-in-the-uk). 
+
+##If you want to ride a motorcycle
+
+You’ll be given provisional motorcycle entitlement if you exchange your full valid licence within 5 years of becoming resident. You’ll then need to take a [theory test](/motorcycle-theory-test) and [practical test](/motorcycle-practical-test).
+
+If you do not exchange your licence within 5 years of becoming resident, you’ll need to [get a provisional driving licence](/apply-first-provisional-driving-licence) in order to take the tests.
+
+Find out about [riding a motorcycle](/ride-motorcycle-moped) in the UK."
+  },
+  
+  { 
+    _label: "Outcome 17",
+    title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+    moreInfo: "After 12 months you must exchange your licence to keep driving. You can exchange it up to 5 years after becoming resident, if it has not expired.
+
+%You can no longer drive in the UK with an old South African book of life-style licence or letter of entitlement to one, and you cannot exchange these for a UK licence. You must have a new credit-card style licence or a letter of entitlement to one.%
+
+##Swap a credit-card style licence for a Great Britain issued licence
+
+s1. Email the Road Traffic Management Corporation (RTMC) at <DLconfirmations@rtmc.co.za> to request a ‘Confirmation of South African Driving Licence’ letter.
+s2. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+s3. Send the form, the £43 fee and any documents you need (including your driving licence and the letter from the RTMC) to the address on the form.
+s4. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+*[RTMC]: Road Traffic Management Corporation
+*[DVLA]: Driver and Vehicle Licensing Agency"
+  },
+  
+  { 
+    _label: "Outcome 18",
+    title: "You cannot exchange your licence but you can drive for up to 12 months on your non-GB licence.",
+    moreInfo: "After 12 months you'll need to take a [theory test](/driving-theory-test) and a [practical test](/practical-driving-test-for-cars). You'll need to [get a provisional driving licence](/apply-first-provisional-driving-licence) before you can take the tests.
+
+You’ll get a full Great Britain issued driving licence when you pass the theory and practical tests."
+  },
+  
+  { 
+    _label: "Outcome 19",
+    title: "You can exchange your licence up to 5 years after becoming resident in Great Britain, but you can only drive small vehicles for 12 months. ",
+    moreInfo: "The fee is £43.
+
+s1. Get a D2 pack from the Post Office. If you’re over 45 you need to get a D4 form too. Find a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+s2. If you’re over 45 get your doctor to fill in the D4 form. 
+s3. Send the forms, fee and any documents you need (including your driving licence) to the address on the form.
+s4. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+^An optician or optometrist must fill in the vision assessment part of the D4 form if it cannot be done by your doctor.^"
+  },
+  
+  { 
+    _label: "Outcome 20",
+    title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+    moreInfo: "After 12 months you must exchange your licence to keep driving. You can exchange it up to 5 years after becoming resident, if it has not expired.
+
+If your licence allows you to drive manual vehicles, you can usually exchange it for a UK licence that allows you to drive manual vehicles.
+
+To get a UK licence to drive a manual vehicle, you may need to show proof of passing your driving test in a manual vehicle. You’ll need to do this if your driving licence was issued from one of the following territories:
+
+* Australian Capital Territory
+
+* New South Wales
+
+* Northern Territory
+
+* South Australia
+
+* Tasmania
+
+* Victoria
+
+If your driving test was taken in an automatic vehicle, you can only drive an automatic vehicle.
+
+## Exchange your licence
+
+
+s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+s2. Send the form, £43 fee and any documents you need (including your driving licence and proof of passing your test in a manual vehicle if needed) to the address on the form.
+s3. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked."
+  },
+  
+  { 
+    _label: "Outcome 21",
+    title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+    moreInfo: "After 12 months you must exchange your licence to keep driving. You can exchange it up to 5 years after becoming resident, if it has not expired.
+
+##What you can exchange your licence for
+
+###If you passed your driving test before 28 December 2021
+
+You can only exchange your driving licence for a UK licence that allows you to drive automatic vehicles. 
+
+###If you passed your driving test on or after 28 December 2021 
+
+If your current licence allows you to drive manual vehicles, you can exchange it for a UK licence that allows you to drive manual vehicles.
+
+###If you have a motorcycle licence
+
+You cannot exchange your motorcycle licence for a UK equivalent. You must [apply for a provisional licence](https://www.gov.uk/apply-first-provisional-driving-licence?step-by-step-nav=e01e924b-9c7c-4c71-8241-66a575c2f61f) and take a theory and practical test in the UK.
+
+## Exchange your licence
+
+s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+s2. Send the form, £43 fee and your driving licence to the address on the form.
+s3. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked."
+  },
+  
+  { 
+    _label: "Outcome 22",
+    title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+    moreInfo: "After 12 months you must exchange your licence to keep driving. You can exchange it up to 5 years after becoming resident, if it has not expired. You cannot exchange your motorcycle entitlement. 
+
+If your licence allows you to drive manual vehicles, you can usually exchange it for a UK licence that allows you to drive manual vehicles.
+
+## Exchange your licence
+
+s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+s2. Get an official translation of your licence from a Taipei Representative Office in the UK. You can [contact the London office](https://www.roc-taiwan.org/uk_en/contact_us.html) or [contact the Edinburgh office](https://www.roc-taiwan.org/ukedi_en/contact_us.html)
+s3. Send the form, £43 fee and any documents you need (including your driving licence, the official translation, and proof of passing your test in a manual vehicle if needed) to the address on the form.
+s4. Your licence will usually arrive in 3 to 4 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+
+##If you want to ride a motorcycle
+
+You’ll be given provisional motorcycle entitlement if you exchange your full valid licence within 5 years of becoming resident. You’ll then need to take a [theory test](/motorcycle-theory-test) and [practical test](/motorcycle-practical-test).
+
+If you do not exchange your licence within 5 years of becoming resident, you’ll need to [get a provisional driving licence](/apply-first-provisional-driving-licence) in order to take the tests.
+
+Find out about [riding a motorcycle](/ride-motorcycle-moped) in the UK."
+  },
+  
+  { 
+    _label: "Outcome 23",
+    title: "You can continue to drive in the UK with your current licence for 12 months after becoming resident.",
+    moreInfo: "After 12 months, you must exchange your licence to keep driving a car. You can exchange it up to 5 years after becoming resident, if it has not expired. You cannot exchange your motorcycle licence. 
+
+If your licence allows you to drive manual vehicles, you can usually exchange it for a UK licence that allows you to drive manual vehicles.
+
+## Exchange a licence
+
+s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+s2. Send the form, £43 fee and any documents you need (including your driving licence and proof of passing your test in a manual vehicle if needed) to the address on the form.
+s3. Your licence will usually arrive in 3 to 4 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+
+##If you want to ride a motorcycle
+
+You’ll be given provisional motorcycle entitlement if you exchange your full valid licence within 5 years of becoming resident. You’ll then need to take a [theory test](/motorcycle-theory-test) and [practical test](/motorcycle-practical-test).
+
+If you do not exchange your licence within 5 years of becoming resident, you’ll need to [get a provisional driving licence](/apply-first-provisional-driving-licence) in order to take the tests.
+
+Find out about [riding a motorcycle](/ride-motorcycle-moped) in the UK."
+  },
+  
+  { 
+    _label: "Outcome 24",
+    title: "You can continue to drive in Great Britain without exchanging your licence for at least 3 years after becoming resident.",
+    moreInfo: "You may be able to use it for 4 years and 6 months depending on [when you successfully applied for entry clearance or permission to stay in the United Kingdom](/guidance/driving-in-great-britain-ukrainian-driving-licence-exchange).
+
+After this time, you must exchange your licence to keep driving in Great Britain.
+
+^[There are different rules in Northern Ireland](https://www.nidirect.gov.uk/articles/advice-foreign-driving-licences-northern-ireland).^
+
+##Exchanging your licence
+
+You can exchange your licence for a UK licence up to 5 years after becoming resident, if it has not expired.
+
+###If you passed your driving test before 28 December 2021
+
+You can only exchange your driving licence for a UK licence that allows you to drive automatic vehicles. 
+
+###If you passed your driving test on or after 28 December 2021 
+
+If your current licence allows you to drive manual vehicles, you can exchange it for a UK licence that allows you to drive manual vehicles.
+
+###If you have a motorcycle licence
+
+You cannot exchange your motorcycle licence for a UK equivalent. You must [apply for a provisional licence](/apply-first-provisional-driving-licence?step-by-step-nav=e01e924b-9c7c-4c71-8241-66a575c2f61f) and take a theory and practical test in the UK.
+
+## Exchange your licence
+
+s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+s2. Send the form, £43 fee and your driving licence to the address on the form.
+s3. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked."
+  },
+  
+  { 
+    _label: "Outcome 25",
+    title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+    moreInfo: "After 12 months you must exchange your licence to keep driving. You can exchange it up to 5 years after becoming resident, if it has not expired.
+
+If your licence allows you to drive manual vehicles, you can usually exchange it for a UK licence that allows you to drive manual vehicles.
+
+You must have a letter confirming your driving licence details from the Cayman Islands government. This will prove whether or not you can drive a manual vehicle.
+
+Request a ‘letter of entitlement’ from the Cayman Islands Department of Vehicle and Driver's Licensing (DVDL).
+
+$C
+Cayman Islands DVDL Customer Support Unit
+<DVDLExamBookings@gov.ky>
+$C
+
+If you passed your test outside the Cayman Islands, you’ll also need a letter from that country confirming what type of vehicle you can drive.
+
+## Exchange your licence
+
+s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder). 
+s2. Send the form, £43 fee and any documents you need (including your driving licence and proof of passing your test) to the address on the form.
+s3. Your licence will usually arrive in 3 to 4 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked."
+  },
+  
+  { 
+    _label: "Outcome 26",
+    title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+    moreInfo: "After 12 months you must exchange your licence to keep driving. You can exchange it up to 5 years after becoming resident, if it has not expired.
+
+If your licence allows you to drive manual vehicles, you can usually exchange it for a UK licence that allows you to drive manual vehicles.
+
+You must have a ‘letter of entitlement’ from the country where you passed your test confirming that you can drive.
+
+## Exchange your licence
+
+s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder). 
+s2. Send the form, £43 fee and any documents you need (including your driving licence and proof of passing your test) to the address on the form.
+s3. Your licence will usually arrive in 3 to 4 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked."
+  },
+  
+  { 
+    _label: "Outcome 27",
+    title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+    moreInfo: " After 12 months you must exchange your licence to keep driving. You can exchange it up to 5 years after becoming resident, if it has not expired.
+
+If your licence allows you to drive manual vehicles, you can usually exchange it for a UK licence that allows you to drive manual vehicles.
+
+## Exchange your licence
+
+s1. [Request a Licence Data Verification Letter (LDVL) from the UAE Ministry of Interior](https://moi.gov.ae/en/eservices/traffic.thcm.certificate.aspx). You’ll need to sign in with your UAE pass, select ‘To whom it may concern certificates’ and then select ‘Licence Data Verification Letter’.
+s2. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+s3. Send the LDVL, the form, the £43 fee and any documents you need (including your driving licence and proof of passing your test in a manual vehicle if needed) to the address on the form.
+s4. Your licence will usually arrive in 3 to 4 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked."
+  },
+  
+  { 
+    _label: "Outcome 28",
+    title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+    moreInfo: "After 12 months you must exchange your licence to keep driving a car. You can exchange it up to 5 years after becoming resident, if it has not expired. You cannot exchange your motorcycle entitlement.
+
+##Exchange your licence
+
+s1. Request a [Letter of Entitlement (LoE)](https://www.asp.gov.md/ro/servicii/conducatori-auto/33/331) from the Republic of Moldova Public Services Agency.
+s2. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder). 
+s3. Send the form, £43 fee and any documents you need (including your driving licence and your Driving Licence Verification Document) to the address on the form.
+s4. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+##If you want to ride a motorcycle
+
+You’ll be given provisional motorcycle entitlement if you exchange your full valid licence within 5 years of becoming resident. You’ll then need to take a [theory test](/motorcycle-theory-test) and [practical test](/motorcycle-practical-test).
+
+If you do not exchange your licence within 5 years of becoming resident, you’ll need to [get a provisional driving licence](/apply-first-provisional-driving-licence) in order to take the tests.
+
+Find out about [riding a motorcycle](/ride-motorcycle-moped) in the UK."
+  }
+
+] %}
+
+{% for outcome in outcomes %}
+{% set i = loop.index %}
+{% set headingNumber = i + 0 %}
+
+<!-- Outcome {{ i }} -->
+<div class="govuk-accordion__section">
+  <div class="govuk-accordion__section-header">
+    <h2 class="govuk-accordion__section-heading">
+      <span
+        class="govuk-accordion__section-button"
+        id="accordion-default-heading-outcome-{{ headingNumber }}"
+      >
+        Outcome {{ i }}
+      </span>
+    </h2>
+
+    <div
+      class="govuk-accordion__section-summary govuk-body"
+      id="accordion-with-summary-sections-summary-{{ headingNumber }}"
+    >
+      {{ outcome.title }}
+    </div>
+  </div>
+
+  <div
+    id="accordion-default-content-{{ headingNumber }}"
+    class="govuk-accordion__section-content"
+  >
+    <div class="govuk-form-group">
+      <label
+        class="govuk-label govuk-label--s"
+        for="outcome-{{ i }}-title"
+      >
+        Outcome
+      </label>
+      <input
+        class="govuk-input"
+        id="outcome-{{ i }}-title"
+        name="outcome-{{ i }}-title"
+        type="text"
+        spellcheck="false"
+        value="{{ outcome.title }}"
+      >
+    </div>
+
+    {{ govukTextarea({
+      name: "question" + i + "moreInformation",
+      id: "question-" + i + "-more-information",
+      label: {
+        text: "More information (optional)",
+        classes: "govuk-label govuk-label--s"
+      },
+      rows: 10,
+      value: outcome.moreInfo
+    }) }}
+
+    <p class="govuk-body">
+      <a class="govuk-link govuk-link--no-visited-state" href="#">Delete outcome</a>
+    </p>
+  </div>
+</div>
+
+{% endfor %}
+
+</div>
+      
+  <!-- End outcomes -->
+
+  {{ govukButton({
+    text: "Add another outcome",
+    classes: "govuk-button--secondary govuk-!-margin-bottom-8"
+  }) }}
+      
+ 
+      
+
+
+  </div>
+
+  <div class="govuk-grid-column-one-third sticky options-sidebar">
+    <div class="actions-panel">
+      <h3 class="govuk-heading-s">Options</h3>
+      <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">Save</button>
+      <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">2i</button>
+      <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">Preview (opens in new tab)</a></p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <p class="govuk-body-s">Guidance:</p>
+      <ul class="govuk-list govuk-body-s govuk-list--bullet">
+        <li><a href="https://govspeak-preview.publishing.service.gov.uk/guide" class="govuk-link--no-visited-state" target="_blank">Govspeak guide (opens in new tab)</a></li>
+        <li><a href="#" class="govuk-link--no-visited-state">Content Block Manager (opens in new tab)</a></li>
+      </ul>
+      <p class="govuk-body-s">Overview:</p>
+      <ul class="govuk-list govuk-body-s govuk-list--bullet">
+        <li><a href="#questions" class="govuk-link--no-visited-state">Questions</a> (7)</li>
+        <li><a href="#outcomes" class="govuk-link--no-visited-state">Outcomes</a> (28)</li>
+        <li><a href="#" class="govuk-link--no-visited-state">View flow diagram (opens in new tab)</a></li>
+      </ul>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+
+{% endblock %}
