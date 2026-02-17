@@ -1,0 +1,84 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block pageTitle %}
+  Confirm the changes are factually correct - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "agnostic-fact-check-the-changes-SPoC"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% set factualErrorsHtml %}
+      {{ govukTextarea({
+        name: "factual-errors",
+        id: "factual-errors",
+        rows: 18,
+        label: {
+          text: "What are the factual errors?",
+          classes: "govuk-label--m"
+        },
+        hint: {
+          html: '
+            Say what’s wrong, where it is, and why.</br>
+            For example: “Chapter 2, under ‘How much it costs’ – the fee is £150, not £130.”</br>
+          '
+        },
+        value: data['factual-errors']
+      }) }}
+    {% endset -%}
+
+    <form action="/agnostic-check-your-answers-before-sending-your-response" method="post" novalidate>
+
+      {{ govukRadios({
+        name: "factually-correct",
+        fieldset: {
+          legend: {
+            html: "<span class='govuk-caption-xl'>Become an apprentice</span>Confirm the changes are factually correct",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "Yes, they’re correct",
+            text: "Yes, they’re correct",
+            checked: data['factually-correct'] === "Yes, they’re correct"
+          },
+          {
+            value: "No, there’s an error",
+            text: "No, there’s an error",
+            checked: data['factually-correct'] === "No, there’s an error",
+            conditional: {
+              html: factualErrorsHtml
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

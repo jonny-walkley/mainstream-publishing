@@ -1,0 +1,85 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block pageTitle %}
+  Check your answers before sending your response - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "agnostic-confirm-the-changes-are-factually-correct"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <span class='govuk-caption-xl'>Become an apprentice</span>
+    <h1 class="govuk-heading-xl">Check your answers before sending your response</h1>
+    
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Confirm the changes are factually correct
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['factually-correct'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="agnostic-confirm-the-changes-are-factually-correct">
+            Change<span class="govuk-visually-hidden">
+              your answer to 'Confirm that the changes are factually correct'
+            </span>
+          </a>
+        </dd>
+      </div>
+
+      {% if data['factually-correct'] === "No, there’s an error" %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What are the factual errors?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['factual-errors'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link govuk-link--no-visited-state" href="agnostic-confirm-the-changes-are-factually-correct">
+              Change<span class="govuk-visually-hidden">
+                your answer to 'What are the factual errors?'
+              </span>
+            </a>
+          </dd>
+        </div>
+
+      {% endif %}
+
+    </dl>
+
+    <h2 class="govuk-heading-m">Now send your response</h2>
+
+    {{ govukWarningText({
+      text: "Only one fact check response can be submitted. Make sure you’ve discussed this with colleagues first.",
+      iconFallbackText: "Warning"
+    }) }}
+
+    {{ govukButton({
+      text: "Confirm and send",
+      href: "fact-check-submitted"
+    }) }}
+
+  </div>
+</div>
+{% endblock %}
