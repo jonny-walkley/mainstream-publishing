@@ -6,11 +6,12 @@
 
 {% block header %}
   {{ govukHeader({
-    productName: "Publisher",
+    productName: "Fact Check Manager",
     homepageUrl: "/index",
     serviceUrl: "/index",
     navigationClasses: "align-right"
   }) }}
+
 {% endblock %}
 
 {% block content %}
@@ -360,14 +361,15 @@
 
       <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Preview</h3>
       <p class="govuk-body"><a href="draft-become-apprentice" class="govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">Preview the draft page (opens in new tab)</a></p>
-      
+      <p class="govuk-body">The preview link will expire when the content is published.</p>
+
       <hr class="govuk-section-break govuk-section-break govuk-section-break--visible govuk-!-margin-top-6 govuk-!-margin-bottom-3">
       
       <h3 class="govuk-heading-s">Guidance</h3>
       <p class="govuk-body">When fact checking:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>a minus sign (−) and highlights show content that has been removed</li>
-        <li>a plus sign (+) and highlights show content that has been added</li>
+        <li>a minus sign (–), highlights and underlining shows content that has been removed</li>
+        <li>a plus sign (+), highlights and underlining shows content that has been added</li>
         <!-- <li><a href="https://govspeak-preview.publishing.service.gov.uk/guide" class="govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">Govspeak formatting (opens in new tab)</a> uses extra characters – ignore them</li> -->
       </ul>
       <p class="govuk-body"><a href="https://www.gov.uk/government/publications/how-content-requests-from-government-get-published/fact-checking-content-on-govuk" class="govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">Fact checking guidance (opens in new tab)</a></p>
