@@ -35,7 +35,7 @@
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Edition</dt>
-        <dd class="govuk-summary-list__value">46 <strong class="govuk-tag govuk-tag--yellow">Draft</strong></dd>
+        <dd class="govuk-summary-list__value">47 <strong class="govuk-tag govuk-tag--yellow">Draft</strong></dd>
         <dd class="govuk-summary-list__actions"></dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -89,40 +89,40 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
     </div>
 
     <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="start-button-text-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h1 class="govuk-fieldset__heading">
-                Start button text
-              </h1>
-            </legend>
-            <div class="govuk-radios govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="start-now" name="start-button-text" type="radio" value="start-now" checked>
-                <label class="govuk-label govuk-radios__label" for="start-now">
-                  Start now
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="continue" name="start-button-text" type="radio" value="continue">
-                <label class="govuk-label govuk-radios__label" for="continue">
-                  Continue
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="find-contact-details" name="start-button-text" type="radio" value="find-contact-details">
-                <label class="govuk-label govuk-radios__label" for="find-contact-details">
-                  Find contact details
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="next" name="start-button-text" type="radio" value="next">
-                <label class="govuk-label govuk-radios__label" for="next">
-                  Next
-                </label>
-              </div>
-            </div>
-          </fieldset>
+      <fieldset class="govuk-fieldset" aria-describedby="start-button-text-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Start button text
+          </h1>
+        </legend>
+        <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="start-now" name="start-button-text" type="radio" value="start-now" checked>
+            <label class="govuk-label govuk-radios__label" for="start-now">
+              Start now
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="continue" name="start-button-text" type="radio" value="continue">
+            <label class="govuk-label govuk-radios__label" for="continue">
+              Continue
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="find-contact-details" name="start-button-text" type="radio" value="find-contact-details">
+            <label class="govuk-label govuk-radios__label" for="find-contact-details">
+              Find contact details
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="next" name="start-button-text" type="radio" value="next">
+            <label class="govuk-label govuk-radios__label" for="next">
+              Next
+            </label>
+          </div>
         </div>
+      </fieldset>
+    </div>
 
     <h3 class="govuk-heading-l" id="questions">Questions</h3>
 
@@ -152,7 +152,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
           </div>
 
           {{ govukTextarea({
-            name: "question1moreInformation ",
+            name: "question1moreInformation",
             id: "question-1-more-information",
             label: {
               text: "More information (optional)",
@@ -346,7 +346,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
           </div>
 
           {{ govukTextarea({
-            name: "question1moreInformation ",
+            name: "question1moreInformation",
             id: "question-2-more-information",
             label: {
               text: "More information (optional)",
@@ -421,7 +421,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                 </select>
               </div>
 
-              <a href="#accordion-default-heading-outcome-1" class="govuk-body govuk-link govuk-link--no-visited-state">Go to outcome 1</a>
+              <a href="#accordion-default-heading-4" class="govuk-body govuk-link govuk-link--no-visited-state">Go to question 4</a>
 
 
             </div>
@@ -495,7 +495,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                 </select>
               </div>
 
-              <a href="#accordion-default-heading-outcome-1" class="govuk-body govuk-link govuk-link--no-visited-state">Go to outcome 1</a>
+              <a href="#accordion-default-heading-3" class="govuk-body govuk-link govuk-link--no-visited-state">Go to question 3</a>
 
 
             </div>
@@ -539,7 +539,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
           </div>
 
           {{ govukTextarea({
-            name: "question1moreInformation ",
+            name: "question1moreInformation",
             id: "question-3-more-information",
             label: {
               text: "More information (optional)",
@@ -579,7 +579,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="" disabled>Questions</option>
                   <option value="question-4">Question 4</option>
                   <option value="question-5">Question 5</option>
-                  <option value="question-6" selected>Question 6</option>
+                  <option value="question-6" selected>Question 6 – How old are you?</option>
                   <option value="question-7">Question 7</option>
                   <option value="" disabled>Outcomes</option>
                   <option value="outcome-1">Outcome 1</option>
@@ -655,7 +655,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="question-6">Question 6</option>
                   <option value="question-7">Question 7</option>
                   <option value="" disabled>Outcomes</option>
-                  <option value="outcome-1" selected>Outcome 1</option>
+                  <option value="outcome-1">Outcome 1</option>
                   <option value="outcome-2">Outcome 2</option>
                   <option value="outcome-3">Outcome 3</option>
                   <option value="outcome-4">Outcome 4</option>
@@ -673,7 +673,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-16">Outcome 16</option>
                   <option value="outcome-17">Outcome 17</option>
                   <option value="outcome-18">Outcome 18</option>
-                  <option value="outcome-19" selected>Outcome 19</option>
+                  <option value="outcome-19" selected>Outcome 19 – You can exchange your licence up to 5 years after becoming resident in Great Britain, but you can only drive small vehicles for 12 months.</option>
                   <option value="outcome-20">Outcome 20</option>
                   <option value="outcome-21">Outcome 21</option>
                   <option value="outcome-22">Outcome 22</option>
@@ -728,11 +728,11 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="question-6">Question 6</option>
                   <option value="question-7">Question 7</option>
                   <option value="" disabled>Outcomes</option>
-                  <option value="outcome-1" selected>Outcome 1</option>
+                  <option value="outcome-1">Outcome 1</option>
                   <option value="outcome-2">Outcome 2</option>
                   <option value="outcome-3">Outcome 3</option>
                   <option value="outcome-4">Outcome 4</option>
-                  <option value="outcome-5" selected>Outcome 5</option>
+                  <option value="outcome-5" selected>Outcome 5 – You can exchange your licence if it was issued on or after 1 April 1986. There is no fee.</option>
                   <option value="outcome-6">Outcome 6</option>
                   <option value="outcome-7">Outcome 7</option>
                   <option value="outcome-8">Outcome 8</option>
@@ -806,7 +806,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-3">Outcome 3</option>
                   <option value="outcome-4">Outcome 4</option>
                   <option value="outcome-5">Outcome 5</option>
-                  <option value="outcome-6" selected>Outcome 6</option>
+                  <option value="outcome-6" selected>Outcome 6 – You can exchange your licence if it was issued on or after 1 April 1991. You must exchange it within 12 months of becoming resident in the UK. The fee is £43.</option>
                   <option value="outcome-7">Outcome 7</option>
                   <option value="outcome-8">Outcome 8</option>
                   <option value="outcome-9">Outcome 9</option>
@@ -880,7 +880,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-4">Outcome 4</option>
                   <option value="outcome-5">Outcome 5</option>
                   <option value="outcome-6">Outcome 6</option>
-                  <option value="outcome-7" selected>Outcome 7</option>
+                  <option value="outcome-7" selected>Outcome 7 – You can exchange your licence up to 5 years after becoming resident in Great Britain, but you can only use it for 12 months. The fee is £43.</option>
                   <option value="outcome-8">Outcome 8</option>
                   <option value="outcome-9">Outcome 9</option>
                   <option value="outcome-10">Outcome 10</option>
@@ -954,7 +954,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-5">Outcome 5</option>
                   <option value="outcome-6">Outcome 6</option>
                   <option value="outcome-7">Outcome 7</option>
-                  <option value="outcome-8" selected>Outcome 8</option>
+                  <option value="outcome-8" selected>Outcome 8 – You cannot exchange your licence and you must stop driving large vehicles. You can drive cars and motorcycles for up to 12 months.</option>
                   <option value="outcome-9">Outcome 9</option>
                   <option value="outcome-10">Outcome 10</option>
                   <option value="outcome-11">Outcome 11</option>
@@ -1020,7 +1020,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
           </div>
 
           {{ govukTextarea({
-            name: "question1moreInformation ",
+            name: "question1moreInformation",
             id: "question-4-more-information",
             label: {
               text: "More information (optional)",
@@ -1070,7 +1070,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-6">Outcome 6</option>
                   <option value="outcome-7">Outcome 7</option>
                   <option value="outcome-8">Outcome 8</option>
-                  <option value="outcome-9" selected>Outcome 9</option>
+                  <option value="outcome-9" selected>Outcome 9 – You can drive in Great Britain on a full, valid driving licence from an EU country.</option>
                   <option value="outcome-10">Outcome 10</option>
                   <option value="outcome-11">Outcome 11</option>
                   <option value="outcome-12">Outcome 12</option>
@@ -1092,6 +1092,9 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-28">Outcome 28</option>
                 </select>
               </div>
+
+              <a href="#accordion-default-heading-outcome-9" class="govuk-body govuk-link govuk-link--no-visited-state">Go to outcome 9</a>
+
 
             </div>
           
@@ -1140,7 +1143,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-7">Outcome 7</option>
                   <option value="outcome-8">Outcome 8</option>
                   <option value="outcome-9">Outcome 9</option>
-                  <option value="outcome-10" selected>Outcome 10</option>
+                  <option value="outcome-10" selected>Outcome 10 – You can exchange your licence if it was issued on or after 1 January 1976. There is no fee.</option>
                   <option value="outcome-11">Outcome 11</option>
                   <option value="outcome-12">Outcome 12</option>
                   <option value="outcome-13">Outcome 13</option>
@@ -1161,6 +1164,9 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-28">Outcome 28</option>
                 </select>
               </div>
+
+              <a href="#accordion-default-heading-outcome-10" class="govuk-body govuk-link govuk-link--no-visited-state">Go to outcome 10</a>
+
 
             </div>
           
@@ -1210,7 +1216,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-8">Outcome 8</option>
                   <option value="outcome-9">Outcome 9</option>
                   <option value="outcome-10">Outcome 10</option>
-                  <option value="outcome-11" selected>Outcome 11</option>
+                  <option value="outcome-11" selected>Outcome 11 – You may be able to exchange your licence.</option>
                   <option value="outcome-12">Outcome 12</option>
                   <option value="outcome-13">Outcome 13</option>
                   <option value="outcome-14">Outcome 14</option>
@@ -1230,6 +1236,9 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-28">Outcome 28</option>
                 </select>
               </div>
+
+              <a href="#accordion-default-heading-outcome-11" class="govuk-body govuk-link govuk-link--no-visited-state">Go to outcome 11</a>
+
 
             </div>
           
@@ -1265,7 +1274,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                 </label>
                 <select class="govuk-select" id="question-4-answer-4-goes-to" name="question-4-answer-4-goes-to" style="width: 100%;">
                   <option value="" disabled>Questions</option>
-                  <option value="question-5" selected>Question 5</option>
+                  <option value="question-5" selected>Question 5 – Which country was your current licence issued in?</option>
                   <option value="question-6">Question 6</option>
                   <option value="question-7">Question 7</option>
                   <option value="" disabled>Outcomes</option>
@@ -1299,6 +1308,9 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-28">Outcome 28</option>
                 </select>
               </div>
+
+              <a href="#accordion-default-heading-5" class="govuk-body govuk-link govuk-link--no-visited-state">Go to question 5</a>
+
 
             </div>
           
@@ -1355,7 +1367,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-15">Outcome 15</option>
                   <option value="outcome-16">Outcome 16</option>
                   <option value="outcome-17">Outcome 17</option>
-                  <option value="outcome-18" selected>Outcome 18</option>
+                  <option value="outcome-18" selected>Outcome 18 – You cannot exchange your licence but you can drive for up to 12 months on your non-GB licence.</option>
                   <option value="outcome-19">Outcome 19</option>
                   <option value="outcome-20">Outcome 20</option>
                   <option value="outcome-21">Outcome 21</option>
@@ -1368,6 +1380,9 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-28">Outcome 28</option>
                 </select>
               </div>
+
+              <a href="#accordion-default-heading-outcome-18" class="govuk-body govuk-link govuk-link--no-visited-state">Go to outcome 18</a>
+
 
             </div>
           
@@ -1408,7 +1423,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
           </div>
 
           {{ govukTextarea({
-            name: "question1moreInformation ",
+            name: "question1moreInformation",
             id: "question-5-more-information",
             label: {
               text: "More information (optional)",
@@ -1460,7 +1475,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-9">Outcome 9</option>
                   <option value="outcome-10">Outcome 10</option>
                   <option value="outcome-11">Outcome 11</option>
-                  <option value="outcome-12" selected>Outcome 12</option>
+                  <option value="outcome-12" selected>Outcome 12 – You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.</option>
                   <option value="outcome-13">Outcome 13</option>
                   <option value="outcome-14">Outcome 14</option>
                   <option value="outcome-15">Outcome 15</option>
@@ -1479,6 +1494,9 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-28">Outcome 28</option>
                 </select>
               </div>
+
+              <a href="#accordion-default-heading-outcome-12" class="govuk-body govuk-link govuk-link--no-visited-state">Go to outcome 12</a>
+
 
             </div>
           
@@ -1536,7 +1554,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-17">Outcome 17</option>
                   <option value="outcome-18">Outcome 18</option>
                   <option value="outcome-19">Outcome 19</option>
-                  <option value="outcome-20" selected>Outcome 20</option>
+                  <option value="outcome-20" selected>Outcome 20 – You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.</option>
                   <option value="outcome-21">Outcome 21</option>
                   <option value="outcome-22">Outcome 22</option>
                   <option value="outcome-23">Outcome 23</option>
@@ -1547,6 +1565,9 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-28">Outcome 28</option>
                 </select>
               </div>
+
+              <a href="#accordion-default-heading-outcome-20" class="govuk-body govuk-link govuk-link--no-visited-state">Go to outcome 20</a>
+
 
             </div>
           
@@ -1596,7 +1617,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-9">Outcome 9</option>
                   <option value="outcome-10">Outcome 10</option>
                   <option value="outcome-11">Outcome 11</option>
-                  <option value="outcome-12">Outcome 12</option>
+                  <option value="outcome-12" selected>Outcome 12 – You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.</option>
                   <option value="outcome-13">Outcome 13</option>
                   <option value="outcome-14">Outcome 14</option>
                   <option value="outcome-15">Outcome 15</option>
@@ -1604,7 +1625,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-17">Outcome 17</option>
                   <option value="outcome-18">Outcome 18</option>
                   <option value="outcome-19">Outcome 19</option>
-                  <option value="outcome-20" selected>Outcome 20</option>
+                  <option value="outcome-20">Outcome 20</option>
                   <option value="outcome-21">Outcome 21</option>
                   <option value="outcome-22">Outcome 22</option>
                   <option value="outcome-23">Outcome 23</option>
@@ -1615,6 +1636,9 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-28">Outcome 28</option>
                 </select>
               </div>
+
+              <a href="#accordion-default-heading-outcome-12" class="govuk-body govuk-link govuk-link--no-visited-state">Go to outcome 12</a>
+
 
             </div>
           
@@ -1696,7 +1720,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="question-7">Question 7</option>
                   <option value="" disabled>Outcomes</option>
                   <option value="outcome-1">Outcome 1</option>
-                  <option value="outcome-2" selected>Outcome 2</option>
+                  <option value="outcome-2" selected>Outcome 2 – You can drive in Great Britain on your licence until you’re 45, or for 5 years after you become resident in Great Britain, whichever is longer.</option>
                   <option value="outcome-3">Outcome 3</option>
                   <option value="outcome-4">Outcome 4</option>
                   <option value="outcome-5">Outcome 5</option>
@@ -1725,6 +1749,9 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-28">Outcome 28</option>
                 </select>
               </div>
+
+              <a href="#accordion-default-heading-outcome-2" class="govuk-body govuk-link govuk-link--no-visited-state">Go to outcome 2</a>
+
 
             </div>
           
@@ -1764,7 +1791,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="" disabled>Outcomes</option>
                   <option value="outcome-1">Outcome 1</option>
                   <option value="outcome-2">Outcome 2</option>
-                  <option value="outcome-3" selected>Outcome 3</option>
+                  <option value="outcome-3" selected>Outcome 3 – You can drive on your non-GB licence until you're 66, or for 5 years after you become resident in Great Britain, whichever is shorter.</option>
                   <option value="outcome-4">Outcome 4</option>
                   <option value="outcome-5">Outcome 5</option>
                   <option value="outcome-6">Outcome 6</option>
@@ -1792,6 +1819,9 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-28">Outcome 28</option>
                 </select>
               </div>
+
+              <a href="#accordion-default-heading-outcome-3" class="govuk-body govuk-link govuk-link--no-visited-state">Go to outcome 3</a>
+
 
             </div>
           
@@ -1832,7 +1862,7 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-1">Outcome 1</option>
                   <option value="outcome-2">Outcome 2</option>
                   <option value="outcome-3">Outcome 3</option>
-                  <option value="outcome-4" selected>Outcome 4</option>
+                  <option value="outcome-4" selected>Outcome 4 – You must exchange your licence - the fee is £43.</option>
                   <option value="outcome-5">Outcome 5</option>
                   <option value="outcome-6">Outcome 6</option>
                   <option value="outcome-7">Outcome 7</option>
@@ -1859,6 +1889,9 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-28">Outcome 28</option>
                 </select>
               </div>
+
+              <a href="#accordion-default-heading-outcome-4" class="govuk-body govuk-link govuk-link--no-visited-state">Go to outcome 4</a>
+
 
             </div>
           
@@ -1973,6 +2006,9 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                 </select>
               </div>
 
+              <a href="#accordion-default-heading-outcome-24" class="govuk-body govuk-link govuk-link--no-visited-state">Go to outcome 24</a>
+
+
             </div>
           
           </div>
@@ -2037,6 +2073,9 @@ Use this tool to find out how to exchange your non-GB driving licence for a Brit
                   <option value="outcome-28">Outcome 28</option>
                 </select>
               </div>
+
+              <a href="#accordion-default-heading-outcome-21" class="govuk-body govuk-link govuk-link--no-visited-state">Go to outcome 21</a>
+
 
             </div>
           
@@ -2530,8 +2569,6 @@ Find out about [riding a motorcycle](/ride-motorcycle-moped) in the UK."
 ] %}
 
 {% for outcome in outcomes %}
-{% set i = loop.index %}
-{% set headingNumber = i + 0 %}
 
 <!-- Outcome {{ i }} -->
 <div class="govuk-accordion__section">
@@ -2539,35 +2576,35 @@ Find out about [riding a motorcycle](/ride-motorcycle-moped) in the UK."
     <h2 class="govuk-accordion__section-heading">
       <span
         class="govuk-accordion__section-button"
-        id="accordion-default-heading-outcome-{{ headingNumber }}"
+        id="accordion-default-heading-outcome-{{ loop.index }}"
       >
-        Outcome {{ i }}
+        Outcome {{ loop.index }}
       </span>
     </h2>
 
     <div
       class="govuk-accordion__section-summary govuk-body"
-      id="accordion-with-summary-sections-summary-{{ headingNumber }}"
+      id="accordion-with-summary-sections-summary-{{ loop.index }}"
     >
       {{ outcome.title }}
     </div>
   </div>
 
   <div
-    id="accordion-default-content-{{ headingNumber }}"
+    id="accordion-default-content-{{ loop.index }}"
     class="govuk-accordion__section-content"
   >
     <div class="govuk-form-group">
       <label
         class="govuk-label govuk-label--s"
-        for="outcome-{{ i }}-title"
+        for="outcome-{{ loop.index }}-title"
       >
-        Outcome {{ i }}
+        Outcome {{ loop.index }}
       </label>
       <input
         class="govuk-input"
-        id="outcome-{{ i }}-title"
-        name="outcome-{{ i }}-title"
+        id="outcome-{{ loop.index }}-title"
+        name="outcome-{{ loop.index }}-title"
         type="text"
         spellcheck="false"
         value="{{ outcome.title }}"
@@ -2575,8 +2612,8 @@ Find out about [riding a motorcycle](/ride-motorcycle-moped) in the UK."
     </div>
 
     {{ govukTextarea({
-      name: "outcome" + i + "moreInformation",
-      id: "outcome-" + i + "-more-information",
+      name: "outcome" ~ loop.index ~ "moreInformation",
+      id: "outcome-" ~ loop.index ~ "-more-information",
       label: {
         text: "More information (optional)",
         classes: "govuk-label govuk-label--s"
@@ -2585,8 +2622,94 @@ Find out about [riding a motorcycle](/ride-motorcycle-moped) in the UK."
       value: outcome.moreInfo
     }) }}
 
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Answers that go to outcome {{ loop.index }}
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Question X, answer X
+            </h2>
+            <ul class="govuk-summary-card__actions">
+              <li class="govuk-summary-card__action">
+                <!-- <a class="govuk-link govuk-link--no-visited-state" href="#">Go to answer X</a> -->
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Question
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  X
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Answer
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  X
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  <a class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-regular" href="#">Go to answer X</a>
+                </dt>
+              </div>    
+            </dl>
+          </div>
+        </div>
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Question X, answer X
+            </h2>
+            <ul class="govuk-summary-card__actions">
+              <li class="govuk-summary-card__action">
+                <!-- <a class="govuk-link govuk-link--no-visited-state" href="#">Go to answer X</a> -->
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Question
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  X
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Answer
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  X
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  <a class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-regular" href="#">Go to answer X</a>
+                </dt>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+      </div>
+    </details>
+
     <p class="govuk-body">
-      <a class="govuk-link govuk-link--no-visited-state" href="#">Delete outcome {{ i }}</a>
+      <a class="govuk-link govuk-link--no-visited-state" href="#">Delete outcome {{ loop.index }}</a>
     </p>
   </div>
 </div>
