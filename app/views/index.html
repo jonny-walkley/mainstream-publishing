@@ -10,6 +10,7 @@ Mainstream publishing - GOV.UK Prototype Kit
   productName: "Publisher",
   homepageUrl: "/index",
   serviceUrl: "/index",
+  navigationClasses: "align-right",
   navigation: [
     {
       href: "https://docs.google.com/spreadsheets/d/11u2XitAlHNBgSlKJspit6Kbd0-4b_ujVnte7opiuy3I/edit?gid=0#gid=0",
@@ -31,118 +32,131 @@ Mainstream publishing - GOV.UK Prototype Kit
 
     <span class="govuk-caption-xl">Prototype</span>
     <h1 class="govuk-heading-xl">Mainstream publishing</h1>
+    
     <p class="govuk-body-l">Transitioning Publisher from Bootstrap to the GOV.UK Design System.</p>
+        
+    <p class="govuk-body-l govuk-!-font-weight-bold"><a href="latest-prototype/my-content">Latest dynamic prototype</a></p>
+
+    <!-- <div class="index-spacer"></div> -->
+
+
+
+
+    {% set 2026_to_2027_html %}
+
+      <h3 class="govuk-heading-s">Q1: April to June</h3>
+
+      <p class="govuk-!-font-weight-bold"><a href="simple-smart-answer-concept-1.html">SSA concept 1</a></p>
+
+      <!-- {{ govukTaskList({
+        idPrefix: "all-colours",
+        items: [
+          {
+            title: {
+              text: "SSA concept 1"
+            },
+            href: "#",
+            status: {
+              tag: {
+                text: "In progress",
+                classes: "govuk-tag--blue"
+              }
+            }
+          }
+        ]
+      }) }} -->
+
+    {% endset %}
+
+
+    {% set 2025_to_2026_html %}
+
+            <!-- Q4 -->
+
+          <h3 class="govuk-heading-m">Q4: January to March</h3>
+
+          <p><a href="agnostic-fact-check-email">Agnostic fact check manager</a></p>
+          <p><a href="guide-accordion-version">Guides – accordion version</a></p>
+          <p><a href="guide-accordion-version-read-only">Guides – accordion version (read-only)</a></p>
+
+          <!-- Q3 -->
+
+          <h3 class="govuk-heading-m">Q3: October to December</h3>
+
+          <p><a href="confirm-delete-chapter">Confirm delete chapter</a></p>
+          <p><a href="my-content-empty-state">My content empty state</a></p>
+
+          <h3 class="govuk-heading-s">Fact check SME journey</h3>
+          <p><a href="fact-check-concept-email">Version 1</a></p>
+          <p><a href="fact-check-concept-email-2a">Version 2: Single Point of Contact (SPOC)</a></p>
+          <p><a href="fact-check-concept-email-2b">Version 2: Subject Matter expert (SME)</a></p>
+          <p><a href="fact-check-concept-email-3">Version 3</a></p>
+
+          <!-- Q2 -->
+
+          <h3 class="govuk-heading-m">Q2: July to September</h3>
+
+          <h3 class="govuk-heading-s">Publications page multi-page concept</h3>
+          <p>
+            <a target="_blank"
+              href="https://www.figma.com/proto/UUNr4fuY8A9KYQ0efK0sz6/Mainstream?page-id=481%3A7577&node-id=560-14524&viewport=-3448%2C55%2C0.45&t=RGJeMMTwZ0lEQAI8-1&scaling=contain&content-scaling=responsive&hotspot-hints=0&hide-ui=1">
+              Round 1 UR</a> [Figma]
+          </p>
+          <p><a href="/multi-page-concept/my-content">Round 2 UR</a></p>
+          <p><a href="/latest-prototype/my-content">Iterations from round 2 UR</a></p>
+          <p><a href="my-content-potential-iteration">Potential ‘My content’ future iteration</a></p>
+          <p><a href="/fact-check-prototype/index">Initial fact check prototype created by UR and dev (no design input)</a></p>
+
+          <!-- Q1 -->
+
+          <h3 class="govuk-heading-m">Q1: April to June</h3>
+
+          <p><a href="new-content-item">Add artefact</a></p>
+          <p><a target="_blank" href="https://www.figma.com/design/UUNr4fuY8A9KYQ0efK0sz6/Mainstream?node-id=10-1526&t=81UKy3f4rk8d8o7m-1">Claim 2i from a content item</a> [Figma]</p>
+          <p><a href="/working-prototype/publications">Edit pages for all content types</a></p>
+          <p><a href="answer-edit-fact-check">Fact check as-is flow</a></p>
+          <p><a href="ur-2ier-content-2-2i-approved">Publish as-is flow</a></p>
+          <p><a href="answer-edit-ready">Ready state edit page (Answer)</a></p>
+          <p><a href="answer-edit-schedule">Schedule publication MVP</a></p>
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Tagging
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <h3 class="govuk-heading-s">States</h3>
+              <p><a target="_blank" href="tagging-mvp-empty-state">Empty state</a></p>
+              <p><a target="_blank" href="tagging-mvp-tagged-state">Tagged state</a></p>
+              <h3 class="govuk-heading-s">GOV.UK breadcrumb</h3>
+              <p><a target="_blank" href="tagging-mvp-breadcrumb">Set breadcrumb</a></p>
+              <p><a target="_blank" href="tagging-mvp-edit-breadcrumb">Edit breadcrumb</a></p>
+              <p><a target="_blank" href="tagging-mvp-success-breadcrumb-updated">Success breadcrumb updated</a></p>
+              <p><a target="_blank" href="tagging-mvp-remove-breadcrumb">Remove breadcrumb</a></p>
+              <p><a target="_blank" href="tagging-mvp-tagged-breadcrumb-removed">Success breadcrumb removed</a></p>
+              <p><a target="_blank" href="tagging-mvp-tagged-state-breadcrumb-warning">Breadcrumb does not match browse pages warning</a></p>
+              <h3 class="govuk-heading-s">Mainstream browse pages</h3>
+              <p><a target="_blank" href="tagging-mvp-mainstream-browse-pages-option-2">Tag browse pages</a></p>
+              <p><a target="_blank" href="tagging-mvp-edit-mainstream-browse-pages">Edit browse pages</a></p>
+              <p><a target="_blank" href="tagging-mvp-success-browse-pages-updated">Success browse pages updated</a></p>        
+              <h3 class="govuk-heading-s">Organisations</h3>
+              <p><a target="_blank" href="tagging-mvp-organisations">Tag organisations</a></p>
+              <p><a target="_blank" href="tagging-mvp-edit-organisations">Edit organisations</a></p>
+              <p><a target="_blank" href="tagging-mvp-success-organisations-updated">Success organisations updated</a></p>
+              <h3 class="govuk-heading-s">Related content</h3>
+              <p><a target="_blank" href="tagging-mvp-related-content">Tag related content</a></p>
+              <p><a target="_blank" href="tagging-mvp-edit-related-content">Edit related content</a></p>
+              <p><a target="_blank" href="tagging-mvp-related-content-reorder">Reorder related content</a></p>
+              <p><a target="_blank" href="tagging-mvp-related-content-order-updated">Success related content order updated</a></p>
+            </div>
+          </details>
     
-    <div class="index-spacer"></div>
-    <p class="govuk-body-l"><a href="latest-prototype/my-content">Latest dynamic prototype</a></p>
+    {% endset %}
 
-    <div class="index-spacer"></div>
-
-    <!-- Q4 -->
-
-    <h2 class="govuk-heading-m">Q4: January to March</h2>
-   
-    <p><a href="agnostic-fact-check-email">Agnostic fact check manager</a></p>
-    <p><a href="guide-accordion-version">Guides – accordion version</a></p>
-    <p><a href="guide-accordion-version-read-only">Guides – accordion version (read-only)</a></p>
-
-    <div class="index-spacer"></div>
-
-    <!-- Q3 -->
-
-    <h2 class="govuk-heading-m">Q3: October to December</h2>
-   
-    <p><a href="confirm-delete-chapter">Confirm delete chapter</a></p>
-    <p><a href="my-content-empty-state">My content empty state</a></p>
-
-    <h3 class="govuk-heading-s">Fact check SME journey</h3>
-    <p><a href="fact-check-concept-email">Version 1</a></p>
-    <p><a href="fact-check-concept-email-2a">Version 2: Single Point of Contact (SPOC)</a></p>
-    <p><a href="fact-check-concept-email-2b">Version 2: Subject Matter expert (SME)</a></p>
-    <p><a href="fact-check-concept-email-3">Version 3</a></p>
-
-    <div class="index-spacer"></div>
-
-    <!-- Q2 -->
-
-    <h2 class="govuk-heading-m">Q2: July to September</h2>
     
-    <h3 class="govuk-heading-s">Publications page multi-page concept</h3>
-    <p>
-      <a target="_blank"
-        href="https://www.figma.com/proto/UUNr4fuY8A9KYQ0efK0sz6/Mainstream?page-id=481%3A7577&node-id=560-14524&viewport=-3448%2C55%2C0.45&t=RGJeMMTwZ0lEQAI8-1&scaling=contain&content-scaling=responsive&hotspot-hints=0&hide-ui=1">
-        Round 1 UR</a> [Figma]
-    </p>
-    <p><a href="/multi-page-concept/my-content">Round 2 UR</a></p>
-    <p><a href="/latest-prototype/my-content">Iterations from round 2 UR</a></p>
-    <p><a href="my-content-potential-iteration">Potential ‘My content’ future iteration</a></p>
-    <p><a href="/fact-check-prototype/index">Initial fact check prototype created by UR and dev (no design input)</a></p>
+    {% set 2024_to_2025_html %}
 
-    <div class="index-spacer"></div>
-
-    <!-- Q1 -->
-
-    <h2 class="govuk-heading-m">Q1: April to June</h2>
-
-    <p><a href="new-content-item">Add artefact</a></p>
-    <p><a target="_blank" href="https://www.figma.com/design/UUNr4fuY8A9KYQ0efK0sz6/Mainstream?node-id=10-1526&t=81UKy3f4rk8d8o7m-1">Claim 2i from a content item</a> [Figma]</p>
-    <p><a href="/working-prototype/publications">Edit pages for all content types</a></p>
-    <p><a href="answer-edit-fact-check">Fact check as-is flow</a></p>
-    <p><a href="ur-2ier-content-2-2i-approved">Publish as-is flow</a></p>
-    <p><a href="answer-edit-ready">Ready state edit page (Answer)</a></p>
-    <p><a href="answer-edit-schedule">Schedule publication MVP</a></p>
-    <details class="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Tagging
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <h3 class="govuk-heading-s">States</h3>
-        <p><a target="_blank" href="tagging-mvp-empty-state">Empty state</a></p>
-        <p><a target="_blank" href="tagging-mvp-tagged-state">Tagged state</a></p>
-        <h3 class="govuk-heading-s">GOV.UK breadcrumb</h3>
-        <p><a target="_blank" href="tagging-mvp-breadcrumb">Set breadcrumb</a></p>
-        <p><a target="_blank" href="tagging-mvp-edit-breadcrumb">Edit breadcrumb</a></p>
-        <p><a target="_blank" href="tagging-mvp-success-breadcrumb-updated">Success breadcrumb updated</a></p>
-        <p><a target="_blank" href="tagging-mvp-remove-breadcrumb">Remove breadcrumb</a></p>
-        <p><a target="_blank" href="tagging-mvp-tagged-breadcrumb-removed">Success breadcrumb removed</a></p>
-        <p><a target="_blank" href="tagging-mvp-tagged-state-breadcrumb-warning">Breadcrumb does not match browse pages warning</a></p>
-        <h3 class="govuk-heading-s">Mainstream browse pages</h3>
-        <p><a target="_blank" href="tagging-mvp-mainstream-browse-pages-option-2">Tag browse pages</a></p>
-        <p><a target="_blank" href="tagging-mvp-edit-mainstream-browse-pages">Edit browse pages</a></p>
-        <p><a target="_blank" href="tagging-mvp-success-browse-pages-updated">Success browse pages updated</a></p>        
-        <h3 class="govuk-heading-s">Organisations</h3>
-        <p><a target="_blank" href="tagging-mvp-organisations">Tag organisations</a></p>
-        <p><a target="_blank" href="tagging-mvp-edit-organisations">Edit organisations</a></p>
-        <p><a target="_blank" href="tagging-mvp-success-organisations-updated">Success organisations updated</a></p>
-        <h3 class="govuk-heading-s">Related content</h3>
-        <p><a target="_blank" href="tagging-mvp-related-content">Tag related content</a></p>
-        <p><a target="_blank" href="tagging-mvp-edit-related-content">Edit related content</a></p>
-        <p><a target="_blank" href="tagging-mvp-related-content-reorder">Reorder related content</a></p>
-        <p><a target="_blank" href="tagging-mvp-related-content-order-updated">Success related content order updated</a></p>
-      </div>
-    </details>
-
-    <div class="index-spacer"></div>
-
-    <h2 class="govuk-heading-l">2024 to 2025</h2>
-
-    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections">
-
-      <!-- Q4 -->
-
-      <div class="govuk-accordion__section">
-
-        <div class="govuk-accordion__section-header">
-          <h2 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-4">
-              Q4: January to March
-            </span>
-          </h2>
-        </div>
-
-        <div id="accordion-with-summary-sections-content-4" class="govuk-accordion__section-content">
+    <h3 class="govuk-heading-m">Q4: January to March</h3>
 
           <h2 class="govuk-heading-m">March</h2>
           <p><a target="_blank" href="https://www.figma.com/design/UUNr4fuY8A9KYQ0efK0sz6/Mainstream?node-id=0-1&t=woi4g28BelgVyuPf-1">
@@ -170,22 +184,9 @@ Mainstream publishing - GOV.UK Prototype Kit
           <p><a href="assign-2i-reviewer-mvp-assigned.html">Already assigned to someone</a></p>
           <p><a href="assign-2i-reviewer-mvp-unassigned.html">Unassigned</a></p>
 
-        </div>
-      </div>
+          <!-- Q3 -->
 
-      <!-- Q3 -->
-
-      <div class="govuk-accordion__section">
-
-        <div class="govuk-accordion__section-header">
-          <h2 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-3">
-              Q3: October to December
-            </span>
-          </h2>
-        </div>
-
-        <div id="accordion-with-summary-sections-content-3" class="govuk-accordion__section-content">
+          <h3 class="govuk-heading-m">Q3: October to December</h3>
 
           <p><a href="https://docs.google.com/document/d/1JvJxab8cwbuQaAPZfKblqbZa3uW0Z0Iil2rDYQFUq-0/edit?tab=t.0">
             Design System roadmap Google doc</a></p>
@@ -263,22 +264,9 @@ Mainstream publishing - GOV.UK Prototype Kit
           <p><a href="boilerplate-guide-2i-request-amendments.html">Amends requested by reviewer</a></p>
           <p><a href="boilerplate-guide-2i-amends-needed.html">After amends requested submitted: shows 'amends needed' tag</a></p>
 
-        </div>
-      </div>
+          <!-- Q2 -->
 
-      <!-- Q2 -->
-
-      <div class="govuk-accordion__section">
-
-        <div class="govuk-accordion__section-header">
-          <h2 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
-              Q2: July to September
-            </span>
-          </h2>
-        </div>
-
-        <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content">
+          <h3 class="govuk-heading-m">Q2: July to September</h3>
 
           <h2 class="govuk-heading-m">19 August 2024</h2>
 
@@ -368,21 +356,10 @@ Mainstream publishing - GOV.UK Prototype Kit
 
           </details>
 
-        </div>
+          <!-- Q1 -->
 
-      </div>
+          <h3 class="govuk-heading-m">Q1: April to June</h3>
 
-      <!-- Q1 -->
-
-      <div class="govuk-accordion__section">
-        <div class="govuk-accordion__section-header">
-          <h2 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
-              Q1: April to June
-            </span>
-          </h2>
-        </div>
-        <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
           <h2 class="govuk-heading-m">27 June 2024 - Save animation</h2>
           <p><a href="guide-template-2-chapter.html">Save animation on a chapter</a></p>
 
@@ -426,10 +403,59 @@ Mainstream publishing - GOV.UK Prototype Kit
           <h2 class="govuk-heading-m">Mainstream publishing prototype building</h2>
           <p><a href="/publications">Publications page</a></p>
           <p><a href="/guide">Guide</a></p>
-        </div>
-      </div>
     
-    </div>
+    {% endset %}
+
+
+
+
+
+
+    {{ govukAccordion({
+      id: "accordion-default",
+      rememberExpanded: false,
+      classes: "govuk-!-margin-top-9",
+      items: [
+        {
+          heading: {
+            text: "2026 to 2027"
+          },
+          content: {
+            html: 2026_to_2027_html
+          },
+          expanded: true
+        },
+        {
+          heading: {
+            text: "2025 to 2026"
+          },
+          content: {
+            html: 2025_to_2026_html
+          }
+        },
+        {
+          heading: {
+            text: "2024 to 2025"
+          },
+          content: {
+            html: 2024_to_2025_html
+          }
+        }
+      ]
+    }) }}
+
+
+
+
+
+
+
+
+    
+
+
+
+    
       
   </div>
 </div>
