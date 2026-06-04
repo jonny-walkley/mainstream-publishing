@@ -1,0 +1,88 @@
+{% extends "layouts/main-rebrand.html" %}
+
+{% block pageTitle %}
+ Add outcome - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right",
+    navigation: [
+      {
+        href: "#1",
+        text: "Switch app"
+      },
+      {
+        href: "#2",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+  {% include "includes/_service-navigation_iteration.njk" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Exchange a non-GB driving licence</span>
+      Add outcome
+    </h1>
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-label--s" for="">
+        Outcome
+      </label>
+      <input class="govuk-input" id="" name="" type="text" spellcheck="false" value="">
+    </div>
+
+    {{ govukTextarea({
+      name: "",
+      id: "",
+      label: {
+        text: "More information (optional)",
+        classes: "govuk-label govuk-label--s"
+      },
+      rows: 15,
+      value: ""
+    }) }}
+
+  </div>
+
+  <div class="govuk-grid-column-one-third sticky options-sidebar">
+    <div class="actions-panel">
+      
+      <h3 class="govuk-heading-s">Options</h3>
+      
+      <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">Save</button>
+
+      {{ govukButton({
+        text: "Cancel and discard changes",
+        classes: "govuk-button--warning wide govuk-!-margin-bottom-0",
+        href: "exchange-nongb-driving-licence"
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-bottom-3">
+
+      <p class="govuk-body-s">Guidance</p>
+      <p class="govuk-body-s"><a href="https://govspeak-preview.publishing.service.gov.uk/guide" class="govuk-link--no-visited-state" target="_blank">Govspeak guide (opens in new tab)</a></p>
+      <p class="govuk-body-s"><a href="#" class="govuk-link--no-visited-state">Content Block Manager (opens in new tab)</a></p>
+
+    </div>
+  </div>
+
+  </div>
+
+
+{% endblock %}

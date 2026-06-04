@@ -1,0 +1,1246 @@
+{% extends "layouts/main-rebrand.html" %}
+
+{% block pageTitle %}
+  Simple smart answer - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right",
+    navigation: [
+      {
+        href: "#1",
+        text: "Switch app"
+      },
+      {
+        href: "#2",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+  {% include "includes/_service-navigation_iteration.njk" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">Simple smart answer</span>
+    <h1 class="govuk-heading-xl">Exchange a non-GB driving licence</h1>
+    
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Edition</dt>
+        <dd class="govuk-summary-list__value">47 <strong class="govuk-tag govuk-tag--yellow govuk-!-margin-left-1">Draft</strong></dd>
+        <dd class="govuk-summary-list__actions"></dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Assigned to</dt>
+        <dd class="govuk-summary-list__value">Genie Reigns</dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> assignee</span></a>
+        </dd>
+      </div>
+    </dl>
+  
+  </div>
+
+  <div class="govuk-grid-column-full">
+    
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" aria-current="page" href="#">Edit</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#">Tagging</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#">Metadata</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#">History and notes</a></li>
+        <li class="moj-sub-navigation__item"><a class="moj-sub-navigation__link" href="#">Admin</a></li>
+      </ul>
+    </nav>
+
+  </div>
+
+  <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-l">Edit</h2>
+
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+                        
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-label--m" for="doc-title">Title</label>
+      <input class="govuk-input" id="doc-title" name="doc-title" type="text" spellcheck="false" autocomplete="name" value="Exchange a non-GB driving licence">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-label--m" for="body">
+        Body
+      </label>          
+      <textarea class="govuk-textarea" id="body" name="body" rows="15" autocomplete="body">
+Use this tool to find out how to exchange your non-GB driving licence for a British licence.
+
+^Great Britain is England, Wales and Scotland. There's a different process if you want to [get a Northern Ireland driving licence](http://www.nidirect.gov.uk/index/information-and-services/motoring/driver-licensing/driving-in-ni-on-a-foreign-licence/exchanging-your-foreign-driving-licence.htm).^
+
+*[GB]: Great Britain</textarea>
+    </div>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="start-button-text-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Start button text
+          </h1>
+        </legend>
+        <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="start-now" name="start-button-text" type="radio" value="start-now" checked>
+            <label class="govuk-label govuk-radios__label" for="start-now">
+              Start now
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="continue" name="start-button-text" type="radio" value="continue">
+            <label class="govuk-label govuk-radios__label" for="continue">
+              Continue
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="find-contact-details" name="start-button-text" type="radio" value="find-contact-details">
+            <label class="govuk-label govuk-radios__label" for="find-contact-details">
+              Find contact details
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="next" name="start-button-text" type="radio" value="next">
+            <label class="govuk-label govuk-radios__label" for="next">
+              Next
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <h3 class="govuk-heading-l" id="questions">Questions</h3>
+
+    <!-- Accordions -->
+
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default-questions" data-i18n.hide-all-sections="Hide all questions" data-i18n.show-all-sections="Show all questions">
+
+
+    <span>
+    {% set questions = [
+
+          {
+            id: 1,
+            title: "Are you a resident of Great Britain?",
+            moreInfo: "You’re normally a resident if you live in Great Britain for 185 days in each calendar year.",
+            answers: [
+
+              {
+                id: 1,
+                title: "Yes",
+                goesTo: "question-2"
+              },
+
+              {
+                id: 2,
+                title: "No",
+                goesTo: "outcome-1"
+              }
+
+            ]
+          },
+
+          {
+            id: 2,
+            title: "What kind of licence do you have?",
+            moreInfo: "Your licence will say what type of vehicles you can drive.",
+            answers: [
+
+              {
+                id: 1,
+                title: "Car or motorcycle",
+                goesTo: "question-4"
+              },
+
+              {
+                id: 2,
+                title: "Lorry, bus or minibus",
+                goesTo: "question-3"
+              }
+
+            ]
+          },
+
+          {
+            id: 3,
+            title: "Where did you pass your test?",
+            moreInfo: "",
+            answers: [
+
+              {
+                id: 1,
+                title: "European Union or European Economic Area",
+                goesTo: "question-6"
+              },
+
+              {
+                id: 2,
+                title: "Switzerland",
+                goesTo: "outcome-19"
+              },
+
+              {
+                id: 3,
+                title: "Great Britain or Northern Ireland",
+                goesTo: "outcome-5"
+              },
+
+              {
+                id: 4,
+                title: "Jersey, Guernsey or Isle of Man",
+                goesTo: "outcome-6"
+              },
+
+              {
+                id: 5,
+                title: "Gibraltar",
+                goesTo: "outcome-7"
+              },
+
+              {
+                id: 6,
+                title: "Other",
+                goesTo: "outcome-8"
+              }
+
+            ]
+          },
+
+          {
+            id: 4,
+            title: "Where did you pass your test?",
+            moreInfo: "'Designated countries or territories' are: Andorra, Australia, Barbados, British Virgin Islands, Canada, Cayman Islands, Falkland Islands, Faroe Islands, Gibraltar, Hong Kong, Japan, Monaco, New Zealand, Republic of Korea, Republic of Moldova, Republic of North Macedonia, Singapore, South Africa, Switzerland, Taiwan, Ukraine, United Arab Emirates and Zimbabwe.",
+            answers: [
+
+              {
+                id: 1,
+                title: "European Union or European Economic Area",
+                goesTo: "outcome-9"
+              },
+
+              {
+                id: 2,
+                title: "Great Britain or Northern Ireland",
+                goesTo: "outcome-10"
+              },
+
+              {
+                id: 3,
+                title: "Jersey, Guernsey or Isle of Man",
+                goesTo: "outcome-11"
+              },
+
+              {
+                id: 4,
+                title: "A 'designated country or territory' (countries or territories with exchange agreements with Great Britain)",
+                goesTo: "question-5"
+              },
+
+              {
+                id: 5,
+                title: "Other",
+                goesTo: "outcome-18"
+              }
+
+            ]
+          },
+
+          {
+            id: 5,
+            title: "Which country was your current licence issued in?",
+            moreInfo: "",
+            answers: [
+              {
+                id: 1,
+                title: "Andorra",
+                goesTo: "outcome-12"
+              },
+              {
+                id: 2,
+                title: "Australia",
+                goesTo: "outcome-20"
+              },
+              {
+                id: 3,
+                title: "Barbados",
+                goesTo: "outcome-12"
+              },
+              {
+                id: 4,
+                title: "British Virgin Islands",
+                goesTo: "outcome-12"
+              },
+              {
+                id: 5,
+                title: "Canada",
+                goesTo: "outcome-13"
+              },
+              {
+                id: 6,
+                title: "Cayman Islands",
+                goesTo: "outcome-25"
+              },
+              {
+                id: 7,
+                title: "Falkland Islands",
+                goesTo: "outcome-12"
+              },
+              {
+                id: 8,
+                title: "Faroe Islands",
+                goesTo: "outcome-14"
+              },
+              {
+                id: 9,
+                title: "Gibraltar",
+                goesTo: "outcome-12"
+              },
+              {
+                id: 10,
+                title: "Hong Kong",
+                goesTo: "outcome-12"
+              },
+              {
+                id: 11,
+                title: "Japan",
+                goesTo: "outcome-15"
+              },
+              {
+                id: 12,
+                title: "Monaco",
+                goesTo: "outcome-12"
+              },
+              {
+                id: 13,
+                title: "New Zealand",
+                goesTo: "outcome-13"
+              },
+              {
+                id: 14,
+                title: "Republic of Korea",
+                goesTo: "outcome-16"
+              },
+              {
+                id: 15,
+                title: "Republic of Moldova",
+                goesTo: "outcome-28"
+              },
+              {
+                id: 16,
+                title: "Republic of North Macedonia",
+                goesTo: "outcome-23"
+              },
+              {
+                id: 17,
+                title: "Singapore",
+                goesTo: "outcome-12"
+              },
+              {
+                id: 18,
+                title: "South Africa",
+                goesTo: "outcome-17"
+              },
+              {
+                id: 19,
+                title: "Switzerland",
+                goesTo: "outcome-12"
+              },
+              {
+                id: 20,
+                title: "Taiwan",
+                goesTo: "outcome-22"
+              },
+              {
+                id: 21,
+                title: "Ukraine",
+                goesTo: "question-7"
+              },
+              {
+                id: 22,
+                title: "United Arab Emirates",
+                goesTo: "outcome-27"
+              },
+              {
+                id: 23,
+                title: "Zimbabwe",
+                goesTo: "outcome-12"
+              },
+              {
+                id: 24,
+                title: "Other",
+                goesTo: "outcome-26"
+              }
+            ]
+          },
+
+          {
+            id: 6,
+            title: "How old are you?",
+            moreInfo: "",
+            answers: [
+
+              {
+                id: 1,
+                title: "Under 45",
+                goesTo: "outcome-2"
+              },
+
+              {
+                id: 2,
+                title: "45 to 65",
+                goesTo: "outcome-3"
+              },
+
+              {
+                id: 2,
+                title: "66 or over",
+                goesTo: "outcome-4"
+              }
+
+            ]
+          },
+
+          {
+            id: 7,
+            title: "Do you have a Ukraine visa scheme visa? Or have you had one in the past?",
+            moreInfo: "The Ukraine visa scheme visas are:
+
+    + the Ukraine Family Scheme visa
+    + the Ukraine Sponsorship Scheme visa
+    + the Ukraine Extension Scheme visa",
+            answers: [
+
+              {
+                id: 1,
+                title: "Yes",
+                goesTo: "outcome-24"
+              },
+
+              {
+                id: 2,
+                title: "No",
+                goesTo: "outcome-21"
+              }
+
+            ]
+          }
+
+        ] %}
+
+
+
+
+
+
+
+        {% set outcomes = [
+
+      { 
+        _label: "Outcome 1",
+        title: "You cannot exchange your driving licence because you're not a resident of Great Britain.",
+        moreInfo: "
+    ^You may be able to drive in the UK for up to 12 months on your non-GB licence.^
+
+    [Check if you can drive in the UK on your non-GB licence](/driving-nongb-licence)."
+      },
+      
+      { 
+        _label: "Outcome 2",
+        title: "You can drive in Great Britain on your licence until you’re 45, or for 5 years after you become resident in Great Britain, whichever is longer.",
+        moreInfo: "%You must [register your details](/government/publications/application-for-a-driving-licence-counterpart-for-non-gb-licence-holders-form-d9) with the Driver and Vehicle Licensing Agency (DVLA) within 12 months of becoming resident.%
+
+    After this time you must exchange your licence - the fee is £43. You do not have to retake your test. 
+
+    s1. Get a D2 pack from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+    s2. Send the forms and any documents you need (including your driving licence) to the address on the form.
+    s3. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+
+    *[DVLA]: Driver and Vehicle Licensing Agency"
+      },
+      
+      { 
+        _label: "Outcome 3",
+        title: "You can drive on your non-GB licence until you're 66, or for 5 years after you become resident in Great Britain, whichever is shorter.",
+        moreInfo: "^You must [register your details](/government/publications/application-for-a-driving-licence-counterpart-for-non-gb-licence-holders-form-d9) with the Driver and Vehicle Licensing Agency (DVLA) within 12 months of becoming resident.^
+
+    After this time you must exchange your licence - the fee is £43. You do not have to retake your test. 
+
+    s1. Get a D2 pack and a D4 form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+    s2. Get your doctor to fill in a D4 form. 
+    s3. Send the forms and any documents you need (including your driving licence) to the address on the form.
+    s4. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+    ^An optician or optometrist must fill in the vision assessment part of the D4 form if it cannot be done by your doctor.^
+
+    *[DVLA]: Driver and Vehicle Licensing Agency"
+      },
+      
+      { 
+        _label: "Outcome 4",
+        title: "You must exchange your licence - the fee is £43.",
+        moreInfo: "You do not have to retake your test. 
+
+    s1. Get a D2 pack and a D4 form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+    s2. Get your doctor to fill in a D4 form.
+    s3. Send the forms and any documents you need (including your driving licence) to the address on the form.
+    s4. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+    ^An optician or optometrist must fill in the vision assessment part of the D4 form if it cannot be done by your doctor.^"
+      },
+      
+      { 
+        _label: "Outcome 5",
+        title: "You can exchange your licence if it was issued on or after 1 April 1986. There is no fee.",
+        moreInfo: "s1. Get a D2 pack from the Post Office. If you’re over 45 you need to get a D4 form too. Find a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+    s2. If you’re over 45 get your doctor to fill in the D4 form. 
+    s3. Send the forms and any documents you need (including your driving licence) to the address on the form.
+    s4. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+    ^An optician or optometrist must fill in the vision assessment part of the D4 form if it cannot be done by your doctor.^"
+      },
+      
+      { 
+        _label: "Outcome 6",
+        title: "You can exchange your licence if it was issued on or after 1 April 1991. You must exchange it within 12 months of becoming resident in the UK. The fee is £43.",
+        moreInfo: "s1. Get a D2 pack and a D4 form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+    s2. Get your doctor to fill in a D4 form. 
+    s3. Send the forms, fee and any documents you need (including your driving licence) to the address on the form.
+    s4. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+    ^An optician or optometrist must fill in the vision assessment part of the D4 form if it cannot be done by your doctor.^"
+      },
+      
+      { 
+        _label: "Outcome 7",
+        title: "You can exchange your licence up to 5 years after becoming resident in Great Britain, but you can only use it for 12 months. The fee is £43.",
+        moreInfo: "s1. Get a D2 pack from the Post Office. If you’re over 45 you need to get a D4 form too. Find a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+    s2. If you’re over 45 get your doctor to fill in the D4 form. 
+    s3. Send the forms, fee and any documents you need (including your driving licence) to the address on the form.
+    s4. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+    ^An optician or optometrist must fill in the vision assessment part of the D4 form if it cannot be done by your doctor.^"
+      },
+      
+      { 
+        _label: "Outcome 8",
+        title: "You cannot exchange your licence and you must stop driving large vehicles. You can drive cars and motorcycles for up to 12 months.",
+        moreInfo: "You need to [get a Great Britain issued licence](/become-lorry-bus-driver) to drive a lorry, bus or minibus."
+      },
+      
+      { 
+        _label: "Outcome 9",
+        title: "You can drive in Great Britain on a full, valid driving licence from an EU country.",
+        moreInfo: "You can drive in Great Britain until you’re 70. If you're 67 or over when you become resident, you can drive for 3 years.
+
+    After this time you must exchange your licence. You do not have to retake your test.
+
+    s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder). 
+    s2. Send the form, the £43 fee and any documents you need (including your driving licence) to the address on the form.
+    s3. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+    %You can only drive in Great Britain with a non-EU licence for 12 months after you arrive.%"
+      },
+      
+      { 
+        _label: "Outcome 10",
+        title: "You can exchange your licence if it was issued on or after 1 January 1976. There is no fee.",
+        moreInfo: "s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+    s2. Send the form and any documents you need (including your driving licence) to the address on the form.
+    s3. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked."
+      },
+      
+      { 
+        _label: "Outcome 11",
+        title: "You may be able to exchange your licence.",
+        moreInfo: "You can exchange your licence up to five years after you became resident, if it was issued on or after 1 April 1991. The fee is £43.
+
+    s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder). 
+    s2. Send the form, fee and any documents you need (including your driving licence) to the address on the form.
+    s3. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked."
+      },
+      
+      { 
+        _label: "Outcome 12",
+        title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+        moreInfo: " After 12 months you must exchange your licence to keep driving. You can exchange it up to 5 years after becoming resident, if it has not expired.
+
+    If your licence allows you to drive manual vehicles, you can usually exchange it for a UK licence that allows you to drive manual vehicles.
+
+    ## Exchange your licence
+
+    s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+    s2. Send the form, £43 fee and any documents you need (including your driving licence and proof of passing your test in a manual vehicle if needed) to the address on the form.
+    s3. Your licence will usually arrive in 3 to 4 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked."
+      },
+      
+      { 
+        _label: "Outcome 13",
+        title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+        moreInfo: "After 12 months you must exchange your licence to keep driving. You can exchange it up to 5 years after becoming resident, if it has not expired.
+
+    %You can only drive manual vehicles if you can prove you passed a manual vehicle test - otherwise, you must drive an automatic.%
+
+    s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder). 
+    s2. Send the form, £43 fee and any documents you need (including your driving licence) to the address on the form.
+    s3. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked."
+      },
+      
+      { 
+        _label: "Outcome 14",
+        title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+        moreInfo: "After 12 months you must exchange your licence to keep driving a car. You can exchange it up to 5 years after becoming resident, if it has not expired. You cannot exchange your motorcycle entitlement.
+
+    ##Exchange your licence
+
+    s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+    s2. Send the form, £43 fee and any documents you need (including your driving licence) to the address on the form.
+    s3. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+    ##If you want to ride a motorcycle
+
+    You’ll be given provisional motorcycle entitlement if you exchange your full valid licence within 5 years of becoming resident. You’ll then need to take a [theory test](/motorcycle-theory-test) and [practical test](/motorcycle-practical-test).
+
+    If you do not exchange your licence within 5 years of becoming resident, you’ll need to [get a provisional driving licence](/apply-first-provisional-driving-licence) in order to take the tests.
+
+    Find out about [riding a motorcycle](/ride-motorcycle-moped) in the UK."
+      },
+      
+      { 
+        _label: "Outcome 15",
+        title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+        moreInfo: "After 12 months you must exchange your licence to keep driving. You can exchange it up to 5 years after becoming resident, if it has not expired.
+
+    %You need to provide an official translation of your licence - [contact your embassy](/government/publications/foreign-embassies-in-the-uk).%
+
+    s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder). 
+    s2. Send the form, £43 fee and any documents you need (including your driving licence) to the address on the form.
+    s3. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked."
+      },
+      
+      { 
+        _label: "Outcome 16",
+        title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+        moreInfo: "After 12 months you must exchange your licence to keep driving. You can exchange it up to 5 years after becoming resident, if it has not expired. You cannot exchange your motorcycle entitlement.
+
+    s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder). 
+    s2. Send the form, £43 fee and any documents you need (including your driving licence) to the address on the form.
+    s3. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+    %You need to provide an official translation of your licence - [contact your embassy](/government/publications/foreign-embassies-in-the-uk). 
+
+    ##If you want to ride a motorcycle
+
+    You’ll be given provisional motorcycle entitlement if you exchange your full valid licence within 5 years of becoming resident. You’ll then need to take a [theory test](/motorcycle-theory-test) and [practical test](/motorcycle-practical-test).
+
+    If you do not exchange your licence within 5 years of becoming resident, you’ll need to [get a provisional driving licence](/apply-first-provisional-driving-licence) in order to take the tests.
+
+    Find out about [riding a motorcycle](/ride-motorcycle-moped) in the UK."
+      },
+      
+      { 
+        _label: "Outcome 17",
+        title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+        moreInfo: "After 12 months you must exchange your licence to keep driving. You can exchange it up to 5 years after becoming resident, if it has not expired.
+
+    %You can no longer drive in the UK with an old South African book of life-style licence or letter of entitlement to one, and you cannot exchange these for a UK licence. You must have a new credit-card style licence or a letter of entitlement to one.%
+
+    ##Swap a credit-card style licence for a Great Britain issued licence
+
+    s1. Email the Road Traffic Management Corporation (RTMC) at <DLconfirmations@rtmc.co.za> to request a ‘Confirmation of South African Driving Licence’ letter.
+    s2. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+    s3. Send the form, the £43 fee and any documents you need (including your driving licence and the letter from the RTMC) to the address on the form.
+    s4. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+    *[RTMC]: Road Traffic Management Corporation
+    *[DVLA]: Driver and Vehicle Licensing Agency"
+      },
+      
+      { 
+        _label: "Outcome 18",
+        title: "You cannot exchange your licence but you can drive for up to 12 months on your non-GB licence.",
+        moreInfo: "After 12 months you'll need to take a [theory test](/driving-theory-test) and a [practical test](/practical-driving-test-for-cars). You'll need to [get a provisional driving licence](/apply-first-provisional-driving-licence) before you can take the tests.
+
+    You’ll get a full Great Britain issued driving licence when you pass the theory and practical tests."
+      },
+      
+      { 
+        _label: "Outcome 19",
+        title: "You can exchange your licence up to 5 years after becoming resident in Great Britain, but you can only drive small vehicles for 12 months. ",
+        moreInfo: "The fee is £43.
+
+    s1. Get a D2 pack from the Post Office. If you’re over 45 you need to get a D4 form too. Find a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+    s2. If you’re over 45 get your doctor to fill in the D4 form. 
+    s3. Send the forms, fee and any documents you need (including your driving licence) to the address on the form.
+    s4. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+    ^An optician or optometrist must fill in the vision assessment part of the D4 form if it cannot be done by your doctor.^"
+      },
+      
+      { 
+        _label: "Outcome 20",
+        title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+        moreInfo: "After 12 months you must exchange your licence to keep driving. You can exchange it up to 5 years after becoming resident, if it has not expired.
+
+    If your licence allows you to drive manual vehicles, you can usually exchange it for a UK licence that allows you to drive manual vehicles.
+
+    To get a UK licence to drive a manual vehicle, you may need to show proof of passing your driving test in a manual vehicle. You’ll need to do this if your driving licence was issued from one of the following territories:
+
+    * Australian Capital Territory
+
+    * New South Wales
+
+    * Northern Territory
+
+    * South Australia
+
+    * Tasmania
+
+    * Victoria
+
+    If your driving test was taken in an automatic vehicle, you can only drive an automatic vehicle.
+
+    ## Exchange your licence
+
+
+    s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+    s2. Send the form, £43 fee and any documents you need (including your driving licence and proof of passing your test in a manual vehicle if needed) to the address on the form.
+    s3. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked."
+      },
+      
+      { 
+        _label: "Outcome 21",
+        title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+        moreInfo: "After 12 months you must exchange your licence to keep driving. You can exchange it up to 5 years after becoming resident, if it has not expired.
+
+    ##What you can exchange your licence for
+
+    ###If you passed your driving test before 28 December 2021
+
+    You can only exchange your driving licence for a UK licence that allows you to drive automatic vehicles. 
+
+    ###If you passed your driving test on or after 28 December 2021 
+
+    If your current licence allows you to drive manual vehicles, you can exchange it for a UK licence that allows you to drive manual vehicles.
+
+    ###If you have a motorcycle licence
+
+    You cannot exchange your motorcycle licence for a UK equivalent. You must [apply for a provisional licence](https://www.gov.uk/apply-first-provisional-driving-licence?step-by-step-nav=e01e924b-9c7c-4c71-8241-66a575c2f61f) and take a theory and practical test in the UK.
+
+    ## Exchange your licence
+
+    s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+    s2. Send the form, £43 fee and your driving licence to the address on the form.
+    s3. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked."
+      },
+      
+      { 
+        _label: "Outcome 22",
+        title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+        moreInfo: "After 12 months you must exchange your licence to keep driving. You can exchange it up to 5 years after becoming resident, if it has not expired. You cannot exchange your motorcycle entitlement. 
+
+    If your licence allows you to drive manual vehicles, you can usually exchange it for a UK licence that allows you to drive manual vehicles.
+
+    ## Exchange your licence
+
+    s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+    s2. Get an official translation of your licence from a Taipei Representative Office in the UK. You can [contact the London office](https://www.roc-taiwan.org/uk_en/contact_us.html) or [contact the Edinburgh office](https://www.roc-taiwan.org/ukedi_en/contact_us.html)
+    s3. Send the form, £43 fee and any documents you need (including your driving licence, the official translation, and proof of passing your test in a manual vehicle if needed) to the address on the form.
+    s4. Your licence will usually arrive in 3 to 4 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+
+    ##If you want to ride a motorcycle
+
+    You’ll be given provisional motorcycle entitlement if you exchange your full valid licence within 5 years of becoming resident. You’ll then need to take a [theory test](/motorcycle-theory-test) and [practical test](/motorcycle-practical-test).
+
+    If you do not exchange your licence within 5 years of becoming resident, you’ll need to [get a provisional driving licence](/apply-first-provisional-driving-licence) in order to take the tests.
+
+    Find out about [riding a motorcycle](/ride-motorcycle-moped) in the UK."
+      },
+      
+      { 
+        _label: "Outcome 23",
+        title: "You can continue to drive in the UK with your current licence for 12 months after becoming resident.",
+        moreInfo: "After 12 months, you must exchange your licence to keep driving a car. You can exchange it up to 5 years after becoming resident, if it has not expired. You cannot exchange your motorcycle licence. 
+
+    If your licence allows you to drive manual vehicles, you can usually exchange it for a UK licence that allows you to drive manual vehicles.
+
+    ## Exchange a licence
+
+    s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+    s2. Send the form, £43 fee and any documents you need (including your driving licence and proof of passing your test in a manual vehicle if needed) to the address on the form.
+    s3. Your licence will usually arrive in 3 to 4 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+
+    ##If you want to ride a motorcycle
+
+    You’ll be given provisional motorcycle entitlement if you exchange your full valid licence within 5 years of becoming resident. You’ll then need to take a [theory test](/motorcycle-theory-test) and [practical test](/motorcycle-practical-test).
+
+    If you do not exchange your licence within 5 years of becoming resident, you’ll need to [get a provisional driving licence](/apply-first-provisional-driving-licence) in order to take the tests.
+
+    Find out about [riding a motorcycle](/ride-motorcycle-moped) in the UK."
+      },
+      
+      { 
+        _label: "Outcome 24",
+        title: "You can continue to drive in Great Britain without exchanging your licence for at least 3 years after becoming resident.",
+        moreInfo: "You may be able to use it for 4 years and 6 months depending on [when you successfully applied for entry clearance or permission to stay in the United Kingdom](/guidance/driving-in-great-britain-ukrainian-driving-licence-exchange).
+
+    After this time, you must exchange your licence to keep driving in Great Britain.
+
+    ^[There are different rules in Northern Ireland](https://www.nidirect.gov.uk/articles/advice-foreign-driving-licences-northern-ireland).^
+
+    ##Exchanging your licence
+
+    You can exchange your licence for a UK licence up to 5 years after becoming resident, if it has not expired.
+
+    ###If you passed your driving test before 28 December 2021
+
+    You can only exchange your driving licence for a UK licence that allows you to drive automatic vehicles. 
+
+    ###If you passed your driving test on or after 28 December 2021 
+
+    If your current licence allows you to drive manual vehicles, you can exchange it for a UK licence that allows you to drive manual vehicles.
+
+    ###If you have a motorcycle licence
+
+    You cannot exchange your motorcycle licence for a UK equivalent. You must [apply for a provisional licence](/apply-first-provisional-driving-licence?step-by-step-nav=e01e924b-9c7c-4c71-8241-66a575c2f61f) and take a theory and practical test in the UK.
+
+    ## Exchange your licence
+
+    s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+    s2. Send the form, £43 fee and your driving licence to the address on the form.
+    s3. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked."
+      },
+      
+      { 
+        _label: "Outcome 25",
+        title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+        moreInfo: "After 12 months you must exchange your licence to keep driving. You can exchange it up to 5 years after becoming resident, if it has not expired.
+
+    If your licence allows you to drive manual vehicles, you can usually exchange it for a UK licence that allows you to drive manual vehicles.
+
+    You must have a letter confirming your driving licence details from the Cayman Islands government. This will prove whether or not you can drive a manual vehicle.
+
+    Request a ‘letter of entitlement’ from the Cayman Islands Department of Vehicle and Driver's Licensing (DVDL).
+
+    $C
+    Cayman Islands DVDL Customer Support Unit
+    <DVDLExamBookings@gov.ky>
+    $C
+
+    If you passed your test outside the Cayman Islands, you’ll also need a letter from that country confirming what type of vehicle you can drive.
+
+    ## Exchange your licence
+
+    s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder). 
+    s2. Send the form, £43 fee and any documents you need (including your driving licence and proof of passing your test) to the address on the form.
+    s3. Your licence will usually arrive in 3 to 4 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked."
+      },
+      
+      { 
+        _label: "Outcome 26",
+        title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+        moreInfo: "After 12 months you must exchange your licence to keep driving. You can exchange it up to 5 years after becoming resident, if it has not expired.
+
+    If your licence allows you to drive manual vehicles, you can usually exchange it for a UK licence that allows you to drive manual vehicles.
+
+    You must have a ‘letter of entitlement’ from the country where you passed your test confirming that you can drive.
+
+    ## Exchange your licence
+
+    s1. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder). 
+    s2. Send the form, £43 fee and any documents you need (including your driving licence and proof of passing your test) to the address on the form.
+    s3. Your licence will usually arrive in 3 to 4 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked."
+      },
+      
+      { 
+        _label: "Outcome 27",
+        title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+        moreInfo: "After 12 months you must exchange your licence to keep driving. You can exchange it up to 5 years after becoming resident, if it has not expired.
+
+    If your licence allows you to drive manual vehicles, you can usually exchange it for a UK licence that allows you to drive manual vehicles.
+
+    ## Exchange your licence
+
+    s1. [Request a Licence Data Verification Letter (LDVL) from the UAE Ministry of Interior](https://moi.gov.ae/en/eservices/traffic.thcm.certificate.aspx). You’ll need to sign in with your UAE pass, select ‘To whom it may concern certificates’ and then select ‘Licence Data Verification Letter’.
+    s2. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder).
+    s3. Send the LDVL, the form, the £43 fee and any documents you need (including your driving licence and proof of passing your test in a manual vehicle if needed) to the address on the form.
+    s4. Your licence will usually arrive in 3 to 4 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked."
+      },
+      
+      { 
+        _label: "Outcome 28",
+        title: "You can continue to drive in the UK without exchanging your licence for 12 months after becoming resident.",
+        moreInfo: "After 12 months you must exchange your licence to keep driving a car. You can exchange it up to 5 years after becoming resident, if it has not expired. You cannot exchange your motorcycle entitlement.
+
+    ##Exchange your licence
+
+    s1. Request a [Letter of Entitlement (LoE)](https://www.asp.gov.md/ro/servicii/conducatori-auto/33/331) from the Republic of Moldova Public Services Agency.
+    s2. Get a D1 application form from a [Post Office that offers DVLA services](https://www.postoffice.co.uk/branch-finder). 
+    s3. Send the form, £43 fee and any documents you need (including your driving licence and your Driving Licence Verification Document) to the address on the form.
+    s4. Your licence will usually arrive within 3 weeks. It might take longer if you’ve told DVLA about a medical condition and your details need to be checked.
+
+    ##If you want to ride a motorcycle
+
+    You’ll be given provisional motorcycle entitlement if you exchange your full valid licence within 5 years of becoming resident. You’ll then need to take a [theory test](/motorcycle-theory-test) and [practical test](/motorcycle-practical-test).
+
+    If you do not exchange your licence within 5 years of becoming resident, you’ll need to [get a provisional driving licence](/apply-first-provisional-driving-licence) in order to take the tests.
+
+    Find out about [riding a motorcycle](/ride-motorcycle-moped) in the UK."
+      }
+
+    ] %}
+
+    </span>
+
+
+
+
+
+
+
+
+
+
+{% for question in questions %}
+
+<div class="govuk-accordion__section">
+
+  <div class="govuk-accordion__section-header">
+
+    <h2 class="govuk-accordion__section-heading">
+      <span
+        class="govuk-accordion__section-button"
+        id="accordion-default-heading-{{ question.id }}">
+        Question {{ question.id }}
+      </span>
+    </h2>
+
+    <div class="govuk-accordion__section-summary govuk-body">
+      {{ question.title }}
+    </div>
+
+  </div>
+
+  <div
+    id="accordion-default-content-questions-{{ question.id }}"
+    class="govuk-accordion__section-content">
+
+    <div class="govuk-form-group">
+      <label
+        class="govuk-label govuk-label--s"
+        for="question-{{ question.id }}-title">
+        Question {{ question.id }}
+      </label>
+
+      <input
+        class="govuk-input"
+        id="question-{{ question.id }}-title"
+        name="question-{{ question.id }}-title"
+        type="text"
+        spellcheck="false"
+        value="{{ question.title }}">
+    </div>
+
+    {{ govukTextarea({
+      name: "question-" + question.id + "-more-information",
+      id: "question-" + question.id + "-more-information",
+      label: {
+        text: "More information (optional)",
+        classes: "govuk-label govuk-label--s"
+      },
+      rows: 5,
+      value: question.moreInfo
+    }) }}
+
+    {% for answer in question.answers %}
+
+      <div class="govuk-summary-card">
+
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            Answer {{ answer.id }}
+          </h2>
+
+          <ul class="govuk-summary-card__actions">
+            <li class="govuk-summary-card__action">
+              <a class="govuk-link govuk-link--no-visited-state" href="confirm-delete?type=answer&id={{ answer.id }}&title={{ answer.title }}&questionid={{ question.id }}&question={{ question.title }}">
+                Delete answer
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="govuk-summary-card__content">
+
+          <div class="govuk-form-group">
+
+            <label
+              class="govuk-label govuk-label--s"
+              for="question-{{ question.id }}-answer-{{ answer.id }}-title">
+              Answer
+            </label>
+
+            <input
+              class="govuk-input"
+              id="question-{{ question.id }}-answer-{{ answer.id }}-title"
+              name="question-{{ question.id }}-answer-{{ answer.id }}-title"
+              type="text"
+              value="{{ answer.title }}">
+
+          </div>
+
+          <div class="govuk-form-group">
+
+            <label
+              class="govuk-label govuk-label--s"
+              for="question-{{ question.id }}-answer-{{ answer.id }}-goes-to">
+              Goes to
+            </label>
+
+            <select
+              class="govuk-select"
+              id="question-{{ question.id }}-answer-{{ answer.id }}-goes-to"
+              name="question-{{ question.id }}-answer-{{ answer.id }}-goes-to">
+
+              <option value="" disabled>Questions</option>
+
+              {% for q in questions %}
+                {% if q.id > question.id %}
+                  <option
+                    value="question-{{ q.id }}"
+                    {% if answer.goesTo == "question-" + q.id %}selected{% endif %}>
+                    Question {{ q.id }} – {{ q.title }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+
+              <option value="" disabled>Outcomes</option>
+
+              {% for outcome in outcomes %}
+                <option
+                  value="outcome-{{ loop.index }}"
+                  {% if answer.goesTo == "outcome-" + loop.index %}selected{% endif %}>
+                  Outcome {{ loop.index }} – {{ outcome.title }}
+                </option>
+              {% endfor %}
+
+            </select>
+
+            {% if answer.goesTo %}
+
+              {% for q in questions %}
+                {% if answer.goesTo == "question-" + q.id %}
+                  <p class="govuk-body govuk-!-margin-top-3 govuk-!-margin-bottom-0">
+                    <a
+                      class="govuk-link govuk-link--no-visited-state"
+                      href="#accordion-default-heading-{{ q.id }}">
+                      Go to Question {{ q.id }}
+                    </a>
+                  </p>
+                {% endif %}
+              {% endfor %}
+
+              {% for outcome in outcomes %}
+                {% if answer.goesTo == "outcome-" + loop.index %}
+                  <p class="govuk-body govuk-!-margin-top-3 govuk-!-margin-bottom-0">
+                    <a
+                      class="govuk-link govuk-link--no-visited-state"
+                      href="#accordion-default-heading-outcome-{{ loop.index }}">
+                      Go to Outcome {{ loop.index }}
+                    </a>
+                  </p>
+                {% endif %}
+              {% endfor %}
+
+            {% endif %}
+
+          </div>
+
+        </div>
+
+      </div>
+
+    {% endfor %}
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Add another answer",
+        classes: "govuk-button--secondary govuk-!-margin-bottom-0",
+        href: "add-answer?id=" + question.id + "&title=" + question.title
+      }) }}
+    <a class="govuk-link govuk-link--no-visited-state" href="confirm-delete.html?type=question&id={{ question.id }}&title={{ question.title}}">Delete Question {{ question.id }}</a>
+
+</div>
+
+  </div>
+
+</div>
+
+{% endfor %}
+
+        </div> <!-- END QUESTIONS ACCORDION -->
+
+        {{ govukButton({
+          text: "Add another question",
+          classes: "govuk-button--secondary govuk-!-margin-bottom-8",
+          href: "add-question.html"
+        }) }}
+
+        <h3 class="govuk-heading-l" id="outcomes">Outcomes</h3>
+
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default-outcomes" data-i18n.hide-all-sections="Hide all outcomes" data-i18n.show-all-sections="Show all outcomes">
+
+          {% for outcome in outcomes %}
+
+          <!-- Outcome {{ i }} -->
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-outcome-{{ loop.index }}">
+                  Outcome {{ loop.index }}
+                </span>
+              </h2>
+
+              <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-outcomes{{ loop.index }}">
+                {{ outcome.title }}
+              </div>
+            </div>
+
+            <div id="accordion-default-content-outcomes-{{ loop.index }}" class="govuk-accordion__section-content">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="outcome-{{ loop.index }}-title">
+                  Outcome {{ loop.index }}
+                </label>
+                <input class="govuk-input" id="outcome-{{ loop.index }}-title" name="outcome-{{ loop.index }}-title" type="text" spellcheck="false" value="{{ outcome.title }}">
+              </div>
+
+              {{ govukTextarea({
+                name: "outcome" ~ loop.index ~ "moreInformation",
+                id: "outcome-" ~ loop.index ~ "-more-information",
+                label: {
+                  text: "More information (optional)",
+                  classes: "govuk-label govuk-label--s"
+                },
+                rows: 15,
+                value: outcome.moreInfo
+              }) }}
+
+              {% set outcomeNumber = loop.index %}
+              {% set answerCount = 0 %}
+
+              {% for question in questions %}
+                {% for answer in question.answers %}
+                  {% if answer.goesTo == "outcome-" + outcomeNumber %}
+                    {% set answerCount = answerCount + 1 %}
+                  {% endif %}
+                {% endfor %}
+              {% endfor %}
+
+              <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Used by {{ answerCount }} answer{% if answerCount != 1 %}s{% endif %}
+                  </span>
+                </summary>
+
+                <div class="govuk-details__text">
+
+                  {% for question in questions %}
+
+                    {% set hasMatches = false %}
+
+                    {% for answer in question.answers %}
+                      {% if answer.goesTo == "outcome-" + outcomeNumber %}
+                        {% set hasMatches = true %}
+                      {% endif %}
+                    {% endfor %}
+
+                    {% if hasMatches %}
+
+                      <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+                        <a class="govuk-link govuk-link--no-visited-state" href="#accordion-default-heading-{{ question.id }}">Question {{ question.id }} – {{ question.title }}</a>
+                      </h3>
+
+                      <ul class="govuk-list govuk-list--bullet">
+                        {% for answer in question.answers %}
+                          {% if answer.goesTo == "outcome-" + outcomeNumber %}
+                            <li>{{ answer.title }}</li>
+                          {% endif %}
+                        {% endfor %}
+                      </ul>
+
+                    {% endif %}
+
+                  {% endfor %}
+
+                </div>
+              </details>
+
+              <p class="govuk-body">
+                <a class="govuk-link govuk-link--no-visited-state" href="confirm-delete?type=outcome&id={{ loop.index }}&title={{ outcome.title }}">Delete Outcome {{ loop.index }}</a>
+              </p>
+
+            </div>
+          </div>
+
+        {% endfor %}
+
+      </div>
+      
+      <!-- End outcomes -->
+
+      {{ govukButton({
+        text: "Add another outcome",
+        classes: "govuk-button--secondary govuk-!-margin-bottom-8",
+        href: "add-outcome"
+      }) }}            
+
+    </div>
+
+    <div class="govuk-grid-column-one-third sticky options-sidebar">
+      <div class="actions-panel">
+        
+        <h3 class="govuk-heading-s">Options</h3>
+        
+        <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">Save</button>
+        <button type="submit" class="govuk-button govuk-button--secondary wide" data-module="govuk-button">2i</button>
+        
+        <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">Preview (opens in new tab)</a></p>
+        <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">View flow diagram (opens in new tab)</a></p>
+        
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-bottom-3">
+        
+        <p class="govuk-body"><a href="#questions" class="govuk-link--no-visited-state">Questions</a> ({{ questions.length }})</p>
+        <p class="govuk-body"><a href="#outcomes" class="govuk-link--no-visited-state">Outcomes</a> ({{ outcomes.length }})</p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-bottom-3">
+
+        <p class="govuk-body-s">Guidance</p>
+        <p class="govuk-body-s"><a href="https://govspeak-preview.publishing.service.gov.uk/guide" class="govuk-link--no-visited-state" target="_blank">Govspeak guide (opens in new tab)</a></p>
+        <p class="govuk-body-s"><a href="#" class="govuk-link--no-visited-state">Content Block Manager (opens in new tab)</a></p>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
