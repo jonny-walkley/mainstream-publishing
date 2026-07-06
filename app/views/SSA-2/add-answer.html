@@ -1,0 +1,162 @@
+{% extends "layouts/main-rebrand.html" %}
+
+{% set answerCounts = {
+  "1": 3,
+  "2": 3,
+  "3": 7,
+  "4": 6,
+  "5": 25,
+  "6": 4,
+  "7": 3
+} %}
+
+{% block pageTitle %}
+ Add answer {{ answerCounts[data['id']] }} - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Publisher",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right",
+    navigation: [
+      {
+        href: "#1",
+        text: "Switch app"
+      },
+      {
+        href: "#2",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+  {% include "includes/_service-navigation_iteration.njk" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Question {{ data['id'] }} – {{ data['title'] }}</span>
+      Add answer {{ answerCounts[data['id']] }}
+    </h1>
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-label--s" for="">
+        Answer {{ answerCounts[data['id']] }}
+      </label>
+      <input class="govuk-input" id="" name="" type="text" spellcheck="false" value="">
+    </div>
+
+    <div class="govuk-form-group">
+
+            <label
+              class="govuk-label govuk-label--s"
+              for="question-{{ question.id }}-answer-{{ answer.id }}-goes-to">
+              Goes to
+            </label>
+
+            <div id="hint" class="govuk-hint">
+              You can leave this blank and select it later
+            </div>
+
+            <select
+              class="govuk-select govuk-!-width-full"
+              id="question-{{ question.id }}-answer-{{ answer.id }}-goes-to"
+              name="question-{{ question.id }}-answer-{{ answer.id }}-goes-to">
+
+              <option value="Select a question or outcome" selected >Select a question or outcome</option>
+
+              <option value="" disabled>Questions</option>
+
+              {% for q in questions %}
+                {% if q.id > question.id %}
+                  <option
+                    value="question-{{ q.id }}"
+                    {% if answer.goesTo == "question-" + q.id %}selected{% endif %}>
+                    Question {{ q.id }} – {{ q.title }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+
+              <option value="" disabled>Outcomes</option>
+
+              {% for outcome in outcomes %}
+                <option
+                  value="outcome-{{ loop.index }}"
+                  {% if answer.goesTo == "outcome-" + loop.index %}selected{% endif %}>
+                  Outcome {{ loop.index }} – {{ outcome.title }}
+                </option>
+              {% endfor %}
+
+            </select>
+
+            {% if answer.goesTo %}
+
+              {% for q in questions %}
+                {% if answer.goesTo == "question-" + q.id %}
+                  <p class="govuk-body govuk-!-margin-top-3 govuk-!-margin-bottom-0">
+                    <a
+                      class="govuk-link govuk-link--no-visited-state"
+                      href="#accordion-default-heading-{{ q.id }}">
+                      Go to Question {{ q.id }}
+                    </a>
+                  </p>
+                {% endif %}
+              {% endfor %}
+
+              {% for outcome in outcomes %}
+                {% if answer.goesTo == "outcome-" + loop.index %}
+                  <p class="govuk-body govuk-!-margin-top-3 govuk-!-margin-bottom-0">
+                    <a
+                      class="govuk-link govuk-link--no-visited-state"
+                      href="#accordion-default-heading-outcome-{{ loop.index }}">
+                      Go to Outcome {{ loop.index }}
+                    </a>
+                  </p>
+                {% endif %}
+              {% endfor %}
+
+            {% endif %}
+
+          </div>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third sticky options-sidebar">
+    <div class="actions-panel">
+      
+      <h3 class="govuk-heading-s">Options</h3>
+      
+      <button type="submit" data-prevent-double-click="true" class="govuk-button wide" data-module="govuk-button">Save</button>
+
+      {{ govukButton({
+        text: "Cancel and discard changes",
+        classes: "govuk-button--warning wide govuk-!-margin-bottom-0",
+        href: "exchange-nongb-driving-licence"
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-bottom-3">
+
+      <p class="govuk-body-s">Guidance</p>
+      <p class="govuk-body-s"><a href="https://govspeak-preview.publishing.service.gov.uk/guide" class="govuk-link--no-visited-state" target="_blank">Govspeak guide (opens in new tab)</a></p>
+      <p class="govuk-body-s"><a href="#" class="govuk-link--no-visited-state">Content Block Manager (opens in new tab)</a></p>
+
+    </div>
+  </div>
+
+  </div>
+
+
+{% endblock %}
