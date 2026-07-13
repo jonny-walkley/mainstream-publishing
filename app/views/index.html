@@ -13,11 +13,11 @@ Mainstream publishing - GOV.UK Prototype Kit
   navigationClasses: "align-right",
   navigation: [
     {
-      href: "https://docs.google.com/spreadsheets/d/12mrPehZOlpr2XU_IgmABp1izuhMnd3F5xSWORzw8aJA/edit?gid=0#gid=0",
+      href: "https://beisgov.sharepoint.com/:l:/r/sites/FactCheckManager/Lists/MPE%20FCM%20Tracker?e=12mCCA",
       text: "FCM tracker"
     },
     {
-      href: "https://docs.google.com/spreadsheets/d/11u2XitAlHNBgSlKJspit6Kbd0-4b_ujVnte7opiuy3I/edit?gid=0#gid=0",
+      href: "https://beisgov.sharepoint.com/:l:/r/sites/GOVUK-Pub/Lists/MPE%20Design%20System%20tracker?e=I6N1ls",
       text: "Design System tracker"
     },
     {
@@ -51,7 +51,33 @@ Mainstream publishing - GOV.UK Prototype Kit
       <h3 class="govuk-heading-s">Q1: April to June</h3>
 
       <p class="govuk-!-font-weight-bold"><a href="SSA-1/exchange-nongb-driving-licence.html">SSA concept 1</a></p>
-      <p class="govuk-!-font-weight-bold"><a href="#">SSA concept 2</a></p>
+      <p class="govuk-!-font-weight-bold"><a href="SSA-2/exchange-nongb-driving-licence.html">SSA concept 2</a></p>
+      {% call govukDetails({
+        summaryText: "Change notes"
+      }) %}
+        <p class="govuk-body govuk-!-font-weight-bold">Main page:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+          <li>changed ‘Show all questions’ to ‘Show all question details’</li>
+          <li>changed ‘Show all outcomes’ to ‘Show all outcome details’</li>
+          <li>made ‘Go to’ link open relevant accordion</li>
+          <li>changed ‘Used by X answers’ to ‘X answers go to Outcome X’</li>
+          <li>changed bulleted list lead-in line from “Question X – [question]” to “From Question X – ‘[question]’:”</li>
+          <li>added answer number to bulleted list of answers</li>
+          <li>made the answers links instead of the questions</li>
+        </ul>
+        <p class="govuk-body govuk-!-font-weight-bold">Add pages:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+          <li>made headings consistently size XL</li>
+          <li>added question/answer/outcome number to heading and text input label</li>
+        </ul>
+        <p class="govuk-body govuk-!-font-weight-bold">Delete pages:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+          <li>made headings consistently size XL</li>
+          <li>added question/answer/outcomenumber to heading to be consistent with the add pages and the delete link text on the main page</li>
+          <li>added single curly quotes to the answer and question text</li>
+          <li>added answer number to the answer text</li>
+        </ul>
+      {% endcall %}
 
       <!-- {{ govukTaskList({
         idPrefix: "all-colours",
