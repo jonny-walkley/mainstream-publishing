@@ -1,0 +1,57 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block pageTitle %}
+ Create a new user or request training | GOV.UK Support – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Support",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="#" class="govuk-back-link" onclick="history.back(); return false;">
+    Back
+  </a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Create a new user or request training</span>
+      Who needs a copy of this request?
+    </h1>
+
+<form method="post" action="/support-app/who-needs-a-copy-of-this-request-answer">
+
+        {{ govukInput({
+            label: {
+            text: "Email addresses"
+            },
+            hint: {
+            text: "Separate multiple email addresses with a comma or semi‑colon, followed by a space"
+            },
+            id: "request-copy-emails",
+            name: "requestCopyEmails",
+            type: "email",
+            autocomplete: "email",
+            spellcheck: false
+        }) }}  
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

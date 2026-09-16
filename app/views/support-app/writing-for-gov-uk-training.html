@@ -1,0 +1,69 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block pageTitle %}
+ Create a new user or request training | GOV.UK Support – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Support",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="#" class="govuk-back-link" onclick="history.back(); return false;">
+    Back
+  </a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">
+      Create a new user or request training
+    </span>
+
+<form method="post" action="/support-app/writing-for-gov-uk-training-answer">
+
+      {{ govukRadios({
+        name: "writingForGovUkTraining",
+        fieldset: {
+          legend: {
+            text: "Do you want " + data.fullName + " to do the Writing for GOV.UK training?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "New publishers who only have access to Manuals Publisher, Specialist Publisher or Travel Advice Publisher can do Writing for GOV.UK training"
+        },
+        items: [
+          {
+            value: "writing-and-publishing-on-gov-uk",
+            text: "Writing and Publishing on GOV.UK "
+          },
+          {
+            value: "writing-and-publishing-on-gov-uk-for-press-officers",
+            text: "Writing and Publishing on GOV.UK for press officers",
+            hint: {
+              text: "If they only need to publish news stories and press releases"
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

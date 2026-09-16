@@ -1,0 +1,96 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block pageTitle %}
+ Create a new user or request training | GOV.UK Support – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+productName: "Support",
+homepageUrl: "/index",
+serviceUrl: "/index",
+navigationClasses: "align-right"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+<a href="#" class="govuk-back-link" onclick="history.back(); return false;">
+Back
+</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row"> <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-xl">
+  Create a new user or request training
+</span>
+
+<form method="post" action="/support-app/whitehall-publisher-training-answer">
+
+  {% if data.requestType == "new-account" %}
+
+    {{ govukRadios({
+      name: "whitehallTraining",
+      fieldset: {
+        legend: {
+          text: "Select the Whitehall Publisher training for " + data.fullName,
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      hint: {
+        text: "All new publishers using Whitehall Publisher must complete training"
+      },
+      items: [
+        {
+          value: "writing-and-publishing-on-gov-uk",
+          text: "Writing and Publishing on GOV.UK"
+        },
+        {
+          value: "writing-and-publishing-on-gov-uk-for-press-officers",
+          text: "Writing and Publishing on GOV.UK for press officers",
+          hint: {
+            text: "If they only need to publish news stories and press releases"
+          }
+        }
+      ]
+    }) }}
+
+  {% elif data.requestType == "refresher-training" %}
+
+    {{ govukRadios({
+      name: "whitehallTraining",
+      fieldset: {
+        legend: {
+          text: "Which refresher training does " + data.fullName + " need for Whitehall Publisher?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      items: [
+        {
+          value: "writing-and-publishing-on-gov-uk",
+          text: "Writing and Publishing on GOV.UK"
+        },
+        {
+          value: "writing-and-publishing-on-gov-uk-for-press-officers",
+          text: "Writing and Publishing on GOV.UK for press officers",
+          hint: {
+            text: "If they only need to publish news stories and press releases"
+          }
+        }
+      ]
+    }) }}
+
+  {% endif %}
+
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+
+</form>
+
+</div> </div>
+
+{% endblock %}

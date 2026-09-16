@@ -1,0 +1,68 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block pageTitle %}
+ Create a new user or request training | GOV.UK Support – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Support",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="#" class="govuk-back-link" onclick="history.back(); return false;">
+    Back
+  </a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">
+      Create a new user or request training
+    </span>
+
+<form method="post" action="/support-app/what-are-you-requesting-answer">
+
+
+      {{ govukRadios({
+        name: "requestType",
+        fieldset: {
+          legend: {
+            text: "What are you requesting for " + data.fullName + "?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "new-account",
+            text: "A new account"
+          },
+          {
+            value: "completed-training",
+            text: "Confirm " + data.fullName + " has completed their Whitehall training"
+          },
+          {
+            value: "refresher-training",
+            text: "Refresher training"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block pageTitle %}
+ Create a new user or request training | GOV.UK Support – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Support",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="#" class="govuk-back-link" onclick="history.back(); return false;">
+    Back
+  </a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">
+      Create a new user or request training
+    </span>
+
+<form method="post" action="/support-app/completed-training-answer">
+
+      {{ govukRadios({
+        name: "editorType",
+        fieldset: {
+          legend: {
+            text: "Does " + data.fullName + " need to be an editor or managing editor on Whitehall Publisher?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "Most organisations are limited to 5 managing editors"
+        },
+        items: [
+          {
+            value: "editor",
+            text: "Make them an editor",
+            hint: {
+              text: "Editors can publish and review (2i) Whitehall content"
+            }
+          },
+          {
+            value: "managing-editor",
+            text: "Make them a managing editor",
+            hint: {
+              text: "Managing editors can do also unpublish or withdraw content, change the format of your organisation page"
+            }
+          },
+          {
+            value: "regular-writer",
+            text: "Keep them as a regular writer"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

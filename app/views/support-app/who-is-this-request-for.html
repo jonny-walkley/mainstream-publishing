@@ -1,0 +1,95 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block pageTitle %}
+ Create a new user or request training | GOV.UK Support – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Support",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="#" class="govuk-back-link" onclick="history.back(); return false;">
+    Back
+  </a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Create a new user or request training</span>
+      Who is this request for?
+    </h1>
+
+<form method="post" action="/support-app/who-is-this-request-for">
+
+      {{ govukInput({
+        label: {
+          text: "Full name"
+        },
+        id: "full-name",
+        name: "fullName",
+        autocomplete: "name",
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Email address"
+        },
+        hint: {
+          text: "The user will be copied into the request"
+        },
+        id: "email",
+        name: "email",
+        type: "email",
+        autocomplete: "email",
+        spellcheck: false
+      }) }}
+
+      {{ govukSelect({
+        id: "sort",
+        name: "sort",
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Organisation"
+        },
+        items: [
+          {
+            value: "published",
+            text: "Recently published"
+          },
+          {
+            value: "updated",
+            text: "Select an organisation",
+            selected: true
+          },
+          {
+            value: "views",
+            text: "Most views"
+          },
+          {
+            value: "comments",
+            text: "Most comments"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,228 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block pageTitle %}
+ Create a new user or request training | GOV.UK Support – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    productName: "Support",
+    homepageUrl: "/index",
+    serviceUrl: "/index",
+    navigationClasses: "align-right"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="#" class="govuk-back-link" onclick="history.back(); return false;">
+    Back
+  </a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Create a new user or request training</span>
+      Check your answers before sending your request
+    </h1>
+
+    <h2 class="govuk-heading-m">
+        Who this request is for
+    </h2>
+
+    <dl class="govuk-summary-list">
+
+      {% if data.fullName %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Full name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data.fullName }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/support-app/who-is-this-request-for">
+            Change<span class="govuk-visually-hidden"> full name</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+      {% if data.email %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data.email }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/support-app/who-is-this-request-for">
+            Change<span class="govuk-visually-hidden"> email address</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+      {% if data.sort %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Organisation
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data.sort }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/support-app/who-is-this-request-for">
+            Change<span class="govuk-visually-hidden"> organisation</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+      </dl>
+
+    <h2 class="govuk-heading-m">
+        Request details
+    </h2>
+          <dl class="govuk-summary-list">
+
+      {% if data.requestType %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Request type
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          {% if data.requestType == "new-account" %}
+            A new account
+          {% elif data.requestType == "completed-training" %}
+            Confirm {{ data.fullName }} has completed their Whitehall training
+          {% elif data.requestType == "refresher-training" %}
+            Refresher training
+          {% endif %}
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/support-app/what-are-you-requesting">
+            Change<span class="govuk-visually-hidden"> request type</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+      {% if data.apps %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Apps
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% for app in data.apps %}
+            {{ app }} 
+            {% if not loop.last %}<br>{% endif %}
+          {% endfor %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/support-app/which-apps">
+            Change<span class="govuk-visually-hidden"> apps</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+{% if data.otherApps %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Other apps
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data.otherApps }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/support-app/which-apps-access-to">
+            Change<span class="govuk-visually-hidden"> apps</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+      {% if data.whitehallTraining %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Whitehall Publisher training
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data.whitehallTraining }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/support-app/whitehall-publisher-training">
+            Change<span class="govuk-visually-hidden"> Whitehall Publisher training</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+
+      {% if data.editorType %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Whitehall Publisher role
+  </dt>
+  <dd class="govuk-summary-list__value">
+
+    {% if data.editorType == "editor" %}
+      Make them an editor
+
+    {% elif data.editorType == "managing-editor" %}
+      Make them a managing editor
+
+    {% elif data.editorType == "regular-writer" %}
+      Keep them as a regular writer
+
+    {% elif data.editorType == "no" %}
+      No
+
+    {% endif %}
+
+  </dd>
+
+  <dd class="govuk-summary-list__actions">
+    <a href="/support-app/completed-training">
+      Change<span class="govuk-visually-hidden"> Whitehall Publisher role</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+
+       {# Who needs a copy #}
+      {% if data.requestCopyEmails %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Who needs a copy of this request
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data.requestCopyEmails }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/support-app/who-needs-a-copy-of-this-request">
+            Change<span class="govuk-visually-hidden"> who needs a copy of this request</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+    </dl>
+
+    {{ govukButton({
+      text: "Confirm and send",
+      href: "confirmation-page"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
