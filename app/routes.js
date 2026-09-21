@@ -79,8 +79,8 @@ router.post('/support-app/check-apps', function (req, res) {
 
   var specialistAppsSelected =
     apps.includes('Manuals Publisher') ||
-    apps.includes('Specialist-Publisher') ||
-    apps.includes('Travel-Advice-Publisher')
+    apps.includes('Specialist Publisher') ||
+    apps.includes('Travel Advice Publisher')
 
   if (whitehallSelected) {
 
