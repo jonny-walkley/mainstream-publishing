@@ -20,26 +20,41 @@ Request complete | GOV.UK Support – GOV.UK Prototype Kit
   
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        
+
       {{ govukPanel({
-        titleText: "Request complete",
-        html: "Your reference number<br><strong>HDJ2123F</strong>"
+        titleText: "Request complete"
       }) }}
 
-      <p class="govuk-body">We have sent you a confirmation email.</p>
+      <p class="govuk-body">We have sent a confirmation email to the email addresses you provided.</p>
 
       <h2 class="govuk-heading-m">What happens next</h2>
 
-      <p class="govuk-body">
-        We’ve sent your application to Hackney Electoral Register Office.
-      </p>
-      <p class="govuk-body">
-        They will contact you either to confirm your registration, or to ask for more information.
-      </p>
+      {% if data.requestType == "new-account" %}
 
-      <p class="govuk-body">
-        <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
-      </p>
+        {% if data.whitehallTraining %}
+
+            <p class="govuk-body">We’ll review your request and let you know when we’ve set up an Integration account for the new user and enrolled them on the training.</p>
+            <p class="govuk-body">Once they’ve completed the training, you can let us know using this form. We’ll then create a Production account for them.</p>
+      
+        {% elif data.writingForGovUkTraining == "Yes" %}
+
+            <p class="govuk-body">We’ll review your request and let you know when the new Production and Integration accounts have been created and the new user has been enrolled on the training.</p>
+
+        {% else %}
+
+            <p class="govuk-body">We’ll review your request and let you know when the new Production and Integration accounts have been created.</p>
+
+        {% endif %} 
+      
+      {% elif data.requestType == "completed-training" %}
+      
+        <p class="govuk-body">We’ll review this request and let you know when the new Production account has been created.</p>
+      
+    {% else %}
+      
+        <p class="govuk-body">We’ll review this request and let you know when the user has been enrolled on the training.</p>
+      
+    {% endif %}
 
     </div>
   </div>

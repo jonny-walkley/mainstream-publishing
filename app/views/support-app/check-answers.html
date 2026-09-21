@@ -95,7 +95,7 @@ Check your answers before sending your request | GOV.UK Support – GOV.UK Proto
         <dd class="govuk-summary-list__value">
 
           {% if data.requestType == "new-account" %}
-            A new account
+            New account for {{ data.fullName }}
           {% elif data.requestType == "completed-training" %}
             Confirm {{ data.fullName }} has completed their Whitehall training
           {% elif data.requestType == "refresher-training" %}
@@ -145,6 +145,29 @@ Check your answers before sending your request | GOV.UK Support – GOV.UK Proto
         </dd>
       </div>
       {% endif %}
+
+
+
+
+
+{% if data.writingForGovUkTraining %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            ‘Writing for GOV.UK’ training
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data.writingForGovUkTraining }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/support-app/writing-for-gov-uk-training">
+            Change<span class="govuk-visually-hidden"> writing for GOV.UK training</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+
+
 
       {% if data.whitehallTraining %}
       <div class="govuk-summary-list__row">
@@ -199,6 +222,20 @@ Check your answers before sending your request | GOV.UK Support – GOV.UK Proto
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data.requestCopyEmails }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/support-app/who-needs-a-copy-of-this-request">
+            Change<span class="govuk-visually-hidden"> who needs a copy of this request</span>
+          </a>
+        </dd>
+      </div>
+      {% else %}
+            <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Who needs a copy of this request
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Not provided
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="/support-app/who-needs-a-copy-of-this-request">
