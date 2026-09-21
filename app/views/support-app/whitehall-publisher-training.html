@@ -1,96 +1,106 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
 {% block pageTitle %}
- Create a new user or request training | GOV.UK Support – GOV.UK Prototype Kit
+Select the Whitehall Publisher training for them | GOV.UK Support – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
 {{ govukHeader({
 productName: "Support",
 homepageUrl: "/index",
-serviceUrl: "/index",
-navigationClasses: "align-right"
+serviceUrl: "/index"
 }) }}
 {% endblock %}
 
 {% block beforeContent %}
-<a href="#" class="govuk-back-link" onclick="history.back(); return false;">
-Back
-</a>
+<a href="#" class="govuk-back-link" onclick="history.back(); return false;">Back</a>
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row"> <div class="govuk-grid-column-two-thirds">
-<span class="govuk-caption-xl">
-  Create a new user or request training
-</span>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+        <span class="govuk-caption-xl">
+            Create a new user or request training
+        </span>
 
-<form method="post" action="/support-app/whitehall-publisher-training-answer">
+        <form method="post" action="/support-app/whitehall-publisher-training-answer">
 
-  {% if data.requestType == "new-account" %}
+            {% if data.requestType == "new-account" %}
 
-    {{ govukRadios({
-      name: "whitehallTraining",
-      fieldset: {
-        legend: {
-          text: "Select the Whitehall Publisher training for " + data.fullName,
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--xl"
-        }
-      },
-      hint: {
-        text: "All new publishers using Whitehall Publisher must complete training"
-      },
-      items: [
-        {
-          value: "writing-and-publishing-on-gov-uk",
-          text: "Writing and Publishing on GOV.UK"
-        },
-        {
-          value: "writing-and-publishing-on-gov-uk-for-press-officers",
-          text: "Writing and Publishing on GOV.UK for press officers",
-          hint: {
-            text: "If they only need to publish news stories and press releases"
-          }
-        }
-      ]
-    }) }}
+                {{ govukRadios({
+                name: "whitehallTraining",
+                fieldset: {
+                    legend: {
+                    text: "Select the Whitehall Publisher training for " + data.fullName,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--xl"
+                    }
+                },
+                hint: {
+                    text: "All new publishers who will use Whitehall Publisher must complete training before they’re given access"
+                },
+                items: [
+                    {
+                    value: "Writing and Publishing on GOV.UK",
+                    text: "Writing and Publishing on GOV.UK"
+                    },
+                    {
+                    value: "Writing and Publishing on GOV.UK for press officers",
+                    text: "Writing and Publishing on GOV.UK for press officers",
+                    hint: {
+                        text: "If they only need to publish news stories and press releases"
+                    }
+                    }
+                ]
+                }) }}
 
-  {% elif data.requestType == "refresher-training" %}
+            {% elif data.requestType == "refresher-training" %}
 
-    {{ govukRadios({
-      name: "whitehallTraining",
-      fieldset: {
-        legend: {
-          text: "Which refresher training does " + data.fullName + " need for Whitehall Publisher?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--xl"
-        }
-      },
-      items: [
-        {
-          value: "writing-and-publishing-on-gov-uk",
-          text: "Writing and Publishing on GOV.UK"
-        },
-        {
-          value: "writing-and-publishing-on-gov-uk-for-press-officers",
-          text: "Writing and Publishing on GOV.UK for press officers",
-          hint: {
-            text: "If they only need to publish news stories and press releases"
-          }
-        }
-      ]
-    }) }}
+                {{ govukRadios({
+                name: "whitehallTraining",
+                fieldset: {
+                    legend: {
+                    text: "Which refresher training does " + data.fullName + " need?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--xl"
+                    }
+                },
+                items: [
+                    {
+                        value: "Writing on GOV.UK",
+                        text: "Writing on GOV.UK",
+                        hint: {
+                            text: "This explains how to meet writing standards for GOV.UK"
+                        }
+                    },
+                    {
+                        value: "Writing and Publishing on GOV.UK",
+                        text: "Writing and Publishing on GOV.UK",
+                        hint: {
+                            text: "This explains how to meet writing standards and how to use Whitehall Publisher"
+                        }
+                    },
+                    {
+                        value: "Writing and Publishing on GOV.UK for press officers",
+                        text: "Writing and Publishing on GOV.UK for press officers",
+                        hint: {
+                            text: "This explains how to meet writing standards and how to use Whitehall Publisher to only publish news articles and press releases"
+                        }
+                    }
+                ]
+                }) }}
 
-  {% endif %}
+            {% endif %}
 
-  {{ govukButton({
-    text: "Continue"
-  }) }}
+            {{ govukButton({
+                text: "Continue"
+            }) }}
+        
+        </form>
 
-</form>
-
-</div> </div>
+    </div>
+</div>
 
 {% endblock %}

@@ -1,22 +1,19 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
 {% block pageTitle %}
- Create a new user or request training | GOV.UK Support – GOV.UK Prototype Kit
+Who is this request for? | GOV.UK Support – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
   {{ govukHeader({
     productName: "Support",
     homepageUrl: "/index",
-    serviceUrl: "/index",
-    navigationClasses: "align-right"
+    serviceUrl: "/index"
   }) }}
 {% endblock %}
 
 {% block beforeContent %}
-  <a href="#" class="govuk-back-link" onclick="history.back(); return false;">
-    Back
-  </a>
+<a href="#" class="govuk-back-link" onclick="history.back(); return false;">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -64,21 +61,21 @@
         },
         items: [
           {
-            value: "published",
-            text: "Recently published"
-          },
-          {
-            value: "updated",
+            value: "none",
             text: "Select an organisation",
             selected: true
           },
           {
-            value: "views",
-            text: "Most views"
+            value: "Department for Work and Pensions (DWP)",
+            text: "Department for Work and Pensions (DWP)"
           },
           {
-            value: "comments",
-            text: "Most comments"
+            value: "Government Digital Service (GDS)",
+            text: "Government Digital Service (GDS)"
+          },
+          {
+            value: "HM Revenue and Customs (HMRC)",
+            text: "HM Revenue and Customs (HMRC)"
           }
         ]
       }) }}

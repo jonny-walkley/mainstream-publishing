@@ -1,22 +1,19 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
 {% block pageTitle %}
- Create a new user or request training | GOV.UK Support – GOV.UK Prototype Kit
+What are you requesting? | GOV.UK Support – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
   {{ govukHeader({
     productName: "Support",
     homepageUrl: "/index",
-    serviceUrl: "/index",
-    navigationClasses: "align-right"
+    serviceUrl: "/index"
   }) }}
 {% endblock %}
 
 {% block beforeContent %}
-  <a href="#" class="govuk-back-link" onclick="history.back(); return false;">
-    Back
-  </a>
+<a href="#" class="govuk-back-link" onclick="history.back(); return false;">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -28,7 +25,7 @@
       Create a new user or request training
     </span>
 
-<form method="post" action="/support-app/what-are-you-requesting-answer">
+    <form method="post" action="/support-app/what-are-you-requesting-answer">
 
 
       {{ govukRadios({
@@ -43,7 +40,7 @@
         items: [
           {
             value: "new-account",
-            text: "A new account"
+            text: "New account for " + data.fullName
           },
           {
             value: "completed-training",
@@ -51,7 +48,7 @@
           },
           {
             value: "refresher-training",
-            text: "Refresher training"
+            text: "Refresher training for " + data.fullName
           }
         ]
       }) }}

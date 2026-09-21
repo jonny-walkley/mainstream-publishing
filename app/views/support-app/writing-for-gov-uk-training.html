@@ -1,22 +1,19 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
 {% block pageTitle %}
- Create a new user or request training | GOV.UK Support – GOV.UK Prototype Kit
+Do you want them to do the Writing for GOV.UK training? | GOV.UK Support – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
   {{ govukHeader({
     productName: "Support",
     homepageUrl: "/index",
-    serviceUrl: "/index",
-    navigationClasses: "align-right"
+    serviceUrl: "/index"
   }) }}
 {% endblock %}
 
 {% block beforeContent %}
-  <a href="#" class="govuk-back-link" onclick="history.back(); return false;">
-    Back
-  </a>
+<a href="#" class="govuk-back-link" onclick="history.back(); return false;">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -28,31 +25,28 @@
       Create a new user or request training
     </span>
 
-<form method="post" action="/support-app/writing-for-gov-uk-training-answer">
+    <form method="post" action="/support-app/writing-for-gov-uk-training-answer">
 
       {{ govukRadios({
         name: "writingForGovUkTraining",
         fieldset: {
           legend: {
-            text: "Do you want " + data.fullName + " to do the Writing for GOV.UK training?",
+            text: "Do you want " + data.fullName + " to do the ‘Writing for GOV.UK’ training?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "New publishers who only have access to Manuals Publisher, Specialist Publisher or Travel Advice Publisher can do Writing for GOV.UK training"
+          text: "You can decide whether " + data.fullName + " does this training. It explains how to meet writing standards for GOV.UK, but not how to use publishing apps."
         },
         items: [
           {
-            value: "writing-and-publishing-on-gov-uk",
-            text: "Writing and Publishing on GOV.UK "
+            value: "Yes",
+            text: "Yes"
           },
           {
-            value: "writing-and-publishing-on-gov-uk-for-press-officers",
-            text: "Writing and Publishing on GOV.UK for press officers",
-            hint: {
-              text: "If they only need to publish news stories and press releases"
-            }
+            value: "No",
+            text: "No"
           }
         ]
       }) }}

@@ -1,22 +1,19 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
 {% block pageTitle %}
- Create a new user or request training | GOV.UK Support – GOV.UK Prototype Kit
+Which apps do they need access to? | GOV.UK Support – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
   {{ govukHeader({
     productName: "Support",
     homepageUrl: "/index",
-    serviceUrl: "/index",
-    navigationClasses: "align-right"
+    serviceUrl: "/index"
   }) }}
 {% endblock %}
 
 {% block beforeContent %}
-  <a href="#" class="govuk-back-link" onclick="history.back(); return false;">
-    Back
-  </a>
+<a href="#" class="govuk-back-link" onclick="history.back(); return false;">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -30,227 +27,116 @@
 
     <form method="post" action="/support-app/check-apps">
 
-  {% set otherHtml %}
-    {{ govukTextarea({
-      id: "otherApps",
-      name: "otherApps",
-      label: {
-        text: "List any other publishing applications and permissions the user needs",
-        classes: "govuk-label--s"
-      },
-      hint: {
-        text: "If you’re not sure what these are, explain what tasks they need to be able to do"
-      },
-      value: data.otherApps
-    }) }}
-  {% endset %}
+        {% set otherHtml %}
+            {{ govukTextarea({
+            id: "otherApps",
+            name: "otherApps",
+            label: {
+                text: "List any other publishing applications that " + data.fullName + " needs",
+                classes: "govuk-label--s"
+            },
+            hint: {
+                text: "If you’re not sure what these are, explain what tasks they need to be able to do"
+            },
+            value: data.otherApps
+            }) }}
+        {% endset %}
 
+        {{ govukCheckboxes({
+            name: "apps",
+            fieldset: {
+            legend: {
+                text: "Which apps does " + data.fullName + " need access to?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+            }
+            },
+            hint: {
+            text: "Select all that apply. All users have access to Content Data, Feedback Explorer, GovSearch and basic Support forms."
+            },
+            items: [
+            {
+                value: "Local Links Manager",
+                text: "Local Links Manager",
+                hint: {
+                text: "Update local transaction pages"
+                },
+                checked: data.apps and "local-links-manager" in data.apps
+            },
 
-  {{ govukCheckboxes({
-    name: "apps",
-    fieldset: {
-      legend: {
-        text: "Which apps does " + data.fullName + " need access to?",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--xl"
-      }
-    },
-    hint: {
-      text: "Select all that apply. All users have basic access to Content Data, Feedback Explorer, GovSearch and Support forms."
-    },
-    items: [
+            {
+                value: "Manuals Publisher",
+                text: "Manuals Publisher",
+                hint: {
+                text: "Create or update manuals"
+                },
+                checked: data.apps and "manuals-publisher" in data.apps
+            },
 
-      {
-        value: "asset-manager",
-        text: "Asset Manager",
-        hint: {
-          text: "Manages assets"
-        },
-        checked: data.apps and "asset-manager" in data.apps
-      },
+            {
+                value: "Places Manager",
+                text: "Places Manager",
+                hint: {
+                text: "Update ‘Find my nearest’ pages"
+                },
+                checked: data.apps and "places-manager" in data.apps
+            },
+            {
+                value: "Specialist publisher",
+                text: "Specialist publisher",
+                hint: {
+                text: "Create or update specialist finders and their content"
+                },
+                checked: data.apps and "specialist-publisher" in data.apps
+            },
+            {
+                value: "Travel Advice Publisher",
+                text: "Travel Advice Publisher",
+                hint: {
+                text: "Update FCDO travel advice"
+                },
+                checked: data.apps and "travel-advice-publisher" in data.apps
+            },
+            {
+                value: "Whitehall Publisher",
+                text: "Whitehall Publisher",
+                hint: {
+                text: "Create or update GOV.UK content"
+                },
+                checked: data.apps and "whitehall" in data.apps
+            },
 
-      {
-        value: "collections-publisher",
-        text: "Collections publisher",
-        hint: {
-          text: "Edit specialist topic pages, mainstream browse pages and step-by-step pages"
-        },
-        checked: data.apps and "collections-publisher" in data.apps
-      },
+            {
+                value: "Other apps",
+                text: "Other apps",
+                checked: data.apps and "other" in data.apps,
+                conditional: {
+                html: otherHtml
+                }
+            },
 
-      {
-        value: "content-preview",
-        text: "Content Preview",
-        hint: {
-          text: "Draft version of GOV.UK"
-        },
-        checked: data.apps and "content-preview" in data.apps
-      },
+            {
+                divider: "or"
+            },
 
-      {
-        value: "content-tagger",
-        text: "Content Tagger",
-        hint: {
-          text: "Tag content on GOV.UK"
-        },
-        checked: data.apps and "content-tagger" in data.apps
-      },
+            {
+                value: "None",
+                text: "None",
+                hint: {
+                text: data.fullName + " does not need anything other than access to Content Data, Feedback Explorer, GovSearch and basic Support forms"
+                },
+                behaviour: "exclusive",
+                checked: data.apps and "none" in data.apps
+            }
 
-      {
-        value: "fact-check-manager",
-        text: "Fact Check Manager",
-        hint: {
-          text: "Manages the Fact Check process for Mainstream content"
-        },
-        checked: data.apps and "fact-check-manager" in data.apps
-      },
+            ]
+        }) }}
 
-      {
-        value: "licensing",
-        text: "Licensing",
-        hint: {
-          text: "Review applications for licences"
-        },
-        checked: data.apps and "licensing" in data.apps
-      },
+        {{ govukButton({
+            text: "Continue"
+        }) }}
 
-      {
-        value: "local-links-manager",
-        text: "Local Links Manager",
-        hint: {
-          text: "Manages local links"
-        },
-        checked: data.apps and "local-links-manager" in data.apps
-      },
-
-      {
-        value: "manuals-publisher",
-        text: "Manuals Publisher",
-        hint: {
-          text: "Create and manage manuals"
-        },
-        checked: data.apps and "manuals-publisher" in data.apps
-      },
-
-      {
-        value: "places-manager",
-        text: "Places Manager",
-        hint: {
-          text: "Create and update data sets for ‘find my nearest’ pages"
-        },
-        checked: data.apps and "places-manager" in data.apps
-      },
-
-      {
-        value: "publisher",
-        text: "Publisher",
-        hint: {
-          text: "Publish mainstream content"
-        },
-        checked: data.apps and "publisher" in data.apps
-      },
-
-      {
-        value: "release",
-        text: "Release",
-        hint: {
-          text: "App to manage releases to GOV.UK production"
-        },
-        checked: data.apps and "release" in data.apps
-      },
-
-      {
-        value: "search-admin",
-        text: "Search Admin",
-        hint: {
-          text: "Manages search and browse data such as best bets"
-        },
-        checked: data.apps and "search-admin" in data.apps
-      },
-
-      {
-        value: "service-manual-publisher",
-        text: "Service Manual Publisher",
-        hint: {
-          text: "Creates and manages content for the service manual"
-        },
-        checked: data.apps and "service-manual-publisher" in data.apps
-      },
-
-      {
-        value: "short-url-manager",
-        text: "Short URL Manager",
-        hint: {
-          text: "Manage short URLs"
-        },
-        checked: data.apps and "short-url-manager" in data.apps
-      },
-
-      {
-        value: "specialist-publisher",
-        text: "Specialist publisher",
-        hint: {
-          text: "Publisher tool for specialist documents"
-        },
-        checked: data.apps and "specialist-publisher" in data.apps
-      },
-
-      {
-        value: "transition",
-        text: "Transition",
-        hint: {
-          text: "Dashboard and control panel for websites transitioning to GOV.UK"
-        },
-        checked: data.apps and "transition" in data.apps
-      },
-
-      {
-        value: "travel-advice-publisher",
-        text: "Travel Advice Publisher",
-        hint: {
-          text: "Publishing tool for FCDO Travel Advice"
-        },
-        checked: data.apps and "travel-advice-publisher" in data.apps
-      },
-
-      {
-        value: "whitehall",
-        text: "Whitehall",
-        hint: {
-          text: "Publish government content"
-        },
-        checked: data.apps and "whitehall" in data.apps
-      },
-
-      {
-        value: "other",
-        text: "Other",
-        checked: data.apps and "other" in data.apps,
-        conditional: {
-          html: otherHtml
-        }
-      },
-
-      {
-        divider: "or"
-      },
-
-      {
-        value: "none",
-        text: "None",
-        behaviour: "exclusive",
-        checked: data.apps and "none" in data.apps
-      }
-
-    ]
-  }) }}
-
-
-  {{ govukButton({
-    text: "Continue"
-  }) }}
-
-</form>
+    </form>
 
   </div>
 </div>

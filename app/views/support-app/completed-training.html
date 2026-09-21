@@ -1,22 +1,19 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
 {% block pageTitle %}
- Create a new user or request training | GOV.UK Support – GOV.UK Prototype Kit
+Do they need to be an editor or managing editor on Whitehall Publisher? | GOV.UK Support – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
   {{ govukHeader({
     productName: "Support",
     homepageUrl: "/index",
-    serviceUrl: "/index",
-    navigationClasses: "align-right"
+    serviceUrl: "/index"
   }) }}
 {% endblock %}
 
 {% block beforeContent %}
-  <a href="#" class="govuk-back-link" onclick="history.back(); return false;">
-    Back
-  </a>
+<a href="#" class="govuk-back-link" onclick="history.back(); return false;">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -54,7 +51,7 @@
             value: "managing-editor",
             text: "Make them a managing editor",
             hint: {
-              text: "Managing editors can do also unpublish or withdraw content, change the format of your organisation page"
+              text: "Managing editors can publish, review (2i), unpublish and withdraw Whitehall content"
             }
           },
           {

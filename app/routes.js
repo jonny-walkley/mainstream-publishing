@@ -75,12 +75,12 @@ router.post('/support-app/check-apps', function (req, res) {
 
   var apps = req.session.data['apps'] || []
 
-  var whitehallSelected = apps.includes('whitehall')
+  var whitehallSelected = apps.includes('Whitehall Publisher')
 
   var specialistAppsSelected =
-    apps.includes('manuals-publisher') ||
-    apps.includes('specialist-publisher') ||
-    apps.includes('travel-advice-publisher')
+    apps.includes('Manuals Publisher') ||
+    apps.includes('Specialist-Publisher') ||
+    apps.includes('Travel-Advice-Publisher')
 
   if (whitehallSelected) {
 

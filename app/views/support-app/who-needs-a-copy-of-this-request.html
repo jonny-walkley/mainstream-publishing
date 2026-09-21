@@ -1,22 +1,19 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
 {% block pageTitle %}
- Create a new user or request training | GOV.UK Support – GOV.UK Prototype Kit
+Who needs a copy of this request? | GOV.UK Support – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
   {{ govukHeader({
     productName: "Support",
     homepageUrl: "/index",
-    serviceUrl: "/index",
-    navigationClasses: "align-right"
+    serviceUrl: "/index"
   }) }}
 {% endblock %}
 
 {% block beforeContent %}
-  <a href="#" class="govuk-back-link" onclick="history.back(); return false;">
-    Back
-  </a>
+<a href="#" class="govuk-back-link" onclick="history.back(); return false;">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -29,14 +26,14 @@
       Who needs a copy of this request?
     </h1>
 
-<form method="post" action="/support-app/who-needs-a-copy-of-this-request-answer">
+    <form method="post" action="/support-app/who-needs-a-copy-of-this-request-answer">
 
         {{ govukInput({
             label: {
             text: "Email addresses"
             },
             hint: {
-            text: "Separate multiple email addresses with a comma or semi‑colon, followed by a space"
+            text: "Leave the field blank if no one other than " + data.fullName + " needs a copy. If multiple people need a copy, separate their email addresses with a comma or semicolon followed by a space."
             },
             id: "request-copy-emails",
             name: "requestCopyEmails",
