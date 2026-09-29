@@ -25,34 +25,39 @@ Request complete | GOV.UK Support – GOV.UK Prototype Kit
         titleText: "Request complete"
       }) }}
 
-      <p class="govuk-body">We have sent a confirmation email to the email addresses you provided.</p>
+      <p class="govuk-body">We have sent a confirmation email to the email addresses you provided. Reply to that email if you have any questions or need any help.</p>
 
       <h2 class="govuk-heading-m">What happens next</h2>
 
       {% if data.requestType == "new-account" %}
 
         {% if data.whitehallTraining %}
-
-            <p class="govuk-body">We’ll review your request and let you know when we’ve set up an Integration account for the new user and enrolled them on the training.</p>
-            <p class="govuk-body">Once they’ve completed the training, you can let us know using this form. We’ll then create a Production account for them.</p>
       
+            <p class="govuk-body">{{ data['fullName'] }} will be enrolled in the training automatically. They’ll get an email about that.</p>
+            <p class="govuk-body">We’ll set up an Integration account for them within 2 days so they can complete the training. We’ll let you know when we’ve done that.</p>
+            <p class="govuk-body">Let us know when they’ve completed the training using this form. We’ll then create a Production account for the user, with the same apps as their Integration account.</p>
+            
         {% elif data.writingForGovUkTraining == "Yes" %}
 
-            <p class="govuk-body">We’ll review your request and let you know when the new Production and Integration accounts have been created and the new user has been enrolled on the training.</p>
+            <p class="govuk-body">{{ data['fullName'] }} will be enrolled in the training automatically. They’ll get an email about that. </p>
+            <p class="govuk-body">We’ll set up their Production and Integration account for them within 2 days. We’ll let you know when we’ve done that.</p>
+            <p class="govuk-body">You do not need to tell us when they complete the training. </p>
 
         {% else %}
 
-            <p class="govuk-body">We’ll review your request and let you know when the new Production and Integration accounts have been created.</p>
+            <p class="govuk-body">We’ll review your request within 2 days. We’ll then let you know when the new Production and Integration accounts have been created.</p>
 
         {% endif %} 
       
       {% elif data.requestType == "completed-training" %}
       
-        <p class="govuk-body">We’ll review this request and let you know when the new Production account has been created.</p>
+        <p class="govuk-body">We’ll review this request within 2 days. We’ll then let you know when the new Production account has been created. It will have the same apps as the user’s Integration account.</p>
       
     {% else %}
       
-        <p class="govuk-body">We’ll review this request and let you know when the user has been enrolled on the training.</p>
+        <p class="govuk-body">{{ data['fullName'] }} will be enrolled in the training automatically. They’ll get an email about that.</p>
+        <p class="govuk-body">You may have to unsuspend their Integration account if they need it for the training.</p>
+        <p class="govuk-body">You do not need to tell us when they complete the training.</p>
       
     {% endif %}
 
