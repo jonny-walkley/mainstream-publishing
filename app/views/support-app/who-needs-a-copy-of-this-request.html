@@ -21,27 +21,53 @@ Who needs a copy of this request? | GOV.UK Support – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">
+    <!-- <h1 class="govuk-heading-xl">
       <span class="govuk-caption-xl">Create a new user or request training</span>
-      Who needs a copy of this request?
-    </h1>
+      Does anyone other than {{ data['fullName'] }} need a copy of this request?
+    </h1> -->
 
     <form method="post" action="/support-app/who-needs-a-copy-of-this-request-answer">
 
+      {% set emailHtml %}
         {{ govukInput({
-            label: {
+          id: "request-copy-emails",
+          name: "requestCopyEmails",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false,
+          label: {
             text: "Email addresses"
-            },
-            hint: {
-            text: "Leave the field blank if no one other than " + data.fullName + " needs a copy. If multiple people need a copy, separate their email addresses with a comma or semicolon followed by a space."
-            },
-            id: "request-copy-emails",
-            name: "requestCopyEmails",
-            value: data.requestCopyEmails,
-            type: "email",
-            autocomplete: "email",
-            spellcheck: false
-        }) }}  
+          },
+          hint: {
+            text: "If multiple people need a copy, separate their email addresses with a comma followed by a space"
+          }
+        }) }}
+      {% endset -%}
+
+
+      {{ govukRadios({
+        name: "copyOfRequest",
+        fieldset: {
+          legend: {
+            html: "<span class='govuk-caption-xl'>Create new user or request training</span>Does anyone other than " + data.fullName + " need a copy of this request?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            conditional: {
+              html: emailHtml
+            }
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
 
       {{ govukButton({
         text: "Continue"

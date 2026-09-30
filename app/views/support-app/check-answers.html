@@ -214,14 +214,15 @@ Check your answers before sending your request | GOV.UK Support – GOV.UK Proto
 {% endif %}
 
 
-       {# Who needs a copy #}
-      {% if data.requestCopyEmails %}
-      <div class="govuk-summary-list__row">
+
+
+
+<div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Who needs a copy of this request
+          Does anyone other than {{ data['fullName']}} need a copy of this request?
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data.requestCopyEmails }}
+          {{ data.copyOfRequest }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="/support-app/who-needs-a-copy-of-this-request">
@@ -229,13 +230,16 @@ Check your answers before sending your request | GOV.UK Support – GOV.UK Proto
           </a>
         </dd>
       </div>
-      {% else %}
-            <div class="govuk-summary-list__row">
+
+
+       {# Who needs a copy #}
+      {% if data.copyOfRequest == "Yes" %}
+      <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Who needs a copy of this request
+          Email addresses
         </dt>
         <dd class="govuk-summary-list__value">
-          Not provided
+          {{ data.requestCopyEmails }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="/support-app/who-needs-a-copy-of-this-request">
