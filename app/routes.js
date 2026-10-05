@@ -47,21 +47,21 @@ router.post('/ur-1-pension-credit-breadcrumb-answer', function(request, response
 
 // Support app routes
 
-router.post('/support-app/who-is-this-request-for', function (req, res) {
-  res.render('support-app/what-are-you-requesting')
+router.post('/support-app/what-do-you-need', function (req, res) {
+  res.redirect('/support-app/who-is-this-request-for')
 })
 
-router.post('/support-app/what-are-you-requesting-answer', function (req, res) {
+router.post('/support-app/who-is-this-request-for', function (req, res) {
 
   var requestType = req.session.data['requestType']
 
   if (requestType == "new-account") {
 
-    res.redirect('/support-app/which-apps-access-to')
+    res.redirect('/support-app/which-apps')
 
   } else if (requestType == "completed-training") {
 
-    res.redirect('/support-app/completed-training')
+    res.redirect('/support-app/copy-of-request')
 
   } else if (requestType == "refresher-training") {
 
@@ -95,24 +95,24 @@ router.post('/support-app/check-apps', function (req, res) {
   } else {
 
     // No Whitehall and no specialist apps
-    res.redirect('/support-app/who-needs-a-copy-of-this-request')
+    res.redirect('/support-app/copy-of-request')
 
   }
 
 })
 
 router.post('/support-app/whitehall-publisher-training-answer', function (req, res) {
-  res.render('support-app/who-needs-a-copy-of-this-request')
+  res.redirect('/support-app/copy-of-request')
 })
 
 router.post('/support-app/writing-for-gov-uk-training-answer', function (req, res) {
-  res.render('support-app/who-needs-a-copy-of-this-request')
+  res.redirect('/support-app/copy-of-request')
 })
 
-router.post('/support-app/who-needs-a-copy-of-this-request-answer', function (req, res) {
-  res.render('support-app/check-answers')
+router.post('/support-app/copy-of-request-answer', function (req, res) {
+  res.redirect('/support-app/check-answers')
 })
 
 router.post('/support-app/completed-training-answer', function (req, res) {
-  res.render('support-app/who-needs-a-copy-of-this-request')
+  res.redirect('/support-app/copy-of-request')
 })

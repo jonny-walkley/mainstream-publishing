@@ -26,12 +26,13 @@ Who needs a copy of this request? | GOV.UK Support – GOV.UK Prototype Kit
       Does anyone other than {{ data['fullName'] }} need a copy of this request?
     </h1> -->
 
-    <form method="post" action="/support-app/who-needs-a-copy-of-this-request-answer">
+    <form method="post" action="/support-app/copy-of-request-answer">
 
       {% set emailHtml %}
         {{ govukInput({
           id: "request-copy-emails",
           name: "requestCopyEmails",
+          value: data.requestCopyEmails,
           type: "email",
           autocomplete: "email",
           spellcheck: false,
@@ -47,11 +48,12 @@ Who needs a copy of this request? | GOV.UK Support – GOV.UK Prototype Kit
 
       {{ govukRadios({
         name: "copyOfRequest",
+        value: data.copyOfRequest,
         fieldset: {
           legend: {
             html: "<span class='govuk-caption-xl'>Create new user or request training</span>Does anyone other than " + data.fullName + " need a copy of this request?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
+            classes: "govuk-fieldset__legend--xl"
           }
         },
         items: [

@@ -1,7 +1,7 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
 {% block pageTitle %}
-Which apps do they need access to? | GOV.UK Support – GOV.UK Prototype Kit
+Which apps do they need? | GOV.UK Support – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -32,7 +32,7 @@ Which apps do they need access to? | GOV.UK Support – GOV.UK Prototype Kit
             id: "otherApps",
             name: "otherApps",
             label: {
-                text: "List any other publishing applications that " + data.fullName + " needs",
+                text: "List any other publishing apps that " + data.fullName + " needs",
                 classes: "govuk-label--s"
             },
             hint: {
@@ -46,24 +46,23 @@ Which apps do they need access to? | GOV.UK Support – GOV.UK Prototype Kit
             name: "apps",
             fieldset: {
             legend: {
-                text: "Which apps does " + data.fullName + " need access to?",
+                text: "Which apps does " + data.fullName + " need?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl"
             }
             },
             hint: {
-            text: "Select all that apply. All users have access to Content Data, Feedback Explorer, GovSearch and basic Support forms."
+            text: "Select all that apply. All users have Content Data, Feedback Explorer, GovSearch and basic Support forms."
             },
             items: [
             {
-                value: "Local Links Manager",
-                text: "Local Links Manager",
+                value: "Whitehall Publisher",
+                text: "Whitehall Publisher",
                 hint: {
-                text: "Update local transaction pages"
+                text: "Create or update GOV.UK content"
                 },
-                checked: data.apps and "local-links-manager" in data.apps
+                checked: data.apps and "whitehall" in data.apps
             },
-
             {
                 value: "Manuals Publisher",
                 text: "Manuals Publisher",
@@ -71,15 +70,6 @@ Which apps do they need access to? | GOV.UK Support – GOV.UK Prototype Kit
                 text: "Create or update manuals"
                 },
                 checked: data.apps and "manuals-publisher" in data.apps
-            },
-
-            {
-                value: "Places Manager",
-                text: "Places Manager",
-                hint: {
-                text: "Update ‘Find my nearest’ pages"
-                },
-                checked: data.apps and "places-manager" in data.apps
             },
             {
                 value: "Specialist Publisher",
@@ -98,14 +88,21 @@ Which apps do they need access to? | GOV.UK Support – GOV.UK Prototype Kit
                 checked: data.apps and "travel-advice-publisher" in data.apps
             },
             {
-                value: "Whitehall Publisher",
-                text: "Whitehall Publisher",
+                value: "Local Links Manager",
+                text: "Local Links Manager",
                 hint: {
-                text: "Create or update GOV.UK content"
+                text: "Update local transaction pages"
                 },
-                checked: data.apps and "whitehall" in data.apps
+                checked: data.apps and "local-links-manager" in data.apps
             },
-
+            {
+                value: "Places Manager",
+                text: "Places Manager",
+                hint: {
+                text: "Update ‘Find my nearest’ pages"
+                },
+                checked: data.apps and "places-manager" in data.apps
+            },
             {
                 value: "Other apps",
                 text: "Other apps",
@@ -123,7 +120,7 @@ Which apps do they need access to? | GOV.UK Support – GOV.UK Prototype Kit
                 value: "None",
                 text: "None",
                 hint: {
-                text: data.fullName + " does not need anything other than access to Content Data, Feedback Explorer, GovSearch and basic Support forms"
+                text: "Select if " + data.fullName + " does not need anything other than Content Data, Feedback Explorer, GovSearch and basic Support forms"
                 },
                 behaviour: "exclusive",
                 checked: data.apps and "none" in data.apps

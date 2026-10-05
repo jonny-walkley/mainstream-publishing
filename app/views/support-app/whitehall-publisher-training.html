@@ -31,6 +31,7 @@ serviceUrl: "/index"
 
                 {{ govukRadios({
                 name: "whitehallTraining",
+                value: data.whitehallTraining,
                 fieldset: {
                     legend: {
                     text: "Select the Whitehall Publisher training for " + data.fullName,
@@ -39,19 +40,19 @@ serviceUrl: "/index"
                     }
                 },
                 hint: {
-                    text: "All new publishers who will use Whitehall Publisher must complete training before they’re given access"
+                    text: "All new publishers using Whitehall Publisher must complete training before they’re given access. Pick one of the training courses, depending on what content " + data.fullName + " will be publishing."
                 },
                 items: [
                     {
-                    value: "Writing and Publishing on GOV.UK",
-                    text: "Writing and Publishing on GOV.UK"
+                        value: "Writing and Publishing on GOV.UK for press officers",
+                        text: "Writing and Publishing on GOV.UK for press officers",
+                        hint: {
+                            text: "If they only need to publish news stories and press releases"
+                        }
                     },
                     {
-                    value: "Writing and Publishing on GOV.UK for press officers",
-                    text: "Writing and Publishing on GOV.UK for press officers",
-                    hint: {
-                        text: "If they only need to publish news stories and press releases"
-                    }
+                        value: "Writing and Publishing on GOV.UK for all other publishers",
+                        text: "Writing and Publishing on GOV.UK for all other publishers"
                     }
                 ]
                 }) }}

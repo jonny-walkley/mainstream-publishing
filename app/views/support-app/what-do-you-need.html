@@ -1,7 +1,7 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
 {% block pageTitle %}
-What are you requesting? | GOV.UK Support – GOV.UK Prototype Kit
+What do you need? | GOV.UK Support – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -25,7 +25,7 @@ What are you requesting? | GOV.UK Support – GOV.UK Prototype Kit
       Create a new user or request training
     </span>
 
-    <form method="post" action="/support-app/what-are-you-requesting-answer">
+    <form method="post" action="/support-app/what-do-you-need">
 
 
       {{ govukRadios({
@@ -33,7 +33,7 @@ What are you requesting? | GOV.UK Support – GOV.UK Prototype Kit
         value: data.requestType,
         fieldset: {
           legend: {
-            text: "What are you requesting for " + data.fullName + "?",
+            text: "What do you need?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -41,15 +41,15 @@ What are you requesting? | GOV.UK Support – GOV.UK Prototype Kit
         items: [
           {
             value: "new-account",
-            text: "New account for " + data.fullName
+            text: "New account"
           },
           {
             value: "completed-training",
-            text: "Confirm " + data.fullName + " has completed their Whitehall training"
+            text: "Confirm user has completed their Whitehall training"
           },
           {
             value: "refresher-training",
-            text: "Refresher training for " + data.fullName
+            text: "Refresher training"
           }
         ]
       }) }}
