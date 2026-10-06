@@ -35,7 +35,7 @@ Request complete | GOV.UK Support – GOV.UK Prototype Kit
       
             <p class="govuk-body">{{ data['fullName'] }} will be enrolled in the training automatically. They’ll get an email about that.</p>
             <p class="govuk-body">We’ll set up an Integration account for them within 2 days so they can complete the training. We’ll let you know when we’ve done that.</p>
-            <p class="govuk-body">Let us know when they’ve completed the training using this form. We’ll then create a Production account for the user, with the same apps as their Integration account.</p>
+            <p class="govuk-body">Let us know when they’ve completed the training using this form. We’ll then create a Production account for {{ data['fullName'] }}, with the same apps as their Integration account.</p>
             
         {% elif data.writingForGovUkTraining == "Yes" %}
 
@@ -51,9 +51,9 @@ Request complete | GOV.UK Support – GOV.UK Prototype Kit
       
       {% elif data.requestType == "completed-training" %}
       
-        <p class="govuk-body">We’ll review this request within 2 days. We’ll then let you know when the new Production account has been created. It will have the same apps as the user’s Integration account.</p>
+        <p class="govuk-body">We’ll review this request within 2 days. We’ll then let you know when the new Production account has been created. It will have the same apps as {{ data['fullName'] }}’s Integration account.</p>
       
-    {% else %}
+      {% else %}
       
         <p class="govuk-body">{{ data['fullName'] }} will be enrolled in the training automatically. They’ll get an email about that.</p>
         <p class="govuk-body">You may have to unsuspend their Integration account if they need it for the training.</p>

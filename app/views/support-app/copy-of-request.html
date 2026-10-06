@@ -1,7 +1,7 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
 {% block pageTitle %}
-Who needs a copy of this request? | GOV.UK Support – GOV.UK Prototype Kit
+Does anyone other than the user need a copy of this request? | GOV.UK Support – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -21,11 +21,6 @@ Who needs a copy of this request? | GOV.UK Support – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <!-- <h1 class="govuk-heading-xl">
-      <span class="govuk-caption-xl">Create a new user or request training</span>
-      Does anyone other than {{ data['fullName'] }} need a copy of this request?
-    </h1> -->
-
     <form method="post" action="/support-app/copy-of-request-answer">
 
       {% set emailHtml %}
@@ -44,7 +39,6 @@ Who needs a copy of this request? | GOV.UK Support – GOV.UK Prototype Kit
           }
         }) }}
       {% endset -%}
-
 
       {{ govukRadios({
         name: "copyOfRequest",

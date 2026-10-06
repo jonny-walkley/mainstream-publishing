@@ -21,10 +21,6 @@ serviceUrl: "/index"
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         
-        <span class="govuk-caption-xl">
-            Create a new user or request training
-        </span>
-
         <form method="post" action="/support-app/whitehall-publisher-training-answer">
 
             {% if data.requestType == "new-account" %}
@@ -34,7 +30,7 @@ serviceUrl: "/index"
                 value: data.whitehallTraining,
                 fieldset: {
                     legend: {
-                    text: "Select the Whitehall Publisher training for " + data.fullName,
+                    html: "<span class='govuk-caption-xl'>Create a new user or request training</span>Select the Whitehall Publisher training for " + data.fullName,
                     isPageHeading: true,
                     classes: "govuk-fieldset__legend--xl"
                     }

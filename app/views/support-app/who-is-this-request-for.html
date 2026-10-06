@@ -26,7 +26,7 @@ Who is this request for? | GOV.UK Support – GOV.UK Prototype Kit
       Who is this request for?
     </h1>
 
-<form method="post" action="/support-app/who-is-this-request-for">
+    <form method="post" action="/support-app/who-is-this-request-for">
 
       {{ govukInput({
         label: {
@@ -52,12 +52,11 @@ Who is this request for? | GOV.UK Support – GOV.UK Prototype Kit
         type: "email",
         autocomplete: "email",
         spellcheck: false
-      }) }}
-
-      
+      }) }}   
 
       {{ govukSelect({
         id: "sort",
+        value: data.sort,
         name: "sort",
         classes: "govuk-!-width-full",
         label: {

@@ -21,15 +21,12 @@ Which apps do they need? | GOV.UK Support – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <span class="govuk-caption-xl">
-      Create a new user or request training
-    </span>
-
     <form method="post" action="/support-app/check-apps">
 
         {% set otherHtml %}
             {{ govukTextarea({
             id: "otherApps",
+            value: data.otherApps,
             name: "otherApps",
             label: {
                 text: "List any other publishing apps that " + data.fullName + " needs",
@@ -46,13 +43,13 @@ Which apps do they need? | GOV.UK Support – GOV.UK Prototype Kit
             name: "apps",
             fieldset: {
             legend: {
-                text: "Which apps does " + data.fullName + " need?",
+                html: "<span class='govuk-caption-xl'>Create a new user or request training</span>Which apps does " + data.fullName + " need?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl"
             }
             },
             hint: {
-            text: "Select all that apply. All users have Content Data, Feedback Explorer, GovSearch and basic Support forms."
+                text: "Select all that apply. All users have Content Data, Feedback Explorer, GovSearch and basic Support forms."
             },
             items: [
             {
@@ -61,7 +58,7 @@ Which apps do they need? | GOV.UK Support – GOV.UK Prototype Kit
                 hint: {
                 text: "Create or update GOV.UK content"
                 },
-                checked: data.apps and "whitehall" in data.apps
+                checked: data.apps and "Whitehall Publisher" in data.apps
             },
             {
                 value: "Manuals Publisher",
@@ -69,7 +66,7 @@ Which apps do they need? | GOV.UK Support – GOV.UK Prototype Kit
                 hint: {
                 text: "Create or update manuals"
                 },
-                checked: data.apps and "manuals-publisher" in data.apps
+                checked: data.apps and "Manuals Publisher" in data.apps
             },
             {
                 value: "Specialist Publisher",
@@ -77,7 +74,7 @@ Which apps do they need? | GOV.UK Support – GOV.UK Prototype Kit
                 hint: {
                 text: "Create or update specialist finders and their content"
                 },
-                checked: data.apps and "specialist-publisher" in data.apps
+                checked: data.apps and "Specialist Publisher" in data.apps
             },
             {
                 value: "Travel Advice Publisher",
@@ -85,7 +82,7 @@ Which apps do they need? | GOV.UK Support – GOV.UK Prototype Kit
                 hint: {
                 text: "Update FCDO travel advice"
                 },
-                checked: data.apps and "travel-advice-publisher" in data.apps
+                checked: data.apps and "Travel Advice Publisher" in data.apps
             },
             {
                 value: "Local Links Manager",
@@ -93,7 +90,7 @@ Which apps do they need? | GOV.UK Support – GOV.UK Prototype Kit
                 hint: {
                 text: "Update local transaction pages"
                 },
-                checked: data.apps and "local-links-manager" in data.apps
+                checked: data.apps and "Local Links Manager" in data.apps
             },
             {
                 value: "Places Manager",
@@ -101,12 +98,12 @@ Which apps do they need? | GOV.UK Support – GOV.UK Prototype Kit
                 hint: {
                 text: "Update ‘Find my nearest’ pages"
                 },
-                checked: data.apps and "places-manager" in data.apps
+                checked: data.apps and "Places Manager" in data.apps
             },
             {
                 value: "Other apps",
                 text: "Other apps",
-                checked: data.apps and "other" in data.apps,
+                checked: data.apps and "Other apps" in data.apps,
                 conditional: {
                 html: otherHtml
                 }
@@ -123,7 +120,7 @@ Which apps do they need? | GOV.UK Support – GOV.UK Prototype Kit
                 text: "Select if " + data.fullName + " does not need anything other than Content Data, Feedback Explorer, GovSearch and basic Support forms"
                 },
                 behaviour: "exclusive",
-                checked: data.apps and "none" in data.apps
+                checked: data.apps and "None" in data.apps
             }
 
             ]

@@ -21,10 +21,6 @@ Do you want them to do the ‘Writing for GOV.UK’ training? | GOV.UK Support �
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <span class="govuk-caption-xl">
-      Create a new user or request training
-    </span>
-
     <form method="post" action="/support-app/writing-for-gov-uk-training-answer">
 
       {{ govukRadios({
@@ -32,7 +28,7 @@ Do you want them to do the ‘Writing for GOV.UK’ training? | GOV.UK Support �
         value: data.writingForGovUkTraining,
         fieldset: {
           legend: {
-            text: "Do you want " + data.fullName + " to do the ‘Writing for GOV.UK’ training?",
+            html: "<span class='govuk-caption-xl'>Create a new user or request training</span>Do you want " + data.fullName + " to do the ‘Writing for GOV.UK’ training?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }

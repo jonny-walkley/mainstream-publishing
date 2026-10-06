@@ -41,7 +41,7 @@ Check your answers before sending your request | GOV.UK Support – GOV.UK Proto
           {{ data.fullName }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="/support-app/who-is-this-request-for">
+          <a class="govuk-link" href="/support-app/who-is-this-request-for">
             Change<span class="govuk-visually-hidden"> full name</span>
           </a>
         </dd>
@@ -57,7 +57,7 @@ Check your answers before sending your request | GOV.UK Support – GOV.UK Proto
           {{ data.email }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="/support-app/who-is-this-request-for">
+          <a class="govuk-link" href="/support-app/who-is-this-request-for">
             Change<span class="govuk-visually-hidden"> email address</span>
           </a>
         </dd>
@@ -73,19 +73,20 @@ Check your answers before sending your request | GOV.UK Support – GOV.UK Proto
           {{ data.sort }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="/support-app/who-is-this-request-for">
+          <a class="govuk-link" href="/support-app/who-is-this-request-for">
             Change<span class="govuk-visually-hidden"> organisation</span>
           </a>
         </dd>
       </div>
       {% endif %}
 
-      </dl>
+    </dl>
 
     <h2 class="govuk-heading-m">
         Request details
     </h2>
-          <dl class="govuk-summary-list">
+    
+    <dl class="govuk-summary-list">
 
       {% if data.requestType %}
       <div class="govuk-summary-list__row">
@@ -104,7 +105,7 @@ Check your answers before sending your request | GOV.UK Support – GOV.UK Proto
 
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="/support-app/what-do-you-need">
+          <a class="govuk-link" href="/support-app/what-do-you-need">
             Change<span class="govuk-visually-hidden"> request type</span>
           </a>
         </dd>
@@ -117,20 +118,25 @@ Check your answers before sending your request | GOV.UK Support – GOV.UK Proto
           Apps
         </dt>
         <dd class="govuk-summary-list__value">
-          {% for app in data.apps %}
-            {{ app }} 
-            {% if not loop.last %}<br>{% endif %}
-          {% endfor %}
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Content Data</li>
+            <li>Feedback Explorer</li>
+            <li>GovSearch</li>
+            <li>basic Support forms</li>
+            {% for app in data.apps %}
+              <li>{{ app }}</li>
+            {% endfor %}
+          </ul>
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="/support-app/which-apps">
+          <a class="govuk-link" href="/support-app/which-apps">
             Change<span class="govuk-visually-hidden"> apps</span>
           </a>
         </dd>
       </div>
       {% endif %}
 
-{% if data.otherApps %}
+      {% if data.otherApps %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Other apps
@@ -139,18 +145,14 @@ Check your answers before sending your request | GOV.UK Support – GOV.UK Proto
           {{ data.otherApps }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="/support-app/which-apps">
+          <a class="govuk-link" href="/support-app/which-apps">
             Change<span class="govuk-visually-hidden"> apps</span>
           </a>
         </dd>
       </div>
       {% endif %}
 
-
-
-
-
-{% if data.writingForGovUkTraining %}
+      {% if data.writingForGovUkTraining %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
             ‘Writing for GOV.UK’ training
@@ -159,65 +161,30 @@ Check your answers before sending your request | GOV.UK Support – GOV.UK Proto
           {{ data.writingForGovUkTraining }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="/support-app/writing-for-gov-uk-training">
+          <a class="govuk-link" href="/support-app/writing-for-gov-uk-training">
             Change<span class="govuk-visually-hidden"> writing for GOV.UK training</span>
           </a>
         </dd>
       </div>
       {% endif %}
 
-
-
-
       {% if data.whitehallTraining %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-        Training
+        Whitehall Publisher training
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data.whitehallTraining }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="/support-app/whitehall-publisher-training">
+          <a class="govuk-link" href="/support-app/whitehall-publisher-training">
             Change<span class="govuk-visually-hidden"> Whitehall Publisher training</span>
           </a>
         </dd>
       </div>
       {% endif %}
 
-
-      {% if data.editorType %}
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    Whitehall Publisher role
-  </dt>
-  <dd class="govuk-summary-list__value">
-
-    {% if data.editorType == "editor" %}
-      Make them an editor
-    {% elif data.editorType == "managing-editor" %}
-      Make them a managing editor
-    {% elif data.editorType == "regular-writer" %}
-      Keep them as a regular writer
-    {% elif data.editorType == "no" %}
-      No
-    {% endif %}
-
-  </dd>
-
-  <dd class="govuk-summary-list__actions">
-    <a href="/support-app/completed-training">
-      Change<span class="govuk-visually-hidden"> Whitehall Publisher role</span>
-    </a>
-  </dd>
-</div>
-{% endif %}
-
-
-
-
-
-<div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Does anyone other than {{ data['fullName']}} need a copy of this request?
         </dt>
@@ -225,14 +192,12 @@ Check your answers before sending your request | GOV.UK Support – GOV.UK Proto
           {{ data.copyOfRequest }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="/support-app/copy-of-request">
+          <a class="govuk-link" href="/support-app/copy-of-request">
             Change<span class="govuk-visually-hidden"> who needs a copy of this request</span>
           </a>
         </dd>
       </div>
 
-
-       {# Who needs a copy #}
       {% if data.copyOfRequest == "Yes" %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -242,7 +207,7 @@ Check your answers before sending your request | GOV.UK Support – GOV.UK Proto
           {{ data.requestCopyEmails }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="/support-app/copy-of-request">
+          <a class="govuk-link" href="/support-app/copy-of-request">
             Change<span class="govuk-visually-hidden"> who needs a copy of this request</span>
           </a>
         </dd>
